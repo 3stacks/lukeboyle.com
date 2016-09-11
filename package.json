@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-2016",
+  "version": "1.0.0",
+  "description": "[![Packagist](https://img.shields.io/packagist/v/roots/bedrock.svg?style=flat-square)](https://packagist.org/packages/roots/bedrock) [![Build Status](https://img.shields.io/travis/roots/bedrock.svg?style=flat-square)](https://travis-ci.org/roots/bedrock)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cd ./web/app/themes/lukeboyle && npm run build",
+    "watch": "cd ./web/app/themes/lukeboyle && npm run watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://3stacks@github.com/3stacks/portfolio-2016.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3stacks/portfolio-2016/issues"
+  },
+  "homepage": "https://github.com/3stacks/portfolio-2016#readme"
+}
