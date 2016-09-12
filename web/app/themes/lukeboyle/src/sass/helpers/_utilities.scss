@@ -1,0 +1,10 @@
+.screen-reader-text {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+}
+
+.max-width-container {
+	max-width: 1280px;
+	padding: 0 30px;
+	margin: 0 auto;
+}

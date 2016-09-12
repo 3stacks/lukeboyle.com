@@ -1,0 +1,4 @@
+@mixin put-in-rows($items-per-row, $spacing-size) {
+	width: calc(#{100% / $items-per-row} - #{ ($spacing-size / $items-per-row) * ($items-per-row - 1)});
+	margin-bottom: $spacing-size;
+}

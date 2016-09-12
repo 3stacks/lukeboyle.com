@@ -1,0 +1,38 @@
+.portfolio {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	&--item {
+		@include put-in-rows(3, 30px);
+		color: white;
+		max-width: 405px;
+		max-height: 405px;
+		&:after {
+			content: "";
+			display: block;
+			padding-bottom: 100%;
+		}
+		&--link {
+			color: white;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+		&--title {
+			width: 100%;
+		}
+		p {
+			width: 100%;
+		}
+		&--inner {
+			height: 100%;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			flex-direction: column;
+			flex-wrap: wrap;
+		}
+	}
+}
