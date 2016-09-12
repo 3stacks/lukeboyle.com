@@ -24,6 +24,7 @@
                     <p class="site-nav--logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
                 <?php endif;
                 wp_nav_menu( array(
+                    'menu' => 'primary',
                     'theme_location' => 'primary-menu',
                     'container' => false,
                     'menu_id' => 'menu'
