@@ -3,15 +3,10 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 	&--item {
-		@include put-in-rows(3, 30px);
+		@include put-in-rows(3, 5vw);
 		color: white;
 		max-width: 405px;
 		max-height: 405px;
-		&:after {
-			content: "";
-			display: block;
-			padding-bottom: 100%;
-		}
 		&--link {
 			color: white;
 			&:hover {
