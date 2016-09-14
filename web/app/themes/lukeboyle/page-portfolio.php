@@ -10,8 +10,8 @@
                         <h2 class="portfolio--item--title">
                             <?php echo $post->post_title ?>
                         </h2>
-                        <?php echo get_field('portfolio_snippet', $post->ID) ?>
-                        <a class="portfolio--item--link" href="<?php echo 'portfolio-' . strtolower($post->post_title); ?>">
+                        <?php echo get_field('portfolio_snippet', $post->ID);  ?>
+                        <a class="portfolio--item--link" href="<?php echo $post->guid ?>">
                             Read More
                         </a>
                     </div>
