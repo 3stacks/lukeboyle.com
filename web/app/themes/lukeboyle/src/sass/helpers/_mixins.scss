@@ -1,5 +1,43 @@
+@import "../settings/colors";
+
 @mixin put-in-rows($items-per-row, $spacing-size) {
 	width: calc(#{100vw / $items-per-row} - #{ ($spacing-size / $items-per-row) * ($items-per-row - 1)});
 	height: calc(#{100vw / $items-per-row} - #{ ($spacing-size / $items-per-row) * ($items-per-row - 1)});
 	margin-bottom: $spacing-size;
+}
+
+@mixin triangle {
+	content: "";
+	position: absolute;
+	left: 0;
+	display: block;
+	z-index: 1;
+	width: 0;
+	height: 0;
+}
+
+@mixin top-triangle {
+	position: relative;
+	&:before {
+		@include triangle;
+		top: 0;
+		transform: translateY(-50px);
+		border: {
+			top: 50px solid transparent;
+			left: 110vw solid $primary-color;
+		}
+	}
+}
+
+@mixin bottom-triangle {
+	position: relative;
+	&:after {
+		@include triangle;
+		bottom: 0;
+		transform: translateY(50px);
+		border: {
+			bottom: 50px solid transparent;
+			right: 110vw solid $primary-gradient-light;
+		}
+	}
 }
