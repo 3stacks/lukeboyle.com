@@ -33,11 +33,16 @@
             <h2 class="latest-project-block--title">
                 Latest Project
             </h2>
-            <?php $project = get_field('home_featured_project'); ?>
-            <h3>
-                <?php echo $project->post_title; ?>
-            </h3>
-            <?php echo get_field('portfolio_snippet', $project->ID); ?>
+            <div class="latest-project-block--project">
+                <?php $project = get_field('home_featured_project'); ?>
+                <h3 class="latest-project-block--project--title">
+                    <?php echo $project->post_title; ?>
+                </h3>
+                <?php echo get_field('portfolio_snippet', $project->ID); ?>
+                <a class="button primary" href="<?php echo $project->guid ?>">
+                    Read More
+                </a>
+            </div>
         </div>
     <?php } ?>
     <?php if(get_field('home_npm_packages')) { ?>
