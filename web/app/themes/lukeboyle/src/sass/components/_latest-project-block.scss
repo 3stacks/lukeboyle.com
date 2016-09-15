@@ -1,7 +1,10 @@
 .latest-project-block {
 	padding: 60px 0;
 	text-align: center;
-	h3 {
-		font-size: 2rem;
+	&--project {
+		&--title {
+			font-size: 2rem;
+		}
+
 	}
 }
