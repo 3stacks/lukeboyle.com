@@ -1,0 +1,24 @@
+@import "../settings/colors";
+@import "../helpers/mixins";
+
+.footer {
+	background-color: $primary-color;
+	height: 150px;
+	@include top-triangle;
+	&--inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 100%;
+		@extend .max-width-container;
+		font-size: 1.4rem;
+		&--copyright {
+			color: rgba(white, 0.7);
+		}
+		&--twitter {
+			a {
+				color: rgba(white, 0.7);
+			}
+		}
+	}
+}

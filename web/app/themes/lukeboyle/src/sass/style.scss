@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+html {
+	overflow-x: hidden;
+}
+
 // Vendor
 @import "vendor/normalize";
 
@@ -21,3 +25,35 @@
 @import "components/portfolio";
 @import "components/not-found-error";
 @import "components/blog-post";
+@import "components/footer";
+
+.site-main {
+	padding: 60px 0;
+}
+
+.disclaimer-block {
+	background: #FF851B;
+	color: white;
+	font-weight: bold;
+}
+
+pre {
+	padding: 16px;
+	overflow: auto;
+	font-size: 85%;
+	line-height: 1.45;
+	background-color: #f7f7f7;
+	border-radius: 3px;
+}
+
+a {
+	color: $primary-color;
+	transition: color 0.5s ease-out, border-color 0.25s ease-out;
+	text-decoration: none;
+	border-bottom: 1px solid $primary-color;
+	&:hover,
+	&:active {
+		border-bottom: 1px solid transparent;
+		color: $primary-gradient-light;
+	}
+}
