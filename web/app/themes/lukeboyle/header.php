@@ -8,6 +8,7 @@
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/vendor.js" defer></script>
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/bundle.js" defer></script>
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro" rel="stylesheet">
     <?php wp_head(); ?>
 </head>
 
