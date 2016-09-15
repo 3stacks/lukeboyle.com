@@ -30,19 +30,19 @@
                                     </li>
                                 <?php } ?>
                             </ul>
-                            <ul class="blog-post--meta--tags">
-                                <?php $tags = wp_get_post_tags($post->ID); ?>
-                                <?php foreach ($tags as $tag) { ?>
-                                    <li>
-                                        <?php echo $tag->name ?>
-                                    </li>
-                                <?php } ?>
-                            </ul>
                         </div>
                     </header>
                     <div class="blog-post--content">
                         <?php the_content() ?>
                     </div>
+                    <ul class="blog-post--tags">
+                        <?php $tags = wp_get_post_tags($post->ID); ?>
+                        <?php foreach ($tags as $tag) { ?>
+                            <li>
+                                <?php echo $tag->name ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
                 </article>
             <?php endwhile; ?>
         </div>

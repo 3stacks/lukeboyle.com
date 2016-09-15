@@ -23,20 +23,27 @@
                                 <?php echo $post->post_date ?>
                             </time>
                             <ul class="blog-post--meta--categories">
-                                <li>
-                                    <?php wp_get_post_categories($post->ID); ?>
-                                </li>
-                            </ul>
-                            <ul class="blog-post--meta--tags">
-                                <li>
-                                    React //static
-                                </li>
+                                <?php $categories = wp_get_post_categories($post->ID); ?>
+                                <?php foreach ($categories as $category) { ?>
+                                    <li>
+                                        <?php var_dump($category); ?>
+                                        <?php echo get_the_category_by_ID($category); ?>
+                                    </li>
+                                <?php } ?>
                             </ul>
                         </div>
                     </header>
                     <div class="blog-post--content">
                         <?php the_content() ?>
                     </div>
+                    <ul class="blog-post--tags">
+                        <?php $tags = wp_get_post_tags($post->ID); ?>
+                        <?php foreach ($tags as $tag) { ?>
+                            <li>
+                                <?php echo $tag->name ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
                 </article>
             <?php endwhile; ?>
         </div>
