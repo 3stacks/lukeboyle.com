@@ -17,11 +17,18 @@
         <div class="max-width-container">
             <div class="site-nav">
                 <?php
-
                 if ( is_front_page() && is_home() ) : ?>
-                    <h1 class="site-nav--logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    <h1 class="site-nav--logo">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="Go back to home page">
+                            Luke Boyle
+                        </a>
+                    </h1>
                 <?php else : ?>
-                    <p class="site-nav--logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                    <p class="site-nav--logo">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" title="Go back to home page">
+                            Luke Boyle
+                        </a>
+                    </p>
                 <?php endif;
                 wp_nav_menu( array(
                     'menu' => 'primary',
