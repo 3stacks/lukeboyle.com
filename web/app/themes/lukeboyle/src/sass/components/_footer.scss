@@ -18,6 +18,9 @@
 		&--twitter {
 			a {
 				color: rgba(white, 0.7);
+				&:hover {
+					color: white;
+				}
 			}
 		}
 	}
