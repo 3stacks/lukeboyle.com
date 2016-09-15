@@ -1,0 +1,32 @@
+@import "../settings/colors";
+
+.blog-header {
+	background: $feature-gradient;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+	&--site-name {
+		font-size: 5rem;
+		margin: 0;
+	}
+	&--description {
+		font-size: 2rem;
+	}
+	&--menu {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		li {
+			display: inline-block;
+			&:not(:last-child) {
+				margin-right: 15px;
+			}
+			a {
+				color: white;
+			}
+		}
+	}
+}
