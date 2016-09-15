@@ -1,4 +1,5 @@
 @import "../settings/colors";
+@import "../helpers/mixins";
 
 .blog-header {
 	background: $feature-gradient;
@@ -8,6 +9,8 @@
 	align-items: center;
 	flex-direction: column;
 	color: white;
+	position: relative;
+	@include bottom-triangle;
 	&--site-name {
 		font-size: 5rem;
 		margin: 0;
@@ -19,6 +22,7 @@
 		padding: 0;
 		margin: 0;
 		list-style: none;
+		font-size: 1.4rem;
 		li {
 			display: inline-block;
 			&:not(:last-child) {
@@ -26,6 +30,7 @@
 			}
 			a {
 				color: white;
+				border: none;
 			}
 		}
 	}
