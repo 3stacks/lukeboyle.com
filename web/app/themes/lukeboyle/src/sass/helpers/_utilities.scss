@@ -4,10 +4,7 @@
 }
 
 .max-width-container {
-	max-width: 1280px;
+	max-width: 1000px;
 	padding: 0 30px;
 	margin: 0 auto;
-	&.blog {
-		max-width: 1000px;
-	}
 }
