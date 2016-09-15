@@ -1,3 +1,31 @@
 .blog-post {
-
+	text-align: center;
+	&--title {
+		padding: 60px 0 0;
+		font-size: 4.8rem;
+		line-height: 1;
+		margin-top: 0;
+	}
+	&--meta {
+		&--date {
+			display: inline-block;
+		}
+		&--categories,
+		&--tags {
+			list-style: none;
+			display: inline-block;
+			li {
+				display: inline-block;
+				padding: 0;
+				margin: 0;
+				&:not(:last-child) {
+					margin-right: 15px;
+				}
+			}
+		}
+	}
+	&--content {
+		max-width: 700px;
+		margin: 0 auto;
+	}
 }
