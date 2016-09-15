@@ -16,9 +16,11 @@
                 <?php while ( have_posts() ) : the_post(); ?>
                     <article class="blog-post">
                         <header>
-                            <h1 class="blog-post--title">
-                                <?php echo the_title(); ?>
-                            </h1>
+                            <h2 class="blog-post--title">
+                                <a href="<?php echo $post->guid ?>">
+                                    <?php echo the_title(); ?>
+                                </a>
+                            </h2>
                             <div class="blog-post--meta">
                                 <time datetime="<?php echo $post->post_date ?>">
                                     <?php echo date('d F Y', strtotime($post->post_date)); ?>
