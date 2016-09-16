@@ -4,6 +4,10 @@ html {
 	overflow-x: hidden;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 // Vendor
 @import "vendor/normalize";
 
