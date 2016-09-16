@@ -1,0 +1,18 @@
+.npm-packages-block {
+	text-align: center;
+	&--title {
+		font-size: 3rem;
+	}
+	&--text {
+		font-size: 2rem;
+	}
+	ul {
+		padding: 0;
+		list-style: none;
+		li {
+			a {
+				font-size: 1.6rem;
+			}
+		}
+	}
+}
