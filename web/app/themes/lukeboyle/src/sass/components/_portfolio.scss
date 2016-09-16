@@ -1,3 +1,6 @@
+@import "../settings/colors";
+@import "../helpers/mixins";
+
 .portfolio {
 	display: flex;
 	justify-content: space-between;
@@ -6,27 +9,42 @@
 		@include put-in-rows(3, 30px);
 		color: white;
 		display: flex;
-		&--link {
-			color: white;
-			&:hover {
-				text-decoration: none;
+		flex-direction: column;
+		box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1), 0 0 0 1px rgba(17, 17, 17, 0.1);
+		&--image {
+			font-size: 0;
+			img {
+				width: 100%;
 			}
 		}
-		&--title {
-			width: 100%;
+		&--image {
+			height: 200px;
+			img {
+				object-fit: cover;
+			}
 		}
-		p {
+		&--card {
 			width: 100%;
-		}
-		&--inner {
-			height: 100%;
-			width: 100%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
+			color: black;
+			padding: 10px;
 			text-align: center;
+			min-height: 150px;
+			display: flex;
 			flex-direction: column;
-			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+			&--title {
+				width: 100%;
+				font-size: 2.5rem;
+			}
+			p {
+				width: 100%;
+				font-size: 1.6rem;
+			}
+			a {
+				font-size: 1.4rem;
+				padding: 3px 15px;
+			}
 		}
 	}
 }
