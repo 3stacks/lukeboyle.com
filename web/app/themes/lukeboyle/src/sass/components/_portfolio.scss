@@ -3,10 +3,9 @@
 	justify-content: space-between;
 	flex-wrap: wrap;
 	&--item {
-		@include put-in-rows(3, 5vw);
+		@include put-in-rows(3, 30px);
 		color: white;
-		max-width: 405px;
-		max-height: 405px;
+		display: flex;
 		&--link {
 			color: white;
 			&:hover {
