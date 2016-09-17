@@ -5,7 +5,7 @@
         <?php $posts = get_posts(array('post_type' => 'portfolio_item')); ?>
         <div class="portfolio">
             <?php foreach ($posts as $post) { ?>
-                <div class="portfolio--item">
+                <div class="portfolio--item" data-prefetch="<?php echo $post->guid ?>">
                     <div class="portfolio--item--image">
                         <img src="<?php echo get_field('portfolio_image', $post->ID)['sizes']['medium'] ?>" alt="<?php echo get_field('portfolio_image', $post->ID)['alt'] ?>">
                     </div>

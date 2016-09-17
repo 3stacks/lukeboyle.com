@@ -13,7 +13,6 @@
 	display: block;
 	z-index: 1;
 	width: 0;
-	height: 0;
 }
 
 @mixin top-triangle {
@@ -29,15 +28,16 @@
 	}
 }
 
-@mixin bottom-triangle {
+@mixin bottom-triangle($height: 0px, $color: $primary-gradient-light) {
 	position: relative;
 	&:after {
+		height: $height;
 		@include triangle;
 		bottom: 0;
 		transform: translateY(50px);
 		border: {
 			bottom: 50px solid transparent;
-			right: 110vw solid $primary-gradient-light;
+			right: 110vw solid $color;
 		}
 	}
 }

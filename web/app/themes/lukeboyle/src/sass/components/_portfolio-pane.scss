@@ -1,0 +1,53 @@
+@import "../settings/colors";
+@import "../settings/sizes";
+@import "../helpers/mixins";
+
+$transition-speed: 1.5s;
+
+.portfolio-pane {
+	width: 100vw;
+	top: $header-height;
+	left: 0;
+	position: absolute !important;
+	z-index: 5;
+	transition: height $transition-speed linear;
+	overflow: hidden;
+	height: 0;
+	background-color: transparent;
+	@include bottom-triangle(100px);
+	.max-width-container {
+		background-color: white;
+	}
+	.single-portfolio-item {
+		height: 0;
+		overflow: hidden;
+		transition: height $transition-speed linear 0.15s, padding 0.5s ease-out 1.5s, opacity 0.5s ease-out 0s;
+		padding: 0;
+		opacity: 0.5;
+	}
+	&.shown {
+		height: calc(100vh + 100px);
+		@include bottom-triangle(100px, $primary-color);
+		.single-portfolio-item {
+			height: calc(100vh);
+			opacity: 1;
+			padding: 60px 0 0;
+		}
+		&:after {
+			bottom: 50px;
+		}
+	}
+	&.free {
+		overflow-y: auto;
+		height: 100%;
+		padding: auto;
+		&:after {
+			display: none;
+		}
+		.single-portfolio-item {
+			height: 100%;
+			overflow: auto;
+			min-height: 100vh;
+		}
+	}
+}

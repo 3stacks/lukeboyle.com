@@ -18,6 +18,7 @@ html {
 // Helpers
 @import "helpers/mixins";
 @import "helpers/utilities";
+@import "helpers/sticky-footer";
 
 // Elements
 @import "elements/pre";
@@ -38,6 +39,8 @@ html {
 @import "components/npm-packages-block";
 @import "components/featured-blog-post-block";
 @import "components/single-portfolio-item";
+@import "components/portfolio-pane";
+@import "components/pagination";
 
 .site-main {
 	padding: 60px 0;
@@ -50,28 +53,7 @@ body {
 	flex-direction: column;
 }
 
-header,
-footer {
-	flex-grow: 0;
-}
 
-main {
-	flex-grow: 1;
-}
-
-.pagination {
-	display: flex;
-	justify-content: space-between;
-	width: 25%;
-	margin: 0 auto;
-	font-size: 1.6rem;
-	&--next {
-
-	}
-	&--previous {
-
-	}
-}
 
 .blog-category {
 	text-align: center;
