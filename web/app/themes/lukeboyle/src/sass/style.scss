@@ -19,6 +19,11 @@ html {
 @import "helpers/mixins";
 @import "helpers/utilities";
 
+// Elements
+@import "elements/pre";
+@import "elements/buttons";
+@import "elements/links";
+
 // Components
 @import "components/site-header";
 @import "components/site-nav";
@@ -32,36 +37,10 @@ html {
 @import "components/footer";
 @import "components/npm-packages-block";
 @import "components/featured-blog-post-block";
+@import "components/single-portfolio-item";
 
 .site-main {
 	padding: 60px 0;
-}
-
-.disclaimer-block {
-	background: #FF851B;
-	color: white;
-	font-weight: bold;
-}
-
-pre {
-	padding: 16px;
-	overflow: auto;
-	font-size: 85%;
-	line-height: 1.45;
-	background-color: #f7f7f7;
-	border-radius: 3px;
-}
-
-a {
-	color: $primary-color;
-	transition: color 0.5s ease-out, border-color 0.25s ease-out;
-	text-decoration: none;
-	border-bottom: 1px solid $primary-color;
-	&:hover,
-	&:active {
-		border-bottom: 1px solid transparent;
-		color: $primary-gradient-light;
-	}
 }
 
 body {
@@ -97,22 +76,4 @@ main {
 .blog-category {
 	text-align: center;
 	font-size: 3rem;
-}
-
-.button {
-	margin: 0 auto;
-	line-height: 40px;
-	padding: 10px 20px;
-	transition: background 0.5s ease-out;
-	color: white;
-	font-size: 1.6rem;
-	&:hover {
-		color: white;
-	}
-	&.primary {
-		background-color: $primary-color;
-		&:hover {
-			background-color: $primary-gradient-light;
-		}
-	}
 }

@@ -1,0 +1,21 @@
+@import "../settings/colors";
+
+.single-portfolio-item {
+	padding: 60px 0;
+	text-align: center;
+	&--title {
+		font-size: 4rem;
+	}
+	&--content {
+		font-size: 1.8rem;
+	}
+	&--buttons {
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
+		margin-bottom: 30px;
+		.button {
+			padding: 5px 10px;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+@import "../settings/colors";
+
+.button {
+	margin: 0 auto;
+	line-height: 40px;
+	padding: 10px 20px;
+	transition: background 0.5s ease-out;
+	color: white;
+	font-size: 1.6rem;
+	&:hover {
+		color: white;
+	}
+	&.primary {
+		background-color: $primary-color;
+		&:hover {
+			background-color: $primary-gradient-light;
+		}
+	}
+}
