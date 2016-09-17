@@ -1,4 +1,4 @@
-import mouseNear from './mouse-near';
+import mouseNear from '@lukeboyle/mouse-near';
 
 /**
  * @param {HTMLElement} target

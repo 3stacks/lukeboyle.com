@@ -28,6 +28,6 @@
     "webpack": "^2.1.0-beta.21"
   },
   "dependencies": {
-
+    "@lukeboyle/mouse-near": "^1.0.0"
   }
 }
