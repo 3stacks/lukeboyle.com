@@ -6,8 +6,10 @@
         <div class="portfolio">
             <?php foreach ($posts as $post) { ?>
                 <div class="portfolio--item" data-prefetch="<?php echo $post->guid ?>">
-                    <div class="portfolio--item--image">
-                        <img src="<?php echo get_field('portfolio_image', $post->ID)['sizes']['medium'] ?>" alt="<?php echo get_field('portfolio_image', $post->ID)['alt'] ?>">
+                    <div class="portfolio--item--image" style="background-image: url(<?php echo get_field('portfolio_image', $post->ID)['sizes']['medium'] ?>);">
+                        <span class="visually-hidden">
+                            <?php echo get_field('portfolio_image', $post->ID)['alt'] ?>
+                        </span>
                     </div>
                     <div class="portfolio--item--card">
                         <h2 class="portfolio--item--card--title">
