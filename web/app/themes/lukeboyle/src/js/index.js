@@ -44,18 +44,23 @@ function handleReadMoreLink(markup, event) {
     }
 }
 
-const prefetchElements = Array.from(document.querySelectorAll('[data-prefetch]'));
+function init() {
+    const prefetchElements = Array.from(document.querySelectorAll('[data-prefetch]'));
 
-prefetchElements.forEach((item) => {
-    mouseNear(item, () => {
-        window.fetch(item.getAttribute('data-prefetch'))
-            .then(
-                (response) => response.text()
-            ).then((text) => {
-            const markup = parseHtml(text, 'portfolio-pane');
-            item.querySelector('a').addEventListener('click', handleReadMoreLink.bind(this, markup));
-            item.removeAttribute('data-portfolio-item');
-            item.querySelector('a').setAttribute('data-portfolio-content-loaded', 'true');
-        })
-    }, { buffer: 80 })
-});
+    prefetchElements.forEach((item) => {
+        mouseNear(item, () => {
+            window.fetch(item.getAttribute('data-prefetch'))
+                .then(
+                    (response) => response.text()
+                ).then((text) => {
+                const markup = parseHtml(text, 'portfolio-pane');
+                item.querySelector('a').addEventListener('click', handleReadMoreLink.bind(this, markup));
+                item.removeAttribute('data-portfolio-item');
+                item.querySelector('a').setAttribute('data-portfolio-content-loaded', 'true');
+            })
+        }, { buffer: 80 })
+    });
+}
+
+window.addEventListener('load', init);
+
