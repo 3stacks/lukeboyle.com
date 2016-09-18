@@ -1,16 +1,25 @@
 @import "../settings/colors";
+@import "../settings/widths";
 @import "../helpers/mixins";
+@import "../vendor/breakpoint";
 
 .portfolio {
 	display: flex;
 	justify-content: space-between;
 	flex-wrap: wrap;
 	&--item {
-		@include put-in-rows(3, 30px);
+		@include put-in-rows(1, 0px);
+		margin-bottom: 30px;
 		color: white;
 		display: flex;
 		flex-direction: column;
 		box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1), 0 0 0 1px rgba(17, 17, 17, 0.1);
+		@include breakpoint($s) {
+			@include put-in-rows(2, 30px);
+		}
+		@include breakpoint($m) {
+			@include put-in-rows(3, 30px);
+		}
 		&--image {
 			font-size: 0;
 			img {
@@ -19,8 +28,10 @@
 		}
 		&--image {
 			height: 200px;
-			img {
-				object-fit: cover;
+			width: 100%;
+			background: {
+				size: cover;
+				repeat: no-repeat;
 			}
 		}
 		&--card {
