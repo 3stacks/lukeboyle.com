@@ -31,12 +31,12 @@
                         </a>
                     </p>
                 <?php endif;
-                wp_nav_menu( array(
-                    'menu' => 'primary',
-                    'theme_location' => 'primary-menu',
-                    'container' => false,
-                    'menu_id' => 'menu'
-                ));
+                    wp_nav_menu( array(
+                        'menu' => 'primary',
+                        'theme_location' => 'primary-menu',
+                        'container' => false,
+                        'menu_id' => 'menu'
+                    ));
                 ?>
             </div>
         </div>
