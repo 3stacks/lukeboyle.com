@@ -1,10 +1,5 @@
 const webpack = require('webpack');
 const pkg     = require('./package.json');
-
-/**
- * Webpack reads a config object like Grunt. This must be a CommonJS module
- * because node can't import ES6 modules on the command line yet.
- */
 module.exports = {
 
     entry: {
