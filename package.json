@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/3stacks/portfolio-2016/issues"
   },
-  "homepage": "https://github.com/3stacks/portfolio-2016#readme"
+  "homepage": "https://github.com/3stacks/portfolio-2016#readme",
+  "devDependencies": {
+    "ftp-client": "^0.2.2"
+  }
 }
