@@ -10,6 +10,15 @@
     <script src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/bundle.js" defer></script>
     <link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php esc_url(get_template_directory_uri()); ?>assets/img/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="<?php esc_url(get_template_directory_uri()); ?>assets/img/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="<?php esc_url(get_template_directory_uri()); ?>assets/img/apple-icon-152x152.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="<?php esc_url(get_template_directory_uri()); ?>assets/img/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php esc_url(get_template_directory_uri()); ?>assets/img/favicon-32x32.png">
+    <link rel="manifest" href="<?php esc_url(get_template_directory_uri()); ?>/manifest.json">
+    <meta name="msapplication-TileImage" content="<?php esc_url(get_template_directory_uri()); ?>assets/img/ms-icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#34495e">
+    <meta name="theme-color" content="#34495e">
     <?php wp_head(); ?>
 </head>
 
