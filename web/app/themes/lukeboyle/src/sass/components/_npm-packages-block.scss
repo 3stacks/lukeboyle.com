@@ -1,3 +1,6 @@
+@import "../vendor/breakpoint";
+@import "../settings/widths";
+
 .npm-packages-block {
 	text-align: center;
 	&--title {
@@ -10,8 +13,15 @@
 		padding: 0;
 		list-style: none;
 		li {
+			margin-bottom: 15px;
+			@include breakpoint($m) {
+				margin-bottom: 10px;
+			}
 			a {
-				font-size: 1.6rem;
+				font-size: 2rem;
+				@include breakpoint($m) {
+					font-size: 1.8rem;
+				}
 			}
 		}
 	}
