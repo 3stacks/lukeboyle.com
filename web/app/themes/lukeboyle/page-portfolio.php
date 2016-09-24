@@ -5,7 +5,6 @@
         <?php $posts = get_posts(array('post_type' => 'portfolio_item')); ?>
         <div class="portfolio">
             <?php foreach ($posts as $post) { ?>
-                <?php var_dump($post); ?>
                 <div class="portfolio--item" data-prefetch="<?php echo get_permalink($post->ID); ?>">
                     <div class="portfolio--item--image" style="background-image: url(<?php echo get_field('portfolio_image', $post->ID)['sizes']['medium'] ?>);">
                         <span class="visually-hidden">
