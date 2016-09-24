@@ -16,7 +16,7 @@
                             <?php echo $post->post_title; ?>
                         </h2>
                         <?php echo get_field('portfolio_snippet', $post->ID);  ?>
-                        <a class="portfolio--item--card--link button primary" href="<?php echo $post->guid; ?>">
+                        <a class="portfolio--item--card--link button primary" href="<?php echo get_permalink($post->ID); ?>">
                             Read More
                         </a>
                     </div>
