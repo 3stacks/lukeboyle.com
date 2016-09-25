@@ -33,3 +33,8 @@ bin
 web/app/themes/lukeboyle/assets/bundle.js
 web/app/themes/lukeboyle/assets/style.css
 ftp.json
+web/app/advanced-cache.php
+web/app/db.php
+web/app/ai1wm-backups
+web/app/cache
+web/app/w3tc-config
