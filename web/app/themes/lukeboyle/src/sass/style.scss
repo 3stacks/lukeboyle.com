@@ -42,8 +42,12 @@ html {
 @import "components/portfolio-pane";
 @import "components/pagination";
 
-.site-main {
+.about-main {
 	padding: 60px 0;
+	text-align: center;
+	p {
+		font-size: 1.8rem;
+	}
 }
 
 body {
@@ -53,7 +57,9 @@ body {
 	flex-direction: column;
 }
 
-
+.site-main {
+	padding: 60px 0;
+}
 
 .blog-category {
 	text-align: center;
