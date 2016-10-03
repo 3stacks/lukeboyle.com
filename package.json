@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall" : "cd ./web/app/themes/lukeboyle && npm install",
     "deploy": "node ftp-upload.js",
-    "build": "cp ./robots.txt ./web/wp && cd ./web/app/themes/lukeboyle && npm run build",
+    "build": "cp ./robots.txt ./web/wp && cd ./web/app/themes/lukeboyle && NODE_ENV=production npm run build",
     "watch": "cd ./web/app/themes/lukeboyle && npm run watch"
   },
   "repository": {
