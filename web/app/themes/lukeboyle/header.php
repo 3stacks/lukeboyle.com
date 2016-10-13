@@ -20,6 +20,7 @@
     <meta name="msapplication-TileImage" content="<?php esc_url(get_template_directory_uri()); ?>assets/img/ms-icon-144x144.png">
     <meta name="msapplication-TileColor" content="#34495e">
     <meta name="theme-color" content="#34495e">
+    <title>Luke Boyle | Front End Developer</title>
     <?php wp_head(); ?>
 </head>
 
