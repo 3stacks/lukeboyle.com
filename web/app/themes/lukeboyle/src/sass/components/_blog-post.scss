@@ -1,13 +1,25 @@
+@import "../vendor/breakpoint";
+@import "../settings/widths";
+
 .blog-post {
 	text-align: center;
+
+	img {
+		max-width: 100%;
+	}
+
 	&:last-of-type {
 		padding-bottom: 60px;
 	}
 	&--title {
 		padding: 60px 0 0;
-		font-size: 4.8rem;
+		font-size: 3rem;
 		line-height: 1.5;
 		margin-top: 0;
+
+		@include breakpoint($m) {
+			font-size: 4.8rem;
+		}
 	}
 	&--meta {
 		font-size: 1.4rem;

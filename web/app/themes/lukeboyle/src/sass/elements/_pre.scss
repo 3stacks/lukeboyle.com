@@ -1,8 +1,16 @@
+@import "../vendor/breakpoint";
+@import "../settings/widths";
+
 pre {
 	padding: 16px;
 	overflow: auto;
-	font-size: 85%;
+	font-size: 70%;
 	line-height: 1.45;
 	background-color: #f7f7f7;
 	border-radius: 3px;
+
+	@include breakpoint($m) {
+		font-size: 85%;
+	}
+
 }
