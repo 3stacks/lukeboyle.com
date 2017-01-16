@@ -8,7 +8,7 @@
             Experience with React, Angular and Vue.js.
         </p>
         <p>
-            Experience, with ES6, babel, webpack and gulp.
+            Experience with ES2015, babel, webpack and gulp.
         </p>
         <p>
             For a sample of my open source work, you can visit my github: <a href="https://github.com/3stacks">https://github.com/3stacks</a>
