@@ -2,7 +2,10 @@
 
 <main id="main" class="site-main">
     <div class="max-width-container">
-        <?php $posts = get_posts(array('post_type' => 'portfolio_item')); ?>
+        <?php $posts = get_posts(array(
+            'post_type' => 'portfolio_item',
+            'numberposts' => 9
+        )); ?>
         <div class="portfolio">
             <?php foreach ($posts as $post) { ?>
                 <div class="portfolio--item" data-prefetch="<?php echo get_permalink($post->ID); ?>">
