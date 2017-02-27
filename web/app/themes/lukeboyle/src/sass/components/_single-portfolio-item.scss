@@ -1,4 +1,6 @@
 @import "../settings/colors";
+@import "../settings/widths";
+@import "../vendor/breakpoint";
 
 .single-portfolio-item {
 	padding: 60px 0;
@@ -8,12 +10,23 @@
 	}
 	&--content {
 		font-size: 1.8rem;
+		ul {
+			text-align: left;
+		}
+
+		img {
+			max-width: 100%;
+		}
 	}
 	&--buttons {
+		padding-top: 50px;
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
-		margin-bottom: 30px;
+		margin-bottom: 50px;
+		@include breakpoint($m) {
+			margin-bottom: 100px;
+		}
 		.button {
 			padding: 5px 10px;
 		}
