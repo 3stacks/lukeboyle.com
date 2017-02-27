@@ -20,6 +20,12 @@
 
 		ul {
 			text-align: left;
+			padding: 0;
+			margin-left: 50%;
+			transform: translateX(-30%);
+			@include breakpoint($m) {
+				transform: translateX(-15%);
+			}
 		}
 
 		img {
