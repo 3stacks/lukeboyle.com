@@ -10,9 +10,14 @@
 	}
 	&--content {
 		font-size: 1.8rem;
+		figure {
+			margin: 0;
+		}
+
 		p {
 			font-size: 1.8rem;
 		}
+
 		ul {
 			text-align: left;
 		}
