@@ -1,10 +1,17 @@
 @import "../settings/colors";
 @import "../helpers/mixins";
+@import "../settings/widths";
+@import "../vendor/breakpoint";
 
 .footer {
 	background-color: $primary-color;
-	height: 150px;
+	height: 70px;
 	@include top-triangle;
+
+	@include breakpoint($m) {
+		height: 150px;
+	}
+
 	&--inner {
 		display: flex;
 		justify-content: space-between;
