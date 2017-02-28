@@ -42,7 +42,7 @@
                     <div class="latest-project-block--project--snippet">
                         <?php echo get_field('portfolio_snippet', $project->ID); ?>
                     </div>
-                    <a class="button primary" href="<?php get_permalink($project->ID); ?>">
+                    <a class="button primary" href="<?php echo get_permalink($project->ID); ?>">
                         Read More
                     </a>
                 </div>
