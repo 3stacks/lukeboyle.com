@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "77f034fe7c4be3cfc3755ca1bf0379f2",
-    "content-hash": "e43848d8cc2c71bbb8194a710283f925",
+    "hash": "124bfbfdbf58b4a31a000e6505c1238a",
+    "content-hash": "a454120f269103c625b82839b004b9ce",
     "packages": [
         {
             "name": "composer/installers",
@@ -109,20 +109,58 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.7.4",
+            "version": "4.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "373c6caed518228364a8bc004ae05e877d74364a"
+                "reference": "db59b62af6f69b585e74e59d670d7d9ad04e0e88"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/373c6caed518228364a8bc004ae05e877d74364a",
-                "reference": "373c6caed518228364a8bc004ae05e877d74364a",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/db59b62af6f69b585e74e59d670d7d9ad04e0e88",
+                "reference": "db59b62af6f69b585e74e59d670d7d9ad04e0e88",
                 "shasum": ""
             },
             "require": {
+                "johnpbloch/wordpress-core": "4.7.2",
                 "johnpbloch/wordpress-core-installer": "~0.2",
+                "php": ">=5.3.2"
+            },
+            "type": "package",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "WordPress Community",
+                    "homepage": "http://wordpress.org/about/"
+                }
+            ],
+            "description": "WordPress is web software you can use to create a beautiful website or blog.",
+            "homepage": "http://wordpress.org/",
+            "keywords": [
+                "blog",
+                "cms",
+                "wordpress"
+            ],
+            "time": "2017-03-18 04:47:24"
+        },
+        {
+            "name": "johnpbloch/wordpress-core",
+            "version": "4.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/johnpbloch/wordpress-core.git",
+                "reference": "adc498caffb06200f971f87dca9ef9eabacde654"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress-core/zipball/adc498caffb06200f971f87dca9ef9eabacde654",
+                "reference": "adc498caffb06200f971f87dca9ef9eabacde654",
+                "shasum": ""
+            },
+            "require": {
                 "php": ">=5.3.2"
             },
             "type": "wordpress-core",
@@ -140,9 +178,10 @@
             "homepage": "http://wordpress.org/",
             "keywords": [
                 "blog",
-                "cms"
+                "cms",
+                "wordpress"
             ],
-            "time": "2017-01-26 18:32:19"
+            "time": "2017-02-10 22:30:04"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
