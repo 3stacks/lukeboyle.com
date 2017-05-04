@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const pkg     = require('./package.json');
+const Path = require('path');
 module.exports = {
 
     entry: {
@@ -14,7 +15,7 @@ module.exports = {
         })
     ],
     output: {
-        path: './assets',
+        path: Path.resolve('./assets'),
 
         filename: 'bundle.js'
     },
