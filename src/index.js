@@ -1,5 +1,8 @@
+const fs = require('fs');
 import React from 'react';
-import { render } from 'react-dom';
+import { renderToStaticMarkup } from 'react-dom/server';
 import Body from './components/body/body.jsx';
 
-render(<Body/>, document.getElementById('root'));
+const markup = renderToStaticMarkup(<Body/>);
+
+fs.outputFileSync('./dist/index.html', markup);
