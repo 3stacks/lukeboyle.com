@@ -1,0 +1,34 @@
+@import "../../assets/sass/settings/colors";
+@import "../../assets/sass/helpers/mixins";
+@import "../../assets/sass/settings/widths";
+@import "../../assets/sass/vendor/breakpoint";
+
+.footer {
+  background-color: $primary-color;
+  height: 70px;
+  @include top-triangle;
+
+  @include breakpoint($m) {
+    height: 150px;
+  }
+
+  &--inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    @extend .max-width-container;
+    font-size: 1.4rem;
+    &--copyright {
+      color: rgba(white, 0.7);
+    }
+    &--twitter {
+      a {
+        color: rgba(white, 0.7);
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+}

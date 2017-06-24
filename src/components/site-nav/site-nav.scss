@@ -1,0 +1,56 @@
+@import "../../assets/sass/settings/widths";
+@import "../../assets/sass/vendor/breakpoint";
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 100px;
+  @include breakpoint($m) {
+    flex-wrap: nowrap;
+    height: 60px;
+  }
+  &--logo {
+    margin: 0;
+    font-size: 2.5rem;
+    font-family: 'Roboto Slab', serif;
+    width: 100%;
+    text-align: center;
+    @include breakpoint($m) {
+      width: 250px;
+      text-align: left;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    @include breakpoint($m) {
+      text-align: right;
+    }
+    li {
+      display: inline-block;
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.6rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
