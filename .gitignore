@@ -29,6 +29,7 @@ node_modules
 # Vagrant
 bin
 .vagrant
+dist
 
 web/app/themes/lukeboyle/assets/bundle.js
 web/app/themes/lukeboyle/assets/style.css
