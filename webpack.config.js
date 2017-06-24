@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const pkg     = require('./package.json');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ReactStaticPlugin = require('react-static-webpack-plugin');
 
 /**
  * Webpack reads a config object like Grunt. This must be a CommonJS module
@@ -13,6 +14,11 @@ module.exports = {
         // 'vendor': Object.keys(pkg.dependencies).filter(dep => dep !== 'react-icons')
     },
     plugins: [
+        new ReactStaticPlugin({
+            routes: './src/index.js',
+            template: './src/components/template/template.jsx',
+            renderToStaticMarkup: true
+        }),
         new ExtractTextPlugin('style.css'),
         // new webpack.optimize.CommonsChunkPlugin({
         //     name: 'vendor',

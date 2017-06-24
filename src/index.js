@@ -1,8 +1,9 @@
-const fs = require('fs');
 import React from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
-import Body from './components/body/body.jsx';
+import { render } from 'react-dom';
+import { Router, browserHistory } from 'react-router';
+import routes from './routes';
 
-const markup = renderToStaticMarkup(<Body/>);
-
-fs.outputFileSync('./dist/index.html', markup);
+render(
+    (<Router routes={routes} history={browserHistory} />),
+    document.getElementById('root')
+);
