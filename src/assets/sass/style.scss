@@ -26,8 +26,6 @@ html {
 @import "elements/links";
 
 // Components
-@import "components/site-header";
-@import "components/site-nav";
 @import "components/home-head-banner";
 @import "components/blog-header";
 @import "components/technologies";
@@ -35,7 +33,6 @@ html {
 @import "components/portfolio";
 @import "components/not-found-error";
 @import "components/blog-post";
-@import "components/footer";
 @import "components/npm-packages-block";
 @import "components/featured-blog-post-block";
 @import "components/single-portfolio-item";
