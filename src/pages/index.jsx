@@ -1,0 +1,127 @@
+import React from "react";
+import Link from "gatsby-link";
+import Helmet from "react-helmet";
+
+export default class Index extends React.Component {
+    render() {
+        return (
+            <div>
+                <div className="home-head-banner">
+                    <h2 aria-hidden="true">
+                        Luke Boyle
+                    </h2>
+                    <p>
+                        Front End Developer
+                    </p>
+                    <p>
+                        Melbourne, AU.
+                    </p>
+                </div>
+                <div className="technologies-block">
+                    <div className="max-width-container">
+                        <h2 className="technologies-block--title">
+                            Technologies
+                        </h2>
+                        <ul>
+                            <li>
+                                JavaScript (ES2015, ES2017)
+                            </li>
+                            <li>
+                                React/Redux
+                            </li>
+                            <li>
+                                Vue.js
+                            </li>
+                            <li>
+                                AJAX (Promises and async/await)
+                            </li>
+                            <li>
+                                Node.js
+                            </li>
+                            <li>
+                                SASS
+                            </li>
+                            <li>
+                                Webpack, Gulp
+                            </li>
+                            <li>
+                                Mocha, Karma, Jest for testing
+                            </li>
+                            <li>
+                                TDD
+                            </li>
+                            <li>
+                                Continuous Integration
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="max-width-container">
+                    <div className="latest-project-block">
+                        <h2 className="latest-project-block--title">
+                            Latest Project
+                        </h2>
+                        <div className="latest-project-block--project">
+                            <h3 className="latest-project-block--project--title">
+                                Split Visualiser
+                            </h3>
+                            <div className="latest-project-block--project--snippet">
+                                A web-app for easily visualising and sharing the muscle engagement of your exercise routine.
+                            </div>
+                            <a className="button primary" href="/portfolio_item/split-visualiser/">
+                                Read More
+                            </a>
+                        </div>
+                    </div>
+                    <div className="npm-packages-block">
+                        <h2 className="npm-packages-block--title">
+                            Open Source
+                        </h2>
+                        <p className="npm-packages-block--text">
+                            I'm an advocate for open source. All of my projects are under the MIT license.
+                            You can find some of my work on NPM (below).
+                        </p>
+                        <ul>
+                            <li>
+                                <a href="https://www.npmjs.com/package/@lukeboyle/lazy-slider" target="_blank" title="Find 'lazy slider' on NPM">
+                                    lazy slider </a>
+                            </li>
+                            <li>
+                                <a href="https://www.npmjs.com/package/@lukeboyle/local-storage-manager" target="_blank" title="Find 'local-storage-manager' on NPM">
+                                    local-storage-manager </a>
+                            </li>
+                            <li>
+                                <a href="https://www.npmjs.com/package/@lukeboyle/es6-module-boilerplate" target="_blank" title="Find 'es6-module-boilerplate' on NPM">
+                                    es6-module-boilerplate </a>
+                            </li>
+                            <li>
+                                <a href="https://www.npmjs.com/package/@lukeboyle/timetools" target="_blank" title="Find 'timetools' on NPM">
+                                    timetools </a>
+                            </li>
+                            <li>
+                                <a href="https://www.npmjs.com/package/@lukeboyle/mouse-near" target="_blank" title="Find 'mouse-near' on NPM">
+                                    mouse-near </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className="featured-blog-post-block">
+                        <h2 className="featured-blog-post-block--title">
+                            Featured Blog Post
+                        </h2>
+                        <p className="featured-blog-post-block--post-name">
+                            Automating CSS regression testing
+                        </p>
+                        <p>
+                            <a
+                                className="button primary"
+                                href="https://lukeboyle.com/automating-css-regression-testing-argus-eyes-phantomjs/"
+                            >
+                                Read more
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}

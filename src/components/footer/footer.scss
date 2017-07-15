@@ -12,17 +12,18 @@
     height: 150px;
   }
 
-  &--inner {
+  &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    @extend .max-width-container;
     font-size: 1.4rem;
-    &--copyright {
+
+    &__copyright {
       color: rgba(white, 0.7);
     }
-    &--twitter {
+
+    &__twitter {
       a {
         color: rgba(white, 0.7);
         &:hover {

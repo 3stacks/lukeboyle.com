@@ -2,61 +2,41 @@ import React from "react"
 import PropTypes from "prop-types"
 import Link from "gatsby-link"
 import Helmet from "react-helmet"
-
-import "../css/typography.css"
+import Header from '../components/header/header.jsx';
+import Footer from '../components/footer/footer.jsx';
+import '../assets/sass/style.scss';
 
 export default class Template extends React.Component {
-  static propTypes = {
-    children: PropTypes.func,
-  }
+    static propTypes = {
+        children: PropTypes.func,
+    }
 
-  render() {
-    return (
-      <div>
-        <Helmet
-          title="Gatsby Default Starter"
-          meta={[
-            { name: "description", content: "Sample" },
-            { name: "keywords", content: "sample, something" },
-          ]}
-        />
-        <div
-          style={{
-            background: `rebeccapurple`,
-            marginBottom: `1.45rem`,
-          }}
-        >
-          <div
-            style={{
-              margin: `0 auto`,
-              maxWidth: 960,
-              padding: `1.45rem 1.0875rem`,
-            }}
-          >
-            <h1 style={{ margin: 0 }}>
-              <Link
-                to="/"
-                style={{
-                  color: "white",
-                  textDecoration: "none",
-                }}
-              >
-                Gatsby
-              </Link>
-            </h1>
-          </div>
-        </div>
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
-          {this.props.children()}
-        </div>
-      </div>
-    )
-  }
+    render() {
+        return (
+            <div className="layout">
+                <Helmet
+                    title="Luke Boyle | Front End Developer"
+                    meta={[
+                        {
+                            name: "description",
+                            content: "Luke Boyle is a Front End Developer from Melbourne, Australia. Specialising in JavaScript web applications, he has experience with Angular, React and Vue Js."
+                        },
+                        {
+                            name: 'theme-color',
+                            content: '#34495e'
+                        },
+                        {
+                            name: 'google-site-verification',
+                            content: 'JKQQdLNK9rQUZnixIsfEuJALcEcfPp9_ee2grLgOVGM'
+                        }
+                    ]}
+                />
+                <Header/>
+                <main className="site-main">
+                    {this.props.children()}
+                </main>
+                <Footer/>
+            </div>
+        )
+    }
 }

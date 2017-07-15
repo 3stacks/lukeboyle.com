@@ -1,49 +1,44 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
+
     switch (stage) {
         case 'develop':
             config.loader('sass', {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                loaders: [
-                    'style',
-                    'css',
-                    'sass'
-                ]
+                test: /\.(sass|scss)$/,
+                exclude: /\.module\.(sass|scss)$/,
+                loaders: ['style', 'css', 'sass'],
             });
 
-            return config;
+            break;
+
         case 'build-css':
-            return config.loader('sass', {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                loaders: [
-                    {
-                        loader: ExtractTextPlugin.extract(["css?minimize", "sass"])
-                    }
-                ]
+            config.loader('sass', {
+                test: /\.(sass|scss)$/,
+                exclude: /\.module\.(sass|scss)$/,
+                loader: ExtractTextPlugin.extract(['css?minimize', 'sass']),
             });
+
+            break;
+
         case 'build-html':
-
             config.loader('sass', {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                use: null
+                test: /\.(sass|scss)$/,
+                exclude: /\.module\.(sass|scss)$/,
+                loader: null
             });
 
-            return config;
+            break;
+
         case 'build-javascript':
-
             config.loader('sass', {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                use: null
+                test: /\.(sass|scss)$/,
+                exclude: /\.module\.(sass|scss)$/,
+                loader: null
             });
 
-            return config;
-        default:
-            console.log('hello'); // this always goes off during gatsby develop
-            return config;
+            break;
     }
+
+    return config
 }
