@@ -27,7 +27,7 @@ function revealContent() {
     }, 100);
     setTimeout(function() {
         document.querySelector('.portfolio-pane').classList.add('free')
-    }, 1600)
+    }, 1600);
 }
 
 function handleReadMoreLink(markup, event) {

@@ -9,8 +9,6 @@ export default class Portfolio extends React.Component {
                 <div className="portfolio">
                     <div className="portfolio--item shadow">
                         <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2017/02/spectrum-thumbnail-300x229.png)'}}>
-<span className="visually-hidden">
-</span>
                         </div>
                         <div className="portfolio--item--card">
                             <h2 className="portfolio--item--card--title">
@@ -22,10 +20,7 @@ export default class Portfolio extends React.Component {
                         </div>
                     </div>
                     <div className="portfolio--item shadow">
-                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2016/09/Screen-Shot-2016-09-17-at-9.31.25-AM-1-300x200.jpg)'}}>
-<span className="visually-hidden">
-</span>
-                        </div>
+                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2016/09/Screen-Shot-2016-09-17-at-9.31.25-AM-1-300x200.jpg)'}}></div>
                         <div className="portfolio--item--card">
                             <h2 className="portfolio--item--card--title">
                                 Agander </h2>
@@ -36,10 +31,7 @@ export default class Portfolio extends React.Component {
                         </div>
                     </div>
                     <div className="portfolio--item shadow">
-                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2017/02/journeytree-thumbnail-2-300x205.jpg)'}}>
-<span className="visually-hidden">
-</span>
-                        </div>
+                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2017/02/journeytree-thumbnail-2-300x205.jpg)'}}></div>
                         <div className="portfolio--item--card">
                             <h2 className="portfolio--item--card--title">
                                 Journey Tree </h2>
@@ -50,10 +42,7 @@ export default class Portfolio extends React.Component {
                         </div>
                     </div>
                     <div className="portfolio--item shadow">
-                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2017/01/asdf-300x300.png)'}}>
-<span className="visually-hidden">
-</span>
-                        </div>
+                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2017/01/asdf-300x300.png)'}}></div>
                         <div className="portfolio--item--card">
                             <h2 className="portfolio--item--card--title">
                                 Split Visualiser </h2>
@@ -64,10 +53,7 @@ export default class Portfolio extends React.Component {
                         </div>
                     </div>
                     <div className="portfolio--item shadow">
-                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2017/02/Screen-Shot-2017-02-25-at-10.28.45-pm-300x251.png)'}}>
-<span className="visually-hidden">
-</span>
-                        </div>
+                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2017/02/Screen-Shot-2017-02-25-at-10.28.45-pm-300x251.png)'}}></div>
                         <div className="portfolio--item--card">
                             <h2 className="portfolio--item--card--title">
                                 Type With Apps </h2>
@@ -78,10 +64,7 @@ export default class Portfolio extends React.Component {
                         </div>
                     </div>
                     <div className="portfolio--item shadow">
-                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2016/09/Screen-Shot-2017-02-26-at-8.42.26-pm-1-300x206.png)'}}>
-<span className="visually-hidden">
-</span>
-                        </div>
+                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2016/09/Screen-Shot-2017-02-26-at-8.42.26-pm-1-300x206.png)'}}></div>
                         <div className="portfolio--item--card">
                             <h2 className="portfolio--item--card--title">
                                 Broccoli and Co. </h2>
@@ -92,10 +75,7 @@ export default class Portfolio extends React.Component {
                         </div>
                     </div>
                     <div className="portfolio--item shadow">
-                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2016/09/Screen-Shot-2017-02-27-at-7.02.35-pm-300x252.png)'}}>
-<span className="visually-hidden">
-</span>
-                        </div>
+                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2016/09/Screen-Shot-2017-02-27-at-7.02.35-pm-300x252.png)'}}></div>
                         <div className="portfolio--item--card">
                             <h2 className="portfolio--item--card--title">
                                 Pypes </h2>
@@ -106,10 +86,7 @@ export default class Portfolio extends React.Component {
                         </div>
                     </div>
                     <div className="portfolio--item shadow">
-                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2016/09/Untitled-1-1-300x200.png)'}}>
-<span className="visually-hidden">
-</span>
-                        </div>
+                        <div className="portfolio--item--image" style={{backgroundImage: 'url(https://lukeboyle.com/app/uploads/2016/09/Untitled-1-1-300x200.png)'}}></div>
                         <div className="portfolio--item--card">
                             <h2 className="portfolio--item--card--title">
                                 Vices </h2>
@@ -119,8 +96,8 @@ export default class Portfolio extends React.Component {
                             </a>
                         </div>
                     </div>
-                    <div className="portfolio--item"></div>
-                    <div className="portfolio--item"></div>
+                    <div className="portfolio--item" />
+                    <div className="portfolio--item" />
                 </div>
             </div>
         )
