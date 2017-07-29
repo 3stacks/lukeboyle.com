@@ -1,9 +1,12 @@
 import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
+import technologies from '../data/technologies';
+import projects from '../data/portfolio-items';
 
 export default class Index extends React.Component {
     render() {
+        const latestProject = projects[0];
         return (
             <div>
                 <div className="home-head-banner">
@@ -23,36 +26,15 @@ export default class Index extends React.Component {
                             Technologies
                         </h2>
                         <ul>
-                            <li>
-                                JavaScript (ES2015, ES2017)
-                            </li>
-                            <li>
-                                React/Redux
-                            </li>
-                            <li>
-                                Vue.js
-                            </li>
-                            <li>
-                                AJAX (Promises and async/await)
-                            </li>
-                            <li>
-                                Node.js
-                            </li>
-                            <li>
-                                SASS
-                            </li>
-                            <li>
-                                Webpack, Gulp
-                            </li>
-                            <li>
-                                Mocha, Karma, Jest for testing
-                            </li>
-                            <li>
-                                TDD
-                            </li>
-                            <li>
-                                Continuous Integration
-                            </li>
+                            {
+                                technologies.map(technology => {
+                                    return (
+                                        <li>
+                                            {technology}
+                                        </li>
+                                    )
+                                })
+                            }
                         </ul>
                     </div>
                 </div>
@@ -63,12 +45,12 @@ export default class Index extends React.Component {
                         </h2>
                         <div className="latest-project-block--project">
                             <h3 className="latest-project-block--project--title">
-                                Split Visualiser
+                                {latestProject.name}
                             </h3>
                             <div className="latest-project-block--project--snippet">
-                                A web-app for easily visualising and sharing the muscle engagement of your exercise routine.
+                                {latestProject.snippet}
                             </div>
-                            <a className="button primary" href="/portfolio_item/split-visualiser/">
+                            <a className="button primary" href={latestProject.link}>
                                 Read More
                             </a>
                         </div>
