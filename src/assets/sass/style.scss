@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-html {
-	overflow-x: hidden;
-}
-
 * {
 	box-sizing: border-box;
 }
@@ -26,9 +22,11 @@ html {
 @import "elements/links";
 
 // Components
+@import "components/footer";
+@import "components/header";
+@import "components/site-nav";
 @import "components/home-head-banner";
 @import "components/blog-header";
-@import "components/technologies";
 @import "components/latest-project-block";
 @import "components/portfolio";
 @import "components/not-found-error";
@@ -57,7 +55,7 @@ html {
 }
 
 .site-main {
-	padding: 60px 0;
+	padding: 0 0 60px;
 }
 
 .blog-category {

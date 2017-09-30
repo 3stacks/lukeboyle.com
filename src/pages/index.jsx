@@ -1,60 +1,39 @@
 import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
-import technologies from '../data/technologies';
 import projects from '../data/portfolio-items';
 
 export default class Index extends React.Component {
     render() {
         const latestProject = projects[0];
+
         return (
             <div>
                 <div className="home-head-banner">
-                    <h2 aria-hidden="true">
+                    <h2>
                         Luke Boyle
                     </h2>
                     <p>
                         Front End Developer
                     </p>
-                    <p>
-                        Melbourne, AU.
-                    </p>
                 </div>
-                <div className="technologies-block">
-                    <div className="max-width-container">
-                        <h2 className="technologies-block--title">
-                            Technologies
-                        </h2>
-                        <ul>
-                            {
-                                technologies.map(technology => {
-                                    return (
-                                        <li>
-                                            {technology}
-                                        </li>
-                                    )
-                                })
-                            }
-                        </ul>
+                <div className="latest-project-block">
+                    <h2 className="latest-project-block--title">
+                        Latest Project
+                    </h2>
+                    <div className="latest-project-block--project">
+                        <h3 className="latest-project-block--project--title">
+                            {latestProject.name}
+                        </h3>
+                        <p className="latest-project-block--project--snippet">
+                            {latestProject.snippet}
+                        </p>
+                        <a className="button primary" href={latestProject.link}>
+                            Read More
+                        </a>
                     </div>
                 </div>
                 <div className="max-width-container">
-                    <div className="latest-project-block">
-                        <h2 className="latest-project-block--title">
-                            Latest Project
-                        </h2>
-                        <div className="latest-project-block--project">
-                            <h3 className="latest-project-block--project--title">
-                                {latestProject.name}
-                            </h3>
-                            <div className="latest-project-block--project--snippet">
-                                {latestProject.snippet}
-                            </div>
-                            <a className="button primary" href={latestProject.link}>
-                                Read More
-                            </a>
-                        </div>
-                    </div>
                     <div className="npm-packages-block">
                         <h2 className="npm-packages-block--title">
                             Open Source
@@ -93,14 +72,12 @@ export default class Index extends React.Component {
                         <p className="featured-blog-post-block--post-name">
                             Automating CSS regression testing
                         </p>
-                        <p>
-                            <a
-                                className="button primary"
-                                href="https://lukeboyle.com/automating-css-regression-testing-argus-eyes-phantomjs/"
-                            >
-                                Read more
-                            </a>
-                        </p>
+                        <a
+                            className="button primary"
+                            href="https://lukeboyle.com/automating-css-regression-testing-argus-eyes-phantomjs/"
+                        >
+                            Read more
+                        </a>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,5 @@
 import React from 'react';
-import SiteNav from '../site-nav/site-nav.jsx';
-import './header.scss';
+import SiteNav from './site-nav.jsx';
 
 export default function Header(props) {
     return (

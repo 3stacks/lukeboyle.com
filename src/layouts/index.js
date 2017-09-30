@@ -2,15 +2,11 @@ import React from "react"
 import PropTypes from "prop-types"
 import Link from "gatsby-link"
 import Helmet from "react-helmet"
-import Header from '../components/header/header.jsx';
-import Footer from '../components/footer/footer.jsx';
+import Header from '../components/header.jsx';
+import Footer from '../components/footer.jsx';
 import '../assets/sass/style.scss';
 
 export default class Template extends React.Component {
-    static propTypes = {
-        children: PropTypes.func,
-    }
-
     render() {
         return (
             <div className="layout">
@@ -40,3 +36,7 @@ export default class Template extends React.Component {
         )
     }
 }
+
+Template.propTypes = {
+    children: PropTypes.func,
+};
