@@ -30,7 +30,7 @@ export default function SiteNav({isFrontPage, ...otherProps}) {
                     </Link>
                 </li>
                 <li className="menu-item">
-                    <Link to="/blog/">
+                    <Link to="/blog/1">
                         Blog
                     </Link>
                 </li>

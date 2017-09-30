@@ -7,6 +7,9 @@ export default class Portfolio extends React.Component {
     render() {
         return (
             <div className="max-width-container">
+                <Helmet
+                    title="Development Portfolio | Luke Boyle"
+                />
                 <div className="portfolio">
                     {portfolioItems.map((portfolioItem, index) => {
                         return (

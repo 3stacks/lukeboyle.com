@@ -28,7 +28,7 @@ export default class Index extends React.Component {
                         <p className="latest-project-block--project--snippet">
                             {latestProject.snippet}
                         </p>
-                        <a className="button primary" href={latestProject.link}>
+                        <a className="button secondary" href={latestProject.link}>
                             Read More
                         </a>
                     </div>
