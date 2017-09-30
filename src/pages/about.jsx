@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 export default class About extends React.Component {
     render() {
         return (
-            <div className="max-width-container">
+            <div className="max-width-container about-main">
                 <Helmet>
                     <title>About | Luke Boyle</title>
                 </Helmet>

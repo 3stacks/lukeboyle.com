@@ -4,9 +4,9 @@
 
 .single-portfolio-item {
 	padding: 60px 0;
-	text-align: center;
 	&--title {
 		font-size: 4rem;
+		text-align: center;
 	}
 	&--content {
 		font-size: 1.8rem;
@@ -16,16 +16,6 @@
 
 		p {
 			font-size: 1.8rem;
-		}
-
-		ul {
-			text-align: left;
-			padding: 0;
-			margin-left: 50%;
-			transform: translateX(-30%);
-			@include breakpoint($m) {
-				transform: translateX(-15%);
-			}
 		}
 
 		img {

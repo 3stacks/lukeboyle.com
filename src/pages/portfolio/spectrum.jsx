@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
+import spectrumSrc from '../../assets/img/portfolio/spectrum.png';
 
 export default class Portfolio extends React.Component {
     render() {
@@ -10,8 +11,11 @@ export default class Portfolio extends React.Component {
                     <h1 className="single-portfolio-item--title">
                         Spectrum </h1>
                     <div className="single-portfolio-item--content">
+                        <div>
+                            <img src={spectrumSrc} alt="" width="453" height="346" />
+                        </div>
                         <p>
-                            <img src="http://lukeboyle.com/app/uploads/2017/02/spectrum-thumbnail.png" alt="" width="453" height="346" className="alignnone size-full wp-image-460"/>
+                            Beta coming soon.
                         </p>
                         <p>Spectrum is a web-based editor for writing software specification documents. The app enables software architects to progressively define the functionality in their system allowing developers to begin implementing the specification sooner.</p>
                         <h3>Technology List</h3>
@@ -19,7 +23,6 @@ export default class Portfolio extends React.Component {
                             <li>React</li>
                             <li>Webpack</li>
                             <li>Node.js</li>
-                            <li>Prototyping Tools</li>
                         </ul>
                         <h3>Challenges</h3>
                         <p>One of the major challenges faced in this project was reimplementing the textbox to allow us to make complex data structures human readable. Along with displaying the complex data, users have to be able to select text, copy and paste text and control the cursor as they would in their operating system (cmd vs ctrl).</p>
@@ -30,8 +33,6 @@ export default class Portfolio extends React.Component {
                         <p>The editor also allows authors to insert special cross-links to other parts of the spec for quick reference and to reduce the amount of duplicated information. This allows for a single-source-of-truth for stakeholders to review and automatically propagates changes across the whole spec.</p>
                         <p>Spectrum offers special insights that management can use to better allocated resources on the project including generating an application-wide dependency visualisation to aid in human effort bottleneck prediction.</p>
                         <p>The application’s specfile format can also be version-tracked like any other text/code file for the ability to diff the file’s change history using already available tools – a unique feature among more common formats like Microsoft Word documents.</p>
-                    </div>
-                    <div className="single-portfolio-item--buttons">
                     </div>
                 </div>
             </div>
