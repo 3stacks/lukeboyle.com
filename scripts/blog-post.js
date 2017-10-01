@@ -7,6 +7,10 @@ const titleCase = require('title-case');
 const shell = require('shelljs');
 const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
 
+function getMarkupFromMarkdown(markdownString) {
+	return `<div>${markdown.toHTML(markdownString)}</div>`;
+}
+
 function generateComponent(post) {
 	const fileName = getFileNameFromPath(post.path);
 
@@ -24,7 +28,7 @@ function generateComponent(post) {
 							<Helmet>
 								<title>${titleCase(fileName)} | Luke Boyle</title>
 							</Helmet>
-							${markdown.toHTML(post.contents)}
+							${getMarkupFromMarkdown(post.contents)}
 						</div>
 					);
 				}
@@ -52,6 +56,11 @@ function generateComponent(post) {
 			shell.mkdir('-p', path.resolve(`${__dirname}/../src/pages/${component.path.replace(`/${component.fileName}.md`, '')}`));
 			fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/${component.path.replace('.md', '.jsx')}`), component.component);
 		});
+
+		glob('./src/blog-posts/**/*.jsx', {}, (err, files) => {
+			console.error(err);
+
+			const pageCount = Math.ceil(files.length / 5);
 		});
 	});
 })();
