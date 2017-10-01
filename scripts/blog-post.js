@@ -46,6 +46,8 @@ function generateComponent(post) {
 
 		const components = blogPosts.map(generateComponent);
 
+		shell.rm('-rf', path.resolve(`${__dirname}/../src/pages/blog-posts`));
+
 		components.forEach(component => {
 			shell.mkdir('-p', path.resolve(`${__dirname}/../src/pages/${component.path.replace(`/${component.fileName}.md`, '')}`));
 			fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/${component.path.replace('.md', '.jsx')}`), component.component);
