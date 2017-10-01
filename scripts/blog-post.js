@@ -5,17 +5,7 @@ const markdown = require('markdown');
 const camelCase = require('camel-case');
 const titleCase = require('title-case');
 const shell = require('shelljs');
-
-function getFileNameFromPath(path) {
-	const pathWithoutDirectory = path.includes('/') ? path.slice(path.indexOf('/') + 1, path.length - 1) : path;
-	const pathWithoutExtensions = pathWithoutDirectory.includes('.js') ? pathWithoutDirectory.slice(0, pathWithoutDirectory.indexOf('.js')) : pathWithoutDirectory;
-
-	if (pathWithoutDirectory.includes('/')) {
-		return getFileNameFromPath(pathWithoutExtensions);
-	} else {
-		return pathWithoutExtensions;
-	}
-}
+const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
 
 function generateComponent(post) {
 	const fileName = getFileNameFromPath(post.path);
