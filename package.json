@@ -23,6 +23,7 @@
     "react-markdown-loader": "^1.1.14",
     "sass-loader": "^6.0.6",
     "shelljs": "^0.7.8",
+    "showdown": "^1.7.4",
     "style-loader": "^0.18.2",
     "title-case": "^2.1.1"
   },

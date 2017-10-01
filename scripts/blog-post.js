@@ -1,14 +1,32 @@
 const glob = require('glob');
 const fs = require('fs');
 const path = require('path');
-const markdown = require('markdown').markdown;
+const showdown  = require('showdown');
+const converter = new showdown.Converter();
 const camelCase = require('camel-case');
 const titleCase = require('title-case');
 const shell = require('shelljs');
 const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
 
+function sanitiseMarkdown(markdownBlock) {
+	if (markdownBlock[0] !== 'code_block') {
+		return markdownBlock;
+	}
+
+	return [
+		markdownBlock[0],
+		`{"${markdownBlock[1]}"}`
+	]
+}
+
+// function getMarkupFromMarkdown(markdownString) {
+// 	const parsedTree = markdown.parse(markdownString).map(sanitiseMarkdown);
+//
+// 	return `<div>${markdown.renderJsonML(markdown.toHTMLTree(parsedTree))}</div>`;
+// }
+
 function getMarkupFromMarkdown(markdownString) {
-	return `<div>${markdown.toHTML(markdownString)}</div>`;
+	return `<div>${converter.makeHtml(markdownString)}</div>`;
 }
 
 function generateComponent(post) {
