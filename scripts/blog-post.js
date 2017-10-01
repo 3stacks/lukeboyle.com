@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const showdown  = require('showdown');
 const converter = new showdown.Converter();
+converter.setFlavor('github');
 const camelCase = require('camel-case');
 const titleCase = require('title-case');
 const shell = require('shelljs');
