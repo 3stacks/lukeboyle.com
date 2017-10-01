@@ -1,7 +1,7 @@
 const glob = require('glob');
 const fs = require('fs');
 const path = require('path');
-const markdown = require('markdown');
+const markdown = require('markdown').markdown;
 const camelCase = require('camel-case');
 const titleCase = require('title-case');
 const shell = require('shelljs');
@@ -24,7 +24,7 @@ function generateComponent(post) {
 							<Helmet>
 								<title>${titleCase(fileName)} | Luke Boyle</title>
 							</Helmet>
-							${post.contents}
+							${markdown.toHTML(post.contents)}
 						</div>
 					);
 				}
