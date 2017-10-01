@@ -47,9 +47,9 @@ function generateComponent(post) {
 		const components = blogPosts.map(generateComponent);
 
 		components.forEach(component => {
-			console.log(component.path);
-			shell.mkdir('-p', path.resolve(`${__dirname}/../src/${component.path.replace(`/${component.fileName}.md`, '')}`));
-			fs.writeFileSync(path.resolve(`${__dirname}/../src/${component.path.replace('.md', '.jsx')}`), component.component);
+			shell.mkdir('-p', path.resolve(`${__dirname}/../src/pages/${component.path.replace(`/${component.fileName}.md`, '')}`));
+			fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/${component.path.replace('.md', '.jsx')}`), component.component);
+		});
 		});
 	});
 })();
