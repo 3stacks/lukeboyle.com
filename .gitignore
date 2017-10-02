@@ -32,3 +32,4 @@ public/
 vendor
 web
 src/pages/blog-posts
+blog.jsx
