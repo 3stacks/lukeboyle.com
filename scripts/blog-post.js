@@ -40,18 +40,29 @@ function getMarkupFromMarkdown(markdownString) {
 
 function generateComponent(post) {
 	const fileName = getFileNameFromPath(post.path);
+	const camelCaseName = camelCase(fileName);
 
 	return {
 		path: post.path,
 		fileName,
+		componentName: camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
 		component: `
 			import React from 'react';
 			import Helmet from 'react-helmet';
 				
-			export default class ${camelCase(fileName)} extends React.Component {
+			export default class ${camelCaseName} extends React.Component {
+				componentDidMount() {
+					const heading = this.rootNode.querySelector('h1');
+					
+					heading.innerHTML = '<a href="/${post.path.replace('.md', '')}">' + heading.innerText + '</a>';
+				}
+				
 				render() {
 					return (
-						<div className="max-width-container blog">
+						<div 
+							className={this.props.isBlogPage ? "" : "max-width-container blog"}
+							ref={el => this.rootNode = el}
+						>
 							<Helmet>
 								<title>${titleCase(fileName)} | Luke Boyle</title>
 							</Helmet>
@@ -84,10 +95,31 @@ function generateComponent(post) {
 			fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/${component.path.replace('.md', '.jsx')}`), component.component);
 		});
 
-		glob('./src/blog-posts/**/*.jsx', {}, (err, files) => {
-			console.error(err);
+		const reversedComponents = components.reverse();
 
-			const pageCount = Math.ceil(files.length / 5);
-		});
+		const blogPage = `
+			import React from 'react';
+			import Helmet from 'react-helmet';
+			${reversedComponents.reduce((acc, curr) => {
+				return acc + `import ${curr.componentName} from './${curr.path.replace('.md', '.jsx')}';\n`;
+			}, '')}
+				
+			export default class Blog extends React.Component {
+				render() {
+					return (
+						<div className="max-width-container blog">
+							<Helmet>
+								<title>Blog | Luke Boyle</title>
+							</Helmet>
+							${reversedComponents.reduce((acc, curr) => {
+								return acc + `<${curr.componentName} isBlogPage={true}/>\n`;	
+							}, '')}
+						</div>
+					);
+				}
+			}
+		`;
+
+		fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/blog.jsx`), blogPage);
 	});
 })();
