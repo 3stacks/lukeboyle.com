@@ -107,13 +107,23 @@ function generateComponent(post) {
 			export default class Blog extends React.Component {
 				render() {
 					return (
-						<div className="max-width-container blog">
+						<div>
 							<Helmet>
 								<title>Blog | Luke Boyle</title>
 							</Helmet>
-							${reversedComponents.reduce((acc, curr) => {
-								return acc + `<${curr.componentName} isBlogPage={true}/>\n`;	
-							}, '')}
+							<div className="blog-header">
+								<h1 className="blog-header--site-name">
+									Boyleing Point
+								</h1>
+								<p className="blog-header--description">
+									7/11 was an inside job
+								</p>
+							</div>
+							<div className="max-width-container blog">
+								${reversedComponents.reduce((acc, curr) => {
+									return acc + `<${curr.componentName} isBlogPage={true}/>\n`;
+								}, '')}
+							</div>
 						</div>
 					);
 				}
