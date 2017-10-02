@@ -16,7 +16,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
             config.loader('sass', {
                 test: /\.(sass|scss)$/,
                 exclude: /\.module\.(sass|scss)$/,
-                loader: ExtractTextPlugin.extract(['css?minimize', 'sass']),
+                loaders: ['css?minimize', 'sass'],
             });
 
             break;
@@ -40,5 +40,5 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
             break;
     }
 
-    return config
-}
+    return config;
+};
