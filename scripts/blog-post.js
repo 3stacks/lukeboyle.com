@@ -8,15 +8,24 @@ const titleCase = require('title-case');
 const shell = require('shelljs');
 const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
 
+renderer.heading = function(code, level) {
+	if (level === 1) {
+		return `
+			<header>
+				<h1 className="blog-post--title">${code}</h1>
+			</header>
+		`;
+	} else {
+		return `<h${level}>${code}</h${level}>`;
+	}
+};
+
 renderer.code = function(code, language) {
-	console.log(code.split('\n'));
 	return `<pre><code>
 		${code.split('\n').map(codeBlock => {
-			console.log(codeBlock);
 		const codeWithEscapedQuotes = codeBlock.split('"').join('\\"');
 		const codeWithEscapedHashes = codeWithEscapedQuotes.split('#').join('\\#');
-		const codeWithEscapedCurlies = codeWithEscapedHashes.split('{').join('\\{').split('}').join('\\}');
-		return `<span>{"${codeWithEscapedCurlies}"}</span>`;
+		return `<span>{"${codeWithEscapedHashes}"}</span>`;
 	}).join('')}
 	</code></pre>`;
 };
@@ -26,7 +35,7 @@ renderer.image = function(href, title, text) {
 };
 
 function getMarkupFromMarkdown(markdownString) {
-	return `<div>${marked(markdownString, {renderer: renderer, gfm: true})}</div>`;
+	return `<article className="blog-post">${marked(markdownString, {renderer: renderer, gfm: true})}</article>`;
 }
 
 function generateComponent(post) {
@@ -42,7 +51,7 @@ function generateComponent(post) {
 			export default class ${camelCase(fileName)} extends React.Component {
 				render() {
 					return (
-						<div className="max-width-container">
+						<div className="max-width-container blog">
 							<Helmet>
 								<title>${titleCase(fileName)} | Luke Boyle</title>
 							</Helmet>
