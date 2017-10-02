@@ -1,7 +1,7 @@
 {
   "name": "Portfolio",
   "description": "Luke Boyle's portfolio/blog website",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "author": "Luke Boyle <luke.boyle.au@gmail.com>",
   "dependencies": {
     "gatsby": "^1.0.1",
