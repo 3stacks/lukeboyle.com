@@ -1,33 +1,32 @@
 const glob = require('glob');
 const fs = require('fs');
 const path = require('path');
-const showdown  = require('showdown');
-const converter = new showdown.Converter();
-converter.setFlavor('github');
+const marked = require('marked');
+const renderer = new marked.Renderer();
 const camelCase = require('camel-case');
 const titleCase = require('title-case');
 const shell = require('shelljs');
 const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
 
-function sanitiseMarkdown(markdownBlock) {
-	if (markdownBlock[0] !== 'code_block') {
-		return markdownBlock;
-	}
+renderer.code = function(code, language) {
+	console.log(code.split('\n'));
+	return `<pre><code>
+		${code.split('\n').map(codeBlock => {
+			console.log(codeBlock);
+		const codeWithEscapedQuotes = codeBlock.split('"').join('\\"');
+		const codeWithEscapedHashes = codeWithEscapedQuotes.split('#').join('\\#');
+		const codeWithEscapedCurlies = codeWithEscapedHashes.split('{').join('\\{').split('}').join('\\}');
+		return `<span>{"${codeWithEscapedCurlies}"}</span>`;
+	}).join('')}
+	</code></pre>`;
+};
 
-	return [
-		markdownBlock[0],
-		`{"${markdownBlock[1]}"}`
-	]
-}
-
-// function getMarkupFromMarkdown(markdownString) {
-// 	const parsedTree = markdown.parse(markdownString).map(sanitiseMarkdown);
-//
-// 	return `<div>${markdown.renderJsonML(markdown.toHTMLTree(parsedTree))}</div>`;
-// }
+renderer.image = function(href, title, text) {
+	return `<img src="${href}" alt="${text}"/>`;
+};
 
 function getMarkupFromMarkdown(markdownString) {
-	return `<div>${converter.makeHtml(markdownString)}</div>`;
+	return `<div>${marked(markdownString, {renderer: renderer, gfm: true})}</div>`;
 }
 
 function generateComponent(post) {
