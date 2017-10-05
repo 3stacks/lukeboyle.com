@@ -27,7 +27,7 @@
     "gatsby-plugin-react-helmet": "^1.0.6",
     "marked": "^0.3.6",
     "prop-types": "^15.6.0",
-    "react": "^16.0.0",
+    "react": "15.0.0",
     "title-case": "^2.1.1"
   }
 }
