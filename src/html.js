@@ -25,13 +25,15 @@ export default class HTML extends React.Component {
             )
         }
 
+        console.log(css);
+
         return (
             <html lang="en">
             <head>
                 <script>
-                    {/*window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;*/}
-                    {/*ga('create', 'UA-84326776-1', 'auto');*/}
-                    {/*ga('send', 'pageview');*/}
+                    {"window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;"}
+                    {"ga('create', 'UA-84326776-1', 'auto');"}
+                    {"ga('send', 'pageview');"}
                 </script>
                 <script async src="https://www.google-analytics.com/analytics.js" />
                 <meta charSet="utf-8" />

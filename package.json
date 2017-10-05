@@ -14,7 +14,8 @@
     "camel-case": "^3.0.0",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^3.0.0",
-    "gatsby-plugin-sass": "^1.0.1",
+    "gatsby-plugin-purify-css": "^2.1.0",
+    "gatsby-plugin-sass": "^1.0.12",
     "gh-pages": "^0.12.0",
     "marked": "^0.3.6",
     "node-sass": "^4.5.3",
@@ -24,7 +25,6 @@
     "react-markdown-loader": "^1.1.14",
     "sass-loader": "^6.0.6",
     "shelljs": "^0.7.8",
-    "showdown": "^1.7.4",
     "style-loader": "^0.18.2",
     "title-case": "^2.1.1"
   },
