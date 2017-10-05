@@ -6,12 +6,11 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     {
-      resolve: 'gatsby-plugin-purify-css',
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        purifyOptions: {
-          minify: true
-        }
-      }
-    }
-  ],
+        trackingId: 'UA-84326776-1',
+      },
+    },
+    'gatsby-plugin-offline'
+  ]
 };
