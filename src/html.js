@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import * as PropTypes from 'prop-types';
+import React, { Component } from "react"
+import * as PropTypes from "prop-types"
 // Images
 import androidIcon from './assets/img/android-icon-192x192.png';
 import appleSmall from './assets/img/apple-icon-76x76.png';
@@ -21,8 +21,6 @@ export default class Html extends Component {
           />
           <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro" rel="stylesheet" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro" rel="stylesheet" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"

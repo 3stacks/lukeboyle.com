@@ -25,7 +25,7 @@ renderer.code = function(code, language) {
 		${code.split('\n').map(codeBlock => {
 		const codeWithEscapedQuotes = codeBlock.split('"').join('\\"');
 		const codeWithEscapedHashes = codeWithEscapedQuotes.split('#').join('\\#');
-		return `<span>{"${codeWithEscapedHashes}"}</span>`;
+		return `<div>{"${codeWithEscapedHashes}"}</div>`;
 	}).join('')}
 	</code></pre>`;
 };

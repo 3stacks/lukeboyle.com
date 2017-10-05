@@ -1,11 +1,11 @@
-import aganderSrc from '../../../src/assets/img/portfolio/thumbs/agander.jpg';
-import broccoliSrc from '../../../src/assets/img/portfolio/thumbs/broccoli.png';
-import jtSrc from '../../../src/assets/img/portfolio/thumbs/jt.jpg';
-import pypesSrc from '../../../src/assets/img/portfolio/thumbs/pypes.png';
-import spectrumSrc from '../../../src/assets/img/portfolio/thumbs/spectrum.png';
-import splitSrc from '../../../src/assets/img/portfolio/thumbs/split.png';
-import typeSrc from '../../../src/assets/img/portfolio/thumbs/type.png';
-import vicesSrc from '../../../src/assets/img/portfolio/thumbs/vices.png';
+import aganderSrc from '../assets/img/portfolio/thumbs/agander.jpg';
+import broccoliSrc from '../assets/img/portfolio/thumbs/broccoli.png';
+import jtSrc from '../assets/img/portfolio/thumbs/jt.jpg';
+import pypesSrc from '../assets/img/portfolio/thumbs/pypes.png';
+import spectrumSrc from '../assets/img/portfolio/thumbs/spectrum.png';
+import splitSrc from '../assets/img/portfolio/thumbs/split.png';
+import typeSrc from '../assets/img/portfolio/thumbs/type.png';
+import vicesSrc from '../assets/img/portfolio/thumbs/vices.png';
 
 export default [
     {
