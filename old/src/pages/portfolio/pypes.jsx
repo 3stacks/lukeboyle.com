@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
-import issuesSrc from '../../assets/img/portfolio/issues.png';
+import issuesSrc from '../../../../src/assets/img/portfolio/issues.png';
 
 export default class Pypes extends React.Component {
     render() {

@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
-import spectrumSrc from '../../assets/img/portfolio/spectrum.png';
+import spectrumSrc from '../../../../src/assets/img/portfolio/spectrum.png';
 
 export default class Portfolio extends React.Component {
     render() {
