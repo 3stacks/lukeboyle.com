@@ -1,12 +1,14 @@
 import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
-import issuesSrc from '../../assets/img/portfolio/issues.png';
 
 export default class Pypes extends React.Component {
     render() {
         return (
             <div className="max-width-container">
+                <Helmet>
+                    <title>Pypes Blogging Platform | Project Case Study</title>
+                </Helmet>
                 <div className="single-portfolio-item">
                     <h1 className="single-portfolio-item--title">
                         Pypes

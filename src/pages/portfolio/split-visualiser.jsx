@@ -6,9 +6,13 @@ export default class SplitVisualiser extends React.Component {
     render() {
         return (
             <div className="max-width-container">
+                <Helmet>
+                    <title>Split Visualiser | Project Case Study</title>
+                </Helmet>
                 <div className="single-portfolio-item">
                     <h1 className="single-portfolio-item--title">
-                        Split Visualiser </h1>
+                        Split Visualiser
+                    </h1>
                     <ul className="single-portfolio-item--content">
                         <li>
                             Vue.js (ES2015)

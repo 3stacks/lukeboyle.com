@@ -7,6 +7,9 @@ export default class Portfolio extends React.Component {
     render() {
         return (
             <div className="max-width-container">
+                <Helmet>
+                    <title>Spectrum | Project Case Study</title>
+                </Helmet>
                 <div className="single-portfolio-item">
                     <h1 className="single-portfolio-item--title">
                         Spectrum </h1>

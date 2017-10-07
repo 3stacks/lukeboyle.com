@@ -7,6 +7,9 @@ export default class Portfolio extends React.Component {
     render() {
         return (
             <div className="max-width-container">
+                <Helmet>
+                    <title>Angular 1.5 Case Study</title>
+                </Helmet>
                 <div className="single-portfolio-item">
                     <h1 className="single-portfolio-item--title">
                         Broccoli and Co.
