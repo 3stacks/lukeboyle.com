@@ -25,8 +25,12 @@ export default class SplitVisualiser extends React.Component {
                         </li>
                     </ul>
                     <p>
-                        Split Visualiser was developed as a feasibility test for Vue 2.0 to see if the interface
-                        and performance could scale to larger applications.
+                        Split Visualiser was the first app to be published under
+                        the <a href="https://stak.digital">Stak Digital</a> brand
+                        and it was developed during a particularly intense gym
+                        fascination period. It was partly an experiment to
+                        determine the feasibility of Vue 2.0 for smaller projects
+                        and to see performance could scale as complexity increases.
                     </p>
                     <div className="single-portfolio-item--buttons">
                         <a target="_blank" className="single-portfolio-item--link button primary" href="https://projects.stak.digital/split-visualiser">
