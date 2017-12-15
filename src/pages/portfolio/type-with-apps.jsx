@@ -15,7 +15,7 @@ export default class TypeWithApps extends React.Component {
                         Type With Apps
                     </h1>
                     <div className="single-portfolio-item--content">
-                        <p>Type With Apps is the result of a hack session in a laundromat. What started as simply replicating the iOS homescreen in <strong>Angular 1.5</strong> ended as a pretty fun meme generator</p>
+                        <p>Type With Apps is the result of a hack session in a laundromat. What started as simply replicating the iOS homescreen in <strong>Angular 1.5</strong> ended as a pretty fun meme generator.</p>
                         <h2>Challenges</h2>
                         <p>The biggest challenge of this project was adding support for multiple letter icons. I firstly had to consider whether the multiple letters appeared together (i.e. are there spaces in-between?). Then I had to do an initial run over the string and check if there were any matches to the multiple character icons I had. After that initial run was done, I had an array that was a mixture of letters and app icon objects. The final pass cleans up all of the single letters and the icons are output to the screen.</p>
                     </div>
