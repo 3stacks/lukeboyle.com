@@ -74,7 +74,7 @@ export default class Index extends React.Component {
                         </p>
                         <a
                             className="button primary"
-                            href="https://lukeboyle.com/automating-css-regression-testing-argus-eyes-phantomjs/"
+                            href="/blog-posts/2016/12/automating-css-regression-testing-with-argus-eyes--phantom-js"
                         >
                             Read more
                         </a>
