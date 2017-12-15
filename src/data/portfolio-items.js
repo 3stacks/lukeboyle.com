@@ -6,8 +6,15 @@ import spectrumSrc from '../assets/img/portfolio/thumbs/spectrum.png';
 import splitSrc from '../assets/img/portfolio/thumbs/split.png';
 import typeSrc from '../assets/img/portfolio/thumbs/type.png';
 import vicesSrc from '../assets/img/portfolio/thumbs/vices.png';
+import guesstimateSrc from '../assets/img/portfolio/thumbs/guesstimate.jpg';
 
 export default [
+    {
+        name: 'Guesstimate',
+        snippet: 'Break your project up into easier to estimate chunks and total it for more accurate estimations',
+        link: '/portfolio/guesstimate/',
+        thumb: guesstimateSrc
+    },
     {
         name: 'Spectrum',
         snippet: 'Spectrum is a web-based editor for writing software specification documents.',
