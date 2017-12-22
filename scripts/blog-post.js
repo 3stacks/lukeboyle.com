@@ -63,9 +63,11 @@ function generateComponent(post) {
 							className={this.props.isBlogPage ? "" : "max-width-container blog"}
 							ref={el => this.rootNode = el}
 						>
-							<Helmet>
-								<title>${titleCase(fileName)} | Luke Boyle</title>
-							</Helmet>
+							{!this.props.isBlogPage && (
+								<Helmet>
+									<title>${titleCase(fileName)} | Luke Boyle</title>
+								</Helmet>
+							)}
 							${getMarkupFromMarkdown(post.contents)}
 						</div>
 					);
