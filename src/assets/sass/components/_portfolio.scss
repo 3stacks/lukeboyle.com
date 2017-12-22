@@ -23,7 +23,7 @@
 		@include breakpoint($s) {
 			@include put-in-rows(2, 30px);
 		}
-		@include breakpoint($m) {
+		@include breakpoint($l) {
 			@include put-in-rows(3, 30px);
 		}
 		&--image {

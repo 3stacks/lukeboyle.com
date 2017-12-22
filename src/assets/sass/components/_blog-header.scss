@@ -20,7 +20,7 @@
 	@include bottom-triangle;
 	&--site-name {
 		font-size: 4rem;
-		margin: 0;
+		margin: 0 0 30px;
 
 		@include breakpoint($m) {
 			font-size: 5rem;
