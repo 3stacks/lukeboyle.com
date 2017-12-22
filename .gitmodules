@@ -1,3 +1,3 @@
-[submodule "/Users/luke/Sites/portfolio/blog-posts"]
-	path = /Users/luke/Sites/portfolio/blog-posts
+[submodule "blog-posts"]
+	path = blog-posts
 	url = https://github.com/3stacks/blog-posts
