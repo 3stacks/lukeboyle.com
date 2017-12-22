@@ -37,6 +37,10 @@
 @import "components/portfolio-pane";
 @import "components/pagination";
 
+* {
+	line-height: 1.5;
+}
+
 .about-main {
 	padding: {
 		top: 60px;
