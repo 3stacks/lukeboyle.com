@@ -12,6 +12,7 @@
   "author": "Daniel Farrell <daniel.farrell@mobelux.com>",
   "license": "MIT",
   "dependencies": {
+    "date-fns": "^1.29.0",
     "gatsby": "latest",
     "gatsby-link": "latest",
     "gatsby-plugin-google-analytics": "latest",
