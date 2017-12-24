@@ -41,6 +41,15 @@
 	line-height: 1.5;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	line-height: 1.3;
+}
+
 .about-main {
 	padding: {
 		top: 60px;
@@ -72,6 +81,12 @@
 
 .blog {
 	padding-top: 60px;
+}
+
+.about-main {
+	ul {
+		font-size: 1.8rem;
+	}
 }
 
 small {

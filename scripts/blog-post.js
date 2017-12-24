@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const marked = require('marked');
 const renderer = new marked.Renderer();
+const formatDate = require('date-fns/format');
 const camelCase = require('camel-case');
 const titleCase = require('title-case');
 const shell = require('shelljs');
@@ -30,12 +31,28 @@ renderer.code = function(code, language) {
 	</code></pre>`;
 };
 
+renderer.table = function(header, body) {
+	if (header.includes('Metadata name')) {
+		const rows = body.split('<tr>');
+		const dateRow = rows.find(row => row.includes('post_date'));
+		const rawDate = dateRow.split('<td>')[2];
+		const date = rawDate.slice(0, rawDate.length - 12);
+		return `<p>
+			<time datetime="${date}">${formatDate(date, 'Do of MMMM, YYYY')}</time>
+		</p>`
+	} else {
+		return header + body;
+	}
+};
+
 renderer.image = function(href, title, text) {
 	return `<img src="${href}" alt="${text}"/>`;
 };
 
 function getMarkupFromMarkdown(markdownString) {
-	return `<article className="blog-post">${marked(markdownString, {renderer: renderer, gfm: true})}</article>`;
+	return `<article className="blog-post">
+		${marked(markdownString, {renderer: renderer, gfm: true})}
+	</article>`;
 }
 
 function generateComponent(post) {
