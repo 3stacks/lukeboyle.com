@@ -18,19 +18,21 @@ export default class Index extends React.Component {
                     </p>
                 </div>
                 <div className="latest-project-block">
-                    <h2 className="latest-project-block--title">
-                        Latest Project
-                    </h2>
-                    <div className="latest-project-block--project">
-                        <h3 className="latest-project-block--project--title">
-                            {latestProject.name}
-                        </h3>
-                        <p className="latest-project-block--project--snippet">
-                            {latestProject.snippet}
-                        </p>
-                        <a className="button secondary" href={latestProject.link}>
-                            Read More
-                        </a>
+                    <div className="max-width-container">
+                        <h2 className="latest-project-block--title">
+                            Latest Project
+                        </h2>
+                        <div className="latest-project-block--project">
+                            <h3 className="latest-project-block--project--title">
+								{latestProject.name}
+                            </h3>
+                            <p className="latest-project-block--project--snippet">
+								{latestProject.snippet}
+                            </p>
+                            <a className="button secondary" href={latestProject.link}>
+                                Read More
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div className="max-width-container">
