@@ -23,12 +23,11 @@
       color: rgba(white, 0.7);
     }
 
-    &__twitter {
-      a {
-        color: rgba(white, 0.7);
-        &:hover {
-          color: white;
-        }
+    a {
+      color: rgba(white, 0.7);
+
+      &:hover {
+        color: white;
       }
     }
   }
