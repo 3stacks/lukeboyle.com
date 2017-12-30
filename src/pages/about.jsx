@@ -25,7 +25,7 @@ export default class About extends React.Component {
                         Experienced in React, Angular and Vue.js
                     </li>
                     <li>
-                        Experienced with ES2018, babel, webpack and gulp.
+                        Experience with ES2018, GraphQL, Express, babel, webpack and gulp.
                     </li>
                 </ul>
                 <p>
