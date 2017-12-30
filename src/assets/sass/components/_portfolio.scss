@@ -4,13 +4,20 @@
 @import "../vendor/breakpoint";
 
 .portfolio {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
+	display: grid;
+	grid-template-columns: 1fr;
 	padding-top: 60px;
 
+	@include bp(600px) {
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 20px;
+	}
+
+	@include bp(800px) {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
 	&--item {
-		@include put-in-rows(1, 0px);
 		margin-bottom: 30px;
 		color: white;
 		display: flex;
@@ -20,12 +27,6 @@
 			box-shadow: rgba(0, 0, 0, 0.12) 0 1px 6px, rgba(0, 0, 0, 0.12) 0 1px 4px;
 		}
 
-		@include breakpoint($s) {
-			@include put-in-rows(2, 30px);
-		}
-		@include breakpoint($l) {
-			@include put-in-rows(3, 30px);
-		}
 		&--image {
 			font-size: 0;
 			img {

@@ -6,6 +6,12 @@
 	margin-bottom: $spacing-size;
 }
 
+@mixin bp($size) {
+	@media (min-width: $size) {
+		@content;
+	}
+}
+
 @mixin triangle {
 	content: "";
 	position: absolute;
