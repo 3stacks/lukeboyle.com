@@ -105,22 +105,54 @@ function generateComponent(post) {
 			return acc;
 		}, []);
 
-		const components = blogPosts.map(generateComponent);
+		const reversedComponents = blogPosts.map(generateComponent);
 
 		shell.rm('-rf', path.resolve(`${__dirname}/../src/pages/blog-posts`));
 
-		components.forEach(component => {
+		reversedComponents.forEach(component => {
 			shell.mkdir('-p', path.resolve(`${__dirname}/../src/pages/${component.path.replace(`/${component.fileName}.md`, '')}`));
 			fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/${component.path.replace('.md', '.jsx')}`), component.component);
 		});
 
-		const reversedComponents = components.reverse();
+		const components = reversedComponents.reverse();
+		const postsPerPage = 4;
+		const pages = components.reduce((acc, curr, index) => {
+			const pagesSoFar = Object.keys(acc);
 
-		const blogPage = `
+			const lastPage = parseInt(pagesSoFar[pagesSoFar.length - 1], 10) || 0;
+
+			if (index % postsPerPage === 0) {
+				const newPage = lastPage + 1;
+
+				return Object.assign(
+					{},
+					acc,
+					{
+						[newPage]: [
+							curr
+						]
+					}
+				);
+			}
+
+			return Object.assign(
+				{},
+				acc,
+				{
+					[lastPage]: [
+						...acc[lastPage],
+						curr
+					]
+				}
+			);
+		}, {});
+
+		Object.entries(pages).forEach(([key, value], index) => {
+			const blogPage = `
 			import React from 'react';
 			import Helmet from 'react-helmet';
-			${reversedComponents.reduce((acc, curr) => {
-				return acc + `import ${curr.componentName} from './${curr.path.replace('.md', '.jsx')}';\n`;
+			${value.reduce((acc, curr) => {
+				return acc + `import ${curr.componentName} from '${index === 0 ? './' : '../'}${curr.path.replace('.md', '.jsx')}';\n`;
 			}, '')}
 				
 			export default class Blog extends React.Component {
@@ -128,7 +160,7 @@ function generateComponent(post) {
 					return (
 						<div>
 							<Helmet>
-								<title>Blog | Luke Boyle</title>
+								<title>${index === 0 ? 'Blog | Luke Boyle' : `Page ${parseInt(key, 10) - 1} | Blog`}</title>
 							</Helmet>
 							<div className="blog-header">
 								<h1 className="blog-header--site-name">
@@ -139,9 +171,15 @@ function generateComponent(post) {
 								</p>
 							</div>
 							<div className="max-width-container blog">
-								${reversedComponents.reduce((acc, curr) => {
-									return acc + `<${curr.componentName} isBlogPage={true}/>\n`;
-								}, '')}
+								${value.reduce((acc, curr) => {
+				return acc + `<${curr.componentName} isBlogPage={true}/>\n`;
+			}, '')}
+							</div>
+							<div class="max-width-container">
+								<ul className="pagination">
+									${index > 0 ? `<li><a href="${key === '2' ? '/blog' : `/blog/${parseInt(key, 10) - 2}`}">Newer</a></li>` : ''}
+									${index !== Object.values(pages).length - 1 ? `<li className="pagination__next"><a href="/blog/${parseInt(key, 10)}">Older</a></li>` : ''}
+								</ul>
 							</div>
 						</div>
 					);
@@ -149,6 +187,11 @@ function generateComponent(post) {
 			}
 		`;
 
-		fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/blog.jsx`), blogPage);
+			const fileName = index === 0
+				? `${__dirname}/../src/pages/blog.jsx`
+				: `${__dirname}/../src/pages/blog/${index}.jsx`;
+
+			fs.writeFileSync(path.resolve(fileName), blogPage);
+		});
 	});
 })();
