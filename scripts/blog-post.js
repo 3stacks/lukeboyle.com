@@ -55,15 +55,21 @@ function getMarkupFromMarkdown(markdownString) {
 	</article>`;
 }
 
-function generateComponent(post) {
-	const fileName = getFileNameFromPath(post.path);
+function generateComponent(acc, curr) {
+	const fileName = getFileNameFromPath(curr.path);
 	const camelCaseName = camelCase(fileName);
 
-	return {
-		path: post.path,
-		fileName,
-		componentName: camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
-		component: `
+	// TODO: use regex
+	const postStatusIndex = curr.contents.indexOf('post_status');
+	const almostPostStatus = curr.contents.slice(postStatusIndex + 13);
+	const postStatus = almostPostStatus.slice(0, almostPostStatus.indexOf('|')).trim();
+
+	if (postStatus !== 'draft') {
+		acc.push({
+			path: curr.path,
+			fileName,
+			componentName: camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
+			component: `
 			import React from 'react';
 			import Helmet from 'react-helmet';
 				
@@ -71,7 +77,7 @@ function generateComponent(post) {
 				componentDidMount() {
 					const heading = this.rootNode.querySelector('h1');
 					
-					heading.innerHTML = '<a href="/${post.path.replace('.md', '')}">' + heading.innerText + '</a>';
+					heading.innerHTML = '<a href="/${curr.path.replace('.md', '')}">' + heading.innerText + '</a>';
 				}
 				
 				render() {
@@ -85,13 +91,16 @@ function generateComponent(post) {
 									<title>${titleCase(fileName)} | Luke Boyle</title>
 								</Helmet>
 							)}
-							${getMarkupFromMarkdown(post.contents)}
+							${getMarkupFromMarkdown(curr.contents)}
 						</div>
 					);
 				}
 			}
 		`
-	};
+		});
+	}
+
+	return acc;
 }
 
 (() => {
@@ -105,7 +114,7 @@ function generateComponent(post) {
 			return acc;
 		}, []);
 
-		const reversedComponents = blogPosts.map(generateComponent);
+		const reversedComponents = blogPosts.reduce(generateComponent, []);
 
 		shell.rm('-rf', path.resolve(`${__dirname}/../src/pages/blog-posts`));
 
