@@ -50,19 +50,54 @@ renderer.image = function(href, title, text) {
 };
 
 function getMarkupFromMarkdown(markdownString) {
-	return `<article className="blog-post">
-		${marked(markdownString, {renderer: renderer, gfm: true})}
-	</article>`;
+	return marked(markdownString, {renderer: renderer, gfm: true});
 }
 
-function generateComponent(acc, curr) {
+function generateComponent(acc, curr, index) {
 	const fileName = getFileNameFromPath(curr.path);
 	const camelCaseName = camelCase(fileName);
+	const postContents = curr.contents;
 
 	// TODO: use regex
-	const postStatusIndex = curr.contents.indexOf('post_status');
-	const almostPostStatus = curr.contents.slice(postStatusIndex + 13);
+	const postStatusIndex = postContents.indexOf('post_status');
+	const almostPostStatus = postContents.slice(postStatusIndex + 13);
 	const postStatus = almostPostStatus.slice(0, almostPostStatus.indexOf('|')).trim();
+
+	const lines = postContents.split('\n');
+	// TODO: fuck this off
+	let tableMode = false;
+	const contents = lines.reduce((acc, curr, index) => {
+		if (curr.slice(0, 2) === '# ') {
+			return Object.assign({}, acc, {
+				title: curr.slice(2)
+			});
+		}
+
+		// Table Start
+		if (curr.includes('| Metadata name |')) {
+			tableMode = true;
+		}
+
+		if (tableMode === true) {
+			if (curr.slice(0, 2) === '| ') {
+				const lineWithoutFirstDelimeter = curr.slice(2);
+				const key = lineWithoutFirstDelimeter.slice(0, lineWithoutFirstDelimeter.indexOf(' | '));
+				const value = lineWithoutFirstDelimeter.slice(lineWithoutFirstDelimeter.indexOf(' | ') + 3, -2);
+
+				return Object.assign({}, acc, {
+					metaData: Object.assign({}, acc.metaData, {
+						[key]: value
+					})
+				});
+			} else {
+				tableMode = false;
+			}
+		}
+
+		return Object.assign({}, acc, {
+			contents: `${acc.contents || ''}\n${curr}`
+		})
+	}, {});
 
 	if (postStatus !== 'draft') {
 		acc.push({
@@ -71,28 +106,19 @@ function generateComponent(acc, curr) {
 			componentName: camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
 			component: `
 			import React from 'react';
-			import Helmet from 'react-helmet';
+			import BlogPost from '../../../../components/blog-post.jsx';
 				
 			export default class ${camelCaseName} extends React.Component {
-				componentDidMount() {
-					const heading = this.rootNode.querySelector('h1');
-					
-					heading.innerHTML = '<a href="/${curr.path.replace('.md', '')}">' + heading.innerText + '</a>';
-				}
-				
 				render() {
 					return (
-						<div 
-							className={this.props.isBlogPage ? "" : "max-width-container blog"}
-							ref={el => this.rootNode = el}
+						<BlogPost
+							isSinglePostPage={!this.props.isBlogPage}
+							title="${contents.title}"
+							publishDate="${contents.metaData['post_date']}"
+							slug="${curr.path.replace('.md', '')}"
 						>
-							{!this.props.isBlogPage && (
-								<Helmet>
-									<title>${titleCase(fileName)} | Luke Boyle</title>
-								</Helmet>
-							)}
-							${getMarkupFromMarkdown(curr.contents)}
-						</div>
+							${getMarkupFromMarkdown(contents.contents)}
+						</BlogPost>
 					);
 				}
 			}
