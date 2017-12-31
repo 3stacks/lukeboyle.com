@@ -115,7 +115,7 @@ function generateComponent(acc, curr, index) {
 							isSinglePostPage={!this.props.isBlogPage}
 							title="${contents.title}"
 							publishDate="${contents.metaData['post_date']}"
-							slug="${curr.path.replace('.md', '')}"
+							slug="/${curr.path.replace('.md', '')}"
 						>
 							${getMarkupFromMarkdown(contents.contents)}
 						</BlogPost>
