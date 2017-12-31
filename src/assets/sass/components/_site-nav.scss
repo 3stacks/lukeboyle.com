@@ -57,11 +57,12 @@
       a {
         color: white;
         font-size: 1.6rem;
-        border-color: white;
+        border-color: transparent;
 
+        &.active,
         &:focus,
         &:hover {
-          border-color: transparent;
+          border-color: white;
         }
       }
     }
