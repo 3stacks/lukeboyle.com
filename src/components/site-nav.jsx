@@ -25,17 +25,17 @@ export default function SiteNav({isFrontPage, ...otherProps}) {
                     </a>
                 </li>
                 <li className="menu__item">
-                    <Link to="/portfolio/">
+                    <Link to="/portfolio">
                         Portfolio
                     </Link>
                 </li>
                 <li className="menu__item">
-                    <Link to="/blog/">
+                    <Link to="/blog">
                         Blog
                     </Link>
                 </li>
                 <li className="menu__item">
-                    <Link to="/about/">
+                    <Link to="/about">
                         About
                     </Link>
                 </li>
