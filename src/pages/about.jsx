@@ -22,7 +22,7 @@ export default class About extends React.Component {
                         Open-source advocate
                     </li>
                     <li>
-                        Experienced in React, Angular and Vue.js
+                        Experience with React, Angular and Vue.js
                     </li>
                     <li>
                         Experience with ES2018, GraphQL, Express, babel, webpack and gulp.
