@@ -22,10 +22,7 @@
 		color: white;
 		display: flex;
 		flex-direction: column;
-
-		&.shadow {
-			box-shadow: rgba(0, 0, 0, 0.12) 0 1px 6px, rgba(0, 0, 0, 0.12) 0 1px 4px;
-		}
+		box-shadow: rgba(0, 0, 0, 0.12) 0 1px 6px, rgba(0, 0, 0, 0.12) 0 1px 4px;
 
 		&--image {
 			font-size: 0;

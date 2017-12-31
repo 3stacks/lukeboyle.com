@@ -13,7 +13,7 @@ export default class Portfolio extends React.Component {
                 <div className="portfolio">
                     {portfolioItems.map((portfolioItem, index) => {
                         return (
-                            <div className="portfolio--item shadow" key={index}>
+                            <div className="portfolio--item" key={index}>
                                 <div
                                     className="portfolio--item--image"
                                     style={{backgroundImage: `url(${portfolioItem.thumb})`}}
@@ -32,8 +32,6 @@ export default class Portfolio extends React.Component {
                             </div>
                         );
                     })}
-                    <div className="portfolio--item" />
-                    <div className="portfolio--item" />
                 </div>
             </div>
         )
