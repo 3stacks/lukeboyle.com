@@ -182,11 +182,11 @@ function generateComponent(acc, curr, index) {
 			);
 		}, {});
 
-		Object.entries(pages).forEach(([key, value], index) => {
+		Object.keys(pages).forEach((key, index) => {
 			const blogPage = `
 			import React from 'react';
 			import Helmet from 'react-helmet';
-			${value.reduce((acc, curr) => {
+			${pages[key].reduce((acc, curr) => {
 				return acc + `import ${curr.componentName} from '${index === 0 ? './' : '../'}${curr.path.replace('.md', '.jsx')}';\n`;
 			}, '')}
 				
@@ -206,8 +206,8 @@ function generateComponent(acc, curr, index) {
 								</p>
 							</div>
 							<div className="max-width-container blog">
-								${value.reduce((acc, curr) => {
-				return acc + `<${curr.componentName} isBlogPage={true}/>\n`;
+								${pages[key].reduce((acc, curr) => {
+				return acc + `<${curr.componentName} isBlogPage={true} />\n`;
 			}, '')}
 							</div>
 							<div class="max-width-container">
