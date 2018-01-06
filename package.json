@@ -13,7 +13,7 @@
   "license": "MIT",
   "dependencies": {
     "date-fns": "^1.29.0",
-    "gatsby": "latest",
+    "gatsby": "^1.9.149",
     "gatsby-link": "latest",
     "gatsby-plugin-google-analytics": "latest",
     "gatsby-plugin-offline": "latest",
