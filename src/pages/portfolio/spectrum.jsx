@@ -17,9 +17,6 @@ export default class Portfolio extends React.Component {
                         <div>
                             <img src={spectrumSrc} alt="" width="453" height="346" />
                         </div>
-                        <p>
-                            Beta coming soon.
-                        </p>
                         <p>Spectrum is a web-based editor for writing software specification documents. The app enables software architects to progressively define the functionality in their system allowing developers to begin implementing the specification sooner.</p>
                         <h3>Technology List</h3>
                         <ul>
@@ -27,9 +24,9 @@ export default class Portfolio extends React.Component {
                             <li>Webpack</li>
                             <li>Node.js</li>
                         </ul>
-                        <h3>Challenges</h3>
+                        <h2>Challenges</h2>
                         <p>One of the major challenges faced in this project was reimplementing the textbox to allow us to make complex data structures human readable. Along with displaying the complex data, users have to be able to select text, copy and paste text and control the cursor as they would in their operating system (cmd vs ctrl).</p>
-                        <h3>Accomplishments</h3>
+                        <h2>Accomplishments</h2>
                         <p>Architected a file format that adhered to our application design goals while being valid Markdown. This meant I had to make a processor to generate a specfile from complex app data and conversely, a parser to generate app data at runtime.</p>
                         <p>The app provides spec authors with a rich WYSIWYG editor for the specfile that allows each screen, form, section or component to be written independently of other parts of the spec.</p>
                         <p>Special formatting is given to warnings, errors and other textual content that the implementors will need to take verbatim.</p>
