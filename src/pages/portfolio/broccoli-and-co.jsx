@@ -14,6 +14,11 @@ export default class Portfolio extends React.Component {
                     <h1 className="single-portfolio-item--title">
                         Broccoli and Co.
                     </h1>
+                    <div className="single-portfolio-item--content">
+                        <h2>
+                            Coming soon
+                        </h2>
+                    </div>
                     <div className="single-portfolio-item--buttons">
                         <a target="_blank" className="single-portfolio-item--link button primary" href="http://broccoli.3stacks.me">
                             View live site

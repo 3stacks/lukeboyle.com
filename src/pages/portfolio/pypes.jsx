@@ -14,9 +14,9 @@ export default class Pypes extends React.Component {
                         Pypes
                     </h1>
                     <div className="single-portfolio-item--content">
-                        <h3>
+                        <h2>
                             JSON files as a service
-                        </h3>
+                        </h2>
                         <p>
                             The premise of this app was to have a fiendishly simple back-end. The global blog
                             settings and posts are all stored in a JSON file. The back-end product (Pypes Rear)
@@ -39,9 +39,9 @@ export default class Pypes extends React.Component {
                             with utility functions for pulling down posts, saving new posts and updating old posts.
                             The blog controllers use these functions with heavy integration with Promises.
                         </p>
-                        <h3 className="case-study--block--title">
+                        <h2 className="case-study--block--title">
                             Technologies – Admin Portal
-                        </h3>
+                        </h2>
                         <ul>
                             <li>
                                 Angular 1.5
@@ -62,9 +62,9 @@ export default class Pypes extends React.Component {
                                 Bulma.io
                             </li>
                         </ul>
-                        <h3 className="case-study--block--title">
+                        <h2 className="case-study--block--title">
                             Technologies – Rear
-                        </h3>
+                        </h2>
                         <ul>
                             <li>
                                 PHP

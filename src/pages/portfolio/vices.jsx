@@ -17,14 +17,12 @@ export default class Vices extends React.Component {
                     <div className="single-portfolio-item--content">
                         <div className="case-study">
                             <div className="case-study--block">
-                                <h3 className="case-study--block--title">
+                                <h2 className="case-study--block--title">
                                     Case Study
-                                </h3>
-                                <h5 className="case-study--block--subtitle">
-                                    <a href="https://vices.me" target="_blank">
-                                        1.0 is out now
-                                    </a>
-                                </h5>
+                                </h2>
+                                <a href="https://vices.me" target="_blank">
+                                    1.0 is out now
+                                </a>
                             </div>
                             <div className="case-study--block">
                                 <div className="case-study--block--body">
@@ -34,21 +32,24 @@ export default class Vices extends React.Component {
                                 </div>
                             </div>
                             <div className="case-study--block">
-                                <h3 className="case-study--block--title">
+                                <h2 className="case-study--block--title">
                                     Event BUS System
-                                </h3>
+                                </h2>
                                 <div className="case-study--block--body">
                                     <p>
-                                        The Event BUS system handles all click events in the app and adds them to a
-                                        history of actions taken in the app. This could be utilised to undo actions
+                                        The Event BUS system is a flux-like
+                                        state storage system that handles all
+                                        events in the app and adds them to a
+                                        history of actions taken in the app.
+                                        This could be utilised to undo actions
                                         and facilitate accurate bug reports.
                                     </p>
                                 </div>
                             </div>
                             <div className="case-study--block">
-                                <h3 className="case-study--block--title">
+                                <h2 className="case-study--block--title">
                                     Technologies
-                                </h3>
+                                </h2>
                                 <ul>
                                     <li>
                                         React.js
