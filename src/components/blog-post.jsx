@@ -19,7 +19,7 @@ export default function BlogPost(
 		<div className={isSinglePostPage ? 'max-width-container blog' : ''}>
 			{isSinglePostPage && (
 				<Helmet>
-					<title>Agander 1 0 Is Now Out | Luke Boyle</title>
+					<title>{title} | Luke Boyle</title>
 				</Helmet>
 			)}
 			<article className="blog-post">
