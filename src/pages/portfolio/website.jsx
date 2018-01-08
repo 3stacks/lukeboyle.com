@@ -40,8 +40,8 @@ export default class Website extends React.Component {
                             </li>
                         </ul>
                     </div>
-                    <div className="single-portfolio-item--buttons">
-                        <a target="_blank" className="single-portfolio-item--link button primary" href="https://github.com/3stacks/portfolio-2016">
+                    <div className="single-portfolio-item__buttons">
+                        <a target="_blank" className="button primary" href="https://github.com/3stacks/portfolio-2016">
                             See repository
                         </a>
                     </div>
