@@ -7,8 +7,15 @@ import splitSrc from '../assets/img/portfolio/thumbs/split.png';
 import typeSrc from '../assets/img/portfolio/thumbs/type.png';
 import vicesSrc from '../assets/img/portfolio/thumbs/vices.png';
 import guesstimateSrc from '../assets/img/portfolio/thumbs/guesstimate.jpg';
+import websiteSrc from '../assets/img/portfolio/thumbs/website.png';
 
 export default [
+    {
+        name: 'This website',
+        snippet: 'A progressively enhancing static site with offline caching and a unique content version control system',
+        link: '/portfolio/website/',
+        thumb: websiteSrc
+    },
     {
         name: 'Guesstimate',
         snippet: 'Break your project up into easier to estimate chunks and total it for more accurate estimations',
@@ -45,12 +52,12 @@ export default [
         link: '/portfolio/type-with-apps/',
         thumb: typeSrc
     },
-    {
-        name: 'Broccoli and Co.',
-        snippet: 'A case study about the scalability and organisation of SPAs made in Angular 1.5 with comprehensive testing.',
-        link: '/portfolio/broccoli-and-co/',
-        thumb: broccoliSrc
-    },
+    // {
+    //     name: 'Broccoli and Co.',
+    //     snippet: 'A case study about the scalability and organisation of SPAs made in Angular 1.5 with comprehensive testing.',
+    //     link: '/portfolio/broccoli-and-co/',
+    //     thumb: broccoliSrc
+    // },
     {
         name: 'Pypes',
         snippet: 'A micro-blogging platform with a RESTful interface and an Angular admin panel.',

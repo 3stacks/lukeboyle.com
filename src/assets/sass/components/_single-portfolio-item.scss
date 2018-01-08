@@ -4,11 +4,13 @@
 
 .single-portfolio-item {
 	padding: 60px 0;
-	&--title {
+
+	&__title {
 		font-size: 4rem;
 		text-align: center;
 	}
-	&--content {
+
+	&__content {
 		font-size: 1.8rem;
 		figure {
 			margin: 0;
@@ -22,17 +24,16 @@
 			max-width: 100%;
 		}
 	}
-	&--buttons {
+
+	&__buttons {
 		padding-top: 50px;
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
 		margin-bottom: 50px;
+
 		@include breakpoint($m) {
 			margin-bottom: 100px;
-		}
-		.button {
-			padding: 5px 10px;
 		}
 	}
 }
