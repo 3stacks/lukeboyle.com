@@ -40,31 +40,8 @@ export default class Website extends React.Component {
                             </li>
                         </ul>
                     </div>
-                    <div className="single-portfolio-item__buttons">
-                        <a target="_blank" className="button primary" href="https://github.com/3stacks/portfolio-2016">
-=======
-                    <h1 className="single-portfolio-item--title">
-                        This website
-                    </h1>
-                    <div className="single-portfolio-item--content">
-                        <p>
-                            The last iteration of this website was a truly insane
-                            infinite scrolling carousel that was very overwhelming
-                            to anyone who dare behold it, so with this version
-                            (which recently had its first birthday) I decided to
-                            go with a much more content focused design since I
-                            actually wanted to start writing more publicly.
-                        </p>
-                        <p>
-                            At the time, I didn't want to sink a lot of effort
-                            into it, so WordPress was identified as the path of
-                            least resistance. It was working well and was quite
-                            fast (for a WordPress website)
-                        </p>
-                    </div>
                     <div className="single-portfolio-item--buttons">
                         <a target="_blank" className="single-portfolio-item--link button primary" href="https://github.com/3stacks/portfolio-2016">
->>>>>>> master
                             See repository
                         </a>
                     </div>
