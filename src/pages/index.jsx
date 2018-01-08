@@ -41,11 +41,11 @@ export default class Index extends React.Component {
                             Featured Blog Post
                         </h2>
                         <p className="featured-blog-post-block--post-name">
-                            Automating CSS regression testing
+                            Converting a WordPress site to a React static site
                         </p>
                         <a
                             className="button primary"
-                            href="/blog-posts/2016/12/automating-css-regression-testing-with-argus-eyes--phantom-js"
+                            href="/blog-posts/2018/01/converting-wordpress-site-to-static"
                         >
                             Read more
                         </a>
