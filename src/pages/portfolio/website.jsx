@@ -39,6 +39,10 @@ export default class Website extends React.Component {
                                 Node.js
                             </li>
                         </ul>
+                        <p>
+                            To read more about the journey of creating this site,
+                            read my <a href="/blog-posts/2018/01/converting-wordpress-site-to-static">blog post</a>.
+                        </p>
                     </div>
                     <div className="single-portfolio-item__buttons">
                         <a target="_blank" className="button primary" href="https://github.com/3stacks/portfolio-2016">
