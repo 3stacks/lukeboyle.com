@@ -2,6 +2,7 @@ import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import projects from '../data/portfolio-items';
+import {MY_NAME} from "constants";
 
 export default class Index extends React.Component {
     render() {
@@ -11,7 +12,7 @@ export default class Index extends React.Component {
             <div>
                 <div className="home-head-banner">
                     <h2>
-                        Luke Boyle
+                        {MY_NAME}
                     </h2>
                     <p>
                         Front End Developer
@@ -29,9 +30,9 @@ export default class Index extends React.Component {
                             <p className="latest-project-block--project--snippet">
 								{latestProject.snippet}
                             </p>
-                            <a className="button secondary" href={latestProject.link}>
+                            <Link className="button secondary" to={latestProject.link}>
                                 Read More
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -43,12 +44,12 @@ export default class Index extends React.Component {
                         <p className="featured-blog-post-block--post-name">
                             Converting a WordPress site to a React static site
                         </p>
-                        <a
+                        <Link
                             className="button primary"
-                            href="/blog-posts/2018/01/converting-wordpress-site-to-static"
+                            to="/blog-posts/2018/01/converting-wordpress-site-to-static"
                         >
                             Read more
-                        </a>
+                        </Link>
                     </div>
                     <div className="npm-packages-block">
                         <h2 className="npm-packages-block--title">

@@ -1,14 +1,19 @@
 import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
+import portfolioData from '../../data/portfolio-items';
 import issuesSrc from '../../assets/img/portfolio/issues.png';
+import {META_DESCRIPTION, PORTFOLIO_ITEM_NAMES} from "constants";
 
 export default class Portfolio extends React.Component {
     render() {
-        return (
+		const portfolioContent = portfolioData.find(data => data.name === PORTFOLIO_ITEM_NAMES.AGANDER);
+
+		return (
             <div className="max-width-container">
                 <Helmet>
                     <title>Agander | Project Case Study</title>
+					<meta name="description" content={META_DESCRIPTION.HOME}/>
                 </Helmet>
                 <div className="single-portfolio-item">
                     <h1 className="single-portfolio-item--title">
