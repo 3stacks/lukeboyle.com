@@ -5,17 +5,18 @@ import Helmet from "react-helmet";
 import Header from '../components/header.jsx';
 import Footer from '../components/footer.jsx';
 import '../assets/sass/style.scss';
+import {META_DESCRIPTION, MY_NAME} from "constants";
 
 export default class Template extends React.Component {
     render() {
         return (
             <div className="layout">
                 <Helmet
-                    title="Luke Boyle | Front End Developer"
+                    title={`${MY_NAME} | Front End Developer`}
                     meta={[
                         {
                             name: "description",
-                            content: "Luke Boyle is a Front End Developer from Melbourne, Australia. Specialising in JavaScript web applications, he has experience with Angular, React and Vue Js."
+                            content: META_DESCRIPTION.HOME
                         },
                         {
                             name: 'theme-color',
