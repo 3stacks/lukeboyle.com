@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import portfolioData from '../../data/portfolio-items';
 import issuesSrc from '../../assets/img/portfolio/issues.png';
-import {META_DESCRIPTION, PORTFOLIO_ITEM_NAMES} from "constants";
+import {PORTFOLIO_ITEM_NAMES} from "constants";
 
 export default class Portfolio extends React.Component {
     render() {
@@ -13,7 +13,7 @@ export default class Portfolio extends React.Component {
             <div className="max-width-container">
                 <Helmet>
                     <title>Agander | Project Case Study</title>
-					<meta name="description" content={META_DESCRIPTION.HOME}/>
+					<meta name="description" content={portfolioContent.snippet}/>
                 </Helmet>
                 <div className="single-portfolio-item">
                     <h1 className="single-portfolio-item--title">
