@@ -8,7 +8,7 @@ import typeSrc from '../assets/img/portfolio/thumbs/type.png';
 import vicesSrc from '../assets/img/portfolio/thumbs/vices.png';
 import guesstimateSrc from '../assets/img/portfolio/thumbs/guesstimate.jpg';
 import websiteSrc from '../assets/img/portfolio/thumbs/website.png';
-import {PORTFOLIO_ITEM_NAMES} from "constants";
+import {PORTFOLIO_ITEM_NAMES} from '../constants';
 
 export default [
     {

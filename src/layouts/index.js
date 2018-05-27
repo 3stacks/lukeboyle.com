@@ -5,7 +5,7 @@ import Helmet from "react-helmet";
 import Header from '../components/header.jsx';
 import Footer from '../components/footer.jsx';
 import '../assets/sass/style.scss';
-import {META_DESCRIPTION, MY_NAME} from "constants";
+import {META_DESCRIPTION, MY_NAME} from "../constants";
 
 export default class Template extends React.Component {
     render() {

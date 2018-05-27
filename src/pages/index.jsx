@@ -2,7 +2,7 @@ import React from "react";
 import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import projects from '../data/portfolio-items';
-import {MY_NAME} from "constants";
+import {MY_NAME} from "../constants";
 
 export default class Index extends React.Component {
     render() {
