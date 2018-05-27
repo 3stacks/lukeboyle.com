@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import portfolioData from '../../data/portfolio-items';
 import issuesSrc from '../../assets/img/portfolio/issues.png';
-import {PORTFOLIO_ITEM_NAMES} from "constants";
+import {PORTFOLIO_ITEM_NAMES} from "../../constants";
 
 export default class Portfolio extends React.Component {
     render() {
