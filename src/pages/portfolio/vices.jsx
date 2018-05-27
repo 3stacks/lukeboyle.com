@@ -29,6 +29,10 @@ export default class Vices extends React.Component {
                                     <p>
                                         I made Vices because I was spending way too much money on iced coffee and I needed a way to motivate myself to quit.
                                     </p>
+                                    <p>
+                                        The new version adds a compound interest calculator to project how much your vice
+                                        will impact you 10 years down the road (assuming you stop throwing your money in the trash and start throwing it into investments).
+                                    </p>
                                 </div>
                             </div>
                             <div className="case-study__block">
@@ -52,7 +56,7 @@ export default class Vices extends React.Component {
                                 </h2>
                                 <ul>
                                     <li>
-                                        React.js
+                                        React
                                     </li>
                                     <li>
                                         SASS
@@ -61,7 +65,7 @@ export default class Vices extends React.Component {
                                         Gulp
                                     </li>
                                     <li>
-                                        ECMAScript 6
+                                        ECMAScript 2015+
                                     </li>
                                     <li>
                                         Ant Design Language
