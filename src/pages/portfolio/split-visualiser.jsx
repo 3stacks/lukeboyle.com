@@ -10,12 +10,12 @@ export default class SplitVisualiser extends React.Component {
                     <title>Split Visualiser | Project Case Study</title>
                 </Helmet>
                 <div className="single-portfolio-item">
-                    <h1 className="single-portfolio-item--title">
+                    <h1 className="single-portfolio-item__title">
                         Split Visualiser
                     </h1>
-                    <ul className="single-portfolio-item--content">
+                    <ul className="single-portfolio-item__content">
                         <li>
-                            Vue.js (ES2015)
+                            Vue.js
                         </li>
                         <li>
                             Node.js
@@ -32,11 +32,15 @@ export default class SplitVisualiser extends React.Component {
                         determine the feasibility of Vue 2.0 for smaller projects
                         and to see performance could scale as complexity increases.
                     </p>
-                    <div className="single-portfolio-item--buttons">
-                        <a target="_blank" className="single-portfolio-item--link button primary" href="https://projects.stak.digital/split-visualiser">
+                    <p>
+                        Selecting exercises will highlight muscle groups based on their
+                        utilisation, allowing you to gauge how effective your split is.
+                    </p>
+                    <div className="single-portfolio-item__buttons">
+                        <a target="_blank" className="single-portfolio-item__link button primary" href="http://splitviz.io">
                             View live site
                         </a>
-                        <a target="_blank" className="single-portfolio-item--link button primary" href="https://github.com/stak-digital/split-visualiser">
+                        <a target="_blank" className="single-portfolio-item__link button primary" href="https://github.com/stak-digital/split-visualiser">
                             See repository
                         </a>
                     </div>

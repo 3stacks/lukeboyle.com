@@ -11,10 +11,10 @@ export default class Portfolio extends React.Component {
                     <title>Guesstimate | Project Case Study</title>
                 </Helmet>
                 <div className="single-portfolio-item">
-                    <h1 className="single-portfolio-item--title">
+                    <h1 className="single-portfolio-item__title">
                         Guesstimate
                     </h1>
-                    <div className="single-portfolio-item--content">
+                    <div className="single-portfolio-item__content">
                         <p>
                             What if there was a way to skirt the inaccuracy
                             issues inherent to spreadsheet estimations? What
@@ -65,11 +65,11 @@ export default class Portfolio extends React.Component {
                             traversable data structure
                         </p>
                     </div>
-                    <div className="single-portfolio-item--buttons">
-                        <a target="_blank" className="single-portfolio-item--link button primary" href="https://guesstimate.io">
+                    <div className="single-portfolio-item__buttons">
+                        <a target="_blank" className="single-portfolio-item__link button primary" href="https://guesstimate.io">
                             View live site
                         </a>
-                        <a target="_blank" className="single-portfolio-item--link button primary" href="https://github.com/stak-digital/guesstimate">
+                        <a target="_blank" className="single-portfolio-item__link button primary" href="https://github.com/stak-digital/guesstimate">
                             See repository
                         </a>
                     </div>

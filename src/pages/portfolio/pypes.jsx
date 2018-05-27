@@ -10,10 +10,10 @@ export default class Pypes extends React.Component {
                     <title>Pypes Blogging Platform | Project Case Study</title>
                 </Helmet>
                 <div className="single-portfolio-item">
-                    <h1 className="single-portfolio-item--title">
+                    <h1 className="single-portfolio-item__title">
                         Pypes
                     </h1>
-                    <div className="single-portfolio-item--content">
+                    <div className="single-portfolio-item__content">
                         <h2>
                             JSON files as a service
                         </h2>
@@ -39,7 +39,7 @@ export default class Pypes extends React.Component {
                             with utility functions for pulling down posts, saving new posts and updating old posts.
                             The blog controllers use these functions with heavy integration with Promises.
                         </p>
-                        <h2 className="case-study--block--title">
+                        <h2 className="case-study__block__title">
                             Technologies – Admin Portal
                         </h2>
                         <ul>
@@ -62,7 +62,7 @@ export default class Pypes extends React.Component {
                                 Bulma.io
                             </li>
                         </ul>
-                        <h2 className="case-study--block--title">
+                        <h2 className="case-study__block__title">
                             Technologies – Rear
                         </h2>
                         <ul>
@@ -86,11 +86,11 @@ export default class Pypes extends React.Component {
                             </li>
                         </ul>
                     </div>
-                    <div className="single-portfolio-item--buttons">
-                        <a target="_blank" className="single-portfolio-item--link button primary" href="https://github.com/3stacks/pypes-face">
+                    <div className="single-portfolio-item__buttons">
+                        <a target="_blank" className="single-portfolio-item__link button primary" href="https://github.com/3stacks/pypes-face">
                             View live site
                         </a>
-                        <a target="_blank" className="single-portfolio-item--link button primary" href="https://github.com/3stacks/pypes-face">
+                        <a target="_blank" className="single-portfolio-item__link button primary" href="https://github.com/3stacks/pypes-face">
                             See repository
                         </a>
                     </div>

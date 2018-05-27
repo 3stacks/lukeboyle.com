@@ -11,19 +11,19 @@ export default class Portfolio extends React.Component {
                     <title>Angular 1.5 Case Study</title>
                 </Helmet>
                 <div className="single-portfolio-item">
-                    <h1 className="single-portfolio-item--title">
+                    <h1 className="single-portfolio-item__title">
                         Broccoli and Co.
                     </h1>
-                    <div className="single-portfolio-item--content">
+                    <div className="single-portfolio-item__content">
                         <h2>
                             Coming soon
                         </h2>
                     </div>
-                    <div className="single-portfolio-item--buttons">
-                        <a target="_blank" className="single-portfolio-item--link button primary" href="http://broccoli.3stacks.me">
+                    <div className="single-portfolio-item__buttons">
+                        <a target="_blank" className="single-portfolio-item__link button primary" href="http://broccoli.3stacks.me">
                             View live site
                         </a>
-                        <a target="_blank" className="single-portfolio-item--link button primary" href="http://github.com/3stacks/broccoli-and-co">
+                        <a target="_blank" className="single-portfolio-item__link button primary" href="http://github.com/3stacks/broccoli-and-co">
                             See repository
                         </a>
                     </div>

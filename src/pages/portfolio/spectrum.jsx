@@ -11,9 +11,9 @@ export default class Portfolio extends React.Component {
                     <title>Spectrum | Project Case Study</title>
                 </Helmet>
                 <div className="single-portfolio-item">
-                    <h1 className="single-portfolio-item--title">
+                    <h1 className="single-portfolio-item__title">
                         Spectrum </h1>
-                    <div className="single-portfolio-item--content">
+                    <div className="single-portfolio-item__content">
                         <div>
                             <img src={spectrumSrc} alt="" width="453" height="346" />
                         </div>
@@ -33,6 +33,15 @@ export default class Portfolio extends React.Component {
                         <p>The editor also allows authors to insert special cross-links to other parts of the spec for quick reference and to reduce the amount of duplicated information. This allows for a single-source-of-truth for stakeholders to review and automatically propagates changes across the whole spec.</p>
                         <p>Spectrum offers special insights that management can use to better allocated resources on the project including generating an application-wide dependency visualisation to aid in human effort bottleneck prediction.</p>
                         <p>The application’s specfile format can also be version-tracked like any other text/code file for the ability to diff the file’s change history using already available tools – a unique feature among more common formats like Microsoft Word documents.</p>
+                    </div>
+
+                    <div className="single-portfolio-item__buttons">
+                        <a target="_blank" className="single-portfolio-item__link button primary" href="https://spectrum-app.io">
+                            Try the beta
+                        </a>
+                        <a target="_blank" className="single-portfolio-item__link button primary" href="https://brycehanscomb.com/work/spectrum/">
+                            Read more
+                        </a>
                     </div>
                 </div>
             </div>

@@ -16,10 +16,10 @@ export default class Portfolio extends React.Component {
 					<meta name="description" content={portfolioContent.snippet}/>
                 </Helmet>
                 <div className="single-portfolio-item">
-                    <h1 className="single-portfolio-item--title">
+                    <h1 className="single-portfolio-item__title">
                         Agander
                     </h1>
-                    <div className="single-portfolio-item--content">
+                    <div className="single-portfolio-item__content">
                         <h2>
                             Case Study
                         </h2>
@@ -103,11 +103,11 @@ export default class Portfolio extends React.Component {
                         <p>Because of this, I can be confident that any build under the 1.x release will be
                             compatible with currently stored app data.</p>
                     </div>
-                    <div className="single-portfolio-item--buttons">
-                        <a target="_blank" className="single-portfolio-item--link button primary" href="https://agander.io">
+                    <div className="single-portfolio-item__buttons">
+                        <a target="_blank" className="single-portfolio-item__link button primary" href="https://agander.io">
                             View live site
                         </a>
-                        <a target="_blank" className="single-portfolio-item--link button primary" href="https://github.com/3stacks/agander">
+                        <a target="_blank" className="single-portfolio-item__link button primary" href="https://github.com/3stacks/agander">
                             See repository
                         </a>
                     </div>

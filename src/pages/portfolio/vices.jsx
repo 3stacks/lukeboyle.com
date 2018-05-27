@@ -11,31 +11,31 @@ export default class Vices extends React.Component {
                     <title>Vices | Project Case Study</title>
                 </Helmet>
                 <div className="single-portfolio-item">
-                    <h1 className="single-portfolio-item--title">
+                    <h1 className="single-portfolio-item__title">
                         Vices
                     </h1>
-                    <div className="single-portfolio-item--content">
+                    <div className="single-portfolio-item__content">
                         <div className="case-study">
-                            <div className="case-study--block">
-                                <h2 className="case-study--block--title">
+                            <div className="case-study__block">
+                                <h2 className="case-study__block__title">
                                     Case Study
                                 </h2>
                                 <a href="https://vices.me" target="_blank">
-                                    1.0 is out now
+                                    2.0 is out now
                                 </a>
                             </div>
-                            <div className="case-study--block">
-                                <div className="case-study--block--body">
+                            <div className="case-study__block">
+                                <div className="case-study__block__body">
                                     <p>
                                         I made Vices because I was spending way too much money on iced coffee and I needed a way to motivate myself to quit.
                                     </p>
                                 </div>
                             </div>
-                            <div className="case-study--block">
-                                <h2 className="case-study--block--title">
+                            <div className="case-study__block">
+                                <h2 className="case-study__block__title">
                                     Event BUS System
                                 </h2>
-                                <div className="case-study--block--body">
+                                <div className="case-study__block__body">
                                     <p>
                                         The Event BUS system is a flux-like
                                         state storage system that handles all
@@ -46,8 +46,8 @@ export default class Vices extends React.Component {
                                     </p>
                                 </div>
                             </div>
-                            <div className="case-study--block">
-                                <h2 className="case-study--block--title">
+                            <div className="case-study__block">
+                                <h2 className="case-study__block__title">
                                     Technologies
                                 </h2>
                                 <ul>
@@ -64,16 +64,16 @@ export default class Vices extends React.Component {
                                         ECMAScript 6
                                     </li>
                                     <li>
-                                        Material-UI
+                                        Ant Design Language
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div className="single-portfolio-item--buttons">
-                            <a target="_blank" className="single-portfolio-item--link button primary" href="https://vices.me">
+                        <div className="single-portfolio-item__buttons">
+                            <a target="_blank" className="single-portfolio-item__link button primary" href="https://vices.me">
                                 View live site
                             </a>
-                            <a target="_blank" className="single-portfolio-item--link button primary" href="https://github.com/3stacks/vices">
+                            <a target="_blank" className="single-portfolio-item__link button primary" href="https://github.com/3stacks/vices">
                                 See repository
                             </a>
                         </div>
