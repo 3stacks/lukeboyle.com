@@ -24,6 +24,12 @@
 		flex-direction: column;
 		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 		border-radius: 4px;
+		transition: all 0.3s ease-out;
+
+		&:hover {
+			box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+			transform: translateY(-5px);
+		}
 
 		&--image {
 			font-size: 0;
