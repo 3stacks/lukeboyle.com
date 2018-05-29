@@ -6,15 +6,24 @@
 .portfolio {
 	display: grid;
 	grid-template-columns: 1fr;
-	padding-top: 60px;
+	margin-bottom: 30px;
 
 	@include bp(600px) {
 		grid-template-columns: 1fr 1fr;
-		grid-column-gap: 20px;
+		grid-column-gap: 30px;
 	}
 
 	@include bp(800px) {
 		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	&__container {
+		padding-top: 60px;
+		
+		h1 {
+			text-align: center;
+			margin-bottom: 60px;
+		}
 	}
 
 	&--item {
