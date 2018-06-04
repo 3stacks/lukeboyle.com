@@ -48,12 +48,12 @@ export default [
         link: '/portfolio/split-visualiser/',
         thumb: splitSrc
     },
-    {
-        name: PORTFOLIO_ITEM_NAMES.JOURNEY_TREE,
-        snippet: 'A multi-platform collection of social networking and business applications for childcare staff and parents.',
-        link: '/portfolio/journey-tree/',
-        thumb: jtSrc
-    },
+    // {
+    //     name: PORTFOLIO_ITEM_NAMES.JOURNEY_TREE,
+    //     snippet: 'A multi-platform collection of social networking and business applications for childcare staff and parents.',
+    //     link: '/portfolio/journey-tree/',
+    //     thumb: jtSrc
+    // },
     {
         name: PORTFOLIO_ITEM_NAMES.TYPE_WITH_APPS,
         snippet: 'A web-app for easily visualising and sharing the muscle engagement of your exercise routine.',
