@@ -12,12 +12,6 @@ import debtDestroyerSrc from '../assets/img/portfolio/thumbs/debt-destroyer.jpg'
 import {PORTFOLIO_ITEM_NAMES} from '../constants';
 
 export default [
-	{
-		name: PORTFOLIO_ITEM_NAMES.DEBT_DESTROYER,
-		snippet: 'Simulate how long it will take to pay off your debts with support for multiple debts.',
-		link: '/portfolio/debt-destroyer/',
-		thumb: debtDestroyerSrc
-	},
     {
         name: PORTFOLIO_ITEM_NAMES.GUESSTIMATE,
         snippet: 'Break your project up into easier to estimate chunks and total it for more accurate estimations',
@@ -30,6 +24,12 @@ export default [
         link: '/portfolio/spectrum/',
         thumb: spectrumSrc
     },
+	{
+		name: PORTFOLIO_ITEM_NAMES.DEBT_DESTROYER,
+		snippet: 'Simulate how long it will take to pay off your debts with support for multiple debts.',
+		link: '/portfolio/debt-destroyer/',
+		thumb: debtDestroyerSrc
+	},
 	{
 		name: PORTFOLIO_ITEM_NAMES.THIS_WEBSITE,
 		snippet: 'A progressively enhancing static site with offline caching and a unique content version control system',
