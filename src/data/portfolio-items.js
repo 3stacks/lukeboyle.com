@@ -8,15 +8,16 @@ import typeSrc from '../assets/img/portfolio/thumbs/type.png';
 import vicesSrc from '../assets/img/portfolio/thumbs/vices.png';
 import guesstimateSrc from '../assets/img/portfolio/thumbs/guesstimate.jpg';
 import websiteSrc from '../assets/img/portfolio/thumbs/website.png';
+import debtDestroyerSrc from '../assets/img/portfolio/thumbs/debt-destroyer.jpg';
 import {PORTFOLIO_ITEM_NAMES} from '../constants';
 
 export default [
-    {
-        name: PORTFOLIO_ITEM_NAMES.THIS_WEBSITE,
-        snippet: 'A progressively enhancing static site with offline caching and a unique content version control system',
-        link: '/portfolio/website/',
-        thumb: websiteSrc
-    },
+	{
+		name: PORTFOLIO_ITEM_NAMES.DEBT_DESTROYER,
+		snippet: 'Simulate how long it will take to pay off your debts with support for multiple debts.',
+		link: '/portfolio/debt-destroyer/',
+		thumb: debtDestroyerSrc
+	},
     {
         name: PORTFOLIO_ITEM_NAMES.GUESSTIMATE,
         snippet: 'Break your project up into easier to estimate chunks and total it for more accurate estimations',
@@ -29,6 +30,12 @@ export default [
         link: '/portfolio/spectrum/',
         thumb: spectrumSrc
     },
+	{
+		name: PORTFOLIO_ITEM_NAMES.THIS_WEBSITE,
+		snippet: 'A progressively enhancing static site with offline caching and a unique content version control system',
+		link: '/portfolio/website/',
+		thumb: websiteSrc
+	},
     {
         name: PORTFOLIO_ITEM_NAMES.AGANDER,
         snippet: 'A productivity app aggregating calendar and tasks. Reduce the noise in your daily agenda.',
