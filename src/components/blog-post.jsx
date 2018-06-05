@@ -11,6 +11,7 @@ export default function BlogPost(
 		title,
 		publishDate,
 		slug,
+		canonical,
 	}
 ) {
 	const HeadingTag = isSinglePostPage ? 'h1' : 'h2';
@@ -19,6 +20,9 @@ export default function BlogPost(
 		<div className={isSinglePostPage ? 'max-width-container blog' : ''}>
 			{isSinglePostPage && (
 				<Helmet>
+					{canonical !== '' && (
+						<link rel="canonical" href={canonical}/>
+					)}
 					<title>{title} | Luke Boyle</title>
 				</Helmet>
 			)}

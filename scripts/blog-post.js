@@ -53,6 +53,18 @@ function getMarkupFromMarkdown(markdownString) {
 	return marked(markdownString, {renderer: renderer, gfm: true});
 }
 
+function getCanonicalURLFromString(someString) {
+	const canonicalUrlIndex = someString.indexOf('canonical');
+
+	if (canonicalUrlIndex < 0) {
+		return null;
+	}
+
+	const almostCanonicalUrl = someString.slice(canonicalUrlIndex + 12);
+
+	return almostCanonicalUrl.slice(0, almostCanonicalUrl.indexOf('|')).trim() || '';
+}
+
 function generateComponent(acc, curr, index) {
 	const fileName = getFileNameFromPath(curr.path);
 	const camelCaseName = camelCase(fileName);
@@ -62,6 +74,8 @@ function generateComponent(acc, curr, index) {
 	const postStatusIndex = postContents.indexOf('post_status');
 	const almostPostStatus = postContents.slice(postStatusIndex + 13);
 	const postStatus = almostPostStatus.slice(0, almostPostStatus.indexOf('|')).trim();
+
+	const canonicalUrl = getCanonicalURLFromString(postContents) || '';
 
 	const lines = postContents.split('\n');
 	// TODO: fuck this off
@@ -116,6 +130,7 @@ function generateComponent(acc, curr, index) {
 							title="${contents.title}"
 							publishDate="${contents.metaData['post_date']}"
 							slug="/${curr.path.replace('.md', '')}"
+							canonical="${canonicalUrl}"
 						>
 							${getMarkupFromMarkdown(contents.contents)}
 						</BlogPost>
