@@ -15,9 +15,9 @@ export default class About extends React.Component {
                     </span>
                 </h1>
                 <div style={{maxWidth: 700, margin: '0 auto'}}>
-					<p>
+					<h2>
 						Quick facts:
-					</p>
+					</h2>
 					<ul>
 						<li>
 							Co-founder of <a href="https://stak.digital">Stak Digital</a>
@@ -26,21 +26,40 @@ export default class About extends React.Component {
 							Open-source advocate
 						</li>
 						<li>
-							Experience with React, Angular and Vue.js
+							Experience with React, Angular 1.x, and Vue.js
 						</li>
 						<li>
 							Experience with ES2018, GraphQL, Express, babel, webpack and gulp.
 						</li>
+						<li>
+							Interested in working with GoLang commercially
+						</li>
 					</ul>
-					<p>
-						For a sample of my open source work, you can visit my github: <a href="https://github.com/3stacks">https://github.com/3stacks</a>
-					</p>
-					<p>
-						For a sample of my node work, you can visit my profile on npm: <a href="https://npmjs.com/~lukeboyle">https://npmjs.com/~lukeboyle</a>
-					</p>
-					<p>
-						For project enquiries; go to <a href="https://stak.digital">https://stak.digital</a> and fill out your information at the bottom
-					</p>
+					<h2>
+						Links
+					</h2>
+					<ul>
+						<li>
+							LinkedIn: <a href="https://www.linkedin.com/in/luke-boyle">
+								https://www.linkedin.com/in/luke-boyle
+							</a>
+						</li>
+						<li>
+							Personal Github: <a href="https://github.com/3stacks">https://github.com/3stacks</a>
+						</li>
+						<li>
+							Stak Github: <a href="https://github.com/stak-digital">https://github.com/stak-digital</a>
+						</li>
+						<li>
+							npm: <a href="https://npmjs.com/~lukeboyle">https://npmjs.com/~lukeboyle</a>
+						</li>
+						<li>
+							Stack Overflow: <a href="https://stackoverflow.com/users/story/5602665">https://stackoverflow.com/users/story/5602665</a>
+						</li>
+						<li>
+							For project enquiries; go to <a href="https://stak.digital">https://stak.digital</a> and fill out your information at the bottom
+						</li>
+					</ul>
                 </div>
             </div>
         );
