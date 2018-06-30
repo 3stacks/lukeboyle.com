@@ -31,7 +31,7 @@ export default [
         thumb: spectrumSrc,
 		links: [
 			{
-				label: 'View live site',
+				label: 'Try the beta',
 				href: 'https://spectrum-app.io/'
 			}
 		]
