@@ -1,12 +1,22 @@
 const glob = require('glob');
 const fs = require('fs');
 const path = require('path');
-const marked = require('marked');
-const renderer = new marked.Renderer();
 const formatDate = require('date-fns/format');
 const camelCase = require('camel-case');
 const titleCase = require('title-case');
 const shell = require('shelljs');
+const marked = require('marked');
+const renderer = new marked.Renderer();
+
+renderer.code = function(code, language) {
+	return `<pre><code>
+		${code.split('\n').map(codeBlock => {
+		const codeWithEscapedQuotes = codeBlock.split('"').join('\\"');
+		const codeWithEscapedHashes = codeWithEscapedQuotes.split('#').join('\\#');
+		return `<div>{"${codeWithEscapedHashes}"}</div>`;
+	}).join('')}
+	</code></pre>`;
+};
 const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
 
 renderer.heading = function(code, level) {
@@ -19,16 +29,6 @@ renderer.heading = function(code, level) {
 	} else {
 		return `<h${level}>${code}</h${level}>`;
 	}
-};
-
-renderer.code = function(code, language) {
-	return `<pre><code>
-		${code.split('\n').map(codeBlock => {
-		const codeWithEscapedQuotes = codeBlock.split('"').join('\\"');
-		const codeWithEscapedHashes = codeWithEscapedQuotes.split('#').join('\\#');
-		return `<div>{"${codeWithEscapedHashes}"}</div>`;
-	}).join('')}
-	</code></pre>`;
 };
 
 renderer.table = function(header, body) {
