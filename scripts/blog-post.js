@@ -1,5 +1,5 @@
 const glob = require('glob');
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 const formatDate = require('date-fns/format');
 const camelCase = require('camel-case');
@@ -69,6 +69,18 @@ function generateComponent(acc, curr, index) {
 	const fileName = getFileNameFromPath(curr.path);
 	const camelCaseName = camelCase(fileName);
 	const postContents = curr.contents;
+	let imports = `
+import React from 'react';
+import BlogPost from '../../../../components/blog-post.jsx';`;
+
+	renderer.image = function(href, title, text) {
+		const rawFilename = getFileNameFromPath(href);
+		const imageName = `${camelCase(rawFilename.slice(0, rawFilename.indexOf('.')))}Src`;
+
+		imports = `${imports}\nimport ${imageName} from '${href.includes('http') ? href : `../..${href}`}'`;
+
+		return `<img src={${imageName}} alt="${text}"/>`;
+	};
 
 	// TODO: use regex
 	const postStatusIndex = postContents.indexOf('post_status');
@@ -114,13 +126,14 @@ function generateComponent(acc, curr, index) {
 	}, {});
 
 	if (postStatus !== 'draft') {
+		const postContents = getMarkupFromMarkdown(contents.contents);
+
 		acc.push({
 			path: curr.path,
 			fileName,
 			componentName: camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
 			component: `
-			import React from 'react';
-			import BlogPost from '../../../../components/blog-post.jsx';
+			${imports}
 				
 			export default class ${camelCaseName} extends React.Component {
 				render() {
@@ -128,11 +141,11 @@ function generateComponent(acc, curr, index) {
 						<BlogPost
 							isSinglePostPage={!this.props.isBlogPage}
 							title="${contents.title}"
-							publishDate="${contents.metaData['post_date']}"
+							publishDate="${contents.metaData.post_date}"
 							slug="/${curr.path.replace('.md', '')}"
 							canonical="${canonicalUrl}"
 						>
-							${getMarkupFromMarkdown(contents.contents)}
+							${postContents}
 						</BlogPost>
 					);
 				}
@@ -241,6 +254,7 @@ function generateComponent(acc, curr, index) {
 				? `${__dirname}/../src/pages/blog.jsx`
 				: `${__dirname}/../src/pages/blog/${index}.jsx`;
 
+			fs.copySync(`${__dirname}/../blog-posts/images`, `${__dirname}/../src/pages/blog-posts/images`);
 			fs.writeFileSync(path.resolve(fileName), blogPage);
 		});
 	});
