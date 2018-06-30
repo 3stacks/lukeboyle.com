@@ -13,10 +13,26 @@ function getMarkupFromMarkdown(markdownString) {
 	return marked(markdownString, {renderer: renderer, gfm: true});
 }
 
+renderer.heading = function(code, level) {
+	if (level === 1) {
+		return `
+			<header>
+				<h1 className="single-portfolio-item__title">${code}</h1>
+			</header>
+		`;
+	} else {
+		return `<h${level}>${code}</h${level}>`;
+	}
+};
+
 function generateComponent(acc, curr, index) {
 	const fileName = getFileNameFromPath(curr.path).replace('.md', '');
 	const camelCaseName = camelCase(fileName);
-	let imports = `import React from 'react';\nimport portfolioData from '../../data/portfolio-items';\nimport {PORTFOLIO_ITEM_NAMES} from "../../constants";`;
+	let imports = `
+import React from 'react';
+import portfolioData from '../../data/portfolio-items';
+import Helmet from 'react-helmet';
+import {PORTFOLIO_ITEM_NAMES} from "../../constants";`;
 
 	renderer.image = function(href, title, text) {
 		const rawFilename = getFileNameFromPath(href);
@@ -42,7 +58,15 @@ function generateComponent(acc, curr, index) {
 				
 					return (
 						<div className="max-width-container">
-							${bodyMarkup}
+							<Helmet>
+								<title>{portfolioContent.name} | Project Case Study</title>
+								<meta name="description" content={portfolioContent.snippet}/>
+							</Helmet>
+							<div className="single-portfolio-item">
+								<div className="single-portfolio-item__content">
+									${bodyMarkup}
+								</div>
+							</div>
 						</div>
 					);
 				}
