@@ -4,10 +4,11 @@
   "description": "Example Gatsby website using the Gatsby plugin gatsby-plugin-sass",
   "main": "index.js",
   "scripts": {
+    "generate-portfolio-items": "node scripts/portfolio.js",
     "generate-blog-posts": "node scripts/blog-post.js",
-    "start": "npm run generate-blog-posts && npm run develop",
+    "start": "npm run generate-blog-posts && npm run generate-portfolio-items && npm run develop",
     "develop": "gatsby develop",
-    "build": "NODE_ENV=production npm run generate-blog-posts && gatsby build"
+    "build": "NODE_ENV=production npm run generate-blog-posts && npm run generate-portfolio-items && gatsby build"
   },
   "author": "Daniel Farrell <daniel.farrell@mobelux.com>",
   "license": "MIT",
