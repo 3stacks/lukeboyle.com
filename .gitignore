@@ -34,3 +34,4 @@ web
 src/pages/blog-posts
 blog.jsx
 src/pages/blog
+src/pages/portfolio
