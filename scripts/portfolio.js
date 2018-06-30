@@ -65,6 +65,19 @@ import {PORTFOLIO_ITEM_NAMES} from "../../constants";`;
 							<div className="single-portfolio-item">
 								<div className="single-portfolio-item__content">
 									${bodyMarkup}
+									<div className="single-portfolio-item__buttons">
+										{portfolioContent.links.map(link => {
+											return (
+												<a
+													target="_blank"
+													className="single-portfolio-item__link button primary"
+													href={link.href}
+												>
+													{link.label}
+												</a>
+											);
+										})}
+									</div>
 								</div>
 							</div>
 						</div>
@@ -91,7 +104,6 @@ import {PORTFOLIO_ITEM_NAMES} from "../../constants";`;
 		const reversedComponents = blogPosts.reduce(generateComponent, []);
 
 		fs.copySync(`${__dirname}/../portfolio-items/images`, `${__dirname}/../src/pages/portfolio/images`);
-
 		reversedComponents.forEach(component => {
 			fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/portfolio/${component.fileName}.jsx`), component.component);
 		});
