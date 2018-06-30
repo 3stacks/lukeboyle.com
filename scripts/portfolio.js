@@ -101,6 +101,8 @@ import {PORTFOLIO_ITEM_NAMES} from "../../constants";`;
 			return acc;
 		}, []);
 
+		shell.rm('-rf', path.resolve(`${__dirname}/../src/pages/portfolio`));
+
 		const reversedComponents = blogPosts.reduce(generateComponent, []);
 
 		fs.copySync(`${__dirname}/../portfolio-items/images`, `${__dirname}/../src/pages/portfolio/images`);

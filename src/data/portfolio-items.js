@@ -55,7 +55,7 @@ export default [
 	{
 		name: PORTFOLIO_ITEM_NAMES.THIS_WEBSITE,
 		snippet: 'A progressively enhancing static site with offline caching and a unique content version control system',
-		link: '/portfolio/website/',
+		link: '/portfolio/this-website/',
 		thumb: websiteSrc,
 		links: [
 			{
