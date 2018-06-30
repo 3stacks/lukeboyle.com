@@ -16,37 +16,85 @@ export default [
         name: PORTFOLIO_ITEM_NAMES.GUESSTIMATE,
         snippet: 'Break your project up into easier to estimate chunks and total it for more accurate estimations',
         link: '/portfolio/guesstimate/',
-        thumb: guesstimateSrc
+        thumb: guesstimateSrc,
+		links: [
+			{
+				label: 'View live site',
+				href: 'https://guesstimate.io/'
+			}
+		]
     },
     {
         name: PORTFOLIO_ITEM_NAMES.SPECTRUM,
         snippet: 'Spectrum is a web-based editor for writing software specification documents.',
         link: '/portfolio/spectrum/',
-        thumb: spectrumSrc
+        thumb: spectrumSrc,
+		links: [
+			{
+				label: 'View live site',
+				href: 'https://spectrum-app.io/'
+			}
+		]
     },
 	{
 		name: PORTFOLIO_ITEM_NAMES.DEBT_DESTROYER,
 		snippet: 'Simulate how long it will take to pay off your debts with support for multiple debts.',
 		link: '/portfolio/debt-destroyer/',
-		thumb: debtDestroyerSrc
+		thumb: debtDestroyerSrc,
+		links: [
+			{
+				label: 'View live site',
+				href: 'https://debtdestroyer.io/'
+			},
+			{
+				label: 'See repository',
+				href: 'https://github.com/3stacks/debt-destroyer'
+			}
+		]
 	},
 	{
 		name: PORTFOLIO_ITEM_NAMES.THIS_WEBSITE,
 		snippet: 'A progressively enhancing static site with offline caching and a unique content version control system',
 		link: '/portfolio/website/',
-		thumb: websiteSrc
+		thumb: websiteSrc,
+		links: [
+			{
+				label: 'See repository',
+				href: 'https://github.com/3stacks/portfolio-2016'
+			}
+		]
 	},
     {
         name: PORTFOLIO_ITEM_NAMES.AGANDER,
         snippet: 'A productivity app aggregating calendar and tasks. Reduce the noise in your daily agenda.',
         link: '/portfolio/agander/',
-        thumb: aganderSrc
+        thumb: aganderSrc,
+		links: [
+			{
+				label: 'View live site',
+				href: 'https://agander.io/'
+			},
+			{
+				label: 'See repository',
+				href: 'https://github.com/3stacks/agander'
+			}
+		]
     },
     {
         name: PORTFOLIO_ITEM_NAMES.SPLIT_VISUALISER,
         snippet: 'A web-app for easily visualising and sharing the muscle engagement of your exercise routine.',
         link: '/portfolio/split-visualiser/',
-        thumb: splitSrc
+        thumb: splitSrc,
+		links: [
+			{
+				label: 'View live site',
+				href: 'http://splitviz.io/'
+			},
+			{
+				label: 'See repository',
+				href: 'https://github.com/stak-digital/split-visualiser'
+			}
+		]
     },
     // {
     //     name: PORTFOLIO_ITEM_NAMES.JOURNEY_TREE,
@@ -58,7 +106,17 @@ export default [
         name: PORTFOLIO_ITEM_NAMES.TYPE_WITH_APPS,
         snippet: 'A web-app for easily visualising and sharing the muscle engagement of your exercise routine.',
         link: '/portfolio/type-with-apps/',
-        thumb: typeSrc
+        thumb: typeSrc,
+		links: [
+			{
+				label: 'View live site',
+				href: 'http://3stacks.github.io/type-with-apps'
+			},
+			{
+				label: 'See repository',
+				href: 'https://github.com/3stacks/type-with-apps'
+			}
+		]
     },
     // {
     //     name: PORTFOLIO_ITEM_NAMES.BROCCOLI,
@@ -70,12 +128,28 @@ export default [
         name: PORTFOLIO_ITEM_NAMES.PYPES,
         snippet: 'A micro-blogging platform with a RESTful interface and an Angular admin panel.',
         link: '/portfolio/pypes/',
-        thumb: pypesSrc
+        thumb: pypesSrc,
+		links: [
+			{
+				label: 'See repository',
+				href: 'https://github.com/3stacks/pypes-face'
+			}
+		]
     },
     {
         name: PORTFOLIO_ITEM_NAMES.VICES,
         snippet: 'A micro-application designed to tell you how much money you\'re wasting on your bad habit.',
         link: '/portfolio/vices/',
-        thumb: vicesSrc
+        thumb: vicesSrc,
+		links: [
+			{
+				label: 'View live site',
+				href: 'https://vices.me/'
+			},
+			{
+				label: 'See repository',
+				href: 'https://github.com/3stacks/vices'
+			}
+		]
     }
 ];
