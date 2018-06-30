@@ -96,12 +96,6 @@ export default [
 			}
 		]
     },
-    // {
-    //     name: PORTFOLIO_ITEM_NAMES.JOURNEY_TREE,
-    //     snippet: 'A multi-platform collection of social networking and business applications for childcare staff and parents.',
-    //     link: '/portfolio/journey-tree/',
-    //     thumb: jtSrc
-    // },
     {
         name: PORTFOLIO_ITEM_NAMES.TYPE_WITH_APPS,
         snippet: 'A web-app for easily visualising and sharing the muscle engagement of your exercise routine.',
@@ -118,12 +112,6 @@ export default [
 			}
 		]
     },
-    // {
-    //     name: PORTFOLIO_ITEM_NAMES.BROCCOLI,
-    //     snippet: 'A case study about the scalability and organisation of SPAs made in Angular 1.5 with comprehensive testing.',
-    //     link: '/portfolio/broccoli-and-co/',
-    //     thumb: broccoliSrc
-    // },
     {
         name: PORTFOLIO_ITEM_NAMES.PYPES,
         snippet: 'A micro-blogging platform with a RESTful interface and an Angular admin panel.',
