@@ -1,6 +1,5 @@
 import aganderSrc from '../assets/img/portfolio/thumbs/agander.jpg';
-import broccoliSrc from '../assets/img/portfolio/thumbs/broccoli.png';
-import jtSrc from '../assets/img/portfolio/thumbs/jt.jpg';
+import ureSrc from '../assets/img/portfolio/thumbs/ure.jpg';
 import pypesSrc from '../assets/img/portfolio/thumbs/pypes.png';
 import spectrumSrc from '../assets/img/portfolio/thumbs/spectrum.png';
 import splitSrc from '../assets/img/portfolio/thumbs/split.png';
@@ -12,6 +11,13 @@ import debtDestroyerSrc from '../assets/img/portfolio/thumbs/debt-destroyer.jpg'
 import {PORTFOLIO_ITEM_NAMES} from '../constants';
 
 export default [
+	{
+		name: PORTFOLIO_ITEM_NAMES.UNDERWRITING_RULES_ENGINE,
+		snippet: 'The Underwriting Rules Engine is a front-end product used to accurately underwrite life insurance applications',
+		link: '/portfolio/underwriting-rules-engine/',
+		thumb: ureSrc,
+		links: []
+	},
     {
         name: PORTFOLIO_ITEM_NAMES.GUESSTIMATE,
         snippet: 'Break your project up into easier to estimate chunks and total it for more accurate estimations',
