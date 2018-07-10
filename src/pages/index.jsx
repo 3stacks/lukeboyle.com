@@ -39,7 +39,7 @@ export default class Index extends React.Component {
                 <div className="max-width-container">
                     <div className="featured-blog-post-block">
                         <h2 className="featured-blog-post-block--title">
-                            Featured Blog Post
+                            Latest Post
                         </h2>
                         <p className="featured-blog-post-block--post-name">
                             Converting a WordPress site to a React static site
