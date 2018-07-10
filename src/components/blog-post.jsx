@@ -17,7 +17,7 @@ export default function BlogPost(
 	const HeadingTag = isSinglePostPage ? 'h1' : 'h2';
 
 	return (
-		<div className={isSinglePostPage ? 'max-width-container blog' : ''}>
+		<div className={isSinglePostPage ? 'blog-single' : ''}>
 			{isSinglePostPage && (
 				<Helmet>
 					{canonical !== '' && (
@@ -34,12 +34,14 @@ export default function BlogPost(
 						</BlogPostTitle>
 					</HeadingTag>
 				</header>
-				<p>
-					<time className="post-meta__date" dateTime={publishDate}>
-						{formatDate(publishDate, 'Do of MMMM, YYYY')}
-					</time>
-				</p>
-				{children}
+				<div className={isSinglePostPage ? 'max-width-container blog-post__content' : ''}>
+					<p>
+						<time className="post-meta__date" dateTime={publishDate}>
+							{formatDate(publishDate, 'Do of MMMM, YYYY')}
+						</time>
+					</p>
+					{children}
+				</div>
 			</article>
 		</div>
 	)

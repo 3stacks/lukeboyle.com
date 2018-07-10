@@ -2,8 +2,8 @@
 @import "../settings/widths";
 
 .blog-post {
-	max-width: 700px;
-	margin: 0 auto 60px;
+	max-width: 100%;
+	margin: 0 0 60px;
 	font-size: 1.8rem;
 	text-align: left;
 
@@ -68,7 +68,7 @@
 			}
 		}
 	}
-	&--content {
+	&__content {
 		max-width: 700px;
 		margin: 0 auto 2rem;
 		font-size: 1.8rem;

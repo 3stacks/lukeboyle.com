@@ -83,6 +83,21 @@ h6 {
 	padding-top: 100px;
 }
 
+.blog-single {
+	header {
+		background: $feature-gradient;
+		@include bottom-triangle;
+		padding: 60px 0;
+		margin: 0 0 60px;
+
+		h1 {
+			max-width: 700px;
+			color: white;
+			margin: 0 auto;
+		}
+	}
+}
+
 .about-main {
 	ul {
 		font-size: 1.8rem;
