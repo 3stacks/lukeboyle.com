@@ -1,20 +1,18 @@
 import React from "react";
 import Helmet from "react-helmet";
+import meSrc from '../assets/img/me.jpeg';
 
 export default class About extends React.Component {
     render() {
         return (
-            <div className="max-width-container about-main">
+            <div className="about-page">
                 <Helmet>
                     <title>About | Luke Boyle</title>
                 </Helmet>
-                <h1 style={{textAlign: 'center'}}>
-                    Front End Developer from
-                    <span style={{display: 'block'}}>
-                        Melbourne, Australia
-                    </span>
-                </h1>
-                <div style={{maxWidth: 700, margin: '0 auto'}}>
+				<div className="about-page__header">
+					<img className="about-page__image" src={meSrc} />
+				</div>
+                <div style={{maxWidth: 700, margin: '0 auto'}} className="max-width-container about-main">
 					<h2>
 						Quick facts:
 					</h2>

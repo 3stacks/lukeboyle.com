@@ -36,6 +36,7 @@
 @import "components/single-portfolio-item";
 @import "components/portfolio-pane";
 @import "components/pagination";
+@import "components/about-page";
 
 * {
 	line-height: 1.5;
@@ -108,4 +109,13 @@ h6 {
 
 small {
 	font-size: 1.2rem;
+}
+
+.layout {
+	&.about {
+		.site-header {
+			background-color: transparent;
+			z-index: 5;
+		}
+	}
 }

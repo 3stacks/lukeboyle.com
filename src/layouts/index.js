@@ -9,8 +9,9 @@ import {META_DESCRIPTION, MY_NAME} from "../constants";
 
 export default class Template extends React.Component {
     render() {
+
         return (
-            <div className="layout">
+            <div className={`layout ${this.props.location.pathname.split('/').join('')}`}>
                 <Helmet
                     title={`${MY_NAME} | Front End Developer`}
                     meta={[
@@ -28,7 +29,7 @@ export default class Template extends React.Component {
                         }
                     ]}
                 />
-                <Header/>
+                <Header />
                 <main className="site-main">
                     {this.props.children()}
                 </main>
