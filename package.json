@@ -20,6 +20,7 @@
     "gatsby-plugin-google-analytics": "latest",
     "gatsby-plugin-offline": "latest",
     "gatsby-plugin-sass": "latest",
+    "gatsby-plugin-sitemap": "^1.2.25",
     "react-typography": "^0.15.10",
     "tachyons-sass": "^4.7.1",
     "typography": "^0.15.10"
