@@ -11,14 +11,7 @@
     justify-content: center;
     padding: 100px 0;
     margin-top: -100px;
-    background: {
-      color: #34495e;
-      image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%2334495e' cx='50' cy='0' r='50'/%3E%3Cg fill='%23354a60' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23364c61' cx='50' cy='100' r='50'/%3E%3Cg fill='%23374d63' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23384e64' cx='50' cy='200' r='50'/%3E%3Cg fill='%23384f66' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%23395168' cx='50' cy='300' r='50'/%3E%3Cg fill='%233a5269' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%233b536b' cx='50' cy='400' r='50'/%3E%3Cg fill='%233c556d' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%233d566e' cx='50' cy='500' r='50'/%3E%3Cg fill='%233e5770' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%233f5872' cx='50' cy='600' r='50'/%3E%3Cg fill='%23405a73' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23415b75' cx='50' cy='700' r='50'/%3E%3Cg fill='%23415c77' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23425e78' cx='50' cy='800' r='50'/%3E%3Cg fill='%23435f7a' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%2344607c' cx='50' cy='900' r='50'/%3E%3Cg fill='%2345627d' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%2346637f' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
-      attachment: fixed;
-      size: contain;
-      position: center;
-    }
-
+    @include background;
     @include breakpoint($m) {
       padding: 60px 0;
       margin-top: -60px;
@@ -40,8 +33,7 @@
   }
 
   &__image {
-    border: 5px solid #fff;
-    width: 200px;
-    height: 200px;
+    width: 210px;
+    height: 210px;
   }
 }

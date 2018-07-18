@@ -14,6 +14,25 @@ export default class About extends React.Component {
 				</div>
                 <div style={{maxWidth: 700, margin: '0 auto'}} className="max-width-container about-main">
 					<h2>
+						Working at Qantas
+					</h2>
+					<p>
+						Working in the Qantas Assure team and building upon the
+						existing front/back end architecture to improve the
+						customer journey
+					</p>
+					<p>
+						Creating server-side GraphQL schemas and Relay/Apollo to
+						consume the GraphQL API to request prices and quotes
+						from third party APIs
+					</p>
+					<p>
+						Building an Express content server with a GraphQL schema for CMS caching
+					</p>
+					<h2>
+						Co-founder of Stak Digital
+					</h2>
+					<h2>
 						Quick facts:
 					</h2>
 					<ul>

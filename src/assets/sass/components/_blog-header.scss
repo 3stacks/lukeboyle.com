@@ -4,7 +4,10 @@
 @import "../settings/widths";
 
 .blog-header {
-	background: $feature-gradient;
+	@include background;
+	margin-top: -60px;
+	margin-bottom: 60px;
+	padding-top: 60px;
 	height: 150px;
 	display: flex;
 	justify-content: center;
@@ -13,11 +16,24 @@
 	color: white;
 	position: relative;
 
-	@include breakpoint($m) {
-		height: 300px;
+	&:after {
+		height: 10px;
+		content: "";
+		position: absolute;
+		left: 0;
+		display: block;
+		z-index: 1;
+		width: 0;
+		bottom: 0;
+		transform: translateY(50px);
+		border-top: 50px solid transparent;
+		border-left: 110vw solid #fff;
 	}
 
-	@include bottom-triangle;
+	@include breakpoint($m) {
+		height: 350px;
+	}
+
 	&--site-name {
 		font-size: 4rem;
 		margin: 0 0 30px;

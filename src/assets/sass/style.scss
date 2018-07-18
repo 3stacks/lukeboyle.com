@@ -80,12 +80,6 @@ h6 {
 	font-size: 3rem;
 }
 
-.blog {
-	padding-top: 100px;
-	max-width: 700px;
-	margin: 0 auto;
-}
-
 .blog-single {
 	header {
 		background: $feature-gradient;
@@ -112,10 +106,21 @@ small {
 }
 
 .layout {
+	&.blog,
 	&.about {
 		.site-header {
 			background-color: transparent;
+			background-image: none;
 			z-index: 5;
 		}
 	}
+
+	&.blog {
+		padding: 0;
+	}
+}
+
+.max-width-container.blog {
+	max-width: 700px;
+	margin: 0 auto;
 }
