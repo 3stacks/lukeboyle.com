@@ -1,6 +1,6 @@
 import React from "react";
 import Helmet from "react-helmet";
-import meSrc from '../assets/img/me.jpeg';
+import meSrc from '../assets/img/me.png';
 
 export default class About extends React.Component {
     render() {
