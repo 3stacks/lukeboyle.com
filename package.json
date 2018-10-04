@@ -32,6 +32,7 @@
     "marked": "^0.4.0",
     "prop-types": "^15.6.0",
     "react": "15.0.0",
-    "title-case": "^2.1.1"
+    "title-case": "^2.1.1",
+    "glob": "^7.1.3"
   }
 }
