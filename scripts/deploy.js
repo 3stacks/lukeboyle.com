@@ -3,10 +3,13 @@ const s3 = new AWS.S3();
 const fs = require('fs');
 const glob = require('glob');
 
-AWS.config.update({
-	region: 'ap-southeast-2',
-	credentials: new AWS.SharedIniFileCredentials()
+new AWS.Config({
+	accessKeyId: process.env.AWS_KEYID,
+	secretAccessKey: process.env.AWS_SECRET,
+	region: 'ap-southeast-2'
 });
+
+console.log(process.env.AWS_KEYID, process.env.AWS_SECRET);
 
 glob('./public/**/*', {}, (err, files) => {
 	files.forEach(file => {
