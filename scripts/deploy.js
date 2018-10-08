@@ -4,7 +4,7 @@ const fs = require('fs');
 const glob = require('glob');
 require('dotenv').config();
 
-new AWS.Config({
+AWS.config = new AWS.Config({
 	credentials: new AWS.Credentials({
 		accessKeyId: process.env.AWS_KEYID,
 		secretAccessKey: process.env.AWS_SECRET,
