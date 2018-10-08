@@ -36,6 +36,6 @@ jobs:
     - run: mkdir src/pages/blog
     - run: yarn run build
     - run: touch ./.env
-    - run: echo AWS_KEYID=$AWS_KEYID >> ./.env
-    - run: echo AWS_SECRET=$AWS_SECRET >> ./.env
-    - run: node scripts/deploy.js
+    - run: echo AWS_ACCESS_KEY_ID=$AWS_KEYID >> ./.env
+    - run: echo AWS_SECRET_ACCESS_KEY=$AWS_SECRET >> ./.env
+    - run: AWS_ACCESS_KEY_ID=$AWS_KEYID AWS_SECRET_ACCESS_KEY=$AWS_SECRET node scripts/deploy.js
