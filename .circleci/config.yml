@@ -37,6 +37,9 @@ jobs:
     - run: mkdir ~/.aws
     - run: yarn run build
     - run: echo [default] aws_access_key_id=$AWS_KEYID aws_secret_access_key=$AWS_SECRET >> ~/.aws/credentials
+    - run: |
+        cat ~/.aws/credentials | while read line
+        do
+          echo "a line: $line"
+        done
     - run: node scripts/deploy.js
-
-
