@@ -5,7 +5,7 @@ const glob = require('glob');
 require('dotenv').config();
 
 new AWS.Config({
-	credentials: new AWS.ECSCredentials({
+	credentials: new AWS.Credentials({
 		accessKeyId: process.env.AWS_KEYID,
 		secretAccessKey: process.env.AWS_SECRET,
 	}),
