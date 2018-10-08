@@ -34,7 +34,6 @@ jobs:
         key: v1-dependencies-{{ checksum "package.json" }}
     - run: git submodule update --init --recursive
     - run: mkdir src/pages/blog
-    - run: mkdir ~/.aws
     - run: yarn run build
     - run: touch ./.env
     - run: echo AWS_KEYID=$AWS_KEYID >> ./.env

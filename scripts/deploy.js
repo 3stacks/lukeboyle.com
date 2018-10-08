@@ -5,12 +5,12 @@ const glob = require('glob');
 require('dotenv').config();
 
 new AWS.Config({
-	accessKeyId: process.env.AWS_KEYID,
-	secretAccessKey: process.env.AWS_SECRET,
+	credentials: new AWS.ECSCredentials({
+		accessKeyId: process.env.AWS_KEYID,
+		secretAccessKey: process.env.AWS_SECRET,
+	}),
 	region: 'ap-southeast-2'
 });
-
-console.log(process.env.AWS_KEYID, process.env.AWS_SECRET);
 
 glob('./public/**/*', {}, (err, files) => {
 	files.forEach(file => {
