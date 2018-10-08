@@ -15,7 +15,7 @@ AWS.config = new AWS.Config({
 console.log(new AWS.Credentials({
 	accessKeyId: process.env.AWS_KEYID,
 	secretAccessKey: process.env.AWS_SECRET,
-});
+}));
 
 glob('./public/**/*', {}, (err, files) => {
 	files.forEach(file => {
