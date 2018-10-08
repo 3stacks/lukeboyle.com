@@ -3,6 +3,11 @@ const s3 = new AWS.S3();
 const fs = require('fs');
 const glob = require('glob');
 
+AWS.config.update({
+	region: 'ap-southeast-2',
+	credentials: new AWS.SharedIniFileCredentials()
+});
+
 glob('./public/**/*', {}, (err, files) => {
 	files.forEach(file => {
 		if (!fs.lstatSync(file).isDirectory()) {
@@ -17,7 +22,7 @@ glob('./public/**/*', {}, (err, files) => {
 				{partSize: 10 * 1024 * 1024, queueSize: 1},
 				(err, data) => {
 					if (err) {
-						console.error(err);
+						throw new Error(err.message);
 					}
 
 					console.log(data);
