@@ -2,6 +2,7 @@ const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
 const fs = require('fs');
 const glob = require('glob');
+require('dotenv').config();
 
 new AWS.Config({
 	accessKeyId: process.env.AWS_KEYID,
