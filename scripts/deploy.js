@@ -12,6 +12,11 @@ AWS.config = new AWS.Config({
 	region: 'ap-southeast-2'
 });
 
+console.log(new AWS.Credentials({
+	accessKeyId: process.env.AWS_KEYID,
+	secretAccessKey: process.env.AWS_SECRET,
+});
+
 glob('./public/**/*', {}, (err, files) => {
 	files.forEach(file => {
 		if (!fs.lstatSync(file).isDirectory()) {
