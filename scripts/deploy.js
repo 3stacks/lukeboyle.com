@@ -2,6 +2,7 @@ const AWS = require('aws-sdk');
 const s3 = new AWS.S3();
 const fs = require('fs');
 const glob = require('glob');
+const mimeTypes = require('mime-types');
 require('dotenv').config();
 
 AWS.config = new AWS.Config({
@@ -16,12 +17,14 @@ glob('./public/**/*', {}, (err, files) => {
 	files.forEach(file => {
 		if (!fs.lstatSync(file).isDirectory()) {
 			const fileContents = fs.readFileSync(`./${file}`);
+			const fileMime = mimeTypes.lookup(file);
 
 			s3.upload(
 				{
 					Bucket: 'lukeboyle.com',
 					Key: file.replace('./public/', ''),
-					Body: fileContents
+					Body: fileContents,
+					ContentType: fileMime
 				},
 				{partSize: 10 * 1024 * 1024, queueSize: 1},
 				(err, data) => {
