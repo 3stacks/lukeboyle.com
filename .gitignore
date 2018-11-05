@@ -36,3 +36,4 @@ blog.jsx
 src/pages/blog
 src/pages/portfolio
 package-lock.json
+.env

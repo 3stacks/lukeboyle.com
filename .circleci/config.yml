@@ -32,7 +32,10 @@ jobs:
         paths:
         - node_modules
         key: v1-dependencies-{{ checksum "package.json" }}
+    - run: git submodule update --init --recursive
+    - run: mkdir src/pages/blog
     - run: yarn run build
-    - run: echo [default] aws_access_key_id=$AWS_KEYID aws_secret_access_key=$AWS_SECRET >> ~/.aws/credentials
-
-
+    - run: touch ./.env
+    - run: echo AWS_ACCESS_KEY_ID=$AWS_KEYID >> ./.env
+    - run: echo AWS_SECRET_ACCESS_KEY=$AWS_SECRET >> ./.env
+    - run: AWS_ACCESS_KEY_ID=$AWS_KEYID AWS_SECRET_ACCESS_KEY=$AWS_SECRET node scripts/deploy.js
