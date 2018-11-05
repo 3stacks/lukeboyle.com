@@ -106,8 +106,9 @@ small {
 }
 
 .layout {
-	&.blog,
-	&.about {
+	&.blog {
+		max-width: 100% !important;
+
 		.site-header {
 			background-color: transparent;
 			background-image: none;
@@ -120,7 +121,7 @@ small {
 	}
 }
 
-.max-width-container.blog {
+.max-width-container.blog-page {
 	max-width: 700px;
 	margin: 0 auto;
 }
