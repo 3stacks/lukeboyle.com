@@ -27,14 +27,14 @@ export default function BlogPost(
 				</Helmet>
 			)}
 			<article className="blog-post">
-				<header>
+				<header className={isSinglePostPage ? 'blog-header' : ''}>
 					<HeadingTag>
 						<BlogPostTitle isLink={!isSinglePostPage} href={slug}>
 							{title}
 						</BlogPostTitle>
 					</HeadingTag>
 				</header>
-				<div className={isSinglePostPage ? 'max-width-container blog-post__content' : ''}>
+				<div className={isSinglePostPage ? 'max-width-container blog-page blog-post__content' : ''}>
 					<p>
 						<time className="post-meta__date" dateTime={publishDate}>
 							{formatDate(publishDate, 'Do of MMMM, YYYY')}

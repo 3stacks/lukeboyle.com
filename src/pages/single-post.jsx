@@ -8,7 +8,7 @@ export default class Tag extends React.Component {
                 <Helmet>
                     <title>Blog Post | Luke Boyle</title>
                 </Helmet>
-                <div className="max-width-container blog">
+                <div className="max-width-container blog-page">
                     <article className="blog-post">
                         <header>
                             <h2 className="blog-post--title">

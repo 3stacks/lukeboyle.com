@@ -81,18 +81,8 @@ h6 {
 }
 
 .blog-single {
-	header {
-		background: $feature-gradient;
-		@include bottom-triangle;
-		padding: 60px 0;
-		margin: 0 0 60px;
-
-		h1 {
-			max-width: 700px;
-			color: white;
-			margin: 0 auto;
-		}
-	}
+	position: relative;
+	transform: translateY(-60px);
 }
 
 .about-main {
@@ -104,6 +94,17 @@ h6 {
 small {
 	font-size: 1.2rem;
 }
+
+div[class*="blog-posts"] {
+	max-width: 100% !important;
+
+	.site-header {
+		background-color: transparent;
+		background-image: none;
+		z-index: 5;
+	}
+}
+
 
 .layout {
 	&.blog {
