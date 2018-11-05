@@ -5,33 +5,27 @@ import meSrc from '../assets/img/me.png';
 export default class About extends React.Component {
     render() {
         return (
-            <div className="about-page">
+            <div className="about-page max-width-container">
                 <Helmet>
                     <title>About | Luke Boyle</title>
                 </Helmet>
-				<div className="about-page__header">
-					<img className="about-page__image" src={meSrc} />
-				</div>
+				{/*<div className="about-page__header">*/}
+					{/*<h1>*/}
+						{/*About*/}
+					{/*</h1>*/}
+				{/*</div>*/}
                 <div style={{maxWidth: 700, margin: '0 auto'}} className="max-width-container about-main">
 					<h2>
-						Working at Qantas
+						Working at SEEK
 					</h2>
 					<p>
-						Working in the Qantas Assure team and building upon the
-						existing front/back end architecture to improve the
-						customer journey
+						Working in the Company Reviews team focused on
+						re-platforming and improving the quality of reviews
 					</p>
 					<p>
-						Creating server-side GraphQL schemas and Relay/Apollo to
-						consume the GraphQL API to request prices and quotes
-						from third party APIs
+						Maintaining legacy C# API, building out new microservice
+						APIs, and improving customer facing and internal UI services.
 					</p>
-					<p>
-						Building an Express content server with a GraphQL schema for CMS caching
-					</p>
-					<h2>
-						Co-founder of Stak Digital
-					</h2>
 					<h2>
 						Quick facts:
 					</h2>
@@ -46,16 +40,16 @@ export default class About extends React.Component {
 							Experience with React, Angular 1.x, and Vue.js
 						</li>
 						<li>
-							Experience with ES2018, GraphQL, Express, babel, webpack and gulp.
-						</li>
-						<li>
-							Interested in working with GoLang commercially
+							Experienced with AWS stack including Lambda, EC2, API Gateway
 						</li>
 					</ul>
 					<h2>
 						Links
 					</h2>
 					<ul>
+						<li>
+							Twitter: <a href="https://twitter.com/tricepidemic">https://twitter.com/tricepidemic</a>
+						</li>
 						<li>
 							LinkedIn: <a href="https://www.linkedin.com/in/luke-boyle">
 								https://www.linkedin.com/in/luke-boyle
@@ -77,6 +71,26 @@ export default class About extends React.Component {
 							For project enquiries; go to <a href="https://stak.digital">https://stak.digital</a> and fill out your information at the bottom
 						</li>
 					</ul>
+					<h2>
+						The site
+					</h2>
+					<h3>
+						Tracking &amp; privacy
+					</h3>
+					<p>
+						The site uses DNS level analytics provided by Cloudflare
+						to give me traffic stats and geographical information.
+						I don't use Google analytics or any other tracking software.
+					</p>
+					<h3>
+						Attributions
+					</h3>
+					<p>
+						The background pattern in the header and footer was
+						provided by <a href="https://www.svgbackgrounds.com">
+							https://www.svgbackgrounds.com
+						</a>.
+					</p>
                 </div>
             </div>
         );
