@@ -83,6 +83,12 @@ h6 {
 .blog-single {
 	position: relative;
 	transform: translateY(-60px);
+
+	.blog-header {
+		@include background;
+		background-color: transparent !important;
+		background-attachment: fixed !important;
+	}
 }
 
 .about-main {
@@ -95,26 +101,13 @@ small {
 	font-size: 1.2rem;
 }
 
-div[class*="blog-posts"] {
+.layout[class*="blog"] {
 	max-width: 100% !important;
 
 	.site-header {
 		background-color: transparent;
 		background-image: none;
 		z-index: 5;
-	}
-}
-
-
-.layout {
-	&.blog {
-		max-width: 100% !important;
-
-		.site-header {
-			background-color: transparent;
-			background-image: none;
-			z-index: 5;
-		}
 	}
 
 	&.blog {
