@@ -233,7 +233,7 @@ import BlogPost from '../../../../components/blog-post.jsx';`;
 									7/11 was an inside job
 								</p>
 							</div>
-							<div className="max-width-container blog">
+							<div className="max-width-container blog-page">
 								${pages[key].reduce((acc, curr) => {
 				return acc + `<${curr.componentName} isBlogPage={true} />\n`;
 			}, '')}
