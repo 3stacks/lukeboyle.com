@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import formatDate from 'date-fns/format';
-import BlogPostTitle from './blog-post-title.jsx';
+import Layout from './layout';
+import BlogPostTitle from './blog-post-title.js';
 import Helmet from 'react-helmet';
 
 export default function BlogPost(
@@ -17,7 +18,7 @@ export default function BlogPost(
 	const HeadingTag = isSinglePostPage ? 'h1' : 'h2';
 
 	return (
-		<div className={isSinglePostPage ? 'blog-single' : ''}>
+		<Layout slug={isSinglePostPage ? 'blog-single' : ''}>
 			{isSinglePostPage && (
 				<Helmet>
 					{canonical !== '' && (
@@ -43,7 +44,7 @@ export default function BlogPost(
 					{children}
 				</div>
 			</article>
-		</div>
+		</Layout>
 	)
 }
 

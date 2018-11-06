@@ -6,14 +6,13 @@ import {MaxWidthContainer} from '../../styled/utils';
 
 const StyledHeader = styled.header`
 	${background}
-    @include background;
     color: white;
     width: 100%;
 `;
 
 export default function Header() {
 	return (
-		<StyledHeader className="site-header">
+		<StyledHeader>
 			<MaxWidthContainer>
 				<SiteNav/>
 			</MaxWidthContainer>

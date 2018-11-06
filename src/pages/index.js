@@ -3,13 +3,14 @@ import Link from "gatsby-link";
 import Helmet from "react-helmet";
 import projects from '../data/portfolio-items';
 import {MY_NAME} from "../constants";
+import Layout from '../components/layout';
 
 export default class Index extends React.Component {
     render() {
         const latestProject = projects[0];
 
         return (
-            <div>
+            <Layout slug="home">
                 <div className="home-head-banner">
                     <h2>
                         {MY_NAME}
@@ -52,7 +53,7 @@ export default class Index extends React.Component {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </Layout>
         )
     }
 }

@@ -1,12 +1,13 @@
 import React from "react";
-import Link from "gatsby-link";
+import {Link} from 'gatsby';
 import Helmet from "react-helmet";
+import Layout from '../components/layout';
 import portfolioItems from '../data/portfolio-items';
 
 export default class Portfolio extends React.Component {
     render() {
         return (
-            <div className="max-width-container">
+            <Layout slug="portfolio">
                 <Helmet
                     title="Development Portfolio | Luke Boyle"
                 />
@@ -29,16 +30,16 @@ export default class Portfolio extends React.Component {
 										<p>
 											{portfolioItem.snippet}
 										</p>
-										<a className="portfolio--item--card--link button primary" href={portfolioItem.link}>
+										<Link className="portfolio--item--card--link button primary" href={portfolioItem.link}>
 											Read More
-										</a>
+										</Link>
 									</div>
 								</div>
 							);
 						})}
 					</div>
                 </div>
-            </div>
+            </Layout>
         )
     }
 }

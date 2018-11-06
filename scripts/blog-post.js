@@ -174,7 +174,7 @@ import BlogPost from '../../../../components/blog-post.jsx';`;
 
 		reversedComponents.forEach(component => {
 			shell.mkdir('-p', path.resolve(`${__dirname}/../src/pages/${component.path.replace(`/${component.fileName}.md`, '')}`));
-			fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/${component.path.replace('.md', '.jsx')}`), component.component);
+			fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/${component.path.replace('.md', '.js')}`), component.component);
 		});
 
 		const components = reversedComponents.reverse();
@@ -214,14 +214,15 @@ import BlogPost from '../../../../components/blog-post.jsx';`;
 			const blogPage = `
 			import React from 'react';
 			import Helmet from 'react-helmet';
+			import Layout from '../components/layout';
 			${pages[key].reduce((acc, curr) => {
-				return acc + `import ${curr.componentName} from '${index === 0 ? './' : '../'}${curr.path.replace('.md', '.jsx')}';\n`;
+				return acc + `import ${curr.componentName} from '${index === 0 ? './' : '../'}${curr.path.replace('.md', '.js')}';\n`;
 			}, '')}
 				
 			export default class Blog extends React.Component {
 				render() {
 					return (
-						<div>
+						<Layout slug="blog">
 							<Helmet>
 								<title>${index === 0 ? 'Blog | Luke Boyle' : `Page ${parseInt(key, 10) - 1} | Blog`}</title>
 							</Helmet>
@@ -244,15 +245,15 @@ import BlogPost from '../../../../components/blog-post.jsx';`;
 									${index !== Object.values(pages).length - 1 ? `<li className="pagination__next"><a href="/blog/${parseInt(key, 10)}">Older</a></li>` : ''}
 								</ul>
 							</div>
-						</div>
+						</Layout>
 					);
 				}
 			}
 		`;
 
 			const fileName = index === 0
-				? `${__dirname}/../src/pages/blog.jsx`
-				: `${__dirname}/../src/pages/blog/${index}.jsx`;
+				? `${__dirname}/../src/pages/blog.js`
+				: `${__dirname}/../src/pages/blog/${index}.js`;
 
 			fs.copySync(`${__dirname}/../blog-posts/images`, `${__dirname}/../src/pages/blog-posts/images`);
 			fs.writeFileSync(path.resolve(fileName), blogPage);

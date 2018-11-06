@@ -1,51 +1,47 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { StaticQuery, graphql } from 'gatsby'
+import React from "react";
+import Helmet from "react-helmet";
+import PropTypes from 'prop-types';
+import Header from './header';
+import Footer from './footer.js';
+import {META_DESCRIPTION, MY_NAME} from "../constants";
+import styled from 'styled-components';
 
-import Header from './header'
-import './layout.css'
+const StyledLayout = styled.div`
+    margin: 0;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+`;
 
-const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <Helmet
-          title={data.site.siteMetadata.title}
-          meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
-          ]}
-        >
-          <html lang="en" />
-        </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: 960,
-            padding: '0px 1.0875rem 1.45rem',
-            paddingTop: 0,
-          }}
-        >
-          {children}
-        </div>
-      </>
-    )}
-  />
-)
+export default class Layout extends React.Component {
+    propTypes = {
+        slug: PropTypes.string.isRequired
+    };
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+	render() {
+		return (
+			<StyledLayout className={`layout ${this.props.slug}`}>
+				<Helmet
+					title={`${MY_NAME} | Front End Developer`}
+					meta={[
+						{
+							name: "description",
+							content: META_DESCRIPTION.HOME
+						},
+						{
+							name: 'google-site-verification',
+							content: 'JKQQdLNK9rQUZnixIsfEuJALcEcfPp9_ee2grLgOVGM'
+						}
+					]}
+				/>
+				<Header />
+				<main className="site-main">
+					{this.props.children}
+				</main>
+				<Footer/>
+			</StyledLayout>
+		)
+	}
 }
-
-export default Layout
