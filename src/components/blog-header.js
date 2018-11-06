@@ -7,7 +7,7 @@ export default styled.div`
 	margin-top: -60px;
 	margin-bottom: 60px;
 	padding-top: 60px;
-	height: 150px;
+	height: 200px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
