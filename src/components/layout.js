@@ -57,7 +57,7 @@ export default class Layout extends React.Component {
 					<link rel="icon" type="image/png" sizes="192x192" href={androidIcon} />
 					<link rel="icon" type="image/png" sizes="32x32" href={favicon} />
 				</Helmet>
-				<Header />
+				<Header isHome/>
 				<main className="site-main">
 					{this.props.children}
 				</main>

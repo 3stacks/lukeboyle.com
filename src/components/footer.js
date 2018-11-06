@@ -13,13 +13,9 @@ const StyledFooter = styled.div`
     
     ${bp(WIDTHS.M, `
         height: 150px;
-        
-        &:before {
-            transform: translateY(-50px);
-        }  
     `)}
 
-    &.inner {
+    & .inner {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -27,7 +23,7 @@ const StyledFooter = styled.div`
         font-size: 1.4rem;
     
         a {
-            color: rgba(white, 0.7);
+            color: white;
         
             &:hover {
                 color: white;
@@ -35,9 +31,9 @@ const StyledFooter = styled.div`
         }
     }
     
-    &.copyright {
-        color: rgba(white, 0.7);
-        font-size: 1.4rem;
+    & .copyright {
+        color: white;
+        font-size: 1.2rem;
     }
 }
 `;
@@ -45,7 +41,7 @@ const StyledFooter = styled.div`
 export default function Footer({...otherProps}) {
     return (
         <StyledFooter>
-            <MaxWidthContainer className="inner max-width-container">
+            <MaxWidthContainer className="inner">
                 <small className="copyright">
                     &copy; Luke Boyle 93' til infinity
                 </small>

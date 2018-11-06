@@ -13,12 +13,16 @@ const StyledNav = styled.div`
     flex-wrap: wrap;
     height: 100px;
     
+    a {
+        color: white;
+    }
+    
     ${bp(WIDTHS.M, `
         flex-wrap: nowrap;
         height: 60px;     
     `)}
     
-    &.logo {
+    & .logo {
         margin: 0;
         font-size: 2.5rem;
         font-family: 'Roboto Slab', serif;
@@ -46,12 +50,13 @@ const StyledNav = styled.div`
         padding: 0;
         width: 100%;
         text-align: center;
+        color: white;
         
         ${bp(WIDTHS.M, `
             text-align: right;
         `)}
         
-        &.item {
+        & .item {
           display: inline-block;
           margin: 0;
         
@@ -74,10 +79,10 @@ const StyledNav = styled.div`
     }
 `;
 
-export default function SiteNav({isFrontPage, ...otherProps}) {
+export default function SiteNav({isHome, ...otherProps}) {
     return (
         <StyledNav>
-            {isFrontPage ? (
+            {isHome ? (
                 <h1 className=".logo">
                     {MY_NAME}
                 </h1>
@@ -115,9 +120,9 @@ export default function SiteNav({isFrontPage, ...otherProps}) {
 }
 
 SiteNav.propTypes = {
-    isFrontPage: PropTypes.bool
+    isHome: PropTypes.bool
 };
 
 SiteNav.defaultProps = {
-    isFrontPage: false
+    isHome: false
 };

@@ -39,25 +39,18 @@ export const topTriangle = `
 	&:before {
 		${triangle}
 		top: 0;
-		transform: translateY(-60px);
 		border-bottom: 50px solid transparent;
 		border-right: 110vw solid #fff;
 		border-left: none;
 	}
 `;
 
-export function bottomTriangle(height = 0, color = COLORS.PRIMARY_GRADIENT_LIGHT) {
-	return `
-		position: relative;
-		&:after {
-			${triangle}
-			height: ${height};
-			bottom: 0;
-			transform: translateY(50px);
-			border: {
-				bottom: 50px solid transparent;
-				right: 110vw solid ${color};
-			}
-		}
-	`;
-}
+export const bottomTriangle = `
+	position: relative;
+	&:after {
+		${triangle}
+		bottom: 0;
+		border-top: 50px solid transparent;
+		border-left: 110vw solid #fff;
+	}
+`;

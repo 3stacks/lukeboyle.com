@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'gatsby';
 import styled from 'styled-components';
 import COLORS from '../styled/colors';
 
@@ -28,14 +29,26 @@ const styles = `
 	${props => props.isSecondary && `
 		background-color: white;
 		color: $primary-color;
+		border: 1px solid white;
 		
 		&:hover,
 		&:focus {
 			background-color: #e9e9e9;
 		}
-		border: 1px solid white;
 	`}
 `;
 
 export default styled.button`${styles}`;
-export const LinkButton = styled.a`${styles}`;
+export const LinkButton = styled(Link)`${styles}`;
+export const SecondaryLinkButton = styled(Link)`
+	${styles}
+	background-color: white;
+	color: ${COLORS.PRIMARY};
+	border: 1px solid white;
+
+	&:hover,
+	&:focus {
+		color: ${COLORS.PRIMARY_GRADIENT_LIGHT};
+		background-color: #e9e9e9;
+	}
+`;
