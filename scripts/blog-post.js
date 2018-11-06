@@ -71,7 +71,7 @@ function generateComponent(acc, curr, index) {
 	const postContents = curr.contents;
 	let imports = `
 import React from 'react';
-import BlogPost from '../../../../components/blog-post.jsx';`;
+import BlogPost from '../../../../components/blog-post.js';`;
 
 	renderer.image = function(href, title, text) {
 		const rawFilename = getFileNameFromPath(href);
@@ -174,7 +174,7 @@ import BlogPost from '../../../../components/blog-post.jsx';`;
 
 		reversedComponents.forEach(component => {
 			shell.mkdir('-p', path.resolve(`${__dirname}/../src/pages/${component.path.replace(`/${component.fileName}.md`, '')}`));
-			fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/${component.path.replace('.md', '.jsx')}`), component.component);
+			fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/${component.path.replace('.md', '.js')}`), component.component);
 		});
 
 		const components = reversedComponents.reverse();
@@ -211,48 +211,52 @@ import BlogPost from '../../../../components/blog-post.jsx';`;
 		}, {});
 
 		Object.keys(pages).forEach((key, index) => {
+			const rootDir = index === 0 ? '..' : '../..';
 			const blogPage = `
 			import React from 'react';
 			import Helmet from 'react-helmet';
+			import BlogHeader from '${rootDir}/components/blog-header';
+			import Layout from '${rootDir}/components/layout';
+			import {MaxWidthContainer} from '${rootDir}/styled/utils';
 			${pages[key].reduce((acc, curr) => {
-				return acc + `import ${curr.componentName} from '${index === 0 ? './' : '../'}${curr.path.replace('.md', '.jsx')}';\n`;
+				return acc + `import ${curr.componentName} from '${index === 0 ? './' : '../'}${curr.path.replace('.md', '.js')}';\n`;
 			}, '')}
 				
 			export default class Blog extends React.Component {
 				render() {
 					return (
-						<div>
+						<Layout slug="blog">
 							<Helmet>
 								<title>${index === 0 ? 'Blog | Luke Boyle' : `Page ${parseInt(key, 10) - 1} | Blog`}</title>
 							</Helmet>
-							<div className="blog-header">
-								<h1 className="blog-header--site-name">
+							<BlogHeader>
+								<h1 className="site-name">
 									Boyleing Point
 								</h1>
-								<p className="blog-header--description">
+								<p className="description">
 									7/11 was an inside job
 								</p>
-							</div>
-							<div className="max-width-container blog-page">
+							</BlogHeader>
+							<MaxWidthContainer className="blog-page">
 								${pages[key].reduce((acc, curr) => {
 				return acc + `<${curr.componentName} isBlogPage={true} />\n`;
 			}, '')}
-							</div>
-							<div class="max-width-container">
+							</MaxWidthContainer>
+							<MaxWidthContainer>
 								<ul className="pagination">
 									${index > 0 ? `<li><a href="${key === '2' ? '/blog' : `/blog/${parseInt(key, 10) - 2}`}">Newer</a></li>` : ''}
 									${index !== Object.values(pages).length - 1 ? `<li className="pagination__next"><a href="/blog/${parseInt(key, 10)}">Older</a></li>` : ''}
 								</ul>
-							</div>
-						</div>
+							</MaxWidthContainer>
+						</Layout>
 					);
 				}
 			}
 		`;
 
 			const fileName = index === 0
-				? `${__dirname}/../src/pages/blog.jsx`
-				: `${__dirname}/../src/pages/blog/${index}.jsx`;
+				? `${__dirname}/../src/pages/blog.js`
+				: `${__dirname}/../src/pages/blog/${index}.js`;
 
 			fs.copySync(`${__dirname}/../blog-posts/images`, `${__dirname}/../src/pages/blog-posts/images`);
 			fs.writeFileSync(path.resolve(fileName), blogPage);

@@ -37,3 +37,12 @@ src/pages/blog
 src/pages/portfolio
 package-lock.json
 .env
+# Project dependencies
+.cache
+node_modules
+yarn-error.log
+
+# Build directory
+/public
+.DS_Store
+

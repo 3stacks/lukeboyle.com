@@ -3,8 +3,27 @@ module.exports = {
     title: 'Luke Boyle | Front End Developer',
   },
   plugins: [
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
-    'gatsby-plugin-offline'
+    'gatsby-plugin-offline',
+    {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+            name: `images`,
+            path: `${__dirname}/src/assets/img`,
+        },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
+    {
+        resolve: `gatsby-plugin-manifest`,
+        options: {
+            start_url: '/',
+            background_color: '#34495e',
+            theme_color: '#34495e',
+            display: 'minimal-ui',
+            icon: 'src/assets/img/android-icon-192x192.png', // This path is relative to the root of the site.
+        },
+    },
   ]
 };

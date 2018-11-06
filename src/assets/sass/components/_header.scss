@@ -1,8 +1,0 @@
-@import "../settings/colors";
-@import "../helpers/mixins";
-
-.site-header {
-  @include background;
-  color: white;
-  width: 100%;
-}

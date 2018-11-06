@@ -10,9 +10,5 @@ export const PORTFOLIO_ITEM_NAMES = {
 	SPECTRUM: 'Spectrum',
 	AGANDER: 'Agander',
 	SPLIT_VISUALISER: 'Split Visualiser',
-	JOURNEY_TREE: 'Journey Tree',
-	TYPE_WITH_APPS: 'Type With Apps',
-	BROCCOLI: 'Broccoli and Co.',
-	PYPES: 'Pypes',
 	VICES: 'Vices',
 };
