@@ -102,34 +102,6 @@ export default [
 			}
 		]
     },
-    // {
-    //     name: PORTFOLIO_ITEM_NAMES.TYPE_WITH_APPS,
-    //     snippet: 'A web-app for easily visualising and sharing the muscle engagement of your exercise routine.',
-    //     link: '/portfolio/type-with-apps/',
-    //     thumb: typeSrc,
-	// 	links: [
-	// 		{
-	// 			label: 'View live site',
-	// 			href: 'http://3stacks.github.io/type-with-apps'
-	// 		},
-	// 		{
-	// 			label: 'See repository',
-	// 			href: 'https://github.com/3stacks/type-with-apps'
-	// 		}
-	// 	]
-    // },
-    // {
-    //     name: PORTFOLIO_ITEM_NAMES.PYPES,
-    //     snippet: 'A micro-blogging platform with a RESTful interface and an Angular admin panel.',
-    //     link: '/portfolio/pypes/',
-    //     thumb: pypesSrc,
-	// 	links: [
-	// 		{
-	// 			label: 'See repository',
-	// 			href: 'https://github.com/3stacks/pypes-face'
-	// 		}
-	// 	]
-    // },
     {
         name: PORTFOLIO_ITEM_NAMES.VICES,
         snippet: 'A micro-application designed to tell you how much money you\'re wasting on your bad habit.',

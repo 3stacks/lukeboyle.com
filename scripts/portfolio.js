@@ -56,13 +56,15 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 				
 			export default class ${camelCaseName} extends React.Component {
 				render() {
-					const portfolioContent = portfolioData.find(data => data.name === PORTFOLIO_ITEM_NAMES.${fileName.toUpperCase().split('-').join('_')});
 				
+					const portfolioContent = portfolioData.find(data => data.name === PORTFOLIO_ITEM_NAMES.${fileName.toUpperCase().split('-').join('_')});
+					
 					return (
 						<Layout>
+							${fileName}
 							<MaxWidthContainer>
 								<Helmet>
-									<title>{\`\${portfolioContent.name} | Project Case Study\`}</title>
+									<title>{portfolioContent.name} | Project Case Study</title>
 									<meta name="description" content={portfolioContent.snippet}/>
 								</Helmet>
 								<PortfolioItem>
@@ -73,6 +75,7 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 												return (
 													<a
 														target="_blank"
+														rel="noopener noreferrer"
 														className="link button primary"
 														href={link.href}
 													>

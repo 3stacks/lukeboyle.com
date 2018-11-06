@@ -1,5 +1,3 @@
-import COLORS from 'colors';
-
 export function putInRows(itemsPerRow, spacingSize) {
 	return `
 		width: calc(${100 / itemsPerRow}% - ${ (spacingSize / itemsPerRow) * (itemsPerRow - 1)});

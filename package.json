@@ -26,6 +26,8 @@
   },
   "devDependencies": {
     "@lukeboyle/get-filename-from-path": "^1.0.3",
+    "babel-plugin-styled-components": "^1.8.0",
+    "gatsby-plugin-styled-components": "^3.0.1",
     "aws-sdk": "^2.329.0",
     "camel-case": "^3.0.0",
     "dotenv": "^6.0.0",
