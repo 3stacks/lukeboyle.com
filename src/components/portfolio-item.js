@@ -1,16 +1,18 @@
-@import "../settings/colors";
-@import "../settings/widths";
-@import "../vendor/breakpoint";
+import styled from 'styled-components';
+import WIDTHS from '../styled/widths';
+import {bp} from '../styled/mixins';
 
-.single-portfolio-item {
+export default styled.div`
 	padding: 60px 0;
 
-	&__title {
+	& .title {
 		font-size: 4rem;
 		text-align: center;
 	}
 
-	&__content {
+	& .content {
+		max-width: 700px;
+		margin: 0 auto;
 		font-size: 1.8rem;
 		figure {
 			margin: 0;
@@ -25,15 +27,15 @@
 		}
 	}
 
-	&__buttons {
+	& .buttons {
 		padding-top: 50px;
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
 		margin-bottom: 50px;
 
-		@include breakpoint($m) {
-			margin-bottom: 100px;
-		}
+		${bp(WIDTHS.M, `
+			margin-bottom: 100px;		
+		`)}
 	}
-}
+`;

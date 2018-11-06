@@ -10,7 +10,7 @@ import {bp} from '../styled/mixins';
 import WIDTHS from '../styled/widths';
 import {MaxWidthContainer} from "../styled/utils";
 
-const StyledPost = styled.article`
+export const StyledPost = styled.article`
 	max-width: 100%;
 	margin: 0 0 60px;
 	font-size: 1.8rem;
@@ -139,7 +139,7 @@ export default function BlogPost(
 						</BlogPostTitle>
 					</HeadingTag>
 				</HeaderTag>
-				<MaxWidthContainer className={isSinglePostPage ? 'blog-page .content' : ''}>
+				<MaxWidthContainer className={isSinglePostPage ? 'blog-page content' : ''}>
 					<p>
 						<time className=".date" dateTime={publishDate}>
 							{formatDate(publishDate, 'Do of MMMM, YYYY')}

@@ -62,7 +62,10 @@ p {
 
 .blog-single {
   position: relative;
-  transform: translateY(-60px);
+}
+
+.blog-single h1 {
+  margin-top: 0;
 }
 
 .blog-single .blog-header {
@@ -139,4 +142,8 @@ a:focus {
 
 .pagination__next {
   margin-left: auto;
+}
+
+.blog-page {
+  max-width: 700px;
 }

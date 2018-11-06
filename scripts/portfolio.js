@@ -3,9 +3,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const marked = require('marked');
 const renderer = require('./utils/renderer');
-const formatDate = require('date-fns/format');
 const camelCase = require('camel-case');
-const titleCase = require('title-case');
 const shell = require('shelljs');
 const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
 
@@ -17,7 +15,7 @@ renderer.heading = function(code, level) {
 	if (level === 1) {
 		return `
 			<header>
-				<h1 className="single-portfolio-item__title">${code}</h1>
+				<h1 className="title">${code}</h1>
 			</header>
 		`;
 	} else {
@@ -31,8 +29,12 @@ function generateComponent(acc, curr, index) {
 	let imports = `
 import React from 'react';
 import portfolioData from '../../data/portfolio-items';
+import PortfolioItem from '../../components/portfolio-item';
 import Helmet from 'react-helmet';
-import {PORTFOLIO_ITEM_NAMES} from "../../constants";`;
+import {MaxWidthContainer} from '../../styled/utils';
+import Layout from '../../components/layout';
+import {StyledPost} from '../../components/blog-post';
+import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 
 	renderer.image = function(href, title, text) {
 		const rawFilename = getFileNameFromPath(href);
@@ -57,30 +59,32 @@ import {PORTFOLIO_ITEM_NAMES} from "../../constants";`;
 					const portfolioContent = portfolioData.find(data => data.name === PORTFOLIO_ITEM_NAMES.${fileName.toUpperCase().split('-').join('_')});
 				
 					return (
-						<div className="max-width-container">
-							<Helmet>
-								<title>{portfolioContent.name} | Project Case Study</title>
-								<meta name="description" content={portfolioContent.snippet}/>
-							</Helmet>
-							<div className="single-portfolio-item">
-								<div className="single-portfolio-item__content">
-									${bodyMarkup}
-									<div className="single-portfolio-item__buttons">
-										{portfolioContent.links.map(link => {
-											return (
-												<a
-													target="_blank"
-													className="single-portfolio-item__link button primary"
-													href={link.href}
-												>
-													{link.label}
-												</a>
-											);
-										})}
-									</div>
-								</div>
-							</div>
-						</div>
+						<Layout>
+							<MaxWidthContainer>
+								<Helmet>
+									<title>{\`\${portfolioContent.name} | Project Case Study\`}</title>
+									<meta name="description" content={portfolioContent.snippet}/>
+								</Helmet>
+								<PortfolioItem>
+									<StyledPost className="content">
+										${bodyMarkup}
+										<div className="buttons">
+											{portfolioContent.links.map(link => {
+												return (
+													<a
+														target="_blank"
+														className="link button primary"
+														href={link.href}
+													>
+														{link.label}
+													</a>
+												);
+											})}
+										</div>
+									</StyledPost>
+								</PortfolioItem>
+							</MaxWidthContainer>
+						</Layout>
 					);
 				}
 			}

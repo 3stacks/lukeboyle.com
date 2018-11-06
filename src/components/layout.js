@@ -23,7 +23,7 @@ const StyledLayout = styled.div`
 `;
 
 export default class Layout extends React.Component {
-    propTypes = {
+    static propTypes = {
         slug: PropTypes.string.isRequired
     };
 
