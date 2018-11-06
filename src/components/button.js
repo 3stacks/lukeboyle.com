@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import COLORS from '../styled/colors';
 
-export default styled.button`
+const styles = `
 	display: inline-flex;
 	align-items: center;
 	color: white;
@@ -36,3 +36,6 @@ export default styled.button`
 		border: 1px solid white;
 	`}
 `;
+
+export default styled.button`${styles}`;
+export const LinkButton = styled.a`${styles}`;

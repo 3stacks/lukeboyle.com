@@ -71,7 +71,7 @@ function generateComponent(acc, curr, index) {
 	const postContents = curr.contents;
 	let imports = `
 import React from 'react';
-import BlogPost from '../../../../components/blog-post.jsx';`;
+import BlogPost from '../../../../components/blog-post.js';`;
 
 	renderer.image = function(href, title, text) {
 		const rawFilename = getFileNameFromPath(href);
@@ -214,7 +214,7 @@ import BlogPost from '../../../../components/blog-post.jsx';`;
 			const blogPage = `
 			import React from 'react';
 			import Helmet from 'react-helmet';
-			import Layout from '../components/layout';
+			import Layout from ${index === 0 ? '\'../components/layout\'' : '\'../../components/layout\''};
 			${pages[key].reduce((acc, curr) => {
 				return acc + `import ${curr.componentName} from '${index === 0 ? './' : '../'}${curr.path.replace('.md', '.js')}';\n`;
 			}, '')}

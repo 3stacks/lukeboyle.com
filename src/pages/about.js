@@ -1,20 +1,15 @@
 import React from "react";
 import Helmet from "react-helmet";
-import meSrc from '../assets/img/me.png';
+import Layout from '../components/layout';
 
 export default class About extends React.Component {
     render() {
         return (
-            <div className="about-page max-width-container">
-                <Helmet>
-                    <title>About | Luke Boyle</title>
-                </Helmet>
-				{/*<div className="about-page__header">*/}
-					{/*<h1>*/}
-						{/*About*/}
-					{/*</h1>*/}
-				{/*</div>*/}
-                <div style={{maxWidth: 700, margin: '0 auto'}} className="max-width-container about-main">
+            <Layout slug="about">
+				<Helmet>
+					<title>About | Luke Boyle</title>
+				</Helmet>
+				<div style={{maxWidth: 700, margin: '0 auto'}} className="max-width-container about-main">
 					<h2>
 						Working at SEEK
 					</h2>
@@ -52,8 +47,8 @@ export default class About extends React.Component {
 						</li>
 						<li>
 							LinkedIn: <a href="https://www.linkedin.com/in/luke-boyle">
-								https://www.linkedin.com/in/luke-boyle
-							</a>
+							https://www.linkedin.com/in/luke-boyle
+						</a>
 						</li>
 						<li>
 							Personal Github: <a href="https://github.com/3stacks">https://github.com/3stacks</a>
@@ -88,11 +83,11 @@ export default class About extends React.Component {
 					<p>
 						The background pattern in the header and footer was
 						provided by <a href="https://www.svgbackgrounds.com">
-							https://www.svgbackgrounds.com
-						</a>.
+						https://www.svgbackgrounds.com
+					</a>.
 					</p>
-                </div>
-            </div>
+				</div>
+			</Layout>
         );
     }
 }

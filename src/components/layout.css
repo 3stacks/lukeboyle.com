@@ -60,3 +60,12 @@ pre {
   background-color: #f7f7f7;
   border-radius: 3px;
 }
+
+header,
+footer {
+  flex-grow: 0;
+}
+
+main {
+  flex-grow: 1;
+}

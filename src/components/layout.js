@@ -5,6 +5,8 @@ import Header from './header';
 import Footer from './footer.js';
 import {META_DESCRIPTION, MY_NAME} from "../constants";
 import styled from 'styled-components';
+import './layout.css';
+import '../assets/css/normalize.css';
 
 const StyledLayout = styled.div`
     margin: 0;
