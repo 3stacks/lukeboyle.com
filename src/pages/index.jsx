@@ -51,37 +51,6 @@ export default class Index extends React.Component {
                             Read more
                         </Link>
                     </div>
-                    <div className="npm-packages-block">
-                        <h2 className="npm-packages-block--title">
-                            Open Source Highlights
-                        </h2>
-                        <p className="npm-packages-block--text">
-                            I'm an advocate for open source and many of my
-                            projects are under the MIT license.
-                        </p>
-                        <ul>
-                            <li>
-                                <a href="https://github.com/stak-digital/units/" target="_blank">
-                                    Units - Lodash for unit conversions
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.npmjs.com/package/@lukeboyle/mouse-near" target="_blank">
-                                    mouse-near
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.npmjs.com/package/@lukeboyle/when-clicked-outside" target="_blank">
-                                    when-clicked-outside
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://www.npmjs.com/package/@lukeboyle/wordpress-to-markdown" target="_blank">
-                                    wordpress-to-markdown
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
         )
