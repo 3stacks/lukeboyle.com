@@ -11,7 +11,7 @@ const StyledHeader = styled.header`
     z-index: 5;
 `;
 
-export default function Header({isHome}) {
+export default function Header({isHome = false}) {
 	return (
 		<StyledHeader>
 			<MaxWidthContainer>
