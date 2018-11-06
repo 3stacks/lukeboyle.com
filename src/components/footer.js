@@ -33,7 +33,7 @@ const StyledFooter = styled.div`
     
     & .copyright {
         color: white;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 }
 `;

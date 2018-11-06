@@ -125,3 +125,18 @@ a:focus {
    color: #46637f
  }
 
+.pagination {
+  display: flex;
+  width: 25%;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  padding-top: 40px;
+}
+
+.pagination li {
+  list-style: none;
+}
+
+.pagination__next {
+  margin-left: auto;
+}

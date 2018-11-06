@@ -1,6 +1,7 @@
 import React from "react"
 import Helmet from "react-helmet"
 import {Link} from 'gatsby';
+import {MaxWidthContainer} from '../styled/utils';
 
 export default function NotFoundError() {
     return (
@@ -8,15 +9,16 @@ export default function NotFoundError() {
             <Helmet>
                 <title>Not Found</title>
             </Helmet>
-            <h1>Not Found</h1>
-            <p>
-                The page you are looking for doesn't exist.
-                I'll be honest, it was probably my fault.
-            </p>
-
-            <Link href="/">
-                Go back to Home
-            </Link>
+            <MaxWidthContainer>
+				<h1>Not Found</h1>
+				<p>
+					The page you are looking for doesn't exist.
+					I'll be honest, it was probably my fault.
+				</p>
+				<Link href="/">
+					Go back to Home
+				</Link>
+            </MaxWidthContainer>
         </div>
     );
 }
