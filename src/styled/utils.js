@@ -10,3 +10,8 @@ export const MaxWidthContainer = styled.div`
 		padding: 0 30px;		
 	`)}
 `;
+
+export const ScreenReaderText = styled.span`
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+`;

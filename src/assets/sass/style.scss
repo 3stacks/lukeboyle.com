@@ -1,25 +1,3 @@
-@charset "UTF-8";
-
-* {
-	box-sizing: border-box;
-}
-
-// Vendor
-@import "vendor/normalize";
-
-// Settings
-@import "settings/type";
-@import "settings/colors";
-
-// Helpers
-@import "helpers/mixins";
-@import "helpers/utilities";
-@import "helpers/sticky-footer";
-
-// Elements
-@import "elements/links";
-
-// Components
 @import "components/home-head-banner";
 @import "components/blog-header";
 @import "components/latest-project-block";

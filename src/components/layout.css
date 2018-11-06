@@ -69,3 +69,27 @@ footer {
 main {
   flex-grow: 1;
 }
+
+.disclaimer-block {
+  background: #FF851B;
+  color: white;
+  white-space: normal;
+}
+
+a {
+  color: #34495e;
+  transition: color 0.5s ease-out, border-color 0.25s ease-out;
+  text-decoration: none;
+  border-bottom: 1px solid #34495e;
+}
+
+a:hover {
+  border-bottom: 1px solid transparent;
+  color: #46637f
+}
+
+a:focus {
+   border-bottom: 1px solid transparent;
+   color: #46637f
+ }
+
