@@ -47,7 +47,7 @@ const HomeHeadBanner = styled.div`
 `;
 
 const FeatureBlogPostBlock = styled.div`
-	padding: 60px 0;
+	padding: 0px 0 60px;
 	text-align: center;
 	font-size: 0;
 	
@@ -94,7 +94,7 @@ export default class Index extends React.Component {
 						{MY_NAME}
 					</h2>
 					<p>
-						Front End Developer
+						King of the web
 					</p>
                 </HomeHeadBanner>
 				<LatestProjectBlock>
@@ -123,7 +123,7 @@ export default class Index extends React.Component {
 						<p className="post-name">
 							Top albums of 2018
 						</p>
-						<LinkButton to="/blog-posts/2018/01/converting-wordpress-site-to-static">
+						<LinkButton to="/blog-posts/2018/11/top-albums-of-2018">
 							Read more
 						</LinkButton>
 					</FeatureBlogPostBlock>

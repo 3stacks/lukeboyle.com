@@ -25,7 +25,7 @@ export function bp(size, content) {
 }
 
 export const triangle = `
-	height: 10px;
+	height: 0;
 	content: "";
 	position: absolute;
 	left: 0;

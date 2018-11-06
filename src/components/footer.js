@@ -9,7 +9,7 @@ const StyledFooter = styled.div`
     ${background}
     ${topTriangle}
     background-color: ${COLORS.PRIMARY};
-    height: 80px;
+    height: 100px;
     
     ${bp(WIDTHS.M, `
         height: 150px;
