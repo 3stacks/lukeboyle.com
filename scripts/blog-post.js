@@ -211,12 +211,12 @@ import BlogPost from '../../../../components/blog-post.js';`;
 		}, {});
 
 		Object.keys(pages).forEach((key, index) => {
-			const componentRootDir = index === 0 ? '../components' : '../../components/';
+			const componentRootDir = index === 0 ? '../components' : '../../components';
 			const blogPage = `
 			import React from 'react';
 			import Helmet from 'react-helmet';
-			import BlogHeader from ${componentRootDir}/blog-header;
-			import Layout from ${componentRootDir}/layout;
+			import BlogHeader from '${componentRootDir}/blog-header';
+			import Layout from '${componentRootDir}/layout';
 			${pages[key].reduce((acc, curr) => {
 				return acc + `import ${curr.componentName} from '${index === 0 ? './' : '../'}${curr.path.replace('.md', '.js')}';\n`;
 			}, '')}
