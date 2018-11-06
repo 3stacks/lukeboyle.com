@@ -211,12 +211,13 @@ import BlogPost from '../../../../components/blog-post.js';`;
 		}, {});
 
 		Object.keys(pages).forEach((key, index) => {
-			const componentRootDir = index === 0 ? '../components' : '../../components';
+			const rootDir = index === 0 ? '..' : '../..';
 			const blogPage = `
 			import React from 'react';
 			import Helmet from 'react-helmet';
-			import BlogHeader from '${componentRootDir}/blog-header';
-			import Layout from '${componentRootDir}/layout';
+			import BlogHeader from '${rootDir}/components/blog-header';
+			import Layout from '${rootDir}/components/layout';
+			import {MaxWidthContainer} from '${rootDir}/styled/utils';
 			${pages[key].reduce((acc, curr) => {
 				return acc + `import ${curr.componentName} from '${index === 0 ? './' : '../'}${curr.path.replace('.md', '.js')}';\n`;
 			}, '')}
@@ -229,24 +230,24 @@ import BlogPost from '../../../../components/blog-post.js';`;
 								<title>${index === 0 ? 'Blog | Luke Boyle' : `Page ${parseInt(key, 10) - 1} | Blog`}</title>
 							</Helmet>
 							<BlogHeader>
-								<h1 className=".site-name">
+								<h1 className="site-name">
 									Boyleing Point
 								</h1>
-								<p className=".description">
+								<p className="description">
 									7/11 was an inside job
 								</p>
 							</BlogHeader>
-							<div className="max-width-container blog-page">
+							<MaxWidthContainer className="blog-page">
 								${pages[key].reduce((acc, curr) => {
 				return acc + `<${curr.componentName} isBlogPage={true} />\n`;
 			}, '')}
-							</div>
-							<div class="max-width-container">
+							</MaxWidthContainer>
+							<MaxWidthContainer>
 								<ul className="pagination">
 									${index > 0 ? `<li><a href="${key === '2' ? '/blog' : `/blog/${parseInt(key, 10) - 2}`}">Newer</a></li>` : ''}
 									${index !== Object.values(pages).length - 1 ? `<li className="pagination__next"><a href="/blog/${parseInt(key, 10)}">Older</a></li>` : ''}
 								</ul>
-							</div>
+							</MaxWidthContainer>
 						</Layout>
 					);
 				}
