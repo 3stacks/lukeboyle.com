@@ -61,7 +61,6 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 					
 					return (
 						<Layout>
-							${fileName}
 							<MaxWidthContainer>
 								<Helmet>
 									<title>{portfolioContent.name} | Project Case Study</title>
