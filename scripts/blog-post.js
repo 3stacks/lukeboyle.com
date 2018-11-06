@@ -211,10 +211,12 @@ import BlogPost from '../../../../components/blog-post.js';`;
 		}, {});
 
 		Object.keys(pages).forEach((key, index) => {
+			const componentRootDir = index === 0 ? '../components' : '../../components/';
 			const blogPage = `
 			import React from 'react';
 			import Helmet from 'react-helmet';
-			import Layout from ${index === 0 ? '\'../components/layout\'' : '\'../../components/layout\''};
+			import BlogHeader from ${componentRootDir}/blog-header;
+			import Layout from ${componentRootDir}/layout;
 			${pages[key].reduce((acc, curr) => {
 				return acc + `import ${curr.componentName} from '${index === 0 ? './' : '../'}${curr.path.replace('.md', '.js')}';\n`;
 			}, '')}
@@ -226,14 +228,14 @@ import BlogPost from '../../../../components/blog-post.js';`;
 							<Helmet>
 								<title>${index === 0 ? 'Blog | Luke Boyle' : `Page ${parseInt(key, 10) - 1} | Blog`}</title>
 							</Helmet>
-							<div className="blog-header">
-								<h1 className="blog-header--site-name">
+							<BlogHeader>
+								<h1 className=".site-name">
 									Boyleing Point
 								</h1>
-								<p className="blog-header--description">
+								<p className=".description">
 									7/11 was an inside job
 								</p>
-							</div>
+							</BlogHeader>
 							<div className="max-width-container blog-page">
 								${pages[key].reduce((acc, curr) => {
 				return acc + `<${curr.componentName} isBlogPage={true} />\n`;
