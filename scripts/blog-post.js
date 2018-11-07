@@ -4,6 +4,7 @@ const path = require('path');
 const formatDate = require('date-fns/format');
 const camelCase = require('camel-case');
 const titleCase = require('title-case');
+const truncate = require('truncate-html');
 const shell = require('shelljs');
 const marked = require('marked');
 const renderer = new marked.Renderer();
@@ -71,6 +72,7 @@ function generateComponent(acc, curr, index) {
 	const postContents = curr.contents;
 	let imports = `
 import React from 'react';
+import {Link} from 'gatsby';
 import BlogPost from '../../../../components/blog-post.js';`;
 
 	renderer.image = function(href, title, text) {
@@ -127,7 +129,9 @@ import BlogPost from '../../../../components/blog-post.js';`;
 
 	if (postStatus !== 'draft') {
 		const postContents = getMarkupFromMarkdown(contents.contents);
+		const truncatedContents = truncate(postContents, 500, {decodeEntities: true});
 
+		console.log(truncatedContents);
 		acc.push({
 			path: curr.path,
 			fileName,
@@ -144,8 +148,17 @@ import BlogPost from '../../../../components/blog-post.js';`;
 							publishDate="${contents.metaData.post_date}"
 							slug="/${curr.path.replace('.md', '')}"
 							canonical="${canonicalUrl}"
-						>
-							${postContents}
+						> 
+							{this.props.isBlogPage ? (
+								<div>
+									${postContents}
+									<p>
+										<Link to="/${curr.path.replace('.md', '')}">Read more</Link>
+									</p>
+								</div>
+							) : (
+								${postContents}
+							)}
 						</BlogPost>
 					);
 				}
