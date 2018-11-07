@@ -15,7 +15,7 @@ export default function NotFoundError() {
 					The page you are looking for doesn't exist.
 					I'll be honest, it was probably my fault.
 				</p>
-				<Link href="/">
+				<Link to="/">
 					Go back to Home
 				</Link>
             </MaxWidthContainer>
