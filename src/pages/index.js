@@ -19,7 +19,7 @@ const HomeHeadBanner = styled.div`
 	height: 250px;
 	
 	${bp(WIDTHS.M, `
-        height: 400px;
+        height: 300px;
 	`)}
 
 	h2 {
