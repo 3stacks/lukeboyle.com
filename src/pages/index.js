@@ -121,9 +121,9 @@ export default class Index extends React.Component {
 							Latest Post
 						</h2>
 						<p className="post-name">
-							Top albums of 2018
+							Mac Miller
 						</p>
-						<LinkButton to="/blog-posts/2018/11/top-albums-of-2018">
+						<LinkButton to="/blog-posts/2018/11/mac-miller">
 							Read more
 						</LinkButton>
 					</FeatureBlogPostBlock>
