@@ -9,6 +9,10 @@ const marked = require('marked');
 const sortBy = require('lodash/sortBy');
 const renderer = new marked.Renderer();
 
+renderer.blockquote = function(htmlString) {
+	return `<BlockQuote>${htmlString}</BlockQuote>`;
+};
+
 renderer.code = function(code, language) {
 	return `<pre><code>
 		${code.split('\n').map(codeBlock => {
@@ -72,7 +76,8 @@ function generateComponent(acc, curr, index) {
 	const postContents = curr.contents;
 	let imports = `
 import React from 'react';
-import BlogPost from '../../../../components/blog-post.js';`;
+import BlogPost from '../../../../components/blog-post.js';
+import BlockQuote from '../../../../components/block-quote.js';`;
 
 	renderer.image = function(href, title, text) {
 		const rawFilename = getFileNameFromPath(href);
