@@ -18,7 +18,7 @@ export default styled.div`
 	${bottomTriangle}
 	
 	${bp(WIDTHS.M, `
-		height: 400px;
+		height: 300px;
 	`)}
 
 	& .site-name {
