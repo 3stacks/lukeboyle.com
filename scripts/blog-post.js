@@ -6,6 +6,7 @@ const camelCase = require('camel-case');
 const titleCase = require('title-case');
 const shell = require('shelljs');
 const marked = require('marked');
+const sortBy = require('lodash/sortBy');
 const renderer = new marked.Renderer();
 
 renderer.code = function(code, language) {
@@ -132,6 +133,7 @@ import BlogPost from '../../../../components/blog-post.js';`;
 			path: curr.path,
 			fileName,
 			componentName: camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
+			publishDate: new Date(contents.metaData.post_date).getTime(),
 			component: `
 			${imports}
 				
@@ -169,6 +171,7 @@ import BlogPost from '../../../../components/blog-post.js';`;
 		}, []);
 
 		const reversedComponents = blogPosts.reduce(generateComponent, []);
+		const componentsSortedByDate = sortBy(reversedComponents, 'publishDate');
 
 		shell.rm('-rf', path.resolve(`${__dirname}/../src/pages/blog-posts`));
 
@@ -177,7 +180,7 @@ import BlogPost from '../../../../components/blog-post.js';`;
 			fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/${component.path.replace('.md', '.js')}`), component.component);
 		});
 
-		const components = reversedComponents.reverse();
+		const components = componentsSortedByDate.reverse();
 		const postsPerPage = 4;
 		const pages = components.reduce((acc, curr, index) => {
 			const pagesSoFar = Object.keys(acc);
