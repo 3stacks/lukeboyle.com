@@ -109,6 +109,11 @@ export default function SiteNav({isHome, ...otherProps}) {
                         Blog
                     </Link>
                 </li>
+				<li className="item">
+					<Link to="/music">
+						Music
+					</Link>
+				</li>
                 <li className="item">
                     <Link to="/about">
                         About
