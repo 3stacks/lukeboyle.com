@@ -20,6 +20,14 @@ const StyledLayout = styled.div`
     flex-direction: column;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
+    
+    .block-header {
+		font-size: 2.5rem;
+	}
+	
+	.title {
+		font-size: 3.5rem;
+	}
 `;
 
 export default class Layout extends React.Component {

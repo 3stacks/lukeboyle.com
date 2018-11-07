@@ -75,9 +75,6 @@ export const LatestProjectBlock = styled.div`
 	${topTriangle}
 	${bottomTriangle}
 
-	.title {
-		font-size: 2.5rem;
-	}
 	.snippet {
 		font-size: 1.6rem;
 	}
@@ -99,7 +96,7 @@ export default class Index extends React.Component {
                 </HomeHeadBanner>
 				<LatestProjectBlock>
 					<MaxWidthContainer isSmall>
-						<h2>
+						<h2 className="block-header">
 							Latest Project
 						</h2>
 						<div className="project">
@@ -117,12 +114,12 @@ export default class Index extends React.Component {
 				</LatestProjectBlock>
                 <MaxWidthContainer>
                     <FeatureBlogPostBlock>
-						<h2 className="title">
+						<h2 className="block-header">
 							Latest Post
 						</h2>
-						<p className="post-name">
+						<h3 className="title">
 							Mac Miller
-						</p>
+						</h3>
 						<LinkButton to="/blog-posts/2018/11/mac-miller">
 							Read more
 						</LinkButton>
