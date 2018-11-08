@@ -55,7 +55,7 @@ const ArtistList = styled.ol`
 	}
 `;
 
-const MainHeader = styled.h1`
+const MainHeader = styled.h2`
 	text-align: center;
 	font-size: 3rem;
 	margin-bottom: 20px;
@@ -63,13 +63,45 @@ const MainHeader = styled.h1`
 
 const BodyWrapper = styled.div`
 	display: grid;
-	grid-template-columns: 1fr 3fr;
-	grid-column-gap: 20px;
+	grid-template-columns: 1fr;
+	grid-gap: 20px;
+	padding-top: 20px;
+	
+	.left {
+		align-self: start;
+		
+		${bp(1000, `
+			position: sticky;
+			top: -1px;
+		`)}
+	
+		h2 {
+			text-align: center;
+			
+			${bp(1000, `
+				text-align: left;
+				font-size: 2.8rem;
+			`)}
+			
+			${bp(1027, `
+				font-size: 3rem;
+			`)}
+		}
+	}
+	
+	${bp(1000, `
+		grid-template-columns: 1fr 3fr;
+	`)}
 	
 	ul {
 		list-style: none;
 		padding: 0;
 		margin: 0;
+		text-align: center;
+		
+		${bp(1000, `
+			text-align: left;
+		`)}
 	}
 	
 	li {
@@ -87,8 +119,8 @@ export default class Portfolio extends React.Component {
 				/>
 				<MaxWidthContainer>
 					<BodyWrapper>
-						<div>
-							<MainHeader style={{textAlign: 'left'}}>
+						<div className="left">
+							<MainHeader>
 								Recent posts
 							</MainHeader>
 							<ul>
