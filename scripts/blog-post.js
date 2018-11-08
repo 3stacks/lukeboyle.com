@@ -139,6 +139,8 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 			fileName,
 			componentName: camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
 			publishDate: new Date(contents.metaData.post_date).getTime(),
+			postCategory: contents.metaData.post_category || 'blog',
+			postTitle: contents.metaData.post_title,
 			component: `
 			${imports}
 				
@@ -177,6 +179,16 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 
 		const reversedComponents = blogPosts.reduce(generateComponent, []);
 		const componentsSortedByDate = sortBy(reversedComponents, 'publishDate');
+		const musicPosts = [];
+		const postsWithoutMusicPosts = componentsSortedByDate.filter(component => {
+			if (component.postCategory === 'music') {
+				musicPosts.push(component);
+
+				return false;
+			}
+
+			return true;
+		});
 
 		shell.rm('-rf', path.resolve(`${__dirname}/../src/pages/blog-posts`));
 
@@ -185,7 +197,16 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 			fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/${component.path.replace('.md', '.js')}`), component.component);
 		});
 
-		const components = componentsSortedByDate.reverse();
+		fs.writeFileSync(path.resolve(`${__dirname}/../src/data/music-posts.json`), JSON.stringify(musicPosts.reverse().map(({postTitle, path, fileName, componentName}) => {
+			return {
+				path,
+				fileName,
+				componentName,
+				postTitle
+			};
+		}), null, '\t'));
+
+		const components = postsWithoutMusicPosts.reverse();
 		const postsPerPage = 4;
 		const pages = components.reduce((acc, curr, index) => {
 			const pagesSoFar = Object.keys(acc);
