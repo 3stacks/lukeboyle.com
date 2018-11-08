@@ -7,6 +7,7 @@ import {MaxWidthContainer} from '../styled/utils';
 import {bp} from '../styled/mixins';
 import {LinkButton} from "../components/button";
 import artistData from '../data/artists.json';
+import albumData from '../data/albums.json';
 
 const ArtistList = styled.ol`
 	list-style: none;
@@ -84,6 +85,30 @@ export default class Portfolio extends React.Component {
 										</h2>
 										<p className="play-count">
 											{artist.playcount} plays
+										</p>
+									</li>
+								);
+							})}
+						</ArtistList>
+					</MaxWidthContainer>
+					<MainHeader>
+						My most played albums
+					</MainHeader>
+					<MaxWidthContainer>
+						<ArtistList>
+							{albumData.map(album => {
+								const imageToShow = album.image.find(image => image.size === 'large') || album.image[0];
+								const imageSrc = imageToShow['#text'];
+								return (
+									<li key={album.mbid}>
+										<div className="image-wrapper">
+											<img src={imageSrc} alt=""/>
+										</div>
+										<h2 className="artist-name">
+											{album.name}
+										</h2>
+										<p className="play-count">
+											{album.playcount} plays
 										</p>
 									</li>
 								);

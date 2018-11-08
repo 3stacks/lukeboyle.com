@@ -48,3 +48,4 @@ yarn-error.log
 .DS_Store
 
 artists.json
+albums.json
