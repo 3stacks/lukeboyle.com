@@ -133,6 +133,32 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 
 	if (postStatus !== 'draft') {
 		const postContents = getMarkupFromMarkdown(contents.contents);
+		let parsedContents = postContents;
+
+		if (contents.metaData.post_type === 'top_list') {
+			imports = `${imports}\nimport AlbumBlock from '../../../../components/album-block';`;
+			const rawParts = postContents.split('<h2>');
+			const parts = rawParts.slice(1, rawParts.length);
+			const contents = parts.reduce((acc, curr) => {
+				const albumTitle = curr.split('</h2>')[0];
+				const artistStart = curr.split('<h3>');
+				const artist = artistStart[artistStart.length - 1].split('</h3>')[0];
+				const imageStart = curr.split('<img ');
+				const imageBits = imageStart[imageStart.length - 1].split('/>')[0];
+				const snippet = curr.split('/></p>')[1];
+				return `${acc}\n<AlbumBlock>
+	<h2 className="title">${albumTitle}</h2>
+	<h3 className="artist">${artist}</h3>
+	<img ${imageBits} />
+	${snippet === '\n' ? '\n' : `<div className="snippet">
+		${curr.split('/></p>')[1]}
+	</div>\n`}
+</AlbumBlock>
+`;
+			}, '');
+
+			parsedContents = contents;
+		}
 
 		acc.push({
 			path: curr.path,
@@ -140,6 +166,7 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 			componentName: camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
 			publishDate: new Date(contents.metaData.post_date).getTime(),
 			postCategory: contents.metaData.post_category || 'blog',
+			postType: contents.metaData.post_type || 'text-post',
 			postTitle: contents.metaData.post_title,
 			component: `
 			${imports}
@@ -154,7 +181,7 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 							slug="/${curr.path.replace('.md', '')}"
 							canonical="${canonicalUrl}"
 						>
-							${postContents}
+							${parsedContents}
 						</BlogPost>
 					);
 				}
