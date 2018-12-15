@@ -118,9 +118,9 @@ export default class Index extends React.Component {
 							Latest Post
 						</h2>
 						<h3 className="title">
-							Mac Miller
+							A case study for iterative development
 						</h3>
-						<LinkButton to="/blog-posts/2018/11/mac-miller">
+						<LinkButton to="/blog-posts/2018/11/case-study-for-iterative-development">
 							Read more
 						</LinkButton>
 					</FeatureBlogPostBlock>
