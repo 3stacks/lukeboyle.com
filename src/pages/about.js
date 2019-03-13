@@ -1,6 +1,23 @@
 import React from "react";
 import Helmet from "react-helmet";
 import Layout from '../components/layout';
+import mozillaSrc from '../assets/img/mozilla.gif';
+import rcaSrc from '../assets/img/rca.gif';
+import berrySrc from '../assets/img/berry.gif';
+import styled from 'styled-components';
+
+const SupportContainer = styled.ul`
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 30px;
+	list-style: none;
+	margin: 0 0 30px;
+	padding: 0;
+	
+	img {
+		max-width: 100%;
+	}
+`;
 
 export default class About extends React.Component {
     render() {
@@ -29,13 +46,13 @@ export default class About extends React.Component {
 							Co-founder of <a href="https://stak.digital">Stak Digital</a>
 						</li>
 						<li>
-							Open-source advocate
+							Open-source/data privacy advocate
 						</li>
 						<li>
-							Experience with React, Angular 1.x, and Vue.js
+							Experienced with React, Angular 1.x, and Vue.js
 						</li>
 						<li>
-							Experienced with AWS stack including Lambda, EC2, API Gateway
+							Experienced with AWS services including Lambda, EC2, API Gateway
 						</li>
 					</ul>
 					<h2>
@@ -66,6 +83,20 @@ export default class About extends React.Component {
 							For project enquiries; go to <a href="https://stak.digital">https://stak.digital</a> and fill out your information at the bottom
 						</li>
 					</ul>
+					<h2>
+						Proudly supporting
+					</h2>
+					<SupportContainer>
+						<li>
+							<img src={mozillaSrc} alt="The Mozilla Foundation"/>
+						</li>
+						<li>
+							<img src={rcaSrc} alt="Red Cross Australia"/>
+						</li>
+						<li>
+							<img src={berrySrc} alt="Berry Street"/>
+						</li>
+					</SupportContainer>
 					<h2>
 						The site
 					</h2>
