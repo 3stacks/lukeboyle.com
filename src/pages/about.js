@@ -60,12 +60,9 @@ export default class About extends React.Component {
 					</h2>
 					<ul>
 						<li>
-							Twitter: <a href="https://twitter.com/tricepidemic">https://twitter.com/tricepidemic</a>
-						</li>
-						<li>
 							LinkedIn: <a href="https://www.linkedin.com/in/luke-boyle">
-							https://www.linkedin.com/in/luke-boyle
-						</a>
+								https://www.linkedin.com/in/luke-boyle
+							</a>
 						</li>
 						<li>
 							Personal Github: <a href="https://github.com/3stacks">https://github.com/3stacks</a>
@@ -80,7 +77,7 @@ export default class About extends React.Component {
 							Stack Overflow: <a href="https://stackoverflow.com/users/story/5602665">https://stackoverflow.com/users/story/5602665</a>
 						</li>
 						<li>
-							For project enquiries; go to <a href="https://stak.digital">https://stak.digital</a> and fill out your information at the bottom
+							For project enquiries; go to <a href="https://stak.digital/contact">https://stak.digital/contact</a> and fill out your information at the bottom
 						</li>
 					</ul>
 					<h2>
