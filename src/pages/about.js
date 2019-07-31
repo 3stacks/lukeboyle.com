@@ -77,7 +77,7 @@ export default class About extends React.Component {
 							Stack Overflow: <a href="https://stackoverflow.com/users/story/5602665">https://stackoverflow.com/users/story/5602665</a>
 						</li>
 						<li>
-							For project enquiries; go to <a href="https://stak.digital/contact">https://stak.digital/contact</a> and fill out your information at the bottom
+							For project enquiries: <a href="https://stak.digital/contact">https://stak.digital/contact</a>
 						</li>
 					</ul>
 					<h2>
