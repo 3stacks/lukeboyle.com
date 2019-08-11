@@ -21,3 +21,9 @@ jobs:
         npm run build --if-present
   deploy:
     runs-on: ubuntu-18.04
+    steps:
+    - name: Deploy
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
+      run: AWS_ACCESS_KEY_ID=$AWS_KEYID AWS_SECRET_ACCESS_KEY=$AWS_SECRET node scripts/deploy.js
