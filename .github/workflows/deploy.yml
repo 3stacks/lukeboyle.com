@@ -1,0 +1,29 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@master
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        version: 10.x
+    - name: Build
+      env:
+        LAST_FM_API_KEY: ${{ secrets.LAST_FM_API_KEY }}
+      run: |
+        echo GATSBY_LAST_FM_API_KEY=${{secrets.LAST_FM_API_KEY}} >> .env
+        npm install
+        mkdir src/pages/blog
+        npm run build --if-present
+    - name: Deploy
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
+      run: node scripts/deploy.js
