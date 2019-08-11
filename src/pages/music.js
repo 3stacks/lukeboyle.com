@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 import Helmet from "react-helmet";
 import Layout from '../components/layout';
 import {Link} from 'gatsby';
@@ -111,6 +112,21 @@ const BodyWrapper = styled.div`
 `;
 
 export default class Portfolio extends React.Component {
+	state = {
+		artistData: [],
+		albumData: []
+	};
+
+	componentDidMount = async () => {
+		try {
+			const response = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&period=3month&user=lookboil&api_key=${process.env.GATSBY_LAST_FM_API_KEY}&format=json`);
+
+			console.log(response.data.topartists.artist.slice(0, 12), null, '\t');
+		} catch (e) {
+			console.error(e);
+		}
+	};
+
 	render() {
 		return (
 			<Layout slug="music">
