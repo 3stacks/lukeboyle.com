@@ -1,16 +1,15 @@
 import React from "react";
 import axios from 'axios';
+import {graphql} from "gatsby";
 import Helmet from "react-helmet";
 import Layout from '../components/layout';
 import {Link} from 'gatsby';
-import portfolioItems from '../data/portfolio-items';
 import styled from 'styled-components';
 import {MaxWidthContainer} from '../styled/utils';
 import {bp} from '../styled/mixins';
-import {LinkButton} from "../components/button";
+import postData from '../data/music-posts.json';
 import artistData from '../data/artists.json';
 import albumData from '../data/albums.json';
-import postData from '../data/music-posts.json';
 
 const ArtistList = styled.ol`
 	list-style: none;
@@ -45,9 +44,10 @@ const ArtistList = styled.ol`
 	}
 	
 	.artist-name {
-		font-size: 1.8rem;
+		font-size: 1.7rem;
 		margin-bottom: 1rem;
 		padding-top: 1rem;
+		text-align: center;
 	}
 	
 	.play-count {
@@ -113,15 +113,24 @@ const BodyWrapper = styled.div`
 
 export default class Portfolio extends React.Component {
 	state = {
-		artistData: [],
-		albumData: []
+		artistData: artistData,
+		albumData: albumData
 	};
 
 	componentDidMount = async () => {
-		try {
-			const response = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&period=3month&user=lookboil&api_key=${process.env.GATSBY_LAST_FM_API_KEY}&format=json`);
+		const API_KEY = this.props.data.site.siteMetadata.lastFMApiKey;
 
-			console.log(response.data.topartists.artist.slice(0, 12), null, '\t');
+		try {
+			const artistResponse = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=12&period=1month&user=lookboil&api_key=${API_KEY}&format=json`);
+			const albumResponse = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&limit=12&user=lookboil&api_key=${API_KEY}&format=json`);
+
+			this.setState(state => {
+				return {
+					...state,
+					artistData: artistResponse.data.topartists.artist,
+					albumData: albumResponse.data.topalbums.album
+				}
+			})
 		} catch (e) {
 			console.error(e);
 		}
@@ -156,7 +165,7 @@ export default class Portfolio extends React.Component {
 								Who I've been listening to
 							</MainHeader>
 							<ArtistList>
-								{artistData.map(artist => {
+								{this.state.artistData.map(artist => {
 									const imageToShow = artist.image.find(image => image.size === 'large') || artist.image[0];
 									const imageSrc = imageToShow['#text'];
 									return (
@@ -178,7 +187,7 @@ export default class Portfolio extends React.Component {
 								My most played albums
 							</MainHeader>
 							<ArtistList>
-								{albumData.map(album => {
+								{this.state.albumData.map(album => {
 									const imageToShow = album.image.find(image => image.size === 'large') || album.image[0];
 									const imageSrc = imageToShow['#text'];
 									return (
@@ -203,3 +212,13 @@ export default class Portfolio extends React.Component {
 		)
 	}
 }
+
+export const query = graphql`
+	query MusicPageQuery {
+		site {
+			siteMetadata {
+				lastFMApiKey
+			}
+		}
+	}
+`;

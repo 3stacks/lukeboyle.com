@@ -1,6 +1,9 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: 'Luke Boyle | Front End Developer',
+    lastFMApiKey: process.env.LAST_FM_API_KEY
   },
   plugins: [
     'gatsby-plugin-styled-components',
