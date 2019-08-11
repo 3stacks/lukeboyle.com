@@ -17,6 +17,7 @@ jobs:
       env:
         LAST_FM_API_KEY: ${{ secrets.LAST_FM_API_KEY }}
       run: |
+        echo GATSBY_LAST_FM_API_KEY=${{secrets.LAST_FM_API_KEY}} >> .env
         npm install
         mkdir src/pages/blog
         npm run build --if-present
