@@ -13,8 +13,6 @@ AWS.config = new AWS.Config({
 	region: 'ap-southeast-2'
 });
 
-console.log(process.env.AWS_ACCESS_KEY_ID)
-
 glob('./public/**/*', {}, (err, files) => {
 	files.forEach(file => {
 		if (!fs.lstatSync(file).isDirectory()) {
