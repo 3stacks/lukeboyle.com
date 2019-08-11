@@ -1,6 +1,0 @@
-[submodule "blog-posts"]
-	path = blog-posts
-	url = https://github.com/3stacks/blog-posts
-[submodule "portfolio-items"]
-	path = portfolio-items
-	url = https://github.com/3stacks/portfolio-items
