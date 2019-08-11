@@ -5,16 +5,14 @@ import WIDTHS from '../styled/widths';
 import {bp} from '../styled/mixins';
 
 const StyledBlockQuote = styled.blockquote`
-	& .body {
-		display: inline-flex;
-		font-size: 1.9rem;
-		line-height: 1.5;
-		font-family: 'Roboto Slab';
-		
-		${bp(WIDTHS.M, `
-			font-size: 2.4rem;
-		`)}
-	}
+	display: inline-flex;
+	font-size: 1.9rem;
+	line-height: 1.5;
+	font-family: 'Roboto Slab';
+	
+	${bp(WIDTHS.M, `
+		font-size: 2.4rem;
+	`)}
 	
 	p {
 		margin: 0;
@@ -38,11 +36,11 @@ const StyledBlockQuote = styled.blockquote`
 export default function BlockQuote({citation, children}) {
 	return (
 		<StyledBlockQuote className="block-quote" cite={citation}>
-			<p className="body">
-				<FaQuoteLeft className="icon"/>
+			<FaQuoteLeft className="icon"/>
+			<span className="body">
 				{children}
-				<FaQuoteRight className="icon"/>
-			</p>
+			</span>
+			<FaQuoteRight className="icon"/>
 		</StyledBlockQuote>
 	);
 }
