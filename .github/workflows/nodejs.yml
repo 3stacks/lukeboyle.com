@@ -1,4 +1,4 @@
-name: Node CI
+name: CI
 
 on: [push]
 
@@ -21,9 +21,13 @@ jobs:
         npm install
         mkdir src/pages/blog
         npm run build --if-present
+  deploy:
+    runs-on: ubuntu-18.04
+
+    branches:
+    - master
+
     - name: Deploy
-      branches:
-      - master
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
