@@ -101,7 +101,7 @@ for the jobs yet.
 The steps field is quite simple in this example. For each step, you can chose to specify the `uses` field ([docs](https://help.github.com/en/articles/configuring-a-workflow#referencing-actions-in-your-workflow)).
 The format for this argument is `{owner}/{repo}@{ref}` or `{owner}/{repo}/{path}@{ref}.`. You can reference actions in
 your current repository or you can reference standard actions as per the example above. 
-`actions/checkout@master` checks out - you got it - master. `actions/setup-node@v1` sets up Node, probably 
+`actions/checkout@master` checks out the current branch. `actions/setup-node@v1` sets up Node, probably 
 through a Docker container. You can provide arguments to the action using the `with` key.
 
 Now, the magic begins. Go to your repository and visit: `https://github.com/{yourName}/{yourRepo}/actions`. You'll be prompted
