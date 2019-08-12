@@ -104,7 +104,7 @@ your current repository or you can reference standard actions as per the example
 `actions/checkout@master` checks out - you got it - master. `actions/setup-node@v1` sets up Node, probably 
 through a Docker container. You can provide arguments to the action using the `with` key.
 
-Now, the magic begins. Go to your repository and visit: https://githubs/{yourName}/{yourRepo}/actions. You'll be prompted
+Now, the magic begins. Go to your repository and visit: `https://github.com/{yourName}/{yourRepo}/actions`. You'll be prompted
 to enable Actions for this repository. Hit enable and then commit your `ci.yml` file, push it up and check the Actions tab.
 You should begin to see your commits start popping up under the relevant action.
 
@@ -172,7 +172,7 @@ jobs:
 That is much cleaner. Well now that we've got it building successfully, we have to move onto deploying our code.
 If you look at the env key, this is how we provide environment variables to the step. 
 These are accessible in node scripts via `process.env`. `SOME_API_KEY` in this example is a hardcoded string. Github
-also provides a secrets manager within your repository.
+also provides a secrets manager within your repository. Don't worry about that node script yet.
 
 ![github-secrets](/images/posts/github-actions/secrets.JPG)
 
@@ -197,9 +197,109 @@ more than enough. I also use Cloudflare to cache the assets, so the majority of 
  the Cloudflare CDN, rather than S3, so my usage stays very low for S3. This also has the benefit of using Cloudflare's 
  smart routing to make my Sydney hosted S3 bucket much faster for international users.
  
- ## Github pages deployment
- 
- 
+## Github pages deployment
+
+See the example repository here: [https://github.com/3stacks/github-actions-react-pages](https://github.com/3stacks/github-actions-react-pages)
+
+[COMING SOON]
+
+Visit `https://github.com/{yourName}/{yourRepo}/settings` and scroll to the Github Pages section.
+Here you may enable github pages on the master branch, root folder (i.e. you build into root directory) or master 
+branch /docs. I'd prefer the latter for cleanliness sake, even if it's not semantically correct. 
+
+![Github pages setup](/images/posts/github-actions/pages-setup.JPG)
+
+From here, our deployment is dead simple. We just have to make sure that our build command moves the generated files 
+to the /docs folder.
+
+## S3 Deployment
+
+See the example repository here: [https://github.com/3stacks/github-actions-react-s3](https://github.com/3stacks/github-actions-react-s3)
+
+First I'll quickly go through how to get your S3 bucket and IAM keys and be a bit responsible in the process.
+
+### Create the bucket
+
+- Go to your AWS panel and navigate to S3.
+- Click `Create Bucket` and give it a url friendly name the same as the domain you will use for.
+- Choose whatever region is most appropriate for you. I chose Sydney (ap-southeast-2) because most of my traffic is Australian
+- Skip step 2
+- On step 3, untick the `Block all public access` checkbox
+- Visit your bucket, go to Permissions, then to Bucket Policy and paste the below in (replacing the arn)
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": "s3:GetObject",
+            "Resource": "arn:aws:s3:::your-arn-here/*"
+        }
+    ]
+}
+``` 
+
+With this policy, any user that queries can get any object in the bucket, so please, don't store anything private in there.
+
+- In Properties, go to Static web hosting
+- check "Use this bucket to host a website"
+- make the index document `index.html`
+- your endpoint will be displayed there
+
+### Creating the IAM user
+
+We're going to start by making a policy that is our deployment policy for this bucket. It ensures that if the keys to 
+an IAM user leak all you'll be giving away is access to that single bucket.
+
+- Go to IAM
+- Go to Policies on the left
+- Change tabs to the JSON editor, rather than the Visual Editor
+- Paste in the follow, replacing the ARN with your own bucket's ARN
+- Name your policy. I called mine {projectName}DeployPolicy
+
+```json
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:::your-arn-here.io"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::your-arn-here.io/*"
+        }
+    ]
+}
+```
+
+- On the left, navigate to Users
+- Create a User
+- Give it a relevant name ({projectName}DeployUser?), tick `Programmatic Access`
+- Select `Attach existing policies directly`
+- Search for your newly created policy and attach it to the user
+- Click through the wizard
+- Take note of your Access Key ID and Secret access key
+
+### Storing and using the secrets
+
+- Visit [https://github.com/3stacks/{yourProject}/settings/secrets](https://github.com/3stacks/{yourProject}/settings/secrets)
+- Click 'Add a new secret'
+- Call it `AWS_ACCESS_KEY_ID` and copy the corresponding value from your newly created IAM user
+- Repeat for `AWS_SECRET` 
+
+Now your Github Action will pick these up in deploy.yml. Now, if you copy the contents of 
 
 ## Advanced Bits
 
