@@ -27,13 +27,13 @@ Off the top of my head, I can recall these:
 
 - Projects (Kanban boards with automated status changes)
 - Sponsor program
-- Package Registry (npm, NuGet, Ruby gems, all in the same platform)
+- Package Registry (publishing for npm, NuGet, Ruby gems, all in the same platform)
 - Github Actions (my personal favourite)
 
 Github actions is now in open beta
-(You can opt in here: [https://github.com/features/actions](https://github.com/features/actions))
+(you can opt in here: [https://github.com/features/actions](https://github.com/features/actions))
 and it enables you to set up containerised builds, testing, deployments
-in response to several signals, including push, pull requests, tags.
+in response to many github events (push, pull requests, tags, schedule).
 
 The process is much the same as something like CircleCI, Travis, or Buildkite.
 The integration for CI checks on pull requests and commits has been in
@@ -42,3 +42,168 @@ the build.
 
 In this post I'll be showing you how to set up to build and release
 a single-page app running React.
+
+Keep in mind that the v1 Github Actions syntax has been deprecated, so make sure you are looking 
+at the yaml documentation. There's a handy warning at the top of the deprecated pages:
+
+> The documentation at https://developer.github.com/actions and support for the HCL syntax in GitHub Actions will be deprecated on September 30, 2019. Documentation for the new limited public beta using the YAML syntax is available on https://help.github.com. 
+
+Find the docs here: [https://help.github.com/en/categories/automating-your-workflow-with-github-actions](https://help.github.com/en/categories/automating-your-workflow-with-github-actions)
+
+For this example, I'll be using [Create React App](https://github.com/facebook/create-react-app). Initialise that if 
+you'd like to follow along, or just retrofit an old, simple project.
+
+There's two actions I want to create
+
+- CI Only
+- CI and Deploy
+
+Let's create the action files.
+
+Create a folder in the root of your repo `.github/workflows`
+Create two files in that folder called `ci.yml` and `deploy.yml`
+
+Let's look at the ci.yml file and add some boilerplate
+
+`ci.yml`
+```yaml
+name: CI
+
+on: [pull_request, push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        version: 10.x
+    - name: Build
+      run: |
+        npm install
+        npm run build --if-present
+
+```
+
+The first thing to note is on line 3, there is an option called `on` ([docs for `on`](https://help.github.com/en/articles/configuring-a-workflow#triggering-a-workflow-with-events). This field is a list of signals you want to respond
+to. For this one, I'm only doing it on pull request. Because this `on` property is at the top level, regrettably you
+can't combine all your steps and choose not to run some steps on pull request. This is the reason for having two
+separate action files. In principle, the actions should be entirely self contained processes.
+
+The jobs is a list of independent actions. By default, they run in parallel. You could use this to separate things 
+like your unit and integration tests to speed up your CI. This example is pretty simple, so I haven't found a use 
+for the jobs yet.
+
+The steps field is quite simple in this example. For each step, you can chose to specify the `uses` field ([docs](https://help.github.com/en/articles/configuring-a-workflow#referencing-actions-in-your-workflow)).
+The format for this argument is `{owner}/{repo}@{ref}` or `{owner}/{repo}/{path}@{ref}.`. You can reference actions in
+your current repository or you can reference standard actions as per the example above. 
+`actions/checkout@master` checks out - you got it - master. `actions/setup-node@v1` sets up Node, probably 
+through a Docker container. You can provide arguments to the action using the `with` key.
+
+Now, the magic begins. Go to your repository and visit: https://githubs/{yourName}/{yourRepo}/actions. You'll be prompted
+to enable Actions for this repository. Hit enable and then commit your `ci.yml` file, push it up and check the Actions tab.
+You should begin to see your commits start popping up under the relevant action.
+
+![Github actions, list of builds](/images/posts/github-actions/action-builds.JPG)
+
+In the image below, you can see the left side has the name of the action, the event that triggers it, and the jobs below that.
+
+![Github Action build page](/images/posts/github-actions/building-ci.JPG)
+
+With luck, we now have our CI build successfully running. Onto the deployment action. 
+
+`deploy.yml`
+```yaml
+name: Deploy
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        version: 10.x
+    - name: Build
+      run: |
+        npm install
+        npm run build --if-present
+    - name: Deploy
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
+      run: node scripts/deploy.js
+```
+
+You might notice that the first few steps are identical to the steps in `ci.yml`. Well why don't we utilise that
+as our build script and deploy using that action? We refer to the action in our own repository using `./path-to-action`
+as below.
+
+`deploy.yml`
+```yaml
+name: Deploy
+
+on: [pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: ./ci
+    - name: Deploy
+      env:
+        SOME_API_KEY: "asdf"
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
+      run: node scripts/deploy.js
+```
+
+That is much cleaner. Well now that we've got it building successfully, we have to move onto deploying our code.
+If you look at the env key, this is how we provide environment variables to the step. 
+These are accessible in node scripts via `process.env`. `SOME_API_KEY` in this example is a hardcoded string. Github
+also provides a secrets manager within your repository.
+
+![github-secrets](/images/posts/github-actions/secrets.JPG)
+
+At a previous job, they outlawed all external CI services because they were worried about their AWS IAM keys getting 
+out in the event of a CircleCI data breach. Given that we're dealing with Github + MSoft, I have to believe there's 
+some encryption magic happening when you upload these secrets. Once you've set the value in the secrets, you will not
+be able to see it again and it will only be exposed to the CI agent.
+
+I tried to log one of these secrets, and cleverly, it was censored in the logs (see below). Gone are the days of 
+having to rotate your IAM keys because you accidentally logged it in your CI or Cloudwatch.
+
+![Secrets in build logs](/images/posts/github-actions/secrets-censored.JPG)
+
+I'll come back to those AWS secrets shortly. From this point, all we have to do is deploy. I'm going to offer two suggestions:
+
+- Github pages
+- AWS S3 static web hosting
+
+I'd suggest going with Github pages for this example, and for most use cases that would be fine to go live with. 
+Most sites I make are not under high demand, nor do they have many concurrent users, so for my purposes, S3 storage is 
+more than enough. I also use Cloudflare to cache the assets, so the majority of sessions download assets off 
+ the Cloudflare CDN, rather than S3, so my usage stays very low for S3. This also has the benefit of using Cloudflare's 
+ smart routing to make my Sydney hosted S3 bucket much faster for international users.
+ 
+ ## Github pages deployment
+ 
+ 
+
+## Advanced Bits
+
+Github Actions also supports using specific Docker containers from Dockerhub. So if you have complicated dependencies, 
+you can choose to utilise this option. Use the `uses` key and give it a path in the format of: `docker://{image}:{tag}`
+
+[https://help.github.com/en/articles/configuring-a-workflow#referencing-a-container-on-docker-hub](https://help.github.com/en/articles/configuring-a-workflow#referencing-a-container-on-docker-hub)) 
