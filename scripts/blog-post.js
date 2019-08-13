@@ -9,15 +9,22 @@ const marked = require('marked');
 const sortBy = require('lodash/sortBy');
 const renderer = new marked.Renderer();
 
+
+
 renderer.blockquote = function(htmlString) {
 	return `<BlockQuote>${htmlString}</BlockQuote>`;
 };
 
 renderer.code = function(code, language) {
+	if (code.includes('{owner')) {
+		console.log(code);
+	}
 	return `<pre><code>
 		${code.split('\n').map(codeBlock => {
 		const codeWithEscapedQuotes = codeBlock.split('"').join('\\"');
-		const codeWithEscapedHashes = codeWithEscapedQuotes.split('#').join('\\#');
+		const codeWithEscapedCurliesLeft = codeWithEscapedQuotes.split('{').join(`{'{'}`);
+		const codeWithEscapedCurliesRight = codeWithEscapedCurliesLeft.split('}').join(`{'}'}`);
+		const codeWithEscapedHashes = codeWithEscapedCurliesRight.split('#').join('\\#');
 		return `<div>{"${codeWithEscapedHashes}"}</div>`;
 	}).join('')}
 	</code></pre>`;
