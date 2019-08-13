@@ -344,7 +344,7 @@ Ensure you set the region you would prefer in the deploy env.
 Now we're done! Commit those changes, push it and you'll see the build
 run and deploy your app.
 
-Visit `http://{bucket name}.s3-website-ap-southeast-2.amazonaws.com/` to verify.
+Visit `http://{bucketName}.s3-website-ap-southeast-2.amazonaws.com/` to verify.
 
 From now on, commit on master and your code will be deployed automatically.
 
