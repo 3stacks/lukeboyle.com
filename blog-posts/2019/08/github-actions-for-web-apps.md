@@ -107,11 +107,11 @@ Now, the magic begins. Go to your repository and visit: `https://github.com/{you
 to enable Actions for this repository. Hit enable and then commit your `ci.yml` file, push it up and check the Actions tab.
 You should begin to see your commits start popping up under the relevant action.
 
-![Github actions, list of builds](/images/posts/github-actions/action-builds.JPG)
+![Github actions, list of builds](/images/posts/github-actions/action-builds.jpg)
 
 In the image below, you can see the left side has the name of the action, the event that triggers it, and the jobs below that.
 
-![Github Action build page](/images/posts/github-actions/building-ci.JPG)
+![Github Action build page](/images/posts/github-actions/building-ci.jpg)
 
 With luck, we now have our CI build successfully running.
 Onto the deployment action. Copy the below to your ci.yml
@@ -171,7 +171,7 @@ node scripts via `process.env`. `SOME_API_KEY` in this example is a
 hardcoded string. Github also provides a secrets manager within your
 repository. Don't worry about that node script yet.
 
-![github-secrets](/images/posts/github-actions/secrets.JPG)
+![github-secrets](/images/posts/github-actions/secrets.jpg)
 
 At a previous job, they outlawed all external CI services because they were worried about their AWS IAM keys getting 
 out in the event of a CircleCI data breach. Given that we're dealing with Github + MSoft, I have to believe there's 
@@ -181,7 +181,7 @@ be able to see it again and it will only be exposed to the CI agent.
 I tried to log one of these secrets, and cleverly, it was censored in the logs (see below). Gone are the days of 
 having to rotate your IAM keys because you accidentally logged it in your CI or Cloudwatch.
 
-![Secrets in build logs](/images/posts/github-actions/secrets-censored.JPG)
+![Secrets in build logs](/images/posts/github-actions/secrets-censored.jpg)
 
 I'll come back to those AWS secrets shortly.
 From this point, all we have to do is deploy.
@@ -368,7 +368,7 @@ git push origin gh-pages
 Back in your browser, select the `gh-pages` branch in the Pages
 dropdown (See below):
 
-![Github pages setup](/images/posts/github-actions/pages-setup.JPG)
+![Github pages setup](/images/posts/github-actions/pages-setup.jpg)
 
 From here, deployment is fairly painless. Let's take advantage of the
 Actions ecosystem Github is building and use: [https://github.com/marketplace/actions/deploy-to-github-pages?version=1.1.2](https://github.com/marketplace/actions/deploy-to-github-pages?version=1.1.2),
