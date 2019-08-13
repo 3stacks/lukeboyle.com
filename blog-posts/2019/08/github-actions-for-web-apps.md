@@ -314,7 +314,10 @@ See the example repository here: [https://github.com/3stacks/github-actions-reac
 
 Visit `https://github.com/{yourName}/{yourRepo}/settings` and scroll to the Github Pages section.
 Here you may enable github pages on the `master` branch or `gh-pages`, root folder (i.e. you build into root directory) or master
-branch /docs. To enable using the `gh-pages` branch, the repo must already
+branch /docs. I prefer to use a separate branch as it's generally
+advisable to keep your master branch clean of build files.
+
+To enable the `gh-pages` branch, the repo must already
 have one. In your terminal, do the following:
 
 ```bash
@@ -322,17 +325,24 @@ git checkout -B gh-pages
 git push origin gh-pages
 ```
 
+Back in your browser, select the `gh-pages` branch in the Pages
+dropdown (See below):
+
 ![Github pages setup](/images/posts/github-actions/pages-setup.JPG)
 
 From here, deployment is fairly painless. Let's take advantage of the
 actions ecosystem Github is building and use: [https://github.com/marketplace/actions/deploy-to-github-pages?version=1.1.2](https://github.com/marketplace/actions/deploy-to-github-pages?version=1.1.2),
 an action written by [James Ives](https://github.com/JamesIves/github-pages-deploy-action)
 
-### Github access token
+First we have to generate a personal access token.
 
 - Go to [https://github.com/settings/tokens](https://github.com/settings/tokens)
 - Click `Generate new token`
+- Select the appropriate scopes. We only need repo related scopes (below)
 
+* Do not share this key with anyone. It has access read/write access all your repositories *
+
+![Github access token scopes](/images/posts/github-actions/scopes.jpg)
 
 ## Now.sh deployment
 
@@ -340,7 +350,9 @@ an action written by [James Ives](https://github.com/JamesIves/github-pages-depl
 
 ## Tidbits
 
-Github Actions also supports using specific Docker containers from Dockerhub. So if you have complicated dependencies, 
-you can choose to utilise this option. Use the `uses` key and give it a path in the format of: `docker://{image}:{tag}`
+Github Actions also supports using specific Docker containers
+from Dockerhub. So if you have complicated dependencies, you can
+choose to utilise this option. Use the `uses` key and give it a path
+in the format of: `docker://{image}:{tag}`
 
 [https://help.github.com/en/articles/configuring-a-workflow#referencing-a-container-on-docker-hub](https://help.github.com/en/articles/configuring-a-workflow#referencing-a-container-on-docker-hub)) 
