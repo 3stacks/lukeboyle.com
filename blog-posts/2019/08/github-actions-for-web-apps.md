@@ -8,8 +8,6 @@
 | post_status | draft |
 | post_type | revision |
 
-Quick facts
-
 Arguably, the key feature that made Gitlab a market leading platform was
 their decision to build the platform as an end-to-end application
 delivery service including version control, CI, Infrastructure,
@@ -304,8 +302,6 @@ of the deployment script from here: [https://github.com/3stacks/github-actions-r
 to a directory (`./scripts/` is what was defined in `ci.yml`, but you
 can change this if you prefer a different directory).
 
-
-
 ## Github pages deployment
 
 **COMING SOON - This section is not complete**
@@ -331,8 +327,8 @@ dropdown (See below):
 ![Github pages setup](/images/posts/github-actions/pages-setup.JPG)
 
 From here, deployment is fairly painless. Let's take advantage of the
-actions ecosystem Github is building and use: [https://github.com/marketplace/actions/deploy-to-github-pages?version=1.1.2](https://github.com/marketplace/actions/deploy-to-github-pages?version=1.1.2),
-an action written by [James Ives](https://github.com/JamesIves/github-pages-deploy-action)
+Actions ecosystem Github is building and use: [https://github.com/marketplace/actions/deploy-to-github-pages?version=1.1.2](https://github.com/marketplace/actions/deploy-to-github-pages?version=1.1.2),
+an action written by [James Ives](https://github.com/JamesIves/github-pages-deploy-action).
 
 First we have to generate a personal access token.
 
@@ -344,11 +340,68 @@ First we have to generate a personal access token.
 
 ![Github access token scopes](/images/posts/github-actions/scopes.jpg)
 
+Add the secret as per the [Storing and using the secrets](/#Storing and using the secrets) section
+above, calling your access token secret `GITHUB_ACCESS_TOKEN`
+
+Back in `ci.yml`,
+```yaml
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        version: 10.x
+    - name: Build
+      run: |
+        npm install
+        npm run build --if-present
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@1.1.3
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      env:
+        ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: build
+```
+
+Our secret and other required arguments will be provided to the Pages
+Deploy action using the `env` key.
+
+### If you aren't using a custom domain
+
+Due to the way the routing is done in github pages, assets referencing
+ `/` will go to the root of your Pages (e.g. `https://3stacks.github.io`).
+ This means none of the assets in CRA will be loaded. To get around this,
+ in your `package.json`, add `"homepage": ".",`. This will make it resolve
+ correctly.
+
+Now we're done! Commit those changes, push it and you'll see the build
+run and deploy your app.
+
+Visit `http://{yourName}.github.io/{repo-name}` to verify.
+
+From now on, commit on master and your code will be deployed automatically.
+
 ## Now.sh deployment
 
 **COMING SOON - This section is not complete**
 
 ## Tidbits
+
+### Containerised Steps
 
 Github Actions also supports using specific Docker containers
 from Dockerhub. So if you have complicated dependencies, you can
