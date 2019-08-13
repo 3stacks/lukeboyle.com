@@ -14,9 +14,10 @@ Arguably, the key feature that made Gitlab a market leading platform was
 their decision to build the platform as an end-to-end application
 delivery service including version control, CI, Infrastructure,
 community engagement, and so on. The simplicity that comes with this
-centralisation made Gitlab really stand out when compared to
-Atlassian's suite of Bitbucket, Jira, Bamboo. Even more, when compared
-to Github at the time, the market offering was quite limited.
+centralisation made Gitlab really stand out when compared to the
+Atlassian suite of Bitbucket, Jira, Bamboo. Even more when compared
+to Github at the time, since their market offering pretty much started
+and ended at git (with some other things like gh-pages, marketplace, etc).
 
 It has been a couple years since Gitlab's rise to prominence and the
 market has certainly shifted. Even before Github was acquired by Microsoft
@@ -53,15 +54,15 @@ Find the docs here: [https://help.github.com/en/categories/automating-your-workf
 For this example, I'll be using [Create React App](https://github.com/facebook/create-react-app). Initialise that if 
 you'd like to follow along, or just retrofit an old, simple project.
 
-There's two actions I want to create
+There's two flows I want to create
 
 - CI Only
 - CI and Deploy
 
-Let's create the action files.
+Let's create the action file.
 
 Create a folder in the root of your repo `.github/workflows`
-Create two files in that folder called `ci.yml` and `deploy.yml`
+Create a file in that folder called `ci.yml`
 
 Let's look at the ci.yml file and add some boilerplate
 
@@ -114,13 +115,18 @@ In the image below, you can see the left side has the name of the action, the ev
 
 ![Github Action build page](/images/posts/github-actions/building-ci.JPG)
 
-With luck, we now have our CI build successfully running. Onto the deployment action. 
+With luck, we now have our CI build successfully running.
+Onto the deployment action. Copy the below to your ci.yml
 
-`deploy.yml`
+`ci.yml`
 ```yaml
-name: Deploy
+name: CI
 
-on: [pull_request]
+on:
+  pull_request:
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -138,47 +144,40 @@ jobs:
         npm install
         npm run build --if-present
     - name: Deploy
+      if: github.event_name == push && github.ref == refs/heads/master
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
       run: node scripts/deploy.js
 ```
 
-You might notice that the first few steps are identical to the steps in `ci.yml`. Well why don't we utilise that
-as our build script and deploy using that action? We refer to the action in our own repository using `./path-to-action`
-as below.
+You'll note that at the moment we're executing this on both:
 
-`deploy.yml`
-```yaml
-name: Deploy
+- pushes to master branch
+- pull requests
 
-on: [pull_request]
+This means that unless we add a filter, we'd be deploying branches on
+any pull request, which could probably break our app.
 
-jobs:
-  build:
+To the `Deploy` step, we've added an if. This if should have a boolean
+value that will determine whether to run the step or not.
 
-    runs-on: ubuntu-18.04
+You could do things like check if a step was successful, or in our case:
 
-    steps:
-    - uses: ./ci
-    - name: Deploy
-      env:
-        SOME_API_KEY: "asdf"
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
-      run: node scripts/deploy.js
-```
+- Make sure the event is a push
+- Make sure the branch is master
 
-That is much cleaner. Well now that we've got it building successfully, we have to move onto deploying our code.
-If you look at the env key, this is how we provide environment variables to the step. 
-These are accessible in node scripts via `process.env`. `SOME_API_KEY` in this example is a hardcoded string. Github
-also provides a secrets manager within your repository. Don't worry about that node script yet.
+Moving onto deployment, if you look at the env key, this is how we
+provide environment variables to the step. These are accessible in
+node scripts via `process.env`. `SOME_API_KEY` in this example is a
+hardcoded string. Github also provides a secrets manager within your
+repository. Don't worry about that node script yet.
 
 ![github-secrets](/images/posts/github-actions/secrets.JPG)
 
 At a previous job, they outlawed all external CI services because they were worried about their AWS IAM keys getting 
 out in the event of a CircleCI data breach. Given that we're dealing with Github + MSoft, I have to believe there's 
-some encryption magic happening when you upload these secrets. Once you've set the value in the secrets, you will not
+some encryption magic happening when you upload and access these secrets. Once you've set the value in the secrets, you will not
 be able to see it again and it will only be exposed to the CI agent.
 
 I tried to log one of these secrets, and cleverly, it was censored in the logs (see below). Gone are the days of 
@@ -186,31 +185,32 @@ having to rotate your IAM keys because you accidentally logged it in your CI or 
 
 ![Secrets in build logs](/images/posts/github-actions/secrets-censored.JPG)
 
-I'll come back to those AWS secrets shortly. From this point, all we have to do is deploy. I'm going to offer two suggestions:
+I'll come back to those AWS secrets shortly.
+From this point, all we have to do is deploy.
+I'm going to offer three suggestions:
 
-- Github pages
 - AWS S3 static web hosting
+- Github pages **Tutorial coming soon**
+- Now.sh **Tutorial coming soon**
 
-I'd suggest going with Github pages for this example, and for most use cases that would be fine to go live with. 
-Most sites I make are not under high demand, nor do they have many concurrent users, so for my purposes, S3 storage is 
-more than enough. I also use Cloudflare to cache the assets, so the majority of sessions download assets off 
- the Cloudflare CDN, rather than S3, so my usage stays very low for S3. This also has the benefit of using Cloudflare's 
- smart routing to make my Sydney hosted S3 bucket much faster for international users.
- 
-## Github pages deployment
+I would argue that S3 is superior to Github Pages. The unfortunate part
+of Pages is that it can only serve from files in the repository, so you
+have to commit your built files in order to host. However, Pages are
+free forever, unlike S3 sites which will begin to cost if you start
+having significant traffic. If performance is a concern for you, look
+elsewhere as neither of these are going to be blazing fast.
 
-See the example repository here: [https://github.com/3stacks/github-actions-react-pages](https://github.com/3stacks/github-actions-react-pages)
+I'd suggest going with Github pages for simplicity as you'll avoid
+setting up an additional account (and potentially save $$).
 
-[COMING SOON]
+Most sites I make are not under high demand, nor do they have many
+concurrent users, so for my purposes, S3 storage is more than enough.
 
-Visit `https://github.com/{yourName}/{yourRepo}/settings` and scroll to the Github Pages section.
-Here you may enable github pages on the master branch, root folder (i.e. you build into root directory) or master 
-branch /docs. I'd prefer the latter for cleanliness sake, even if it's not semantically correct. 
-
-![Github pages setup](/images/posts/github-actions/pages-setup.JPG)
-
-From here, our deployment is dead simple. We just have to make sure that our build command moves the generated files 
-to the /docs folder.
+I also use Cloudflare to cache the assets, so the majority of sessions
+download assets off the Cloudflare CDN, rather than S3, so my usage
+stays very low for S3. This also has the benefit of using Cloudflare's
+ smart routing to make my Sydney hosted S3 bucket much faster for
+ international users.
 
 ## S3 Deployment
 
@@ -299,9 +299,46 @@ an IAM user leak all you'll be giving away is access to that single bucket.
 - Call it `AWS_ACCESS_KEY_ID` and copy the corresponding value from your newly created IAM user
 - Repeat for `AWS_SECRET` 
 
-Now your Github Action will pick these up in deploy.yml. Now, if you copy the contents of 
+Now your Github Action will pick these up in `ci.yml`. Copy the contents
+of the deployment script from here: [https://github.com/3stacks/github-actions-react-s3/blob/master/scripts/deploy.js](https://github.com/3stacks/github-actions-react-s3/blob/master/scripts/deploy.js)
+to a directory (`./scripts/` is what was defined in `ci.yml`, but you
+can change this if you prefer a different directory).
 
-## Advanced Bits
+
+
+## Github pages deployment
+
+**COMING SOON - This section is not complete**
+
+See the example repository here: [https://github.com/3stacks/github-actions-react-pages](https://github.com/3stacks/github-actions-react-pages)
+
+Visit `https://github.com/{yourName}/{yourRepo}/settings` and scroll to the Github Pages section.
+Here you may enable github pages on the `master` branch or `gh-pages`, root folder (i.e. you build into root directory) or master
+branch /docs. To enable using the `gh-pages` branch, the repo must already
+have one. In your terminal, do the following:
+
+```bash
+git checkout -B gh-pages
+git push origin gh-pages
+```
+
+![Github pages setup](/images/posts/github-actions/pages-setup.JPG)
+
+From here, deployment is fairly painless. Let's take advantage of the
+actions ecosystem Github is building and use: [https://github.com/marketplace/actions/deploy-to-github-pages?version=1.1.2](https://github.com/marketplace/actions/deploy-to-github-pages?version=1.1.2),
+an action written by [James Ives](https://github.com/JamesIves/github-pages-deploy-action)
+
+### Github access token
+
+- Go to [https://github.com/settings/tokens](https://github.com/settings/tokens)
+- Click `Generate new token`
+
+
+## Now.sh deployment
+
+**COMING SOON - This section is not complete**
+
+## Tidbits
 
 Github Actions also supports using specific Docker containers from Dockerhub. So if you have complicated dependencies, 
 you can choose to utilise this option. Use the `uses` key and give it a path in the format of: `docker://{image}:{tag}`
