@@ -22,9 +22,7 @@ renderer.code = function(code, language) {
 	return `<pre><code>
 		${code.split('\n').map(codeBlock => {
 		const codeWithEscapedQuotes = codeBlock.split('"').join('\\"');
-		const codeWithEscapedCurliesLeft = codeWithEscapedQuotes.split('{').join(`{'{'}`);
-		const codeWithEscapedCurliesRight = codeWithEscapedCurliesLeft.split('}').join(`{'}'}`);
-		const codeWithEscapedHashes = codeWithEscapedCurliesRight.split('#').join('\\#');
+		const codeWithEscapedHashes = codeWithEscapedQuotes.split('#').join('\\#');
 		return `<div>{"${codeWithEscapedHashes}"}</div>`;
 	}).join('')}
 	</code></pre>`;
