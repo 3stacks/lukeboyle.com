@@ -5,7 +5,7 @@
 | post_title | Github Actions for web apps |
 | post_date | 2019-08-12 00:00:00 |
 | post_modified | 2019-08-12 00:00:00 |
-| post_status | draft |
+| post_status | publish |
 | post_type | revision |
 
 Arguably, the key feature that made Gitlab a market leading platform was
@@ -142,7 +142,7 @@ jobs:
         npm install
         npm run build --if-present
     - name: Deploy
-      if: github.event_name == push && github.ref == refs/heads/master
+      if: github.event_name == 'push' && github.ref == refs/heads/master
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
@@ -188,7 +188,7 @@ From this point, all we have to do is deploy.
 I'm going to offer three suggestions:
 
 - AWS S3 static web hosting
-- Github pages **Tutorial coming soon**
+- Github pages
 - Now.sh **Tutorial coming soon**
 
 I would argue that S3 is superior to Github Pages. The unfortunate part
@@ -300,11 +300,55 @@ an IAM user leak all you'll be giving away is access to that single bucket.
 Now your Github Action will pick these up in `ci.yml`. Copy the contents
 of the deployment script from here: [https://github.com/3stacks/github-actions-react-s3/blob/master/scripts/deploy.js](https://github.com/3stacks/github-actions-react-s3/blob/master/scripts/deploy.js)
 to a directory (`./scripts/` is what was defined in `ci.yml`, but you
-can change this if you prefer a different directory).
+can change this if you prefer a different directory). Make sure you update
+the S3 bucket name on line 24.
+
+Your `ci.yml` workflow should resemble the below:
+
+`ci.yml`
+```yaml
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@master
+    - name: Use Node.js 10.x
+      uses: actions/setup-node@v1
+      with:
+        version: 10.x
+    - name: Build
+      run: |
+        npm install
+        npm run build --if-present
+    - name: Deploy
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      env:
+        AWS_DEFAULT_REGION: ap-southeast-2
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
+      run: node ./scripts/deploy.js
+```
+
+Ensure you set the region you would prefer in the deploy env.
+
+Now we're done! Commit those changes, push it and you'll see the build
+run and deploy your app.
+
+Visit `http://{bucket name}.s3-website-ap-southeast-2.amazonaws.com/` to verify.
+
+From now on, commit on master and your code will be deployed automatically.
 
 ## Github pages deployment
-
-**COMING SOON - This section is not complete**
 
 See the example repository here: [https://github.com/3stacks/github-actions-react-pages](https://github.com/3stacks/github-actions-react-pages)
 
