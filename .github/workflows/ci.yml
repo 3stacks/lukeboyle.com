@@ -34,7 +34,7 @@ jobs:
       run: node ./scripts/deploy.js
     - name: Purge cache
       uses: 3stacks/cloudflare-purge-cache-action@v1.0.4
-      env:
+      with:
         authToken: ${{ secrets.CLOUDFLARE_AUTH_TOKEN }}
         siteName: lukeboyle.com
         authEmail: me@lukeboyle.com
