@@ -33,7 +33,7 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
       run: node ./scripts/deploy.js
     - name: Purge cache
-      uses: 3stacks/cloudflare-purge-cache-action@master
+      uses: 3stacks/cloudflare-purge-cache-action@1.0.1
       env:
         authToken: ${{ secrets.CLOUDFLARE_AUTH_TOKEN }}
         siteName: lukeboyle.com
