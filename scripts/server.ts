@@ -7,7 +7,16 @@ const typeDefs = gql`
     type BlogPost {
         title: String
         content: String
+		metaData: PostMetaData
     }
+	
+	type PostMetaData {
+		post_title: String
+		post_date: String
+		post_modified: String
+		post_status: String
+		post_type: String
+	}
 
     type Query {
         blogPosts: [BlogPost]
@@ -28,6 +37,7 @@ function resolveBlogPosts() : Promise<IBlogPost[]> {
 
             resolve(paths.reduce((acc : IBlogPost[], path) => {
                 const rawContent : string = fs.readFileSync(path, {encoding: 'utf-8'});
+                const
                 const post : IBlogPost = {
                     title: path,
                     content: rawContent
