@@ -8,8 +8,7 @@ const shell = require('shelljs');
 const marked = require('marked');
 const sortBy = require('lodash/sortBy');
 const renderer = new marked.Renderer();
-
-
+const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
 
 renderer.blockquote = function(htmlString) {
 	return `<BlockQuote>${htmlString}</BlockQuote>`;
@@ -27,7 +26,6 @@ renderer.code = function(code, language) {
 	}).join('')}
 	</code></pre>`;
 };
-const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
 
 renderer.heading = function(code, level) {
 	if (level === 1) {
@@ -136,7 +134,7 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 		})
 	}, {});
 
-	if (postStatus !== 'draft') {
+	if (postStatus && postStatus !== 'draft') {
 		const postContents = getMarkupFromMarkdown(contents.contents);
 		let parsedContents = postContents;
 
@@ -201,6 +199,10 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 (() => {
 	glob('blog-posts/**/*.md', {}, (err, files) => {
 		const blogPosts = files.reduce((acc, curr) => {
+			if (curr.includes('/server/')) {
+				return acc;
+			}
+
 			acc.push({
 				path: curr,
 				contents: fs.readFileSync(curr, {encoding: 'utf-8'})
