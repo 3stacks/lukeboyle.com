@@ -23,9 +23,18 @@ const typeDefs = gql`
     }
 `;
 
+interface IMetaData {
+	post_title: string
+	post_date: string
+	post_modified: string
+	post_status: string
+	post_type: string
+}
+
 interface IBlogPost {
     title: string,
-    content: string
+    content: string,
+	metaData: IMetaData
 }
 
 function resolveBlogPosts() : Promise<IBlogPost[]> {
@@ -37,10 +46,37 @@ function resolveBlogPosts() : Promise<IBlogPost[]> {
 
             resolve(paths.reduce((acc : IBlogPost[], path) => {
                 const rawContent : string = fs.readFileSync(path, {encoding: 'utf-8'});
-                const
+                const lines = rawContent.split('\n');
+                let title;
+                let metaData;
+                let contents;
+
+                lines.forEach(line => {
+                	if (line.slice(0, 2) === '# ') {
+                		title = line.slice(2);
+
+						return;
+					}
+
+                	if (line.slice(0, 2) === '| ') {
+						const lineWithoutFirstDelimeter = line.slice(2);
+						const key = lineWithoutFirstDelimeter.slice(0, lineWithoutFirstDelimeter.indexOf(' | '));
+						const value = lineWithoutFirstDelimeter.slice(lineWithoutFirstDelimeter.indexOf(' | ') + 3, -2);
+
+						metaData = {
+							...metaData,
+							[key]: value.trim()
+						};
+
+						return;
+					}
+
+                	contents = `${contents || ''}\n${line}`;
+				});
                 const post : IBlogPost = {
-                    title: path,
-                    content: rawContent
+                    title,
+					metaData,
+                    content: contents
                 };
 
                 acc.push(post);
