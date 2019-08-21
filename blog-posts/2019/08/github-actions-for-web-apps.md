@@ -435,7 +435,7 @@ Due to the way the routing is done in github pages, assets referencing
 Now we're done! Commit those changes, push it and you'll see the build
 run and deploy your app.
 
-Visit `http://[yourName].github.io/[repo-name]` to verify.
+Visit `http://{yourName}.github.io/{repo-name}` to verify.
 
 From now on, commit on master and your code will be deployed automatically.
 
