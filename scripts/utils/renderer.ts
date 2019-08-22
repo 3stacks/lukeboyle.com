@@ -1,0 +1,56 @@
+import marked from 'marked';
+import formatDate from 'date-fns/format';
+
+const renderer = new marked.Renderer();
+
+renderer.blockquote = function(htmlString) {
+    return `<BlockQuote>${htmlString}</BlockQuote>`;
+};
+
+renderer.code = function(code, language) {
+    if (code.includes('{owner')) {
+        console.log(code);
+    }
+    return `<pre><code>
+		${code.split('\n').map(codeBlock => {
+        const codeWithEscapedQuotes = codeBlock.split('"').join('\\"');
+        const codeWithEscapedHashes = codeWithEscapedQuotes.split('#').join('\\#');
+        return `<div>{"${codeWithEscapedHashes}"}</div>`;
+    }).join('')}
+	</code></pre>`;
+};
+const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
+
+renderer.heading = function(code, level) {
+    if (level === 1) {
+        return `
+			<header>
+				<h1 className="blog-post--title">${code}</h1>
+			</header>
+		`;
+    } else {
+        return `<h${level}>${code}</h${level}>`;
+    }
+};
+
+renderer.table = function(header, body) {
+    if (header.includes('Metadata name')) {
+        const rows = body.split('<tr>');
+        const dateRow = rows.find(row => row.includes('post_date'));
+        const rawDate = dateRow.split('<td>')[2];
+        const date = rawDate.slice(0, rawDate.length - 12);
+        return `<p>
+			<time datetime="${date}">${formatDate(date, 'Do of MMMM, YYYY')}</time>
+		</p>`
+    } else {
+        return header + body;
+    }
+};
+
+renderer.image = function(href, title, text) {
+    return `<img src="${href}" alt="${text}"/>`;
+};
+
+export function getMarkupFromMarkdown(markdownString : string) : string {
+    return marked(markdownString, {renderer: renderer, gfm: true});
+}

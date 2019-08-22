@@ -10,7 +10,6 @@ const sortBy = require('lodash/sortBy');
 const renderer = require('./utils/renderer');
 const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
 
-
 function getMarkupFromMarkdown(markdownString) {
 	return marked(markdownString, {renderer: renderer, gfm: true});
 }
@@ -88,7 +87,7 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 		})
 	}, {});
 
-	if (postStatus !== 'draft') {
+	if (postStatus && postStatus !== 'draft') {
 		const postContents = getMarkupFromMarkdown(contents.contents);
 		let parsedContents = postContents;
 
@@ -153,6 +152,10 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 (() => {
 	glob('blog-posts/**/*.md', {}, (err, files) => {
 		const blogPosts = files.reduce((acc, curr) => {
+			if (curr.includes('/server/')) {
+				return acc;
+			}
+
 			acc.push({
 				path: curr,
 				contents: fs.readFileSync(curr, {encoding: 'utf-8'})

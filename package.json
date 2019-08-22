@@ -9,7 +9,9 @@
     "start": "npm run generate-artist-data && npm run generate-blog-posts && npm run generate-portfolio-items && npm run develop",
     "develop": "gatsby develop",
     "build": "NODE_ENV=production npm run generate-artist-data && npm run generate-blog-posts && npm run generate-portfolio-items && gatsby build",
-    "deploy": "node scripts/deploy.js"
+    "deploy": "node scripts/deploy.js",
+    "server:build": "tsc scripts/server.ts",
+    "server:start": "nodemon 'scripts/server.ts' --exec 'ts-node' scripts/server.ts -e ts,graphql"
   },
   "author": "Luke Boyle",
   "license": "MIT",
@@ -24,7 +26,10 @@
     "react-typography": "^0.15.10",
     "styled-components": "^4.0.3",
     "tachyons-sass": "^4.7.1",
-    "typography": "^0.15.10"
+    "typography": "^0.15.10",
+    "apollo-server": "^2.8.1",
+    "graphql": "^14.4.2",
+    "marked": "^0.7.0"
   },
   "devDependencies": {
     "@lukeboyle/get-filename-from-path": "^1.0.3",
@@ -49,6 +54,10 @@
     "mime-types": "^2.1.20",
     "prop-types": "^15.6.0",
     "shelljs": "^0.8.2",
-    "title-case": "^2.1.1"
+    "title-case": "^2.1.1",
+    "@types/marked": "^0.6.5",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.5.3"
   }
 }
