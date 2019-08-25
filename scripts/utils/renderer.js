@@ -55,7 +55,7 @@ function escapeCurlies(text) {
 
 renderer.paragraph = function(text) {
 	return `<p>
-		${escapeCurlies(text)}
+		${text}
 	</p>`;
 };
 
