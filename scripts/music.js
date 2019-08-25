@@ -11,6 +11,28 @@ axios.get(
 axios.get(
 	`http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=lookboil&api_key=${process.env.LAST_FM_API_KEY}&format=json`
 ).then(response => {
-	console.log(response.data);
 	fs.writeFileSync('./src/data/albums.json', JSON.stringify(response.data.topalbums.album.slice(0, 12), null, '\t'));
+});
+
+function sleep(time) {
+	return new Promise(resolve => {
+		setTimeout(resolve, time);
+	});
+}
+
+axios.get(`https://api.discogs.com/users/lookboil/collection/folders/0/releases`).then(response => {
+	const releaseIds = response.data.releases.map(release => release.id);
+	const releases = releaseIds.slice(0, 4).map(async (releaseId) => {
+		try {
+			await sleep(2000);
+			const response = await axios.get(`https://api.discogs.com/releases/${releaseId}`);
+			return response.data;
+		} catch (e) {
+			console.error(e)
+		}
+	});
+
+	Promise.all(releases).then((values) => {
+		fs.writeFileSync('./src/data/crate.json', JSON.stringify(values, null, '\t'));
+	});
 });

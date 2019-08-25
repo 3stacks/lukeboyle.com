@@ -10,6 +10,7 @@ import {bp} from '../styled/mixins';
 import postData from '../data/music-posts.json';
 import artistData from '../data/artists.json';
 import albumData from '../data/albums.json';
+import crateData from '../data/crate.json';
 
 const ArtistList = styled.ol`
 	list-style: none;
@@ -113,8 +114,9 @@ const BodyWrapper = styled.div`
 
 export default class Portfolio extends React.Component {
 	state = {
-		artistData: artistData,
-		albumData: albumData
+		artistData,
+		albumData,
+		crateData
 	};
 
 	componentDidMount = async () => {
@@ -161,6 +163,26 @@ export default class Portfolio extends React.Component {
 							</ul>
 						</div>
 						<div>
+							<MainHeader>
+								What's new in the crate
+							</MainHeader>
+							<ArtistList>
+								{this.state.crateData.map(release => {
+									return (
+										<li key={release.instance_id}>
+											<div className="image-wrapper">
+												<img src={release.images[0].uri} alt=""/>
+											</div>
+											<h2 className="artist-name">
+												{release.title}
+											</h2>
+											<p className="play-count">
+												{release.artists[0].name}
+											</p>
+										</li>
+									);
+								})}
+							</ArtistList>
 							<MainHeader>
 								Who I've been listening to
 							</MainHeader>
