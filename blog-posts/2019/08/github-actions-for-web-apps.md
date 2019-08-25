@@ -98,12 +98,12 @@ like your unit and integration tests to speed up your CI. This example is pretty
 for the jobs yet.
 
 The steps field is quite simple in this example. For each step, you can chose to specify the `uses` field ([docs](https://help.github.com/en/articles/configuring-a-workflow#referencing-actions-in-your-workflow)).
-The format for this argument is `[owner]/[repo]@[ref]` or `[owner]/[repo]/[path]@[ref].`. You can reference actions in
+The format for this argument is `{owner}/{repo}@{ref}` or `{owner}/{repo}/{path}@{ref}.`. You can reference actions in
 your current repository or you can reference standard actions as per the example above. 
 `actions/checkout@master` checks out the current branch. `actions/setup-node@v1` sets up Node, probably 
 through a Docker container. You can provide arguments to the action using the `with` key.
 
-Now, the magic begins. Go to your repository and visit: `https://github.com/[yourName]/[yourRepo]/actions`. You'll be prompted
+Now, the magic begins. Go to your repository and visit: `https://github.com/{yourName}/{yourRepo}/actions`. You'll be prompted
 to enable Actions for this repository. Hit enable and then commit your `ci.yml` file, push it up and check the Actions tab.
 You should begin to see your commits start popping up under the relevant action.
 
@@ -256,7 +256,7 @@ an IAM user leak all you'll be giving away is access to that single bucket.
 - Go to Policies on the left
 - Change tabs to the JSON editor, rather than the Visual Editor
 - Paste in the follow, replacing the ARN with your own bucket's ARN
-- Name your policy. I called mine [projectName]DeployPolicy
+- Name your policy. I called mine `{projectName}DeployPolicy`
 
 ```json
 {
@@ -284,7 +284,7 @@ an IAM user leak all you'll be giving away is access to that single bucket.
 
 - On the left, navigate to Users
 - Create a User
-- Give it a relevant name ([projectName]DeployUser?), tick `Programmatic Access`
+- Give it a relevant name (`{projectName}DeployUser`?), tick `Programmatic Access`
 - Select `Attach existing policies directly`
 - Search for your newly created policy and attach it to the user
 - Click through the wizard
@@ -344,7 +344,7 @@ Ensure you set the region you would prefer in the deploy env.
 Now we're done! Commit those changes, push it and you'll see the build
 run and deploy your app.
 
-Visit `http://[bucketName].s3-website-ap-southeast-2.amazonaws.com/` to verify.
+Visit `http://{bucketName}.s3-website-ap-southeast-2.amazonaws.com/` to verify.
 
 From now on, commit on master and your code will be deployed automatically.
 
@@ -435,7 +435,7 @@ Due to the way the routing is done in github pages, assets referencing
 Now we're done! Commit those changes, push it and you'll see the build
 run and deploy your app.
 
-Visit `http://[yourName].github.io/[repo-name]` to verify.
+Visit `http://{yourName}.github.io/{repo-name}` to verify.
 
 From now on, commit on master and your code will be deployed automatically.
 
@@ -450,6 +450,6 @@ From now on, commit on master and your code will be deployed automatically.
 Github Actions also supports using specific Docker containers
 from Dockerhub. So if you have complicated dependencies, you can
 choose to utilise this option. Use the `uses` key and give it a path
-in the format of: `docker://[image]:[tag]`
+in the format of: `docker://{image}:{tag}`
 
 [https://help.github.com/en/articles/configuring-a-workflow#referencing-a-container-on-docker-hub](https://help.github.com/en/articles/configuring-a-workflow#referencing-a-container-on-docker-hub)) 
