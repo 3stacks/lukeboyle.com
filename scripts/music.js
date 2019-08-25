@@ -5,7 +5,7 @@ const fs = require('fs');
 axios.get(
 	`http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&period=3month&user=lookboil&api_key=${process.env.LAST_FM_API_KEY}&format=json`
 ).then(response => {
-	fs.writeFileSync('./src/data/artists.json', JSON.stringify(response.data.topartists.artist.slice(0, 12), null, '\t'));
+	fs.writeFileSync('./src/data/artists.json', JSON.stringify(response.data.topartists.artist.slice(0, 8), null, '\t'));
 });
 
 axios.get(
@@ -20,12 +20,12 @@ function sleep(time) {
 	});
 }
 
-axios.get(`https://api.discogs.com/users/lookboil/collection/folders/0/releases`).then(response => {
+axios.get(`https://api.discogs.com/users/lookboil/collection/folders/0/releases?sort=added&sort_order=desc`).then(response => {
 	const releaseIds = response.data.releases.map(release => release.id);
-	const releases = releaseIds.slice(0, 4).map(async (releaseId) => {
+	const releases = releaseIds.slice(0, 3).map(async (releaseId) => {
 		try {
 			await sleep(2000);
-			const response = await axios.get(`https://api.discogs.com/releases/${releaseId}`);
+			const response = await axios.get(`https://api.discogs.com/releases/${releaseId}?token=${process.env.DISCOGS_TOKEN}`);
 			return response.data;
 		} catch (e) {
 			console.error(e)

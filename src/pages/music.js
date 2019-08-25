@@ -42,6 +42,10 @@ const ArtistList = styled.ol`
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		
+		img {
+			max-width: 100%;
+		}
 	}
 	
 	.artist-name {
@@ -112,6 +116,22 @@ const BodyWrapper = styled.div`
 	}
 `;
 
+const SeeMoreOnBlock = styled.li`
+	width: 100%
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+	.image-wrapper {
+		background-color: #e9e9e9;
+		height: 100%;
+		padding: 20px;
+	}
+	a {
+		border: none;
+	}
+`;
+
 export default class Portfolio extends React.Component {
 	state = {
 		artistData,
@@ -123,7 +143,7 @@ export default class Portfolio extends React.Component {
 		const API_KEY = this.props.data.site.siteMetadata.lastFMApiKey;
 
 		try {
-			const artistResponse = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=12&period=1month&user=lookboil&api_key=${API_KEY}&format=json`);
+			const artistResponse = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=8&period=1month&user=lookboil&api_key=${API_KEY}&format=json`);
 			const albumResponse = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&limit=12&user=lookboil&api_key=${API_KEY}&format=json`);
 
 			this.setState(state => {
@@ -182,6 +202,15 @@ export default class Portfolio extends React.Component {
 										</li>
 									);
 								})}
+								<SeeMoreOnBlock>
+									<div className="image-wrapper">
+										<a href="https://www.discogs.com/user/LookBoil/collection?sort_by=added&sort_order=asc">
+											See my collection on Discogs
+										</a>
+									</div>
+									<h2 className="artist-name" >&nbsp;</h2>
+									<p className="play-count" >&nbsp;</p>
+								</SeeMoreOnBlock>
 							</ArtistList>
 							<MainHeader>
 								Who I've been listening to
