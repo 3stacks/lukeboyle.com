@@ -2,14 +2,10 @@ const glob = require('glob');
 const fs = require('fs-extra');
 const path = require('path');
 const marked = require('marked');
-const renderer = require('./utils/renderer');
+const {getMarkupFromMarkdown, renderer} = require('./utils/renderer');
 const camelCase = require('camel-case');
 const shell = require('shelljs');
 const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
-
-function getMarkupFromMarkdown(markdownString) {
-	return marked(markdownString, {renderer: renderer, gfm: true});
-}
 
 renderer.heading = function(code, level) {
 	if (level === 1) {

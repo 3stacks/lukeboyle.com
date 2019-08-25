@@ -7,12 +7,8 @@ const titleCase = require('title-case');
 const shell = require('shelljs');
 const marked = require('marked');
 const sortBy = require('lodash/sortBy');
-const renderer = require('./utils/renderer');
+const {getMarkupFromMarkdown, renderer} = require('./utils/renderer');
 const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
-
-function getMarkupFromMarkdown(markdownString) {
-	return marked(markdownString, {renderer: renderer, gfm: true});
-}
 
 function getCanonicalURLFromString(someString) {
 	const canonicalUrlIndex = someString.indexOf('canonical');
