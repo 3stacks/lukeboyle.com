@@ -9,12 +9,6 @@
 | post_type | top_list |
 | post_category | music |
 
-## CrasH Talk
-
-### ScHoolboy Q
-
-![crash-talk](/images/albums/2019/crash-talk.jpeg)
-
 ## IGOR
 
 ### Tyler, the Creator
@@ -50,6 +44,12 @@
 ### slowthai
 
 ![britain](/images/albums/2019/britain.png)
+
+## Guns
+
+### Quelle Chris
+
+![Guns album artwork](/images/albums/2019/guns.jpg)
 
 ## Hiding Places
 
