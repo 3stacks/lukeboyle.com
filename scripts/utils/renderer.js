@@ -9,9 +9,6 @@ renderer.blockquote = function(htmlString) {
 };
 
 renderer.code = function(code, language) {
-    if (code.includes('{owner')) {
-        console.log(code);
-    }
     return `<pre><code>
 		${code.split('\n').map(codeBlock => {
         const codeWithEscapedQuotes = codeBlock.split('"').join('\\"');
@@ -49,6 +46,17 @@ renderer.table = function(header, body) {
 
 renderer.image = function(href, title, text) {
     return `<img src="${href}" alt="${text}"/>`;
+};
+
+function escapeCurlies(text) {
+	const textWithEscapedLeftBrace = text.split('{').join('{\'{');
+	return textWithEscapedLeftBrace.split('}').join('}\'}');
+}
+
+renderer.paragraph = function(text) {
+	return `<p>
+		${escapeCurlies(text)}
+	</p>`;
 };
 
 function getMarkupFromMarkdown(markdownString) {
