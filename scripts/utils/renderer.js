@@ -48,17 +48,6 @@ renderer.image = function(href, title, text) {
     return `<img src="${href}" alt="${text}"/>`;
 };
 
-function escapeCurlies(text) {
-	const textWithEscapedLeftBrace = text.split('{').join('{\'{');
-	return textWithEscapedLeftBrace.split('}').join('}\'}');
-}
-
-renderer.paragraph = function(text) {
-	return `<p>
-		${text}
-	</p>`;
-};
-
 function getMarkupFromMarkdown(markdownString) {
 	return marked(markdownString, {renderer, gfm: true});
 }
