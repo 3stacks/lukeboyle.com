@@ -190,7 +190,7 @@ export default class Portfolio extends React.Component {
 							<ArtistList>
 								{this.state.crateData.map(release => {
 									return (
-										<li key={release.instance_id}>
+										<li key={release.id}>
 											<div className="image-wrapper">
 												<img src={release.images[0].uri} alt=""/>
 											</div>
