@@ -140,6 +140,7 @@ export default class Portfolio extends React.Component {
 	};
 
 	componentDidMount = async () => {
+		console.log(crateData);
 		const API_KEY = this.props.data.site.siteMetadata.lastFMApiKey;
 
 		try {
