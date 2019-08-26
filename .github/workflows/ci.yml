@@ -21,7 +21,7 @@ jobs:
       env:
         LAST_FM_API_KEY: ${{ secrets.LAST_FM_API_KEY }}
       run: |
-        echo GATSBY_LAST_FM_API_KEY=${{secrets.LAST_FM_API_KEY}}\nDISCOGS_TOKEN=${{secrets.DISCOGS_TOKEN}} >> .env
+        printf "GATSBY_LAST_FM_API_KEY=${{secrets.LAST_FM_API_KEY}}\nDISCOGS_TOKEN=${{secrets.DISCOGS_TOKEN}}" >> .env
         npm install -g yarn
         yarn install
         mkdir src/pages/blog
