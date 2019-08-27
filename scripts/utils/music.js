@@ -1,15 +1,15 @@
 const axios = require('axios');
 
 async function getTopAlbums(apiKey) {
-	return await axios.get(
-		`http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&user=lookboil&api_key=${apiKey}&format=json`
-	)
+	return axios.get(
+		`http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=8&period=1month&user=lookboil&api_key=${apiKey}&format=json`
+	);
 }
 
 async function getTopArtists(apiKey) {
-	return await axios.get(
-		`http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&period=3month&user=lookboil&api_key=${apiKey}&format=json`
-	)
+	return axios.get(
+		`http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&limit=12&user=lookboil&api_key=${apiKey}&format=json`
+	);
 }
 
 function sleep(time) {

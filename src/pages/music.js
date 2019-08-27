@@ -7,6 +7,7 @@ import {Link} from 'gatsby';
 import styled from 'styled-components';
 import {MaxWidthContainer} from '../styled/utils';
 import {bp} from '../styled/mixins';
+import {getDiscogsCollectionItems, getTopArtists, getTopAlbums} from '../../scripts/utils/music';
 import postData from '../data/music-posts.json';
 import artistData from '../data/artists.json';
 import albumData from '../data/albums.json';
@@ -140,18 +141,20 @@ export default class Portfolio extends React.Component {
 	};
 
 	componentDidMount = async () => {
-		console.log(crateData);
-		const API_KEY = this.props.data.site.siteMetadata.lastFMApiKey;
+		const LAST_FM_API_KEY = this.props.data.site.siteMetadata.lastFMApiKey;
+		const DISCOGS_API_KEY = this.props.data.site.siteMetadata.discogsApiKey;
 
 		try {
-			const artistResponse = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=8&period=1month&user=lookboil&api_key=${API_KEY}&format=json`);
-			const albumResponse = await axios.get(`http://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&limit=12&user=lookboil&api_key=${API_KEY}&format=json`);
+			const artistResponse = await getTopAlbums(LAST_FM_API_KEY);
+			const albumResponse = await getTopArtists(LAST_FM_API_KEY);
+			const discogsResponse = await getDiscogsCollectionItems(DISCOGS_API_KEY);
 
 			this.setState(state => {
 				return {
 					...state,
 					artistData: artistResponse.data.topartists.artist,
-					albumData: albumResponse.data.topalbums.album
+					albumData: albumResponse.data.topalbums.album,
+					crateData: discogsResponse
 				}
 			})
 		} catch (e) {
@@ -270,6 +273,7 @@ export const query = graphql`
 		site {
 			siteMetadata {
 				lastFMApiKey
+				discogsApiKey
 			}
 		}
 	}

@@ -3,7 +3,8 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'Luke Boyle | Front End Developer',
-    lastFMApiKey: process.env.LAST_FM_API_KEY
+    lastFMApiKey: process.env.LAST_FM_API_KEY,
+  	discogsApiKey: process.env.DISCOGS_TOKEN,
   },
   plugins: [
     'gatsby-plugin-styled-components',
