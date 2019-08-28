@@ -1,4 +1,3 @@
-const colors = require('./src/styled/colors');
 require('dotenv').config();
 
 module.exports = {
@@ -24,8 +23,8 @@ module.exports = {
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				start_url: '/',
-				background_color: colors.PRIMARY,
-				theme_color: colors.PRIMARY,
+				background_color: '#34495e',
+				theme_color: '#34495e',
 				display: 'minimal-ui',
 				icon: 'src/assets/img/android-icon-192x192.png' // This path is relative to the root of the site.
 			}
