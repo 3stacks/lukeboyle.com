@@ -2,13 +2,13 @@ const axios = require('axios');
 
 async function getTopAlbums(apiKey) {
 	return axios.get(
-		`https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&limit=8&period=1month&user=lookboil&api_key=${apiKey}&format=json`
+		`https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&limit=12&user=lookboil&api_key=${apiKey}&format=json`
 	);
 }
 
 async function getTopArtists(apiKey) {
 	return axios.get(
-		`https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=12&user=lookboil&api_key=${apiKey}&format=json`
+		`https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=8&period=1month&user=lookboil&api_key=${apiKey}&format=json`
 	);
 }
 
