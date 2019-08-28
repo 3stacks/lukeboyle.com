@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import WIDTHS from '../styled/widths';
 import {background, bottomTriangle, bp, topTriangle} from '../styled/mixins';
 import {MaxWidthContainer} from '../styled/utils';
-import {LinkButton, SecondaryLinkButton} from '../components/button';
+import {LinkButton} from '../components/button';
 
 const HomeHeadBanner = styled.div`
     width: 100%;
@@ -105,9 +105,9 @@ export default class Index extends React.Component {
 							<p className="snippet">
 								{latestProject.snippet}
 							</p>
-							<SecondaryLinkButton to={latestProject.link}>
+							<LinkButton isSecondary to={latestProject.link}>
 								Read More
-							</SecondaryLinkButton>
+							</LinkButton>
 						</div>
 					</MaxWidthContainer>
 				</LatestProjectBlock>
