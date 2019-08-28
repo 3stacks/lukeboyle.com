@@ -48,6 +48,7 @@ export default function Footer() {
 				<small className="copyright">
 					&copy; Luke Boyle 93' til infinity
 				</small>
+				<a className="copyright" href="/sitemap.xml">Sitemap</a>
 			</MaxWidthContainer>
 		</StyledFooter>
 	);

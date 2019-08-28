@@ -2,11 +2,13 @@ require('dotenv').config();
 
 module.exports = {
 	siteMetadata: {
+		siteUrl: 'https://lukeboyle.com',
 		title: 'Luke Boyle | Front End Developer',
 		lastFMApiKey: process.env.LAST_FM_API_KEY,
 		discogsApiKey: process.env.DISCOGS_TOKEN
 	},
 	plugins: [
+		'gatsby-plugin-sitemap',
 		'gatsby-plugin-styled-components',
 		'gatsby-plugin-react-helmet',
 		'gatsby-plugin-offline',

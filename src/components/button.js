@@ -42,13 +42,13 @@ export default styled.button`${styles}`;
 export const LinkButton = styled(Link)`${styles}`;
 export const SecondaryLinkButton = styled(Link)`
 	${styles}
-	background-color: white;
-	color: ${COLORS.PRIMARY};
-	border: 1px solid white;
+	background-color: white !important;
+	color: ${COLORS.PRIMARY} !important;
+	border: 1px solid white !important;
 
 	&:hover,
 	&:focus {
-		color: ${COLORS.PRIMARY_GRADIENT_LIGHT};
-		background-color: #e9e9e9;
+		color: ${COLORS.PRIMARY_GRADIENT_LIGHT} !important;
+		background-color: #e9e9e9 !important;
 	}
 `;
