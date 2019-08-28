@@ -1,5 +1,4 @@
 import React from "react";
-import {Link} from 'gatsby';
 import projects from '../data/portfolio-items';
 import {MY_NAME} from "../constants";
 import Layout from '../components/layout';
