@@ -1,13 +1,16 @@
-import React from "react";
-import axios from 'axios';
-import {graphql} from "gatsby";
-import Helmet from "react-helmet";
+import React from 'react';
+import { graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 import Layout from '../components/layout';
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
-import {MaxWidthContainer} from '../styled/utils';
-import {bp} from '../styled/mixins';
-import {getDiscogsCollectionItems, getTopArtists, getTopAlbums} from '../../scripts/utils/music';
+import { MaxWidthContainer } from '../styled/utils';
+import { bp } from '../styled/mixins';
+import {
+	getDiscogsCollectionItems,
+	getTopArtists,
+	getTopAlbums
+} from '../../scripts/utils/music';
 import postData from '../data/music-posts.json';
 import artistData from '../data/artists.json';
 import albumData from '../data/albums.json';
@@ -21,17 +24,26 @@ const ArtistList = styled.ol`
 	margin: 0;
 	padding: 0;
 	
-	${bp(450, `
+	${bp(
+		450,
+		`
 		grid-template-columns: 1fr 1fr;
-	`)}
+	`
+	)}
 	
-	${bp(700, `
+	${bp(
+		700,
+		`
 		grid-template-columns: 1fr 1fr 1fr;
-	`)}
+	`
+	)}
 	
-	${bp(920, `
+	${bp(
+		920,
+		`
 		grid-template-columns: 1fr 1fr 1fr 1fr;
-	`)}
+	`
+	)}
 	
 	li {
 		display: flex;
@@ -73,44 +85,59 @@ const BodyWrapper = styled.div`
 	grid-template-columns: 1fr;
 	grid-gap: 20px;
 	padding-top: 20px;
-	
+
 	.left {
 		align-self: start;
-		
-		${bp(1000, `
+
+		${bp(
+			1000,
+			`
 			position: sticky;
 			top: -1px;
-		`)}
-	
+		`
+		)}
+
 		h2 {
 			text-align: center;
-			
-			${bp(1000, `
+
+			${bp(
+				1000,
+				`
 				text-align: left;
 				font-size: 2.8rem;
-			`)}
-			
-			${bp(1027, `
+			`
+			)}
+
+			${bp(
+				1027,
+				`
 				font-size: 3rem;
-			`)}
+			`
+			)}
 		}
 	}
-	
-	${bp(1000, `
+
+	${bp(
+		1000,
+		`
 		grid-template-columns: 1fr 3fr;
-	`)}
-	
+	`
+	)}
+
 	ul {
 		list-style: none;
 		padding: 0;
 		margin: 0;
 		text-align: center;
-		
-		${bp(1000, `
+
+		${bp(
+			1000,
+			`
 			text-align: left;
-		`)}
+		`
+		)}
 	}
-	
+
 	li {
 		font-size: 1.8rem;
 		margin-bottom: 15px;
@@ -124,10 +151,13 @@ const SeeMoreOnBlock = styled.li`
 	align-items: center;
 	
 	.image-wrapper {
-		background-color: #e9e9e9;
-		height: 100%;
-		padding: 20px;
+		a {
+			background-color: #e9e9e9;
+			padding: 20px;
+			height: 167.5px;
+		}
 	}
+	
 	a {
 		border: none;
 	}
@@ -147,7 +177,9 @@ export default class Portfolio extends React.Component {
 		try {
 			const albumResponse = await getTopAlbums(LAST_FM_API_KEY);
 			const artistResponse = await getTopArtists(LAST_FM_API_KEY);
-			const discogsResponse = await getDiscogsCollectionItems(DISCOGS_API_KEY);
+			const discogsResponse = await getDiscogsCollectionItems(
+				DISCOGS_API_KEY
+			);
 
 			this.setState(state => {
 				return {
@@ -155,8 +187,8 @@ export default class Portfolio extends React.Component {
 					artistData: artistResponse.data.topartists.artist,
 					albumData: albumResponse.data.topalbums.album,
 					crateData: discogsResponse
-				}
-			})
+				};
+			});
 		} catch (e) {
 			console.error(e);
 		}
@@ -165,20 +197,21 @@ export default class Portfolio extends React.Component {
 	render() {
 		return (
 			<Layout slug="music">
-				<Helmet
-					title="Music | Luke Boyle"
-				/>
+				<Helmet title="Music | Luke Boyle" />
 				<MaxWidthContainer>
 					<BodyWrapper>
 						<div className="left">
-							<MainHeader>
-								Recent posts
-							</MainHeader>
+							<MainHeader>Recent posts</MainHeader>
 							<ul>
 								{postData.map(post => {
 									return (
 										<li key={post.fileName}>
-											<Link to={`/${post.path.replace('.md', '')}`}>
+											<Link
+												to={`/${post.path.replace(
+													'.md',
+													''
+												)}`}
+											>
 												{post.postTitle}
 											</Link>
 										</li>
@@ -187,15 +220,16 @@ export default class Portfolio extends React.Component {
 							</ul>
 						</div>
 						<div>
-							<MainHeader>
-								What's new in the crate
-							</MainHeader>
+							<MainHeader>What's new in the crate</MainHeader>
 							<ArtistList>
 								{this.state.crateData.map(release => {
 									return (
 										<li key={release.id}>
 											<div className="image-wrapper">
-												<img src={release.images[0].uri} alt=""/>
+												<img
+													src={release.images[0].uri}
+													alt=""
+												/>
 											</div>
 											<h2 className="artist-name">
 												{release.title}
@@ -212,21 +246,20 @@ export default class Portfolio extends React.Component {
 											See my collection on Discogs
 										</a>
 									</div>
-									<h2 className="artist-name" >&nbsp;</h2>
-									<p className="play-count" >&nbsp;</p>
 								</SeeMoreOnBlock>
 							</ArtistList>
-							<MainHeader>
-								Who I've been listening to
-							</MainHeader>
+							<MainHeader>Who I've been listening to</MainHeader>
 							<ArtistList>
 								{this.state.artistData.map(artist => {
-									const imageToShow = artist.image.find(image => image.size === 'large') || artist.image[0];
+									const imageToShow =
+										artist.image.find(
+											image => image.size === 'large'
+										) || artist.image[0];
 									const imageSrc = imageToShow['#text'];
 									return (
 										<li key={artist.mbid}>
 											<div className="image-wrapper">
-												<img src={imageSrc} alt=""/>
+												<img src={imageSrc} alt="" />
 											</div>
 											<h2 className="artist-name">
 												{artist.name}
@@ -238,17 +271,18 @@ export default class Portfolio extends React.Component {
 									);
 								})}
 							</ArtistList>
-							<MainHeader>
-								My most played albums
-							</MainHeader>
+							<MainHeader>My most played albums</MainHeader>
 							<ArtistList>
 								{this.state.albumData.map(album => {
-									const imageToShow = album.image.find(image => image.size === 'large') || album.image[0];
+									const imageToShow =
+										album.image.find(
+											image => image.size === 'large'
+										) || album.image[0];
 									const imageSrc = imageToShow['#text'];
 									return (
 										<li key={album.mbid}>
 											<div className="image-wrapper">
-												<img src={imageSrc} alt=""/>
+												<img src={imageSrc} alt="" />
 											</div>
 											<h2 className="artist-name">
 												{album.name}
@@ -264,7 +298,7 @@ export default class Portfolio extends React.Component {
 					</BodyWrapper>
 				</MaxWidthContainer>
 			</Layout>
-		)
+		);
 	}
 }
 
