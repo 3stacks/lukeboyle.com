@@ -53,12 +53,12 @@ export default class Layout extends React.Component {
 				>
 					<meta name="referrer" content="origin" />
 					<meta charSet="utf-8" />
-					<link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro" rel="stylesheet" />
 					<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 					<meta
 						name="viewport"
 						content="width=device-width, initial-scale=1.0"
 					/>
+					<link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro&display=swap" rel="stylesheet" />
 					<link rel="apple-touch-icon" sizes="76x76" href={appleSmall} />
 					<link rel="apple-touch-icon" sizes="120x120" href={appleMedium} />
 					<link rel="apple-touch-icon" sizes="152x152" href={appleLarge} />

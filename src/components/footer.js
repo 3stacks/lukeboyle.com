@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import WIDTHS from '../styled/widths';
 import COLORS from '../styled/colors';
-import {bp, background, topTriangle,} from '../styled/mixins';
-import {MaxWidthContainer} from '../styled/utils';
+import { bp, background, topTriangle } from '../styled/mixins';
+import { MaxWidthContainer } from '../styled/utils';
 
 const StyledFooter = styled.div`
     ${background}
@@ -11,9 +11,12 @@ const StyledFooter = styled.div`
     background-color: ${COLORS.PRIMARY};
     height: 100px;
     
-    ${bp(WIDTHS.M, `
+    ${bp(
+		WIDTHS.M,
+		`
         height: 150px;
-    `)}
+    `
+	)}
 
     & .inner {
         display: flex;
@@ -38,14 +41,14 @@ const StyledFooter = styled.div`
 }
 `;
 
-export default function Footer({...otherProps}) {
-    return (
-        <StyledFooter>
-            <MaxWidthContainer className="inner">
-                <small className="copyright">
-                    &copy; Luke Boyle 93' til infinity
-                </small>
-            </MaxWidthContainer>
-        </StyledFooter>
-    );
+export default function Footer() {
+	return (
+		<StyledFooter>
+			<MaxWidthContainer className="inner">
+				<small className="copyright">
+					&copy; Luke Boyle 93' til infinity
+				</small>
+			</MaxWidthContainer>
+		</StyledFooter>
+	);
 }
