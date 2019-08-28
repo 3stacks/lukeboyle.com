@@ -242,7 +242,11 @@ export default class Portfolio extends React.Component {
 								})}
 								<SeeMoreOnBlock>
 									<div className="image-wrapper">
-										<a href="https://www.discogs.com/user/LookBoil/collection?sort_by=added&sort_order=asc">
+										<a
+											href="https://www.discogs.com/user/LookBoil/collection?sort_by=added&sort_order=asc"
+											target="_blank"
+											rel="noreferrer noopener"
+										>
 											See my collection on Discogs
 										</a>
 									</div>
