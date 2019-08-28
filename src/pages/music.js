@@ -145,8 +145,8 @@ export default class Portfolio extends React.Component {
 		const DISCOGS_API_KEY = this.props.data.site.siteMetadata.discogsApiKey;
 
 		try {
-			const artistResponse = await getTopAlbums(LAST_FM_API_KEY);
-			const albumResponse = await getTopArtists(LAST_FM_API_KEY);
+			const albumResponse = await getTopAlbums(LAST_FM_API_KEY);
+			const artistResponse = await getTopArtists(LAST_FM_API_KEY);
 			const discogsResponse = await getDiscogsCollectionItems(DISCOGS_API_KEY);
 
 			this.setState(state => {
