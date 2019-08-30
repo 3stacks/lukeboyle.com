@@ -145,22 +145,7 @@ const BodyWrapper = styled.div`
 `;
 
 const SeeMoreOnBlock = styled.li`
-	width: 100%
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	
-	.image-wrapper {
-		a {
-			background-color: #e9e9e9;
-			padding: 20px;
-			height: 167.5px;
-		}
-	}
-	
-	a {
-		border: none;
-	}
+	width: 100%;
 `;
 
 export default class Portfolio extends React.Component {
@@ -241,15 +226,13 @@ export default class Portfolio extends React.Component {
 									);
 								})}
 								<SeeMoreOnBlock>
-									<div className="image-wrapper">
-										<a
-											href="https://www.discogs.com/user/LookBoil/collection?sort_by=added&sort_order=asc"
-											target="_blank"
-											rel="noreferrer noopener"
-										>
-											See my collection on Discogs
-										</a>
-									</div>
+									<a
+										href="https://www.discogs.com/user/LookBoil/collection?sort_by=added&sort_order=asc"
+										target="_blank"
+										rel="noreferrer noopener"
+									>
+										See my collection on Discogs
+									</a>
 								</SeeMoreOnBlock>
 							</ArtistList>
 							<MainHeader>Who I've been listening to</MainHeader>
