@@ -36,7 +36,7 @@
 
 ### You Ain't a Killer
 
-![XXX](/images/albums/top-verses/xxx.jpg)
+![Capital Punishment](/images/albums/top-verses/capital-punishment.jpg)
 
 >It's hard to analyze which guys are spies; be advised, people
  We recognize who lies, it's all in the eyes, chico
@@ -68,7 +68,9 @@
 
 ### AZ
 
-### Life's a Btch
+### Life's a Bitch
+
+![Illmatic](/images/albums/top-verses/illmatic.jpg)
 
 >Visualizin' the realism of life in actuality
  Fuck who's the baddest, a person's status depends on salary
@@ -92,6 +94,8 @@
 
 ### Beef Rap
 
+![Mm Food](/images/albums/top-verses/mm-food.jpg)
+
 >What up?
  To all rappers: shut up with your shutting up
  And keep your shirt on, at least a button-up
@@ -112,6 +116,8 @@
 # DOOM
 
 ## America's Most Blunted
+
+![Madvillainy](/images/albums/top-verses/madvillainy.jpg)
 
 >Quas, when he really hit star mode
  Never will he boost loose Phillies with the bar-code
@@ -140,6 +146,8 @@
 
 ### Living In The World Today
 
+![Liquid Swords](/images/albums/top-verses/liquid-swords.jpg)
+
 >My rhyme gross weight vehicle combination
  Was too heavy for the Chevy's, is chased out the station
  Double-edged was the guillotine that beheaded it
@@ -156,3 +164,56 @@
  Microphone cords tangled from being Star Spangled
  Now, who could ever say they heard of this?
  My motherfuckin' style is mad murderous
+
+## R.A. The Rugged Man
+
+### Uncommon Valor: A Vietnam Story
+
+![Servants in Heaven, Kings in Hell](/images/albums/top-verses/servants-in-heaven.jpg)
+
+>Call me Thorburn, John A., staff sergeant
+ Marksman, skilled in killin', illin', I'm able and willin'
+ Kill a village elephant, rapin' and pillage a village
+ Illegitimate killers, U.S. Military guerrillas
+ This ain't no real war, Vietnam shit
+ World War II, that's a war, this is just a military conflict
+ Soothin' drug abusin', Vietnamese women screwin'
+ Sex, gamblin' and boozin' — all this shit is amusin'
+ Bitches and guns, this is every man's dream
+ I don't wanna go home where I'm just an ordinary human being
+ Special Op, Huey chopper gun ship, run shit
+ Gook run when the minigun spit, won't miss
+ Kill shit, spit four-thousand bullets a minute
+ Victor Charlie, hair-trigger, hit it, I'm in it to win it
+ Get it, the lieutenant hinted, the villain, I been it
+ The killin', I did it, cripple, did it
+ Pictures I painted is vivid, live it
+ A wizard with weapons: the secret mission, we 'bout to begin it
+ Government funded, behind enemy lines
+ Bullets is sprayin', it's heatin' up a hundred degrees
+ The enemy's the North Vietnamese, bitch please!
+ Ain't no sweat, I'm told be at ease
+ Until I see the pilot got hit, and we 'bout to hit some trees
+ Tail rotor broke, crash land
+ American man in Cambodia, right in the enemy hand
+ Take a swig of the Whiskey to calm us
+ Them yellow men wearin' black pajamas
+ They wanna harm us, they all up on us
+ Bang bang, bullet hit my chest, feel no pain
+ To my left, the Captain caught a bullet right in his brain
+ Body parts flyin', loss of limbs, explosions
+ Bad intentions, I see my best friend's intestines
+ Pray to the one above, it's rainin', I'm covered in mud
+ I think I'm dyin', I feel dizzy, I'm losin' blood
+ I see my childhood, I'm back in the arms of my mother
+ I see my whole life, I see Christ, I see bright lights
+ I see Israelites, Muslims and Christians at peace, no fights
+ Black, Whites, Asians, people of all types
+ I must've died, then I woke up, surprised I'm alive
+ I'm in a hospital bed, they rescued me, I survived
+ I escaped the war, came back
+ But ain't escape Agent Orange: two of my kids born handicapped
+ Spastic, quadriplegia, micro cephalic
+ Cerebral palsy, cortical blindness — name it, they had it
+ My son died, he ain't live
+ But I still try to think positive, ‘cause in life, God take, God give
