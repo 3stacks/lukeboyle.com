@@ -165,6 +165,32 @@
  Now, who could ever say they heard of this?
  My motherfuckin' style is mad murderous
 
+### Earl Sweatshirt
+
+### WIND IN MY SAILS
+
+>My whole disposition like fuck who told me to sit
+ Ten toes on the cement, lil weed in my socks
+ Send dudes songs to repent, clean up my thoughts
+ We in a box, see a lot of niggas talk on the bench
+ A lotta father figures followin' trends, I ain't involved with 'em
+ Lemmings like to fall off of cliffs and bring they squad with 'em
+ I seen God in the mirror drinking, I tee off when the spirit hit me
+ And I don't fear the ending, I feel the envy
+ I listen to my past when it whisper to me
+ Half of it makes sense, my nigga half of it riddles to me
+ Moses with a makeshift staff sending ripples through ya
+ And through the land, and the river been a plan
+ But when I go to grab it, it slither out my hand
+ So on my other hand, I been handling business
+ Kinda shabby but my momma told me "Man up, my nigga"
+ And now I'm Popeye with the anchor tats and the spinach
+ Finna spazz on a nigga if I have to
+ Risk takers know Satan knew dance moves
+ It could be your last move
+ Hard to see the glass half full, when you don't have food
+ Wrist dangling like black fruit, nigga
+
 ## R.A. The Rugged Man
 
 ### Uncommon Valor: A Vietnam Story
