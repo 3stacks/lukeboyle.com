@@ -14,7 +14,7 @@
     "server:start": "nodemon 'scripts/server.ts' --exec 'ts-node' scripts/server.ts -e ts,graphql"
   },
   "author": "Luke Boyle",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "dependencies": {
     "apollo-server": "^2.8.1",
     "date-fns": "^1.29.0",
