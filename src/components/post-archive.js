@@ -77,7 +77,7 @@ export default function PostArchive({data}) {
 								<Accordion>
 									{Object.entries(months).map(([month, posts]) => {
 										return (
-											<AccordionItem>
+											<AccordionItem key={month}>
 												<AccordionItemHeading>
 													<AccordionItemButton>
 														{month}
@@ -86,9 +86,11 @@ export default function PostArchive({data}) {
 												<AccordionItemPanel>
 													<ul>
 														{posts.map(post => {
+															const url = `/blog-posts/${year}/${month}/${post.slug}`;
+
 															return (
-																<li>
-																	<a href={`/blog-posts/${year}/${month}/${post.slug}`}>
+																<li key={url}>
+																	<a href={url}>
 																		{post.title}
 																	</a>
 																</li>

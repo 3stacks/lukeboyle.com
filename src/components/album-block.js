@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import {bp} from '../styled/mixins';
-import WIDTHS from '../styled/widths';
 
 export default styled.div`
 	display: grid;
