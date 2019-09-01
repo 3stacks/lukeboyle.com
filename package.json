@@ -6,7 +6,7 @@
         "generate-blog-posts": "ts-node scripts/blog-post.ts",
         "generate-portfolio-posts": "ts-node scripts/portfolio.ts",
         "generate-music-posts": "ts-node scripts/music.ts",
-        "prepare-data": "ts-node ./scripts/server.ts & npm-run-all -p generate-blog-posts generate-portfolio-posts generate-music-posts",
+        "prepare-data": "npm-run-all -p generate-blog-posts generate-portfolio-posts generate-music-posts",
         "deploy": "ts-node scripts/deploy.ts",
         "start": "yarn run prepare-data && gatsby develop",
         "build": "NODE_ENV=production yarn run prepare-data && gatsby build"
