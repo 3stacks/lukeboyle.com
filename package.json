@@ -16,9 +16,6 @@
     "author": "Luke Boyle",
     "license": "BSD-3-Clause",
     "dependencies": {
-        "@types/lodash": "^4.14.138",
-        "@types/shelljs": "^0.8.5",
-        "apollo-server": "^2.8.1",
         "date-fns": "^1.29.0",
         "gatsby-link": "latest",
         "react": "^16.5.1",
@@ -30,6 +27,9 @@
         "typography": "^0.15.10"
     },
     "devDependencies": {
+        "apollo-server": "^2.8.1",
+        "@types/lodash": "^4.14.138",
+        "@types/shelljs": "^0.8.5",
         "@lukeboyle/get-filename-from-path": "^1.0.3",
         "@types/fs-extra": "^8.0.0",
         "@types/marked": "^0.6.5",
