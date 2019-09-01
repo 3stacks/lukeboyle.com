@@ -8,7 +8,7 @@ import { bp } from '../styled/mixins';
 import { MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
 
-const HomeHeadBanner = styled.div`
+export const HomeHeadBanner = styled.div`
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -24,6 +24,7 @@ const HomeHeadBanner = styled.div`
 	`
 	)}
 
+	h1,
 	h2 {
 		font-size: 4rem;
 		margin: 0 0 15px;

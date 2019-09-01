@@ -161,16 +161,19 @@ const StyledLayout = styled.div`
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
 
-	${props => {
-		console.log(props);
-		return (
-			props.isHome &&
-			`
+	${props =>
+		props.isHome &&
+		`
 		color: white;
 		background-color: ${colors.PRIMARY};
-	`
-		);
-	}}
+	`}
+
+	${props =>
+		props.className.includes('portfolio') &&
+		`
+		color: white;
+		background-color: ${colors.PRIMARY};
+	`}
 
 	.block-header {
 		font-size: 2.5rem;

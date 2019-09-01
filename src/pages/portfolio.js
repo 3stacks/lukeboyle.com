@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { bp } from '../styled/mixins';
 import { MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
+import { HomeHeadBanner } from './index';
 
 const PortfolioContainer = styled.div`
 	padding-top: 30px;
@@ -47,6 +48,7 @@ const PortfolioItem = styled.div`
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
 	border-radius: 4px;
 	transition: all 0.3s ease-out;
+	background-color: white;
 
 	&:hover {
 		box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
@@ -101,7 +103,9 @@ export default class Portfolio extends React.Component {
 			<Layout slug="portfolio">
 				<Helmet title="Development Portfolio | Luke Boyle" />
 				<PortfolioContainer>
-					<h1>A Sample of My Work</h1>
+					<HomeHeadBanner>
+						<h1>A Sample of My Work</h1>
+					</HomeHeadBanner>
 					<MaxWidthContainer className="inner">
 						{portfolioItems.map((portfolioItem, index) => {
 							return (
