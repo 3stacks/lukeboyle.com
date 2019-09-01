@@ -183,17 +183,8 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 			reversedComponents,
 			'publishDate'
 		);
-		const musicPosts = [];
-		const postsWithoutMusicPosts = componentsSortedByDate.filter(
-			component => {
-				if (component.postCategory === 'music') {
-					musicPosts.push(component);
-
-					return false;
-				}
-
-				return true;
-			}
+		const musicPosts = componentsSortedByDate.filter(
+			component => component.postCategory === 'music'
 		);
 
 		shell.rm('-rf', path.resolve(`${__dirname}/../src/pages/blog-posts`));
@@ -238,7 +229,7 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 		);
 
 		const sidebarData = await resolveBlogPosts();
-		const components = postsWithoutMusicPosts.reverse();
+		const components = componentsSortedByDate.reverse();
 		const postsPerPage = 6;
 		const pages = components.reduce((acc, curr, index) => {
 			const pagesSoFar = Object.keys(acc);
