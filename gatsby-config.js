@@ -8,6 +8,7 @@ module.exports = {
 		discogsApiKey: process.env.DISCOGS_TOKEN
 	},
 	plugins: [
+		'gatsby-plugin-typescript',
 		'gatsby-plugin-sitemap',
 		'gatsby-plugin-styled-components',
 		'gatsby-plugin-react-helmet',

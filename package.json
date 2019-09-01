@@ -8,8 +8,8 @@
         "generate-music-posts": "ts-node scripts/music.ts",
         "prepare-data": "npm-run-all -p generate-blog-posts generate-portfolio-posts generate-music-posts",
         "deploy": "ts-node scripts/deploy.ts",
-        "start": "npm run generate-artist-data && npm run generate-blog-posts && npm run generate-portfolio-items && gatsby develop",
-        "build": "NODE_ENV=production npm run generate-artist-data && npm run generate-blog-posts && npm run generate-portfolio-items && gatsby build",
+        "start": "yarn run prepare-data && gatsby develop",
+        "build": "NODE_ENV=production yarn run prepare-data && gatsby build",
         "server:build": "tsc scripts/server.ts",
         "server:start": "nodemon 'scripts/server.ts' --exec 'ts-node' scripts/server.ts -e ts,graphql"
     },
@@ -48,6 +48,7 @@
         "gatsby-plugin-sharp": "^2.0.7",
         "gatsby-plugin-sitemap": "^2.2.9",
         "gatsby-plugin-styled-components": "^3.0.1",
+        "gatsby-plugin-typescript": "^2.1.5",
         "gatsby-source-filesystem": "^2.0.4",
         "gatsby-transformer-sharp": "^2.1.4",
         "glob": "^7.1.3",

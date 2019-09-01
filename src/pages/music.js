@@ -10,7 +10,7 @@ import {
 	getDiscogsCollectionItems,
 	getTopArtists,
 	getTopAlbums
-} from '../../scripts/utils/music';
+} from '../../scripts/utils/music.ts';
 import postData from '../data/music-posts.json';
 import artistData from '../data/artists.json';
 import albumData from '../data/albums.json';
@@ -169,8 +169,8 @@ export default class Portfolio extends React.Component {
 			this.setState(state => {
 				return {
 					...state,
-					artistData: artistResponse.data.topartists.artist,
-					albumData: albumResponse.data.topalbums.album,
+					artistData: artistResponse,
+					albumData: albumResponse,
 					crateData: discogsResponse
 				};
 			});
