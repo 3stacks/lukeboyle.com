@@ -18,7 +18,7 @@ export interface ILastFMArtist {
 }
 
 export interface ILastFMTopArtistResponse {
-	topArtists: {
+	topartists: {
 		artist: ILastFMArtist[];
 	};
 }
@@ -36,7 +36,7 @@ export interface ILastFMAlbum {
 }
 
 export interface ILastFMTopAlbumResponse {
-	topAlbums: {
+	topalbums: {
 		album: ILastFMAlbum[];
 	};
 }
@@ -184,7 +184,7 @@ export async function getTopAlbums(apiKey: string): Promise<ILastFMAlbum[]> {
 		`https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&limit=12&user=lookboil&api_key=${apiKey}&format=json`
 	);
 
-	return response.data.topAlbums.album;
+	return response.data.topalbums.album;
 }
 
 export async function getTopArtists(apiKey: string): Promise<ILastFMArtist[]> {
@@ -192,7 +192,7 @@ export async function getTopArtists(apiKey: string): Promise<ILastFMArtist[]> {
 		`https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=8&period=1month&user=lookboil&api_key=${apiKey}&format=json`
 	);
 
-	return response.data.topArtists.artist;
+	return response.data.topartists.artist;
 }
 
 function sleep(time: number): Promise<any> {

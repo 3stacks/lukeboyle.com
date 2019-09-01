@@ -1,10 +1,10 @@
 import glob from 'glob';
 import fs from 'fs-extra';
 import path from 'path';
-const {getMarkupFromMarkdown, renderer} = require('./utils/renderer');
-const camelCase = require('camel-case');
-const shell = require('shelljs');
-const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
+import {getMarkupFromMarkdown, renderer} from './utils/renderer';
+import camelCase from 'lodash/camelCase';
+import shell from 'shelljs';
+import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
 
 function generateComponent(acc, curr, index) {
 	const fileName = getFileNameFromPath(curr.path).replace('.md', '');

@@ -5,11 +5,12 @@ import {bp} from '../styled/mixins';
 export default styled.div`
 	padding: 60px 0;
 
-	& .title {
+	& .title,
+ 	& .blog-post--title {
 		font-size: 4rem;
 		text-align: center;
 	}
-
+	
 	& .content {
 		max-width: 700px;
 		margin: 0 auto;
