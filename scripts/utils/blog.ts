@@ -1,5 +1,11 @@
 import glob from 'glob';
+import safeGet from 'lodash/get';
+import pick from 'lodash/pick';
 import * as fs from 'fs';
+
+export function isNotDirectory(path) {
+	return !fs.lstatSync(path).isDirectory();
+}
 
 interface IMetaData {
 	post_title: string;
@@ -10,17 +16,28 @@ interface IMetaData {
 }
 
 interface IBlogPost {
+	slug: string;
+	path: string;
 	title: string;
 	content: string;
 	metaData: IMetaData;
 }
 
-export function resolveBlogPost(path :string) : Promise<IBlogPost> {
+interface IPostArchive {
+	[year: string]: {
+		[month: string]: IBlogPost[];
+	};
+}
+
+export function resolveBlogPost(path: string): Promise<IBlogPost> {
 	return new Promise(resolve => {
 		const rawContent: string = fs.readFileSync(path, {
 			encoding: 'utf-8'
 		});
 		const lines = rawContent.split('\n');
+		const slug = path
+			.split('/')
+			[path.split('/').length - 1].replace('.md', '');
 		let title;
 		let metaData;
 		let contents;
@@ -55,6 +72,8 @@ export function resolveBlogPost(path :string) : Promise<IBlogPost> {
 		});
 
 		resolve({
+			slug,
+			path,
 			title,
 			metaData,
 			content: contents
@@ -62,38 +81,45 @@ export function resolveBlogPost(path :string) : Promise<IBlogPost> {
 	});
 }
 
-export function resolveBlogPosts(): Promise<IBlogPost[]> {
+export function resolveBlogPosts(): Promise<IPostArchive> {
 	return new Promise((resolve, reject) => {
-		glob('blog-posts/**/*.md', (err, paths: string[]) => {
+		glob('blog-posts/**/*.md', async (err, paths: string[]) => {
 			if (err) {
 				console.error(err);
 			}
 
-			paths.slice(0, 1).reduce(async (acc, path) => {
-				const pathParts = path.replace('blog-posts/', '').split('/');
-				const year = pathParts[0];
-				const month = pathParts[1];
-				const slug = pathParts[2].replace('.md', '');
-				const post = await resolveBlogPost(path);
+			const posts = paths.filter(isNotDirectory).map(resolveBlogPost);
 
-				return {
-					...acc,
-					[year]: {
-						...acc[year],
-						[month]: [
-							...acc[year.month],
-							{
-								slug,
-								title: post.title
+			resolve(
+				await Promise.all(posts).then(values => {
+					return values.reverse().reduce((acc, post) => {
+						const pathParts = post.path
+							.replace('blog-posts/', '')
+							.split('/');
+						const year = pathParts[0];
+						const month = pathParts[1];
+
+						if (post.metaData.post_status === 'draft') {
+							return acc;
+						}
+
+						return {
+							...acc,
+							[year]: {
+								...acc[year],
+								[month]: [
+									...safeGet(acc, [year, month], []),
+									{
+										slug: post.slug,
+										path: post.path,
+										title: post.title,
+									}
+								]
 							}
-						]
-					}
-				};
-			}, {});
-
-			const posts = paths.map((path) => resolveBlogPost(path));
-
-			Promise.all(posts).then((values) => resolve(values))
+						};
+					}, {});
+				})
+			);
 		});
 	});
 }

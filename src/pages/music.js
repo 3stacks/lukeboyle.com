@@ -80,14 +80,20 @@ const MainHeader = styled.h2`
 	margin-bottom: 20px;
 `;
 
-const BodyWrapper = styled.div`
+export const BodyWrapper = styled.div`
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 20px;
 	padding-top: 20px;
+	
+	div:last-of-type {
+		max-width: 700px;
+	}
 
 	.left {
 		align-self: start;
+		padding: 0 20px 0 0;
+		max-width: 230px;
 
 		${bp(
 			1000,
@@ -139,7 +145,7 @@ const BodyWrapper = styled.div`
 	}
 
 	li {
-		font-size: 1.8rem;
+		font-size: 1.7rem;
 		margin-bottom: 15px;
 	}
 `;

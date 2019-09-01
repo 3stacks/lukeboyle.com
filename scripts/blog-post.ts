@@ -6,8 +6,9 @@ import shell from 'shelljs';
 import sortBy from 'lodash/sortBy';
 import { getMarkupFromMarkdown, renderer } from './utils/renderer';
 import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
+import { isNotDirectory, resolveBlogPosts } from './utils/blog';
 
-function getCanonicalURLFromString(someString : string) : string {
+function getCanonicalURLFromString(someString: string): string {
 	const canonicalUrlIndex = someString.indexOf('canonical');
 
 	if (canonicalUrlIndex < 0) {
@@ -167,12 +168,8 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 }
 
 (() => {
-	glob('blog-posts/**/*.md', {}, (err, files) => {
-		const blogPosts = files.reduce((acc, curr) => {
-			if (curr.includes('/server/')) {
-				return acc;
-			}
-
+	glob('blog-posts/**/*.md', {}, async (err, files) => {
+		const blogPosts = files.filter(isNotDirectory).reduce((acc, curr) => {
 			acc.push({
 				path: curr,
 				contents: fs.readFileSync(curr, { encoding: 'utf-8' })
@@ -240,6 +237,7 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 			)
 		);
 
+		const sidebarData = await resolveBlogPosts();
 		const components = postsWithoutMusicPosts.reverse();
 		const postsPerPage = 4;
 		const pages = components.reduce((acc, curr, index) => {
@@ -267,6 +265,8 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 			import React from 'react';
 			import Helmet from 'react-helmet';
 			import BlogHeader from '${rootDir}/components/blog-header';
+			import PostArchive from '${rootDir}/components/post-archive';
+			import {BodyWrapper} from '${rootDir}/pages/music';
 			import Layout from '${rootDir}/components/layout';
 			import {MaxWidthContainer} from '${rootDir}/styled/utils';
 			${pages[key].reduce((acc, curr) => {
@@ -298,12 +298,22 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 								</p>
 							</BlogHeader>
 							<MaxWidthContainer className="blog-page">
-								${pages[key].reduce((acc, curr) => {
-									return (
-										acc +
-										`<${curr.componentName} isBlogPage={true} />\n`
-									);
-								}, '')}
+								<BodyWrapper>
+									<div className="left">
+										<h3>
+											Post Archive
+										</h3>
+										<PostArchive data={${JSON.stringify(sidebarData)}} />
+									</div>
+									<div>
+										${pages[key].reduce((acc, curr) => {
+											return (
+												acc +
+												`<${curr.componentName} isBlogPage={true} />\n`
+											);
+										}, '')}								
+									</div>
+								</BodyWrapper>
 							</MaxWidthContainer>
 							<MaxWidthContainer>
 								<ul className="pagination">
