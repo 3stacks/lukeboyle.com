@@ -9,6 +9,38 @@
 | post_type | top_list |
 | post_category | music |
 
+## André 3000
+
+### Elevators (Me & You)
+
+Got stopped at the mall the other day
+
+Heard a call from the other way that I just came from
+
+Some nigga was saying something, talking 'bout smoke something "Hey man, you remember me from school?" "No not really"
+
+But he kept smiling like a clown, facial expression looking silly
+
+And he kept asking me, "What kinda car you drive?
+
+I know you paid, I know y'all got beaucoup of hoes
+
+From all them songs that y'all done made"
+
+And I replied that I had been going through the same things that he had
+
+True, I've got more fans than the average man
+
+But not enough loot to last me to the end of the week
+
+I live by the beat like you live check-to-check
+
+If it don't move your feet then I don't eat so we like neck-to-neck
+
+Yes, we done come a long way like them slim-ass cigarettes
+
+From Virginia, this ain't gon' stop, so we just gon' continue
+
 ## Danny Brown
 
 ### DNA
