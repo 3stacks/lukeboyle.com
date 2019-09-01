@@ -16,6 +16,8 @@
   "author": "Luke Boyle",
   "license": "BSD-3-Clause",
   "dependencies": {
+    "@types/lodash": "^4.14.138",
+    "@types/shelljs": "^0.8.5",
     "apollo-server": "^2.8.1",
     "date-fns": "^1.29.0",
     "gatsby-link": "latest",
