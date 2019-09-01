@@ -6,12 +6,10 @@
         "generate-blog-posts": "ts-node scripts/blog-post.ts",
         "generate-portfolio-posts": "ts-node scripts/portfolio.ts",
         "generate-music-posts": "ts-node scripts/music.ts",
-        "prepare-data": "npm-run-all -p generate-blog-posts generate-portfolio-posts generate-music-posts",
+        "prepare-data": "ts-node ./scripts/server.ts & npm-run-all -p generate-blog-posts generate-portfolio-posts generate-music-posts",
         "deploy": "ts-node scripts/deploy.ts",
         "start": "yarn run prepare-data && gatsby develop",
-        "build": "NODE_ENV=production yarn run prepare-data && gatsby build",
-        "server:build": "tsc scripts/server.ts",
-        "server:start": "nodemon 'scripts/server.ts' --exec 'ts-node' scripts/server.ts -e ts,graphql"
+        "build": "NODE_ENV=production yarn run prepare-data && gatsby build"
     },
     "author": "Luke Boyle",
     "license": "BSD-3-Clause",
@@ -23,18 +21,17 @@
         "react-helmet": "^5.2.0",
         "react-icons": "^3.2.2",
         "react-typography": "^0.15.10",
-        "styled-components": "^4.0.3",
-        "typography": "^0.15.10"
+        "styled-components": "^4.0.3"
     },
     "devDependencies": {
-        "apollo-server": "^2.8.1",
-        "@types/lodash": "^4.14.138",
-        "@types/shelljs": "^0.8.5",
+        "typography": "^0.15.10",
         "@lukeboyle/get-filename-from-path": "^1.0.3",
         "@types/fs-extra": "^8.0.0",
+        "@types/lodash": "^4.14.138",
         "@types/marked": "^0.6.5",
         "@types/mime-types": "^2.1.0",
         "@types/node": "^12.7.3",
+        "@types/shelljs": "^0.8.5",
         "aws-sdk": "^2.329.0",
         "axios": "^0.18.0",
         "babel-plugin-styled-components": "^1.8.0",
