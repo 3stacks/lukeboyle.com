@@ -1,8 +1,8 @@
 import dotenv from 'dotenv';
-dotenv.config();
-
 import fs from 'fs';
 import {getTopArtists, getTopAlbums, getDiscogsCollectionItems} from './utils/music';
+
+dotenv.config();
 
 (async () => {
 	try {

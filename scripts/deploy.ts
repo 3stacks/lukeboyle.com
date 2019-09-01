@@ -1,9 +1,12 @@
-const AWS = require('aws-sdk');
+import AWS from 'aws-sdk';
+import fs from 'fs';
+import glob from 'glob';
+import mimeTypes from 'mime-types';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const s3 = new AWS.S3();
-const fs = require('fs');
-const glob = require('glob');
-const mimeTypes = require('mime-types');
-require('dotenv').config();
 
 AWS.config = new AWS.Config({
 	credentials: new AWS.Credentials({
@@ -14,10 +17,12 @@ AWS.config = new AWS.Config({
 });
 
 glob('./public/**/*', {}, (err, files) => {
+	console.log(`${files.length} files found`);
+
 	files.forEach(file => {
 		if (!fs.lstatSync(file).isDirectory()) {
 			const fileContents = fs.readFileSync(`./${file}`);
-			const fileMime = mimeTypes.lookup(file);
+			const fileMime = mimeTypes.lookup(file) || 'text/plain';
 
 			s3.upload(
 				{
