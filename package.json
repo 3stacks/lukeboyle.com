@@ -3,8 +3,8 @@
   "version": "2.0.0",
   "description": "My personal website",
   "scripts": {
-    "generate-artist-data": "node scripts/music.js",
-    "generate-portfolio-items": "node scripts/portfolio.js",
+    "generate-artist-data": "ts-node scripts/music.ts",
+    "generate-portfolio-items": "ts-node scripts/portfolio.ts",
     "generate-blog-posts": "node scripts/blog-post.js",
     "start": "npm run generate-artist-data && npm run generate-blog-posts && npm run generate-portfolio-items && npm run develop",
     "develop": "gatsby develop",
@@ -31,7 +31,9 @@
   },
   "devDependencies": {
     "@lukeboyle/get-filename-from-path": "^1.0.3",
+    "@types/fs-extra": "^8.0.0",
     "@types/marked": "^0.6.5",
+    "@types/node": "^12.7.3",
     "aws-sdk": "^2.329.0",
     "axios": "^0.18.0",
     "babel-plugin-styled-components": "^1.8.0",

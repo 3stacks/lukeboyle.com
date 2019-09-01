@@ -1,12 +1,14 @@
-require('dotenv').config();
-const fs = require('fs');
-const {getTopAlbums, getTopArtists, getDiscogsCollectionItems} = require('./utils/music');
+import dotenv from 'dotenv';
+dotenv.config();
+
+import fs from 'fs';
+import {getTopArtists, getTopAlbums, getDiscogsCollectionItems} from './utils/music';
 
 (async () => {
 	try {
 		const topArtistResponse = await getTopArtists(process.env.LAST_FM_API_KEY);
 
-		fs.writeFileSync('./src/data/artists.json', JSON.stringify(topArtistResponse.data.topartists.artist.slice(0, 8), null, '\t'));
+		fs.writeFileSync('./src/data/artists.json', JSON.stringify(topArtistResponse.slice(0, 8), null, '\t'));
 	} catch (e) {
 		console.error('Top artist fetching failed', e);
 	}
@@ -14,7 +16,7 @@ const {getTopAlbums, getTopArtists, getDiscogsCollectionItems} = require('./util
 	try {
 		const topAlbumResponse = await getTopAlbums(process.env.LAST_FM_API_KEY);
 
-		fs.writeFileSync('./src/data/albums.json', JSON.stringify(topAlbumResponse.data.topalbums.album.slice(0, 12), null, '\t'));
+		fs.writeFileSync('./src/data/albums.json', JSON.stringify(topAlbumResponse.slice(0, 12), null, '\t'));
 	} catch (e) {
 		console.error('Top album fetching failed', e);
 	}

@@ -1,23 +1,10 @@
-const glob = require('glob');
-const fs = require('fs-extra');
-const path = require('path');
-const marked = require('marked');
+import glob from 'glob';
+import fs from 'fs-extra';
+import path from 'path';
 const {getMarkupFromMarkdown, renderer} = require('./utils/renderer');
 const camelCase = require('camel-case');
 const shell = require('shelljs');
 const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
-
-renderer.heading = function(code, level) {
-	if (level === 1) {
-		return `
-			<header>
-				<h1 className="title">${code}</h1>
-			</header>
-		`;
-	} else {
-		return `<h${level}>${code}</h${level}>`;
-	}
-};
 
 function generateComponent(acc, curr, index) {
 	const fileName = getFileNameFromPath(curr.path).replace('.md', '');

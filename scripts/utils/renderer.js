@@ -1,6 +1,5 @@
 const marked = require('marked');
 const formatDate = require('date-fns/format');
-const getFileNameFromPath = require('@lukeboyle/get-filename-from-path');
 
 const renderer = new marked.Renderer();
 
@@ -18,11 +17,11 @@ renderer.code = function(code, language) {
 	</code></pre>`;
 };
 
-renderer.heading = function(code, level) {
+renderer.heading = function(code, level, portfolioItem = false) {
     if (level === 1) {
         return `
 			<header>
-				<h1 className="blog-post--title">${code}</h1>
+				<h1 className="${portfolioItem ? 'title' : 'blog-post--title'}">${code}</h1>
 			</header>
 		`;
     } else {
