@@ -1,15 +1,18 @@
 import styled from 'styled-components';
-import {bp} from '../styled/mixins';
+import { bp } from '../styled/mixins';
 import WIDTHS from '../styled/widths';
 
 export const MaxWidthContainer = styled.div`
-	${props => props.isSmall ? 'max-width: 700px;' : 'max-width: 1000px;'}
+	${props => (props.isSmall ? 'max-width: 700px;' : 'max-width: 1000px;')}
 	padding: 0 15px;
 	margin: 0 auto;
-	
-	${bp(WIDTHS.M, `
+
+	${bp(
+		WIDTHS.M,
+		`
 		padding: 0 30px;		
-	`)}
+	`
+	)}
 `;
 
 export const ScreenReaderText = styled.span`

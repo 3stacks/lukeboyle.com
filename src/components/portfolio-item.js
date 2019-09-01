@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 import WIDTHS from '../styled/widths';
-import {bp} from '../styled/mixins';
+import { bp } from '../styled/mixins';
 
 export default styled.div`
 	padding: 60px 0;
 
 	& .title,
- 	& .blog-post--title {
+	& .blog-post--title {
 		font-size: 4rem;
 		text-align: center;
 	}
-	
+
 	& .content {
 		max-width: 700px;
 		margin: 0 auto;
@@ -35,8 +35,11 @@ export default styled.div`
 		width: 100%;
 		margin-bottom: 50px;
 
-		${bp(WIDTHS.M, `
+		${bp(
+			WIDTHS.M,
+			`
 			margin-bottom: 100px;		
-		`)}
+		`
+		)}
 	}
 `;

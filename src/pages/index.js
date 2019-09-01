@@ -1,43 +1,52 @@
-import React from "react";
+import React from 'react';
 import projects from '../data/portfolio-items';
-import {MY_NAME} from "../constants";
+import { MY_NAME } from '../constants';
 import Layout from '../components/layout';
 import styled from 'styled-components';
 import WIDTHS from '../styled/widths';
-import {background, bottomTriangle, bp, topTriangle} from '../styled/mixins';
-import {MaxWidthContainer} from '../styled/utils';
-import {LinkButton} from '../components/button';
+import { bp } from '../styled/mixins';
+import { MaxWidthContainer } from '../styled/utils';
+import { LinkButton } from '../components/button';
 
 const HomeHeadBanner = styled.div`
-    width: 100%;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	flex-wrap: wrap;
-	height: 250px;
-	
-	${bp(WIDTHS.M, `
-        height: 300px;
-	`)}
+	height: 200px;
+
+	${bp(
+		768,
+		`
+		height: 300px;
+	`
+	)}
 
 	h2 {
 		font-size: 4rem;
 		margin: 0 0 15px;
 
-		${bp(WIDTHS.M, `
+		${bp(
+			WIDTHS.M,
+			`
 		    margin: 0 0 30px;
 			font-size: 6rem;
-	    `)}
+	    `
+		)}
 	}
-	
+
 	p {
 		font-size: 2rem;
 		margin: 0;
 
-		${bp(WIDTHS.M, `
+		${bp(
+			WIDTHS.M,
+			`
 		    font-size: 3rem;
-	    `)}
+	    `
+		)}
 
 		&:first-of-type {
 			margin: 0 0 15px;
@@ -45,86 +54,73 @@ const HomeHeadBanner = styled.div`
 	}
 `;
 
-const FeatureBlogPostBlock = styled.div`
-	padding: 0px 0 60px;
-	text-align: center;
-	font-size: 0;
-	
-	& .title {
-		font-size: 3.5rem;
-	}
-	
-	& .post-name {
-		font-size: 2rem;
-	}
-	
-	& .post-image {
-		margin-bottom: 20px;
-	}
+const RecentStuff = styled.div`
+	display: grid;
+	padding: 30px 0;
+	grid-gap: 30px;
+	grid-template-columns: 1fr;
+
+	${bp(
+		620,
+		`
+		grid-template-columns: 1fr 1fr;
+	`
+	)}
 `;
 
-export const LatestProjectBlock = styled.div`
-	padding: 110px 0;
-	margin-bottom: 60px;
+const Stuff = styled.div`
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+	border-radius: 4px;
+	background-color: white;
+	color: #222;
 	text-align: center;
-	${background}
-	color: white;
-	position: relative;
-	
-	${topTriangle}
-	${bottomTriangle}
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-	.snippet {
-		font-size: 1.6rem;
+	a {
+		margin-top: auto;
 	}
 `;
 
 export default class Index extends React.Component {
-    render() {
-        const latestProject = projects[0];
+	render() {
+		const latestProject = projects[0];
 
-        return (
-            <Layout slug="home" isHome>
-                <HomeHeadBanner>
-					<h2>
-						{MY_NAME}
-					</h2>
-					<p>
-						King of the web
-					</p>
-                </HomeHeadBanner>
-				<LatestProjectBlock>
-					<MaxWidthContainer isSmall>
-						<h2 className="block-header">
-							Latest Project
-						</h2>
-						<div className="project">
-							<h3 className="title">
-								{latestProject.name}
-							</h3>
-							<p className="snippet">
-								{latestProject.snippet}
-							</p>
-							<LinkButton isSecondary to={latestProject.link}>
+		return (
+			<Layout slug="home" isHome>
+				<HomeHeadBanner>
+					<h2>{MY_NAME}</h2>
+					<p>King of the web</p>
+				</HomeHeadBanner>
+				<MaxWidthContainer>
+					<RecentStuff>
+						<Stuff>
+							<h2 className="block-header">Latest Project</h2>
+							<h3 className="title">{latestProject.name}</h3>
+							<p className="snippet">{latestProject.snippet}</p>
+							<LinkButton to={latestProject.link}>
 								Read More
 							</LinkButton>
-						</div>
-					</MaxWidthContainer>
-				</LatestProjectBlock>
-                <MaxWidthContainer>
-                    <FeatureBlogPostBlock>
-						<h2 className="block-header">
-							Latest Post
-						</h2>
-						<h3 className="title">
-							Github Actions for web apps
-						</h3>
-						<LinkButton to="/blog-posts/2019/08/github-actions-for-web-apps">
-							Read more
-						</LinkButton>
-					</FeatureBlogPostBlock>
-                </MaxWidthContainer>
-            </Layout>
-        )
-    }
+						</Stuff>
+						<Stuff>
+							<h2 className="block-header">Latest Post</h2>
+							<h3 className="title">
+								Github Actions for web apps
+							</h3>
+							<p>
+								Github continues to improve their offering with
+								the newly released "Github Actions" system.
+								Here's the definitive guide to deploying SPAs.
+							</p>
+							<LinkButton to="/blog-posts/2019/08/github-actions-for-web-apps">
+								Read more
+							</LinkButton>
+						</Stuff>
+					</RecentStuff>
+				</MaxWidthContainer>
+			</Layout>
+		);
+	}
 }

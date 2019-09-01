@@ -26,8 +26,8 @@ module.exports = {
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				start_url: '/',
-				background_color: '#34495e',
-				theme_color: '#34495e',
+				background_color: '#3b02a8',
+				theme_color: '#3b02a8',
 				display: 'minimal-ui',
 				icon: 'src/assets/img/android-icon-192x192.png' // This path is relative to the root of the site.
 			}

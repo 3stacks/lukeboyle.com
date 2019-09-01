@@ -10,6 +10,7 @@ import appleMedium from '../assets/img/apple-icon-120x120.png';
 import appleLarge from '../assets/img/apple-icon-152x152.png';
 import androidIcon from '../assets/img/android-icon-192x192.png';
 import favicon from '../assets/img/favicon-32x32.png';
+import colors from '../styled/colors';
 
 import './layout.css';
 
@@ -71,10 +72,6 @@ const GlobalLayoutStyle = createGlobalStyle`
 		font-size: 1.8rem;
 	}
 	
-	.site-main {
-		padding-bottom: 60px;
-	}
-	
 	.blog-category {
 		text-align: center;
 		font-size: 3rem;
@@ -86,11 +83,6 @@ const GlobalLayoutStyle = createGlobalStyle`
 	
 	.blog-single h1 {
 		margin-top: 0;
-	}
-	
-	.blog-single .blog-header {
-		background-color: transparent !important;
-		background-attachment: fixed !important;
 	}
 	
 	.about-main ul {
@@ -132,15 +124,15 @@ const GlobalLayoutStyle = createGlobalStyle`
 	}
 	
 	a {
-		color: #34495e;
+		color: ${colors.PRIMARY};
 		transition: color 0.5s ease-out, border-color 0.25s ease-out;
 		text-decoration: none;
-		border-bottom: 1px solid #34495e;
+		border-bottom: 1px solid ${colors.PRIMARY};
 		
 		&:hover, 
 		&:focus {
 			border-bottom: 1px solid transparent;
-			color: #46637f;
+			color: ${colors.PRIMARY_GRADIENT_LIGHT};
 		}
 	}
 	
@@ -169,6 +161,17 @@ const StyledLayout = styled.div`
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
 
+	${props => {
+		console.log(props);
+		return (
+			props.isHome &&
+			`
+		color: white;
+		background-color: ${colors.PRIMARY};
+	`
+		);
+	}}
+
 	.block-header {
 		font-size: 2.5rem;
 	}
@@ -185,7 +188,10 @@ export default class Layout extends React.Component {
 
 	render() {
 		return (
-			<StyledLayout className={`layout ${this.props.slug}`}>
+			<StyledLayout
+				className={`layout ${this.props.slug}`}
+				isHome={this.props.isHome}
+			>
 				<Helmet
 					title={`${MY_NAME} | Front End Developer`}
 					meta={[
@@ -241,7 +247,7 @@ export default class Layout extends React.Component {
 				</Helmet>
 				<GlobalLayoutStyle />
 				<Header isHome={this.props.slug === 'home'} />
-				<main className="site-main">{this.props.children}</main>
+				<main>{this.props.children}</main>
 				<Footer />
 			</StyledLayout>
 		);

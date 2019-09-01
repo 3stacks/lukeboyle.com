@@ -1,20 +1,18 @@
 import styled from 'styled-components';
 import WIDTHS from '../styled/widths';
-import { bp, background, bottomTriangle } from '../styled/mixins';
+import { bp } from '../styled/mixins';
+import COLORS from '../styled/colors';
 
 export default styled.div`
-	${background}
-	
 	height: 200px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	color: white;
+	background-color: ${COLORS.PRIMARY};
 	position: relative;
 
-	${bottomTriangle}
-	
 	${bp(
 		WIDTHS.S,
 		`
@@ -23,7 +21,7 @@ export default styled.div`
 		padding-top: 60px;
 	`
 	)}
-	
+
 	${bp(
 		WIDTHS.M,
 		`
@@ -34,7 +32,7 @@ export default styled.div`
 	& .site-name {
 		font-size: 4rem;
 		margin: 0 0 30px;
-		
+
 		${bp(
 			WIDTHS.M,
 			`
@@ -42,9 +40,8 @@ export default styled.div`
 		`
 		)}
 	}
-	
+
 	& .description {
 		font-size: 2rem;
 	}
-	
 `;

@@ -1,19 +1,22 @@
 import React from 'react';
-import {FaQuoteLeft, FaQuoteRight} from 'react-icons/fa';
+import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
 import styled from 'styled-components';
 import WIDTHS from '../styled/widths';
-import {bp} from '../styled/mixins';
+import { bp } from '../styled/mixins';
 
 const StyledBlockQuote = styled.blockquote`
 	display: inline-flex;
 	font-size: 1.9rem;
 	line-height: 1.5;
 	font-family: 'Roboto Slab';
-	
-	${bp(WIDTHS.M, `
+
+	${bp(
+		WIDTHS.M,
+		`
 		font-size: 2.4rem;
-	`)}
-	
+	`
+	)}
+
 	p {
 		margin: 0;
 	}
@@ -33,14 +36,12 @@ const StyledBlockQuote = styled.blockquote`
 	}
 `;
 
-export default function BlockQuote({citation, children}) {
+export default function BlockQuote({ citation, children }) {
 	return (
 		<StyledBlockQuote className="block-quote" cite={citation}>
-			<FaQuoteLeft className="icon"/>
-			<span className="body">
-				{children}
-			</span>
-			<FaQuoteRight className="icon"/>
+			<FaQuoteLeft className="icon" />
+			<span className="body">{children}</span>
+			<FaQuoteRight className="icon" />
 		</StyledBlockQuote>
 	);
 }
