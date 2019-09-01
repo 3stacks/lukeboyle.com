@@ -29,7 +29,7 @@ function generateComponent(acc, curr) {
 	const postContents = curr.contents;
 	let imports = `
 import React from 'react';
-import BlogPost from '../../../../components/blog-post.js';
+import BlogPost from '../../../../components/blog-post.tsx';
 import BlockQuote from '../../../../components/block-quote.js';`;
 
 	renderer.image = function(href, title, text) {
@@ -239,7 +239,7 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 
 		const sidebarData = await resolveBlogPosts();
 		const components = postsWithoutMusicPosts.reverse();
-		const postsPerPage = 4;
+		const postsPerPage = 6;
 		const pages = components.reduce((acc, curr, index) => {
 			const pagesSoFar = Object.keys(acc);
 
@@ -293,9 +293,6 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 								<h1 className="site-name">
 									Boyleing Point
 								</h1>
-								<p className="description">
-									7/11 was an inside job
-								</p>
 							</BlogHeader>
 							<MaxWidthContainer className="blog-page">
 								<BodyWrapper>
@@ -311,34 +308,32 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 												acc +
 												`<${curr.componentName} isBlogPage={true} />\n`
 											);
-										}, '')}								
+										}, '')}	
+										<ul className="pagination">
+											${
+												index > 0
+													? `<li><a href="${
+															key === '2'
+																? '/blog'
+																: `/blog/${parseInt(
+																		key,
+																		10
+																  ) - 2}`
+													  }">Newer</a></li>`
+													: ''
+											}
+											${
+												index !==
+												Object.values(pages).length - 1
+													? `<li className="pagination__next"><a href="/blog/${parseInt(
+															key,
+															10
+													  )}">Older</a></li>`
+													: ''
+											}
+										</ul>							
 									</div>
 								</BodyWrapper>
-							</MaxWidthContainer>
-							<MaxWidthContainer>
-								<ul className="pagination">
-									${
-										index > 0
-											? `<li><a href="${
-													key === '2'
-														? '/blog'
-														: `/blog/${parseInt(
-																key,
-																10
-														  ) - 2}`
-											  }">Newer</a></li>`
-											: ''
-									}
-									${
-										index !==
-										Object.values(pages).length - 1
-											? `<li className="pagination__next"><a href="/blog/${parseInt(
-													key,
-													10
-											  )}">Older</a></li>`
-											: ''
-									}
-								</ul>
 							</MaxWidthContainer>
 						</Layout>
 					);

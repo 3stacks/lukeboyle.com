@@ -6,6 +6,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { MaxWidthContainer } from '../styled/utils';
 import { bp } from '../styled/mixins';
+import WIDTHS from '../styled/widths';
 import {
 	getDiscogsCollectionItems,
 	getTopArtists,
@@ -85,7 +86,7 @@ export const BodyWrapper = styled.div`
 	grid-template-columns: 1fr;
 	grid-gap: 20px;
 	padding-top: 20px;
-	
+
 	div:last-of-type {
 		max-width: 700px;
 	}
@@ -93,7 +94,14 @@ export const BodyWrapper = styled.div`
 	.left {
 		align-self: start;
 		padding: 0 20px 0 0;
-		max-width: 230px;
+		width: 100%;
+
+		${bp(
+			WIDTHS.M,
+			`
+			max-width: 230px;
+		`
+		)}
 
 		${bp(
 			1000,
@@ -124,7 +132,7 @@ export const BodyWrapper = styled.div`
 	}
 
 	${bp(
-		1000,
+		WIDTHS.M,
 		`
 		grid-template-columns: 1fr 3fr;
 	`
