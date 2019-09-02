@@ -253,7 +253,7 @@ export default class Layout extends React.Component<IProps> {
                     )}
                     <div className="body-slot">{this.props.children}</div>
                 </main>
-                <Footer showFillColor={!isHomeOrPortfolioPage} />
+                <Footer />
             </StyledLayout>
         );
     }
