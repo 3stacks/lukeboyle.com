@@ -12,6 +12,8 @@ import favicon from '../../assets/img/favicon-32x32.png';
 import COLORS from '../../styled/colors';
 
 import './layout.css';
+import WIDTHS from '../../styled/widths';
+import { bp } from '../../styled/mixins';
 
 const GlobalLayoutStyle = createGlobalStyle`
 	* {
@@ -130,10 +132,16 @@ const GlobalLayoutStyle = createGlobalStyle`
 	
 	.pagination {
 		display: flex;
-		width: 25%;
-		margin: 0 auto;
+		margin: 0 auto !important;
 		font-size: 1.6rem;
-		padding-top: 40px;
+		width: calc(100% - 20px)
+		
+		${bp(
+            WIDTHS.M,
+            `
+		    width: calc(100% - 120px)
+		`
+        )}
 	}
 	
 	.pagination li {
