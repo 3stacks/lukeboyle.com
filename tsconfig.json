@@ -1,14 +1,14 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "lib": [ "dom","es6" ],
-    "outDir": "dist",
-    "rootDir": "./",
-    "removeComments": true,
-    "esModuleInterop": true,
-    "jsx": "react"
-  },
-  "exclude": [ "node_modules" ],
-  "include": [ "src" ]
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "lib": ["dom", "es6"],
+        "outDir": "dist",
+        "rootDir": "./",
+        "removeComments": true,
+        "esModuleInterop": true,
+        "jsx": "react"
+    },
+    "exclude": ["node_modules"],
+    "include": ["src"]
 }

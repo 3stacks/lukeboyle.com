@@ -1,8 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 import Header from '../header/header';
-import Footer from '../footer.js';
+import Footer from '../footer/footer';
 import { META_DESCRIPTION, MY_NAME } from '../../constants';
 import styled, { createGlobalStyle } from 'styled-components';
 import appleSmall from '../../assets/img/apple-icon-76x76.png';
@@ -177,7 +176,7 @@ const StyledLayout = styled.div`
 interface IProps {
     isHome: boolean;
     slug: string;
-    headChildren: () => React.ReactElement;
+    headChildren?: () => React.ReactElement;
 }
 
 export default class Layout extends React.Component<IProps> {
