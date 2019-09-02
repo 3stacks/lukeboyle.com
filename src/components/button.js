@@ -9,13 +9,14 @@ function getButtonStyles({ isSecondary }) {
 		${
 			isSecondary
 				? `
-			background-color: white;
-			color: ${COLORS.PRIMARY};
-			border: 1px solid white;
+			color: white;
+			background-color: ${COLORS.SECONDARY};
+			border: none;
 		`
 				: `
 			color: white;
 			background-color: ${COLORS.PRIMARY};
+			border: none;
 		`
 		}
 		padding: 10px 15px;
@@ -32,15 +33,15 @@ function getButtonStyles({ isSecondary }) {
 			${
 				isSecondary
 					? `
-				color: ${COLORS.PRIMARY_GRADIENT_LIGHT}
-				background-color: #e9e9e9;
-				border: 1px solid #e9e9e9;
+				color: white
+				border: none;
 			`
 					: `
-				background-color: ${COLORS.PRIMARY_GRADIENT_LIGHT};
 				color: white;
+				border: none;
 			`
 			}
+			opacity: 0.9;
 			transform: translateY(-1px);
 			box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
 			outline: none;

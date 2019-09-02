@@ -29,17 +29,8 @@ export default styled.div`
 	}
 
 	& .buttons {
-		padding-top: 50px;
 		display: flex;
 		justify-content: space-between;
 		width: 100%;
-		margin-bottom: 50px;
-
-		${bp(
-			WIDTHS.M,
-			`
-			margin-bottom: 100px;		
-		`
-		)}
 	}
 `;

@@ -10,14 +10,14 @@ export default styled.div`
 	align-items: center;
 	flex-direction: column;
 	color: white;
-	background-color: ${COLORS.PRIMARY};
 	position: relative;
+	background-color: ${COLORS.PRIMARY}
 
 	${bp(
 		WIDTHS.S,
 		`
 		margin-top: -60px;
-		margin-bottom: 60px;
+		margin-bottom: 0;
 		padding-top: 60px;
 	`
 	)}

@@ -1,7 +1,7 @@
 const COLORS = {
-	PRIMARY: '#3b02a8',
-	PRIMARY_GRADIENT_LIGHT: '#2e539b',
-	SECONDARY: '#2e539b'
+	PRIMARY: '#2e539b',
+	PRIMARY_GRADIENT_LIGHT: '#3d7bdc',
+	SECONDARY: '#fd6a57'
 };
 
 export default COLORS;

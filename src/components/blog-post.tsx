@@ -11,7 +11,7 @@ import { MaxWidthContainer } from '../styled/utils';
 
 export const StyledPost = styled.article`
     max-width: 100%;
-    margin: 0 0 60px;
+    padding: 0 0 60px;
     font-size: 1.8rem;
     text-align: left;
 

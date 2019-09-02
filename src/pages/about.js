@@ -143,26 +143,12 @@ export default class About extends React.Component {
 							<img src={berrySrc} alt="Berry Street" />
 						</li>
 					</SupportContainer>
-					<h2>The site</h2>
-					<h3>Tracking &amp; privacy</h3>
+					<h2>Tracking &amp; privacy</h2>
 					<p>
 						The site uses DNS level analytics provided by Cloudflare
 						to give me traffic stats and geographical information. I
 						don't use Google analytics or any other tracking
 						software.
-					</p>
-					<h3>Attributions</h3>
-					<p>
-						The background pattern in the header and footer was
-						provided by{' '}
-						<a
-							href="https://www.svgbackgrounds.com"
-							target="_blank"
-							rel="noreferrer noopener"
-						>
-							https://www.svgbackgrounds.com
-						</a>
-						.
 					</p>
 				</div>
 			</Layout>

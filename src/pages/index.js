@@ -90,11 +90,12 @@ export default class Index extends React.Component {
 		const latestProject = projects[0];
 
 		return (
-			<Layout slug="home" isHome>
+			<Layout slug="home" isHome headChildren={() => (
 				<HomeHeadBanner>
 					<h2>{MY_NAME}</h2>
 					<p>King of the web</p>
 				</HomeHeadBanner>
+			)}>
 				<MaxWidthContainer>
 					<RecentStuff>
 						<Stuff>
@@ -115,7 +116,7 @@ export default class Index extends React.Component {
 								the newly released "Github Actions" system.
 								Here's the definitive guide to deploying SPAs.
 							</p>
-							<LinkButton to="/blog-posts/2019/08/github-actions-for-web-apps">
+							<LinkButton isSecondary to="/blog-posts/2019/08/github-actions-for-web-apps">
 								Read more
 							</LinkButton>
 						</Stuff>

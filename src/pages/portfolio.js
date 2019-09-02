@@ -100,12 +100,13 @@ const PortfolioItem = styled.div`
 export default class Portfolio extends React.Component {
 	render() {
 		return (
-			<Layout slug="portfolio">
+			<Layout slug="portfolio" headChildren={() => (
+				<HomeHeadBanner>
+					<h1>A Sample of My Work</h1>
+				</HomeHeadBanner>
+			)}>
 				<Helmet title="Development Portfolio | Luke Boyle" />
 				<PortfolioContainer>
-					<HomeHeadBanner>
-						<h1>A Sample of My Work</h1>
-					</HomeHeadBanner>
 					<MaxWidthContainer className="inner">
 						{portfolioItems.map((portfolioItem, index) => {
 							return (

@@ -85,7 +85,8 @@ export const BodyWrapper = styled.div`
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 20px;
-	padding-top: 20px;
+	padding-top: 60px;
+	padding-bottom: 60px;
 
 	div:last-of-type {
 		max-width: 700px;

@@ -1,12 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import WIDTHS from '../styled/widths';
-import COLORS from '../styled/colors';
-import { bp } from '../styled/mixins';
 import { MaxWidthContainer } from '../styled/utils';
 
 const StyledFooter = styled.div`
-    background-color: ${COLORS.PRIMARY};
     height: 60px;
 
     & .inner {
@@ -29,7 +25,6 @@ const StyledFooter = styled.div`
         color: white;
         font-size: 1.4rem;
     }
-}
 `;
 
 export default function Footer() {

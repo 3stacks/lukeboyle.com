@@ -117,12 +117,6 @@ const GlobalLayoutStyle = createGlobalStyle`
 		flex-grow: 1;
 	}
 	
-	.disclaimer-block {
-		background: #FF851B;
-		color: white;
-		white-space: normal;
-	}
-	
 	a {
 		color: ${colors.PRIMARY};
 		transition: color 0.5s ease-out, border-color 0.25s ease-out;
@@ -132,7 +126,6 @@ const GlobalLayoutStyle = createGlobalStyle`
 		&:hover, 
 		&:focus {
 			border-bottom: 1px solid transparent;
-			color: ${colors.PRIMARY_GRADIENT_LIGHT};
 		}
 	}
 	
@@ -160,20 +153,8 @@ const StyledLayout = styled.div`
 	flex-direction: column;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
-
-	${props =>
-		props.isHome &&
-		`
-		color: white;
-		background-color: ${colors.PRIMARY};
-	`}
-
-	${props =>
-		props.className.includes('portfolio') &&
-		`
-		color: white;
-		background-color: ${colors.PRIMARY};
-	`}
+	color: white;
+	background: linear-gradient(${colors.PRIMARY}, #3B60A8);
 
 	.block-header {
 		font-size: 2.5rem;
@@ -182,6 +163,13 @@ const StyledLayout = styled.div`
 	.title {
 		font-size: 3.5rem;
 	}
+	
+	${props => !props.showFullPageColor && `
+		.body-slot {
+			background-color: white;
+			color: #222;
+		}
+	`}
 `;
 
 export default class Layout extends React.Component {
@@ -190,10 +178,14 @@ export default class Layout extends React.Component {
 	};
 
 	render() {
+		const isHomeOrPortfolioPage =
+			this.props.isHome || this.props.slug === 'portfolio';
+
 		return (
 			<StyledLayout
 				className={`layout ${this.props.slug}`}
 				isHome={this.props.isHome}
+				showFullPageColor={isHomeOrPortfolioPage}
 			>
 				<Helmet
 					title={`${MY_NAME} | Front End Developer`}
@@ -249,9 +241,21 @@ export default class Layout extends React.Component {
 					/>
 				</Helmet>
 				<GlobalLayoutStyle />
-				<Header isHome={this.props.slug === 'home'} />
-				<main>{this.props.children}</main>
-				<Footer />
+				<Header
+					isHome={this.props.slug === 'home'}
+					showFillColor={!isHomeOrPortfolioPage}
+				/>
+				<main>
+					{this.props.headChildren && (
+						<div className="head-slot">
+							{this.props.headChildren()}
+						</div>
+					)}
+					<div className="body-slot">
+						{this.props.children}
+					</div>
+				</main>
+				<Footer showFillColor={!isHomeOrPortfolioPage} />
 			</StyledLayout>
 		);
 	}
