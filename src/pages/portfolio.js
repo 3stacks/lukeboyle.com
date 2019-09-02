@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Layout from '../components/layout';
+import Layout from '../components/layout/layout.tsx';
 import portfolioItems from '../data/portfolio-items';
 import styled from 'styled-components';
 import { bp } from '../styled/mixins';

@@ -258,7 +258,7 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 			import BlogHeader from '${rootDir}/components/blog-header';
 			import PostArchive from '${rootDir}/components/post-archive';
 			import {BodyWrapper} from '${rootDir}/pages/music';
-			import Layout from '${rootDir}/components/layout';
+			import Layout from '${rootDir}/components/layout/layout.tsx';
 			import {MaxWidthContainer} from '${rootDir}/styled/utils';
 			${pages[key].reduce((acc, curr) => {
 				return (

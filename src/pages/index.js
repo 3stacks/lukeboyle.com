@@ -1,7 +1,7 @@
 import React from 'react';
 import projects from '../data/portfolio-items';
 import { MY_NAME } from '../constants';
-import Layout from '../components/layout';
+import Layout from '../components/layout/layout.tsx';
 import styled from 'styled-components';
 import WIDTHS from '../styled/widths';
 import { bp } from '../styled/mixins';

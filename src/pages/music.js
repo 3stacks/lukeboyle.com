@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import Layout from '../components/layout';
+import Layout from '../components/layout/layout.tsx';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { MaxWidthContainer } from '../styled/utils';

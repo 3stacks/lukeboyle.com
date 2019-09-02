@@ -10,7 +10,7 @@ import appleMedium from '../../assets/img/apple-icon-120x120.png';
 import appleLarge from '../../assets/img/apple-icon-152x152.png';
 import androidIcon from '../../assets/img/android-icon-192x192.png';
 import favicon from '../../assets/img/favicon-32x32.png';
-import colors from '../../styled/colors';
+import COLORS from '../../styled/colors';
 
 import './layout.css';
 
@@ -118,10 +118,10 @@ const GlobalLayoutStyle = createGlobalStyle`
 	}
 	
 	a {
-		color: ${colors.PRIMARY};
+		color: ${COLORS.PRIMARY};
 		transition: color 0.5s ease-out, border-color 0.25s ease-out;
 		text-decoration: none;
-		border-bottom: 1px solid ${colors.PRIMARY};
+		border-bottom: 1px solid ${COLORS.PRIMARY};
 		
 		&:hover, 
 		&:focus {
@@ -154,7 +154,7 @@ const StyledLayout = styled.div`
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     color: white;
-    background: linear-gradient(${colors.PRIMARY}, #3b60a8);
+    background: linear-gradient(${COLORS.PRIMARY}, #3b60a8);
 
     .block-header {
         font-size: 2.5rem;
@@ -181,10 +181,6 @@ interface IProps {
 }
 
 export default class Layout extends React.Component<IProps> {
-    static propTypes = {
-        slug: PropTypes.string.isRequired
-    };
-
     render() {
         const isHomeOrPortfolioPage =
             this.props.isHome || this.props.slug === 'portfolio';

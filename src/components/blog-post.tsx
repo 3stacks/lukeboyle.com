@@ -1,6 +1,6 @@
 import * as React from 'react';
 import formatDate from 'date-fns/format';
-import Layout from './layout';
+import Layout from './layout/layout';
 import BlogPostTitle from './blog-post-title.js';
 import BlogHeader from './blog-header';
 import Helmet from 'react-helmet';

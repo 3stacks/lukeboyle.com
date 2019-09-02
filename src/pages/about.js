@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Layout from '../components/layout';
+import Layout from '../components/layout/layout.tsx';
 import mozillaSrc from '../assets/img/mozilla.gif';
 import rcaSrc from '../assets/img/rca.gif';
 import berrySrc from '../assets/img/berry.gif';

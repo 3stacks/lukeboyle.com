@@ -15,7 +15,7 @@ import portfolioData from '../../data/portfolio-items';
 import PortfolioItem from '../../components/portfolio-item';
 import Helmet from 'react-helmet';
 import {MaxWidthContainer} from '../../styled/utils';
-import Layout from '../../components/layout';
+import Layout from '../../components/layout/layout.tsx';
 import {StyledPost} from '../../components/blog-post';
 import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 
