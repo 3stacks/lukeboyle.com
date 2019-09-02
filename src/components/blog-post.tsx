@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import formatDate from 'date-fns/format';
 import Layout from './layout';
 import BlogPostTitle from './blog-post-title.js';
@@ -115,9 +115,12 @@ export default function BlogPost({
     canonical
 }: {
     isSinglePostPage: boolean;
+    children: React.ReactElement;
     publishDate: string;
     author: string;
     title: string;
+    slug: string;
+    canonical: string;
 }) {
     const HeadingTag = isSinglePostPage ? 'h1' : 'h2';
     const WrapperContainer = isSinglePostPage ? Layout : 'div';

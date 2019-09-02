@@ -6,8 +6,9 @@
     "outDir": "dist",
     "rootDir": "./",
     "removeComments": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "jsx": "react"
   },
   "exclude": [ "node_modules" ],
-  "include": [ "./**/*.ts" ]
+  "include": [ "src" ]
 }
