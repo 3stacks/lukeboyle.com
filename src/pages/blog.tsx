@@ -3,6 +3,7 @@
 			import Helmet from 'react-helmet';
 			import {BlogHeader} from '../styled/utils';
 			import PostArchive from '../components/post-archive/post-archive';
+			import {HomeHeadBanner} from '../pages/index';
 			import {BodyWrapper} from '../pages/music';
 			import Layout from '../components/layout/layout';
 			import {MaxWidthContainer} from '../styled/utils';

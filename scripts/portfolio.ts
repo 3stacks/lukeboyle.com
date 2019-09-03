@@ -16,6 +16,7 @@ import Helmet from 'react-helmet';
 import {MaxWidthContainer, PortfolioItem} from '../../styled/utils';
 import Layout from '../../components/layout/layout';
 import {StyledPost} from '../../components/blog-post/style';
+import {HomeHeadBanner} from '../../pages/index';
 import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 
 	renderer.image = function(href, title, text) {
@@ -29,7 +30,10 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 		return `<img src={${imageName}} alt="${text}"/>`;
 	};
 
-	const bodyMarkup = getMarkupFromMarkdown(curr.contents);
+
+	const rawMarkup = getMarkupFromMarkdown(curr.contents);
+	const headMarkup = rawMarkup.slice(rawMarkup.indexOf('<h1 '), rawMarkup.indexOf('</h1>') + 5);
+	const bodyMarkup = rawMarkup.slice(rawMarkup.indexOf('</header>') + 9);
 
 	acc.push({
 		path: curr.path,
@@ -48,13 +52,17 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 						.join('_')});
 					
 					return (
-						<Layout>
-							<MaxWidthContainer>
-								<Helmet>
-									<title>{portfolioContent.name} | Project Case Study</title>
-									<meta name="description" content={portfolioContent.snippet}/>
-								</Helmet>
-								<PortfolioItem>
+						<Layout slug="portfolio" headChildren={() => (
+							<HomeHeadBanner>
+								${headMarkup}
+							</HomeHeadBanner>
+						)}>
+							<Helmet>
+								<title>{portfolioContent.name} | Project Case Study</title>
+								<meta name="description" content={portfolioContent.snippet}/>
+							</Helmet>
+							<PortfolioItem>
+								<MaxWidthContainer>
 									<StyledPost className="content">
 										${bodyMarkup}
 										<div className="buttons">
@@ -73,8 +81,8 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 											})}
 										</div>
 									</StyledPost>
-								</PortfolioItem>
-							</MaxWidthContainer>
+								</MaxWidthContainer>
+							</PortfolioItem>
 						</Layout>
 					);
 				}

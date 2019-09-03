@@ -133,6 +133,8 @@ export const BlogHeader = styled.div`
 
 export const PortfolioItem = styled.div`
 	padding: 60px 0;
+	background-color: ${COLORS.WHITE};
+	color: ${COLORS.TEXT};
 
 	& .title,
 	& .blog-post--title {
