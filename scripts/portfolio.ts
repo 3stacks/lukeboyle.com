@@ -15,7 +15,7 @@ import portfolioData from '../../data/portfolio-items';
 import Helmet from 'react-helmet';
 import {MaxWidthContainer, PortfolioItem} from '../../styled/utils';
 import Layout from '../../components/layout/layout';
-import {StyledPost} from '../../components/blog-post/blog-post';
+import {StyledPost} from '../../components/blog-post/style';
 import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 
 	renderer.image = function(href, title, text) {
@@ -24,7 +24,7 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 			rawFilename.slice(0, rawFilename.indexOf('.'))
 		)}Src`;
 
-		imports = `${imports}\nimport ${imageName} from '.${href}'`;
+		imports = `${imports}\nimport ${imageName} from '.${href.replace('/portfolio-items', '')}'`;
 
 		return `<img src={${imageName}} alt="${text}"/>`;
 	};
@@ -61,10 +61,11 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 											{portfolioContent.links.map(link => {
 												return (
 													<LinkButton
+														key={link.href}
 														target="_blank"
 														rel="noopener noreferrer"
 														className="link button primary"
-														href={link.href}
+														to={link.href}
 													>
 														{link.label}
 													</LinkButton>

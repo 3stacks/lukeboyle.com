@@ -39,7 +39,9 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 		)}Src`;
 
 		imports = `${imports}\nimport ${imageName} from '${
-			href.includes('http') ? href : `../..${href.replace('/blog-posts', '')}`
+			href.includes('http')
+				? href
+				: `../..${href.replace('/blog-posts', '')}`
 		}'`;
 
 		return `<img src={${imageName}} alt="${text}"/>`;
@@ -257,6 +259,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			import Helmet from 'react-helmet';
 			import {BlogHeader} from '${rootDir}/styled/utils';
 			import PostArchive from '${rootDir}/components/post-archive/post-archive';
+			import {HomeHeadBanner} from '${rootDir}/pages/index';
 			import {BodyWrapper} from '${rootDir}/pages/music';
 			import Layout from '${rootDir}/components/layout/layout';
 			import {MaxWidthContainer} from '${rootDir}/styled/utils';

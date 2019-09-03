@@ -43,4 +43,4 @@ after launching the URE, MLC has seen a 300% increase in straight-through proces
 - Underwrite Me comes with basic input types out of the box, so using custom tags
 on certain questions, we were able to expand the range of input types
 
-![](/images/custom-fields.png)
+![](/portfolio-items/images/custom-fields.png)

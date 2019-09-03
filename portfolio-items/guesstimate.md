@@ -6,7 +6,7 @@ Guesstimate was born in pursuit of a solution for these problems and addresses t
 
 The result is a deep tree of accurate micro-estimations that get summed up for you. With enough discipline you can break your project into provably accurate blocks and confidently embark on the journey to ship it™.
 
-![A tree structure of tasks](/images/estimate-ui.jpg)
+![A tree structure of tasks](/portfolio-items/images/estimate-ui.jpg)
 
 ### Technology List
 
