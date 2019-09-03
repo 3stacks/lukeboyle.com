@@ -16,6 +16,8 @@ export const HomeHeadBanner = styled.div`
 	flex-direction: column;
 	flex-wrap: wrap;
 	height: 200px;
+	text-align: center;
+	padding: 0 20px;
 
 	${bp(
 		768,
