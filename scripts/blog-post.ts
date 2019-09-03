@@ -29,8 +29,8 @@ function generateComponent(acc, curr) {
 	const postContents = curr.contents;
 	let imports = `
 import React from 'react';
-import BlogPost from '../../../../components/blog-post.tsx';
-import BlockQuote from '../../../../components/block-quote.js';`;
+import BlogPost from '../../../../components/blog-post/blog-post';
+import BlockQuote from '../../../../components/block-quote/block-quote';`;
 
 	renderer.image = function(href, title, text) {
 		const rawFilename = getFileNameFromPath(href);
@@ -101,7 +101,7 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 		let parsedContents = postContents;
 
 		if (contents.metaData.post_type === 'top_list') {
-			imports = `${imports}\nimport AlbumBlock from '../../../../components/album-block';`;
+			imports = `${imports}\nimport {AlbumBlock} from '../../../../styled/utils';`;
 			const rawParts = postContents.split('<h2>');
 			const parts = rawParts.slice(1, rawParts.length);
 			const contents = parts.reduce((acc, curr) => {
@@ -203,7 +203,7 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 				path.resolve(
 					`${__dirname}/../src/pages/${component.path.replace(
 						'.md',
-						'.js'
+						'.tsx'
 					)}`
 				),
 				component.component
@@ -255,17 +255,17 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 			const blogPage = `
 			import React from 'react';
 			import Helmet from 'react-helmet';
-			import BlogHeader from '${rootDir}/components/blog-header';
-			import PostArchive from '${rootDir}/components/post-archive';
+			import {BlogHeader} from '${rootDir}/styled/utils';
+			import PostArchive from '${rootDir}/components/post-archive/post-archive';
 			import {BodyWrapper} from '${rootDir}/pages/music';
-			import Layout from '${rootDir}/components/layout/layout.tsx';
+			import Layout from '${rootDir}/components/layout/layout';
 			import {MaxWidthContainer} from '${rootDir}/styled/utils';
 			${pages[key].reduce((acc, curr) => {
 				return (
 					acc +
 					`import ${curr.componentName} from '${
 						index === 0 ? './' : '../'
-					}${curr.path.replace('.md', '.js')}';\n`
+					}${curr.path.replace('.md', '')}';\n`
 				);
 			}, '')}
 				
@@ -334,8 +334,8 @@ import BlockQuote from '../../../../components/block-quote.js';`;
 
 			const fileName =
 				index === 0
-					? `${__dirname}/../src/pages/blog.js`
-					: `${__dirname}/../src/pages/blog/${index}.js`;
+					? `${__dirname}/../src/pages/blog.tsx`
+					: `${__dirname}/../src/pages/blog/${index}.tsx`;
 
 			fs.copySync(
 				`${__dirname}/../blog-posts/images`,

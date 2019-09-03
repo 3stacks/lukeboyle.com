@@ -1,12 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import { MY_NAME } from '../constants';
 import styled from 'styled-components';
-import { bp } from '../styled/mixins';
-import WIDTHS from '../styled/widths';
+import { bp } from '../../styled/mixins';
+import WIDTHS from '../../styled/widths';
 
-const StyledNav = styled.div`
+export const StyledNav = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -94,44 +90,3 @@ const StyledNav = styled.div`
 		}
 	}
 `;
-
-export default function SiteNav({ isHome, ...otherProps }) {
-	return (
-		<StyledNav>
-			{isHome ? (
-				<h1 className="logo">{MY_NAME}</h1>
-			) : (
-				<p className="logo">
-					<Link to="/" rel="home" title="Go back to the home page">
-						{MY_NAME}
-					</Link>
-				</p>
-			)}
-			<ul id="menu" className="menu">
-				<li className="item">
-					<Link to="/">Home</Link>
-				</li>
-				<li className="item">
-					<Link to="/portfolio">Portfolio</Link>
-				</li>
-				<li className="item">
-					<Link to="/blog">Blog</Link>
-				</li>
-				<li className="item">
-					<Link to="/music">Music</Link>
-				</li>
-				<li className="item">
-					<Link to="/about">About</Link>
-				</li>
-			</ul>
-		</StyledNav>
-	);
-}
-
-SiteNav.propTypes = {
-	isHome: PropTypes.bool
-};
-
-SiteNav.defaultProps = {
-	isHome: false
-};

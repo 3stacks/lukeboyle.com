@@ -1,14 +1,14 @@
 import React from 'react';
-import SiteNav from '../site-nav';
+import SiteNav from '../site-nav/site-nav';
 import { MaxWidthContainer } from '../../styled/utils';
-import {StyledHeader} from './style';
+import { StyledHeader } from './style';
 
 export default function Header({ isHome = false }) {
-	return (
-		<StyledHeader>
-			<MaxWidthContainer>
-				<SiteNav isHome={isHome} />
-			</MaxWidthContainer>
-		</StyledHeader>
-	);
+    return (
+        <StyledHeader>
+            <MaxWidthContainer>
+                <SiteNav isHome={isHome} />
+            </MaxWidthContainer>
+        </StyledHeader>
+    );
 }

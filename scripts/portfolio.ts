@@ -1,7 +1,7 @@
 import glob from 'glob';
 import fs from 'fs-extra';
 import path from 'path';
-import {getMarkupFromMarkdown, renderer} from './utils/renderer';
+import { getMarkupFromMarkdown, renderer } from './utils/renderer';
 import camelCase from 'lodash/camelCase';
 import shell from 'shelljs';
 import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
@@ -12,16 +12,17 @@ function generateComponent(acc, curr, index) {
 	let imports = `
 import React from 'react';
 import portfolioData from '../../data/portfolio-items';
-import PortfolioItem from '../../components/portfolio-item';
 import Helmet from 'react-helmet';
-import {MaxWidthContainer} from '../../styled/utils';
-import Layout from '../../components/layout/layout.tsx';
-import {StyledPost} from '../../components/blog-post';
+import {MaxWidthContainer, PortfolioItem} from '../../styled/utils';
+import Layout from '../../components/layout/layout';
+import {StyledPost} from '../../components/blog-post/blog-post';
 import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 
 	renderer.image = function(href, title, text) {
 		const rawFilename = getFileNameFromPath(href);
-		const imageName = `${camelCase(rawFilename.slice(0, rawFilename.indexOf('.')))}Src`;
+		const imageName = `${camelCase(
+			rawFilename.slice(0, rawFilename.indexOf('.'))
+		)}Src`;
 
 		imports = `${imports}\nimport ${imageName} from '.${href}'`;
 
@@ -41,7 +42,10 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 			export default class ${camelCaseName} extends React.Component {
 				render() {
 				
-					const portfolioContent = portfolioData.find(data => data.name === PORTFOLIO_ITEM_NAMES.${fileName.toUpperCase().split('-').join('_')});
+					const portfolioContent = portfolioData.find(data => data.name === PORTFOLIO_ITEM_NAMES.${fileName
+						.toUpperCase()
+						.split('-')
+						.join('_')});
 					
 					return (
 						<Layout>
@@ -85,7 +89,7 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 		const blogPosts = files.reduce((acc, curr) => {
 			acc.push({
 				path: curr,
-				contents: fs.readFileSync(curr, {encoding: 'utf-8'})
+				contents: fs.readFileSync(curr, { encoding: 'utf-8' })
 			});
 
 			return acc;
@@ -95,9 +99,17 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 
 		const reversedComponents = blogPosts.reduce(generateComponent, []);
 
-		fs.copySync(`${__dirname}/../portfolio-items/images`, `${__dirname}/../src/pages/portfolio/images`);
+		fs.copySync(
+			`${__dirname}/../portfolio-items/images`,
+			`${__dirname}/../src/pages/portfolio/images`
+		);
 		reversedComponents.forEach(component => {
-			fs.writeFileSync(path.resolve(`${__dirname}/../src/pages/portfolio/${component.fileName}.jsx`), component.component);
+			fs.writeFileSync(
+				path.resolve(
+					`${__dirname}/../src/pages/portfolio/${component.fileName}.tsx`
+				),
+				component.component
+			);
 		});
 	});
 })();

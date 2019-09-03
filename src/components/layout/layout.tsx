@@ -1,8 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 import Header from '../header/header';
-import Footer from '../footer.js';
+import Footer from '../footer/footer';
 import { META_DESCRIPTION, MY_NAME } from '../../constants';
 import styled, { createGlobalStyle } from 'styled-components';
 import appleSmall from '../../assets/img/apple-icon-76x76.png';
@@ -13,6 +12,8 @@ import favicon from '../../assets/img/favicon-32x32.png';
 import COLORS from '../../styled/colors';
 
 import './layout.css';
+import WIDTHS from '../../styled/widths';
+import { bp } from '../../styled/mixins';
 
 const GlobalLayoutStyle = createGlobalStyle`
 	* {
@@ -131,10 +132,16 @@ const GlobalLayoutStyle = createGlobalStyle`
 	
 	.pagination {
 		display: flex;
-		width: 25%;
-		margin: 0 auto;
+		margin: 0 auto !important;
 		font-size: 1.6rem;
-		padding-top: 40px;
+		width: calc(100% - 20px)
+		
+		${bp(
+            WIDTHS.M,
+            `
+		    width: calc(100% - 120px)
+		`
+        )}
 	}
 	
 	.pagination li {
@@ -177,7 +184,7 @@ const StyledLayout = styled.div`
 interface IProps {
     isHome: boolean;
     slug: string;
-    headChildren: () => React.ReactElement;
+    headChildren?: () => React.ReactElement;
 }
 
 export default class Layout extends React.Component<IProps> {
@@ -254,7 +261,7 @@ export default class Layout extends React.Component<IProps> {
                     )}
                     <div className="body-slot">{this.props.children}</div>
                 </main>
-                <Footer showFillColor={!isHomeOrPortfolioPage} />
+                <Footer />
             </StyledLayout>
         );
     }
