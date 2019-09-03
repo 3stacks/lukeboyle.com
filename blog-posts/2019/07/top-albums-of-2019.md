@@ -13,49 +13,49 @@
 
 ### Tyler, the Creator
 
-![igor](/images/albums/2019/igor.jpg)
+![igor](/blog-posts/images/albums/2019/igor.jpg)
 
 ## Ventura
 
 ### Anderson .Paak
 
-![ventura](/images/albums/2019/ventura.jpg)
+![ventura](/blog-posts/images/albums/2019/ventura.jpg)
 
 ## Here Comes the Cowboy
 
 ### Mac DeMarco
 
-![the-cowboy](/images/albums/2019/the-cowboy.jpeg)
+![the-cowboy](/blog-posts/images/albums/2019/the-cowboy.jpeg)
 
 ## Social Cues
 
 ### Cage The Elephant
 
-![social-cues](/images/albums/2019/social-cues.jpg)
+![social-cues](/blog-posts/images/albums/2019/social-cues.jpg)
 
 ## Czarface Meets Ghostface
 
 ### Czarface & Ghostface Killah
 
-![crash-talk](/images/albums/2019/ghostczar.jpg)
+![crash-talk](/blog-posts/images/albums/2019/ghostczar.jpg)
 
 ## Nothing Great About Britain
 
 ### slowthai
 
-![britain](/images/albums/2019/britain.png)
+![britain](/blog-posts/images/albums/2019/britain.png)
 
 ## Guns
 
 ### Quelle Chris
 
-![Guns album artwork](/images/albums/2019/guns.jpg)
+![Guns album artwork](/blog-posts/images/albums/2019/guns.jpg)
 
 ## Hiding Places
 
 ### woods + segal
 
-![hiding-places](/images/albums/2019/hiding-places.jpg)
+![hiding-places](/blog-posts/images/albums/2019/hiding-places.jpg)
 
 The influx of these MC/Producer partnerships is producing some
 amazing albums. I compare it to Hollywood films. In most of these
@@ -142,4 +142,4 @@ contribute to the experience, then it isn't featured.
 
 ### Freddie Gibbs & Madlib
 
-![bandana](/images/albums/2019/bandana.jpeg)
+![bandana](/blog-posts/images/albums/2019/bandana.jpeg)

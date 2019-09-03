@@ -7,7 +7,7 @@
 | post_status | publish |
 | post_type | revision |
 
-![Mac Miller](/images/mac.jpg)
+![Mac Miller](/blog-posts/images/mac.jpg)
 
 > I was drowning but now I'm swimming
 

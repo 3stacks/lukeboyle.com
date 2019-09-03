@@ -13,7 +13,7 @@
 
 ### Elevators (Me & You)
 
-![ATLiens](/images/albums/top-verses/atliens.jpg)
+![ATLiens](/blog-posts/images/albums/top-verses/atliens.jpg)
 
 Got stopped at the mall the other day
 
@@ -47,7 +47,7 @@ From Virginia, this ain't gon' stop, so we just gon' continue
 
 ### DNA
 
-![XXX](/images/albums/top-verses/xxx.jpg)
+![XXX](/blog-posts/images/albums/top-verses/xxx.jpg)
 
 Warhols all on the wall of the villa
 
@@ -85,7 +85,7 @@ To describe ya mixtape that shit was like a toothache
 
 ### You Ain't a Killer
 
-![Capital Punishment](/images/albums/top-verses/capital-punishment.jpg)
+![Capital Punishment](/blog-posts/images/albums/top-verses/capital-punishment.jpg)
 
 It's hard to analyze which guys are spies; be advised, people
 
@@ -144,7 +144,7 @@ One that survive, it's who's the wisest
 ## AZ
 ### Life's a Bitch
 
-![Illmatic](/images/albums/top-verses/illmatic.jpg)
+![Illmatic](/blog-posts/images/albums/top-verses/illmatic.jpg)
 
 Visualizin' the realism of life in actuality
 
@@ -184,7 +184,7 @@ Keepin' it real, packin' steel, gettin' high
 
 ### Beef Rap
 
-![Mm Food](/images/albums/top-verses/mm-food.jpg)
+![Mm Food](/blog-posts/images/albums/top-verses/mm-food.jpg)
 
 What up?
 
@@ -222,7 +222,7 @@ Yes, you, who's screwed by the dude on the CD, nude
 
 ### America's Most Blunted
 
-![Madvillainy](/images/albums/top-verses/madvillainy.jpg)
+![Madvillainy](/blog-posts/images/albums/top-verses/madvillainy.jpg)
 
 Quas, when he really hit star mode
 
@@ -272,7 +272,7 @@ Tear a page out the good book, hear it how you want it
 
 ### Living In The World Today
 
-![Liquid Swords](/images/albums/top-verses/liquid-swords.jpg)
+![Liquid Swords](/blog-posts/images/albums/top-verses/liquid-swords.jpg)
 
 My rhyme gross weight vehicle combination
 
@@ -310,7 +310,7 @@ My motherfuckin' style is mad murderous
 
 ### WIND IN MY SAILS
 
-![Wind in my sails](/images/albums/top-verses/wind-in-my-sails.jpg)
+![Wind in my sails](/blog-posts/images/albums/top-verses/wind-in-my-sails.jpg)
 
 My whole disposition like fuck who told me to sit
 
@@ -358,7 +358,7 @@ Wrist dangling like black fruit, nigga
 
 ### Uncommon Valor: A Vietnam Story
 
-![Servants in Heaven, Kings in Hell](/images/albums/top-verses/servants-in-heaven.jpg)
+![Servants in Heaven, Kings in Hell](/blog-posts/images/albums/top-verses/servants-in-heaven.jpg)
 
 Call me Thorburn, John A., staff sergeant
 

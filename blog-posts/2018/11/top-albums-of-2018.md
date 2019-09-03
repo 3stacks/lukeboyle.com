@@ -13,77 +13,77 @@
 
 ### Father John Misty
 
-![gods-favorite](/images/gods-favorite.jpg)
+![gods-favorite](/blog-posts/images/gods-favorite.jpg)
 
 ## TA13OO
 
 ### Denzel Curry
 
-![taboo](/images/taboo.jpg)
+![taboo](/blog-posts/images/taboo.jpg)
 
 ## Freddie
 
 ### Freddie Gibbs
 
-![freddie](/images/freddie.jpg)
+![freddie](/blog-posts/images/freddie.jpg)
 
 ## Everything's Fine
 
 ### Quelle Chris & Jean Grae
 
-![everything-fine](/images/everything-fine.jpg)
+![everything-fine](/blog-posts/images/everything-fine.jpg)
 
 ## Year of the Snitch
 
 ### Death Grips
 
-![year-of-the-snitch](/images/year-of-the-snitch.jpg)
+![year-of-the-snitch](/blog-posts/images/year-of-the-snitch.jpg)
 
 ## Vacation in Hell
 
 ### Flatbush Zombies
 
-![vacation-in-hell](/images/vacation-in-hell.jpg)
+![vacation-in-hell](/blog-posts/images/vacation-in-hell.jpg)
 
 ## DiCaprio 2
 
 ### JID
 
-![dicaprio](/images/dicaprio.jpg)
+![dicaprio](/blog-posts/images/dicaprio.jpg)
 
 
 ## What Happens When I Try To Relax
 
 ### Open Mike Eagle
 
-![what-happens](/images/what-happens.jpg)
+![what-happens](/blog-posts/images/what-happens.jpg)
 
 ## Testing
 
 ### A$AP Rocky
 
-![testing](/images/testing.jpg)
+![testing](/blog-posts/images/testing.jpg)
 
 ## Daytona
 
 ### Pusha T
 
-![daytona](/images/daytona.jpg)
+![daytona](/blog-posts/images/daytona.jpg)
 
 ## Swimming
 
 ### Mac Miller
 
-![swimming](/images/swimming.jpg)
+![swimming](/blog-posts/images/swimming.jpg)
 
 ## KOD
 
 ### J.Cole
 
-![kod](/images/kod.jpg)
+![kod](/blog-posts/images/kod.jpg)
 
 ## some rap songs
 
 ### Earl Sweatshirt
 
-![srs](/images/srs.jpg)
+![srs](/blog-posts/images/srs.jpg)

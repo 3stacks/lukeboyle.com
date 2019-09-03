@@ -39,7 +39,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 		)}Src`;
 
 		imports = `${imports}\nimport ${imageName} from '${
-			href.includes('http') ? href : `../..${href}`
+			href.includes('http') ? href : `../..${href.replace('/blog-posts', '')}`
 		}'`;
 
 		return `<img src={${imageName}} alt="${text}"/>`;

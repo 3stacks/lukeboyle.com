@@ -15,89 +15,89 @@
 
 ### The I.L.Y's
 
-![](/images/scum-with-boundaries.jpg)
+![](/blog-posts/images/scum-with-boundaries.jpg)
 
 ## Do What Thou Wilt.
 
 ### Ab-Soul
 
-![](/images/dwtw.jpg)
+![](/blog-posts/images/dwtw.jpg)
 
 ## Untitled, Unmastered
 
 ### Kendrick Lamar
 
-![untitled](/images/untitled.jpg)
+![untitled](/blog-posts/images/untitled.jpg)
 
 ## Hella Personal Film Festival
 
 ### Open Mike Eagle
 
-![a1158245013_10](/images/hella-personal.jpg)
+![a1158245013_10](/blog-posts/images/hella-personal.jpg)
 
 ## We got it from Here... Thank You 4 Your Service
 
 ### A Tribe Called Quest
 
-![09e256ce885fe6b3cf181239c3b3231c-1000x1000x1](/images/atcq.png)
+![09e256ce885fe6b3cf181239c3b3231c-1000x1000x1](/blog-posts/images/atcq.png)
 
 ## The Life of Pablo
 
 ### Kanye West
 
-![the_life_of_pablo_alternate](/images/tlop.jpeg)
+![the_life_of_pablo_alternate](/blog-posts/images/tlop.jpeg)
 
 ## Still Brazy
 
 ### YG
 
-![e308ca36](/images/still-brazy.jpg)
+![e308ca36](/blog-posts/images/still-brazy.jpg)
 
 ## The Sun's Tirade
 
 ### Isaiah Rashad
 
-![thesunstirade](/images/tirade.jpg)
+![thesunstirade](/blog-posts/images/tirade.jpg)
 
 ## Atrocity Exhibition
 
 ### Danny Brown
 
-![atrocityexhibition](/images/atrocity.jpg)
+![atrocityexhibition](/blog-posts/images/atrocity.jpg)
 
 ## Yes Lawd
 
 ### NxWorries
 
-![nxworries-anderson-paak-knxwledge-yes-lawd-cover-art](/images/yes-lawd.jpg)
+![nxworries-anderson-paak-knxwledge-yes-lawd-cover-art](/blog-posts/images/yes-lawd.jpg)
 
 ## Bottomless Pit
 
 ### Death Grips
 
-![deathgripscoverbottom](/images/bottomless.jpg)
+![deathgripscoverbottom](/blog-posts/images/bottomless.jpg)
 
 ## 3001: A Laced Oddysey
 
 ### Flatbush Zombies
 
-![3001alaced_odyssey](/images/laced-odyssey.jpg)
+![3001alaced_odyssey](/blog-posts/images/laced-odyssey.jpg)
 
 ## Blank Face LP
 
 ### ScHoolboy Q
 
-![blank-face-lp](/images/blank-face.jpg)
+![blank-face-lp](/blog-posts/images/blank-face.jpg)
 
 ## Blonde
 
 ### Frank Ocean
 
-![frank-ocean-blond-compressed-0933daea-f052-40e5-85a4-35e07dac73df](/images/blonde.jpg)
+![frank-ocean-blond-compressed-0933daea-f052-40e5-85a4-35e07dac73df](/blog-posts/images/blonde.jpg)
 
 ## Malibu
 
 ### Anderson .Paak
 
-![anderson-paak-malibu-cover-art](/images/malibu.jpeg)
+![anderson-paak-malibu-cover-art](/blog-posts/images/malibu.jpeg)
         
