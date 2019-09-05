@@ -36,7 +36,7 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 		componentName: camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
 		component: `
 			${imports}
-			import {LinkButton} from '../../components/button';
+			import {AnchorButton} from '../../components/button';
 				
 			export default class ${camelCaseName} extends React.Component {
 				render() {
@@ -56,14 +56,14 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 										<div className="buttons">
 											{portfolioContent.links.map(link => {
 												return (
-													<LinkButton
+													<AnchorButton
 														target="_blank"
 														rel="noopener noreferrer"
 														className="link button primary"
 														href={link.href}
 													>
 														{link.label}
-													</LinkButton>
+													</AnchorButton>
 												);
 											})}
 										</div>

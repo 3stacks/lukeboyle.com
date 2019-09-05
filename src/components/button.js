@@ -55,3 +55,4 @@ export default styled.button`
 export const LinkButton = styled(Link)`
 	${props => getButtonStyles(props)}
 `;
+export const AnchorButton = styled.a`${props => getButtonStyles(props)}`;
