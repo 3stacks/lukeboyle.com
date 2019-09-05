@@ -8,7 +8,15 @@ import { bp } from '../styled/mixins';
 import { MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
 
-export const HomeHeadBanner = styled.div`
+export function HomeHeadBanner({ children }) {
+    return (
+        <StyledBanner>
+            <MaxWidthContainer>{children}</MaxWidthContainer>
+        </StyledBanner>
+    );
+}
+
+export const StyledBanner = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
@@ -16,6 +24,7 @@ export const HomeHeadBanner = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     height: 200px;
+    text-align: center;
 
     ${bp(
         768,
