@@ -99,7 +99,7 @@ export default [
 		links: [
 			{
 				label: 'View live site',
-				href: 'http://splitviz.io/'
+				href: 'https://splitviz.io/'
 			},
 			{
 				label: 'See repository',
