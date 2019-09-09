@@ -451,3 +451,73 @@ Cerebral palsy, cortical blindness — name it, they had it
 My son died, he ain't live
 
 But I still try to think positive, ‘cause in life, God take, God give
+
+## Freddie Gibbs
+
+### Rob Me A Nigga
+
+![Cold day in hell](/blog-posts/images/albums/top-verses/cold-day-in-hell.jpg)
+
+The liquor got me lurking and looking for a lame nigga
+
+To set up for my next lick
+
+In the Chevy, about to roll up the stress, with a Tec
+
+And what he got on his neck, got him a death wish
+
+It's kinda funny cause he used to be my nigga tho
+
+We was breaking bread, flipping bricks like a year ago
+
+Shit can get into a nigga's head when his digits low
+
+Make you wanna send one of your friends to his funeral
+
+Maybe me and him was never friends in the first place
+
+Don't mean a thing cause we share the same birthplace
+
+Same city, same hood, but we down to kill each other for a dollar
+
+Cause we want it in the worst way
+
+Money talk and bullshit gon walk a marathon
+
+And I ain't scared of getting killed cause I'm getting mine
+
+And if they ever try to raid, I'mma hit the fuckin pigs with the K's
+
+I ain't tryna do a lick of time
+
+Spend all my last money, the bills too high
+
+His jewelry, his whip game, the wheels too fly
+
+I'm thinking about murder every time we cruise by
+
+Heard he got like 84 elbows of blue fire
+
+In the basement, muthafuckas still think basic
+
+Thinkin' I'mma show up and erase 'em, but I ain't gonna chase 'em
+
+I'mma be up in his crib waiting
+
+"Bitch where the cash? I can taste it"
+
+Put em on their faces: what you know about kidnapping
+
+And holding a nigga's whole family for ransom?
+
+When your stomach empty it's easy to understand it
+
+Got me out here taking them penitentiary chances
+
+"Born in this world of tears, will die laughing"
+
+Put that on the headpiece right above my casket
+
+Still in the game, my batteries still lastin
+
+Bout to put some gas up in my Caprice Classic, and...
