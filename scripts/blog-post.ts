@@ -7,6 +7,7 @@ import sortBy from 'lodash/sortBy';
 import { getMarkupFromMarkdown, renderer } from './utils/renderer';
 import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
 import { isNotDirectory, resolveBlogPosts } from './utils/blog';
+import music from "../src/pages/music";
 
 function getCanonicalURLFromString(someString: string): string {
 	const canonicalUrlIndex = someString.indexOf('canonical');
@@ -186,7 +187,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			'publishDate'
 		);
 		const musicPosts = componentsSortedByDate.filter(
-			component => component.postCategory === 'music'
+			component => component.postCategory.trim() === 'music'
 		);
 
 		shell.rm('-rf', path.resolve(`${__dirname}/../src/pages/blog-posts`));
@@ -218,6 +219,8 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 				musicPosts
 					.reverse()
 					.map(({ postTitle, path, fileName, componentName }) => {
+						console.log(fileName);
+
 						return {
 							path,
 							fileName,
