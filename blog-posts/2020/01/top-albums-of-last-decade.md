@@ -2,7 +2,7 @@
 
 | Metadata name | Value |
 | --------- | ------ |
-| post_title | Top albums of the 2010s |
+| post_title | My favourite albums of the 2010s |
 | post_date | 2020-01-06 00:00:00 |
 | post_modified | 2020-01-06 00:00:00 |
 | post_status | publish |
