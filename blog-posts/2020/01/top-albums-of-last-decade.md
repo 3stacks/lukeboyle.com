@@ -1,4 +1,4 @@
-# My favourite albums of 2019
+# My favourite albums of the 2010s
 
 | Metadata name | Value |
 | --------- | ------ |
