@@ -69,12 +69,6 @@
 
 ![Cover art for Summertime '06](/blog-posts/images/albums/summertime.jpg)
 
-## Kendrick Lamar
-
-### Good Kid, M.A.A.D City
-
-![Cover art for GKMC](/blog-posts/images/albums/gkmc.jpg)
-
 ## Killer Mike
 
 ### R.A.P Music
@@ -98,6 +92,12 @@
 ### Swimming
 
 ![Cover art for Swimming](/blog-posts/images/albums/swimming.jpg)
+
+## Kendrick Lamar
+
+### Good Kid, M.A.A.D City
+
+![Cover art for GKMC](/blog-posts/images/albums/gkmc.jpg)
 
 ## Mount Eerie
 
