@@ -103,7 +103,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 		const postContents = getMarkupFromMarkdown(contents.contents);
 		let parsedContents = postContents;
 
-		if (contents.metaData.post_type === 'top_list') {
+		if (contents.metaData.post_type.trim() === 'top_list') {
 			imports = `${imports}\nimport {AlbumBlock} from '../../../../styled/utils';`;
 			const rawParts = postContents.split('<h2>');
 			const parts = rawParts.slice(1, rawParts.length);
