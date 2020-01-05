@@ -15,17 +15,23 @@
 
 ![Cover art for I Love You, Honeybear](/blog-posts/images/albums/honeybear.jpg)
 
-## Isaiah Rashad
-
-### Cilvia Demo
-
-![Cover art for Cilvia Demo](/blog-posts/images/albums/cilvia.jpg)
-
 ## Royal Blood
 
 ### Royal Blood
 
 ![Cover art for Royal Blood](/blog-posts/images/albums/royal-blood.jpg)
+
+## Mother Falcon
+
+### Still Life
+
+![Cover art for Still Life](/blog-posts/images/albums/still-life.jpg)
+
+## Isaiah Rashad
+
+### Cilvia Demo
+
+![Cover art for Cilvia Demo](/blog-posts/images/albums/cilvia.jpg)
 
 ## Death Grips
 
