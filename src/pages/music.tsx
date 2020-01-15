@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout/layout';
@@ -13,9 +13,9 @@ import {
     getTopAlbums
 } from '../../scripts/utils/music';
 import postData from '../data/music-posts.json';
-import artistData from '../data/artists.json';
-import albumData from '../data/albums.json';
-import crateData from '../data/crate.json';
+import prefetchedArtistData from '../data/artists.json';
+import prefetchedAlbumData from '../data/albums.json';
+import prefetchedCrateData from '../data/crate.json';
 
 const ArtistList = styled.ol`
 	list-style: none;
@@ -67,8 +67,7 @@ const ArtistList = styled.ol`
 		margin-bottom: 1rem;
 		padding-top: 1rem;
 		text-align: center;
-	}
-	
+	} 
 	.play-count {
 		margin: 0;
 		font-size: 1.6rem;
@@ -159,10 +158,6 @@ export const BodyWrapper = styled.div`
     }
 `;
 
-const SeeMoreOnBlock = styled.li`
-    width: 100%;
-`;
-
 interface IProps {
     data: {
         site: {
@@ -174,68 +169,77 @@ interface IProps {
     };
 }
 
-export default class Portfolio extends React.Component<IProps> {
-    state = {
-        artistData,
-        albumData,
-        crateData
-    };
+export default function Portfolio({data}: IProps) {
+    const [artistData, updateArtistData] = useState(prefetchedArtistData);
+    const [albumData, updateAlbumData] = useState(prefetchedAlbumData);
+    const [crateData, updateCrateData] = useState(prefetchedCrateData);
 
-    componentDidMount = async () => {
-        const LAST_FM_API_KEY = this.props.data.site.siteMetadata.lastFMApiKey;
-        const DISCOGS_API_KEY = this.props.data.site.siteMetadata.discogsApiKey;
+    useEffect(() => {
+        let isCancelled = false;
 
-        try {
-            const albumResponse = await getTopAlbums(LAST_FM_API_KEY);
-            const artistResponse = await getTopArtists(LAST_FM_API_KEY);
-            const discogsResponse = await getDiscogsCollectionItems(
-                DISCOGS_API_KEY
-            );
+        async function fetchData() {
+            const LAST_FM_API_KEY = data.site.siteMetadata
+                .lastFMApiKey;
+            const DISCOGS_API_KEY = data.site.siteMetadata
+                .discogsApiKey;
 
-            this.setState(state => {
-                return {
-                    ...state,
-                    artistData: artistResponse,
-                    albumData: albumResponse,
-                    crateData: discogsResponse
-                };
-            });
-        } catch (e) {
-            console.error(e);
+            try {
+                const albumResponse = await getTopAlbums(LAST_FM_API_KEY);
+                const artistResponse = await getTopArtists(LAST_FM_API_KEY);
+                const discogsResponse = await getDiscogsCollectionItems(
+                    DISCOGS_API_KEY
+                );
+
+                if (!isCancelled) {
+                    updateArtistData(artistResponse);
+                    updateAlbumData(albumResponse);
+                    updateCrateData(discogsResponse);
+                }
+            } catch (e) {
+                console.error(e);
+            }
         }
-    };
 
-    render() {
-        return (
-            <Layout isHome={false} slug="music">
-                <Helmet title="Music | Luke Boyle" />
-                <MaxWidthContainer>
-                    <BodyWrapper>
-                        <div className="left">
-                            <MainHeader>Recent posts</MainHeader>
-                            <ul>
-                                {postData.map(post => {
-                                    return (
-                                        <li key={post.fileName}>
-                                            <Link
-                                                to={`/${post.path.replace(
-                                                    '.md',
-                                                    ''
-                                                )}`}
-                                            >
-                                                {post.postTitle}
-                                            </Link>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </div>
-                        <div>
-                            <MainHeader>What's new in the crate</MainHeader>
-                            <ArtistList>
-                                {this.state.crateData.map(release => {
-                                    return (
-                                        <li key={release.id}>
+        fetchData();
+
+        return () => (isCancelled = true);
+    }, []);
+
+    return (
+        <Layout isHome={false} slug="music">
+            <Helmet title="Music | Luke Boyle" />
+            <MaxWidthContainer>
+                <BodyWrapper>
+                    <div className="left">
+                        <MainHeader>Recent posts</MainHeader>
+                        <ul>
+                            {postData.map(post => {
+                                return (
+                                    <li key={post.fileName}>
+                                        <Link
+                                            to={`/${post.path.replace(
+                                                '.md',
+                                                ''
+                                            )}`}
+                                        >
+                                            {post.postTitle}
+                                        </Link>
+                                    </li>
+                                );
+                            })}
+                        </ul>
+                    </div>
+                    <div>
+                        <MainHeader>What's new in the crate</MainHeader>
+                        <ArtistList>
+                            {crateData.map(release => {
+                                return (
+                                    <li key={release.id}>
+                                        <a
+                                            href="https://www.discogs.com/user/LookBoil/collection?sort_by=added&sort_order=asc"
+                                            target="_blank"
+                                            rel="noreferrer noopener"
+                                        >
                                             <div className="image-wrapper">
                                                 <img
                                                     src={release.images[0].uri}
@@ -248,71 +252,62 @@ export default class Portfolio extends React.Component<IProps> {
                                             <p className="play-count">
                                                 {release.artists[0].name}
                                             </p>
-                                        </li>
-                                    );
-                                })}
-                                <SeeMoreOnBlock>
-                                    <a
-                                        href="https://www.discogs.com/user/LookBoil/collection?sort_by=added&sort_order=asc"
-                                        target="_blank"
-                                        rel="noreferrer noopener"
-                                    >
-                                        See my collection on Discogs
-                                    </a>
-                                </SeeMoreOnBlock>
-                            </ArtistList>
-                            <MainHeader>Who I've been listening to</MainHeader>
-                            <ArtistList>
-                                {this.state.artistData.map(artist => {
-                                    const imageToShow =
-                                        artist.image.find(
-                                            image => image.size === 'large'
-                                        ) || artist.image[0];
-                                    const imageSrc = imageToShow['#text'];
-                                    return (
-                                        <li key={artist.mbid}>
-                                            <div className="image-wrapper">
-                                                <img src={imageSrc} alt="" />
-                                            </div>
-                                            <h2 className="artist-name">
-                                                {artist.name}
-                                            </h2>
-                                            <p className="play-count">
-                                                {artist.playcount} plays
-                                            </p>
-                                        </li>
-                                    );
-                                })}
-                            </ArtistList>
-                            <MainHeader>My most played albums</MainHeader>
-                            <ArtistList>
-                                {this.state.albumData.map(album => {
-                                    const imageToShow =
-                                        album.image.find(
-                                            image => image.size === 'large'
-                                        ) || album.image[0];
-                                    const imageSrc = imageToShow['#text'];
-                                    return (
-                                        <li key={album.mbid}>
-                                            <div className="image-wrapper">
-                                                <img src={imageSrc} alt="" />
-                                            </div>
-                                            <h2 className="artist-name">
-                                                {album.name}
-                                            </h2>
-                                            <p className="play-count">
-                                                {album.playcount} plays
-                                            </p>
-                                        </li>
-                                    );
-                                })}
-                            </ArtistList>
-                        </div>
-                    </BodyWrapper>
-                </MaxWidthContainer>
-            </Layout>
-        );
-    }
+                                        </a>
+                                    </li>
+                                );
+                            })}
+                        </ArtistList>
+                        <MainHeader>Who I've been listening to</MainHeader>
+                        <ArtistList>
+                            {artistData.map(artist => {
+                                const imageToShow =
+                                    artist.image.find(
+                                        image => image.size === 'large'
+                                    ) || artist.image[0];
+                                const imageSrc = imageToShow['#text'];
+                                return (
+                                    <li key={artist.mbid}>
+                                        <div className="image-wrapper">
+                                            <img src={imageSrc} alt="" />
+                                        </div>
+                                        <h2 className="artist-name">
+                                            {artist.name}
+                                        </h2>
+                                        <p className="play-count">
+                                            {artist.playcount} plays
+                                        </p>
+                                    </li>
+                                );
+                            })}
+                        </ArtistList>
+                        <MainHeader>My most played albums</MainHeader>
+                        <ArtistList>
+                            {albumData.map(album => {
+                                const imageToShow =
+                                    album.image.find(
+                                        image => image.size === 'large'
+                                    ) || album.image[0];
+                                const imageSrc = imageToShow['#text'];
+                                return (
+                                    <li key={album.mbid}>
+                                        <div className="image-wrapper">
+                                            <img src={imageSrc} alt="" />
+                                        </div>
+                                        <h2 className="artist-name">
+                                            {album.name}
+                                        </h2>
+                                        <p className="play-count">
+                                            {album.playcount} plays
+                                        </p>
+                                    </li>
+                                );
+                            })}
+                        </ArtistList>
+                    </div>
+                </BodyWrapper>
+            </MaxWidthContainer>
+        </Layout>
+    );
 }
 
 export const query = graphql`
