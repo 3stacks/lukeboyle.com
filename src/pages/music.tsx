@@ -235,24 +235,18 @@ export default function Portfolio({data}: IProps) {
                             {crateData.map(release => {
                                 return (
                                     <li key={release.id}>
-                                        <a
-                                            href="https://www.discogs.com/user/LookBoil/collection?sort_by=added&sort_order=asc"
-                                            target="_blank"
-                                            rel="noreferrer noopener"
-                                        >
-                                            <div className="image-wrapper">
-                                                <img
-                                                    src={release.images[0].uri}
-                                                    alt=""
-                                                />
-                                            </div>
-                                            <h2 className="artist-name">
-                                                {release.title}
-                                            </h2>
-                                            <p className="play-count">
-                                                {release.artists[0].name}
-                                            </p>
-                                        </a>
+                                        <div className="image-wrapper">
+                                            <img
+                                                src={release.images[0].uri}
+                                                alt=""
+                                            />
+                                        </div>
+                                        <h2 className="artist-name">
+                                            {release.title}
+                                        </h2>
+                                        <p className="play-count">
+                                            {release.artists[0].name}
+                                        </p>
                                     </li>
                                 );
                             })}

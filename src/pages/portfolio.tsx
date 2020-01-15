@@ -52,7 +52,7 @@ const PortfolioItem = styled.div`
 
     &:hover {
         box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
-        transform: translateY(-5px);
+        transform: scale(1.02);
     }
 
     & .image {
