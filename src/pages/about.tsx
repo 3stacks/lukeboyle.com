@@ -29,21 +29,17 @@ export default class About extends React.Component {
                 </Helmet>
                 <MaxWidthContainer isSmall className="about-main">
                     <h2>
-                        Working at Deloitte Digital
+                        Working at{' '}
                         <span
                             style={{
-                                color: '#92d600',
-                                fontSize: '6rem',
-                                lineHeight: 1
+                                textTransform: 'uppercase',
+                                color: '#52B5E6'
                             }}
                         >
-                            .
+                            Belong
                         </span>
                     </h2>
-                    <p>
-                        Working in the consulting division managing front-end
-                        web projects.
-                    </p>
+                    <p>Front-end developer and practice lead.</p>
                     <h2>Quick facts:</h2>
                     <ul>
                         <li>
