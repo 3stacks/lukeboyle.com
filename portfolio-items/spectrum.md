@@ -6,17 +6,15 @@ Spectrum is a web-based editor for writing software specification documents. The
 
 ## Technology List
 
-*   React
-*   Webpack
-*   Node.js
+-   React
+-   Webpack
+-   Node.js
 
-Challenges
-----------
+## Challenges
 
 One of the major challenges faced in this project was reimplementing the textbox to allow us to make complex data structures human readable. Along with displaying the complex data, users have to be able to select text, copy and paste text and control the cursor as they would in their operating system (cmd vs ctrl).
 
-Accomplishments
----------------
+## Accomplishments
 
 Architected a file format that adhered to our application design goals while being valid Markdown. This meant I had to make a processor to generate a specfile from complex app data and conversely, a parser to generate app data at runtime.
 

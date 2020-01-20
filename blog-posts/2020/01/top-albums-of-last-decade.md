@@ -1,13 +1,13 @@
 # My favourite albums of the 2010s
 
-| Metadata name | Value |
-| --------- | ------ |
-| post_title | My favourite albums of the 2010s |
-| post_date | 2020-01-06 00:00:00 |
-| post_modified | 2020-01-06 00:00:00 |
-| post_status | publish |
-| post_type | top_list |
-| post_category | music |
+| Metadata name | Value                            |
+| ------------- | -------------------------------- |
+| post_title    | My favourite albums of the 2010s |
+| post_date     | 2020-01-06 00:00:00              |
+| post_modified | 2020-01-06 00:00:00              |
+| post_status   | publish                          |
+| post_type     | top_list                         |
+| post_category | music                            |
 
 ## Father John Misty
 

@@ -1,12 +1,12 @@
 # Github Actions for web apps
 
-| Metadata name | Value |
-| --------- | ------ |
-| post_title | Github Actions for web apps |
-| post_date | 2019-08-12 00:00:00 |
-| post_modified | 2019-08-12 00:00:00 |
-| post_status | publish |
-| post_type | revision |
+| Metadata name | Value                       |
+| ------------- | --------------------------- |
+| post_title    | Github Actions for web apps |
+| post_date     | 2019-08-12 00:00:00         |
+| post_modified | 2019-08-12 00:00:00         |
+| post_status   | publish                     |
+| post_type     | revision                    |
 
 Arguably, the key feature that made Gitlab a market leading platform was
 their decision to build the platform as an end-to-end application
@@ -24,10 +24,10 @@ they were hard at work pushing out feature after feature.
 
 Off the top of my head, I can recall these:
 
-- Projects (Kanban boards with automated status changes)
-- Sponsor program
-- Package Registry (publishing for npm, NuGet, Ruby gems, all in the same platform)
-- Github Actions (my personal favourite)
+-   Projects (Kanban boards with automated status changes)
+-   Sponsor program
+-   Package Registry (publishing for npm, NuGet, Ruby gems, all in the same platform)
+-   Github Actions (my personal favourite)
 
 Github actions is now in open beta
 (you can opt in here: [https://github.com/features/actions](https://github.com/features/actions))
@@ -42,20 +42,20 @@ the build.
 In this post I'll be showing you how to set up to build and release
 a single-page app running React.
 
-Keep in mind that the v1 Github Actions syntax has been deprecated, so make sure you are looking 
+Keep in mind that the v1 Github Actions syntax has been deprecated, so make sure you are looking
 at the yaml documentation. There's a handy warning at the top of the deprecated pages:
 
-> The documentation at https://developer.github.com/actions and support for the HCL syntax in GitHub Actions will be deprecated on September 30, 2019. Documentation for the new limited public beta using the YAML syntax is available on https://help.github.com. 
+> The documentation at https://developer.github.com/actions and support for the HCL syntax in GitHub Actions will be deprecated on September 30, 2019. Documentation for the new limited public beta using the YAML syntax is available on https://help.github.com.
 
 Find the docs here: [https://help.github.com/en/categories/automating-your-workflow-with-github-actions](https://help.github.com/en/categories/automating-your-workflow-with-github-actions)
 
-For this example, I'll be using [Create React App](https://github.com/facebook/create-react-app). Initialise that if 
+For this example, I'll be using [Create React App](https://github.com/facebook/create-react-app). Initialise that if
 you'd like to follow along, or just retrofit an old, simple project.
 
 There's two flows I want to create
 
-- CI Only
-- CI and Deploy
+-   CI Only
+-   CI and Deploy
 
 Let's create the action file.
 
@@ -65,26 +65,26 @@ Create a file in that folder called `ci.yml`
 Let's look at the ci.yml file and add some boilerplate
 
 `ci.yml`
+
 ```yaml
 name: CI
 
 on: [pull_request, push]
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-18.04
 
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@master
-    - name: Use Node.js 10.x
-      uses: actions/setup-node@v1
-      with:
-        version: 10.x
-    - name: Build
-      run: |
-        npm install
-        npm run build --if-present
+        steps:
+            - uses: actions/checkout@master
+            - name: Use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  version: 10.x
+            - name: Build
+              run: |
+                  npm install
+                  npm run build --if-present
 ```
 
 The first thing to note is on line 3, there is an option called `on` ([docs for `on`](https://help.github.com/en/articles/configuring-a-workflow#triggering-a-workflow-with-events). This field is a list of signals you want to respond
@@ -92,14 +92,14 @@ to. For this one, I'm only doing it on pull request. Because this `on` property 
 can't combine all your steps and choose not to run some steps on pull request. This is the reason for having two
 separate action files. In principle, the actions should be entirely self contained processes.
 
-The jobs is a list of independent actions. By default, they run in parallel. You could use this to separate things 
-like your unit and integration tests to speed up your CI. This example is pretty simple, so I haven't found a use 
+The jobs is a list of independent actions. By default, they run in parallel. You could use this to separate things
+like your unit and integration tests to speed up your CI. This example is pretty simple, so I haven't found a use
 for the jobs yet.
 
 The steps field is quite simple in this example. For each step, you can chose to specify the `uses` field ([docs](https://help.github.com/en/articles/configuring-a-workflow#referencing-actions-in-your-workflow)).
 The format for this argument is `[owner]/[repo]@[ref]` or `[owner]/[repo]/[path]@[ref].`. You can reference actions in
-your current repository or you can reference standard actions as per the example above. 
-`actions/checkout@master` checks out the current branch. `actions/setup-node@v1` sets up Node, probably 
+your current repository or you can reference standard actions as per the example above.
+`actions/checkout@master` checks out the current branch. `actions/setup-node@v1` sets up Node, probably
 through a Docker container. You can provide arguments to the action using the `with` key.
 
 Now, the magic begins. Go to your repository and visit: `https://github.com/[yourName]/[yourRepo]/actions`. You'll be prompted
@@ -116,42 +116,42 @@ With luck, we now have our CI build successfully running.
 Onto the deployment action. Copy the below to your ci.yml
 
 `ci.yml`
+
 ```yaml
 name: CI
 
 on:
-  pull_request:
-  push:
-    branches:
-      - master
+    pull_request:
+    push:
+        branches:
+            - master
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-18.04
 
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@master
-    - name: Use Node.js 10.x
-      uses: actions/setup-node@v1
-      with:
-        version: 10.x
-    - name: Build
-      run: |
-        npm install
-        npm run build --if-present
-    - name: Deploy
-      if: github.event_name == 'push' && github.ref == refs/heads/master
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
-      run: node scripts/deploy.js
+        steps:
+            - uses: actions/checkout@master
+            - name: Use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  version: 10.x
+            - name: Build
+              run: |
+                  npm install
+                  npm run build --if-present
+            - name: Deploy
+              if: github.event_name == 'push' && github.ref == refs/heads/master
+              env:
+                  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
+              run: node scripts/deploy.js
 ```
 
 You'll note that at the moment we're executing this on both:
 
-- pushes to master branch
-- pull requests
+-   pushes to master branch
+-   pull requests
 
 This means that unless we add a filter, we'd be deploying branches on
 any pull request, which could probably break our app.
@@ -161,8 +161,8 @@ value that will determine whether to run the step or not.
 
 You could do things like check if a step was successful, or in our case:
 
-- Make sure the event is a push
-- Make sure the branch is master
+-   Make sure the event is a push
+-   Make sure the branch is master
 
 Moving onto deployment, if you look at the env key, this is how we
 provide environment variables to the step. These are accessible in
@@ -172,12 +172,12 @@ repository. Don't worry about that node script yet.
 
 ![github-secrets](/blog-posts/images/secrets.jpg)
 
-At a previous job, they outlawed all external CI services because they were worried about their AWS IAM keys getting 
-out in the event of a CircleCI data breach. Given that we're dealing with Github + MSoft, I have to believe there's 
+At a previous job, they outlawed all external CI services because they were worried about their AWS IAM keys getting
+out in the event of a CircleCI data breach. Given that we're dealing with Github + MSoft, I have to believe there's
 some encryption magic happening when you upload and access these secrets. Once you've set the value in the secrets, you will not
 be able to see it again and it will only be exposed to the CI agent.
 
-I tried to log one of these secrets, and cleverly, it was censored in the logs (see below). Gone are the days of 
+I tried to log one of these secrets, and cleverly, it was censored in the logs (see below). Gone are the days of
 having to rotate your IAM keys because you accidentally logged it in your CI or Cloudwatch.
 
 ![Secrets in build logs](/blog-posts/images/secrets-censored.jpg)
@@ -186,9 +186,9 @@ I'll come back to those AWS secrets shortly.
 From this point, all we have to do is deploy.
 I'm going to offer three suggestions:
 
-- AWS S3 static web hosting
-- Github pages
-- Now.sh **Tutorial coming soon**
+-   AWS S3 static web hosting
+-   Github pages
+-   Now.sh **Tutorial coming soon**
 
 I would argue that S3 is superior to Github Pages. The unfortunate part
 of Pages is that it can only serve from files in the repository, so you
@@ -198,7 +198,7 @@ having significant traffic. If performance is a concern for you, look
 elsewhere as neither of these are going to be blazing fast.
 
 I'd suggest going with Github pages for simplicity as you'll avoid
-setting up an additional account (and potentially save $$).
+setting up an additional account (and potentially save \$\$).
 
 Most sites I make are not under high demand, nor do they have many
 concurrent users, so for my purposes, S3 storage is more than enough.
@@ -206,8 +206,8 @@ concurrent users, so for my purposes, S3 storage is more than enough.
 I also use Cloudflare to cache the assets, so the majority of sessions
 download assets off the Cloudflare CDN, rather than S3, so my usage
 stays very low for S3. This also has the benefit of using Cloudflare's
- smart routing to make my Sydney hosted S3 bucket much faster for
- international users.
+smart routing to make my Sydney hosted S3 bucket much faster for
+international users.
 
 ## S3 Deployment
 
@@ -217,12 +217,12 @@ First I'll quickly go through how to get your S3 bucket and IAM keys and be a bi
 
 ### Create the bucket
 
-- Go to your AWS panel and navigate to S3.
-- Click `Create Bucket` and give it a url friendly name the same as the domain you will use for.
-- Choose whatever region is most appropriate for you. I chose Sydney (ap-southeast-2) because most of my traffic is Australian
-- Skip step 2
-- On step 3, untick the `Block all public access` checkbox
-- Visit your bucket, go to Permissions, then to Bucket Policy and paste the below in (replacing the arn)
+-   Go to your AWS panel and navigate to S3.
+-   Click `Create Bucket` and give it a url friendly name the same as the domain you will use for.
+-   Choose whatever region is most appropriate for you. I chose Sydney (ap-southeast-2) because most of my traffic is Australian
+-   Skip step 2
+-   On step 3, untick the `Block all public access` checkbox
+-   Visit your bucket, go to Permissions, then to Bucket Policy and paste the below in (replacing the arn)
 
 ```json
 {
@@ -237,25 +237,25 @@ First I'll quickly go through how to get your S3 bucket and IAM keys and be a bi
         }
     ]
 }
-``` 
+```
 
 With this policy, any user that queries can get any object in the bucket, so please, don't store anything private in there.
 
-- In Properties, go to Static web hosting
-- check "Use this bucket to host a website"
-- make the index document `index.html`
-- your endpoint will be displayed there
+-   In Properties, go to Static web hosting
+-   check "Use this bucket to host a website"
+-   make the index document `index.html`
+-   your endpoint will be displayed there
 
 ### Creating the IAM user
 
-We're going to start by making a policy that is our deployment policy for this bucket. It ensures that if the keys to 
+We're going to start by making a policy that is our deployment policy for this bucket. It ensures that if the keys to
 an IAM user leak all you'll be giving away is access to that single bucket.
 
-- Go to IAM
-- Go to Policies on the left
-- Change tabs to the JSON editor, rather than the Visual Editor
-- Paste in the follow, replacing the ARN with your own bucket's ARN
-- Name your policy. I called mine [projectName]DeployPolicy
+-   Go to IAM
+-   Go to Policies on the left
+-   Change tabs to the JSON editor, rather than the Visual Editor
+-   Paste in the follow, replacing the ARN with your own bucket's ARN
+-   Name your policy. I called mine [projectName]DeployPolicy
 
 ```json
 {
@@ -270,31 +270,27 @@ an IAM user leak all you'll be giving away is access to that single bucket.
         {
             "Sid": "VisualEditor1",
             "Effect": "Allow",
-            "Action": [
-                "s3:PutObject",
-                "s3:GetObject",
-                "s3:DeleteObject"
-            ],
+            "Action": ["s3:PutObject", "s3:GetObject", "s3:DeleteObject"],
             "Resource": "arn:aws:s3:::your-arn-here.io/*"
         }
     ]
 }
 ```
 
-- On the left, navigate to Users
-- Create a User
-- Give it a relevant name ([projectName]DeployUser?), tick `Programmatic Access`
-- Select `Attach existing policies directly`
-- Search for your newly created policy and attach it to the user
-- Click through the wizard
-- Take note of your Access Key ID and Secret access key
+-   On the left, navigate to Users
+-   Create a User
+-   Give it a relevant name ([projectName]DeployUser?), tick `Programmatic Access`
+-   Select `Attach existing policies directly`
+-   Search for your newly created policy and attach it to the user
+-   Click through the wizard
+-   Take note of your Access Key ID and Secret access key
 
 ### Storing and using the secrets
 
-- Visit [https://github.com/3stacks/[yourProject]/settings/secrets](https://github.com/3stacks/{yourProject}/settings/secrets)
-- Click 'Add a new secret'
-- Call it `AWS_ACCESS_KEY_ID` and copy the corresponding value from your newly created IAM user
-- Repeat for `AWS_SECRET` 
+-   Visit [https://github.com/3stacks/[yourProject]/settings/secrets](https://github.com/3stacks/{yourProject}/settings/secrets)
+-   Click 'Add a new secret'
+-   Call it `AWS_ACCESS_KEY_ID` and copy the corresponding value from your newly created IAM user
+-   Repeat for `AWS_SECRET`
 
 Now your Github Action will pick these up in `ci.yml`. Copy the contents
 of the deployment script from here: [https://github.com/3stacks/github-actions-react-s3/blob/master/scripts/deploy.js](https://github.com/3stacks/github-actions-react-s3/blob/master/scripts/deploy.js)
@@ -305,37 +301,37 @@ the S3 bucket name on line 24.
 Your `ci.yml` workflow should resemble the below:
 
 `ci.yml`
+
 ```yaml
 name: CI
 
 on:
-  pull_request:
-  push:
-    branches:
-      - master
+    pull_request:
+    push:
+        branches:
+            - master
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-18.04
 
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@master
-    - name: Use Node.js 10.x
-      uses: actions/setup-node@v1
-      with:
-        version: 10.x
-    - name: Build
-      run: |
-        npm install
-        npm run build --if-present
-    - name: Deploy
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-      env:
-        AWS_DEFAULT_REGION: ap-southeast-2
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
-      run: node ./scripts/deploy.js
+        steps:
+            - uses: actions/checkout@master
+            - name: Use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  version: 10.x
+            - name: Build
+              run: |
+                  npm install
+                  npm run build --if-present
+            - name: Deploy
+              if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+              env:
+                  AWS_DEFAULT_REGION: ap-southeast-2
+                  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET }}
+              run: node ./scripts/deploy.js
 ```
 
 Ensure you set the region you would prefer in the deploy env.
@@ -375,11 +371,11 @@ an action written by [James Ives](https://github.com/JamesIves/github-pages-depl
 
 First we have to generate a personal access token.
 
-- Go to [https://github.com/settings/tokens](https://github.com/settings/tokens)
-- Click `Generate new token`
-- Select the appropriate scopes. We only need repo related scopes (below)
+-   Go to [https://github.com/settings/tokens](https://github.com/settings/tokens)
+-   Click `Generate new token`
+-   Select the appropriate scopes. We only need repo related scopes (below)
 
-* Do not share this key with anyone. It has access read/write access all your repositories *
+*   Do not share this key with anyone. It has access read/write access all your repositories \*
 
 ![Github access token scopes](/blog-posts/images/scopes.jpg)
 
@@ -387,37 +383,37 @@ Add the secret as per the [Storing and using the secrets](/#Storing and using th
 above, calling your access token secret `GITHUB_ACCESS_TOKEN`
 
 Back in `ci.yml`,
+
 ```yaml
 name: CI
 
 on:
-  pull_request:
-  push:
-    branches:
-      - master
+    pull_request:
+    push:
+        branches:
+            - master
 
 jobs:
-  build:
+    build:
+        runs-on: ubuntu-18.04
 
-    runs-on: ubuntu-18.04
-
-    steps:
-    - uses: actions/checkout@master
-    - name: Use Node.js 10.x
-      uses: actions/setup-node@v1
-      with:
-        version: 10.x
-    - name: Build
-      run: |
-        npm install
-        npm run build --if-present
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@1.1.3
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-      env:
-        ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: build
+        steps:
+            - uses: actions/checkout@master
+            - name: Use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  version: 10.x
+            - name: Build
+              run: |
+                  npm install
+                  npm run build --if-present
+            - name: Deploy to GitHub Pages
+              uses: JamesIves/github-pages-deploy-action@1.1.3
+              if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+              env:
+                  ACCESS_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+                  BRANCH: gh-pages
+                  FOLDER: build
 ```
 
 Our secret and other required arguments will be provided to the Pages
@@ -426,10 +422,10 @@ Deploy action using the `env` key.
 ### If you aren't using a custom domain
 
 Due to the way the routing is done in github pages, assets referencing
- `/` will go to the root of your Pages (e.g. `https://3stacks.github.io`).
- This means none of the assets in CRA will be loaded. To get around this,
- in your `package.json`, add `"homepage": ".",`. This will make it resolve
- correctly.
+`/` will go to the root of your Pages (e.g. `https://3stacks.github.io`).
+This means none of the assets in CRA will be loaded. To get around this,
+in your `package.json`, add `"homepage": ".",`. This will make it resolve
+correctly.
 
 Now we're done! Commit those changes, push it and you'll see the build
 run and deploy your app.
@@ -451,4 +447,4 @@ from Dockerhub. So if you have complicated dependencies, you can
 choose to utilise this option. Use the `uses` key and give it a path
 in the format of: `docker://[image]:[tag]`
 
-[https://help.github.com/en/articles/configuring-a-workflow#referencing-a-container-on-docker-hub](https://help.github.com/en/articles/configuring-a-workflow#referencing-a-container-on-docker-hub)) 
+[https://help.github.com/en/articles/configuring-a-workflow#referencing-a-container-on-docker-hub](https://help.github.com/en/articles/configuring-a-workflow#referencing-a-container-on-docker-hub))

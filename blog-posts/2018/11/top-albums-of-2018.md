@@ -1,13 +1,13 @@
 # Top albums of 2018
 
-| Metadata name | Value |
-| --------- | ------ |
-| post_title | Top albums of 2018 |
-| post_date | 2018-11-09 00:00:00 |
+| Metadata name | Value               |
+| ------------- | ------------------- |
+| post_title    | Top albums of 2018  |
+| post_date     | 2018-11-09 00:00:00 |
 | post_modified | 2018-11-09 00:00:00 |
-| post_status | publish |
-| post_type | top_list |
-| post_category | music |
+| post_status   | publish             |
+| post_type     | top_list            |
+| post_category | music               |
 
 ## God's Favorite Customer
 
@@ -51,7 +51,6 @@
 
 ![dicaprio](/blog-posts/images/dicaprio.jpg)
 
-
 ## What Happens When I Try To Relax
 
 ### Open Mike Eagle
@@ -60,7 +59,7 @@
 
 ## Testing
 
-### A$AP Rocky
+### A\$AP Rocky
 
 ![testing](/blog-posts/images/testing.jpg)
 

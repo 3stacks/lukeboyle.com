@@ -1,12 +1,12 @@
 # The end of quantitative ratings
 
-| Metadata name | Value |
-| --------- | ------ |
-| post_title | The end of quantitative ratings |
-| post_date | 2019-09-10 00:00:00 |
-| post_modified | 2019-09-10 00:00:00 |
-| post_status | draft |
-| post_type | revision |
+| Metadata name | Value                           |
+| ------------- | ------------------------------- |
+| post_title    | The end of quantitative ratings |
+| post_date     | 2019-09-10 00:00:00             |
+| post_modified | 2019-09-10 00:00:00             |
+| post_status   | draft                           |
+| post_type     | revision                        |
 
 "On a scale of one to ten, how bad would you say your pain is?" asks a doctor.
 
@@ -17,4 +17,4 @@ I was speaking to a paramedic and she said that patients almost always inflate t
 
 So what's an easier way to conceptualise the scale? How about, on a scale of one to ten, one being a papercut, ten being childbirth.
 
-It always helps to ground abstract numbers with real experiences or emotions.   
+It always helps to ground abstract numbers with real experiences or emotions.

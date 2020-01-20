@@ -1,13 +1,13 @@
 # A few of my favourite verses
 
-| Metadata name | Value |
-| --------- | ------ |
-| post_title | A few of my favourite verses |
-| post_date | 2019-09-01 00:00:00 |
-| post_modified | 2019-09-01 00:00:00 |
-| post_status | publish |
-| post_type | top_list |
-| post_category | music |
+| Metadata name | Value                        |
+| ------------- | ---------------------------- |
+| post_title    | A few of my favourite verses |
+| post_date     | 2019-09-01 00:00:00          |
+| post_modified | 2019-09-01 00:00:00          |
+| post_status   | publish                      |
+| post_type     | top_list                     |
+| post_category | music                        |
 
 ## André 3000
 
@@ -142,6 +142,7 @@ It's not what crew's the livest
 One that survive, it's who's the wisest
 
 ## AZ
+
 ### Life's a Bitch
 
 ![Illmatic](/blog-posts/images/albums/top-verses/illmatic.jpg)
@@ -216,7 +217,7 @@ Punk, try and ask why ours be better
 
 Could be the iron mask or the Cosby sweater
 
-Yes, you, who's screwed by the dude on the CD, nude 
+Yes, you, who's screwed by the dude on the CD, nude
 
 ## DOOM
 
@@ -266,7 +267,7 @@ Off spite to your surprise
 
 Turn a Newport Light to a joint right before your eyes
 
-Tear a page out the good book, hear it how you want it 
+Tear a page out the good book, hear it how you want it
 
 ## GZA
 

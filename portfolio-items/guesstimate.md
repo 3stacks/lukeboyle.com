@@ -10,9 +10,9 @@ The result is a deep tree of accurate micro-estimations that get summed up for y
 
 ### Technology List
 
-* React
-* Redux
-* Tree data structure
+-   React
+-   Redux
+-   Tree data structure
 
 ### Challenges
 

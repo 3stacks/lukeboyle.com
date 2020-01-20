@@ -75,7 +75,7 @@ export interface IDiscogsReleaseVideo {
 	title: string;
 }
 
-export interface IDiscogsContributor  {
+export interface IDiscogsContributor {
 	username: string;
 	resource_url: string;
 }

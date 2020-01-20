@@ -14,11 +14,11 @@ of flow charts comprising the application outcome matrix.
 
 ## Challenges
 
-- Owing to the fact that any question answered may trigger additional questions
-or sections, the front-end had to communicate with the server whenever the user
-answered a question. Other implementations froze the user's focus and prevented
-them from moving forward while passing up the new answer. I didn't want to block
-the progress of the user because I was certain that would cause drop-offs/frustration.
+-   Owing to the fact that any question answered may trigger additional questions
+    or sections, the front-end had to communicate with the server whenever the user
+    answered a question. Other implementations froze the user's focus and prevented
+    them from moving forward while passing up the new answer. I didn't want to block
+    the progress of the user because I was certain that would cause drop-offs/frustration.
 
 One of the problems this created was that when users answered questions in quick
 succession - due to the unpredictable nature of network speed - sometimes an older
@@ -32,15 +32,15 @@ was considered the latest form state.
 
 ## Accomplishments
 
-- To date, URE is my most well-tested and well-documented project. The readme was
-a central wiki with vast resources ranging from basic information for new
-developers on-boarding to rationales for technical decisions.
-- Semantic versioning with very detailed change logs, deprecation warnings and
-upgrade instructions.
-- According to [this report](https://www.ifa.com.au/risk/25644-mlc-life-straight-through-acceptance-rate-triples),
-after launching the URE, MLC has seen a 300% increase in straight-through processing
-(i.e. no human underwriting) of life insurance applications.
-- Underwrite Me comes with basic input types out of the box, so using custom tags
-on certain questions, we were able to expand the range of input types
+-   To date, URE is my most well-tested and well-documented project. The readme was
+    a central wiki with vast resources ranging from basic information for new
+    developers on-boarding to rationales for technical decisions.
+-   Semantic versioning with very detailed change logs, deprecation warnings and
+    upgrade instructions.
+-   According to [this report](https://www.ifa.com.au/risk/25644-mlc-life-straight-through-acceptance-rate-triples),
+    after launching the URE, MLC has seen a 300% increase in straight-through processing
+    (i.e. no human underwriting) of life insurance applications.
+-   Underwrite Me comes with basic input types out of the box, so using custom tags
+    on certain questions, we were able to expand the range of input types
 
 ![](/portfolio-items/images/custom-fields.png)

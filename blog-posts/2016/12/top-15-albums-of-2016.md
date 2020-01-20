@@ -1,15 +1,13 @@
-
 # Top 15 Albums of 2016
 
-
-| Metadata name | Value |
-| --------- | ------ |
-| post_title | Top 15 Albums of 2016 | 
-| post_date | 2016-12-14 01:48:15 | 
-| post_modified | 2016-12-14 01:48:15 | 
-| post_status | inherit | 
-| post_type | top_list |
-| post_category | music |
+| Metadata name | Value                 |
+| ------------- | --------------------- |
+| post_title    | Top 15 Albums of 2016 |
+| post_date     | 2016-12-14 01:48:15   |
+| post_modified | 2016-12-14 01:48:15   |
+| post_status   | inherit               |
+| post_type     | top_list              |
+| post_category | music                 |
 
 ## Scum With Boundaries
 
@@ -100,4 +98,3 @@
 ### Anderson .Paak
 
 ![anderson-paak-malibu-cover-art](/blog-posts/images/malibu.jpeg)
-        

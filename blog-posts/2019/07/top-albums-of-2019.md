@@ -1,13 +1,13 @@
 # Top albums of 2019
 
-| Metadata name | Value |
-| --------- | ------ |
-| post_title | Top albums of 2019 |
-| post_date | 2019-07-31 00:00:00 |
+| Metadata name | Value               |
+| ------------- | ------------------- |
+| post_title    | Top albums of 2019  |
+| post_date     | 2019-07-31 00:00:00 |
 | post_modified | 2019-07-31 00:00:00 |
-| post_status | publish |
-| post_type | top_list |
-| post_category | music |
+| post_status   | publish             |
+| post_type     | top_list            |
+| post_category | music               |
 
 ## IGOR
 
@@ -72,17 +72,17 @@ is usually a more consistent, interesting, and enjoyable experience.
 
 Look no further than:
 
-- Madvillainy - Madvillain
-- Pinata/Bandana - MadGibbs
-- Hella Personal Film Festival - Open Mike Eagle & Paul White
-- Doggystyle - Snoop Doggy Dogg
-- R.A.P Music - Killer Mike & El-P
-- Yes Lawd - NxWorries
+-   Madvillainy - Madvillain
+-   Pinata/Bandana - MadGibbs
+-   Hella Personal Film Festival - Open Mike Eagle & Paul White
+-   Doggystyle - Snoop Doggy Dogg
+-   R.A.P Music - Killer Mike & El-P
+-   Yes Lawd - NxWorries
 
 And then there's this album. This was certainly the most surprising
 album of the year. billy woods hasn't been on my radar since
-*Today I Wrote Nothing* (2015). For me, *Known Unknowns* (2017,
-produced by BLOCKHEAD) didn't have the same hook that *Hiding Places* has.
+_Today I Wrote Nothing_ (2015). For me, _Known Unknowns_ (2017,
+produced by BLOCKHEAD) didn't have the same hook that _Hiding Places_ has.
 
 One of my favourite parts of this album is the simple, muted melodies
 from Ryan Crosby's guitar.
@@ -95,14 +95,14 @@ something truly great.
 
 The ever-present themes in this album are 1. class and 2. poverty, but
 it doesn't try to shove them down your throat. Whereas in some albums
-these themes can come across as overly heavy-handed, *Hiding Places*
+these themes can come across as overly heavy-handed, _Hiding Places_
 seems to accept that these problems exist and tries to work through
 the anxiety that comes with them, rather than to prescribe change.
 
-This message comes peaks a the half way point in *A day in a Week in a Year*.
+This message comes peaks a the half way point in _A day in a Week in a Year_.
 The title seems to mean that this day is just like any other; nothing
 happens and nothing really changes. This is reinforced by these
- lyrics in verse 1:
+lyrics in verse 1:
 
 > A day, in a week, in a year
 >
@@ -132,7 +132,7 @@ and
 >
 > "Don't call me again" what I shoula said when he called
 
-*Hiding Places* is just the right combination of angry, hateful, despondent, and
+_Hiding Places_ is just the right combination of angry, hateful, despondent, and
 miserable. At 40 minutes long it is incredibly succinct for how deeply
 it explores these feelings. I find it to be one of the most creatively
 honest albums with no radio tracks or meaningless features. If it doesn't

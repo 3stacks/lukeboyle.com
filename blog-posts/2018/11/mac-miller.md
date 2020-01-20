@@ -1,11 +1,12 @@
 # Mac Miller
-| Metadata name | Value |
-| --------- | ------ |
-| post_title | Mac Miller |
-| post_date | 2018-11-07 00:00:00 |
+
+| Metadata name | Value               |
+| ------------- | ------------------- |
+| post_title    | Mac Miller          |
+| post_date     | 2018-11-07 00:00:00 |
 | post_modified | 2018-11-07 00:00:00 |
-| post_status | publish |
-| post_type | revision |
+| post_status   | publish             |
+| post_type     | revision            |
 
 ![Mac Miller](/blog-posts/images/mac.jpg)
 
@@ -74,7 +75,7 @@ never having met him, but I think that's just a testament to the
 artist and person he became. From a frat rapper to a soulful musician
 expressing himself honestly and uninhibited, he touched fans and artists
 alike. We are truly fortunate to have had the opportunity to listen to
-his *magnum opus* Swimming.
+his _magnum opus_ Swimming.
 
 I encourage you to watch the [Mac Miller: A celebration of life](https://youtu.be/PP6GigUOyBY) concert and to donate to [the Mac Miller circles fund](http://pittsburghfoundation.org/macmiller)
 

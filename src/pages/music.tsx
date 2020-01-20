@@ -169,7 +169,7 @@ interface IProps {
     };
 }
 
-export default function Portfolio({data}: IProps) {
+export default function Portfolio({ data }: IProps) {
     const [artistData, updateArtistData] = useState(prefetchedArtistData);
     const [albumData, updateAlbumData] = useState(prefetchedAlbumData);
     const [crateData, updateCrateData] = useState(prefetchedCrateData);
@@ -178,10 +178,8 @@ export default function Portfolio({data}: IProps) {
         let isCancelled = false;
 
         async function fetchData() {
-            const LAST_FM_API_KEY = data.site.siteMetadata
-                .lastFMApiKey;
-            const DISCOGS_API_KEY = data.site.siteMetadata
-                .discogsApiKey;
+            const LAST_FM_API_KEY = data.site.siteMetadata.lastFMApiKey;
+            const DISCOGS_API_KEY = data.site.siteMetadata.discogsApiKey;
 
             try {
                 const albumResponse = await getTopAlbums(LAST_FM_API_KEY);

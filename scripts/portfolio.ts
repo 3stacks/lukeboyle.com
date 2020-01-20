@@ -25,14 +25,19 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 			rawFilename.slice(0, rawFilename.indexOf('.'))
 		)}Src`;
 
-		imports = `${imports}\nimport ${imageName} from '.${href.replace('/portfolio-items', '')}'`;
+		imports = `${imports}\nimport ${imageName} from '.${href.replace(
+			'/portfolio-items',
+			''
+		)}'`;
 
 		return `<img src={${imageName}} alt="${text}"/>`;
 	};
 
-
 	const rawMarkup = getMarkupFromMarkdown(curr.contents);
-	const headMarkup = rawMarkup.slice(rawMarkup.indexOf('<h1 '), rawMarkup.indexOf('</h1>') + 5);
+	const headMarkup = rawMarkup.slice(
+		rawMarkup.indexOf('<h1 '),
+		rawMarkup.indexOf('</h1>') + 5
+	);
 	const bodyMarkup = rawMarkup.slice(rawMarkup.indexOf('</header>') + 9);
 
 	acc.push({

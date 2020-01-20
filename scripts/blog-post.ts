@@ -7,7 +7,7 @@ import sortBy from 'lodash/sortBy';
 import { getMarkupFromMarkdown, renderer } from './utils/renderer';
 import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
 import { isNotDirectory, resolveBlogPosts } from './utils/blog';
-import music from "../src/pages/music";
+import music from '../src/pages/music';
 
 function getCanonicalURLFromString(someString: string): string {
 	const canonicalUrlIndex = someString.indexOf('canonical');
