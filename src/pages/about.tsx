@@ -1,24 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout/layout';
-import mozillaSrc from '../assets/img/mozilla.gif';
-import rcaSrc from '../assets/img/rca.gif';
-import berrySrc from '../assets/img/berry.gif';
-import styled from 'styled-components';
 import { MaxWidthContainer } from '../styled/utils';
-
-const SupportContainer = styled.ul`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px;
-    list-style: none;
-    margin: 0 0 30px;
-    padding: 0;
-
-    img {
-        max-width: 100%;
-    }
-`;
 
 export default class About extends React.Component {
     render() {
@@ -122,21 +105,6 @@ export default class About extends React.Component {
                             </a>
                         </li>
                     </ul>
-                    <h2>Proudly supporting</h2>
-                    <SupportContainer>
-                        <li>
-                            <img
-                                src={mozillaSrc}
-                                alt="The Mozilla Foundation"
-                            />
-                        </li>
-                        <li>
-                            <img src={rcaSrc} alt="Red Cross Australia" />
-                        </li>
-                        <li>
-                            <img src={berrySrc} alt="Berry Street" />
-                        </li>
-                    </SupportContainer>
                     <h2>Tracking &amp; privacy</h2>
                     <p>
                         The site uses DNS level analytics provided by Cloudflare
