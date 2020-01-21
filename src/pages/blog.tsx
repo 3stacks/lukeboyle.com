@@ -6,12 +6,12 @@ import { HomeHeadBanner } from '../pages/index';
 import { BodyWrapper } from '../pages/music';
 import Layout from '../components/layout/layout';
 import { MaxWidthContainer } from '../styled/utils';
-import TopAlbumsOfLastDecadeMd from './blog-posts/2020/01/top-albums-of-last-decade';
+import MacMillerCirclesReviewMd from './blog-posts/2020/01/mac-miller-circles-review';
 import MyFavoriteVersesMd from './blog-posts/2019/09/my-favorite-verses';
-import GithubActionsForWebAppsMd from './blog-posts/2019/08/github-actions-for-web-apps';
-import TopAlbumsOf2019Md from './blog-posts/2019/07/top-albums-of-2019';
-import SoftwareIActuallyBelieveInMd from './blog-posts/2018/12/software-i-actually-believe-in';
-import CaseStudyForIterativeDevelopmentMd from './blog-posts/2018/11/case-study-for-iterative-development';
+import ConvertingWordpressSiteToStaticMd from './blog-posts/2018/01/converting-wordpress-site-to-static';
+import ProjectEstimationsMadeEasyMd from './blog-posts/2017/12/project-estimations-made-easy';
+import CssVariablesACaseStudyMd from './blog-posts/2017/04/css-variables--a-case-study';
+import FunctionalFormValidationInJavaScriptAkaInheritingBadJavaScriptMd from './blog-posts/2017/01/functional-form-validation-in-java-script--aka--inheriting-bad-java-script';
 
 export default class Blog extends React.Component {
     render() {
@@ -242,6 +242,14 @@ export default class Blog extends React.Component {
                                     '2019': {
                                         '09': [
                                             {
+                                                slug:
+                                                    'the-end-of-quantitative-ratings',
+                                                path:
+                                                    'blog-posts/2019/09/the-end-of-quantitative-ratings.md',
+                                                title:
+                                                    'The end of quantitative ratings\r'
+                                            },
+                                            {
                                                 slug: 'my-favorite-verses',
                                                 path:
                                                     'blog-posts/2019/09/my-favorite-verses.md',
@@ -277,6 +285,14 @@ export default class Blog extends React.Component {
                                                     'blog-posts/2020/01/top-albums-of-last-decade.md',
                                                 title:
                                                     'My favourite albums of the 2010s\r'
+                                            },
+                                            {
+                                                slug:
+                                                    'mac-miller-circles-review',
+                                                path:
+                                                    'blog-posts/2020/01/mac-miller-circles-review.md',
+                                                title:
+                                                    'Mac Miller Circles album review'
                                             }
                                         ]
                                     }
@@ -284,12 +300,14 @@ export default class Blog extends React.Component {
                             />
                         </div>
                         <div>
-                            <TopAlbumsOfLastDecadeMd isBlogPage={true} />
+                            <MacMillerCirclesReviewMd isBlogPage={true} />
                             <MyFavoriteVersesMd isBlogPage={true} />
-                            <GithubActionsForWebAppsMd isBlogPage={true} />
-                            <TopAlbumsOf2019Md isBlogPage={true} />
-                            <SoftwareIActuallyBelieveInMd isBlogPage={true} />
-                            <CaseStudyForIterativeDevelopmentMd
+                            <ConvertingWordpressSiteToStaticMd
+                                isBlogPage={true}
+                            />
+                            <ProjectEstimationsMadeEasyMd isBlogPage={true} />
+                            <CssVariablesACaseStudyMd isBlogPage={true} />
+                            <FunctionalFormValidationInJavaScriptAkaInheritingBadJavaScriptMd
                                 isBlogPage={true}
                             />
 

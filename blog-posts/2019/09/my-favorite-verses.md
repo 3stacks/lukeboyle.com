@@ -1,13 +1,13 @@
 # A few of my favourite verses
 
-| Metadata name | Value                        |
+| Metadata name | Value |
 | ------------- | ---------------------------- |
-| post_title    | A few of my favourite verses |
-| post_date     | 2019-09-01 00:00:00          |
-| post_modified | 2019-09-01 00:00:00          |
-| post_status   | publish                      |
-| post_type     | top_list                     |
-| post_category | music                        |
+| post_title | A few of my favourite verses |
+| post_date | 2019-09-01 00:00:00 |
+| post_modified | 2019-09-01 00:00:00 |
+| post_status | publish |
+| post_type | top_list |
+| post_category | music |
 
 ## André 3000
 

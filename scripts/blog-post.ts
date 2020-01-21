@@ -53,6 +53,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 	const almostPostStatus = postContents.slice(postStatusIndex + 13);
 	const postStatus = almostPostStatus
 		.slice(0, almostPostStatus.indexOf('|'))
+		.replace('|', '')
 		.trim();
 
 	const canonicalUrl = getCanonicalURLFromString(postContents) || '';
@@ -98,6 +99,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			contents: `${acc.contents || ''}\n${curr}`
 		});
 	}, {});
+	console.log(fileName, postStatus);
 
 	if (postStatus && postStatus !== 'draft') {
 		const postContents = getMarkupFromMarkdown(contents.contents);
@@ -182,13 +184,14 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 		}, []);
 
 		const reversedComponents = blogPosts.reduce(generateComponent, []);
+
 		const componentsSortedByDate = sortBy(
 			reversedComponents,
 			'publishDate'
 		);
-		const musicPosts = componentsSortedByDate.filter(
-			component => component.postCategory.trim() === 'music'
-		);
+		const musicPosts = componentsSortedByDate.filter(component => {
+			return component.postCategory.trim() === 'music';
+		});
 
 		shell.rm('-rf', path.resolve(`${__dirname}/../src/pages/blog-posts`));
 

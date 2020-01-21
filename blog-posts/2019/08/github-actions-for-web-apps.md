@@ -2,11 +2,11 @@
 
 | Metadata name | Value                       |
 | ------------- | --------------------------- |
-| post_title    | Github Actions for web apps |
-| post_date     | 2019-08-12 00:00:00         |
-| post_modified | 2019-08-12 00:00:00         |
-| post_status   | publish                     |
-| post_type     | revision                    |
+| post_title | Github Actions for web apps |
+| post_date | 2019-08-12 00:00:00 |
+| post_modified | 2019-08-12 00:00:00 |
+| post_status | publish |
+| post_type | revision |
 
 Arguably, the key feature that made Gitlab a market leading platform was
 their decision to build the platform as an end-to-end application

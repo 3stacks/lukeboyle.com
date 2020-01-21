@@ -2,11 +2,11 @@
 
 | Metadata name | Value                                                  |
 | ------------- | ------------------------------------------------------ |
-| post_title    | My Muscle Chef: A case study for iterative development |
-| post_date     | 2018-11-28 00:00:00                                    |
-| post_modified | 2018-11-28 00:00:00                                    |
-| post_status   | publish                                                |
-| post_type     | revision                                               |
+| post_title | My Muscle Chef: A case study for iterative development |
+| post_date | 2018-11-28 00:00:00 |
+| post_modified | 2018-11-28 00:00:00 |
+| post_status | publish |
+| post_type | revision |
 
 Agile development is something that has evolved to become a bit of a joke in the software industry,
 much like an obscure gag amongst friends that evolves over time to the point where the humour is

@@ -2,12 +2,12 @@
 
 | Metadata name | Value                           |
 | ------------- | ------------------------------- |
-| post_title    | Mac Miller Circles album review |
-| post_date     | 2020-01-22 00:00:00             |
-| post_modified | 2020-01-22 00:00:00             |
-| post_status   | publish                         |
-| post_type     | revision                        |
-| post_category | music                           |
+| post_title | Mac Miller Circles album review |
+| post_date | 2020-01-22 00:00:00 |
+| post_modified | 2020-01-22 00:00:00 |
+| post_status | publish |
+| post_type | revision |
+| post_category | music |
 
 ![Circles album cover](/blog-posts/images/circles.png)
 
@@ -28,6 +28,11 @@ connect the dots between a composer who is most well known for his work on movie
 rap artist is a mystery to me. I have to thank Jon for the inspiration/encouragement he gave Malcolm.
 Though, in his interview with Zane Lowe, he insists "That's not something I created, that's something
 he was doing and I was only asking him to recognise that it was already great".
+
+Between Swimming and Circles, there are plentiful references to death and leaving this world.
+Some may take this as a prediction, but I think that could be considered confirmation bias. Plenty
+of rappers write about suicide but they're still here. And I don't believe he truly wanted to die.
+As he says in Complicated, "Fore I start to think about the future. First, can I please get through a day?"
 
 The painful part of listening to this album is the feeling of finality.
 There will never again be a Mac Miller album that was wholly - or even
