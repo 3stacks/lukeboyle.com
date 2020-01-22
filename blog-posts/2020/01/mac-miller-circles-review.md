@@ -9,7 +9,7 @@
 | post_type | revision |
 | post_category | music |
 
-![Circles album cover](/blog-posts/images/circles.png)
+![Circles album cover](/blog-posts/images/circles-splash.jpg)
 
 One of the unfortunate realities of life is that people die. The music industry,
 eager to exploit, will often take this opportunity to cash in. They'll
