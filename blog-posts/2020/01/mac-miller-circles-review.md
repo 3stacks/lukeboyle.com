@@ -19,7 +19,7 @@ Look no further than the discography of Notorious B.I.G, 2pac, Big L, or more re
 
 The announcement of _Circles_ was something different. Mac was working diligently
 to finish this album before his untimely death in 2018. A significant portion of _Swimming_
-and _Circles_ was "executive produced" by Jon Brion who carried the torch and tried to finish
+ and _Circles_ was "executive produced" by Jon Brion who carried the torch and tried to finish
 the album as Mac intended it. When I initially saw his writing credits on Swimming I 
 was quite surprised. 
 
@@ -28,8 +28,8 @@ well known for his work on movie scores and a trendy rap artist. Turns out, it's
 much of a mystery at all. In an [episode of _What's In My Bag_ with Amoeba records](https://youtu.be/qnhbHFgagIM)
 , Jon Brion says: "You know, my complaint about most people who make records and go out and 
 shove their shit down people's throats is that... all I see them doing is giving me their 
-impression of what they think they're supposed to be doing. And it's what bores my about 
-99.999% of people who make stuff". For a man who said that to clear his calendar to 
+impression of what they think they're supposed to be doing. And it's what bores me about 
+99.999% of people who make stuff". For a man who said that to clear his calendar and 
 help finish Swimming and Circles, he must have really been excited about working with
 Mac.    
 
@@ -42,7 +42,7 @@ asking him to recognise that it was already great".
 
 The album is littered with references to time. More specifically it seems to be about how you perceive time.
 Do you let time be a tyrant in your life and fight it, or do you go with the flow and ride it out?
-One of the great albums of all time is Dark Side of the Moon which also featured references to time 
+One of the greatest albums of all time is Dark Side of the Moon which also featured references to time 
 very prominently. Dark Side of the Moon starts and ends the same way, with a heartbeat. This seems to
 represent the cycle of life: a notion that is paralleled in the opening track _Circles_. The line goes
 "I just end up right at the start of the line. Drawin' circles". Similarly, every day ends 
