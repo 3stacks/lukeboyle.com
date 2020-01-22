@@ -36,7 +36,7 @@ Mac.
 If you consider his work in film, Jon really does a masterful job of
 conveying [tone](https://youtu.be/OftqMORxGCE?list=TLPQMjEwMTIwMjAAvHm6l06TAg&t=96). 
 I have to thank Jon for the inspiration/encouragement he gave Mac, but in his 
-[interview with Zane Lowe](https://youtu.be/faEKDnNXt4o), he insists 
+ [interview with Zane Lowe](https://youtu.be/faEKDnNXt4o), he insists 
 "That's not something I created, that's something he was doing and I was only 
 asking him to recognise that it was already great".
 
@@ -53,11 +53,11 @@ through a hard time. Lyrics like "I've got all the time in the world, so for now
 and "'fore I start to think about the future. First, can I please get through a day?". He's taking life 
 one day at a time and working through the "clutter" in his head.
 
-> It's a blue world without you 
-
 ![Mac Miller in blue](/blog-posts/images/mac-miller-blue.jpg)
 
-Blue World
+> "Hey, one of these days we'll all get by 
+>
+> Don't be afraid, don't fall"
 
 Good News
 
