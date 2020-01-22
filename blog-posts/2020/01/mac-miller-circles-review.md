@@ -23,8 +23,6 @@ and _Circles_ was "executive produced" by Jon Brion who carried the torch and tr
 the album as Mac intended it. When I initially saw his writing credits on Swimming I 
 was quite surprised. 
 
-> "The guy who did Magnolia?"
-
 I pondered the mystery of how you connect the dots between an eccentric composer who is most 
 well known for his work on movie scores and a trendy rap artist. Turns out, it's not that
 much of a mystery at all. In an [episode of _What's In My Bag_ with Amoeba records](https://youtu.be/qnhbHFgagIM)
