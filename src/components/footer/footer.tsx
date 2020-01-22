@@ -7,7 +7,7 @@ export default function Footer() {
         <StyledFooter>
             <MaxWidthContainer className="inner">
                 <small className="copyright">
-                    &copy; Luke Boyle 93' til infinity
+                    &copy; Luke Boyle 93 'til infinity
                 </small>
                 <a className="copyright" href="/sitemap.xml">
                     Sitemap
