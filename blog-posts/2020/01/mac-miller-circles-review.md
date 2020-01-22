@@ -18,29 +18,42 @@ posthumous albums, and countless remixes of classic songs with various artists.
 Look no further than the discography of Notorious B.I.G, 2pac, Big L, or more recently, XXXTentacion.
 
 The announcement of _Circles_ was something different. Mac was working diligently
-to finish this album before his untimely death in 2018. A significant portion _Swimming_
+to finish this album before his untimely death in 2018. A significant portion of _Swimming_
 and _Circles_ was "executive produced" by Jon Brion who carried the torch and tried to finish
 the album as Mac intended it. When I initially saw his writing credits on Swimming I 
-was quite surprised. "The guy who did Magnolia?" 
+was quite surprised. 
+
+> "The guy who did Magnolia?"
+
+I pondered the mystery of how you connect the dots between an eccentric composer who is most 
+well known for his work on movie scores and a trendy rap artist. Turns out, it's not that
+much of a mystery at all. In an [episode of _What's In My Bag_ with Amoeba records](https://youtu.be/qnhbHFgagIM)
+, Jon Brion says: "You know, my complaint about most people who make records and go out and 
+shove their shit down people's throats is that... all I see them doing is giving me their 
+impression of what they think they're supposed to be doing. And it's what bores my about 
+99.999% of people who make stuff". For a man who said that to clear his calendar to 
+help finish Swimming and Circles, he must have really been excited about working with
+Mac.    
 
 If you consider his work in film, Jon really does a masterful job of
-conveying [tone](https://youtu.be/OftqMORxGCE?list=TLPQMjEwMTIwMjAAvHm6l06TAg&t=96). How you
-connect the dots between a composer who is most well known for his work on movie scores and a trendy
-rap artist is a mystery to me. I have to thank Jon for the inspiration/encouragement he gave Malcolm.
-Though, in his interview with Zane Lowe, he insists "That's not something I created, that's something
-he was doing and I was only asking him to recognise that it was already great".
+conveying [tone](https://youtu.be/OftqMORxGCE?list=TLPQMjEwMTIwMjAAvHm6l06TAg&t=96). 
+I have to thank Jon for the inspiration/encouragement he gave Mac, but in his 
+[interview with Zane Lowe](https://youtu.be/faEKDnNXt4o), he insists 
+"That's not something I created, that's something he was doing and I was only 
+asking him to recognise that it was already great".
 
 The album is littered with references to time. More specifically it seems to be about how you perceive time.
 Do you let time be a tyrant in your life and fight it, or do you go with the flow and ride it out?
 One of the great albums of all time is Dark Side of the Moon which also featured references to time 
 very prominently. Dark Side of the Moon starts and ends the same way, with a heartbeat. This seems to
 represent the cycle of life: a notion that is paralleled in the opening track _Circles_. The line goes
-"I just end up right at the start of the line. Drawin' circles" 
+"I just end up right at the start of the line. Drawin' circles". Similarly, every day ends 
+the same way it begins; the hands of the clock go around in a circle until they strike 12. 
 
-It seems like Malcolm was living in the present which is a comforting way to approach life when you're going 
+It seems like Mac was living in the present which is a comforting way to approach life when you're going 
 through a hard time. Lyrics like "I've got all the time in the world, so for now I'm just chilling" 
 and "'fore I start to think about the future. First, can I please get through a day?". He's taking life 
-one day at a time and working on the "clutter" in his head.
+one day at a time and working through the "clutter" in his head.
 
 Blue World
 Good News
@@ -59,16 +72,25 @@ Hand me downs
 That's on me
 
 Hands takes the metaphor of time further. The beat sounds reminiscent of a clock ticking, and hands 
-seems to refer to the hands of a clock. It seems to be a letter to himself really te
- "When's the last time you took a little time for yourself?"
+seems to refer to the hands of a clock. It seems to be a letter to himself urging him to ease up
+on himself and stop feeling so low. "When's the last time you took a little time for yourself?" 
+and later in the chorus "No, I stay behind the wheel and never half-speed". "Never half-speed" 
+might suggest that he is always speeding and might benefit from slowing down. This hearkens back to 
+the line on Small Worlds (_Swimming_): "I'm always in a rush, I been thinking too much"
 
 Surf
+
 Once a day
 
-Between Swimming and Circles, there are plentiful references to death and leaving this world.
-Some may take this as a prediction, but I think that could be considered confirmation bias. Plenty
-of rappers write about suicide but they're still here. And I don't believe he truly wanted to die.
-As he says in Complicated, "Fore I start to think about the future. First, can I please get through a day?"
+Strangely, it feels as though any track on the album could have been the last track and it wouldn't
+be lacking. But what's important is that the final track represents the last goodbye. The important
+thing to nail is the tone. Jon Brion made the decision to put _Once A Day_ at the end, and it 
+was a very intentional decision. What message did he want to leave us with for the final act of Mac?
+Once a day opens with a monologue "Once a day, I rise. Once a day, I fall asleep with you". He's 
+really talking to himself. You spend more time with yourself than anyone else and it's important 
+for you to be comfortable with that. "Don't keep it all in your head. The only place that you know nobody
+can ever see". _Once A Day_ is a tale of inner peace and a final reminder that we need to stay 
+open, not just to others, but most importantly, to ourselves. 
 
 The painful part of listening to this album is the feeling of finality.
 There will never again be a Mac Miller album that was wholly - or even
