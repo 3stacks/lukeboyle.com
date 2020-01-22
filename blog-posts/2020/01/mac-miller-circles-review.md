@@ -59,12 +59,6 @@ one day at a time and working through the "clutter" in his head.
 >
 > Don't be afraid, don't fall"
 
-Good News
-
-I can see
-
-Everybody
-
 Woods is my favourite track on the album. It's probably the most subdued track with very sparse lyrics and 
 instrumentation. The opening lines of "Things like this ain't built to last, I might just fade like those
 before me". This could be interpreted a few ways. This album was recorded shortly after the loss of his 
@@ -72,18 +66,12 @@ before me". This could be interpreted a few ways. This album was recorded shortl
  me, then surely you'll be able to forget me and move on". Another interpretation could be his anxiety 
  about his legacy and whether he did enough to be remembered. 
  
-Hand me downs
-
-That's on me
-
 Hands takes the metaphor of time further. The beat sounds reminiscent of a clock ticking, and hands 
 seems to refer to the hands of a clock. It seems to be a letter to himself urging him to ease up
 on himself and stop feeling so low. "When's the last time you took a little time for yourself?" 
 and later in the chorus "No, I stay behind the wheel and never half-speed". "Never half-speed" 
 might suggest that he is always speeding and might benefit from slowing down. This hearkens back to 
 the line on Small Worlds (_Swimming_): "I'm always in a rush, I been thinking too much"
-
-Surf
 
 Strangely, it feels as though any track on the album could have been the last track and it wouldn't
 be lacking. But what's important is that the final track represents the last goodbye. The important
