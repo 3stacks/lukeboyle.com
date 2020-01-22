@@ -5,7 +5,7 @@
 | post_title | Mac Miller - Circles album review |
 | post_date | 2020-01-22 00:00:00 |
 | post_modified | 2020-01-22 00:00:00 |
-| post_status | draft |
+| post_status | publish |
 | post_type | revision |
 | post_category | music |
 
@@ -53,9 +53,14 @@ through a hard time. Lyrics like "I've got all the time in the world, so for now
 and "'fore I start to think about the future. First, can I please get through a day?". He's taking life 
 one day at a time and working through the "clutter" in his head.
 
+> It's a blue world without you 
+
 Blue World
+
 Good News
+
 I can see
+
 Everybody
 
 Woods is my favourite track on the album. It's probably the most subdued track with very sparse lyrics and 
@@ -77,8 +82,6 @@ might suggest that he is always speeding and might benefit from slowing down. Th
 the line on Small Worlds (_Swimming_): "I'm always in a rush, I been thinking too much"
 
 Surf
-
-Once a day
 
 Strangely, it feels as though any track on the album could have been the last track and it wouldn't
 be lacking. But what's important is that the final track represents the last goodbye. The important
