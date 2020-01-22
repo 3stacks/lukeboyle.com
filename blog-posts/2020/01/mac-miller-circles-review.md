@@ -1,8 +1,8 @@
-# Mac Miller - Circles album review
+# Mac Miller - Circles
 
 | Metadata name | Value                           |
 | ------------- | ------------------------------- |
-| post_title | Mac Miller - Circles album review |
+| post_title | Mac Miller - Circles |
 | post_date | 2020-01-22 00:00:00 |
 | post_modified | 2020-01-22 00:00:00 |
 | post_status | publish |
@@ -36,7 +36,7 @@ Mac.
 If you consider his work in film, Jon really does a masterful job of
 conveying [tone](https://youtu.be/OftqMORxGCE?list=TLPQMjEwMTIwMjAAvHm6l06TAg&t=96). 
 I have to thank Jon for the inspiration/encouragement he gave Mac, but in his 
- [interview with Zane Lowe](https://youtu.be/faEKDnNXt4o), he insists 
+[ interview with Zane Lowe](https://youtu.be/faEKDnNXt4o), he insists 
 "That's not something I created, that's something he was doing and I was only 
 asking him to recognise that it was already great".
 
