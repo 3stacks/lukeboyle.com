@@ -5,7 +5,7 @@
 | post_title | Mac Miller Circles album review |
 | post_date | 2020-01-22 00:00:00 |
 | post_modified | 2020-01-22 00:00:00 |
-| post_status | publish |
+| post_status | draft |
 | post_type | revision |
 | post_category | music |
 
