@@ -55,6 +55,8 @@ one day at a time and working through the "clutter" in his head.
 
 > It's a blue world without you 
 
+![Mac Miller in blue](/blog-posts/images/mac-miller-blue.jpg)
+
 Blue World
 
 Good News

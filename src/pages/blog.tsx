@@ -7,11 +7,11 @@ import { BodyWrapper } from '../pages/music';
 import Layout from '../components/layout/layout';
 import { MaxWidthContainer } from '../styled/utils';
 import MacMillerCirclesReviewMd from './blog-posts/2020/01/mac-miller-circles-review';
+import TopAlbumsOfLastDecadeMd from './blog-posts/2020/01/top-albums-of-last-decade';
 import MyFavoriteVersesMd from './blog-posts/2019/09/my-favorite-verses';
-import ConvertingWordpressSiteToStaticMd from './blog-posts/2018/01/converting-wordpress-site-to-static';
-import ProjectEstimationsMadeEasyMd from './blog-posts/2017/12/project-estimations-made-easy';
-import CssVariablesACaseStudyMd from './blog-posts/2017/04/css-variables--a-case-study';
-import FunctionalFormValidationInJavaScriptAkaInheritingBadJavaScriptMd from './blog-posts/2017/01/functional-form-validation-in-java-script--aka--inheriting-bad-java-script';
+import GithubActionsForWebAppsMd from './blog-posts/2019/08/github-actions-for-web-apps';
+import TopAlbumsOf2019Md from './blog-posts/2019/07/top-albums-of-2019';
+import SoftwareIActuallyBelieveInMd from './blog-posts/2018/12/software-i-actually-believe-in';
 
 export default class Blog extends React.Component {
     render() {
@@ -292,7 +292,7 @@ export default class Blog extends React.Component {
                                                 path:
                                                     'blog-posts/2020/01/mac-miller-circles-review.md',
                                                 title:
-                                                    'Mac Miller Circles album review'
+                                                    'Mac Miller - Circles album review'
                                             }
                                         ]
                                     }
@@ -301,15 +301,11 @@ export default class Blog extends React.Component {
                         </div>
                         <div>
                             <MacMillerCirclesReviewMd isBlogPage={true} />
+                            <TopAlbumsOfLastDecadeMd isBlogPage={true} />
                             <MyFavoriteVersesMd isBlogPage={true} />
-                            <ConvertingWordpressSiteToStaticMd
-                                isBlogPage={true}
-                            />
-                            <ProjectEstimationsMadeEasyMd isBlogPage={true} />
-                            <CssVariablesACaseStudyMd isBlogPage={true} />
-                            <FunctionalFormValidationInJavaScriptAkaInheritingBadJavaScriptMd
-                                isBlogPage={true}
-                            />
+                            <GithubActionsForWebAppsMd isBlogPage={true} />
+                            <TopAlbumsOf2019Md isBlogPage={true} />
+                            <SoftwareIActuallyBelieveInMd isBlogPage={true} />
 
                             <ul className="pagination">
                                 <li className="pagination__next">
