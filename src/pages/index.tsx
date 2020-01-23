@@ -84,10 +84,11 @@ const Stuff = styled.div`
     }
     
     &:hover {
-        transform: translate(-3px,-3px);
+        transform: translate(-2px,-2px);
         background-color: #fff;
         box-shadow: 4px 4px 0 0 #111;
         color: #111;
+        border: 2px solid #111;
     }
 `;
 
