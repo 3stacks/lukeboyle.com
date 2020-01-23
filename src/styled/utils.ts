@@ -97,7 +97,7 @@ export const BlogHeader = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	color: white;
+	color: ${COLORS.SECONDARY};
 	position: relative;
 	background-color: ${COLORS.PRIMARY};
 	${bp(

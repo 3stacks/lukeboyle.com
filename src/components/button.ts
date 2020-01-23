@@ -11,7 +11,7 @@ function getButtonStyles({ isSecondary }) {
 				? `
 			color: ${COLORS.SECONDARY};
 			background-color: #fff;
-			border: 2px solid ${COLORS.SECONDARY};;
+			border: 2px solid ${COLORS.SECONDARY};
 		`
 				: `
 			color: white;
@@ -21,18 +21,19 @@ function getButtonStyles({ isSecondary }) {
 		}
 		padding: 10px 15px;
 		text-decoration: none;
-		transition: transform 0.2s ease-out, background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+		transition: transform 0.2s ease-out, box-shadow 0.3s ease-out;
 		text-transform: uppercase;
 		font-size: 1.3rem;
 		font-weight: bold;
+		border: 2px solid ${COLORS.SECONDARY};
 		
 		&:hover,
 		&:focus {
-			color: ${COLORS.SECONDARY};
-			border: 2px solid ${COLORS.SECONDARY};
+			color: ${COLORS.SECONDARY} !important;
 			outline: none;
 			transform: translate(-3px,-3px);
         	background-color: #fff;
+        	border: 2px solid ${COLORS.SECONDARY};
         	box-shadow: 4px 4px 0 0 ${COLORS.SECONDARY};
 			color: ${COLORS.SECONDARY};
 		}
