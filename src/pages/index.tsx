@@ -72,13 +72,14 @@ const RecentStuff = styled.div`
 
 const Stuff = styled.div`
     background-color: white;
-    color: #222;
+    color: #111;
     text-align: center;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    transition: transform 0.2s ease-out, background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+    
     a {
         margin-top: auto;
     }

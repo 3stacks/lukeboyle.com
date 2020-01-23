@@ -28,19 +28,8 @@ function getButtonStyles({ isSecondary }) {
 		
 		&:hover,
 		&:focus {
-			${
-				isSecondary
-					? `
-					color: white;
-					background-color: ${COLORS.SECONDARY};
-					border: 2px solid ${COLORS.SECONDARY}
-			`
-					: `
-				color: ${COLORS.SECONDARY};
-				border: 2px solid ${COLORS.SECONDARY};
-			`
-			}
-			opacity: 0.9;
+			color: ${COLORS.SECONDARY};
+			border: 2px solid ${COLORS.SECONDARY};
 			outline: none;
 			transform: translate(-3px,-3px);
         	background-color: #fff;
