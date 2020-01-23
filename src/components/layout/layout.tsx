@@ -161,7 +161,7 @@ const StyledLayout = styled.div`
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     color: white;
-    background: linear-gradient(${COLORS.PRIMARY}, #3b60a8);
+    background-color: ${COLORS.PRIMARY};
 
     .block-header {
         font-size: 2.5rem;

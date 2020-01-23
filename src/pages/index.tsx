@@ -9,6 +9,7 @@ import { MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
 
 export const HomeHeadBanner = styled.div`
+    color: #111;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -70,8 +71,6 @@ const RecentStuff = styled.div`
 `;
 
 const Stuff = styled.div`
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-    border-radius: 4px;
     background-color: white;
     color: #222;
     text-align: center;
@@ -82,6 +81,13 @@ const Stuff = styled.div`
 
     a {
         margin-top: auto;
+    }
+    
+    &:hover {
+        transform: translate(-3px,-3px);
+        background-color: #fff;
+        box-shadow: 4px 4px 0 0 #111;
+        color: #111;
     }
 `;
 

@@ -11,10 +11,11 @@ export const StyledFooter = styled.div`
 		font-size: 1.4rem;
 
 		a {
-			color: white;
+			color: #111;
 
 			&:hover {
-				color: white;
+				color: #111;
+				border-bottom: 1px solid #111;
 			}
 		}
 	}

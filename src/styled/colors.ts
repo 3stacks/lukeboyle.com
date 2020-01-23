@@ -1,7 +1,7 @@
 enum COLORS {
-	PRIMARY = '#2e539b',
+	PRIMARY = '#ffe01b',
 	PRIMARY_GRADIENT_LIGHT = '#3d7bdc',
-	SECONDARY = '#fd6a57'
+	SECONDARY = '#111'
 }
 
 export default COLORS;
