@@ -7,6 +7,7 @@ import WIDTHS from '../styled/widths';
 import { bp } from '../styled/mixins';
 import { MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
+import COLORS from '../styled/colors';
 
 export function HomeHeadBanner({ children }) {
     return (
@@ -17,6 +18,7 @@ export function HomeHeadBanner({ children }) {
 }
 
 export const StyledBanner = styled.div`
+    color: #111;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -79,18 +81,25 @@ const RecentStuff = styled.div`
 `;
 
 const Stuff = styled.div`
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-    border-radius: 4px;
     background-color: white;
-    color: #222;
+    color: #111;
     text-align: center;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    transition: transform 0.2s ease-out, background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+    
     a {
         margin-top: auto;
+    }
+    
+    &:hover {
+        transform: translate(-2px,-2px);
+        background-color: #fff;
+        box-shadow: 4px 4px 0 0 #111;
+        color: #111;
+        border: 2px solid #111;
     }
 `;
 

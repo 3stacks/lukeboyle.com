@@ -119,14 +119,15 @@ const GlobalLayoutStyle = createGlobalStyle`
 	}
 	
 	a {
-		color: ${COLORS.PRIMARY};
-		transition: color 0.5s ease-out, border-color 0.25s ease-out;
+		color: ${COLORS.SECONDARY};
 		text-decoration: none;
-		border-bottom: 1px solid ${COLORS.PRIMARY};
+		border-bottom: 1px solid ${COLORS.SECONDARY};
 		
 		&:hover, 
 		&:focus {
 			border-bottom: 1px solid transparent;
+			background-color: ${COLORS.SECONDARY};
+			color: white !important;
 		}
 	}
 	
@@ -160,8 +161,8 @@ const StyledLayout = styled.div`
     flex-direction: column;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
-    color: white;
-    background: linear-gradient(${COLORS.PRIMARY}, #3b60a8);
+    color: #111;
+    background-color: ${COLORS.PRIMARY};
 
     .block-header {
         font-size: 2.5rem;
@@ -176,7 +177,7 @@ const StyledLayout = styled.div`
         `
 		.body-slot {
 			background-color: white;
-			color: #222;
+			color: #111;
 		}
 	`}
 `;

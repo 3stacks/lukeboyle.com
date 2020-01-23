@@ -7,6 +7,7 @@ import { bp } from '../styled/mixins';
 import { MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
 import { HomeHeadBanner } from './index';
+import COLORS from '../styled/colors';
 
 const PortfolioContainer = styled.div`
     padding-top: 30px;
@@ -45,14 +46,16 @@ const PortfolioItem = styled.div`
     color: white;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-    border-radius: 4px;
     transition: all 0.3s ease-out;
     background-color: white;
+    border: 2px solid ${COLORS.PRIMARY};
 
     &:hover {
-        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
-        transform: scale(1.02);
+        transform: translate(-2px, -2px);
+        background-color: #fff;
+        box-shadow: 4px 4px 0 0 #111;
+        color: #111;
+        border: 2px solid #111;
     }
 
     & .image {

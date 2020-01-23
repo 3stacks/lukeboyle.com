@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import COLORS from '../../styled/colors';
 
 export const StyledFooter = styled.div`
 	height: 60px;
@@ -11,16 +12,17 @@ export const StyledFooter = styled.div`
 		font-size: 1.4rem;
 
 		a {
-			color: white;
+			color: ${COLORS.SECONDARY};
 
 			&:hover {
-				color: white;
+				color: ${COLORS.SECONDARY};
+				border-bottom: 1px solid #111;
 			}
 		}
 	}
 
 	& .copyright {
-		color: white;
+		color: ${COLORS.SECONDARY};
 		font-size: 1.4rem;
 	}
 `;

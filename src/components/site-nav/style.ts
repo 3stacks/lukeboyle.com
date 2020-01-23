@@ -10,7 +10,7 @@ export const StyledNav = styled.div`
 	height: 60px;
 
 	a {
-		color: white;
+		color: #111;
 	}
 
 	${bp(
@@ -44,11 +44,11 @@ export const StyledNav = styled.div`
 		)}
 
 		a {
-			color: white;
+			color: #111;
 			text-decoration: none;
 
 			&:hover {
-				color: white;
+				color: #111;
 			}
 		}
 	}
@@ -59,7 +59,7 @@ export const StyledNav = styled.div`
 		padding: 0;
 		width: 100%;
 		text-align: center;
-		color: white;
+		color: #111;
 
 		${bp(
 			WIDTHS.M,
@@ -77,14 +77,14 @@ export const StyledNav = styled.div`
 			}
 
 			a {
-				color: white;
+				color: #111;
 				font-size: 1.6rem;
 				border-color: transparent;
 
 				&.active,
 				&:focus,
 				&:hover {
-					border-color: white;
+					border-color: #111;
 				}
 			}
 		}

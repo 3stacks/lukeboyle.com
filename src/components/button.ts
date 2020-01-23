@@ -9,42 +9,33 @@ function getButtonStyles({ isSecondary }) {
 		${
 			isSecondary
 				? `
-			color: white;
-			background-color: ${COLORS.SECONDARY};
-			border: none;
+			color: ${COLORS.SECONDARY};
+			background-color: #fff;
+			border: 2px solid ${COLORS.SECONDARY};
 		`
 				: `
 			color: white;
-			background-color: ${COLORS.PRIMARY};
+			background-color: ${COLORS.SECONDARY};
 			border: none;
 		`
 		}
 		padding: 10px 15px;
 		text-decoration: none;
-		box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
-		transition: transform 0.2s ease-out, background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+		transition: transform 0.2s ease-out, box-shadow 0.3s ease-out;
 		text-transform: uppercase;
 		font-size: 1.3rem;
 		font-weight: bold;
-		border-radius: 4px;
+		border: 2px solid ${COLORS.SECONDARY};
 		
 		&:hover,
 		&:focus {
-			${
-				isSecondary
-					? `
-				color: white
-				border: none;
-			`
-					: `
-				color: white;
-				border: none;
-			`
-			}
-			opacity: 0.9;
-			transform: translateY(-1px);
-			box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+			color: ${COLORS.SECONDARY} !important;
 			outline: none;
+			transform: translate(-3px,-3px);
+        	background-color: #fff;
+        	border: 2px solid ${COLORS.SECONDARY};
+        	box-shadow: 4px 4px 0 0 ${COLORS.SECONDARY};
+			color: ${COLORS.SECONDARY};
 		}
 	`;
 }
