@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import { bp } from './mixins';
 import WIDTHS from './widths';
 import COLORS from './colors';
 
 export const MaxWidthContainer = styled.div`
-	${props => (props.isSmall ? 'max-width: 700px;' : 'max-width: 1000px;')}
+	${props => (props.isSmall ? css`max-width: 700px;` : css`max-width: 1000px;`)}
 	padding: 0 15px;
 	margin: 0 auto;
 
@@ -35,13 +35,16 @@ export const AlbumBlock = styled.div`
 		'd';
 	margin-bottom: 50px;
 	align-items: center;
-	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-	border-radius: 4px;
 	overflow: hidden;
+	background-color: ${COLORS.PRIMARY};
+	color: ${COLORS.TEXT};
+	transform: translate(-2px,-2px);
+        box-shadow: 4px 4px 0 0 #111;
+        border: 2px solid #111;
 
 	${bp(
 		460,
-		`
+		css`
 		grid-template-columns: 3fr 1fr;
 		align-items: center;
 		grid-template-areas: 
@@ -58,7 +61,7 @@ export const AlbumBlock = styled.div`
 
 		${bp(
 			460,
-			`
+			css`
 			margin: 0 0 auto;
 		`
 		)}
@@ -77,7 +80,7 @@ export const AlbumBlock = styled.div`
 
 		${bp(
 			460,
-			`
+			css`
 			width: auto;
 			margin-bottom: 0;
 			align-self: stretch;

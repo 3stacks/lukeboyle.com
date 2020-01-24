@@ -1,7 +1,7 @@
 enum COLORS {
 	PRIMARY = '#ffe01b',
 	WHITE = '#fff',
-	TEXT = '#222',
+	TEXT = '#111',
 	SECONDARY = '#111'
 }
 

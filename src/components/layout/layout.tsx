@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import { META_DESCRIPTION, MY_NAME } from '../../constants';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, css } from 'styled-components';
 import appleSmall from '../../assets/img/apple-icon-76x76.png';
 import appleMedium from '../../assets/img/apple-icon-120x120.png';
 import appleLarge from '../../assets/img/apple-icon-152x152.png';
@@ -174,7 +174,7 @@ const StyledLayout = styled.div`
 
     ${props =>
         !props.showFullPageColor &&
-        `
+        css`
 		.body-slot {
 			background-color: white;
 			color: #111;
