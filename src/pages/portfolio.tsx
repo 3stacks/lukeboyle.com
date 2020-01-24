@@ -46,14 +46,13 @@ const PortfolioItem = styled.div`
     color: white;
     display: flex;
     flex-direction: column;
-    transition: all 0.3s ease-out;
     background-color: white;
     border: 2px solid ${COLORS.PRIMARY};
 
     &:hover {
-        transform: translate(-2px, -2px);
+        transform: translate(-5px, -5px);
         background-color: #fff;
-        box-shadow: 4px 4px 0 0 #111;
+        box-shadow: 7px 7px 0 0 #111;
         color: #111;
         border: 2px solid #111;
     }
