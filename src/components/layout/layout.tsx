@@ -9,6 +9,8 @@ import appleMedium from '../../assets/img/apple-icon-120x120.png';
 import appleLarge from '../../assets/img/apple-icon-152x152.png';
 import androidIcon from '../../assets/img/android-icon-192x192.png';
 import favicon from '../../assets/img/favicon-32x32.png';
+import GraphikWoff from '../../assets/Graphik-Regular.woff';
+import GraphikWoffTwo from '../../assets/Graphik-Regular.woff2';
 import COLORS from '../../styled/colors';
 
 import './layout.css';
@@ -19,6 +21,13 @@ const GlobalLayoutStyle = createGlobalStyle`
 	* {
 		box-sizing: border-box;
 	}
+	
+	@font-face {
+      font-family: 'Graphik';
+      font-display: swap;
+      src: url(${GraphikWoffTwo}) format('woff2'),
+        url(${GraphikWoff}) format('woff');
+    }
 
 	html {
 		font-size: 62.5%;
@@ -29,8 +38,12 @@ const GlobalLayoutStyle = createGlobalStyle`
 	}
 	
 	body {
-		font-family: 'Source Sans Pro', sans-serif;
+		font-family: 'Graphik', 'Helvetica Neue', sans-serif;
 	}
+	
+	pre {
+        font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
+    }
 	
 	h1 {
 		font-size: 4rem;;
@@ -175,11 +188,11 @@ const StyledLayout = styled.div`
     ${props =>
         !props.showFullPageColor &&
         css`
-		.body-slot {
-			background-color: white;
-			color: #111;
-		}
-	`}
+            .body-slot {
+                background-color: white;
+                color: #111;
+            }
+        `}
 `;
 
 interface IProps {
@@ -221,7 +234,7 @@ export default class Layout extends React.Component<IProps> {
                         content="width=device-width, initial-scale=1.0"
                     />
                     <link
-                        href="https://fonts.googleapis.com/css?family=Roboto+Slab|Source+Sans+Pro&display=swap"
+                        href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap"
                         rel="stylesheet"
                     />
                     <link
