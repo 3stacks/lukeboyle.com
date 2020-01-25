@@ -49,9 +49,9 @@ the same way it begins; the hands of the clock go around in a circle until they 
 
 ![Mac Miller in blue](/blog-posts/images/mac-miller-blue.jpg)
 
-> "Hey, one of these days we'll all get by 
+> Hey, one of these days we'll all get by 
 >
-> Don't be afraid, don't fall"
+> Don't be afraid, don't fall
 
 After the very sombre start, the synth and funky bassline of Complicated was fairly jarring on first listen. After
 going back through for a second time, it really just seemed to make sense. The lyrics are very dour which contrasts 
@@ -70,7 +70,7 @@ I'm just chilling" and "'fore I start to think about the future. First, can I pl
 He's taking life one day at a time and working through the "clutter" in his head. The downside of this approach is you 
 can easily forget about the bigger picture and end up clinging to destructive coping mechanisms. 
 
-> "Won't give a fuck about tomorrow if I die today"
+> Won't give a fuck about tomorrow if I die today
 > 
 > [The Star Room](https://youtu.be/Mos8UiWV6_g)
 
