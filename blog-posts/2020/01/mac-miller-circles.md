@@ -127,11 +127,16 @@ seems to refer to the hands of a clock. It seems to be a letter to himself urgin
 on himself and stop feeling so low. "When's the last time you took a little time for yourself?" 
 and later in the chorus "No, I stay behind the wheel and never half-speed". "Never half-speed" 
 might suggest that he is always speeding and might benefit from slowing down. This hearkens back to 
-the line on Small Worlds (_Swimming_): "I'm always in a rush, I been thinking too much"
+the line on Small Worlds (_Swimming_): "I'm always in a rush, I been thinking too much".
+
+He also seems to be lamenting the way he behaves in relationships. Mac knows he's a bit of a fuck-up. On Good News he 
+says "And all I do is say sorry. Half the time I don't even know what I'm saying it about"
+
+"You throw me off my high horse, I'd probably fall to my death"
+
+"Give me, give me what I need and then I'm onto the next"
 
 <iframe width="640" height="480" src="https://www.youtube.com/embed/9Gbl-IDp1qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-surf
 
 On Surf, Mac seems to be reconciling his desire to be loved with his emotional 
 volatility. On Hands he said "Get the fuck out of my car, this ain't a taxi. 
@@ -141,6 +146,8 @@ are you going? Can I come too?"
 
 "Until we get old. There's water in the flowers, let's grow" - Embracing the 
 pursuit of personal improvement? 
+
+"Get Going going going before I'm gone"
 
 Strangely, it feels as though any track on the album could have been the last track and it wouldn't
 be lacking. But what's important is that the final track represents the last goodbye. The important
@@ -163,7 +170,7 @@ Circles feels like a realisation that life isn't a comedy but it's more
 of a tragedy with comic relief. True maturity is welcoming that reality
 but recognising that sometimes the best you can do is keep Swimming in Circles.
 
-![Swimming in Circles](/blog-posts/images/swimming-in-circles.jpg)
+<img class="is-centred" src="/blog-posts/images/swimming-in-circles.jpg" alt="Swimming in Circles">
 
 ## Sources
 
