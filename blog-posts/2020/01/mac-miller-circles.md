@@ -5,7 +5,7 @@
 | post_title | Mac Miller - Circles |
 | post_date | 2020-01-22 00:00:00 |
 | post_modified | 2020-01-22 00:00:00 |
-| post_status | draft |
+| post_status | publish |
 | post_type | revision |
 | post_category | music |
 
@@ -15,7 +15,7 @@ One of the unfortunate realities of life is that people die. The music industry,
 eager to exploit, will often take this opportunity to cash in. They'll
 bastardise the hard work of productive musicians and release
 posthumous albums, and countless remixes of classic songs with various artists.
-Look no further than the discography of Notorious B.I.G, 2pac, Big L, or more recently, XXXTentacion.
+Look no further than the discography of Notorious B.I.G, 2pac, Big L, or more recently, XXXTENTACION.
 
 The announcement of _Circles_ was something different. Mac was working diligently
 to finish this album before his untimely death in 2018. A significant portion of _Swimming_
@@ -31,7 +31,7 @@ shove their shit down people's throats is that... all I see them doing is giving
 impression of what they think they're supposed to be doing. And it's what bores me about 
 99.999% of people who make stuff". For a man who said that to clear his calendar and 
 help finish Swimming and Circles, he must have really been excited about working with
-Mac.    
+Mac.
 
 If you consider his work in film, Jon really does a masterful job of
 conveying [tone](https://youtu.be/OftqMORxGCE?list=TLPQMjEwMTIwMjAAvHm6l06TAg&t=96). 
@@ -48,31 +48,58 @@ represent the cycle of life: a notion that is paralleled in the opening track _C
 "I just end up right at the start of the line. Drawin' circles". Similarly, every day ends 
 the same way it begins; the hands of the clock go around in a circle until they strike 12. 
 
-It seems like Mac was living in the present which is a comforting way to approach life when you're going 
-through a hard time. Lyrics like "I've got all the time in the world, so for now I'm just chilling" 
-and "'fore I start to think about the future. First, can I please get through a day?". He's taking life 
-one day at a time and working through the "clutter" in his head.
-
 ![Mac Miller in blue](/blog-posts/images/mac-miller-blue.jpg)
 
 > "Hey, one of these days we'll all get by 
 >
 > Don't be afraid, don't fall"
 
-Complicated
+After the very sombre start, the synth and funky bassline of Complicated was fairly jarring on first listen. After
+going back through for a second time, it really just seemed to make sense. The lyrics are very dour which contrasts 
+beautifully with the rather upbeat and playful instrumental. Many songs use this tactic like a trojan horse to insert
+some meaning into poppy songs, because they probably wouldn't top the Billboard 200 if the instrumentals matched the lyrics. (See 
+[_Hey Ya_ by Outkast](https://youtu.be/6DyPtvxln2c)). A recent example is in the Purple Mountains song 
+_All My Happiness Is Gone_. The late David Berman said in 
+[an interview](http://exclaim.ca/music/article/david_berman_discusses_every_song_on_purple_mountains_self-titled_new_album) "it 
+just complexifies the profile of it to have the music and the words at odds". As it turns out, Complicated wasn't 
+originally made for the album<sub>[1]</sub>, but it fits beautifully. Leading on from _Come Back to Earth_ on Swimming where he 
+says "I just need a way out of my head", _Complicated_ has the first reference to his difficulties unravelling the 
+mess in his head which ties into _Good News_ later in the album.
 
-Blue world
+With Circles and Complicated, I get the impression that Mac was living in the present which is a comforting way to 
+approach life when you're going through a hard time. Lyrics like "I've got all the time in the world, so for now 
+I'm just chilling" and "'fore I start to think about the future. First, can I please get through a day?". 
+He's taking life one day at a time and working through the "clutter" in his head.
 
-good news
+-------
 
-i can see
+Good News was the perfect choice to tease the project. Mac opens the track talking about fighting his demons, but often
+feeling hamstrung by himself. "I wish that I could just get out my goddamn way"
+
+"There ain't a better time than today" - No time like the present to start bettering yourself
+
+
+With a different interpretation, these lyrics could have been
+ delivered with a very moody inflection to create a much darker tone, but the muted string plucking and sparse instrumentation
+give this very ethereal feeling. Paired with the subdued vocals it is just a beautiful tribute to his life and legacy 
+and a reassuring  
+
+Especially when coupled with the [music video](https://youtu.be/aIHF7u9Wwiw) 
+it has a surreal quality that feels like he's in the room talking to you.
+
+The lyrics almost sound like he's reassuring
+people from the great beyond
+
+-------
 
 Woods is my favourite track on the album. It's probably the most subdued track with very sparse lyrics and 
 instrumentation. The opening lines of "Things like this ain't built to last, I might just fade like those
-before me". This could be interpreted a few ways. This album was recorded shortly after the loss of his 
+before me". This could be interpreted a few ways. This album was recorded shortly after the loss of a 
  relationship. It feels like saying "If you were able to forget the people you used to love and love
  me, then surely you'll be able to forget me and move on". Another interpretation could be his anxiety 
  about his legacy and whether he did enough to be remembered. 
+ 
+<iframe width="1905" height="792" src="https://www.youtube.com/embed/9Gbl-IDp1qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
  
 hand me downs
  
@@ -120,3 +147,9 @@ fitting that the album to solidify his legacy in our minds is Circles.
 Circles feels like a realisation that life isn't a comedy but it's more
 of a tragedy with comic relief. True maturity is welcoming that reality
 but recognising that sometimes the best you can do is keep Swimming in Circles.
+
+![Swimming in Circles](/blog-posts/images/swimming-in-circles.jpg)
+
+## Sources
+
+[1] - [NY Times interview with Jon Brion](https://www.nytimes.com/2020/01/20/arts/music/mac-miller-jon-brion-circles.html)
