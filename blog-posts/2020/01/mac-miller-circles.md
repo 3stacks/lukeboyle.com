@@ -18,8 +18,8 @@ posthumous albums, and countless remixes of classic songs with various artists.
 Look no further than the discography of Notorious B.I.G, 2pac, Big L, or more recently, XXXTENTACION.
 
 The announcement of _Circles_ was something different. Mac was working diligently
-to finish this album before his untimely death in 2018. A significant portion of _Swimming_
- and _Circles_ was "executive produced" by Jon Brion who carried the torch and tried to finish
+to finish this album before his untimely death in 2018. A significant portion of 
+_Swimming_ and _Circles_ was "executive produced" by Jon Brion who carried the torch and tried to finish
 the album as Mac intended it. When I initially saw his writing credits on Swimming I 
 was quite surprised. 
 
