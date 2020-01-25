@@ -3,9 +3,9 @@
 | Metadata name | Value                           |
 | ------------- | ------------------------------- |
 | post_title | Mac Miller - Circles |
-| post_date | 2020-01-22 00:00:00 |
-| post_modified | 2020-01-22 00:00:00 |
-| post_status | draft |
+| post_date | 2020-01-25 00:00:00 |
+| post_modified | 2020-01-25 00:00:00 |
+| post_status | publish |
 | post_type | revision |
 | post_category | music |
 
@@ -26,26 +26,25 @@ was quite surprised.
 I pondered the mystery of how you connect the dots between an eccentric composer who is most 
 well known for his work on movie scores and a trendy rap artist. Turns out, it's not that
 much of a mystery at all. In an [episode of _What's In My Bag_ with Amoeba records](https://youtu.be/qnhbHFgagIM)
-, Jon Brion says: "You know, my complaint about most people who make records and go out and 
+, Jon Brion says "You know, my complaint about most people who make records and go out and 
 shove their shit down people's throats is that... all I see them doing is giving me their 
 impression of what they think they're supposed to be doing. And it's what bores me about 
-99.999% of people who make stuff". For a man who said that to clear his calendar and 
-help finish Swimming and Circles, he must have really been excited about working with
-Mac.
+99.999% of people who make stuff." For a man who said that to clear his calendar and 
+help finish Circles, he must have really been excited about working with Mac.
 
 If you consider his work in film, Jon really does a masterful job of
 conveying [tone](https://youtu.be/OftqMORxGCE?list=TLPQMjEwMTIwMjAAvHm6l06TAg&t=96). 
-I have to thank Jon for the inspiration/encouragement he gave Mac, but in his 
-[ interview with Zane Lowe](https://youtu.be/faEKDnNXt4o), he insists 
+I have to thank Jon for the inspiration/encouragement he gave Mac, but in 
+his [interview with Zane Lowe](https://youtu.be/faEKDnNXt4o), he insists 
 "That's not something I created, that's something he was doing and I was only 
-asking him to recognise that it was already great".
+asking him to recognise that it was already great."
 
 The album is littered with references to time. More specifically it seems to be about how you perceive time.
 Do you let time be a tyrant in your life and fight it, or do you go with the flow and ride it out?
-One of the greatest albums of all time is Dark Side of the Moon which also featured references to time 
-very prominently. Dark Side of the Moon starts and ends the same way, with a heartbeat. This seems to
+One of the greatest albums of all time is _Dark Side of the Moon_ which also featured references to time 
+very prominently. _Dark Side of the Moon_ starts and ends the same way, with a heartbeat. This seems to
 represent the cycle of life: a notion that is paralleled in the opening track _Circles_. The line goes
-"I just end up right at the start of the line. Drawin' circles". Similarly, every day ends 
+"I just end up right at the start of the line. Drawin' circles." Similarly, every day ends 
 the same way it begins; the hands of the clock go around in a circle until they strike 12. 
 
 ![Mac Miller in blue](/blog-posts/images/mac-miller-blue.jpg)
@@ -57,40 +56,49 @@ the same way it begins; the hands of the clock go around in a circle until they 
 After the very sombre start, the synth and funky bassline of Complicated was fairly jarring on first listen. After
 going back through for a second time, it really just seemed to make sense. The lyrics are very dour which contrasts 
 beautifully with the rather upbeat and playful instrumental. Many songs use this tactic like a trojan horse to insert
-some meaning into poppy songs, because they probably wouldn't top the Billboard 200 if the instrumentals matched the lyrics. (See 
-[_Hey Ya_ by Outkast](https://youtu.be/6DyPtvxln2c)). A recent example is in the Purple Mountains song 
-_All My Happiness Is Gone_. The late David Berman said in 
-[an interview](http://exclaim.ca/music/article/david_berman_discusses_every_song_on_purple_mountains_self-titled_new_album) "it 
-just complexifies the profile of it to have the music and the words at odds". As it turns out, Complicated wasn't 
-originally made for the album<sub>[1]</sub>, but it fits beautifully. Leading on from _Come Back to Earth_ on Swimming where he 
-says "I just need a way out of my head", _Complicated_ has the first reference to his difficulties unravelling the 
-mess in his head which ties into _Good News_ later in the album.
+some meaning into poppy songs, because they probably wouldn't top the Billboard 200 if the instrumentals matched the 
+lyrics. (See [_Hey Ya_ by Outkast](https://youtu.be/6DyPtvxln2c)). A recent example is in the Purple Mountains 
+song _All My Happiness Is Gone_. The late David Berman said in [an interview](http://exclaim.ca/music/article/david_berman_discusses_every_song_on_purple_mountains_self-titled_new_album) 
+"it just complexifies the profile of it to have the music and the words at odds". As it turns out, Complicated wasn't 
+originally made for the album<sub>[1]</sub>, but it fits beautifully. Leading on from _Come Back to Earth_ on Swimming 
+where he says "I just need a way out of my head", _Complicated_ has the first reference to his difficulties unravelling 
+the mess in his head which ties into _Good News_ later in the album.
 
 With Circles and Complicated, I get the impression that Mac was living in the present which is a comforting way to 
 approach life when you're going through a hard time. Lyrics like "I've got all the time in the world, so for now 
 I'm just chilling" and "'fore I start to think about the future. First, can I please get through a day?". 
-He's taking life one day at a time and working through the "clutter" in his head.
+He's taking life one day at a time and working through the "clutter" in his head. The downside of this approach is you 
+can easily forget about the bigger picture and end up clinging to destructive coping mechanisms. 
 
--------
+> "Won't give a fuck about tomorrow if I die today"
+> 
+> [The Star Room](https://youtu.be/Mos8UiWV6_g)
 
-Good News was the perfect choice to tease the project. Mac opens the track talking about fighting his demons, but often
-feeling hamstrung by himself. "I wish that I could just get out my goddamn way"
+Aside from a few leaks like "Telescope" (which became Woods) and Once a Day (which was played during his _A 
+Celebration of Life_ as a straight piano ballad), Good News was the only music released to promote the album 
+(perfect choice). Mac opens the track talking about fighting his demons 
+("I spent the whole day in my head, Do a little spring cleanin'"), but often feeling hamstrung by his own instincts to 
+self-sabotage. He says, "I wish that I could just get out my goddamn way", and "Why I gotta build something beautiful
+just to go and set it on fire?"
 
-"There ain't a better time than today" - No time like the present to start bettering yourself
-
+"There ain't a better time than today" - 
+As the saying goes, "The best time to plant a tree was 20 years ago. The second best time is now." There's no time like 
+the present to plant the seeds of change
 
 With a different interpretation, these lyrics could have been
  delivered with a very moody inflection to create a much darker tone, but the muted string plucking and sparse instrumentation
-give this very ethereal feeling. Paired with the subdued vocals it is just a beautiful tribute to his life and legacy 
-and a reassuring  
+give this very calming, ethereal feeling. Paired with the subdued vocals it is just a beautiful tribute to his life and legacy 
+and a reassuring reminder from the great beyond. 
 
-Especially when coupled with the [music video](https://youtu.be/aIHF7u9Wwiw) 
-it has a surreal quality that feels like he's in the room talking to you.
+Especially when coupled with the [music video](https://youtu.be/aIHF7u9Wwiw), it has a surreal quality that feels 
+like he's in the room talking to you. It almost sounds like he's reassuring people from the great beyond with lyrics
+like "There's a whole lot more for me waitin' on the other side". It's a story of the immortal quality of 
+music. So, it only makes sense that an image of Mac appears in a Lotus flower which has a symbolic meaning in Buddhism.
+It resembles the purifying of the spirit which is born into murkiness<sub>[2]</sub>. The ending of him walking through
+the airplane window and disappearing as a ripple in the water is superb and continues to drive home the aquatic theme.
+Good News is the best send-off anyone could hope for.
 
-The lyrics almost sound like he's reassuring
-people from the great beyond
-
--------
+![Mac Miller superimposed in a lotus flower](/blog-posts/images/mac-in-lotus.png)
 
 Woods is my favourite track on the album. It's probably the most subdued track with very sparse lyrics and 
 instrumentation. The opening lines of "Things like this ain't built to last, I might just fade like those
@@ -98,10 +106,18 @@ before me". This could be interpreted a few ways. This album was recorded shortl
  relationship. It feels like saying "If you were able to forget the people you used to love and love
  me, then surely you'll be able to forget me and move on". Another interpretation could be his anxiety 
  about his legacy and whether he did enough to be remembered. 
- 
-<iframe width="1905" height="792" src="https://www.youtube.com/embed/9Gbl-IDp1qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- 
-hand me downs
+  
+Hand Me Downs is a testament to Mac's commitment on his last two albums. In my opinion the best albums seldom have 
+artists featured. To me, it exudes a lack of confidence in what you're producing and a level of insecurity that you 
+feel as though you need to attach bigger names to your songs for them to be well liked. The feature on this album by 
+Baro Sura was a very purposeful choice and it only seems to serve the album's narrative and vibe. And with Baro 
+being a relatively unknown artist it feels like this was someone Mac really liked and believed in, and he delivered 
+a great performance.
+
+The line "I move carelessly that's why I'm always tripping" is a great double entendre. Beyond the literal meaning, 
+the line says that he's moving through life without caring about the consequences, which is why he does drugs.
+
+asdfasdfdsazf
  
 that's on me
  
@@ -112,7 +128,7 @@ and later in the chorus "No, I stay behind the wheel and never half-speed". "Nev
 might suggest that he is always speeding and might benefit from slowing down. This hearkens back to 
 the line on Small Worlds (_Swimming_): "I'm always in a rush, I been thinking too much"
 
-----
+<iframe width="640" height="480" src="https://www.youtube.com/embed/9Gbl-IDp1qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 surf
 
@@ -124,8 +140,6 @@ are you going? Can I come too?"
 
 "Until we get old. There's water in the flowers, let's grow" - Embracing the 
 pursuit of personal improvement? 
-
-----
 
 Strangely, it feels as though any track on the album could have been the last track and it wouldn't
 be lacking. But what's important is that the final track represents the last goodbye. The important
@@ -152,4 +166,5 @@ but recognising that sometimes the best you can do is keep Swimming in Circles.
 
 ## Sources
 
-[1] - [NY Times interview with Jon Brion](https://www.nytimes.com/2020/01/20/arts/music/mac-miller-jon-brion-circles.html)
+- [1] - [NY Times interview with Jon Brion](https://www.nytimes.com/2020/01/20/arts/music/mac-miller-jon-brion-circles.html)
+- [2] - [Symbolism of the Lotus flower](https://buddhists.org/buddhist-symbols/the-meaning-of-the-lotus-flower-in-buddhism/)
