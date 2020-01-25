@@ -6,7 +6,7 @@ import { HomeHeadBanner } from '../pages/index';
 import { BodyWrapper } from '../pages/music';
 import Layout from '../components/layout/layout';
 import { MaxWidthContainer } from '../styled/utils';
-import MacMillerCirclesReviewMd from './blog-posts/2020/01/mac-miller-circles-review';
+import MacMillerCirclesMd from './blog-posts/2020/01/mac-miller-circles';
 import TopAlbumsOfLastDecadeMd from './blog-posts/2020/01/top-albums-of-last-decade';
 import MyFavoriteVersesMd from './blog-posts/2019/09/my-favorite-verses';
 import GithubActionsForWebAppsMd from './blog-posts/2019/08/github-actions-for-web-apps';
@@ -287,12 +287,10 @@ export default class Blog extends React.Component {
                                                     'My favourite albums of the 2010s\r'
                                             },
                                             {
-                                                slug:
-                                                    'mac-miller-circles-review',
+                                                slug: 'mac-miller-circles',
                                                 path:
-                                                    'blog-posts/2020/01/mac-miller-circles-review.md',
-                                                title:
-                                                    'Mac Miller - Circles album review'
+                                                    'blog-posts/2020/01/mac-miller-circles.md',
+                                                title: 'Mac Miller - Circles'
                                             }
                                         ]
                                     }
@@ -300,7 +298,7 @@ export default class Blog extends React.Component {
                             />
                         </div>
                         <div>
-                            <MacMillerCirclesReviewMd isBlogPage={true} />
+                            <MacMillerCirclesMd isBlogPage={true} />
                             <TopAlbumsOfLastDecadeMd isBlogPage={true} />
                             <MyFavoriteVersesMd isBlogPage={true} />
                             <GithubActionsForWebAppsMd isBlogPage={true} />

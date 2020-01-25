@@ -100,7 +100,7 @@ Good News is the best send-off anyone could hope for.
 
 Woods is my favourite track on the album. It's probably the most subdued track with very sparse lyrics and 
 instrumentation. The opening lines of "Things like this ain't built to last, I might just fade like those
-before me". This could be interpreted a few ways. This album was recorded shortly after the loss of a 
+before me" could be interpreted a few ways. This album was recorded shortly after the loss of a 
  relationship. It feels like saying "If you were able to forget the people you used to love and love
  me, then surely you'll be able to forget me and move on". Another interpretation could be his anxiety 
  about his legacy and whether he did enough to be remembered. 
