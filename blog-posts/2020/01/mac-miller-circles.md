@@ -170,7 +170,11 @@ Circles feels like a realisation that life isn't a comedy but it's more
 of a tragedy with comic relief. True maturity is welcoming that reality
 but recognising that sometimes the best you can do is keep Swimming in Circles.
 
-<img class="is-centred" src="/blog-posts/images/swimming-in-circles.jpg" alt="Swimming in Circles">
+<p class="is-centred">
+
+![Swimming in Circles](/blog-posts/images/swimming-in-circles.jpg)    
+
+</p>
 
 ## Sources
 

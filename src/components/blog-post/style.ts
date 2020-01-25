@@ -8,6 +8,10 @@ export const StyledPost = styled.article`
 	font-size: 1.8rem;
 	text-align: left;
 
+	& .is-centred {
+		text-align: center;
+	}
+
 	h1,
 	h2,
 	h3,
