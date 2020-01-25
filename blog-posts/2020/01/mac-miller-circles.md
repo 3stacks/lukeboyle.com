@@ -81,14 +81,12 @@ Celebration of Life_ as a straight piano ballad), Good News was the only music r
 self-sabotage. He says, "I wish that I could just get out my goddamn way", and "Why I gotta build something beautiful
 just to go and set it on fire?"
 
-"There ain't a better time than today" - 
-As the saying goes, "The best time to plant a tree was 20 years ago. The second best time is now." There's no time like 
-the present to plant the seeds of change
-
-With a different interpretation, these lyrics could have been
- delivered with a very moody inflection to create a much darker tone, but the muted string plucking and sparse instrumentation
-give this very calming, ethereal feeling. Paired with the subdued vocals it is just a beautiful tribute to his life and legacy 
-and a reassuring reminder from the great beyond. 
+With a different interpretation, these lyrics could have been delivered with a very moody inflection to create a much 
+darker tone, but the muted string plucking and sparse instrumentation give this very calming, ethereal feeling. 
+This track also features guitar from Wendy Melvoin (guitarist for Prince's band, The Revolution), when you consider 
+that John Mayer played guitar on _Small Worlds_, it's really clear how infectious Mac Miller's talent was. 
+These great musicians happily collaborated with him with very little public recognition. Paired with the subdued 
+vocals it is just a beautiful tribute to his life and legacy and a reassuring reminder from the great beyond. 
 
 Especially when coupled with the [music video](https://youtu.be/aIHF7u9Wwiw), it has a surreal quality that feels 
 like he's in the room talking to you. It almost sounds like he's reassuring people from the great beyond with lyrics
@@ -115,7 +113,10 @@ being a relatively unknown artist it feels like this was someone Mac really like
 a great performance.
 
 The line "I move carelessly that's why I'm always tripping" is a great double entendre. Beyond the literal meaning, 
-the line says that he's moving through life without caring about the consequences, which is why he does drugs.
+the line says that he's moving through life without caring about the consequences, which is why he engages in such 
+destructive behaviours. And lines like "And half the time the wheels that's in the back of my mind Just keep on turning 
+'til the tires flat and burn until the fire crack" echo the message that he feels trapped in his mind with all of the 
+clutter and dealing with his problems is an exhausting process
 
 asdfasdfdsazf
  
