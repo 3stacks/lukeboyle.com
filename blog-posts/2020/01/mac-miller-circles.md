@@ -86,7 +86,7 @@ just to go and set it on fire?"
 
 With a different interpretation, these lyrics could have been delivered with a very moody inflection to create a much 
 darker tone, but the muted string plucking and sparse instrumentation give this very calming, ethereal feeling. 
-This track also features guitar from Wendy Melvoin (guitarist for Prince's band, The Revolution), when you consider 
+This track also features guitar from Wendy Melvoin (guitarist for Prince's band, The Revolution), considering 
 that John Mayer played guitar on _Small Worlds_, it's really clear how infectious Mac Miller's talent was. 
 These great musicians happily collaborated with him with very little public recognition. Paired with the subdued 
 vocals it is just a beautiful tribute to his life and legacy and a reassuring reminder from the great beyond. 
@@ -96,10 +96,12 @@ like he's in the room talking to you. It almost sounds like he's reassuring peop
 like "There's a whole lot more for me waitin' on the other side". It's a story of the immortal quality of 
 music. So, it only makes sense that an image of Mac appears in a Lotus flower which has a symbolic meaning in Buddhism.
 It resembles the purifying of the spirit which is born into murkiness<sub>[2]</sub>. The ending of him walking through
-the airplane window and disappearing as a ripple in the water is superb and continues to drive home the aquatic theme.
+the airplane window and disappearing as a ripple in the water is superb and continues to drive home the idea of swimming.
 Good News is the best send-off anyone could hope for.
 
 ![Mac Miller superimposed in a lotus flower](/blog-posts/images/mac-in-lotus.png)
+
+> I was drowning but now I'm swimming
 
 Woods is my favourite track on the album. It's probably the most subdued track with very sparse lyrics and 
 instrumentation. The opening lines of "Things like this ain't built to last, I might just fade like those
@@ -109,17 +111,11 @@ before me" could be interpreted a few ways. This album was recorded shortly afte
  about his legacy and whether he did enough to be remembered. 
   
 Hand Me Downs is a testament to Mac's commitment on his last two albums. In my opinion the best albums seldom have 
-artists featured. To me, it exudes a lack of confidence in what you're producing and a level of insecurity that you 
-feel as though you need to attach bigger names to your songs for them to be well liked. The feature on this album by 
-Baro Sura was a very purposeful choice and it only seems to serve the album's narrative and vibe. And with Baro 
+(many) artists featured. To me, it exudes a lack of confidence in what you're producing and a level of insecurity that 
+you feel as though you need to attach bigger names to your songs for them to be well liked. The feature on this album 
+by Baro Sura was a very purposeful choice and it only seems to serve the album's narrative and vibe. And with Baro 
 being a relatively unknown artist it feels like this was someone Mac really liked and believed in, and he delivered 
 a great performance. 
-
-The line "I move carelessly that's why I'm always tripping" is a great double entendre. Beyond the literal meaning, 
-the line says that he's moving through life without caring about the consequences, which is why he engages in such 
-destructive behaviours. And lines like "And half the time the wheels that's in the back of my mind Just keep on turning 
-'til the tires flat and burn until the fire crack" echo the message that he feels trapped in his mind with all of the 
-clutter and dealing with his problems is exhausting.
 
 I've written before about how I like albums the most when there's a consistent vision from the lyrics to the production. 
 Out of all of his studio albums, Mac seemed to take care of around 30-50% of the production and outsource the rest of 
@@ -128,12 +124,12 @@ Mac. For whatever reason, the production is credited to Mac Miller, not his oft-
 I like to believe that's because this send-off is a time capsule for us to see who Malcolm really was around the time 
 of his death. A truly honest expression of Mac the musician. 
 
-Hands takes the metaphor of time further. The beat sounds reminiscent of a clock ticking, and hands 
+_Hands_ takes the metaphor of time further. To me, the beat sounds reminiscent of a clock ticking, and hands 
 seems to refer to the hands of a clock. It seems to be a letter to himself urging him to ease up
 on himself and stop feeling so low. "When's the last time you took a little time for yourself?" 
 and later in the chorus "No, I stay behind the wheel and never half-speed". "Never half-speed" 
 might suggest that he is always speeding and might benefit from slowing down. This hearkens back to 
-the line on Small Worlds (_Swimming_): "I'm always in a rush, I been thinking too much".
+the line on _Small Worlds_ (_Swimming_): "I'm always in a rush, I been thinking too much".
 
 Throughout the whole album it feels as though there's two versions of Mac. There's the self-reprimanding Mac with 
 unrelenting standards (the Yin, if you will) and the Mac that is more forgiving and reinforcing that his imperfections
@@ -145,24 +141,7 @@ features two images of himself superimposed.
 >
 > When's the last time you took a little time for yourself?
 
-"No reason to be that upset"
-
-"I'm busy trippin' 'bout some shit that still ain't even happen yet"
-
-"Give me, give me what I need and then I'm onto the next"
-
 <iframe width="640" height="480" src="https://www.youtube.com/embed/9Gbl-IDp1qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-On Surf, Mac seems to be reconciling his desire to be loved with his emotional 
-volatility. On Hands he said "Get the fuck out of my car, this ain't a taxi. 
-They love to see me lonely, hate to see me happy". He's simultaneously pushing 
-people away and lamenting his loneliness. Surf is a more tender approach. "Where 
-are you going? Can I come too?" 
-
-"Until we get old. There's water in the flowers, let's grow" - Embracing the 
-pursuit of personal improvement? 
-
-"Get Going going going before I'm gone"
 
 Strangely, it feels as though any track on the album could have been the last track and it wouldn't
 be lacking. But what's important is that the final track represents the last goodbye. The important
