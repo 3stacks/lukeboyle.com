@@ -3,6 +3,18 @@ import formatDate from 'date-fns/format';
 
 export const renderer = new marked.Renderer();
 
+renderer.link = (href, title, text) => {
+	if (href.startsWith('/')) {
+		return `<a href="${href}" ${
+			title ? `title="${title}"` : ''
+		}>${text}</a>`;
+	}
+
+	return `<a href="${href}" ${
+		title ? `title="${title}"` : ''
+	} target="_blank" rel="noreferrer noopener">${text}</a>`;
+};
+
 renderer.blockquote = function(htmlString: string): string {
 	return `<BlockQuote>${htmlString}</BlockQuote>`;
 };
@@ -22,10 +34,7 @@ renderer.code = function(code: string, language: string) {
 	</code></pre>`;
 };
 
-renderer.heading = function(
-	code: string,
-	level: number,
-): string {
+renderer.heading = function(code: string, level: number): string {
 	if (level === 1) {
 		return `
 			<header>
