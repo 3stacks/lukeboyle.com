@@ -1,8 +1,8 @@
-# My favourite albums of the 2010s
+# Some of my favourite albums of the 2010s
 
 | Metadata name | Value                            |
 | ------------- | -------------------------------- |
-| post_title | My favourite albums of the 2010s |
+| post_title | Some of my favourite albums of the 2010s |
 | post_date | 2020-01-06 00:00:00 |
 | post_modified | 2020-01-06 00:00:00 |
 | post_status | publish |
@@ -57,17 +57,23 @@
 
 ![Cover art for Daytona](/blog-posts/images/daytona.jpg)
 
+## ScHoolboy Q
+
+### Oxymoron
+
+![Cover art for Oxymoron](/blog-posts/images/oxy.jpg)
+
 ## Danny Brown
 
 ### XXX
 
 ![Cover art for XXX](/blog-posts/images/xxx.jpg)
 
-## ScHoolboy Q
+## Run The Jewels
 
-### Oxymoron
+### Run The Jewels 2
 
-![Cover art for Oxymoron](/blog-posts/images/oxy.jpg)
+![Cover art for RTJ2](/blog-posts/images/rtj2.jpg)
 
 ## Vince Staples
 
@@ -81,11 +87,23 @@
 
 ![Cover art for R.A.P](/blog-posts/images/rap.jpg)
 
+## billy woods
+
+### Hiding Places
+
+![Cover art for Hiding Places](/blog-posts/images/albums/2019/hiding-places.jpg)
+
 ## Kanye West
 
 ### My Beautiful Dark Twisted Fantasy
 
 ![Cover art for MBDTF](/blog-posts/images/mbdtf.jpg)
+
+## Freddie Gibbs & Madlib
+
+### Bandana
+
+![Cover art for Bandana](/blog-posts/images/albums/2019/bandana.jpeg)
 
 ## Danny Brown
 
