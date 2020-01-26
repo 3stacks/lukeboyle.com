@@ -5,7 +5,7 @@
 | post_title | Mac Miller - Circles |
 | post_date | 2020-01-25 00:00:00 |
 | post_modified | 2020-01-25 00:00:00 |
-| post_status | publish |
+| post_status | draft |
 | post_type | revision |
 | post_category | music |
 
@@ -110,13 +110,20 @@ artists featured. To me, it exudes a lack of confidence in what you're producing
 feel as though you need to attach bigger names to your songs for them to be well liked. The feature on this album by 
 Baro Sura was a very purposeful choice and it only seems to serve the album's narrative and vibe. And with Baro 
 being a relatively unknown artist it feels like this was someone Mac really liked and believed in, and he delivered 
-a great performance.
+a great performance. 
 
 The line "I move carelessly that's why I'm always tripping" is a great double entendre. Beyond the literal meaning, 
 the line says that he's moving through life without caring about the consequences, which is why he engages in such 
 destructive behaviours. And lines like "And half the time the wheels that's in the back of my mind Just keep on turning 
 'til the tires flat and burn until the fire crack" echo the message that he feels trapped in his mind with all of the 
-clutter and dealing with his problems is an exhausting process
+clutter and dealing with his problems is exhausting.
+
+I've written before about how I like albums the most when there's a consistent vision from the lyrics to the production. 
+Out of all of his studio albums, Mac seemed to take care of around 30-50% of the production and outsource the rest of 
+it to other producers<sub>[3]</sub>. Circles, however, sees a staggering 75% of production handled by 
+Mac. For whatever reason, the production is credited to Mac Miller, not his oft-used production moniker "Larry Fisherman".
+I like to believe that's because this send-off is a time capsule for us to see who Malcolm really was around the time 
+of his death. A truly honest expression of Mac the musician. 
 
 asdfasdfdsazf
  
@@ -180,3 +187,4 @@ but recognising that sometimes the best you can do is keep Swimming in Circles.
 
 - [1] - [NY Times interview with Jon Brion](https://www.nytimes.com/2020/01/20/arts/music/mac-miller-jon-brion-circles.html)
 - [2] - [Symbolism of the Lotus flower](https://buddhists.org/buddhist-symbols/the-meaning-of-the-lotus-flower-in-buddhism/)
+- [3] - [Hip Hop By The Numbers on Circles](https://twitter.com/HipHopNumbers/status/1220404176426913792)
