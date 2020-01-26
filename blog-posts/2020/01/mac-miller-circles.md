@@ -5,7 +5,7 @@
 | post_title | Mac Miller - Circles |
 | post_date | 2020-01-25 00:00:00 |
 | post_modified | 2020-01-25 00:00:00 |
-| post_status | draft |
+| post_status | publish |
 | post_type | revision |
 | post_category | music |
 
@@ -14,8 +14,10 @@
 One of the unfortunate realities of life is that people die. The music industry,
 eager to exploit, will often take this opportunity to cash in. They'll
 bastardise the hard work of productive musicians and release
-posthumous albums, and countless remixes of classic songs with various artists.
+posthumous albums, and countless remixes of classic songs from various artists.
 Look no further than the discography of Notorious B.I.G, 2pac, Big L, or more recently, XXXTENTACION.
+The latest project from X's estate was an album released in late 2019. Out of 25 tracks, 17 tracks had
+featured artists for a total of 21 guest verses.
 
 The announcement of _Circles_ was something different. Mac was working diligently
 to finish this album before his untimely death in 2018. A significant portion of 
@@ -26,7 +28,7 @@ was quite surprised.
 I pondered the mystery of how you connect the dots between an eccentric composer who is most 
 well known for his work on movie scores and a trendy rap artist. Turns out, it's not that
 much of a mystery at all. In an [episode of _What's In My Bag_ with Amoeba records](https://youtu.be/qnhbHFgagIM)
-, Jon Brion says "You know, my complaint about most people who make records and go out and 
+Jon Brion says, "You know, my complaint about most people who make records and go out and 
 shove their shit down people's throats is that... all I see them doing is giving me their 
 impression of what they think they're supposed to be doing. And it's what bores me about 
 99.999% of people who make stuff." For a man who said that to clear his calendar and 
@@ -53,8 +55,9 @@ the same way it begins; the hands of the clock go around in a circle until they 
 >
 > Don't be afraid, don't fall
 
-After the very sombre start, the synth and funky bassline of Complicated was fairly jarring on first listen. After
-going back through for a second time, it really just seemed to make sense. The lyrics are very dour which contrasts 
+After the very sombre start, the synth and funky bassline (shout out to [MonoNeon](https://soundcloud.com/polyneon)) 
+of Complicated was fairly jarring on first listen. After going back through for a second time, it really just seemed 
+to make sense. The lyrics are very dour which contrasts 
 beautifully with the rather upbeat and playful instrumental. Many songs use this tactic like a trojan horse to insert
 some meaning into poppy songs, because they probably wouldn't top the Billboard 200 if the instrumentals matched the 
 lyrics. (See [_Hey Ya_ by Outkast](https://youtu.be/6DyPtvxln2c)). A recent example is in the Purple Mountains 
@@ -125,10 +128,6 @@ Mac. For whatever reason, the production is credited to Mac Miller, not his oft-
 I like to believe that's because this send-off is a time capsule for us to see who Malcolm really was around the time 
 of his death. A truly honest expression of Mac the musician. 
 
-asdfasdfdsazf
- 
-that's on me
- 
 Hands takes the metaphor of time further. The beat sounds reminiscent of a clock ticking, and hands 
 seems to refer to the hands of a clock. It seems to be a letter to himself urging him to ease up
 on himself and stop feeling so low. "When's the last time you took a little time for yourself?" 
@@ -136,10 +135,19 @@ and later in the chorus "No, I stay behind the wheel and never half-speed". "Nev
 might suggest that he is always speeding and might benefit from slowing down. This hearkens back to 
 the line on Small Worlds (_Swimming_): "I'm always in a rush, I been thinking too much".
 
-He also seems to be lamenting the way he behaves in relationships. Mac knows he's a bit of a fuck-up. On Good News he 
-says "And all I do is say sorry. Half the time I don't even know what I'm saying it about"
+Throughout the whole album it feels as though there's two versions of Mac. There's the self-reprimanding Mac with 
+unrelenting standards (the Yin, if you will) and the Mac that is more forgiving and reinforcing that his imperfections
+aren't the sum of his existence (the Yang). If he could just achieve a balance between these two sides then maybe 
+life would be just a little bit less complicated. This concept of Mac's duality could also explain why the album art
+features two images of himself superimposed. 
 
-"You throw me off my high horse, I'd probably fall to my death"
+> Yeah, why don't you wake up from your bad dreams?
+>
+> When's the last time you took a little time for yourself?
+
+"No reason to be that upset"
+
+"I'm busy trippin' 'bout some shit that still ain't even happen yet"
 
 "Give me, give me what I need and then I'm onto the next"
 
