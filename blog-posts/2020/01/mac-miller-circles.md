@@ -27,11 +27,11 @@ was quite surprised.
 
 I pondered the mystery of how you connect the dots between an eccentric composer who is most 
 well known for his work on movie scores and a trendy rap artist. Turns out, it's not that
-much of a mystery at all. In an [episode of _What's In My Bag_ with Amoeba records](https://youtu.be/qnhbHFgagIM)
-Jon Brion says, "You know, my complaint about most people who make records and go out and 
-shove their shit down people's throats is that... all I see them doing is giving me their 
-impression of what they think they're supposed to be doing. And it's what bores me about 
-99.999% of people who make stuff." For a man who said that to clear his calendar and 
+much of a mystery at all. In an 
+[episode of _What's In My Bag_ with Amoeba records](https://youtu.be/qnhbHFgagIM) Jon Brion says, "You know, 
+my complaint about most people who make records and go out and shove their shit down people's throats is that... 
+all I see them doing is giving me their impression of what they think they're supposed to be doing. And it's 
+what bores me about 99.999% of people who make stuff." For a man who said that to clear his calendar and 
 help finish Circles, he must have really been excited about working with Mac.
 
 If you consider his work in film, Jon really does a masterful job of
@@ -72,6 +72,8 @@ approach life when you're going through a hard time. Lyrics like "I've got all t
 I'm just chilling" and "'fore I start to think about the future. First, can I please get through a day?". 
 He's taking life one day at a time and working through the "clutter" in his head. The downside of this approach is you 
 can easily forget about the bigger picture and end up clinging to destructive coping mechanisms. 
+
+![Mac Miller at his NPR tiny desk concert](/blog-posts/images/mac.jpg)
 
 > Won't give a fuck about tomorrow if I die today
 > 
@@ -137,11 +139,11 @@ aren't the sum of his existence (the Yang). If he could just achieve a balance b
 life would be just a little bit less complicated. This concept of Mac's duality could also explain why the album art
 features two images of himself superimposed. 
 
+<iframe width="640" height="480" src="https://www.youtube.com/embed/9Gbl-IDp1qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 > Yeah, why don't you wake up from your bad dreams?
 >
 > When's the last time you took a little time for yourself?
-
-<iframe width="640" height="480" src="https://www.youtube.com/embed/9Gbl-IDp1qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Strangely, it feels as though any track on the album could have been the last track and it wouldn't
 be lacking. But what's important is that the final track represents the last goodbye. The important
@@ -169,6 +171,10 @@ but recognising that sometimes the best you can do is keep Swimming in Circles.
 ![Swimming in Circles](/blog-posts/images/swimming-in-circles.jpg)    
 
 </p>
+
+## Related posts
+
+- A retrospective written in the wake of Mac Miller's passing: [https://lukeboyle.com/blog-posts/2018/11/mac-miller/](https://lukeboyle.com/blog-posts/2018/11/mac-miller/)
 
 ## Sources
 
