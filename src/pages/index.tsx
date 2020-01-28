@@ -88,13 +88,13 @@ const Stuff = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     a {
         margin-top: auto;
     }
-    
+
     &:hover {
-        transform: translate(-5px,-5px);
+        transform: translate(-5px, -5px);
         background-color: #fff;
         box-shadow: 7px 7px 0 0 #111;
         color: #111;

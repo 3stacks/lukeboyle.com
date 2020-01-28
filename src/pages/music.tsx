@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import truncate from 'lodash/truncate';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout/layout';
@@ -6,6 +7,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { MaxWidthContainer } from '../styled/utils';
 import { bp } from '../styled/mixins';
+import circlesSrc from '../assets/img/circles.png';
 import WIDTHS from '../styled/widths';
 import {
     getDiscogsCollectionItems,
@@ -16,13 +18,14 @@ import postData from '../data/music-posts.json';
 import prefetchedArtistData from '../data/artists.json';
 import prefetchedAlbumData from '../data/albums.json';
 import prefetchedCrateData from '../data/crate.json';
+import COLORS from '../styled/colors';
 
 const ArtistList = styled.ol`
 	list-style: none;
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 20px;
-	margin: 0;
+	margin: 0 0 2rem;
 	padding: 0;
 	
 	${bp(
@@ -50,27 +53,38 @@ const ArtistList = styled.ol`
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		transform: translate(-5px, -5px);
+        background-color: ${COLORS.PRIMARY};
+        box-shadow: 7px 7px 0 0 ${COLORS.SECONDARY};
+        color: ${COLORS.SECONDARY};
+        border: 2px solid ${COLORS.SECONDARY};
 	}
 	
 	.image-wrapper {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		text-align: center;
 		
 		img {
 			max-width: 100%;
 		}
 	}
+	.info-wrapper {
+	  padding: 15px;
+	  display: flex;
+	  flex-direction: column;
+	}
 	
 	.artist-name {
 		font-size: 1.7rem;
-		margin-bottom: 1rem;
-		padding-top: 1rem;
+		margin: 0 0 1rem;
 		text-align: center;
 	} 
 	.play-count {
-		margin: 0;
+		margin: auto 0 0;
 		font-size: 1.6rem;
+		text-align: center;
 	}
 `;
 
@@ -154,7 +168,27 @@ export const BodyWrapper = styled.div`
 
     li {
         font-size: 1.7rem;
-        margin-bottom: 15px;
+        margin-bottom: 1rem;
+    }
+`;
+
+const LatestPostBlock = styled.div`
+    display: flex;
+    align-items: center;
+    transform: translate(-5px, -5px);
+    background-color: ${COLORS.PRIMARY};
+    box-shadow: 7px 7px 0 0 ${COLORS.SECONDARY};
+    color: ${COLORS.SECONDARY};
+    border: 2px solid ${COLORS.SECONDARY};
+    margin-bottom: 3rem;
+
+    img {
+        max-width: 100%;
+        width: 300px;
+    }
+
+    div {
+        padding: 20px;
     }
 `;
 
@@ -228,6 +262,13 @@ export default function Portfolio({ data }: IProps) {
                         </ul>
                     </div>
                     <div>
+                        {/*<MainHeader>Latest post</MainHeader>*/}
+                        {/*<LatestPostBlock>*/}
+                        {/*    <img src={circlesSrc} alt="" />*/}
+                        {/*    <div>*/}
+                        {/*        <h3>Mac Miller Circles</h3>*/}
+                        {/*    </div>*/}
+                        {/*</LatestPostBlock>*/}
                         <MainHeader>What's new in the crate</MainHeader>
                         <ArtistList>
                             {crateData.map(release => {
@@ -239,12 +280,16 @@ export default function Portfolio({ data }: IProps) {
                                                 alt=""
                                             />
                                         </div>
-                                        <h2 className="artist-name">
-                                            {release.title}
-                                        </h2>
-                                        <p className="play-count">
-                                            {release.artists[0].name}
-                                        </p>
+                                        <div className="info-wrapper">
+                                            <h2 className="artist-name">
+                                                {truncate(release.title, {
+                                                    length: 20
+                                                })}
+                                            </h2>
+                                            <p className="play-count">
+                                                {release.artists[0].name}
+                                            </p>
+                                        </div>
                                     </li>
                                 );
                             })}
@@ -262,12 +307,16 @@ export default function Portfolio({ data }: IProps) {
                                         <div className="image-wrapper">
                                             <img src={imageSrc} alt="" />
                                         </div>
-                                        <h2 className="artist-name">
-                                            {artist.name}
-                                        </h2>
-                                        <p className="play-count">
-                                            {artist.playcount} plays
-                                        </p>
+                                        <div className="info-wrapper">
+                                            <h2 className="artist-name">
+                                                {truncate(artist.name, {
+                                                    length: 20
+                                                })}
+                                            </h2>
+                                            <p className="play-count">
+                                                {artist.playcount} plays
+                                            </p>
+                                        </div>
                                     </li>
                                 );
                             })}
@@ -285,12 +334,16 @@ export default function Portfolio({ data }: IProps) {
                                         <div className="image-wrapper">
                                             <img src={imageSrc} alt="" />
                                         </div>
-                                        <h2 className="artist-name">
-                                            {album.name}
-                                        </h2>
-                                        <p className="play-count">
-                                            {album.playcount} plays
-                                        </p>
+                                        <div className="info-wrapper">
+                                            <h2 className="artist-name">
+                                                {truncate(album.name, {
+                                                    length: 20
+                                                })}
+                                            </h2>
+                                            <p className="play-count">
+                                                {album.playcount} plays
+                                            </p>
+                                        </div>
                                     </li>
                                 );
                             })}
