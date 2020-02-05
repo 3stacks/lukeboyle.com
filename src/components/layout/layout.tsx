@@ -91,6 +91,10 @@ const GlobalLayoutStyle = createGlobalStyle`
 		padding: 60px 20px;
 	}
 	
+	ul {
+	  list-style: square;
+	}
+	
 	p {
 		font-size: 1.8rem;
 	}
