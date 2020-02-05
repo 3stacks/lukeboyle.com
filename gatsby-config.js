@@ -25,9 +25,11 @@ module.exports = {
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
+				name: 'Luke Boyle - Front End Developer',
+				short_name: 'Luke Boyle',
 				start_url: '/',
-				background_color: '#3b02a8',
-				theme_color: '#3b02a8',
+				background_color: '#ffe01b',
+				theme_color: '#ffe01b',
 				display: 'minimal-ui',
 				icon: 'src/assets/img/android-icon-192x192.png' // This path is relative to the root of the site.
 			}
