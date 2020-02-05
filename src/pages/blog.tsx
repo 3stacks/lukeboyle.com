@@ -284,7 +284,7 @@ export default class Blog extends React.Component {
                                                 path:
                                                     'blog-posts/2020/01/top-albums-of-last-decade.md',
                                                 title:
-                                                    'My favourite albums of the 2010s\r'
+                                                    'Some of my favourite albums of the 2010s\r'
                                             },
                                             {
                                                 slug: 'mac-miller-circles',

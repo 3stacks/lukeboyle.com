@@ -139,8 +139,6 @@ aren't the sum of his existence (the Yang). If he could just achieve a balance b
 life would be just a little bit less complicated. This concept of Mac's duality could also explain why the album art
 features two images of himself superimposed. 
 
-<iframe width="640" height="480" src="https://www.youtube.com/embed/9Gbl-IDp1qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 > Yeah, why don't you wake up from your bad dreams?
 >
 > When's the last time you took a little time for yourself?
