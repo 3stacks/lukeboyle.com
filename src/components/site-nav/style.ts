@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { bp } from '../../styled/mixins';
 import WIDTHS from '../../styled/widths';
+import COLORS from '../../styled/colors';
 
 export const StyledNav = styled.div`
 	display: flex;
@@ -10,14 +11,14 @@ export const StyledNav = styled.div`
 	height: 60px;
 
 	a {
-		color: #111;
+		color: ${COLORS.TEXT};
 	}
 
 	${bp(
 		WIDTHS.M,
+		css`
+			flex-wrap: nowrap;
 		`
-        flex-wrap: nowrap;
-    `
 	)}
 
 	& .logo {
@@ -30,25 +31,26 @@ export const StyledNav = styled.div`
 
 		${bp(
 			768,
+			css`
+				display: block;
 			`
-			display: block;
-		`
 		)}
 
 		${bp(
 			WIDTHS.M,
+			css`
+				width: 250px;
+				text-align: left;
 			`
-            width: 250px;
-            text-align: left;  
-        `
 		)}
 
 		a {
-			color: #111;
+			color: ${COLORS.TEXT};
 			text-decoration: none;
+			border-color: transparent;
 
 			&:hover {
-				color: #111;
+				color: ${COLORS.TEXT};
 			}
 		}
 	}
@@ -59,7 +61,7 @@ export const StyledNav = styled.div`
 		padding: 0;
 		width: 100%;
 		text-align: center;
-		color: #111;
+		color: ${COLORS.TEXT};
 
 		${bp(
 			WIDTHS.M,
@@ -77,15 +79,9 @@ export const StyledNav = styled.div`
 			}
 
 			a {
-				color: #111;
+				color: ${COLORS.TEXT};
 				font-size: 1.6rem;
 				border-color: transparent;
-
-				&.active,
-				&:focus,
-				&:hover {
-					border-color: #111;
-				}
 			}
 		}
 	}

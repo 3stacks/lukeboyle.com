@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 import Layout from '../components/layout/layout';
 import portfolioItems from '../data/portfolio-items';
 import styled from 'styled-components';
-import { bp } from '../styled/mixins';
+import { blackShift, bp } from '../styled/mixins';
 import { MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
 import { HomeHeadBanner } from './index';
@@ -49,13 +49,7 @@ const PortfolioItem = styled.div`
     background-color: white;
     border: 2px solid ${COLORS.PRIMARY};
 
-    &:hover {
-        transform: translate(-5px, -5px);
-        background-color: #fff;
-        box-shadow: 7px 7px 0 0 #111;
-        color: #111;
-        border: 2px solid #111;
-    }
+    ${blackShift(5)}
 
     & .image {
         font-size: 0;

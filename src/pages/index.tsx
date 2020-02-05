@@ -4,7 +4,7 @@ import { MY_NAME } from '../constants';
 import Layout from '../components/layout/layout';
 import styled from 'styled-components';
 import WIDTHS from '../styled/widths';
-import { bp } from '../styled/mixins';
+import { blackShift, bp } from '../styled/mixins';
 import { MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
 import COLORS from '../styled/colors';
@@ -93,13 +93,7 @@ const Stuff = styled.div`
         margin-top: auto;
     }
 
-    &:hover {
-        transform: translate(-5px, -5px);
-        background-color: #fff;
-        box-shadow: 7px 7px 0 0 #111;
-        color: #111;
-        border: 2px solid #111;
-    }
+    ${blackShift(5)}
 `;
 
 export default class Index extends React.Component {
