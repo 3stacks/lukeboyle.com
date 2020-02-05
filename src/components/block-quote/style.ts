@@ -6,7 +6,7 @@ export const StyledBlockQuote = styled.blockquote`
 	display: inline-flex;
 	font-size: 1.9rem;
 	line-height: 1.5;
-	font-family: 'Roboto Slab';
+	font-family: 'Publico', sans-serif;
 
 	${bp(
 		WIDTHS.M,
