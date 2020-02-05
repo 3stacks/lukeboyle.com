@@ -9,8 +9,10 @@ import appleMedium from '../../assets/img/apple-icon-120x120.png';
 import appleLarge from '../../assets/img/apple-icon-152x152.png';
 import androidIcon from '../../assets/img/android-icon-192x192.png';
 import favicon from '../../assets/img/favicon-32x32.png';
-import GraphikWoff from '../../assets/Graphik-Regular.woff';
-import GraphikWoffTwo from '../../assets/Graphik-Regular.woff2';
+import graphikWoff from '../../assets/fonts/Graphik-Regular.woff';
+import graphikWoffTwo from '../../assets/fonts/Graphik-Regular.woff2';
+import publicoWoff from '../../assets/fonts/Publico.woff';
+import publicoWoffTwo from '../../assets/fonts/Publico.woff2';
 import COLORS from '../../styled/colors';
 
 import './layout.css';
@@ -23,10 +25,16 @@ const GlobalLayoutStyle = createGlobalStyle`
 	}
 	
 	@font-face {
-      font-family: 'Graphik';
-      font-display: swap;
-      src: url(${GraphikWoffTwo}) format('woff2'),
-        url(${GraphikWoff}) format('woff');
+        font-family: 'Publico';
+        font-display: swap;
+        src: url(${publicoWoffTwo}) format('woff2'),
+          url(${publicoWoff}) format('woff');
+    }
+    @font-face {
+        font-family: 'Graphik';
+        font-display: swap;
+        src: url(${graphikWoffTwo}) format('woff2'),
+          url(${graphikWoff}) format('woff');
     }
 
 	html {
@@ -34,7 +42,8 @@ const GlobalLayoutStyle = createGlobalStyle`
 	}
 	
 	h1, h2, h3, h4, h5, h6, button {
-		font-family: 'Roboto Slab', serif;
+		font-family: 'Publico', serif;
+		font-weight: normal !important;
 	}
 	
 	body {

@@ -23,7 +23,7 @@ export const StyledNav = styled.div`
 	& .logo {
 		margin: 0;
 		font-size: 2.5rem;
-		font-family: 'Roboto Slab', serif;
+		font-family: 'Publico', serif;
 		width: 100%;
 		text-align: center;
 		display: none;
