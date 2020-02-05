@@ -212,20 +212,12 @@ export default class Layout extends React.Component<IProps> {
                 isHome={this.props.isHome}
                 showFullPageColor={isHomeOrPortfolioPage}
             >
-                <Helmet
-                    title={`${MY_NAME} | Front End Developer`}
-                    meta={[
-                        {
-                            name: 'description',
-                            content: META_DESCRIPTION.HOME
-                        },
-                        {
-                            name: 'google-site-verification',
-                            content:
-                                'JKQQdLNK9rQUZnixIsfEuJALcEcfPp9_ee2grLgOVGM'
-                        }
-                    ]}
-                >
+                <Helmet title={`${MY_NAME} | Front End Developer`}>
+                    <meta name="description" content={META_DESCRIPTION.HOME} />
+                    <meta
+                        name="google-site-verification"
+                        content="JKQQdLNK9rQUZnixIsfEuJALcEcfPp9_ee2grLgOVGM"
+                    />
                     <meta name="referrer" content="origin" />
                     <meta charSet="utf-8" />
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -264,6 +256,7 @@ export default class Layout extends React.Component<IProps> {
                         sizes="32x32"
                         href={favicon}
                     />
+                    <html lang="en-US" />
                 </Helmet>
                 <GlobalLayoutStyle />
                 <Header isHome={this.props.slug === 'home'} />
