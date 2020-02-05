@@ -239,10 +239,6 @@ export default class Layout extends React.Component<IProps> {
                         content="width=device-width, initial-scale=1.0"
                     />
                     <link
-                        href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap"
-                        rel="stylesheet"
-                    />
-                    <link
                         rel="apple-touch-icon"
                         sizes="76x76"
                         href={appleSmall}
