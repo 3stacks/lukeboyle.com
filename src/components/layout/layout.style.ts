@@ -4,7 +4,7 @@ import graphikWoffTwo from '../../assets/fonts/Graphik-Regular.woff2';
 import publicoWoff from '../../assets/fonts/Publico.woff';
 import publicoWoffTwo from '../../assets/fonts/Publico.woff2';
 import COLORS from '../../styled/colors';
-import { WIDTHS } from '../../styled/sizes';
+import {FONT_SIZES, LINE_HEIGHTS, VERTICAL_RHYTHMS, WIDTHS} from '../../styled/sizes';
 import { bp } from '../../styled/mixins';
 
 export const GlobalLayoutStyle = createGlobalStyle`
@@ -41,38 +41,37 @@ export const GlobalLayoutStyle = createGlobalStyle`
 	pre {
         font-family: 'SFMono-Regular', 'Consolas', 'Liberation Mono', 'Menlo', monospace;
     }
+    
+    * {
+		line-height: ${LINE_HEIGHTS.DEFAULT};
+	}
 	
 	h1 {
-		font-size: 4rem;
+		font-size: ${FONT_SIZES.H1}rem;
+		line-height: ${LINE_HEIGHTS.DEFAULT};
+		margin-bottom: ${VERTICAL_RHYTHMS.H1}rem;
 		margin-top: 0;
 	}
 	
 	h2 {
-		font-size: 3.5rem;
+		font-size: ${FONT_SIZES.H2}rem;
+		line-height: ${LINE_HEIGHTS.DEFAULT};
+		margin-bottom: ${VERTICAL_RHYTHMS.H2}rem;
 		margin-top: 0;
 	}
 	
 	h3 {
-		font-size: 2.8rem;
+		font-size: ${FONT_SIZES.H3}rem;
+		line-height: ${LINE_HEIGHTS.DEFAULT};
+		margin-bottom: ${VERTICAL_RHYTHMS.H3}rem;
 		margin-top: 0;
 	}
 	
 	p {
-		font-size: 1.6rem;
+		font-size: ${FONT_SIZES.P}rem;
+		line-height: ${LINE_HEIGHTS.PROSE};
+		margin-bottom: ${VERTICAL_RHYTHMS.P}rem;
 		margin-top: 0;
-	}
-	
-	* {
-		line-height: 1.5;
-	}
-	
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		line-height: 1.3;
 	}
 	
 	.about-main {
@@ -81,10 +80,6 @@ export const GlobalLayoutStyle = createGlobalStyle`
 	
 	ul {
 	  list-style: square;
-	}
-	
-	p {
-		font-size: 1.8rem;
 	}
 	
 	.blog-category {
