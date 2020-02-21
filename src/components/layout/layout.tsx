@@ -16,7 +16,7 @@ import publicoWoffTwo from '../../assets/fonts/Publico.woff2';
 import COLORS from '../../styled/colors';
 
 import './layout.css';
-import WIDTHS from '../../styled/widths';
+import { WIDTHS } from '../../styled/sizes';
 import { bp } from '../../styled/mixins';
 
 const GlobalLayoutStyle = createGlobalStyle`

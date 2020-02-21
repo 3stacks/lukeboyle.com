@@ -3,7 +3,7 @@ import projects from '../data/portfolio-items';
 import { MY_NAME } from '../constants';
 import Layout from '../components/layout/layout';
 import styled from 'styled-components';
-import WIDTHS from '../styled/widths';
+import { WIDTHS } from '../styled/sizes';
 import { blackShift, bp } from '../styled/mixins';
 import { MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';

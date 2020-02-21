@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { bp } from './mixins';
-import WIDTHS from './widths';
+import { WIDTHS } from './sizes';
 import COLORS from './colors';
 
 export const MaxWidthContainer = styled.div`

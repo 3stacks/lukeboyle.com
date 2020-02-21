@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import WIDTHS from '../../styled/widths';
+import { WIDTHS } from '../../styled/sizes';
 import { bp } from '../../styled/mixins';
 
 export const StyledBlockQuote = styled.blockquote`
