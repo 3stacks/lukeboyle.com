@@ -2,23 +2,22 @@ import React, { useState, useEffect } from 'react';
 import truncate from 'lodash/truncate';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import Layout from '../components/layout/layout';
+import Layout from '../../components/layout/layout';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { MaxWidthContainer } from '../styled/utils';
 import { bp } from '../styled/mixins';
-import circlesSrc from '../assets/img/circles.png';
 import WIDTHS from '../styled/widths';
 import {
     getDiscogsCollectionItems,
     getTopArtists,
     getTopAlbums
-} from '../../scripts/utils/music';
-import postData from '../data/music-posts.json';
-import prefetchedArtistData from '../data/artists.json';
-import prefetchedAlbumData from '../data/albums.json';
-import prefetchedCrateData from '../data/crate.json';
-import COLORS from '../styled/colors';
+} from '../../../scripts/utils/music';
+import postData from '../../data/music-posts.json';
+import prefetchedArtistData from '../../data/artists.json';
+import prefetchedAlbumData from '../../data/albums.json';
+import prefetchedCrateData from '../../data/crate.json';
+import COLORS from '../../styled/colors';
 
 const ArtistList = styled.ol`
 	list-style: none;

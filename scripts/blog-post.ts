@@ -259,91 +259,90 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 		}, {});
 
 		Object.keys(pages).forEach((key, index) => {
-			const rootDir = index === 0 ? '..' : '../..';
-			const blogPage = `
-			import React from 'react';
-			import Helmet from 'react-helmet';
-			import {BlogHeader} from '${rootDir}/styled/utils';
-			import PostArchive from '${rootDir}/components/post-archive/post-archive';
-			import {HomeHeadBanner} from '${rootDir}/pages/index';
-			import {BodyWrapper} from '${rootDir}/pages/music';
-			import Layout from '${rootDir}/components/layout/layout';
-			import {MaxWidthContainer} from '${rootDir}/styled/utils';
-			${pages[key].reduce((acc, curr) => {
-				return (
-					acc +
-					`import ${curr.componentName} from '${
-						index === 0 ? './' : '../'
-					}${curr.path.replace('.md', '')}';\n`
-				);
-			}, '')}
+			const rootDir = index === 0 ? '../..' : '../..';
+			const blogPage = `import React from 'react';
+import Helmet from 'react-helmet';
+import {BlogHeader} from '${rootDir}/styled/utils';
+import PostArchive from '${rootDir}/components/post-archive/post-archive';
+import {HomeHeadBanner} from '${rootDir}/pages/index';
+import {BodyWrapper} from '${rootDir}/pages/music';
+import Layout from '${rootDir}/components/layout/layout';
+import {MaxWidthContainer} from '${rootDir}/styled/utils';
+${pages[key].reduce((acc, curr) => {
+	return (
+		acc +
+		`import ${curr.componentName} from '${
+			index === 0 ? '../' : '../'
+		}${curr.path.replace('.md', '')}';\n`
+	);
+}, '')}
 				
-			export default class Blog extends React.Component {
-				render() {
-					return (
-						<Layout slug="blog">
-							<Helmet>
-								<title>${
-									index === 0
-										? 'Blog | Luke Boyle'
-										: `Page ${parseInt(key, 10) - 1} | Blog`
-								}</title>
-							</Helmet>
-							<BlogHeader>
-								<h1 className="site-name">
-									Boyleing Point
-								</h1>
-							</BlogHeader>
-							<MaxWidthContainer className="blog-page">
-								<BodyWrapper>
-									<div className="left">
-										<h3>
-											Post Archive
-										</h3>
-										<PostArchive data={${JSON.stringify(sidebarData)}} />
-									</div>
-									<div>
-										${pages[key].reduce((acc, curr) => {
-											return (
-												acc +
-												`<${curr.componentName} isBlogPage={true} />\n`
-											);
-										}, '')}	
-										<ul className="pagination">
-											${
-												index > 0
-													? `<li><a href="${
-															key === '2'
-																? '/blog'
-																: `/blog/${parseInt(
-																		key,
-																		10
-																  ) - 2}`
-													  }">Newer</a></li>`
-													: ''
-											}
-											${
-												index !==
-												Object.values(pages).length - 1
-													? `<li className="pagination__next"><a href="/blog/${parseInt(
+export default class Blog extends React.Component {
+	render() {
+		return (
+			<Layout slug="blog">
+				<Helmet>
+					<title>${
+						index === 0
+							? 'Blog | Luke Boyle'
+							: `Page ${parseInt(key, 10) - 1} | Blog`
+					}</title>
+				</Helmet>
+				<BlogHeader>
+					<h1 className="site-name">
+						Boyleing Point
+					</h1>
+				</BlogHeader>
+				<MaxWidthContainer className="blog-page">
+					<BodyWrapper>
+						<div className="left">
+							<h3>
+								Post Archive
+							</h3>
+							<PostArchive data={${JSON.stringify(sidebarData)}} />
+						</div>
+						<div>
+							${pages[key].reduce((acc, curr) => {
+								return (
+									acc +
+`							<${curr.componentName} isBlogPage={true} />\n`
+								);
+							}, '')}	
+							<ul className="pagination">
+								${
+									index > 0
+										? `<li><a href="${
+												key === '2'
+													? '/blog'
+													: `/blog/${parseInt(
 															key,
 															10
-													  )}">Older</a></li>`
-													: ''
-											}
-										</ul>							
-									</div>
-								</BodyWrapper>
-							</MaxWidthContainer>
-						</Layout>
-					);
-				}
-			}
+													  ) - 2}`
+										  }">Newer</a></li>`
+										: ''
+								}
+								${
+									index !==
+									Object.values(pages).length - 1
+										? `<li className="pagination__next"><a href="/blog/${parseInt(
+												key,
+												10
+										  )}">Older</a></li>`
+										: ''
+								}
+							</ul>							
+						</div>
+					</BodyWrapper>
+				</MaxWidthContainer>
+			</Layout>
+		);
+	}
+}
 		`;
 
 			const fileName =
 				index === 0
-					? `${__dirname}/../src/pages/blog.tsx`
+					? `${__dirname}/../src/pages/blog/index.tsx`
 					: `${__dirname}/../src/pages/blog/${index}.tsx`;
 
 			fs.copySync(

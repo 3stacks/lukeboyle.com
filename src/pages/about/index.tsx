@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Layout from '../components/layout/layout';
-import { MaxWidthContainer } from '../styled/utils';
+import Layout from '../../components/layout/layout';
+import { MaxWidthContainer } from '../../styled/utils';
 
 export default class About extends React.Component {
     render() {
