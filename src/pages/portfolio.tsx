@@ -53,7 +53,7 @@ const PortfolioItem = styled.div`
         p {
             width: 100%;
             text-align: justify;
-            ${getFontSize(1.7, 2)}
+            ${getFontSize(1.7, 1.15)}
         }
 
         a {

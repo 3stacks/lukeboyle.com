@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import Layout from '../../components/layout/layout';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { MaxWidthContainer } from '../../styled/utils';
+import {getFontSize, MaxWidthContainer} from '../../styled/utils';
 import { bp } from '../../styled/mixins';
 import { WIDTHS } from '../../styled/sizes';
 import {
@@ -73,6 +73,7 @@ const ArtistList = styled.ol`
 	  padding: 15px;
 	  display: flex;
 	  flex-direction: column;
+	  height: 100%;
 	}
 	
 	.artist-name {
@@ -89,8 +90,7 @@ const ArtistList = styled.ol`
 
 const MainHeader = styled.h2`
     text-align: center;
-    font-size: 3rem;
-    margin-bottom: 20px;
+    ${getFontSize(3)}
 `;
 
 export const BodyWrapper = styled.div`
