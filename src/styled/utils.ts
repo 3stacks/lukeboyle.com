@@ -19,7 +19,7 @@ export const MaxWidthContainer = styled.div`
 			  `
 			: css`
 					max-width: 1000px;
-			  `}
+			  `};
 	padding: 0 15px;
 	margin: 0 auto;
 

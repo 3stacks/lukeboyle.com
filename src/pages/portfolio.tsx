@@ -121,7 +121,7 @@ export default class Portfolio extends React.Component {
                                     />
                                     <div className="card">
                                         <h2 className="title">
-                                            {portfolioItem.name}
+                                            {portfolioItem.shortName ? portfolioItem.shortName : portfolioItem.name}
                                         </h2>
                                         <p>{portfolioItem.snippet}</p>
                                         <LinkButton to={portfolioItem.link}>

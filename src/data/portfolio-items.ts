@@ -11,6 +11,7 @@ import { PORTFOLIO_ITEM_NAMES } from '../constants';
 export default [
 	{
 		name: PORTFOLIO_ITEM_NAMES.UNDERWRITING_RULES_ENGINE,
+		shortName: 'MLC URE',
 		snippet:
 			'The Underwriting Rules Engine is a product used to accurately underwrite life insurance applications',
 		link: '/portfolio/underwriting-rules-engine/',

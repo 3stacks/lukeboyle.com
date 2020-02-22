@@ -15,6 +15,7 @@ export enum FONT_SIZES {
 
 export enum LINE_HEIGHTS {
 	DEFAULT = 1.5,
+	HEADINGS = 1.3,
 	PROSE = 1.7
 }
 
