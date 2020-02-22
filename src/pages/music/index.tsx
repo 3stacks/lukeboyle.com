@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import Layout from '../../components/layout/layout';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import {getFontSize, MaxWidthContainer} from '../../styled/utils';
+import { getFontSize, MaxWidthContainer } from '../../styled/utils';
 import { bp } from '../../styled/mixins';
 import { WIDTHS } from '../../styled/sizes';
 import {

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { WIDTHS } from '../../styled/sizes';
 import { bp } from '../../styled/mixins';
-import {getFontSize} from "../../styled/utils";
+import { getFontSize } from '../../styled/utils';
 
 export const StyledBlockQuote = styled.blockquote`
 	display: inline-flex;
