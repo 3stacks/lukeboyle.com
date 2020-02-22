@@ -92,11 +92,11 @@ export const Stuff = styled.div`
 	
 	.block-header {
 		margin-bottom: 2rem;
-		${getFontSize(2.5, 2, 1.3)}
+		${getFontSize(2.5, 1.3, 2)}
 	}
 	
 	.title {
-		${getFontSize(3.5, 3.5, 1.3)}
+		${getFontSize(3.5, 1.3, 3.5)}
 	}
 	
 	h2 {

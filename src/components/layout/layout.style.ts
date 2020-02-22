@@ -4,8 +4,14 @@ import graphikWoffTwo from '../../assets/fonts/Graphik-Regular.woff2';
 import publicoWoff from '../../assets/fonts/Publico.woff';
 import publicoWoffTwo from '../../assets/fonts/Publico.woff2';
 import COLORS from '../../styled/colors';
-import {FONT_SIZES, LINE_HEIGHTS, VERTICAL_RHYTHMS, WIDTHS} from '../../styled/sizes';
+import {
+	FONT_SIZES,
+	LINE_HEIGHTS,
+	VERTICAL_RHYTHMS,
+	WIDTHS
+} from '../../styled/sizes';
 import { bp } from '../../styled/mixins';
+import { getFontSize } from '../../styled/utils';
 
 export const GlobalLayoutStyle = createGlobalStyle`
 	* {
@@ -48,21 +54,21 @@ export const GlobalLayoutStyle = createGlobalStyle`
 	
 	h1 {
 		font-size: ${FONT_SIZES.H1}rem;
-		line-height: ${LINE_HEIGHTS.DEFAULT};
+		line-height: ${LINE_HEIGHTS.FLAT};
 		margin-bottom: ${VERTICAL_RHYTHMS.H1}rem;
 		margin-top: 0;
 	}
 	
 	h2 {
 		font-size: ${FONT_SIZES.H2}rem;
-		line-height: ${LINE_HEIGHTS.DEFAULT};
+		line-height: ${LINE_HEIGHTS.FLAT};
 		margin-bottom: ${VERTICAL_RHYTHMS.H2}rem;
 		margin-top: 0;
 	}
 	
 	h3 {
 		font-size: ${FONT_SIZES.H3}rem;
-		line-height: ${LINE_HEIGHTS.DEFAULT};
+		line-height: ${LINE_HEIGHTS.FLAT};
 		margin-bottom: ${VERTICAL_RHYTHMS.H3}rem;
 		margin-top: 0;
 	}
@@ -79,7 +85,9 @@ export const GlobalLayoutStyle = createGlobalStyle`
 	}
 	
 	ul {
-	  list-style: square;
+	  	list-style: square;
+	  	margin-top: 0;
+		${getFontSize(1.8, 2)};
 	}
 	
 	.blog-category {
@@ -93,10 +101,6 @@ export const GlobalLayoutStyle = createGlobalStyle`
 	
 	.blog-single h1 {
 		margin-top: 0;
-	}
-	
-	.about-main ul {
-		font-size: 1.8rem;
 	}
 	
 	small {
@@ -147,11 +151,11 @@ export const GlobalLayoutStyle = createGlobalStyle`
 		width: calc(100% - 20px)
 		
 		${bp(
-	WIDTHS.M,
-	`
+			WIDTHS.M,
+			`
 		    width: calc(100% - 120px)
 		`
-)}
+		)}
 	}
 	
 	.pagination li {
@@ -164,29 +168,29 @@ export const GlobalLayoutStyle = createGlobalStyle`
 `;
 
 export const StyledLayout = styled.div`
-    margin: 0;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
-    color: #111;
-    background-color: ${COLORS.PRIMARY};
+	margin: 0;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
+	color: #111;
+	background-color: ${COLORS.PRIMARY};
 
-    .block-header {
-        font-size: 2.5rem;
-    }
+	.block-header {
+		font-size: 2.5rem;
+	}
 
-    .title {
-        font-size: 3.5rem;
-    }
+	.title {
+		font-size: 3.5rem;
+	}
 
-    ${props =>
-	!props.showFullPageColor &&
-	css`
-            .main {
-                background-color: white;
-                color: #111;
-            }
-        `}
+	${props =>
+		!props.showFullPageColor &&
+		css`
+			.main {
+				background-color: white;
+				color: #111;
+			}
+		`}
 `;
