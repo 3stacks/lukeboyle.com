@@ -22,7 +22,7 @@
         "react-helmet": "^5.2.0",
         "react-icons": "^3.7.0",
         "react-typography": "^0.15.10",
-        "styled-components": "^4.0.3"
+        "styled-components": "^5.0.1"
     },
     "devDependencies": {
         "@lukeboyle/get-filename-from-path": "^1.0.3",

@@ -1,7 +1,15 @@
 import styled, { css } from 'styled-components';
 import { bp } from './mixins';
-import WIDTHS from './widths';
+import {LINE_HEIGHTS, WIDTHS} from './sizes';
 import COLORS from './colors';
+
+export function getFontSize(fontSize : number, lineHeight: LINE_HEIGHTS = LINE_HEIGHTS.DEFAULT, marginBottom?: number) : string {
+	return css`
+		font-size: ${fontSize}rem;
+		line-height: ${lineHeight};
+		margin-bottom: ${marginBottom ? marginBottom : fontSize * lineHeight}rem;
+	`;
+}
 
 export const MaxWidthContainer = styled.div`
 	${props =>
@@ -11,7 +19,7 @@ export const MaxWidthContainer = styled.div`
 			  `
 			: css`
 					max-width: 1000px;
-			  `}
+			  `};
 	padding: 0 15px;
 	margin: 0 auto;
 

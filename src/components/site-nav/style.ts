@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { bp } from '../../styled/mixins';
-import WIDTHS from '../../styled/widths';
+import { WIDTHS } from '../../styled/sizes';
 import COLORS from '../../styled/colors';
 
 export const StyledNav = styled.div`

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { bp } from '../../styled/mixins';
-import WIDTHS from '../../styled/widths';
+import { WIDTHS } from '../../styled/sizes';
 
 export const StyledPost = styled.article`
 	max-width: 100%;

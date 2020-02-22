@@ -2,12 +2,9 @@ import React from 'react';
 import projects from '../data/portfolio-items';
 import { MY_NAME } from '../constants';
 import Layout from '../components/layout/layout';
-import styled from 'styled-components';
-import WIDTHS from '../styled/widths';
-import { blackShift, bp } from '../styled/mixins';
 import { MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
-import COLORS from '../styled/colors';
+import {RecentStuff, Stuff, StyledBanner} from '../index.style';
 
 export function HomeHeadBanner({ children }) {
     return (
@@ -16,85 +13,6 @@ export function HomeHeadBanner({ children }) {
         </StyledBanner>
     );
 }
-
-export const StyledBanner = styled.div`
-    color: #111;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: wrap;
-    height: 200px;
-    text-align: center;
-
-    ${bp(
-        768,
-        `
-		height: 300px;
-	`
-    )}
-
-    h1,
-	h2 {
-        font-size: 4rem;
-        margin: 0 0 15px;
-
-        ${bp(
-            WIDTHS.M,
-            `
-		    margin: 0 0 30px;
-			font-size: 6rem;
-	    `
-        )}
-    }
-
-    p {
-        font-size: 2rem;
-        margin: 0;
-
-        ${bp(
-            WIDTHS.M,
-            `
-		    font-size: 3rem;
-	    `
-        )}
-
-        &:first-of-type {
-            margin: 0 0 15px;
-        }
-    }
-`;
-
-const RecentStuff = styled.div`
-    display: grid;
-    padding: 30px 0;
-    grid-gap: 30px;
-    grid-template-columns: 1fr;
-
-    ${bp(
-        620,
-        `
-		grid-template-columns: 1fr 1fr;
-	`
-    )}
-`;
-
-const Stuff = styled.div`
-    background-color: white;
-    color: #111;
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    a {
-        margin-top: auto;
-    }
-
-    ${blackShift(5)}
-`;
 
 export default class Index extends React.Component {
     render() {
