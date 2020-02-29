@@ -1,6 +1,6 @@
 import React from 'react';
 import SiteNav from '../site-nav/site-nav';
-import { MaxWidthContainer } from '../../styled/utils';
+import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledHeader } from './style';
 import { BareButton } from '../button';
 import { THEMES } from '../layout/layout';

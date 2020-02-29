@@ -13,9 +13,10 @@ function generateComponent(acc, curr, index) {
 import React from 'react';
 import portfolioData, { IPortfolioItem } from '../../data/portfolio-items';
 import Helmet from 'react-helmet';
-import {MaxWidthContainer, PortfolioItem} from '../../styled/utils';
+import { PortfolioContent } from '../../pages/portfolio.style';
 import Layout from '../../components/layout/layout';
 import HomeHeadBanner from '../../components/HomeHeadBanner';
+import MaxWidthContainer from '../../components/MaxWidthContainer';
 import {StyledPost} from '../../components/blog-post/style';
 import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 
@@ -60,7 +61,7 @@ export const ${camelCaseName} = () => {
 				${headMarkup}
 			</HomeHeadBanner>
 		)}>
-			<PortfolioItem>
+			<PortfolioContent>
 				<Helmet>
 					<title>{portfolioContent.name} | Project Case Study</title>
 					<meta name="description" content={portfolioContent.snippet}/>
@@ -73,7 +74,7 @@ export const ${camelCaseName} = () => {
 						</div>
 					</StyledPost>
 				</MaxWidthContainer>
-			</PortfolioItem>
+			</PortfolioContent>
 		</Layout>
 	);
 };

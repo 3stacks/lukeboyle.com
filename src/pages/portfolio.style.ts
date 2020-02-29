@@ -88,3 +88,33 @@ export const PortfolioContainer = styled.div`
 		)}
 	}
 `;
+
+export const PortfolioContent = styled.div`
+padding: 60px 0;
+background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
+color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
+	& .title,
+& .blog-post--title {
+	        font-size: 4rem;
+	        text-align: center;
+	}
+	& .content {
+	        max-width: 700px;
+	        margin: 0 auto;
+	        font-size: 1.8rem;
+	        figure {
+		                margin: 0;
+		        }
+			        p {
+		                font-size: 1.8rem;
+		        }
+			        img {
+		                max-width: 100%;
+		        }
+	}
+	& .buttons {
+	        display: flex;
+	        justify-content: space-between;
+	        width: 100%;
+	}
+-`;

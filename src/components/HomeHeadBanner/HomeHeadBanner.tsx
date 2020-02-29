@@ -1,5 +1,5 @@
 import React from 'react';
-import { MaxWidthContainer } from '../../styled/utils';
+import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledBanner } from './HomeHeadBanner.style';
 
 export const HomeHeadBanner = ({ children }) => {

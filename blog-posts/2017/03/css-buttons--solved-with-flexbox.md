@@ -1,23 +1,22 @@
-
 # CSS Buttons: Solved with Flexbox
 
 ## This post is causing issues because it's trying to inline the style tags below. Figure out a way to add this to stylesheets.
 
-| Metadata name | Value |
-| --------- | ------ |
-| post_title | CSS Buttons: Solved with Flexbox | 
-| post_date | 2017-03-09 03:57:17 | 
-| post_modified | 2017-03-09 03:57:17 | 
-| post_status | draft | 
-| post_type | revision |
+| Metadata name | Value                            |
+| ------------- | -------------------------------- |
+| post_title    | CSS Buttons: Solved with Flexbox |
+| post_date     | 2017-03-09 03:57:17              |
+| post_modified | 2017-03-09 03:57:17              |
+| post_status   | draft                            |
+| post_type     | revision                         |
 
 There are two commonly accepted approaches to making buttons with CSS, but both of them are a little bit shit. What if I told you there was another way? (`morpheus.wav`)
 
 ## Option 1: Padding for vertical centering (Blue Pill)
+
 <style>.button-padding-approach { font-size: inherit;
 -webkit-appearance: none;
 border-radius: 0; border-style: solid; border-width: 0; cursor: pointer; font-weight: normal; line-height: normal; margin: 0; position: relative; text-align: center; text-decoration: none; display: inline-block; padding: 1rem 2rem 1.0625rem 2rem; font-size: 16px; background-color: #999; color: #000; max-width: 170px; }</style>
-
 
 <div>[A Button](#) [A Button that breaks to two lines](#)</div>
 
@@ -87,4 +86,3 @@ color: #fff;
 </div>
 
 The main caveat of this approach is that the button now needs a container. The container doesn't need anything fancy on it, just `display: inline-block;` to allow the content to naturally scale, and if you want to restrict how large the button can be, add `max-width: x;` Other than that, this approach is pretty bullet-proof from my testing and I like it a lot.
-        

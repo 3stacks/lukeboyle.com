@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
-import { MaxWidthContainer } from '../styled/utils';
+import MaxWidthContainer from '../components/MaxWidthContainer';
 
 export default function NotFoundError() {
     return (

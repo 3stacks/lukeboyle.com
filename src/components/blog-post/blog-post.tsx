@@ -3,8 +3,9 @@ import formatDate from 'date-fns/format';
 import Layout from '../layout/layout';
 import BlogPostTitle from '../blog-post-title';
 import Helmet from 'react-helmet';
-import { MaxWidthContainer, BlogHeader } from '../../styled/utils';
+import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledPost } from './style';
+import BlogHeader from '../BlogHeader';
 
 export default function BlogPost({
     isSinglePostPage,

@@ -1,15 +1,13 @@
-
 # Essential Hip-Hop Albums of the Decade so far.
 
-
-| Metadata name | Value |
-| --------- | ------ |
-| post_title | Essential Hip-Hop Albums of the Decade so far. | 
-| post_date | 2016-09-18 06:23:15 | 
-| post_modified | 2016-09-18 06:23:15 | 
-| post_status | inherit | 
-| post_type | revision |
-| post_category | music |
+| Metadata name | Value                                          |
+| ------------- | ---------------------------------------------- |
+| post_title    | Essential Hip-Hop Albums of the Decade so far. |
+| post_date     | 2016-09-18 06:23:15                            |
+| post_modified | 2016-09-18 06:23:15                            |
+| post_status   | inherit                                        |
+| post_type     | revision                                       |
+| post_category | music                                          |
 
 ## 2010
 
@@ -67,7 +65,7 @@ Young Fathers - Tape Two
 
 Chance The Rapper - Acid Rap
 
-A$AP Ferg - Trap Lord
+A\$AP Ferg - Trap Lord
 
 Tyler, The Creator - WOLF
 
@@ -118,4 +116,3 @@ Jay Rock - 90059
 Vince Staples - Summertime '06
 
 Kendrick Lamar - To Pimp A Butterfly
-        

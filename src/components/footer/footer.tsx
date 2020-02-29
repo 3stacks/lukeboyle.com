@@ -1,5 +1,5 @@
 import React from 'react';
-import { MaxWidthContainer } from '../../styled/utils';
+import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledFooter } from './style';
 import { FaYinYang } from 'react-icons/fa';
 

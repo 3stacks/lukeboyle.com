@@ -1,11 +1,20 @@
-import { css } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CUSTOM_PROPERTIES } from './colors';
 
-export function bp(size, content) {
-	return `
+export const ScreenReaderText = styled.span`
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+`;
+
+export const NoWrap = styled.span`
+	white-space: nowrap;
+`;
+
+export function bp(size: number, content: string) {
+	return css`
 		@media (min-width: ${size}px) {
 			${content}
-		};
+		}
 	`;
 }
 

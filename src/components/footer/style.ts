@@ -16,7 +16,7 @@ export const StyledFooter = styled.div`
 
 			&:hover {
 				color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
-				border-bottom: 1px solid #111;
+				border-bottom: 1px solid ${CUSTOM_PROPERTIES.COLOR_TEXT};
 			}
 		}
 	}

@@ -104,10 +104,10 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 		let parsedContents = postContents;
 
 		if (contents.metaData.post_type === 'top_list') {
-			imports = `${imports}\nimport {AlbumBlock} from '../../../../styled/utils';`;
+			imports = `${imports}\nimport { AlbumBlock } from '../../../music/music.style';`;
 			const rawParts = postContents.split('<h2>');
 			const parts = rawParts.slice(1, rawParts.length);
-			const contents = parts.reduce((acc, curr) => {
+			parsedContents = parts.reduce((acc, curr) => {
 				const albumTitle = curr.split('</h2>')[0];
 				const artistStart = curr.split('<h3>');
 				const artist = artistStart[artistStart.length - 1].split(
@@ -132,8 +132,6 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 </AlbumBlock>
 `;
 			}, '');
-
-			parsedContents = contents;
 		}
 
 		acc.push({
@@ -256,11 +254,11 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			const rootDir = index === 0 ? '../..' : '../..';
 			const blogPage = `import React from 'react';
 import Helmet from 'react-helmet';
-import { BlogHeader } from '${rootDir}/styled/utils';
+import BlogHeader from '${rootDir}/components/BlogHeader';
 import PostArchive from '${rootDir}/components/PostArchive';
-import { BodyWrapper } from '../music';
+import { BodyWrapper } from '../music/music.style';
 import Layout from '${rootDir}/components/layout/layout';
-import { MaxWidthContainer } from '${rootDir}/styled/utils';
+import MaxWidthContainer from '${rootDir}/components/MaxWidthContainer';
 import { PAGES } from '${rootDir}/constants';
 ${pages[key].reduce((acc, curr) => {
 	return (
