@@ -155,22 +155,23 @@ export const GlobalLayoutStyle = createGlobalStyle`
 		display: flex;
 		margin: 0 auto !important;
 		font-size: 1.6rem;
-		width: calc(100% - 20px)
+		width: calc(100% - 20px);
+		justify-content: center;
+		
+		li:first-of-type {
+			margin-right: 20px;
+		}
 		
 		${bp(
 			WIDTHS.M,
+			css`
+				width: calc(100% - 120px);
 			`
-		    width: calc(100% - 120px)
-		`
 		)}
 	}
 	
 	.pagination li {
 		list-style: none;
-	}
-	
-	.pagination__next {
-		margin-left: auto;
 	}
 `;
 

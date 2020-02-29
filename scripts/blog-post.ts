@@ -152,7 +152,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			export const ${camelCaseName} = ({isBlogPage}: {isBlogPage: boolean}) => {
 				return (
 					<BlogPost
-						isSinglePostPage={isBlogPage}
+						isSinglePostPage={!isBlogPage}
 						title="${contents.title}"
 						publishDate="${contents.metaData.post_date}"
 						slug="/${curr.path.replace('.md', '')}"
@@ -328,7 +328,9 @@ export const Blog = () => (
 			</BodyWrapper>
 		</MaxWidthContainer>
 	</Layout>
-)`;
+)
+
+export default Blog;`;
 
 			const fileName =
 				index === 0
