@@ -48,13 +48,12 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 		return `<img src={${imageName}} alt="${text}"/>`;
 	};
 
-	// TODO: use regex
 	const postStatusIndex = postContents.indexOf('post_status');
-	const almostPostStatus = postContents.slice(postStatusIndex + 13);
-	const postStatus = almostPostStatus
-		.slice(0, almostPostStatus.indexOf('|'))
-		.replace('|', '')
-		.trim();
+	const afterPostStatusContents = postContents.slice(postStatusIndex);
+	const almostPostStatus = afterPostStatusContents
+		.slice(afterPostStatusContents.indexOf('|'))
+		.slice(2);
+	const postStatus = almostPostStatus.slice(0, almostPostStatus.indexOf(' '));
 
 	const canonicalUrl = getCanonicalURLFromString(postContents) || '';
 
@@ -87,7 +86,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 
 				return Object.assign({}, acc, {
 					metaData: Object.assign({}, acc.metaData, {
-						[key]: value
+						[key.trim()]: value.trim()
 					})
 				});
 			} else {
@@ -100,11 +99,11 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 		});
 	}, {});
 
-	if (postStatus && postStatus !== 'draft') {
+	if (postStatus !== 'draft') {
 		const postContents = getMarkupFromMarkdown(contents.contents);
 		let parsedContents = postContents;
 
-		if (contents.metaData.post_type.trim() === 'top_list') {
+		if (contents.metaData.post_type === 'top_list') {
 			imports = `${imports}\nimport {AlbumBlock} from '../../../../styled/utils';`;
 			const rawParts = postContents.split('<h2>');
 			const parts = rawParts.slice(1, rawParts.length);
@@ -189,7 +188,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			'publishDate'
 		);
 		const musicPosts = componentsSortedByDate.filter(component => {
-			return component.postCategory.trim() === 'music';
+			return component.postCategory === 'music';
 		});
 
 		shell.rm('-rf', path.resolve(`${__dirname}/../src/pages/blog-posts`));
