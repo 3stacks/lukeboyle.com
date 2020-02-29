@@ -199,7 +199,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 				'-p',
 				path.resolve(
 					`${__dirname}/../src/pages/${component.path.replace(
-						`/${component.fileName}.md`,
+						`/${component.fileName}`,
 						''
 					)}`
 				)
@@ -220,16 +220,12 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			JSON.stringify(
 				musicPosts
 					.reverse()
-					.map(({ postTitle, path, fileName, componentName }) => {
-						console.log(fileName);
-
-						return {
-							path,
-							fileName,
-							componentName,
-							postTitle
-						};
-					}),
+					.map(({ postTitle, path, fileName, componentName }) => ({
+						path,
+						fileName,
+						componentName,
+						postTitle
+					})),
 				null,
 				'\t'
 			)
@@ -261,11 +257,11 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			const rootDir = index === 0 ? '../..' : '../..';
 			const blogPage = `import React from 'react';
 import Helmet from 'react-helmet';
-import {BlogHeader} from '${rootDir}/styled/utils';
-import PostArchive from '${rootDir}/components/post-archive/post-archive';
-import {BodyWrapper} from '../music';
+import { BlogHeader } from '${rootDir}/styled/utils';
+import PostArchive from '${rootDir}/components/PostArchive';
+import { BodyWrapper } from '../music';
 import Layout from '${rootDir}/components/layout/layout';
-import {MaxWidthContainer} from '${rootDir}/styled/utils';
+import { MaxWidthContainer } from '${rootDir}/styled/utils';
 import { PAGES } from '${rootDir}/constants';
 ${pages[key].reduce((acc, curr) => {
 	return (
