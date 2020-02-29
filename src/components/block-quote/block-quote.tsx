@@ -6,7 +6,7 @@ export default function BlockQuote({
     citation = '',
     children
 }: {
-    citation: string;
+    citation?: string;
     children: React.ReactElement;
 }) {
     return (
