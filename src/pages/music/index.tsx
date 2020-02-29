@@ -27,7 +27,7 @@ interface IProps {
     };
 }
 
-export default function Portfolio({ data }: IProps) {
+export default function Music({ data }: IProps) {
     const [artistData, updateArtistData] = useState(prefetchedArtistData);
     const [albumData, updateAlbumData] = useState(prefetchedAlbumData);
     const [crateData, updateCrateData] = useState(prefetchedCrateData);

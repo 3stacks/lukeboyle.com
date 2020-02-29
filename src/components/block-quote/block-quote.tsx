@@ -7,7 +7,7 @@ export default function BlockQuote({
     children
 }: {
     citation?: string;
-    children: React.ReactElement;
+    children: any;
 }) {
     return (
         <StyledBlockQuote cite={citation}>
