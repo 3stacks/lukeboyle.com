@@ -1,7 +1,5 @@
-import styled, { css } from 'styled-components';
-import { bp } from './mixins';
-import { LINE_HEIGHTS, WIDTHS } from './sizes';
-import { CUSTOM_PROPERTIES } from './colors';
+import { css } from 'styled-components';
+import { LINE_HEIGHTS } from './sizes';
 
 export function getFontSize(
 	fontSize: number,

@@ -6,11 +6,10 @@ import camelCase from 'lodash/camelCase';
 import shell from 'shelljs';
 import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
 
-function generateComponent(acc, curr, index) {
+function generateComponent(acc, curr) {
 	const fileName = getFileNameFromPath(curr.path).replace('.md', '');
 	const camelCaseName = camelCase(fileName);
-	let imports = `
-import React from 'react';
+	let imports = `import React from 'react';
 import portfolioData, { IPortfolioItem } from '../../data/portfolio-items';
 import Helmet from 'react-helmet';
 import { PortfolioContent } from '../../pages/portfolio.style';
@@ -45,9 +44,7 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 		path: curr.path,
 		fileName,
 		componentName: camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
-		component: `
-${imports}
-import { ExternalLink } from '../../components/button';
+		component: `${imports}\nimport { ExternalLink } from '../../components/button';
 	
 export const ${camelCaseName} = () => {
 	const portfolioContent : IPortfolioItem = portfolioData.find(data => data.name === PORTFOLIO_ITEM_NAMES.${fileName
