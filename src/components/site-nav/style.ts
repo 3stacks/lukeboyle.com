@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { bp } from '../../styled/mixins';
 import { WIDTHS } from '../../styled/sizes';
-import COLORS from '../../styled/colors';
+import { CUSTOM_PROPERTIES } from '../../styled/colors';
 
 export const StyledNav = styled.div`
 	display: flex;
@@ -11,7 +11,7 @@ export const StyledNav = styled.div`
 	height: 60px;
 
 	a {
-		color: ${COLORS.TEXT};
+		color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 	}
 
 	${bp(
@@ -45,12 +45,12 @@ export const StyledNav = styled.div`
 		)}
 
 		a {
-			color: ${COLORS.TEXT};
+			color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 			text-decoration: none;
 			border-color: transparent;
 
 			&:hover {
-				color: ${COLORS.TEXT};
+				color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 			}
 		}
 	}
@@ -61,7 +61,7 @@ export const StyledNav = styled.div`
 		padding: 0;
 		width: 100%;
 		text-align: center;
-		color: ${COLORS.TEXT};
+		color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 
 		${bp(
 			WIDTHS.M,
@@ -79,7 +79,7 @@ export const StyledNav = styled.div`
 			}
 
 			a {
-				color: ${COLORS.TEXT};
+				color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 				font-size: 1.6rem;
 				border-color: transparent;
 			}

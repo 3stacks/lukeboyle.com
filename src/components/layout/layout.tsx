@@ -17,13 +17,31 @@ interface IProps {
     headChildren?: () => React.ReactElement;
 }
 
-export default class Layout extends React.Component<IProps> {
+export enum THEMES {
+    DEFAULT = 'DEFAULT',
+    NIGHT = 'NIGHT',
+    ALT = 'ALT'
+}
+
+export default class Layout extends React.Component<
+    IProps,
+    { activeTheme: THEMES }
+> {
+    state = {
+        activeTheme: THEMES.DEFAULT
+    };
+
+    handleColorChangePressed = (whichColor: THEMES): void => {
+        this.setState({ activeTheme: whichColor });
+    };
+
     render() {
         const isHomeOrPortfolioPage =
             this.props.isHome || this.props.slug === 'portfolio';
 
         return (
             <StyledLayout
+                activeTheme={this.state.activeTheme}
                 className={`layout ${this.props.slug}`}
                 isHome={this.props.isHome}
                 showFullPageColor={isHomeOrPortfolioPage}
@@ -71,7 +89,11 @@ export default class Layout extends React.Component<IProps> {
                     <html lang="en-US" />
                 </Helmet>
                 <GlobalLayoutStyle />
-                <Header isHome={this.props.slug === 'home'} />
+                <Header
+                    isHome={this.props.slug === 'home'}
+                    activeTheme={this.state.activeTheme}
+                    onColorChangePressed={this.handleColorChangePressed}
+                />
                 <main className="main">
                     {this.props.headChildren && (
                         <div className="head-slot">

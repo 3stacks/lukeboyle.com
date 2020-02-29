@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { bp } from './mixins';
 import { LINE_HEIGHTS, WIDTHS } from './sizes';
-import COLORS from './colors';
+import { CUSTOM_PROPERTIES } from './colors';
 
 export function getFontSize(
 	fontSize: number,
@@ -57,8 +57,8 @@ export const AlbumBlock = styled.div`
 	margin-bottom: 50px;
 	align-items: center;
 	overflow: hidden;
-	background-color: ${COLORS.PRIMARY};
-	color: ${COLORS.TEXT};
+	background-color: ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
+	color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 	transform: translate(-5px, -5px);
 	box-shadow: 7px 7px 0 0 #111;
 	border: 2px solid #111;
@@ -121,9 +121,9 @@ export const BlogHeader = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	color: ${COLORS.SECONDARY};
+	color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 	position: relative;
-	background-color: ${COLORS.PRIMARY};
+	background-color: ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
 	${bp(
 		WIDTHS.S,
 		`
@@ -157,8 +157,8 @@ export const BlogHeader = styled.div`
 
 export const PortfolioItem = styled.div`
 	padding: 60px 0;
-	background-color: ${COLORS.WHITE};
-	color: ${COLORS.TEXT};
+	background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
+	color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 
 	& .title,
 	& .blog-post--title {

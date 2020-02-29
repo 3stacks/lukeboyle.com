@@ -2,8 +2,19 @@ import React from 'react';
 import SiteNav from '../site-nav/site-nav';
 import { MaxWidthContainer } from '../../styled/utils';
 import { StyledHeader } from './style';
+import { BareButton } from '../button';
+import { THEMES } from '../layout/layout';
+import { MdInvertColors } from 'react-icons/md';
 
-export default function Header({ isHome = false }) {
+export default function Header({
+    isHome = false,
+    onColorChangePressed,
+    activeTheme
+}: {
+    isHome: boolean;
+    activeTheme: THEMES;
+    onColorChangePressed: (whichColor: THEMES) => void;
+}) {
     return (
         <StyledHeader>
             <MaxWidthContainer>
