@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
 import Header from '../header/header';
 import Footer from '../footer/footer';
-import { META_DESCRIPTION, MY_NAME } from '../../constants';
+import { META_DESCRIPTION, MY_NAME, PAGES } from '../../constants';
 import appleSmall from '../../assets/img/apple-icon-76x76.png';
 import appleMedium from '../../assets/img/apple-icon-120x120.png';
 import appleLarge from '../../assets/img/apple-icon-152x152.png';
@@ -13,9 +13,10 @@ import './layout.css';
 
 interface IProps {
     isHome: boolean;
+    pageName?: PAGES;
     slug: string;
     headChildren?: () => React.ReactElement;
-    children: React.ReactElement;
+    children: any;
 }
 
 export enum THEMES {
@@ -24,7 +25,13 @@ export enum THEMES {
     ALT = 'ALT'
 }
 
-export default ({ headChildren, isHome, slug, children }: IProps) => {
+export const Layout = ({
+    pageName,
+    headChildren,
+    isHome,
+    slug,
+    children
+}: IProps) => {
     const isHomeOrPortfolioPage = isHome || slug === 'portfolio';
     const [activeTheme, updateActiveTheme] = useState<THEMES>(
         (localStorage && THEMES[localStorage.getItem('activeTheme')]) ||
@@ -43,7 +50,7 @@ export default ({ headChildren, isHome, slug, children }: IProps) => {
             showFullPageColor={isHomeOrPortfolioPage}
         >
             <Helmet title={`${MY_NAME} | Front End Developer`}>
-                <meta name="description" content={META_DESCRIPTION.HOME} />
+                <meta name="description" content={META_DESCRIPTION[pageName]} />
                 <meta
                     name="google-site-verification"
                     content="JKQQdLNK9rQUZnixIsfEuJALcEcfPp9_ee2grLgOVGM"
@@ -98,3 +105,5 @@ export default ({ headChildren, isHome, slug, children }: IProps) => {
         </StyledLayout>
     );
 };
+
+export default Layout;

@@ -9,15 +9,14 @@ import { StyledPost } from './style';
 export default function BlogPost({
     isSinglePostPage,
     children,
-    title,
     publishDate,
+    title,
     slug,
     canonical
 }: {
     isSinglePostPage: boolean;
-    children: React.ReactElement;
+    children: any;
     publishDate: string;
-    author: string;
     title: string;
     slug: string;
     canonical: string;
@@ -67,7 +66,7 @@ export default function BlogPost({
                                 {formatDate(publishDate, 'Do of MMMM, YYYY')}
                             </time>
                         </p>
-                        {children}
+                        <>{children}</>
                     </MaxWidthContainer>
                 )}
             </StyledPost>

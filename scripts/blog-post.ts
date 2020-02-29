@@ -99,7 +99,6 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			contents: `${acc.contents || ''}\n${curr}`
 		});
 	}, {});
-	console.log(fileName, postStatus);
 
 	if (postStatus && postStatus !== 'draft') {
 		const postContents = getMarkupFromMarkdown(contents.contents);
@@ -150,21 +149,21 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			component: `
 			${imports}
 				
-			export default class ${camelCaseName} extends React.Component {
-				render() {
-					return (
-						<BlogPost
-							isSinglePostPage={!this.props.isBlogPage}
-							title="${contents.title}"
-							publishDate="${contents.metaData.post_date}"
-							slug="/${curr.path.replace('.md', '')}"
-							canonical="${canonicalUrl}"
-						>
-							${parsedContents}
-						</BlogPost>
-					);
-				}
+			export const ${camelCaseName} = ({isBlogPage}: {isBlogPage: boolean}) => {
+				return (
+					<BlogPost
+						isSinglePostPage={isBlogPage}
+						title="${contents.title}"
+						publishDate="${contents.metaData.post_date}"
+						slug="/${curr.path.replace('.md', '')}"
+						canonical="${canonicalUrl}"
+					>
+						${parsedContents}
+					</BlogPost>
+				);
 			}
+			
+			export default ${camelCaseName};
 		`
 		});
 	}
@@ -267,6 +266,7 @@ import PostArchive from '${rootDir}/components/post-archive/post-archive';
 import {BodyWrapper} from '../music';
 import Layout from '${rootDir}/components/layout/layout';
 import {MaxWidthContainer} from '${rootDir}/styled/utils';
+import { PAGES } from '${rootDir}/constants';
 ${pages[key].reduce((acc, curr) => {
 	return (
 		acc +
@@ -276,67 +276,59 @@ ${pages[key].reduce((acc, curr) => {
 	);
 }, '')}
 				
-export default class Blog extends React.Component {
-	render() {
-		return (
-			<Layout slug="blog">
-				<Helmet>
-					<title>${
-						index === 0
-							? 'Blog | Luke Boyle'
-							: `Page ${parseInt(key, 10) - 1} | Blog`
-					}</title>
-				</Helmet>
-				<BlogHeader>
-					<h1 className="site-name">
-						Boyleing Point
-					</h1>
-				</BlogHeader>
-				<MaxWidthContainer className="blog-page">
-					<BodyWrapper>
-						<div className="left">
-							<h3>
-								Post Archive
-							</h3>
-							<PostArchive data={${JSON.stringify(sidebarData)}} />
-						</div>
-						<div>
-							${pages[key].reduce((acc, curr) => {
-								return (
-									acc +
-									`							<${curr.componentName} isBlogPage={true} />\n`
-								);
-							}, '')}	
-							<ul className="pagination">
-								${
-									index > 0
-										? `<li><a href="${
-												key === '2'
-													? '/blog'
-													: `/blog/${parseInt(
-															key,
-															10
-													  ) - 2}`
-										  }">Newer</a></li>`
-										: ''
-								}
-								${
-									index !== Object.values(pages).length - 1
-										? `<li className="pagination__next"><a href="/blog/${parseInt(
-												key,
-												10
-										  )}">Older</a></li>`
-										: ''
-								}
-							</ul>							
-						</div>
-					</BodyWrapper>
-				</MaxWidthContainer>
-			</Layout>
-		);
-	}
-}
-		`;
+export const Blog = () => (
+	<Layout isHome={false} slug="blog" pageName={PAGES.BLOG}>
+		<Helmet>
+			<title>${
+				index === 0
+					? 'Blog | Luke Boyle'
+					: `Page ${parseInt(key, 10) - 1} | Luke Boyle's Blog`
+			}</title>
+		</Helmet>
+		<BlogHeader>
+			<h1 className="site-name">
+				Boyleing Point
+			</h1>
+		</BlogHeader>
+		<MaxWidthContainer className="blog-page">
+			<BodyWrapper>
+				<div className="left">
+					<h3>
+						Post Archive
+					</h3>
+					<PostArchive data={${JSON.stringify(sidebarData)}} />
+				</div>
+				<div>
+					${pages[key].reduce((acc, curr) => {
+						return (
+							acc +
+							`<${curr.componentName} isBlogPage={true} />\n`
+						);
+					}, '')}	
+					<ul className="pagination">
+						${
+							index > 0
+								? `<li><a href="${
+										key === '2'
+											? '/blog'
+											: `/blog/${parseInt(key, 10) - 2}`
+								  }">Newer</a></li>`
+								: ''
+						}
+						${
+							index !== Object.values(pages).length - 1
+								? `<li className="pagination__next"><a href="/blog/${parseInt(
+										key,
+										10
+								  )}">Older</a></li>`
+								: ''
+						}
+					</ul>							
+				</div>
+			</BodyWrapper>
+		</MaxWidthContainer>
+	</Layout>
+)`;
 
 			const fileName =
 				index === 0

@@ -1,6 +1,6 @@
 import React from 'react';
 import projects from '../data/portfolio-items';
-import { MY_NAME } from '../constants';
+import { MY_NAME, PAGES } from '../constants';
 import Layout from '../components/layout/layout';
 import { MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
@@ -14,6 +14,7 @@ export default class Index extends React.Component {
         return (
             <Layout
                 slug="home"
+                pageName={PAGES.HOME}
                 isHome
                 headChildren={() => (
                     <HomeHeadBanner>

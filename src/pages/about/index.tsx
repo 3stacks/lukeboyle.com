@@ -2,11 +2,12 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../../components/layout/layout';
 import { MaxWidthContainer } from '../../styled/utils';
+import { PAGES } from '../../constants';
 
 export default class About extends React.Component {
     render() {
         return (
-            <Layout isHome={false} slug="about">
+            <Layout pageName={PAGES.ABOUT} isHome={false} slug="about">
                 <Helmet>
                     <title>About | Luke Boyle</title>
                 </Helmet>
