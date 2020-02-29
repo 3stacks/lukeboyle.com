@@ -17,7 +17,7 @@ import postData from '../../data/music-posts.json';
 import prefetchedArtistData from '../../data/artists.json';
 import prefetchedAlbumData from '../../data/albums.json';
 import prefetchedCrateData from '../../data/crate.json';
-import COLORS from '../../styled/colors';
+import { CUSTOM_PROPERTIES } from '../../styled/colors';
 
 const ArtistList = styled.ol`
 	list-style: none;
@@ -53,10 +53,10 @@ const ArtistList = styled.ol`
 		flex-direction: column;
 		align-items: center;
 		transform: translate(-5px, -5px);
-        background-color: ${COLORS.PRIMARY};
-        box-shadow: 7px 7px 0 0 ${COLORS.SECONDARY};
-        color: ${COLORS.SECONDARY};
-        border: 2px solid ${COLORS.SECONDARY};
+        background-color: ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
+        box-shadow: 7px 7px 0 0 ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
+        color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
+        border: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 	}
 	
 	.image-wrapper {
@@ -175,10 +175,10 @@ const LatestPostBlock = styled.div`
     display: flex;
     align-items: center;
     transform: translate(-5px, -5px);
-    background-color: ${COLORS.PRIMARY};
-    box-shadow: 7px 7px 0 0 ${COLORS.SECONDARY};
-    color: ${COLORS.SECONDARY};
-    border: 2px solid ${COLORS.SECONDARY};
+    background-color: ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
+    box-shadow: 7px 7px 0 0 ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
+    color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
+    border: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
     margin-bottom: 3rem;
 
     img {

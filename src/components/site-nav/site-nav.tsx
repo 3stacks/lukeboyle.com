@@ -4,7 +4,13 @@ import Link from 'gatsby-link';
 import { MY_NAME } from '../../constants';
 import { StyledNav } from './style';
 
-export default function SiteNav({ isHome = false }: { isHome: boolean }) {
+export default function SiteNav({
+    isHome = false,
+    rightSlot
+}: {
+    isHome: boolean;
+    rightSlot?: React.ReactElement;
+}) {
     return (
         <StyledNav>
             {isHome ? (
@@ -33,6 +39,7 @@ export default function SiteNav({ isHome = false }: { isHome: boolean }) {
                     <Link to="/about">About</Link>
                 </li>
             </ul>
+            {rightSlot}
         </StyledNav>
     );
 }

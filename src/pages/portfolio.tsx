@@ -7,15 +7,15 @@ import { blackShift, bp } from '../styled/mixins';
 import { getFontSize, MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
 import { HomeHeadBanner } from './index';
-import COLORS from '../styled/colors';
+import { CUSTOM_PROPERTIES } from '../styled/colors';
 
 const PortfolioItem = styled.div`
     margin-bottom: 30px;
-    color: white;
+    color: ${CUSTOM_PROPERTIES.COLOR_WHITE}
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border: 2px solid ${COLORS.PRIMARY};
+    background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE}
+    border: 2px solid ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
 
     ${blackShift(5)}
 

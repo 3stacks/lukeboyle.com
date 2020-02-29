@@ -2,9 +2,10 @@ import styled, { css } from 'styled-components';
 import { blackShift, bp } from './styled/mixins';
 import { WIDTHS } from './styled/sizes';
 import { getFontSize } from './styled/utils';
+import { CUSTOM_PROPERTIES } from './styled/colors';
 
 export const StyledBanner = styled.div`
-	color: #111;
+	color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -78,8 +79,8 @@ export const RecentStuff = styled.div`
 `;
 
 export const Stuff = styled.div`
-	background-color: white;
-	color: #111;
+	background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
+	color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 	text-align: center;
 	padding: 20px;
 	display: flex;

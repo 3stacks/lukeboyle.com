@@ -3,7 +3,12 @@ import graphikWoff from '../../assets/fonts/Graphik-Regular.woff';
 import graphikWoffTwo from '../../assets/fonts/Graphik-Regular.woff2';
 import publicoWoff from '../../assets/fonts/Publico.woff';
 import publicoWoffTwo from '../../assets/fonts/Publico.woff2';
-import COLORS from '../../styled/colors';
+import {
+	ALT_COLOURS,
+	COLORS,
+	CUSTOM_PROPERTIES,
+	NIGHT_MODE_COLOURS
+} from '../../styled/colors';
 import {
 	FONT_SIZES,
 	LINE_HEIGHTS,
@@ -12,6 +17,8 @@ import {
 } from '../../styled/sizes';
 import { bp } from '../../styled/mixins';
 import { getFontSize } from '../../styled/utils';
+import { THEMES } from './layout';
+import { which } from 'shelljs';
 
 export const GlobalLayoutStyle = createGlobalStyle`
 	* {
@@ -132,15 +139,15 @@ export const GlobalLayoutStyle = createGlobalStyle`
 	}
 	
 	a {
-		color: ${COLORS.SECONDARY};
+		color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 		text-decoration: none;
-		border-bottom: 1px solid ${COLORS.SECONDARY};
+		border-bottom: 1px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 		
 		&:hover, 
 		&:focus {
 			border-bottom: 1px solid transparent;
-			background-color: ${COLORS.SECONDARY};
-			color: white !important;
+			background-color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
+			color: ${CUSTOM_PROPERTIES.COLOR_WHITE} !important;
 		}
 	}
 	
@@ -167,15 +174,37 @@ export const GlobalLayoutStyle = createGlobalStyle`
 	}
 `;
 
+function yankThoseColors(
+	colorTheme: typeof COLORS | typeof NIGHT_MODE_COLOURS | typeof ALT_COLOURS
+): string {
+	return css`
+		--color-primary: ${colorTheme['PRIMARY']};
+		--color-secondary: ${colorTheme['SECONDARY']};
+		--color-white: ${colorTheme['WHITE']};
+		--color-text: ${colorTheme['TEXT']};
+	`;
+}
+
+function getThemeVariables(whichTheme: THEMES) {
+	const palettes = {
+		[THEMES.DEFAULT]: COLORS,
+		[THEMES.NIGHT]: NIGHT_MODE_COLOURS,
+		[THEMES.ALT]: ALT_COLOURS
+	};
+
+	return yankThoseColors(palettes[whichTheme]);
+}
+
 export const StyledLayout = styled.div`
+	${({ activeTheme }) => getThemeVariables(activeTheme)};
 	margin: 0;
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
-	color: #111;
-	background-color: ${COLORS.PRIMARY};
+	color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
+	background-color: ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
 
 	.block-header {
 		font-size: 2.5rem;
@@ -189,8 +218,8 @@ export const StyledLayout = styled.div`
 		!props.showFullPageColor &&
 		css`
 			.main {
-				background-color: white;
-				color: #111;
+				background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
+				color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 			}
 		`}
 `;

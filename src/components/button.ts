@@ -1,6 +1,6 @@
 import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
-import COLORS from '../styled/colors';
+import { CUSTOM_PROPERTIES } from '../styled/colors';
 
 function getButtonStyles({ isSecondary }) {
 	return css`
@@ -8,38 +8,46 @@ function getButtonStyles({ isSecondary }) {
 		align-items: center;
 		${isSecondary
 			? css`
-					color: ${COLORS.SECONDARY};
-					background-color: #fff;
-					border: 2px solid ${COLORS.SECONDARY};
+					color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
+					background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
+					border: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 			  `
 			: css`
-					color: white;
-					background-color: ${COLORS.SECONDARY};
+					color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
+					background-color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 					border: none;
-			  `}
+			  `};
 
 		padding: 10px 15px;
 		text-decoration: none;
 		text-transform: uppercase;
 		font-size: 1.3rem;
 		font-weight: bold;
-		border: 2px solid ${COLORS.SECONDARY};
+		border: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 
 		&:hover,
 		&:focus {
-			color: ${COLORS.SECONDARY} !important;
+			color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY} !important;
 			outline: none;
 			background-color: #fff;
-			border: 2px solid ${COLORS.SECONDARY};
-			color: ${COLORS.SECONDARY};
+			border: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
+			color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 
 			@media screen and (prefers-reduced-motion: no-preference) {
 				transform: translate(-3px, -3px);
-				box-shadow: 4px 4px 0 0 ${COLORS.SECONDARY};
+				box-shadow: 4px 4px 0 0 ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 			}
 		}
 	`;
 }
+
+export const BareButton = styled.button`
+	appearance: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	background: transparent;
+`;
 
 export default styled.button`
 	${props => getButtonStyles(props)}

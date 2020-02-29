@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import COLORS from '../../styled/colors';
+import { CUSTOM_PROPERTIES } from '../../styled/colors';
 
 export const StyledFooter = styled.div`
 	height: 60px;
@@ -12,17 +12,17 @@ export const StyledFooter = styled.div`
 		font-size: 1.4rem;
 
 		a {
-			color: ${COLORS.SECONDARY};
+			color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 
 			&:hover {
-				color: ${COLORS.SECONDARY};
+				color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 				border-bottom: 1px solid #111;
 			}
 		}
 	}
 
 	& .copyright {
-		color: ${COLORS.SECONDARY};
+		color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 		font-size: 1.4rem;
 	}
 `;

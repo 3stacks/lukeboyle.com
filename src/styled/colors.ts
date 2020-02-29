@@ -1,4 +1,4 @@
-enum COLORS {
+export enum COLORS {
 	PRIMARY = '#ffe01b',
 	WHITE = '#fff',
 	TEXT = '#111',
