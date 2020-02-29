@@ -4,7 +4,7 @@ import Layout from '../components/layout/layout';
 import portfolioItems from '../data/portfolio-items';
 import styled from 'styled-components';
 import { blackShift, bp } from '../styled/mixins';
-import {getFontSize, MaxWidthContainer} from '../styled/utils';
+import { getFontSize, MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
 import { HomeHeadBanner } from './index';
 import COLORS from '../styled/colors';
@@ -121,7 +121,9 @@ export default class Portfolio extends React.Component {
                                     />
                                     <div className="card">
                                         <h2 className="title">
-                                            {portfolioItem.shortName ? portfolioItem.shortName : portfolioItem.name}
+                                            {portfolioItem.shortName
+                                                ? portfolioItem.shortName
+                                                : portfolioItem.name}
                                         </h2>
                                         <p>{portfolioItem.snippet}</p>
                                         <LinkButton to={portfolioItem.link}>

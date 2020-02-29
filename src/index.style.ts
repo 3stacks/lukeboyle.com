@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 import { blackShift, bp } from './styled/mixins';
 import { WIDTHS } from './styled/sizes';
-import {getFontSize} from "./styled/utils";
+import { getFontSize } from './styled/utils';
 
 export const StyledBanner = styled.div`
 	color: #111;
@@ -17,10 +17,10 @@ export const StyledBanner = styled.div`
 	${bp(
 		768,
 		css`
-		height: 300px;
-	`
+			height: 300px;
+		`
 	)}
-	
+
 	h1,
 	h2,
 	h3,
@@ -38,9 +38,9 @@ export const StyledBanner = styled.div`
 		${bp(
 			WIDTHS.M,
 			css`
-			font-size: 6rem;
-			margin: 0;
-	    `
+				font-size: 6rem;
+				margin: 0;
+			`
 		)}
 	}
 
@@ -52,9 +52,9 @@ export const StyledBanner = styled.div`
 		${bp(
 			WIDTHS.M,
 			css`
-			padding-top: 30px;
-		    font-size: 3rem;
-	    `
+				padding-top: 30px;
+				font-size: 3rem;
+			`
 		)}
 
 		&:first-of-type {
@@ -72,8 +72,8 @@ export const RecentStuff = styled.div`
 	${bp(
 		620,
 		css`
-		grid-template-columns: 1fr 1fr;
-	`
+			grid-template-columns: 1fr 1fr;
+		`
 	)}
 `;
 
@@ -89,16 +89,16 @@ export const Stuff = styled.div`
 	a {
 		margin-top: auto;
 	}
-	
+
 	.block-header {
 		margin-bottom: 2rem;
 		${getFontSize(2.5, 1.3, 2)}
 	}
-	
+
 	.title {
 		${getFontSize(3.5, 1.3, 3.5)}
 	}
-	
+
 	h2 {
 		margin-bottom: 0;
 	}

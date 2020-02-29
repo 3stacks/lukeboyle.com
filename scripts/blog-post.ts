@@ -305,7 +305,7 @@ export default class Blog extends React.Component {
 							${pages[key].reduce((acc, curr) => {
 								return (
 									acc +
-`							<${curr.componentName} isBlogPage={true} />\n`
+									`							<${curr.componentName} isBlogPage={true} />\n`
 								);
 							}, '')}	
 							<ul className="pagination">
@@ -322,8 +322,7 @@ export default class Blog extends React.Component {
 										: ''
 								}
 								${
-									index !==
-									Object.values(pages).length - 1
+									index !== Object.values(pages).length - 1
 										? `<li className="pagination__next"><a href="/blog/${parseInt(
 												key,
 												10

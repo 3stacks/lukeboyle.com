@@ -7,7 +7,22 @@ export default function Header({ isHome = false }) {
     return (
         <StyledHeader>
             <MaxWidthContainer>
-                <SiteNav isHome={isHome} />
+                <SiteNav
+                    isHome={isHome}
+                    rightSlot={
+                        <BareButton
+                            onClick={event =>
+                                onColorChangePressed(
+                                    activeTheme === THEMES.DEFAULT
+                                        ? THEMES.NIGHT
+                                        : THEMES.DEFAULT
+                                )
+                            }
+                        >
+                            <MdInvertColors className="icon" />
+                        </BareButton>
+                    }
+                />
             </MaxWidthContainer>
         </StyledHeader>
     );

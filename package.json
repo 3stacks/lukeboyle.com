@@ -16,9 +16,9 @@
     "dependencies": {
         "date-fns": "^1.29.0",
         "gatsby-link": "latest",
-        "react": "^16.5.1",
+        "react": "^16.13.0",
         "react-accessible-accordion": "^3.0.0",
-        "react-dom": "^16.5.1",
+        "react-dom": "^16.13.0",
         "react-helmet": "^5.2.0",
         "react-icons": "^3.7.0",
         "react-typography": "^0.15.10",

@@ -4,7 +4,7 @@ import { MY_NAME } from '../constants';
 import Layout from '../components/layout/layout';
 import { MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
-import {RecentStuff, Stuff, StyledBanner} from '../index.style';
+import { RecentStuff, Stuff, StyledBanner } from '../index.style';
 
 export function HomeHeadBanner({ children }) {
     return (

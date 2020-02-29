@@ -112,7 +112,7 @@ export function resolveBlogPosts(): Promise<IPostArchive> {
 									{
 										slug: post.slug,
 										path: post.path,
-										title: post.title,
+										title: post.title
 									}
 								]
 							}

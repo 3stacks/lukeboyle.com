@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
 import Header from '../header/header';
 import Footer from '../footer/footer';
@@ -15,73 +15,84 @@ interface IProps {
     isHome: boolean;
     slug: string;
     headChildren?: () => React.ReactElement;
+    children: React.ReactElement;
 }
 
-export default class Layout extends React.Component<IProps> {
-    render() {
-        const isHomeOrPortfolioPage =
-            this.props.isHome || this.props.slug === 'portfolio';
-
-        return (
-            <StyledLayout
-                className={`layout ${this.props.slug}`}
-                isHome={this.props.isHome}
-                showFullPageColor={isHomeOrPortfolioPage}
-            >
-                <Helmet title={`${MY_NAME} | Front End Developer`}>
-                    <meta name="description" content={META_DESCRIPTION.HOME} />
-                    <meta
-                        name="google-site-verification"
-                        content="JKQQdLNK9rQUZnixIsfEuJALcEcfPp9_ee2grLgOVGM"
-                    />
-                    <meta name="referrer" content="origin" />
-                    <meta charSet="utf-8" />
-                    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-                    <meta
-                        name="viewport"
-                        content="width=device-width, initial-scale=1.0"
-                    />
-                    <link
-                        rel="apple-touch-icon"
-                        sizes="76x76"
-                        href={appleSmall}
-                    />
-                    <link
-                        rel="apple-touch-icon"
-                        sizes="120x120"
-                        href={appleMedium}
-                    />
-                    <link
-                        rel="apple-touch-icon"
-                        sizes="152x152"
-                        href={appleLarge}
-                    />
-                    <link
-                        rel="icon"
-                        type="image/png"
-                        sizes="192x192"
-                        href={androidIcon}
-                    />
-                    <link
-                        rel="icon"
-                        type="image/png"
-                        sizes="32x32"
-                        href={favicon}
-                    />
-                    <html lang="en-US" />
-                </Helmet>
-                <GlobalLayoutStyle />
-                <Header isHome={this.props.slug === 'home'} />
-                <main className="main">
-                    {this.props.headChildren && (
-                        <div className="head-slot">
-                            {this.props.headChildren()}
-                        </div>
-                    )}
-                    <div className="body-slot">{this.props.children}</div>
-                </main>
-                <Footer />
-            </StyledLayout>
-        );
-    }
+export enum THEMES {
+    DEFAULT = 'DEFAULT',
+    NIGHT = 'NIGHT',
+    ALT = 'ALT'
 }
+
+export default ({ headChildren, isHome, slug, children }: IProps) => {
+    const isHomeOrPortfolioPage = isHome || slug === 'portfolio';
+    const [activeTheme, updateActiveTheme] = useState<THEMES>(
+        (localStorage && THEMES[localStorage.getItem('activeTheme')]) ||
+            THEMES.DEFAULT
+    );
+
+    useEffect(() => {
+        localStorage && localStorage.setItem('activeTheme', activeTheme);
+    }, [activeTheme]);
+
+    return (
+        <StyledLayout
+            activeTheme={activeTheme}
+            className={`layout ${slug}`}
+            isHome={isHome}
+            showFullPageColor={isHomeOrPortfolioPage}
+        >
+            <Helmet title={`${MY_NAME} | Front End Developer`}>
+                <meta name="description" content={META_DESCRIPTION.HOME} />
+                <meta
+                    name="google-site-verification"
+                    content="JKQQdLNK9rQUZnixIsfEuJALcEcfPp9_ee2grLgOVGM"
+                />
+                <meta name="referrer" content="origin" />
+                <meta charSet="utf-8" />
+                <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+                <link rel="apple-touch-icon" sizes="76x76" href={appleSmall} />
+                <link
+                    rel="apple-touch-icon"
+                    sizes="120x120"
+                    href={appleMedium}
+                />
+                <link
+                    rel="apple-touch-icon"
+                    sizes="152x152"
+                    href={appleLarge}
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="192x192"
+                    href={androidIcon}
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="32x32"
+                    href={favicon}
+                />
+                <html lang="en-US" />
+            </Helmet>
+            <GlobalLayoutStyle />
+            <Header
+                isHome={slug === 'home'}
+                activeTheme={activeTheme}
+                onColorChangePressed={updateActiveTheme}
+            />
+            <main className="main">
+                {headChildren && (
+                    <div className="head-slot">{headChildren()}</div>
+                )}
+                <div className="body-slot">{children}</div>
+            </main>
+            <Footer />
+        </StyledLayout>
+    );
+};
