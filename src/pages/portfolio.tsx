@@ -4,8 +4,8 @@ import Layout from '../components/layout/layout';
 import portfolioItems from '../data/portfolio-items';
 import { MaxWidthContainer } from '../styled/utils';
 import { LinkButton } from '../components/button';
+import HomeHeadBanner from '../components/HomeHeadBanner';
 import { PortfolioContainer, PortfolioItem } from './portfolio.style';
-import { HomeHeadBanner } from './index';
 
 export const Portfolio = () => {
     return (

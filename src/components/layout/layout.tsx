@@ -90,7 +90,9 @@ export default ({ headChildren, isHome, slug, children }: IProps) => {
                 {headChildren && (
                     <div className="head-slot">{headChildren()}</div>
                 )}
-                <div className="body-slot">{children}</div>
+                <div className="body-slot">
+                    <>{children}</>
+                </div>
             </main>
             <Footer />
         </StyledLayout>

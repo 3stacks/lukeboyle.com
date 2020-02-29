@@ -264,8 +264,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 import Helmet from 'react-helmet';
 import {BlogHeader} from '${rootDir}/styled/utils';
 import PostArchive from '${rootDir}/components/post-archive/post-archive';
-import HomeHeadBanner from '${rootDir}/components/HomeHeadBanner';
-import {BodyWrapper} from '${rootDir}/pages/music';
+import {BodyWrapper} from '../music';
 import Layout from '${rootDir}/components/layout/layout';
 import {MaxWidthContainer} from '${rootDir}/styled/utils';
 ${pages[key].reduce((acc, curr) => {
