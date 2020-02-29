@@ -8,6 +8,15 @@ import websiteSrc from '../assets/img/portfolio/thumbs/website.png';
 import debtDestroyerSrc from '../assets/img/portfolio/thumbs/debt-destroyer.jpg';
 import { PORTFOLIO_ITEM_NAMES } from '../constants';
 
+export interface IPortfolioItem {
+	name: PORTFOLIO_ITEM_NAMES;
+	shortName?: string;
+	snippet: string;
+	link: string;
+	thumb: string;
+	links: { href: string; label: string }[];
+}
+
 export default [
 	{
 		name: PORTFOLIO_ITEM_NAMES.UNDERWRITING_RULES_ENGINE,
