@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { blackShift, bp } from './styled/mixins';
-import { WIDTHS } from './styled/sizes';
 import { getFontSize } from './styled/utils';
 import { CUSTOM_PROPERTIES } from './styled/colors';
 

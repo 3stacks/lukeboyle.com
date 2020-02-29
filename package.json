@@ -10,7 +10,7 @@
         "deploy": "ts-node scripts/deploy.ts",
         "start": "yarn run prepare-data && gatsby develop",
         "build": "NODE_ENV=production yarn run prepare-data && gatsby build",
-        "lint": "eslint ./**/**/*.ts -c .eslintrc.json && tsc --noEmit"
+        "lint": "eslint -c .eslintrc.json ./**/**/*.ts  && tsc --noEmit"
     },
     "author": "Luke Boyle",
     "license": "BSD-3-Clause",
