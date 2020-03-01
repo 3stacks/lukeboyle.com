@@ -17,5 +17,7 @@
         "sourceType": "module"
     },
     "plugins": ["jsx-a11y", "react"],
-    "rules": {}
+    "rules": {
+        "react/no-unescaped-entities": 0
+    }
 }

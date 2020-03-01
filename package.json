@@ -33,6 +33,7 @@
         "@types/mime-types": "^2.1.0",
         "@types/node": "^12.7.3",
         "@types/shelljs": "^0.8.5",
+        "@types/styled-components": "^5.0.1",
         "@typescript-eslint/parser": "^2.21.0",
         "aws-sdk": "^2.329.0",
         "axios": "^0.18.0",
