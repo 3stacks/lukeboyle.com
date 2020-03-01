@@ -94,7 +94,7 @@ padding: 60px 0;
 background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
 color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 	& .title,
-& .blog-post--title {
+	& .blog-post--title {
 	        font-size: 4rem;
 	        text-align: center;
 	}
