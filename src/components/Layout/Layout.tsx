@@ -22,12 +22,14 @@ interface IProps {
 export const Layout = ({ pageName, headChildren, slug, children }: IProps) => {
     const isHomeOrPortfolioPage = slug === 'home' || slug === 'portfolio';
     const [activeTheme, updateActiveTheme] = useState<THEMES>(
-        (localStorage && THEMES[localStorage.getItem('activeTheme')]) ||
+        (typeof window !== 'undefined' &&
+            THEMES[localStorage.getItem('activeTheme')]) ||
             THEMES.DEFAULT
     );
 
     useEffect(() => {
-        localStorage && localStorage.setItem('activeTheme', activeTheme);
+        typeof window !== 'undefined' &&
+            localStorage.setItem('activeTheme', activeTheme);
     }, [activeTheme]);
 
     return (
