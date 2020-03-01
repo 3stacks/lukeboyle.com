@@ -1,4 +1,7 @@
 const yellow = '#ffe01b';
+const nightBlue = '#142634';
+const grey = '#bdc7c1';
+const orange = '#d48872';
 const blue = 'blue';
 const white = '#fff';
 const black = '#111';
@@ -25,10 +28,10 @@ export const ALT_COLORS: ITheme = {
 };
 
 export const NIGHT_MODE_COLORS: ITheme = {
-	PRIMARY: '#2a2438',
-	WHITE: white,
-	TEXT: '#352f44',
-	SECONDARY: '352f44'
+	PRIMARY: nightBlue,
+	WHITE: grey,
+	TEXT: orange,
+	SECONDARY: orange
 };
 
 export enum CUSTOM_PROPERTIES {

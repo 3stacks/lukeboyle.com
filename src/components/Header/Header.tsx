@@ -50,28 +50,28 @@ export default function Header({
                                     }}
                                 />
                             </BareButton>
-                            {/*<BareButton*/}
-                            {/*    style={{*/}
-                            {/*        display: 'flex',*/}
-                            {/*        alignItems: 'center',*/}
-                            {/*        justifyContent: 'center',*/}
-                            {/*        color: CUSTOM_PROPERTIES.COLOR_TEXT*/}
-                            {/*    }}*/}
-                            {/*    onClick={() =>*/}
-                            {/*        onColorChangePressed(*/}
-                            {/*            activeTheme === THEMES.NIGHT*/}
-                            {/*                ? THEMES.DEFAULT*/}
-                            {/*                : THEMES.NIGHT*/}
-                            {/*        )*/}
-                            {/*    }*/}
-                            {/*    title={*/}
-                            {/*        activeTheme === THEMES.NIGHT*/}
-                            {/*            ? 'Switch to light mode'*/}
-                            {/*            : 'Switch to night mode'*/}
-                            {/*    }*/}
-                            {/*>*/}
-                            {/*    <FaMoon style={{ width: 20, height: 20 }} />*/}
-                            {/*</BareButton>*/}
+                            <BareButton
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    color: CUSTOM_PROPERTIES.COLOR_TEXT
+                                }}
+                                onClick={() =>
+                                    onColorChangePressed(
+                                        activeTheme === THEMES.NIGHT
+                                            ? THEMES.DEFAULT
+                                            : THEMES.NIGHT
+                                    )
+                                }
+                                title={
+                                    activeTheme === THEMES.NIGHT
+                                        ? 'Switch to light mode'
+                                        : 'Switch to night mode'
+                                }
+                            >
+                                <FaMoon style={{ width: 20, height: 20 }} />
+                            </BareButton>
                         </>
                     }
                 />
