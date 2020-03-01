@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'gatsby-link';
 import { MY_NAME } from '../../constants';
-import { StyledNav } from './style';
+import { StyledNav } from './SiteNav.style';
 import { routes } from '../../data';
 
 export const SiteNav = ({

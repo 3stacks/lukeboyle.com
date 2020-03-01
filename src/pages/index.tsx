@@ -1,9 +1,9 @@
 import React from 'react';
 import projects from '../data/portfolio-items';
 import { MY_NAME, PAGES } from '../constants';
-import Layout from '../components/layout/layout';
+import Layout from '../components/Layout';
 import MaxWidthContainer from '../components/MaxWidthContainer';
-import { LinkButton } from '../components/button';
+import { LinkButton } from '../components/Button';
 import { RecentStuff, Stuff } from '../index.style';
 import HomeHeadBanner from '../components/HomeHeadBanner';
 

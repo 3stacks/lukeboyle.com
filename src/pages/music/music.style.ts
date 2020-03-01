@@ -14,23 +14,23 @@ export const ArtistList = styled.ol`
 	
 	${bp(
 		450,
+		css`
+			grid-template-columns: 1fr 1fr;
 		`
-		grid-template-columns: 1fr 1fr;
-	`
 	)}
 	
 	${bp(
 		700,
+		css`
+			grid-template-columns: 1fr 1fr 1fr;
 		`
-		grid-template-columns: 1fr 1fr 1fr;
-	`
 	)}
 	
 	${bp(
 		920,
+		css`
+			grid-template-columns: 1fr 1fr 1fr 1fr;
 		`
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-	`
 	)}
 	
 	li {
@@ -96,17 +96,17 @@ export const BodyWrapper = styled.div`
 
 		${bp(
 			WIDTHS.M,
+			css`
+				max-width: 230px;
 			`
-			max-width: 230px;
-		`
 		)}
 
 		${bp(
 			1000,
+			css`
+				position: sticky;
+				top: -1px;
 			`
-			position: sticky;
-			top: -1px;
-		`
 		)}
 
 		h2 {
@@ -114,26 +114,26 @@ export const BodyWrapper = styled.div`
 
 			${bp(
 				1000,
+				css`
+					text-align: left;
+					font-size: 2.8rem;
 				`
-				text-align: left;
-				font-size: 2.8rem;
-			`
 			)}
 
 			${bp(
 				1027,
+				css`
+					font-size: 3rem;
 				`
-				font-size: 3rem;
-			`
 			)}
 		}
 	}
 
 	${bp(
 		WIDTHS.M,
+		css`
+			grid-template-columns: 1fr 3fr;
 		`
-		grid-template-columns: 1fr 3fr;
-	`
 	)}
 
 	ul {
@@ -144,9 +144,9 @@ export const BodyWrapper = styled.div`
 
 		${bp(
 			1000,
+			css`
+				text-align: left;
 			`
-			text-align: left;
-		`
 		)}
 	}
 

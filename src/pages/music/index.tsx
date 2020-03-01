@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import truncate from 'lodash/truncate';
 import { graphql, Link } from 'gatsby';
 import Helmet from 'react-helmet';
-import Layout from '../../components/layout/layout';
+import Layout from '../../components/Layout';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import {
     getDiscogsCollectionItems,

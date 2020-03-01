@@ -18,6 +18,13 @@
     },
     "plugins": ["jsx-a11y", "react"],
     "rules": {
-        "react/no-unescaped-entities": 0
+        "react/no-unescaped-entities": 0,
+        "no-unused-vars": [
+            "warn",
+            {
+                "vars": "all",
+                "varsIgnorePattern": "[I]\\w+"
+            }
+        ]
     }
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import MaxWidthContainer from '../components/MaxWidthContainer';
-import Layout from '../components/layout/layout';
+import Layout from '../components/Layout';
 import BlogHeader from '../components/BlogHeader/BlogHeader';
-import { LinkButton } from '../components/button';
+import { LinkButton } from '../components/Button';
 
 export default function NotFoundError() {
     return (

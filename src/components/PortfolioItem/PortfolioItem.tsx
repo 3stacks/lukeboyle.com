@@ -1,4 +1,4 @@
-import { LinkButton } from '../button';
+import { LinkButton } from '../Button';
 import React from 'react';
 import { IPortfolioItem } from '../../data/portfolio-items';
 import { PortfolioPageItem } from './PortfolioItem.style';

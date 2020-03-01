@@ -1,7 +1,7 @@
 import * as React from 'react';
 import formatDate from 'date-fns/format';
-import Layout from '../layout/layout';
-import BlogPostTitle from '../blog-post-title';
+import Layout from '../Layout';
+import BlogPostTitle from '../BlogPostTitle';
 import Helmet from 'react-helmet';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledPost } from './BlogPost.style';

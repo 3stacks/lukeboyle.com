@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Layout from '../components/layout/layout';
+import Layout from '../components/Layout';
 import portfolioItems from '../data/portfolio-items';
 import MaxWidthContainer from '../components/MaxWidthContainer';
 import HomeHeadBanner from '../components/HomeHeadBanner';

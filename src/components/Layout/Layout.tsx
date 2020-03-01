@@ -8,9 +8,9 @@ import appleMedium from '../../assets/img/apple-icon-120x120.png';
 import appleLarge from '../../assets/img/apple-icon-152x152.png';
 import androidIcon from '../../assets/img/android-icon-192x192.png';
 import favicon from '../../assets/img/favicon-32x32.png';
-import { GlobalLayoutStyle, StyledLayout } from './layout.style';
+import { GlobalLayoutStyle, StyledLayout } from './Layout.style';
 import { THEMES } from '../../styled/colors';
-import './layout.css';
+import './Layout.module.css';
 
 interface IProps {
     pageName?: PAGES;

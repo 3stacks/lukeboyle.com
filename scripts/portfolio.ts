@@ -13,10 +13,10 @@ function generateComponent(acc, curr) {
 import portfolioData, { IPortfolioItem } from '../../data/portfolio-items';
 import Helmet from 'react-helmet';
 import { PortfolioContent } from '../../pages/portfolio.style';
-import Layout from '../../components/layout/layout';
+import Layout from '../../components/Layout';
 import HomeHeadBanner from '../../components/HomeHeadBanner';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
-import {StyledPost} from '../../components/blog-post/style';
+import {StyledPost} from '../../components/BlogPost/BlogPost.style';
 import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 
 	renderer.image = function(href, title, text) {
@@ -44,7 +44,7 @@ import {PORTFOLIO_ITEM_NAMES} from '../../constants';`;
 		path: curr.path,
 		fileName,
 		componentName: camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
-		component: `${imports}\nimport { ExternalLink } from '../../components/button';
+		component: `${imports}\nimport { ExternalLink } from '../../components/Button';
 	
 export const ${camelCaseName} = () => {
 	const portfolioContent : IPortfolioItem = portfolioData.find(data => data.name === PORTFOLIO_ITEM_NAMES.${fileName

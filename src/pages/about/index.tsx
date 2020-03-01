@@ -1,6 +1,6 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import Layout from '../../components/layout/layout';
+import Layout from '../../components/Layout';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import ExternalLink from '../../components/ExternalLink';
 import { PAGES } from '../../constants';

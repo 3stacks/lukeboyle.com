@@ -256,7 +256,7 @@ import Helmet from 'react-helmet';
 import BlogHeader from '${rootDir}/components/BlogHeader';
 import PostArchive from '${rootDir}/components/PostArchive';
 import { BodyWrapper } from '../music/music.style';
-import Layout from '${rootDir}/components/layout/layout';
+import Layout from '${rootDir}/components/Layout';
 import MaxWidthContainer from '${rootDir}/components/MaxWidthContainer';
 import { PAGES } from '${rootDir}/constants';
 ${pages[key].reduce((acc, curr) => {

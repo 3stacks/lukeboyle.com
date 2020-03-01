@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
-import { CUSTOM_PROPERTIES } from '../styled/colors';
+import { CUSTOM_PROPERTIES } from '../../styled/colors';
 
 function getButtonStyles({ isSecondary }) {
     return css`
@@ -48,6 +48,7 @@ export const BareButton = styled.button`
     outline: none;
     cursor: pointer;
     background: transparent;
+    padding: 0;
 `;
 
 export default styled.button<{ isSecondary: boolean }>`
