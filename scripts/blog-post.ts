@@ -30,7 +30,7 @@ function generateComponent(acc, curr) {
 	let imports = `
 import React from 'react';
 import BlogPost from '../../../../components/BlogPost';
-import BlockQuote from '../../../../components/block-quote/block-quote';`;
+import BlockQuote from '../../../../components/BlockQuote';`;
 
 	renderer.image = function(href, title, text) {
 		const rawFilename = getFileNameFromPath(href);

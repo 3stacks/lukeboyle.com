@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { FaQuoteLeft, FaQuoteRight } from 'react-icons/fa';
-import { StyledBlockQuote } from './style';
+import { StyledBlockQuote } from './BlockQuote.style';
 
 export default function BlockQuote({
     citation = '',
