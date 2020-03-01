@@ -4,7 +4,7 @@ import Layout from '../layout/layout';
 import BlogPostTitle from '../blog-post-title';
 import Helmet from 'react-helmet';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
-import { StyledPost } from './style';
+import { StyledPost } from './BlogPost.style';
 import BlogHeader from '../BlogHeader';
 
 export default function BlogPost({

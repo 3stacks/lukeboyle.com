@@ -29,7 +29,7 @@ function generateComponent(acc, curr) {
 	const postContents = curr.contents;
 	let imports = `
 import React from 'react';
-import BlogPost from '../../../../components/blog-post/blog-post';
+import BlogPost from '../../../../components/BlogPost';
 import BlockQuote from '../../../../components/block-quote/block-quote';`;
 
 	renderer.image = function(href, title, text) {
