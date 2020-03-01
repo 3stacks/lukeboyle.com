@@ -12,7 +12,6 @@ import { GlobalLayoutStyle, StyledLayout } from './layout.style';
 import './layout.css';
 
 interface IProps {
-    isHome: boolean;
     pageName?: PAGES;
     slug: string;
     headChildren?: () => React.ReactElement;
@@ -25,14 +24,9 @@ export enum THEMES {
     ALT = 'ALT'
 }
 
-export const Layout = ({
-    pageName,
-    headChildren,
-    isHome,
-    slug,
-    children
-}: IProps) => {
-    const isHomeOrPortfolioPage = isHome || slug === 'portfolio';
+export const Layout = ({ pageName, headChildren, slug, children }: IProps) => {
+    console.log(slug);
+    const isHomeOrPortfolioPage = slug === 'home' || slug === 'portfolio';
     const [activeTheme, updateActiveTheme] = useState<THEMES>(
         (localStorage && THEMES[localStorage.getItem('activeTheme')]) ||
             THEMES.DEFAULT
@@ -46,7 +40,6 @@ export const Layout = ({
         <StyledLayout
             activeTheme={activeTheme}
             className={`layout ${slug}`}
-            isHome={isHome}
             showFullPageColor={isHomeOrPortfolioPage}
         >
             <Helmet title={`${MY_NAME} | Front End Developer`}>
@@ -90,6 +83,7 @@ export const Layout = ({
             <GlobalLayoutStyle />
             <Header
                 isHome={slug === 'home'}
+                slug={slug}
                 activeTheme={activeTheme}
                 onColorChangePressed={updateActiveTheme}
             />

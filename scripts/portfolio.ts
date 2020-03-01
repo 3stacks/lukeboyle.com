@@ -53,7 +53,7 @@ export const ${camelCaseName} = () => {
 		.join('_')});
 		
 	return (
-		<Layout slug="portfolio" isHome={false} headChildren={() => (
+		<Layout slug="portfolio" headChildren={() => (
 			<HomeHeadBanner>
 				${headMarkup}
 			</HomeHeadBanner>

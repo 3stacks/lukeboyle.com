@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import truncate from 'lodash/truncate';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Helmet from 'react-helmet';
 import Layout from '../../components/layout/layout';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
-import { Link } from 'gatsby';
 import {
     getDiscogsCollectionItems,
-    getTopArtists,
-    getTopAlbums
+    getTopAlbums,
+    getTopArtists
 } from '../../../scripts/utils/music';
 import postData from '../../data/music-posts.json';
 import prefetchedArtistData from '../../data/artists.json';
 import prefetchedAlbumData from '../../data/albums.json';
 import prefetchedCrateData from '../../data/crate.json';
-import { BodyWrapper, ArtistList, MainHeader } from './music.style';
+import { ArtistList, BodyWrapper, MainHeader } from './music.style';
+import { PAGES } from '../../constants';
 
 interface IProps {
     data: {
@@ -62,7 +62,7 @@ export default function Music({ data }: IProps) {
     }, []);
 
     return (
-        <Layout isHome={false} slug="music">
+        <Layout isHome={false} slug="music" pageName={PAGES.MUSIC}>
             <Helmet title="Music | Luke Boyle" />
             <MaxWidthContainer>
                 <BodyWrapper>

@@ -14,7 +14,6 @@ export const Index = () => {
         <Layout
             slug="home"
             pageName={PAGES.HOME}
-            isHome
             headChildren={() => (
                 <HomeHeadBanner>
                     <h2>{MY_NAME}</h2>

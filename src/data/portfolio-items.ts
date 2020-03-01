@@ -10,6 +10,7 @@ import { PORTFOLIO_ITEM_NAMES } from '../constants';
 
 export interface IPortfolioItem {
 	name: PORTFOLIO_ITEM_NAMES;
+	id: string;
 	shortName?: string;
 	snippet: string;
 	link: string;
@@ -20,6 +21,7 @@ export interface IPortfolioItem {
 export default [
 	{
 		name: PORTFOLIO_ITEM_NAMES.UNDERWRITING_RULES_ENGINE,
+		id: '1',
 		shortName: 'MLC URE',
 		snippet:
 			'The Underwriting Rules Engine is a product used to accurately underwrite life insurance applications',
@@ -29,6 +31,7 @@ export default [
 	},
 	{
 		name: PORTFOLIO_ITEM_NAMES.GUESSTIMATE,
+		id: '2',
 		snippet:
 			'Break your project up into easier to estimate chunks and total it for more accurate estimations',
 		link: '/portfolio/guesstimate/',
@@ -42,6 +45,7 @@ export default [
 	},
 	{
 		name: PORTFOLIO_ITEM_NAMES.SPECTRUM,
+		id: '3',
 		snippet:
 			'Spectrum is a web-based editor for writing software specification documents.',
 		link: '/portfolio/spectrum/',
@@ -55,6 +59,7 @@ export default [
 	},
 	{
 		name: PORTFOLIO_ITEM_NAMES.DEBT_DESTROYER,
+		id: '4',
 		snippet:
 			'Simulate how long it will take to pay off your debts with support for multiple debts.',
 		link: '/portfolio/debt-destroyer/',
@@ -72,6 +77,7 @@ export default [
 	},
 	{
 		name: PORTFOLIO_ITEM_NAMES.THIS_WEBSITE,
+		id: '5',
 		snippet:
 			'A progressively enhancing static site with offline caching and a unique content version control system',
 		link: '/portfolio/this-website/',
@@ -85,6 +91,7 @@ export default [
 	},
 	{
 		name: PORTFOLIO_ITEM_NAMES.AGANDER,
+		id: '6',
 		snippet:
 			'A productivity app aggregating calendar and tasks. Reduce the noise in your daily agenda.',
 		link: '/portfolio/agander/',
@@ -102,6 +109,7 @@ export default [
 	},
 	{
 		name: PORTFOLIO_ITEM_NAMES.SPLIT_VISUALISER,
+		id: '7',
 		snippet:
 			'A web-app for easily visualising and sharing the muscle engagement of your exercise routine.',
 		link: '/portfolio/split-visualiser/',
@@ -119,6 +127,7 @@ export default [
 	},
 	{
 		name: PORTFOLIO_ITEM_NAMES.VICES,
+		id: '8',
 		snippet:
 			"A micro-application designed to tell you how much money you're wasting on your bad habit.",
 		link: '/portfolio/vices/',

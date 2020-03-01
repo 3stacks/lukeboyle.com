@@ -2,43 +2,39 @@ import React from 'react';
 import Link from 'gatsby-link';
 import { MY_NAME } from '../../constants';
 import { StyledNav } from './style';
+import { routes } from '../../data';
 
-export default function SiteNav({
+export const SiteNav = ({
     isHome = false,
+    slug,
     rightSlot
 }: {
     isHome: boolean;
+    slug: string;
     rightSlot?: React.ReactElement;
-}) {
-    return (
-        <StyledNav>
-            {isHome ? (
-                <h1 className="logo">{MY_NAME}</h1>
-            ) : (
-                <p className="logo">
-                    <Link to="/" rel="home" title="Go back to the home page">
-                        {MY_NAME}
-                    </Link>
-                </p>
-            )}
-            <ul id="menu" className="menu">
-                <li className="item">
-                    <Link to="/">Home</Link>
+}) => (
+    <StyledNav>
+        {isHome ? (
+            <h1 className="logo">{MY_NAME}</h1>
+        ) : (
+            <p className="logo">
+                <Link to="/" rel="home" title="Go back to the home page">
+                    {MY_NAME}
+                </Link>
+            </p>
+        )}
+        <ul id="menu" className="menu">
+            {routes.map(route => (
+                <li
+                    key={route.link}
+                    className={slug === route.slug ? 'item is-active' : 'item'}
+                >
+                    <Link to={route.link}>{route.text}</Link>
                 </li>
-                <li className="item">
-                    <Link to="/portfolio">Portfolio</Link>
-                </li>
-                <li className="item">
-                    <Link to="/blog">Blog</Link>
-                </li>
-                <li className="item">
-                    <Link to="/music">Music</Link>
-                </li>
-                <li className="item">
-                    <Link to="/about">About</Link>
-                </li>
-            </ul>
-            {rightSlot}
-        </StyledNav>
-    );
-}
+            ))}
+        </ul>
+        {rightSlot}
+    </StyledNav>
+);
+
+export default SiteNav;

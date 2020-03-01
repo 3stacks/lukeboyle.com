@@ -1,4 +1,8 @@
-import styled, { createGlobalStyle, css } from 'styled-components';
+import styled, {
+	createGlobalStyle,
+	css,
+	FlattenSimpleInterpolation
+} from 'styled-components';
 import graphikWoff from '../../assets/fonts/Graphik-Regular.woff';
 import graphikWoffTwo from '../../assets/fonts/Graphik-Regular.woff2';
 import publicoWoff from '../../assets/fonts/Publico.woff';
@@ -177,7 +181,7 @@ export const GlobalLayoutStyle = createGlobalStyle`
 
 function yankThoseColors(
 	colorTheme: typeof COLORS | typeof NIGHT_MODE_COLOURS | typeof ALT_COLOURS
-): string {
+): FlattenSimpleInterpolation {
 	return css`
 		--color-primary: ${colorTheme['PRIMARY']};
 		--color-secondary: ${colorTheme['SECONDARY']};
@@ -196,7 +200,10 @@ function getThemeVariables(whichTheme: THEMES) {
 	return yankThoseColors(palettes[whichTheme]);
 }
 
-export const StyledLayout = styled.div`
+export const StyledLayout = styled.div<{
+	activeTheme: THEMES;
+	showFullPageColor: boolean;
+}>`
 	${({ activeTheme }) => getThemeVariables(activeTheme)};
 	margin: 0;
 	display: flex;

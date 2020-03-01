@@ -269,7 +269,7 @@ ${pages[key].reduce((acc, curr) => {
 }, '')}
 				
 export const Blog = () => (
-	<Layout isHome={false} slug="blog" pageName={PAGES.BLOG}>
+	<Layout slug="blog" pageName={PAGES.BLOG}>
 		<Helmet>
 			<title>${
 				index === 0

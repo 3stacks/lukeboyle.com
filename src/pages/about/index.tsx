@@ -7,7 +7,7 @@ import { PAGES } from '../../constants';
 export default class About extends React.Component {
     render() {
         return (
-            <Layout pageName={PAGES.ABOUT} isHome={false} slug="about">
+            <Layout pageName={PAGES.ABOUT} slug="about">
                 <Helmet>
                     <title>About | Luke Boyle</title>
                 </Helmet>

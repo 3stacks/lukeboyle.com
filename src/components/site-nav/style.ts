@@ -30,19 +30,13 @@ export const StyledNav = styled.div`
 		display: none;
 
 		${bp(
-			768,
-			css`
-				display: block;
-			`
-		)}
-
-		${bp(
 			WIDTHS.M,
 			css`
+				display: block;
 				width: 250px;
 				text-align: left;
 			`
-		)}
+		)};
 
 		a {
 			color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
@@ -65,10 +59,10 @@ export const StyledNav = styled.div`
 
 		${bp(
 			WIDTHS.M,
+			css`
+				text-align: right;
 			`
-            text-align: right;
-        `
-		)}
+		)};
 
 		& .item {
 			display: inline-block;
@@ -82,6 +76,13 @@ export const StyledNav = styled.div`
 				color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 				font-size: 1.6rem;
 				border-color: transparent;
+			}
+
+			&.is-active {
+				a {
+					color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
+					background-color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
+				}
 			}
 		}
 	}

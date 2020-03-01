@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
 import { CUSTOM_PROPERTIES } from './colors';
 
 export const ScreenReaderText = styled.span`
@@ -10,7 +10,10 @@ export const NoWrap = styled.span`
 	white-space: nowrap;
 `;
 
-export function bp(size: number, content: string) {
+export function bp(
+	size: number,
+	content: FlattenSimpleInterpolation
+): FlattenSimpleInterpolation {
 	return css`
 		@media (min-width: ${size}px) {
 			${content}
@@ -18,7 +21,7 @@ export function bp(size: number, content: string) {
 	`;
 }
 
-export function blackShift(distance: number): string {
+export function blackShift(distance: number): FlattenSimpleInterpolation {
 	return css`
 		&:hover {
 			background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};

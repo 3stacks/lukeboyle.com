@@ -7,7 +7,7 @@ import { LinkButton } from '../components/button';
 
 export default function NotFoundError() {
     return (
-        <Layout isHome={true} slug="not-found">
+        <Layout slug="home">
             <Helmet>
                 <title>Not Found | Luke Boyle</title>
             </Helmet>

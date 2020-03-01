@@ -27,10 +27,7 @@ export default function BlogPost({
     const HeaderTag = isSinglePostPage ? BlogHeader : 'div';
 
     return (
-        <WrapperContainer
-            isHome={false}
-            slug={isSinglePostPage ? 'blog-single' : ''}
-        >
+        <WrapperContainer slug={isSinglePostPage ? 'blog-single' : ''}>
             {isSinglePostPage && (
                 <Helmet>
                     {canonical !== '' && (

@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { bp } from '../../styled/mixins';
 import { WIDTHS } from '../../styled/sizes';
 
-const MaxWidthContainer = styled.div`
+const MaxWidthContainer = styled.div<{ isSmall?: boolean }>`
     ${props =>
         props.isSmall
             ? css`
