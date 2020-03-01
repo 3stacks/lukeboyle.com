@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { bp } from '../../styled/mixins';
 import { WIDTHS } from '../../styled/sizes';
 
@@ -44,7 +44,12 @@ export const StyledPost = styled.article`
 		margin-top: 0;
 		text-align: center;
 
-		${bp(WIDTHS.M, `font-size: 3.5rem;`)}
+		${bp(
+			WIDTHS.M,
+			css`
+				font-size: 3.5rem;
+			`
+		)}
 	}
 	& .meta {
 		font-size: 1.4rem;
@@ -80,26 +85,5 @@ export const StyledPost = styled.article`
 		margin: 0 auto 2rem;
 		font-size: 1.8rem;
 		text-align: left;
-	}
-
-	& .tags {
-		font-size: 1.4rem;
-		list-style: none;
-		display: inline-block;
-		padding: 0;
-		margin: 0;
-		color: #333;
-
-		li {
-			display: inline-block;
-			padding: 0;
-			margin: 0;
-			&:not(:last-child) {
-				margin-right: 15px;
-			}
-			a {
-				color: #333;
-			}
-		}
 	}
 `;
