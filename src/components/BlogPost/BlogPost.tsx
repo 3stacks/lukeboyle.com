@@ -57,7 +57,7 @@ export default function BlogPost({
                 </HeaderTag>
                 {isSinglePostPage && (
                     <MaxWidthContainer
-                        className={isSinglePostPage ? 'blog-page content' : ''}
+                        className={isSinglePostPage ? 'content' : ''}
                     >
                         <p>
                             <time className="date" dateTime={publishDate}>

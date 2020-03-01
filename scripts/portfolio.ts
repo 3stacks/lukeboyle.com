@@ -12,7 +12,7 @@ function generateComponent(acc, curr) {
 	let imports = `import React from 'react';
 import portfolioData, { IPortfolioItem } from '../../data/portfolio-items';
 import Helmet from 'react-helmet';
-import { PortfolioContent } from '../../pages/portfolio.style';
+import { PortfolioContent } from '../../styled/portfolio.style';
 import Layout from '../../components/Layout';
 import HomeHeadBanner from '../../components/HomeHeadBanner';
 import MaxWidthContainer from '../../components/MaxWidthContainer';

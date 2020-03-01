@@ -103,7 +103,7 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 		let parsedContents = postContents;
 
 		if (contents.metaData.post_type === 'top_list') {
-			imports = `${imports}\nimport { AlbumBlock } from '../../../music/music.style';`;
+			imports = `${imports}\nimport { AlbumBlock } from '../../../../styled/music.style';`;
 			const rawParts = postContents.split('<h2>');
 			const parts = rawParts.slice(1, rawParts.length);
 			parsedContents = parts.reduce((acc, curr) => {
@@ -255,7 +255,7 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 import Helmet from 'react-helmet';
 import BlogHeader from '${rootDir}/components/BlogHeader';
 import PostArchive from '${rootDir}/components/PostArchive';
-import { BodyWrapper } from '../music/music.style';
+import { BodyWrapper } from '../../styled/music.style';
 import Layout from '${rootDir}/components/Layout';
 import MaxWidthContainer from '${rootDir}/components/MaxWidthContainer';
 import { PAGES } from '${rootDir}/constants';
@@ -282,7 +282,7 @@ export const Blog = () => (
 				Boyleing Point
 			</h1>
 		</BlogHeader>
-		<MaxWidthContainer className="blog-page">
+		<MaxWidthContainer>
 			<BodyWrapper>
 				<div className="left">
 					<h3>

@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components';
-import { getFontSize } from '../../styled/utils';
-import { bp } from '../../styled/mixins';
-import { WIDTHS } from '../../styled/sizes';
-import { CUSTOM_PROPERTIES } from '../../styled/colors';
+import { getFontSize } from './utils';
+import { bp } from './mixins';
+import { WIDTHS } from './sizes';
+import { CUSTOM_PROPERTIES } from './colors';
 
 export const ArtistList = styled.ol`
 	list-style: none;
