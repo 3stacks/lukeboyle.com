@@ -50,21 +50,23 @@ export const BareButton = styled.button`
     background: transparent;
 `;
 
-export default styled.button`
+export default styled.button<{ isSecondary: boolean }>`
     ${props => getButtonStyles(props)}
 `;
-export const LinkButton = styled(Link)`
+export const LinkButton = styled(Link)<{ isSecondary: boolean }>`
     ${props => getButtonStyles(props)}
 `;
-export const AnchorButton = styled.a`
+export const AnchorButton = styled.a<{ isSecondary: boolean }>`
     ${props => getButtonStyles(props)}
 `;
 export const ExternalLink = ({
     label,
-    href
+    href,
+    isSecondary
 }: {
     label: string;
     href: string;
+    isSecondary?: boolean;
 }) => {
     return (
         <AnchorButton
@@ -73,6 +75,7 @@ export const ExternalLink = ({
             rel="noopener noreferrer"
             className="link button primary"
             href={href}
+            isSecondary={isSecondary}
         >
             {label}
         </AnchorButton>

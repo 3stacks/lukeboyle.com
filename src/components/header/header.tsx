@@ -3,8 +3,8 @@ import SiteNav from '../site-nav/site-nav';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledHeader } from './style';
 import { BareButton } from '../button';
-import { THEMES } from '../layout/layout';
 import { MdInvertColors } from 'react-icons/md';
+import { CUSTOM_PROPERTIES, THEMES } from '../../styled/colors';
 
 export default function Header({
     isHome = false,
@@ -19,7 +19,7 @@ export default function Header({
 }) {
     const handleButtonPressed = useCallback(() => {
         onColorChangePressed(
-            activeTheme === THEMES.DEFAULT ? THEMES.NIGHT : THEMES.DEFAULT
+            activeTheme === THEMES.DEFAULT ? THEMES.ALT : THEMES.DEFAULT
         );
     }, [activeTheme]);
 
@@ -30,7 +30,15 @@ export default function Header({
                     isHome={isHome}
                     slug={slug}
                     rightSlot={
-                        <BareButton onClick={handleButtonPressed}>
+                        <BareButton
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                color: CUSTOM_PROPERTIES.COLOR_TEXT
+                            }}
+                            onClick={handleButtonPressed}
+                        >
                             <MdInvertColors className="icon" />
                         </BareButton>
                     }

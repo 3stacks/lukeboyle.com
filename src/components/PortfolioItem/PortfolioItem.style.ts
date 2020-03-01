@@ -5,10 +5,8 @@ import { getFontSize } from '../../styled/utils';
 
 export const PortfolioPageItem = styled.div`
 	margin-bottom: 30px;
-	color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
 	display: flex;
 	flex-direction: column;
-	background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
 	border: 2px solid ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
 
 	${blackShift(5)}

@@ -2,6 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../../components/layout/layout';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
+import ExternalLink from '../../components/ExternalLink';
 import { PAGES } from '../../constants';
 
 export default class About extends React.Component {
@@ -16,13 +17,9 @@ export default class About extends React.Component {
                     <ul>
                         <li>
                             Co-founder of{' '}
-                            <a
-                                href="https://stak.digital"
-                                target="_blank"
-                                rel="noreferrer noopener"
-                            >
+                            <ExternalLink href="https://stak.digital">
                                 Stak Digital
-                            </a>
+                            </ExternalLink>
                         </li>
                         <li>Open-source/data privacy advocate</li>
                         <li>Experienced with React, Angular 1.x, and Vue.js</li>
@@ -35,63 +32,39 @@ export default class About extends React.Component {
                     <ul>
                         <li>
                             LinkedIn:{' '}
-                            <a
-                                href="https://www.linkedin.com/in/luke-boyle"
-                                target="_blank"
-                                rel="noreferrer noopener"
-                            >
+                            <ExternalLink href="https://www.linkedin.com/in/luke-boyle">
                                 https://www.linkedin.com/in/luke-boyle
-                            </a>
+                            </ExternalLink>
                         </li>
                         <li>
                             Personal Github:{' '}
-                            <a
-                                href="https://github.com/3stacks"
-                                target="_blank"
-                                rel="noreferrer noopener"
-                            >
+                            <ExternalLink href="https://github.com/3stacks">
                                 https://github.com/3stacks
-                            </a>
+                            </ExternalLink>
                         </li>
                         <li>
                             Stak Github:{' '}
-                            <a
-                                href="https://github.com/stak-digital"
-                                target="_blank"
-                                rel="noreferrer noopener"
-                            >
+                            <ExternalLink href="https://github.com/stak-digital">
                                 https://github.com/stak-digital
-                            </a>
+                            </ExternalLink>
                         </li>
                         <li>
                             npm:{' '}
-                            <a
-                                href="https://npmjs.com/~lukeboyle"
-                                target="_blank"
-                                rel="noreferrer noopener"
-                            >
+                            <ExternalLink href="https://npmjs.com/~lukeboyle">
                                 https://npmjs.com/~lukeboyle
-                            </a>
+                            </ExternalLink>
                         </li>
                         <li>
                             Stack Overflow:{' '}
-                            <a
-                                href="https://stackoverflow.com/users/story/5602665"
-                                target="_blank"
-                                rel="noreferrer noopener"
-                            >
+                            <ExternalLink href="https://stackoverflow.com/users/story/5602665">
                                 https://stackoverflow.com/users/story/5602665
-                            </a>
+                            </ExternalLink>
                         </li>
                         <li>
                             For project enquiries:{' '}
-                            <a
-                                href="https://stak.digital/contact"
-                                target="_blank"
-                                rel="noreferrer noopener"
-                            >
+                            <ExternalLink href="https://stak.digital/contact">
                                 https://stak.digital/contact
-                            </a>
+                            </ExternalLink>
                         </li>
                     </ul>
                     <h2>Tracking &amp; privacy</h2>

@@ -8,10 +8,11 @@ import graphikWoffTwo from '../../assets/fonts/Graphik-Regular.woff2';
 import publicoWoff from '../../assets/fonts/Publico.woff';
 import publicoWoffTwo from '../../assets/fonts/Publico.woff2';
 import {
-	ALT_COLOURS,
+	ALT_COLORS,
 	COLORS,
 	CUSTOM_PROPERTIES,
-	NIGHT_MODE_COLOURS
+	ITheme,
+	NIGHT_MODE_COLORS
 } from '../../styled/colors';
 import {
 	FONT_SIZES,
@@ -21,8 +22,7 @@ import {
 } from '../../styled/sizes';
 import { bp } from '../../styled/mixins';
 import { getFontSize } from '../../styled/utils';
-import { THEMES } from './layout';
-import { which } from 'shelljs';
+import { THEMES } from '../../styled/colors';
 
 export const GlobalLayoutStyle = createGlobalStyle`
 	* {
@@ -179,22 +179,20 @@ export const GlobalLayoutStyle = createGlobalStyle`
 	}
 `;
 
-function yankThoseColors(
-	colorTheme: typeof COLORS | typeof NIGHT_MODE_COLOURS | typeof ALT_COLOURS
-): FlattenSimpleInterpolation {
+function yankThoseColors(colorTheme: ITheme): FlattenSimpleInterpolation {
 	return css`
-		--color-primary: ${colorTheme['PRIMARY']};
-		--color-secondary: ${colorTheme['SECONDARY']};
-		--color-white: ${colorTheme['WHITE']};
-		--color-text: ${colorTheme['TEXT']};
+		--color-primary: ${colorTheme.PRIMARY};
+		--color-secondary: ${colorTheme.SECONDARY};
+		--color-white: ${colorTheme.WHITE};
+		--color-text: ${colorTheme.TEXT};
 	`;
 }
 
 function getThemeVariables(whichTheme: THEMES) {
 	const palettes = {
 		[THEMES.DEFAULT]: COLORS,
-		[THEMES.NIGHT]: NIGHT_MODE_COLOURS,
-		[THEMES.ALT]: ALT_COLOURS
+		[THEMES.NIGHT]: NIGHT_MODE_COLORS,
+		[THEMES.ALT]: ALT_COLORS
 	};
 
 	return yankThoseColors(palettes[whichTheme]);

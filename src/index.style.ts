@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 import { blackShift, bp } from './styled/mixins';
 import { getFontSize } from './styled/utils';
-import { CUSTOM_PROPERTIES } from './styled/colors';
 
 export const RecentStuff = styled.div`
 	display: grid;
@@ -18,13 +17,12 @@ export const RecentStuff = styled.div`
 `;
 
 export const Stuff = styled.div`
-	background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
-	color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 	text-align: center;
 	padding: 20px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	${blackShift(5)}
 
 	a {
 		margin-top: auto;
@@ -42,6 +40,4 @@ export const Stuff = styled.div`
 	h2 {
 		margin-bottom: 0;
 	}
-
-	${blackShift(5)}
 `;

@@ -9,6 +9,7 @@ import appleLarge from '../../assets/img/apple-icon-152x152.png';
 import androidIcon from '../../assets/img/android-icon-192x192.png';
 import favicon from '../../assets/img/favicon-32x32.png';
 import { GlobalLayoutStyle, StyledLayout } from './layout.style';
+import { THEMES } from '../../styled/colors';
 import './layout.css';
 
 interface IProps {
@@ -18,14 +19,7 @@ interface IProps {
     children: any;
 }
 
-export enum THEMES {
-    DEFAULT = 'DEFAULT',
-    NIGHT = 'NIGHT',
-    ALT = 'ALT'
-}
-
 export const Layout = ({ pageName, headChildren, slug, children }: IProps) => {
-    console.log(slug);
     const isHomeOrPortfolioPage = slug === 'home' || slug === 'portfolio';
     const [activeTheme, updateActiveTheme] = useState<THEMES>(
         (localStorage && THEMES[localStorage.getItem('activeTheme')]) ||
