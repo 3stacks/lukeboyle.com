@@ -61,8 +61,7 @@ to make sense. The lyrics are very dour which contrasts
 beautifully with the rather upbeat and playful instrumental. Many songs use this tactic like a trojan horse to insert
 some meaning into poppy songs, because they probably wouldn't top the Billboard 200 if the instrumentals matched the
 lyrics. (See [_Hey Ya_ by Outkast](https://youtu.be/6DyPtvxln2c)). A recent example is in the Purple Mountains
-song _All My Happiness Is Gone_. The late David Berman said in [an interview](http://exclaim.ca/music/article/david_berman_discusses_every_song_on_purple_mountains_self-titled_new_album)
-"it just complexifies the profile of it to have the music and the words at odds". As it turns out, Complicated wasn't
+song _All My Happiness Is Gone_. The late David Berman said in [an interview](http://exclaim.ca/music/article/david_berman_discusses_every_song_on_purple_mountains_self-titled_new_album) "it just complexifies the profile of it to have the music and the words at odds". As it turns out, Complicated wasn't
 originally made for the album<sub>[1]</sub>, but it fits beautifully. Leading on from _Come Back to Earth_ on Swimming
 where he says "I just need a way out of my head", _Complicated_ has the first reference to his difficulties unravelling
 the mess in his head which ties into _Good News_ later in the album.

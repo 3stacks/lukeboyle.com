@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
-import { CUSTOM_PROPERTIES } from '../styled/colors';
-import { bp } from '../styled/mixins';
+import { CUSTOM_PROPERTIES } from './colors';
+import { bp } from './mixins';
 
 export const PortfolioContainer = styled.div`
 	padding-top: 30px;
@@ -35,9 +35,9 @@ export const PortfolioContainer = styled.div`
 `;
 
 export const PortfolioContent = styled.div`
-padding: 60px 0;
-background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
-color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
+	padding: 60px 0;
+	background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
+	color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 	& .title,
 	& .blog-post--title {
 	        font-size: 4rem;

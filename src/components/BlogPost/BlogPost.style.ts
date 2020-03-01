@@ -80,8 +80,8 @@ export const StyledPost = styled.article`
 		margin: 0 auto 2rem;
 		font-size: 1.8rem;
 		text-align: left;
-		padding-top: 60px;
 	}
+
 	& .tags {
 		font-size: 1.4rem;
 		list-style: none;

@@ -22,9 +22,7 @@ export const StyledBlockQuote = styled.blockquote`
 	}
 
 	& .icon {
-		width: 20px;
-		height: 20px;
-		transform: translateY(-10px);
+		width: 30px;
 
 		&:first-of-type {
 			margin-right: 5px;
@@ -32,6 +30,7 @@ export const StyledBlockQuote = styled.blockquote`
 
 		&:last-of-type {
 			margin-left: 5px;
+			align-self: flex-end;
 		}
 	}
 `;

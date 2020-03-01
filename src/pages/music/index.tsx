@@ -13,7 +13,7 @@ import postData from '../../data/music-posts.json';
 import prefetchedArtistData from '../../data/artists.json';
 import prefetchedAlbumData from '../../data/albums.json';
 import prefetchedCrateData from '../../data/crate.json';
-import { ArtistList, BodyWrapper, MainHeader } from './music.style';
+import { ArtistList, BodyWrapper, MainHeader } from '../../styled/music.style';
 import { PAGES } from '../../constants';
 
 interface IProps {
