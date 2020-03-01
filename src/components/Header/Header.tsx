@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import SiteNav from '../site-nav/site-nav';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
-import { StyledHeader } from './style';
+import { StyledHeader } from './Header.style';
 import { BareButton } from '../button';
 import { MdInvertColors } from 'react-icons/md';
 import { CUSTOM_PROPERTIES, THEMES } from '../../styled/colors';

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Helmet from 'react-helmet';
-import Header from '../header/header';
-import Footer from '../footer/footer';
+import Header from '../Header';
+import Footer from '../Footer';
 import { META_DESCRIPTION, MY_NAME, PAGES } from '../../constants';
 import appleSmall from '../../assets/img/apple-icon-76x76.png';
 import appleMedium from '../../assets/img/apple-icon-120x120.png';

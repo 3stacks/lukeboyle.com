@@ -1,9 +1,9 @@
 import React from 'react';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
-import { StyledFooter } from './style';
+import { StyledFooter } from './Footer.style';
 import { FaYinYang } from 'react-icons/fa';
 
-export default function Footer() {
+export const Footer = () => {
     return (
         <StyledFooter>
             <MaxWidthContainer className="inner">
@@ -16,4 +16,6 @@ export default function Footer() {
             </MaxWidthContainer>
         </StyledFooter>
     );
-}
+};
+
+export default Footer;
