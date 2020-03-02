@@ -9,6 +9,8 @@ export const StyledNav = styled.div`
 	align-items: center;
 	flex-wrap: wrap;
 	height: 60px;
+	padding: 16px 0;
+	margin-bottom: 16px;
 
 	a {
 		color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
@@ -17,6 +19,7 @@ export const StyledNav = styled.div`
 	${bp(
 		WIDTHS.M,
 		css`
+			padding: 0;
 			flex-wrap: nowrap;
 		`
 	)}
@@ -50,17 +53,19 @@ export const StyledNav = styled.div`
 	}
 
 	.menu {
+		display: flex;
+		align-items: center;
+		justify-content: center;
 		list-style: none;
 		margin: 0;
 		padding: 0;
 		width: 100%;
-		text-align: center;
 		color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 
 		${bp(
 			WIDTHS.M,
 			css`
-				text-align: right;
+				justify-content: flex-end;
 			`
 		)};
 

@@ -26,52 +26,55 @@ export default function Header({
                     slug={slug}
                     rightSlot={
                         <>
-                            <BareButton
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    color: CUSTOM_PROPERTIES.COLOR_TEXT
-                                }}
-                                onClick={() =>
-                                    onColorChangePressed(
-                                        activeTheme === THEMES.DEFAULT
-                                            ? THEMES.ALT
-                                            : THEMES.DEFAULT
-                                    )
-                                }
-                                title="Switch the color theme"
-                            >
-                                <MdInvertColors
+                            <li className="item">
+                                <BareButton
                                     style={{
-                                        width: 25,
-                                        height: 25,
-                                        margin: '0 10px'
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        color: CUSTOM_PROPERTIES.COLOR_TEXT
                                     }}
-                                />
-                            </BareButton>
-                            <BareButton
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    color: CUSTOM_PROPERTIES.COLOR_TEXT
-                                }}
-                                onClick={() =>
-                                    onColorChangePressed(
+                                    onClick={() =>
+                                        onColorChangePressed(
+                                            activeTheme === THEMES.DEFAULT
+                                                ? THEMES.ALT
+                                                : THEMES.DEFAULT
+                                        )
+                                    }
+                                    title="Switch the color theme"
+                                >
+                                    <MdInvertColors
+                                        style={{
+                                            width: 25,
+                                            height: 25
+                                        }}
+                                    />
+                                </BareButton>
+                            </li>
+                            <li className="item">
+                                <BareButton
+                                    style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        color: CUSTOM_PROPERTIES.COLOR_TEXT
+                                    }}
+                                    onClick={() =>
+                                        onColorChangePressed(
+                                            activeTheme === THEMES.NIGHT
+                                                ? THEMES.DEFAULT
+                                                : THEMES.NIGHT
+                                        )
+                                    }
+                                    title={
                                         activeTheme === THEMES.NIGHT
-                                            ? THEMES.DEFAULT
-                                            : THEMES.NIGHT
-                                    )
-                                }
-                                title={
-                                    activeTheme === THEMES.NIGHT
-                                        ? 'Switch to light mode'
-                                        : 'Switch to night mode'
-                                }
-                            >
-                                <FaMoon style={{ width: 20, height: 20 }} />
-                            </BareButton>
+                                            ? 'Switch to light mode'
+                                            : 'Switch to night mode'
+                                    }
+                                >
+                                    <FaMoon style={{ width: 20, height: 20 }} />
+                                </BareButton>
+                            </li>
                         </>
                     }
                 />
