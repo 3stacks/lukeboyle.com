@@ -62,7 +62,7 @@ export default function Music({ data }: IProps) {
     }, []);
 
     return (
-        <Layout isHome={false} slug="music" pageName={PAGES.MUSIC}>
+        <Layout slug="music" pageName={PAGES.MUSIC}>
             <Helmet title="Music | Luke Boyle" />
             <MaxWidthContainer>
                 <BodyWrapper>

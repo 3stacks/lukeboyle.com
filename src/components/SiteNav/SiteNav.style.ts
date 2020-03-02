@@ -20,6 +20,7 @@ export const StyledNav = styled.div`
 		WIDTHS.M,
 		css`
 			padding: 0;
+			margin-bottom: 0;
 			flex-wrap: nowrap;
 		`
 	)}

@@ -62,7 +62,7 @@ export function resolveBlogPost(path: string): Promise<IBlogPost> {
 
 				metaData = {
 					...metaData,
-					[key]: value.trim()
+					[key.trim()]: value.trim()
 				};
 
 				return;
