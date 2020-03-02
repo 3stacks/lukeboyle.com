@@ -1,12 +1,21 @@
 import styled, { css } from 'styled-components';
-import { bp } from '../../styled/mixins';
+import { blackShift, bp } from '../../styled/mixins';
 import { WIDTHS } from '../../styled/sizes';
 
-export const StyledPost = styled.article`
+export const StyledPost = styled.article<{ isSinglePostPage: boolean }>`
 	max-width: 100%;
 	padding: 0 0 60px;
 	font-size: 1.8rem;
 	text-align: left;
+
+	${({ isSinglePostPage }) =>
+		!isSinglePostPage &&
+		css`
+			padding: 20px;
+			margin-bottom: 20px;
+			text-align: left;
+			${blackShift(5)};
+		`}
 
 	& .is-centred {
 		text-align: center;

@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { getFontSize } from './utils';
-import { bp } from './mixins';
+import { blackShift, bp } from './mixins';
 import { WIDTHS } from './sizes';
 import { CUSTOM_PROPERTIES } from './colors';
 
@@ -91,13 +91,14 @@ export const BodyWrapper = styled.div`
 
 	.left {
 		align-self: start;
-		padding: 0 20px 0 0;
+		padding: 20px;
 		width: 100%;
+		${blackShift(5)};
 
 		${bp(
 			WIDTHS.M,
 			css`
-				max-width: 230px;
+				width: 250px;
 			`
 		)}
 

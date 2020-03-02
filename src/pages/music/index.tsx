@@ -86,13 +86,6 @@ export default function Music({ data }: IProps) {
                         </ul>
                     </div>
                     <div>
-                        {/*<MainHeader>Latest post</MainHeader>*/}
-                        {/*<LatestPostBlock>*/}
-                        {/*    <img src={circlesSrc} alt="" />*/}
-                        {/*    <div>*/}
-                        {/*        <h3>Mac Miller Circles</h3>*/}
-                        {/*    </div>*/}
-                        {/*</LatestPostBlock>*/}
                         <MainHeader>What's new in the crate</MainHeader>
                         <ArtistList>
                             {crateData.map(release => {

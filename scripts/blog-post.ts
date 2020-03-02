@@ -255,6 +255,7 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 import Helmet from 'react-helmet';
 import BlogHeader from '${rootDir}/components/BlogHeader';
 import PostArchive from '${rootDir}/components/PostArchive';
+import BlogPreview from '${rootDir}/components/BlogPreview';
 import { BodyWrapper } from '../../styled/music.style';
 import Layout from '${rootDir}/components/Layout';
 import MaxWidthContainer from '${rootDir}/components/MaxWidthContainer';
@@ -294,7 +295,11 @@ export const Blog = () => (
 					${pages[key].reduce((acc, curr) => {
 						return (
 							acc +
-							`<${curr.componentName} isBlogPage={true} />\n`
+							`<BlogPreview 
+								publishDate={${curr.publishDate}} 
+								title="${curr.postTitle}" 
+								slug="${curr.path.replace('.md', '')}"
+							/>\n`
 						);
 					}, '')}	
 					<ul className="pagination">
