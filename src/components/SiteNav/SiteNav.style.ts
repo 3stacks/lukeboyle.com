@@ -33,11 +33,19 @@ export const StyledNav = styled.div`
 		display: none;
 
 		${bp(
-			WIDTHS.M,
+			600,
 			css`
 				display: block;
+				margin-bottom: 16px;
+			`
+		)}
+
+		${bp(
+			WIDTHS.M,
+			css`
 				width: 250px;
 				text-align: left;
+				margin: 0;
 			`
 		)};
 

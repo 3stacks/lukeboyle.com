@@ -21,8 +21,15 @@ export const BlogHeader = styled.div`
         `
     )}
     ${bp(
+        600,
+        css`
+            padding-top: 150px;
+        `
+    )}
+    ${bp(
         WIDTHS.M,
         css`
+            padding-top: 60px;
             height: 300px;
         `
     )}
