@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
 import formatDate from 'date-fns/format';
-import BlogPostTitle from '../BlogPostTitle';
 import { PostPreview } from './BlogPreview.style';
 
 export const BlogPreview = ({
