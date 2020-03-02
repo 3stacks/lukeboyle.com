@@ -32,8 +32,8 @@ export const SiteNav = ({
                     <Link to={route.link}>{route.text}</Link>
                 </li>
             ))}
+            {rightSlot}
         </ul>
-        {rightSlot}
     </StyledNav>
 );
 
