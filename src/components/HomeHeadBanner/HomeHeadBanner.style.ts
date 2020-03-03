@@ -3,7 +3,7 @@ import { CUSTOM_PROPERTIES } from '../../styled/colors';
 import { bp } from '../../styled/mixins';
 import { WIDTHS } from '../../styled/sizes';
 
-export const StyledBanner = styled.div`
+export const StyledBanner = styled.div<{ hasColor: boolean }>`
 	color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 	width: 100%;
 	display: flex;
@@ -13,6 +13,11 @@ export const StyledBanner = styled.div`
 	flex-wrap: wrap;
 	height: 200px;
 	text-align: center;
+	${({ hasColor }) =>
+		hasColor &&
+		css`
+			background-color: ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
+		`};
 
 	${bp(
 		768,

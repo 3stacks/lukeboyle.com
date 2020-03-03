@@ -5,15 +5,14 @@ import Helmet from 'react-helmet';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledPost } from './BlogPost.style';
 import BlogHeader from '../BlogHeader';
+import HomeHeadBanner from '../HomeHeadBanner/HomeHeadBanner';
 
 export const BlogPost = ({
-    isSinglePostPage,
     children,
     publishDate,
     title,
     canonical
 }: {
-    isSinglePostPage: boolean;
     children: any;
     publishDate: string;
     title: string;
@@ -26,12 +25,10 @@ export const BlogPost = ({
                 <title>{title} | Luke Boyle</title>
             </Helmet>
             <StyledPost>
-                <BlogHeader>
+                <HomeHeadBanner hasColor>
                     <h1>{title}</h1>
-                </BlogHeader>
-                <MaxWidthContainer
-                    className={isSinglePostPage ? 'content' : ''}
-                >
+                </HomeHeadBanner>
+                <MaxWidthContainer className="content">
                     <p>
                         <time className="date" dateTime={publishDate}>
                             {formatDate(publishDate, 'Do of MMMM, YYYY')}

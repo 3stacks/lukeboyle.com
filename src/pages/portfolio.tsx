@@ -12,7 +12,7 @@ export const Portfolio = () => {
         <Layout
             slug="portfolio"
             headChildren={() => (
-                <HomeHeadBanner>
+                <HomeHeadBanner hasColor={false}>
                     <h1>A Sample of My Work</h1>
                 </HomeHeadBanner>
             )}

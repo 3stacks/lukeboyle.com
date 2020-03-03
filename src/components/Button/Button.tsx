@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import styled, { css } from 'styled-components';
 import { CUSTOM_PROPERTIES } from '../../styled/colors';
 
-function getButtonStyles({ isSecondary }) {
+function getButtonStyles({ isSecondary = false }) {
     return css`
         display: inline-flex;
         align-items: center;
@@ -54,10 +54,10 @@ export const BareButton = styled.button`
 export default styled.button<{ isSecondary: boolean }>`
     ${props => getButtonStyles(props)}
 `;
-export const LinkButton = styled(Link)<{ isSecondary: boolean }>`
+export const LinkButton = styled(Link)<{ isSecondary?: boolean }>`
     ${props => getButtonStyles(props)}
 `;
-export const AnchorButton = styled.a<{ isSecondary: boolean }>`
+export const AnchorButton = styled.a<{ isSecondary?: boolean }>`
     ${props => getButtonStyles(props)}
 `;
 export const ExternalLink = ({

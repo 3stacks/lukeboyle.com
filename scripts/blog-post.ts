@@ -145,13 +145,11 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 			component: `
 			${imports}
 				
-			export const ${camelCaseName} = ({isBlogPage}: {isBlogPage: boolean}) => {
+			export const ${camelCaseName} = () => {
 				return (
 					<BlogPost
-						isSinglePostPage={!isBlogPage}
 						title="${contents.title}"
 						publishDate="${contents.metaData.post_date}"
-						slug="/${curr.path.replace('.md', '')}"
 						canonical="${canonicalUrl}"
 					>
 						${parsedContents}
@@ -253,7 +251,7 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 			const rootDir = index === 0 ? '../..' : '../..';
 			const blogPage = `import React from 'react';
 import Helmet from 'react-helmet';
-import BlogHeader from '${rootDir}/components/BlogHeader';
+import HomeHeadBanner from '${rootDir}/components/HomeHeadBanner';
 import PostArchive from '${rootDir}/components/PostArchive';
 import BlogPreview from '${rootDir}/components/BlogPreview';
 import { BodyWrapper } from '../../styled/music.style';
@@ -278,11 +276,11 @@ export const Blog = () => (
 					: `Page ${parseInt(key, 10) - 1} | Luke Boyle's Blog`
 			}</title>
 		</Helmet>
-		<BlogHeader>
+		<HomeHeadBanner hasColor>
 			<h1 className="site-name">
 				Boyleing Point
 			</h1>
-		</BlogHeader>
+		</HomeHeadBanner>
 		<MaxWidthContainer>
 			<BodyWrapper>
 				<div className="left">
@@ -298,7 +296,7 @@ export const Blog = () => (
 							`<BlogPreview 
 								publishDate={${curr.publishDate}} 
 								title="${curr.postTitle}" 
-								slug="${curr.path.replace('.md', '')}"
+								slug="/${curr.path.replace('.md', '')}"
 							/>\n`
 						);
 					}, '')}	

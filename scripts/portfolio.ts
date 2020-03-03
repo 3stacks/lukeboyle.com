@@ -54,7 +54,7 @@ export const ${camelCaseName} = () => {
 		
 	return (
 		<Layout slug="portfolio" headChildren={() => (
-			<HomeHeadBanner>
+			<HomeHeadBanner hasColor={false}>
 				${headMarkup}
 			</HomeHeadBanner>
 		)}>

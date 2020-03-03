@@ -15,7 +15,7 @@ export const Index = () => {
             slug="home"
             pageName={PAGES.HOME}
             headChildren={() => (
-                <HomeHeadBanner>
+                <HomeHeadBanner hasColor={false}>
                     <h2>{MY_NAME}</h2>
                     <p>King of the web</p>
                 </HomeHeadBanner>
