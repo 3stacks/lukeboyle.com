@@ -6,21 +6,26 @@ import shell from 'shelljs';
 import sortBy from 'lodash/sortBy';
 import { getMarkupFromMarkdown, renderer } from './utils/renderer';
 import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
-import { isNotDirectory, resolveBlogPosts } from './utils/blog';
+import {
+	generateBlogPageComponent,
+	generateBlogPostComponent,
+	isNotDirectory,
+	resolveBlogPosts
+} from './utils/blog';
+import { getCanonicalURLFromString } from './utils/string';
 
-function getCanonicalURLFromString(someString: string): string {
-	const canonicalUrlIndex = someString.indexOf('canonical');
+export interface IMetaData {
+	post_type: string;
+	post_date: string;
+	seoTitle: string;
+	seoDescription: string;
+	pageDescription: string;
+}
 
-	if (canonicalUrlIndex < 0) {
-		return null;
-	}
-
-	const almostCanonicalUrl = someString.slice(canonicalUrlIndex + 12);
-
-	return (
-		almostCanonicalUrl.slice(0, almostCanonicalUrl.indexOf('|')).trim() ||
-		''
-	);
+export interface IContents {
+	contents: string;
+	title: string;
+	metaData: IMetaData;
 }
 
 function generateComponent(acc, curr) {
@@ -142,23 +147,14 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 			postCategory: contents.metaData.post_category || 'blog',
 			postType: contents.metaData.post_type || 'text-post',
 			postTitle: contents.metaData.post_title,
-			component: `
-			${imports}
-				
-			export const ${camelCaseName} = () => {
-				return (
-					<BlogPost
-						title="${contents.title}"
-						publishDate="${contents.metaData.post_date}"
-						canonical="${canonicalUrl}"
-					>
-						${parsedContents}
-					</BlogPost>
-				);
-			}
-			
-			export default ${camelCaseName};
-		`
+			snippet: contents.metaData.snippet,
+			component: generateBlogPostComponent(
+				imports,
+				camelCaseName,
+				parsedContents,
+				contents.metaData,
+				canonicalUrl
+			)
 		});
 	}
 
@@ -249,83 +245,13 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 
 		Object.keys(pages).forEach((key, index) => {
 			const rootDir = index === 0 ? '../..' : '../..';
-			const blogPage = `import React from 'react';
-import Helmet from 'react-helmet';
-import HomeHeadBanner from '${rootDir}/components/HomeHeadBanner';
-import PostArchive from '${rootDir}/components/PostArchive';
-import BlogPreview from '${rootDir}/components/BlogPreview';
-import { BodyWrapper } from '../../styled/music.style';
-import Layout from '${rootDir}/components/Layout';
-import MaxWidthContainer from '${rootDir}/components/MaxWidthContainer';
-import { PAGES } from '${rootDir}/constants';
-${pages[key].reduce((acc, curr) => {
-	return (
-		acc +
-		`import ${curr.componentName} from '${
-			index === 0 ? '../' : '../'
-		}${curr.path.replace('.md', '')}';\n`
-	);
-}, '')}
-				
-export const Blog = () => (
-	<Layout slug="blog" pageName={PAGES.BLOG}>
-		<Helmet>
-			<title>${
-				index === 0
-					? 'Blog | Luke Boyle'
-					: `Page ${parseInt(key, 10) - 1} | Luke Boyle's Blog`
-			}</title>
-		</Helmet>
-		<HomeHeadBanner hasColor>
-			<h1 className="site-name">
-				Boyleing Point
-			</h1>
-		</HomeHeadBanner>
-		<MaxWidthContainer>
-			<BodyWrapper>
-				<div className="left">
-					<h3>
-						Post Archive
-					</h3>
-					<PostArchive data={${JSON.stringify(sidebarData)}} />
-				</div>
-				<div>
-					${pages[key].reduce((acc, curr) => {
-						return (
-							acc +
-							`<BlogPreview 
-								publishDate={${curr.publishDate}} 
-								title="${curr.postTitle}" 
-								slug="/${curr.path.replace('.md', '')}"
-							/>\n`
-						);
-					}, '')}	
-					<ul className="pagination">
-						${
-							index > 0
-								? `<li><a href="${
-										key === '2'
-											? '/blog'
-											: `/blog/${parseInt(key, 10) - 2}`
-								  }">Newer</a></li>`
-								: ''
-						}
-						${
-							index !== Object.values(pages).length - 1
-								? `<li className="pagination__next"><a href="/blog/${parseInt(
-										key,
-										10
-								  )}">Older</a></li>`
-								: ''
-						}
-					</ul>							
-				</div>
-			</BodyWrapper>
-		</MaxWidthContainer>
-	</Layout>
-)
-
-export default Blog;`;
+			const blogPage = generateBlogPageComponent(
+				rootDir,
+				key,
+				index,
+				sidebarData,
+				pages
+			);
 
 			const fileName =
 				index === 0

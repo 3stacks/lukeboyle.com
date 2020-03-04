@@ -81,6 +81,7 @@ export const StyledPost = styled.article`
 	}
 
 	& .content {
+		padding: 30px 0 0 0;
 		max-width: 700px;
 		margin: 0 auto 2rem;
 		font-size: 1.8rem;

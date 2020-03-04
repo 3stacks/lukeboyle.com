@@ -1,7 +1,7 @@
 import glob from 'glob';
 import safeGet from 'lodash/get';
-import pick from 'lodash/pick';
 import * as fs from 'fs';
+import { IContents } from '../blog-post';
 
 export function isNotDirectory(path) {
 	return !fs.lstatSync(path).isDirectory();
@@ -13,6 +13,9 @@ interface IMetaData {
 	post_modified: string;
 	post_status: string;
 	post_type: string;
+	seoTitle: string;
+	seoDescription: string;
+	pageDescription: string;
 }
 
 interface IBlogPost {
@@ -82,7 +85,7 @@ export function resolveBlogPost(path: string): Promise<IBlogPost> {
 }
 
 export function resolveBlogPosts(): Promise<IPostArchive> {
-	return new Promise((resolve, reject) => {
+	return new Promise(resolve => {
 		glob('blog-posts/**/*.md', async (err, paths: string[]) => {
 			if (err) {
 				console.error(err);
@@ -122,4 +125,121 @@ export function resolveBlogPosts(): Promise<IPostArchive> {
 			);
 		});
 	});
+}
+
+export function generateBlogPostComponent(
+	imports: string,
+	componentName: string,
+	contents: string,
+	metaData: IMetaData,
+	canonicalUrl: string
+) {
+	return `
+			${imports}
+				
+			export const ${componentName} = () => {
+				return (
+					<BlogPost
+						title="${metaData.post_title}"
+						publishDate="${metaData.post_date}"
+						canonical="${canonicalUrl}"
+						seo={{
+							canonical: ${canonicalUrl ? canonicalUrl : "'',"}
+							pageTitle: ${metaData.seoTitle ? metaData.seoTitle : "'',"}
+							pageDescription: ${metaData.seoDescription ? metaData.pageDescription : "''"}
+						}}
+					>
+						${contents}
+					</BlogPost>
+				);
+			}
+			
+			export default ${componentName};
+		`;
+}
+
+export function generateBlogPageComponent(
+	rootDir: string,
+	key,
+	pageNumber: number,
+	sidebarData: IPostArchive,
+	pages
+) {
+	return `import React from 'react';
+import Helmet from 'react-helmet';
+import HomeHeadBanner from '${rootDir}/components/HomeHeadBanner';
+import PostArchive from '${rootDir}/components/PostArchive';
+import BlogPreview from '${rootDir}/components/BlogPreview';
+import { BodyWrapper } from '../../styled/music.style';
+import Layout from '${rootDir}/components/Layout';
+import MaxWidthContainer from '${rootDir}/components/MaxWidthContainer';
+import { PAGES } from '${rootDir}/constants';
+${pages[key].reduce((acc, curr) => {
+	return (
+		acc +
+		`import ${curr.componentName} from '${
+			pageNumber === 0 ? '../' : '../'
+		}${curr.path.replace('.md', '')}';\n`
+	);
+}, '')}
+				
+export const Blog = () => (
+	<Layout slug="blog" pageName={PAGES.BLOG}>
+		<Helmet>
+			<title>${
+				pageNumber === 0
+					? 'Blog | Luke Boyle'
+					: `Page ${parseInt(key, 10) - 1} | Luke Boyle's Blog`
+			}</title>
+		</Helmet>
+		<HomeHeadBanner hasColor>
+			<h1 className="site-name">
+				Boyleing Point
+			</h1>
+		</HomeHeadBanner>
+		<MaxWidthContainer>
+			<BodyWrapper>
+				<div className="left">
+					<h3>
+						Post Archive
+					</h3>
+					<PostArchive data={${JSON.stringify(sidebarData)}} />
+				</div>
+				<div>
+					${pages[key].reduce((acc, curr) => {
+						return (
+							acc +
+							`<BlogPreview 
+								publishDate={${curr.publishDate}} 
+								title="${curr.postTitle}" 
+								slug="/${curr.path.replace('.md', '')}"
+							/>\n`
+						);
+					}, '')}	
+					<ul className="pagination">
+						${
+							pageNumber > 0
+								? `<li><a href="${
+										key === '2'
+											? '/blog'
+											: `/blog/${parseInt(key, 10) - 2}`
+								  }">Newer</a></li>`
+								: ''
+						}
+						${
+							pageNumber !== Object.values(pages).length - 1
+								? `<li className="pagination__next"><a href="/blog/${parseInt(
+										key,
+										10
+								  )}">Older</a></li>`
+								: ''
+						}
+					</ul>							
+				</div>
+			</BodyWrapper>
+		</MaxWidthContainer>
+	</Layout>
+)
+
+export default Blog;`;
 }
