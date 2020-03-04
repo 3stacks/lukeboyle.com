@@ -8,7 +8,7 @@ export const BlogPreview = ({
     title,
     slug
 }: {
-    publishDate: string;
+    publishDate: number;
     title: string;
     slug: string;
 }) => {
@@ -20,7 +20,7 @@ export const BlogPreview = ({
                 </h2>
                 <p>
                     Posted on the{' '}
-                    <time className="date" dateTime={publishDate}>
+                    <time className="date" dateTime={`${publishDate}`}>
                         {formatDate(publishDate, 'Do of MMMM, YYYY')}
                     </time>
                 </p>
