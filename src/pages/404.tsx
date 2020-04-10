@@ -1,22 +1,28 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import { Link } from 'gatsby';
-import { MaxWidthContainer } from '../styled/utils';
+import MaxWidthContainer from '../components/MaxWidthContainer';
+import Layout from '../components/Layout';
+import { LinkButton } from '../components/Button';
+import HomeHeadBanner from '../components/HomeHeadBanner/HomeHeadBanner';
 
 export default function NotFoundError() {
     return (
-        <div>
+        <Layout slug="home">
             <Helmet>
-                <title>Not Found</title>
+                <title>Not Found | Luke Boyle</title>
             </Helmet>
-            <MaxWidthContainer>
-                <h1>Not Found</h1>
+            <HomeHeadBanner hasColor={false}>
+                <h1 className="site-name">Not found</h1>
+            </HomeHeadBanner>
+            <MaxWidthContainer style={{ textAlign: 'center' }}>
                 <p>
-                    The page you are looking for doesn't exist. I'll be honest,
-                    it was probably my fault.
+                    The page you are looking for doesn&apos;t exist. I&apos;ll
+                    be honest, it was probably my fault.
                 </p>
-                <Link to="/">Go back to Home</Link>
+                <LinkButton isSecondary={false} to="/">
+                    Go back to Home
+                </LinkButton>
             </MaxWidthContainer>
-        </div>
+        </Layout>
     );
 }

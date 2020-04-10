@@ -2,11 +2,11 @@
 
 | Metadata name | Value                                                  |
 | ------------- | ------------------------------------------------------ |
-| post_title | My Muscle Chef: A case study for iterative development |
-| post_date | 2018-11-28 00:00:00 |
-| post_modified | 2018-11-28 00:00:00 |
-| post_status | publish |
-| post_type | revision |
+| post_title    | My Muscle Chef: A case study for iterative development |
+| post_date     | 2018-11-28 00:00:00                                    |
+| post_modified | 2018-11-28 00:00:00                                    |
+| post_status   | publish                                                |
+| post_type     | revision                                               |
 
 Agile development is something that has evolved to become a bit of a joke in the software industry,
 much like an obscure gag amongst friends that evolves over time to the point where the humour is
@@ -18,8 +18,7 @@ side of bizarre, but businesses love it. In my estimation, it’s the idea that 
 collaborative environment. Whether or not it’s just an illusion is another story, but in the age of
 Blockchain, chatbots, and machine learning, Agile is king.
 
-"Agile" in its current sense appears to be derived from the
-[Agile manifesto](http://agilemanifesto.org/principles.html), however, agile practices have roots
+"Agile" in its current sense appears to be derived from the [Agile manifesto](http://agilemanifesto.org/principles.html), however, agile practices have roots
 through the last 4 decades of programming history. Recently I read the
 Mythical Man Month (Brooks, 1975) and in it Brooks extolls the virtues of things like
 disposable prototypes, testing as you build, and always having a working program.

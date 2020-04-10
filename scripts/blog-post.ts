@@ -6,22 +6,26 @@ import shell from 'shelljs';
 import sortBy from 'lodash/sortBy';
 import { getMarkupFromMarkdown, renderer } from './utils/renderer';
 import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
-import { isNotDirectory, resolveBlogPosts } from './utils/blog';
-import music from '../src/pages/music';
+import {
+	generateBlogPageComponent,
+	generateBlogPostComponent,
+	isNotDirectory,
+	resolveBlogPosts
+} from './utils/blog';
+import { getCanonicalURLFromString } from './utils/string';
 
-function getCanonicalURLFromString(someString: string): string {
-	const canonicalUrlIndex = someString.indexOf('canonical');
+export interface IMetaData {
+	post_type: string;
+	post_date: string;
+	seoTitle: string;
+	seoDescription: string;
+	pageDescription: string;
+}
 
-	if (canonicalUrlIndex < 0) {
-		return null;
-	}
-
-	const almostCanonicalUrl = someString.slice(canonicalUrlIndex + 12);
-
-	return (
-		almostCanonicalUrl.slice(0, almostCanonicalUrl.indexOf('|')).trim() ||
-		''
-	);
+export interface IContents {
+	contents: string;
+	title: string;
+	metaData: IMetaData;
 }
 
 function generateComponent(acc, curr) {
@@ -30,8 +34,8 @@ function generateComponent(acc, curr) {
 	const postContents = curr.contents;
 	let imports = `
 import React from 'react';
-import BlogPost from '../../../../components/blog-post/blog-post';
-import BlockQuote from '../../../../components/block-quote/block-quote';`;
+import BlogPost from '../../../../components/BlogPost';
+import BlockQuote from '../../../../components/BlockQuote';`;
 
 	renderer.image = function(href, title, text) {
 		const rawFilename = getFileNameFromPath(href);
@@ -48,13 +52,12 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 		return `<img src={${imageName}} alt="${text}"/>`;
 	};
 
-	// TODO: use regex
 	const postStatusIndex = postContents.indexOf('post_status');
-	const almostPostStatus = postContents.slice(postStatusIndex + 13);
-	const postStatus = almostPostStatus
-		.slice(0, almostPostStatus.indexOf('|'))
-		.replace('|', '')
-		.trim();
+	const afterPostStatusContents = postContents.slice(postStatusIndex);
+	const almostPostStatus = afterPostStatusContents
+		.slice(afterPostStatusContents.indexOf('|'))
+		.slice(2);
+	const postStatus = almostPostStatus.slice(0, almostPostStatus.indexOf(' '));
 
 	const canonicalUrl = getCanonicalURLFromString(postContents) || '';
 
@@ -87,7 +90,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 
 				return Object.assign({}, acc, {
 					metaData: Object.assign({}, acc.metaData, {
-						[key]: value
+						[key.trim()]: value.trim()
 					})
 				});
 			} else {
@@ -99,17 +102,16 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			contents: `${acc.contents || ''}\n${curr}`
 		});
 	}, {});
-	console.log(fileName, postStatus);
 
-	if (postStatus && postStatus !== 'draft') {
+	if (postStatus !== 'draft') {
 		const postContents = getMarkupFromMarkdown(contents.contents);
 		let parsedContents = postContents;
 
-		if (contents.metaData.post_type.trim() === 'top_list') {
-			imports = `${imports}\nimport {AlbumBlock} from '../../../../styled/utils';`;
+		if (contents.metaData.post_type === 'top_list') {
+			imports = `${imports}\nimport { AlbumBlock } from '../../../../styled/music.style';`;
 			const rawParts = postContents.split('<h2>');
 			const parts = rawParts.slice(1, rawParts.length);
-			const contents = parts.reduce((acc, curr) => {
+			parsedContents = parts.reduce((acc, curr) => {
 				const albumTitle = curr.split('</h2>')[0];
 				const artistStart = curr.split('<h3>');
 				const artist = artistStart[artistStart.length - 1].split(
@@ -134,8 +136,6 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 </AlbumBlock>
 `;
 			}, '');
-
-			parsedContents = contents;
 		}
 
 		acc.push({
@@ -147,25 +147,14 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			postCategory: contents.metaData.post_category || 'blog',
 			postType: contents.metaData.post_type || 'text-post',
 			postTitle: contents.metaData.post_title,
-			component: `
-			${imports}
-				
-			export default class ${camelCaseName} extends React.Component {
-				render() {
-					return (
-						<BlogPost
-							isSinglePostPage={!this.props.isBlogPage}
-							title="${contents.title}"
-							publishDate="${contents.metaData.post_date}"
-							slug="/${curr.path.replace('.md', '')}"
-							canonical="${canonicalUrl}"
-						>
-							${parsedContents}
-						</BlogPost>
-					);
-				}
-			}
-		`
+			snippet: contents.metaData.snippet,
+			component: generateBlogPostComponent(
+				imports,
+				camelCaseName,
+				parsedContents,
+				contents.metaData,
+				canonicalUrl
+			)
 		});
 	}
 
@@ -190,7 +179,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			'publishDate'
 		);
 		const musicPosts = componentsSortedByDate.filter(component => {
-			return component.postCategory.trim() === 'music';
+			return component.postCategory === 'music';
 		});
 
 		shell.rm('-rf', path.resolve(`${__dirname}/../src/pages/blog-posts`));
@@ -200,7 +189,7 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 				'-p',
 				path.resolve(
 					`${__dirname}/../src/pages/${component.path.replace(
-						`/${component.fileName}.md`,
+						`/${component.fileName}`,
 						''
 					)}`
 				)
@@ -221,16 +210,12 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 			JSON.stringify(
 				musicPosts
 					.reverse()
-					.map(({ postTitle, path, fileName, componentName }) => {
-						console.log(fileName);
-
-						return {
-							path,
-							fileName,
-							componentName,
-							postTitle
-						};
-					}),
+					.map(({ postTitle, path, fileName, componentName }) => ({
+						path,
+						fileName,
+						componentName,
+						postTitle
+					})),
 				null,
 				'\t'
 			)
@@ -260,85 +245,13 @@ import BlockQuote from '../../../../components/block-quote/block-quote';`;
 
 		Object.keys(pages).forEach((key, index) => {
 			const rootDir = index === 0 ? '../..' : '../..';
-			const blogPage = `import React from 'react';
-import Helmet from 'react-helmet';
-import {BlogHeader} from '${rootDir}/styled/utils';
-import PostArchive from '${rootDir}/components/post-archive/post-archive';
-import {HomeHeadBanner} from '${rootDir}/pages/index';
-import {BodyWrapper} from '${rootDir}/pages/music';
-import Layout from '${rootDir}/components/layout/layout';
-import {MaxWidthContainer} from '${rootDir}/styled/utils';
-${pages[key].reduce((acc, curr) => {
-	return (
-		acc +
-		`import ${curr.componentName} from '${
-			index === 0 ? '../' : '../'
-		}${curr.path.replace('.md', '')}';\n`
-	);
-}, '')}
-				
-export default class Blog extends React.Component {
-	render() {
-		return (
-			<Layout slug="blog">
-				<Helmet>
-					<title>${
-						index === 0
-							? 'Blog | Luke Boyle'
-							: `Page ${parseInt(key, 10) - 1} | Blog`
-					}</title>
-				</Helmet>
-				<BlogHeader>
-					<h1 className="site-name">
-						Boyleing Point
-					</h1>
-				</BlogHeader>
-				<MaxWidthContainer className="blog-page">
-					<BodyWrapper>
-						<div className="left">
-							<h3>
-								Post Archive
-							</h3>
-							<PostArchive data={${JSON.stringify(sidebarData)}} />
-						</div>
-						<div>
-							${pages[key].reduce((acc, curr) => {
-								return (
-									acc +
-`							<${curr.componentName} isBlogPage={true} />\n`
-								);
-							}, '')}	
-							<ul className="pagination">
-								${
-									index > 0
-										? `<li><a href="${
-												key === '2'
-													? '/blog'
-													: `/blog/${parseInt(
-															key,
-															10
-													  ) - 2}`
-										  }">Newer</a></li>`
-										: ''
-								}
-								${
-									index !==
-									Object.values(pages).length - 1
-										? `<li className="pagination__next"><a href="/blog/${parseInt(
-												key,
-												10
-										  )}">Older</a></li>`
-										: ''
-								}
-							</ul>							
-						</div>
-					</BodyWrapper>
-				</MaxWidthContainer>
-			</Layout>
-		);
-	}
-}
-		`;
+			const blogPage = generateBlogPageComponent(
+				rootDir,
+				key,
+				index,
+				sidebarData,
+				pages
+			);
 
 			const fileName =
 				index === 0

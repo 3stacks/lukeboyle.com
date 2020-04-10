@@ -2,12 +2,13 @@
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
-        "lib": ["dom", "es6"],
+        "lib": ["dom", "es6", "es2017"],
         "outDir": "dist",
         "rootDir": "./",
         "removeComments": true,
         "esModuleInterop": true,
-        "jsx": "react"
+        "jsx": "react",
+        "typeRoots": ["./node_modules/@types"]
     },
     "exclude": ["node_modules"],
     "include": ["src"]

@@ -3,6 +3,14 @@ import formatDate from 'date-fns/format';
 
 export const renderer = new marked.Renderer();
 
+renderer.list = (body, ordered, start) => {
+	const tag = ordered ? 'ol' : 'ul';
+
+	return `<${tag} ${start ? `start={${start}}` : ''}>
+			${body}
+		</${tag}>`;
+};
+
 renderer.link = (href, title, text) => {
 	if (href.startsWith('/')) {
 		return `<a href="${href}" ${

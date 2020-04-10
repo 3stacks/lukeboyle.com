@@ -1,14 +1,12 @@
-
 # Agander 1.0 is now out.
 
-
-| Metadata name | Value |
-| --------- | ------ |
-| post_title | Agander 1.0 is now out. | 
-| post_date | 2016-04-11 14:05:20 | 
-| post_modified | 2016-04-11 14:05:20 | 
-| post_status | publish | 
-| post_type | post |
+| Metadata name | Value                   |
+| ------------- | ----------------------- |
+| post_title    | Agander 1.0 is now out. |
+| post_date     | 2016-04-11 14:05:20     |
+| post_modified | 2016-04-11 14:05:20     |
+| post_status   | publish                 |
+| post_type     | post                    |
 
 Agander started in November 2015 with a vision to unify several of the
 productivity services I use. With Agander I could now have one tab where
@@ -21,4 +19,3 @@ a struggle, but the outcome is the true reward. As of Version 0.1 in December
 entered a brief period of refactoring and optimisation, after which point, the
 next set of integrations will be developed to create a more comprehensive
 platform.
-        
