@@ -6,11 +6,13 @@ import { PostPreview } from './BlogPreview.style';
 export const BlogPreview = ({
     publishDate,
     title,
-    slug
+    slug,
+    author
 }: {
     publishDate: number;
     title: string;
     slug: string;
+    author: string;
 }) => {
     return (
         <PostPreview>
@@ -19,8 +21,8 @@ export const BlogPreview = ({
                     <Link to={slug}>{title}</Link>
                 </h2>
                 <p>
-                    Posted on the{' '}
-                    <time className="date" dateTime={`${publishDate}`}>
+                    Posted by {author} on the{' '}
+                    <time className="date" dateTime={publishDate}>
                         {formatDate(publishDate, 'Do of MMMM, YYYY')}
                     </time>
                 </p>

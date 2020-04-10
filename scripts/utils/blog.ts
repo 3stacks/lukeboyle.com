@@ -215,6 +215,7 @@ export const Blog = () => (
 						return (
 							acc +
 							`<BlogPreview 
+								author="${curr.postAuthor}"
 								publishDate={${curr.publishDate}} 
 								title="${curr.postTitle}" 
 								slug="/${curr.path.replace('.md', '')}"
