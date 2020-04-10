@@ -181,7 +181,7 @@ export interface IDiscogsCollectionResponse {
 
 export async function getTopAlbums(apiKey: string): Promise<ILastFMAlbum[]> {
 	const response: AxiosResponse<ILastFMTopAlbumResponse> = await axios.get(
-		`https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&limit=8&period=1month&user=lookboil&api_key=${apiKey}&format=json`
+		`https://ws.audioscrobbler.com/2.0/?method=user.gettopalbums&limit=8&period=1month&user=DlSGUSTING&api_key=${apiKey}&format=json`
 	);
 
 	return response.data.topalbums.album;
@@ -189,7 +189,7 @@ export async function getTopAlbums(apiKey: string): Promise<ILastFMAlbum[]> {
 
 export async function getTopArtists(apiKey: string): Promise<ILastFMArtist[]> {
 	const response: AxiosResponse<ILastFMTopArtistResponse> = await axios.get(
-		`https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=8&period=1month&user=lookboil&api_key=${apiKey}&format=json`
+		`https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&limit=8&period=1month&user=DlSGUSTING&api_key=${apiKey}&format=json`
 	);
 
 	return response.data.topartists.artist;
