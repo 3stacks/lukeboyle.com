@@ -33,8 +33,9 @@ cutter program that includes resisted sprints. The exercise selection with OLAD 
 up to you and should be based on your goals, but Alec suggests including a squat, hip hinge,
 loaded carry, horizontal press, vertical press, upper body pull.
 
-For rep schemes and progression I turned to Dan John's [one lift a day program](https://www.t-nation.com/workouts/one-lift-a-day-program)
-This program is built on 4 week cycles like so:
+For rep schemes and progression I turned to Dan John's
+[one lift a day program](https://www.t-nation.com/workouts/one-lift-a-day-program) This
+program is built on 4 week cycles like so:
 
 -   Week 1: 7 sets of 5
 -   Week 2: 6 sets of 3
