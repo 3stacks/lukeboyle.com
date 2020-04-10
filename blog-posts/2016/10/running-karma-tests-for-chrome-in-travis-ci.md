@@ -7,6 +7,7 @@
 | post_modified | 2016-10-13 02:58:59                         |
 | post_status   | inherit                                     |
 | post_type     | revision                                    |
+| post_author   | Luke Boyle                                  |
 
 A quick-start guide for running Karma tests for Chrome in Travis CI. When you run Travis on a Node.js project, Travis will - by default - run `npm install` and then `npm test`. I first ran into the issue in an Angular project that had tests triggered in the `prepublish` command. My CI build failed and I decided to remove the prepublish hook and change the name of my test script until I had the time to come back. For months I've been avoiding the issue, but I have finally solved it. The Karma docs suggest that you can run the tests in Firefox with the --browsers flag (see [https://karma-runner.github.io/0.8/plus/Travis-CI.html](https://karma-runner.github.io/0.8/plus/Travis-CI.html)). Travis has since updated so that Chrome can be loaded into the environment. For this to work, you'll need to make changes to your `travis.yml` file and your karma config file.
 

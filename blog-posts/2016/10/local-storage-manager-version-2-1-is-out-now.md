@@ -7,6 +7,7 @@
 | post_modified | 2016-10-19 04:47:24                          |
 | post_status   | inherit                                      |
 | post_type     | revision                                     |
+| post_author   | Luke Boyle                                   |
 
 The latest version of local-storage-manager has had the internal interface greatly improved for tidiness and best practice, and now has the new Namespace feature. Traditionally, you would have to store your data like so:
 

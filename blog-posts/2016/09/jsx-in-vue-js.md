@@ -7,6 +7,7 @@
 | post_modified | 2016-09-25 12:10:58 |
 | post_status   | inherit             |
 | post_type     | revision            |
+| post_author   | Luke Boyle          |
 
 I've recently been experimenting with using jsx in Vue, the Vue jsx plugin for babel and using that instead of the standard template pattern. Since there are really not any official docs for the plugin, I'm going to run through a quick usage guide.
 

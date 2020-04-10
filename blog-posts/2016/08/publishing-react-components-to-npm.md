@@ -7,6 +7,7 @@
 | post_modified | 2016-08-11 01:18:56                |
 | post_status   | publish                            |
 | post_type     | post                               |
+| post_author   | Luke Boyle                         |
 
 Having built and published a few React components to npm, in keeping with the plug-n-play spirit of npm, I have what I
 believe to be a very simple implementation for both the development and installation of components. I published a

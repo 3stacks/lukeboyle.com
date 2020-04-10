@@ -1,15 +1,21 @@
 import glob from 'glob';
 import safeGet from 'lodash/get';
 import * as fs from 'fs';
-import { IContents } from '../blog-post';
 
 export function isNotDirectory(path) {
 	return !fs.lstatSync(path).isDirectory();
 }
 
-interface IMetaData {
+export interface IContents {
+	contents: string;
+	title: string;
+	metaData: IMetaData;
+}
+
+export interface IMetaData {
 	post_title: string;
 	post_date: string;
+	post_author: string;
 	post_modified: string;
 	post_status: string;
 	post_type: string;
@@ -134,28 +140,27 @@ export function generateBlogPostComponent(
 	metaData: IMetaData,
 	canonicalUrl: string
 ) {
-	return `
-			${imports}
-				
-			export const ${componentName} = () => {
-				return (
-					<BlogPost
-						title="${metaData.post_title}"
-						publishDate="${metaData.post_date}"
-						canonical="${canonicalUrl}"
-						seo={{
-							canonical: ${canonicalUrl ? canonicalUrl : "'',"}
-							pageTitle: ${metaData.seoTitle ? metaData.seoTitle : "'',"}
-							pageDescription: ${metaData.seoDescription ? metaData.pageDescription : "''"}
-						}}
-					>
-						${contents}
-					</BlogPost>
-				);
-			}
-			
-			export default ${componentName};
-		`;
+	return `${imports}
+	
+export const ${componentName} = () => {
+	return (
+		<BlogPost
+			title="${metaData.post_title}"
+			publishDate="${metaData.post_date}"
+			author="${metaData.post_author}"
+			canonical="${canonicalUrl}"
+			seo={{
+				canonical: ${canonicalUrl ? canonicalUrl : "'',"}
+				pageTitle: ${metaData.seoTitle ? metaData.seoTitle : "'',"}
+				pageDescription: ${metaData.seoDescription ? metaData.pageDescription : "''"}
+			}}
+		>
+			${contents}
+		</BlogPost>
+	);
+}
+
+export default ${componentName};`;
 }
 
 export function generateBlogPageComponent(

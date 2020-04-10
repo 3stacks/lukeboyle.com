@@ -6,7 +6,7 @@
 | post_date     | 2016-03-19 13:08:01                                  |
 | post_modified | 2016-03-19 13:08:01                                  |
 | post_status   | publish                                              |
-| post_type     | post                                                 |
+| post_author   | Luke Boyle                                           |
 
 After a long battle with the weird Google Task Javascript API I've established a module for [Agander](http://agander.io) that has the ability to:
 

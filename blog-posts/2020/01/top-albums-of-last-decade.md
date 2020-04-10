@@ -8,6 +8,7 @@
 | post_status   | publish                                  |
 | post_type     | top_list                                 |
 | post_category | music                                    |
+| post_author   | Luke Boyle                               |
 
 ## Father John Misty
 

@@ -8,6 +8,7 @@
 | post_status   | publish              |
 | post_type     | revision             |
 | post_category | music                |
+| post_author   | Luke Boyle           |
 
 ![Circles album cover](/blog-posts/images/circles-splash.jpg)
 

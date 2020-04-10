@@ -7,6 +7,7 @@
 | post_modified | 2016-12-14 02:41:39                                           |
 | post_status   | inherit                                                       |
 | post_type     | revision                                                      |
+| post_author   | Luke Boyle                                                    |
 
 I have had my eyes on Argus Eyes ([http://arguseyes.io/](http://arguseyes.io/)) for quite some time and now I have the time to implement it at work. The interface is rather simple. You define your browser breakpoints, the pages, and the parts of the pages you wish to capture. All `components` are defined with a name and a selector. For example, ".site-nav" or "body". You define all components in the components array, but then you can cherry pick which ones are used on each page. Such as, homepage may use the hero component, but about may not.
 

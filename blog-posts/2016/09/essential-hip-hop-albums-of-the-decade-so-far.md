@@ -8,6 +8,7 @@
 | post_status   | inherit                                        |
 | post_type     | revision                                       |
 | post_category | music                                          |
+| post_author   | Luke Boyle                                     |
 
 ## 2010
 

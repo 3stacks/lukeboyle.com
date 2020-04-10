@@ -7,6 +7,7 @@
 | post_modified | 2018-12-21 00:00:00            |
 | post_status   | publish                        |
 | post_type     | revision                       |
+| post_author   | Luke Boyle                     |
 
 I do a lot of complaining about privacy and annoying products, but there
 are some that I believe really do a good job. These are some companies

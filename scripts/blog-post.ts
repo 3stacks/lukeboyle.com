@@ -9,24 +9,11 @@ import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
 import {
 	generateBlogPageComponent,
 	generateBlogPostComponent,
+	IMetaData,
 	isNotDirectory,
 	resolveBlogPosts
 } from './utils/blog';
 import { getCanonicalURLFromString } from './utils/string';
-
-export interface IMetaData {
-	post_type: string;
-	post_date: string;
-	seoTitle: string;
-	seoDescription: string;
-	pageDescription: string;
-}
-
-export interface IContents {
-	contents: string;
-	title: string;
-	metaData: IMetaData;
-}
 
 function generateComponent(acc, curr) {
 	const fileName = getFileNameFromPath(curr.path);
@@ -146,6 +133,7 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 			publishDate: new Date(contents.metaData.post_date).getTime(),
 			postCategory: contents.metaData.post_category || 'blog',
 			postType: contents.metaData.post_type || 'text-post',
+			postAuthor: contents.metaData.post_author,
 			postTitle: contents.metaData.post_title,
 			snippet: contents.metaData.snippet,
 			component: generateBlogPostComponent(

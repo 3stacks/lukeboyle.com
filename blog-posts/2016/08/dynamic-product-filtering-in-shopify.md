@@ -7,6 +7,7 @@
 | post_modified | 2016-08-11 00:37:34                  |
 | post_status   | publish                              |
 | post_type     | post                                 |
+| post_author   | Luke Boyle                           |
 
 Disclaimer: Shopify is not good. I recommend steering clear and opting for one of many alternatives. It's an extremely closed platform that doesn't encourage innovation and naturally leans towards bad practice. Given this, if you still have to use it, read on.
 

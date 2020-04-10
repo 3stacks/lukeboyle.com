@@ -9,11 +9,13 @@ import HomeHeadBanner from '../HomeHeadBanner/HomeHeadBanner';
 export const BlogPost = ({
     children,
     publishDate,
+    author,
     title,
     seo: { canonical, pageTitle, pageDescription }
 }: {
     children: any;
     publishDate: string;
+    author: string;
     title: string;
     canonical: string;
     seo: {
@@ -29,7 +31,7 @@ export const BlogPost = ({
                 {pageDescription && (
                     <meta name="description" content={pageDescription} />
                 )}
-                <meta name="author" content="Luke Boyle" />
+                <meta name="author" content={author} />
                 <title>{pageTitle || title} | Luke Boyle</title>
             </Helmet>
             <StyledPost>
@@ -38,6 +40,7 @@ export const BlogPost = ({
                 </HomeHeadBanner>
                 <MaxWidthContainer className="content">
                     <p>
+                        Posted by {author} on the{' '}
                         <time className="date" dateTime={publishDate}>
                             {formatDate(publishDate, 'Do of MMMM, YYYY')}
                         </time>

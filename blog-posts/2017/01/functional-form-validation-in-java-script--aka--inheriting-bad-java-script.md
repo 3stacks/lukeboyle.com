@@ -7,6 +7,7 @@
 | post_modified | 2017-01-30 01:46:32                                                       |
 | post_status   | inherit                                                                   |
 | post_type     | revision                                                                  |
+| post_author   | Luke Boyle                                                                |
 
 I was recently given the job of rebuilding a particularly bad landing page from an external company. Apart from class names, styles and markup being all over the place, there was a particularly obnoxious form validation script sitting in the middle of the page. An excerpt of the script can be seen below, and this documents the process I took when reviving the JS side of things.
 

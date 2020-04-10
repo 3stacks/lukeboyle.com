@@ -8,6 +8,7 @@
 | post_status   | inherit               |
 | post_type     | top_list              |
 | post_category | music                 |
+| post_author   | Luke Boyle            |
 
 ## Scum With Boundaries
 
