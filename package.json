@@ -16,7 +16,7 @@
     "license": "BSD-3-Clause",
     "dependencies": {
         "date-fns": "^1.29.0",
-        "gatsby-link": "latest",
+        "gatsby-link": "^2.3.2",
         "react": "^16.13.0",
         "react-accessible-accordion": "^3.0.0",
         "react-dom": "^16.13.0",

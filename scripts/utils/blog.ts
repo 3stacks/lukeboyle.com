@@ -172,6 +172,7 @@ export function generateBlogPageComponent(
 ) {
 	return `import React from 'react';
 import Helmet from 'react-helmet';
+import Link from 'gatsby-link';
 import HomeHeadBanner from '${rootDir}/components/HomeHeadBanner';
 import PostArchive from '${rootDir}/components/PostArchive';
 import BlogPreview from '${rootDir}/components/BlogPreview';
@@ -214,30 +215,39 @@ export const Blog = () => (
 					${pages[key].reduce((acc, curr) => {
 						return (
 							acc +
-							`<BlogPreview 
-								author="${curr.postAuthor}"
-								publishDate={${curr.publishDate}} 
-								title="${curr.postTitle}" 
-								slug="/${curr.path.replace('.md', '')}"
-							/>\n`
+							`
+<BlogPreview 
+	author="${curr.postAuthor}"
+	publishDate={${curr.publishDate}} 
+	title="${curr.postTitle}" 
+	slug="/${curr.path.replace('.md', '')}"
+/>`
 						);
 					}, '')}	
 					<ul className="pagination">
 						${
 							pageNumber > 0
-								? `<li><a href="${
+								? `<li><Link to="${
 										key === '2'
 											? '/blog'
 											: `/blog/${parseInt(key, 10) - 2}`
-								  }">Newer</a></li>`
+								  }">&lt;</Link></li>`
 								: ''
 						}
+						${Object.entries(pages).reduce((acc, curr, index) => {
+							return `${acc}
+<li>
+	<Link to="/blog/${index}">
+		${index}
+	</Link>
+</li>`;
+						}, '')}
 						${
 							pageNumber !== Object.values(pages).length - 1
-								? `<li className="pagination__next"><a href="/blog/${parseInt(
+								? `<li><Link to="/blog/${parseInt(
 										key,
 										10
-								  )}">Older</a></li>`
+								  )}">&gt;</Link></li>`
 								: ''
 						}
 					</ul>							

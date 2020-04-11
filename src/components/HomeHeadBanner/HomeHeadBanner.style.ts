@@ -23,7 +23,7 @@ export const StyledBanner = styled.div<{ hasColor: boolean }>`
 		768,
 		css`
 			padding-top: 0;
-			height: 300px;
+			height: 200px;
 		`
 	)}
 

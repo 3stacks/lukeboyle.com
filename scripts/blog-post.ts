@@ -250,6 +250,7 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 				`${__dirname}/../blog-posts/images`,
 				`${__dirname}/../src/pages/blog-posts/images`
 			);
+			console.log(`Writing to ${fileName}`);
 			fs.writeFileSync(path.resolve(fileName), blogPage);
 		});
 	});

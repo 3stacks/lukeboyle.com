@@ -18,7 +18,7 @@ export const PortfolioContainer = styled.div`
 		margin-bottom: 30px;
 
 		${bp(
-			600,
+			515,
 			css`
 				grid-template-columns: 1fr 1fr;
 				grid-column-gap: 30px;
@@ -26,7 +26,7 @@ export const PortfolioContainer = styled.div`
 		)}
 
 		${bp(
-			800,
+			780,
 			css`
 				grid-template-columns: 1fr 1fr 1fr;
 			`
@@ -41,6 +41,7 @@ export const PortfolioContent = styled.div`
 	& .title,
 	& .blog-post--title {
 	        font-size: 4rem;
+	        
 	        text-align: center;
 	}
 	& .content {
@@ -56,6 +57,7 @@ export const PortfolioContent = styled.div`
 			img {
 				max-width: 100%;
 			}
+			
 	}
 	& .buttons {
 	        display: flex;
