@@ -1,11 +1,3 @@
-import aganderSrc from '../assets/img/portfolio/thumbs/agander.jpg';
-import ureSrc from '../assets/img/portfolio/thumbs/ure.jpg';
-import spectrumSrc from '../assets/img/portfolio/thumbs/spectrum.png';
-import splitSrc from '../assets/img/portfolio/thumbs/split.png';
-import vicesSrc from '../assets/img/portfolio/thumbs/vices.png';
-import guesstimateSrc from '../assets/img/portfolio/thumbs/guesstimate.jpg';
-import websiteSrc from '../assets/img/portfolio/thumbs/website.png';
-import debtDestroyerSrc from '../assets/img/portfolio/thumbs/debt-destroyer.jpg';
 import { PORTFOLIO_ITEM_NAMES } from '../constants';
 
 export interface IPortfolioItem {
@@ -14,7 +6,6 @@ export interface IPortfolioItem {
 	shortName?: string;
 	snippet: string;
 	link: string;
-	thumb: string;
 	links: { href: string; label: string }[];
 }
 
@@ -26,7 +17,6 @@ export default [
 		snippet:
 			'The Underwriting Rules Engine is a product used to accurately underwrite life insurance applications',
 		link: '/portfolio/underwriting-rules-engine/',
-		thumb: ureSrc,
 		links: []
 	},
 	{
@@ -35,7 +25,6 @@ export default [
 		snippet:
 			'Break your project up into easier to estimate chunks and total it for more accurate estimations',
 		link: '/portfolio/guesstimate/',
-		thumb: guesstimateSrc,
 		links: [
 			{
 				label: 'View live site',
@@ -49,7 +38,6 @@ export default [
 		snippet:
 			'Spectrum is a web-based editor for writing software specification documents.',
 		link: '/portfolio/spectrum/',
-		thumb: spectrumSrc,
 		links: [
 			{
 				label: 'Try the beta',
@@ -63,7 +51,6 @@ export default [
 		snippet:
 			'Simulate how long it will take to pay off your debts with support for multiple debts.',
 		link: '/portfolio/debt-destroyer/',
-		thumb: debtDestroyerSrc,
 		links: [
 			{
 				label: 'View live site',
@@ -81,7 +68,6 @@ export default [
 		snippet:
 			'A progressively enhancing static site with offline caching and a unique content version control system',
 		link: '/portfolio/this-website/',
-		thumb: websiteSrc,
 		links: [
 			{
 				label: 'See repository',
@@ -95,7 +81,6 @@ export default [
 		snippet:
 			'A productivity app aggregating calendar and tasks. Reduce the noise in your daily agenda.',
 		link: '/portfolio/agander/',
-		thumb: aganderSrc,
 		links: [
 			{
 				label: 'View live site',
@@ -113,7 +98,6 @@ export default [
 		snippet:
 			'A web-app for easily visualising and sharing the muscle engagement of your exercise routine.',
 		link: '/portfolio/split-visualiser/',
-		thumb: splitSrc,
 		links: [
 			{
 				label: 'View live site',
@@ -131,7 +115,6 @@ export default [
 		snippet:
 			"A micro-application designed to tell you how much money you're wasting on your bad habit.",
 		link: '/portfolio/vices/',
-		thumb: vicesSrc,
 		links: [
 			{
 				label: 'View live site',

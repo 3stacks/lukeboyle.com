@@ -4,7 +4,6 @@ import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledHeader } from './Header.style';
 import { BareButton } from '../Button';
 import { MdInvertColors } from 'react-icons/md';
-import { FaMoon } from 'react-icons/fa';
 import { CUSTOM_PROPERTIES, THEMES } from '../../styled/colors';
 
 export default function Header({
@@ -51,30 +50,6 @@ export default function Header({
                                     />
                                 </BareButton>
                             </li>
-                            {/*<li className="item">*/}
-                            {/*    <BareButton*/}
-                            {/*        style={{*/}
-                            {/*            display: 'flex',*/}
-                            {/*            alignItems: 'center',*/}
-                            {/*            justifyContent: 'center',*/}
-                            {/*            color: CUSTOM_PROPERTIES.COLOR_TEXT*/}
-                            {/*        }}*/}
-                            {/*        onClick={() =>*/}
-                            {/*            onColorChangePressed(*/}
-                            {/*                activeTheme === THEMES.NIGHT*/}
-                            {/*                    ? THEMES.DEFAULT*/}
-                            {/*                    : THEMES.NIGHT*/}
-                            {/*            )*/}
-                            {/*        }*/}
-                            {/*        title={*/}
-                            {/*            activeTheme === THEMES.NIGHT*/}
-                            {/*                ? 'Switch to light mode'*/}
-                            {/*                : 'Switch to night mode'*/}
-                            {/*        }*/}
-                            {/*    >*/}
-                            {/*        <FaMoon style={{ width: 20, height: 20 }} />*/}
-                            {/*    </BareButton>*/}
-                            {/*</li>*/}
                         </>
                     }
                 />

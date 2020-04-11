@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { bp } from '../../styled/mixins';
-import { WIDTHS } from '../../styled/sizes';
+import { HEADER_HEIGHT, WIDTHS } from '../../styled/sizes';
 import { CUSTOM_PROPERTIES } from '../../styled/colors';
 
 export const StyledNav = styled.div`
@@ -8,9 +8,8 @@ export const StyledNav = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	height: 60px;
+	height: ${HEADER_HEIGHT}px;
 	padding: 16px 0;
-	margin-bottom: 16px;
 
 	a {
 		color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
@@ -20,7 +19,6 @@ export const StyledNav = styled.div`
 		WIDTHS.M,
 		css`
 			padding: 0;
-			margin-bottom: 0;
 			flex-wrap: nowrap;
 		`
 	)}
@@ -89,8 +87,15 @@ export const StyledNav = styled.div`
 
 			a {
 				color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
-				font-size: 1.6rem;
+				font-size: 1.2rem;
 				border-color: transparent;
+
+				${bp(
+					362,
+					css`
+						font-size: 1.6rem;
+					`
+				)};
 			}
 
 			&.is-active {

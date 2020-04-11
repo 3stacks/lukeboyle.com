@@ -52,13 +52,13 @@ export const BareButton = styled.button`
 `;
 
 export default styled.button<{ isSecondary: boolean }>`
-    ${props => getButtonStyles(props)}
+    ${getButtonStyles}
 `;
 export const LinkButton = styled(Link)<{ isSecondary?: boolean }>`
-    ${props => getButtonStyles(props)}
+    ${getButtonStyles}
 `;
 export const AnchorButton = styled.a<{ isSecondary?: boolean }>`
-    ${props => getButtonStyles(props)}
+    ${getButtonStyles}
 `;
 export const ExternalLink = ({
     label,

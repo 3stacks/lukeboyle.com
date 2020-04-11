@@ -5,19 +5,12 @@ import { PortfolioPageItem } from './PortfolioItem.style';
 
 export const PortfolioItem = ({
     id,
-    thumb,
     shortName,
     name,
     snippet,
     link
 }: IPortfolioItem) => (
     <PortfolioPageItem key={id}>
-        <div
-            className="image"
-            style={{
-                backgroundImage: `url(${thumb})`
-            }}
-        />
         <div className="card">
             <h2 className="title">{shortName ? shortName : name}</h2>
             <p>{snippet}</p>

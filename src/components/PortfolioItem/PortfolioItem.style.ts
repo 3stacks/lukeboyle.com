@@ -4,10 +4,13 @@ import { blackShift } from '../../styled/mixins';
 import { getFontSize } from '../../styled/utils';
 
 export const PortfolioPageItem = styled.div`
-	margin-bottom: 30px;
 	display: flex;
 	flex-direction: column;
 	border: 2px solid ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
+
+	&:not(:last-of-type) {
+		margin-bottom: 30px;
+	}
 
 	${blackShift(5)}
 
@@ -49,7 +52,6 @@ export const PortfolioPageItem = styled.div`
 		}
 
 		a {
-			margin-top: auto;
 			font-size: 1.4rem;
 		}
 	}

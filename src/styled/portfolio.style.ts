@@ -48,14 +48,14 @@ export const PortfolioContent = styled.div`
 	        margin: 0 auto;
 	        font-size: 1.8rem;
 	        figure {
-		                margin: 0;
-		        }
-			        p {
-		                font-size: 1.8rem;
-		        }
-			        img {
-		                max-width: 100%;
-		        }
+				margin: 0;
+			}
+			p {
+				font-size: 1.8rem;
+			}
+			img {
+				max-width: 100%;
+			}
 	}
 	& .buttons {
 	        display: flex;

@@ -82,12 +82,20 @@ export const BodyWrapper = styled.div`
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 20px;
-	padding-top: 60px;
-	padding-bottom: 60px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 
 	div:last-of-type {
 		max-width: 700px;
 	}
+
+	${bp(
+		WIDTHS.M,
+		css`
+			padding-top: 60px;
+			padding-bottom: 60px;
+		`
+	)};
 
 	.left {
 		align-self: start;

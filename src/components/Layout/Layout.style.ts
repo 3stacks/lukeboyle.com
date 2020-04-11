@@ -16,6 +16,7 @@ import {
 } from '../../styled/colors';
 import {
 	FONT_SIZES,
+	HEADER_HEIGHT,
 	LINE_HEIGHTS,
 	VERTICAL_RHYTHMS,
 	WIDTHS
@@ -211,7 +212,13 @@ export const StyledLayout = styled.div<{
 	-webkit-overflow-scrolling: touch;
 	color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 	background-color: ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
-
+	padding-bottom: ${HEADER_HEIGHT}px;
+	${bp(
+		WIDTHS.M,
+		css`
+			padding-bottom: 0;
+		`
+	)}
 	.block-header {
 		font-size: 2.5rem;
 	}
