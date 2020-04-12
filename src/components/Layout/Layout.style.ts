@@ -163,8 +163,20 @@ export const GlobalLayoutStyle = createGlobalStyle`
 		width: calc(100% - 20px);
 		justify-content: center;
 		
-		li:first-of-type {
+		li:not(:last-of-type) {
 			margin-right: 20px;
+			
+			a {
+				width: 10px;
+				display: inline-block;
+			}
+		}
+		
+		.is-active {
+			border: none;
+			cursor: pointer;
+			background-color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
+			color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
 		}
 		
 		${bp(
@@ -213,8 +225,9 @@ export const StyledLayout = styled.div<{
 	color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 	background-color: ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
 	padding-bottom: ${HEADER_HEIGHT}px;
+
 	${bp(
-		WIDTHS.M,
+		600,
 		css`
 			padding-bottom: 0;
 		`

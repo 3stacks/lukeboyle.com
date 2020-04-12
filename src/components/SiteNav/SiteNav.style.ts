@@ -8,7 +8,6 @@ export const StyledNav = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	height: ${HEADER_HEIGHT}px;
 	padding: 16px 0;
 
 	a {

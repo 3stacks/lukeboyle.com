@@ -234,14 +234,18 @@ export const Blog = () => (
 								  }">&lt;</Link></li>`
 								: ''
 						}
-						${Object.entries(pages).reduce((acc, curr, index) => {
-							return `${acc}
+						${Object.entries(pages)
+							.slice(1)
+							.reduce((acc, curr, index) => {
+								return `${acc}
 <li>
-	<Link to="/blog/${index}">
+	<Link to="${index === 0 ? '/blog' : `/blog/${index}`}" className=${
+									pageNumber === index ? '"is-active"' : '""'
+								}>
 		${index}
 	</Link>
 </li>`;
-						}, '')}
+							}, '')}
 						${
 							pageNumber !== Object.values(pages).length - 1
 								? `<li><Link to="/blog/${parseInt(
