@@ -165,11 +165,12 @@ export const GlobalLayoutStyle = createGlobalStyle`
 		
 		li:not(:last-of-type) {
 			margin-right: 20px;
-			
-			a {
-				width: 10px;
-				display: inline-block;
-			}
+		}
+		
+		a {
+			width: 31px;
+			display: inline-block;
+			font-size: 2rem;
 		}
 		
 		.is-active {
