@@ -17,7 +17,6 @@ export const StyledNav = styled.div`
 	${bp(
 		WIDTHS.M,
 		css`
-			padding: 0;
 			flex-wrap: nowrap;
 		`
 	)}
