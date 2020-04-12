@@ -169,8 +169,9 @@ export const GlobalLayoutStyle = createGlobalStyle`
 		
 		a {
 			width: 31px;
-			display: inline-block;
 			font-size: 2rem;
+			display: inline-flex;
+			justify-content: center;
 		}
 		
 		.is-active {
