@@ -2,8 +2,8 @@
 post_title: Local Storage Manager version 2.1 is out now
 post_date: 2016-10-19 04:47:24
 post_modified: 2016-10-19 04:47:24
-post_status: inherit
-post_type: revision
+post_status: publish
+post_type: post
 post_author: Luke Boyle
 ---
 

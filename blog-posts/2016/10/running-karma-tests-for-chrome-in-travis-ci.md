@@ -2,8 +2,8 @@
 post_title: Running Karma tests for Chrome in Travis CI
 post_date: 2016-10-13 02:58:59
 post_modified: 2016-10-13 02:58:59
-post_status: inherit
-post_type: revision
+post_status: publish
+post_type: post
 post_author: Luke Boyle
 ---
 

@@ -2,8 +2,8 @@
 post_title: JSX in Vue.JS
 post_date: 2016-09-25 12:10:58
 post_modified: 2016-09-25 12:10:58
-post_status: inherit
-post_type: revision
+post_status: publish
+post_type: post
 post_author: Luke Boyle
 ---
 

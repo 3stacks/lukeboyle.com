@@ -3,7 +3,7 @@ post_title: Using the new built in Wordpress RESTful API for front end
 post_date: 2016-12-23 02:50:52
 post_modified: 2016-12-23 02:50:52
 post_status: draft
-post_type: revision
+post_type: post
 post_author: Luke Boyle
 ---
 

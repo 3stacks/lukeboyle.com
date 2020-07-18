@@ -3,7 +3,7 @@ post_title: Alternatives to Bootstrap CSS Framework
 post_date: 2016-12-16 14:40:48
 post_modified: 2016-12-16 14:40:48
 post_status: draft
-post_type: revision
+post_type: post
 post_author: Luke Boyle
 ---
 

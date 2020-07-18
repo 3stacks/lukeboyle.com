@@ -3,7 +3,7 @@ post_title: Responsive Definition Lists: Solved by flexbox
 post_date: 2017-03-29 12:16:17                           
 post_modified: 2017-03-29 12:16:17                           
 post_status: draft                                         
-post_type: revision                                      
+post_type: post
 post_author: Luke Boyle                                    
 ---
 

@@ -2,8 +2,8 @@
 post_title: CSS Variables: A Case Study 
 post_date: 2017-04-26 15:50:11         
 post_modified: 2017-04-26 15:50:11         
-post_status: inherit                     
-post_type: revision                    
+post_status: publish                     
+post_type: post                    
 post_author: Luke Boyle                  
 ---
 

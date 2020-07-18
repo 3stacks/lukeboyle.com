@@ -3,7 +3,7 @@ post_title: Github Actions for web apps
 post_date: 2019-08-12 00:00:00
 post_modified: 2019-08-12 00:00:00
 post_status: publish
-post_type: revision
+post_type: post
 post_author: Luke Boyle
 ---
 

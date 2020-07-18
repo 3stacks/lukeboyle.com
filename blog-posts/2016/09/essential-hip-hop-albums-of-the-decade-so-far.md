@@ -2,8 +2,8 @@
 post_title: Essential Hip-Hop Albums of the Decade so far.
 post_date: 2016-09-18 06:23:15
 post_modified: 2016-09-18 06:23:15
-post_status: inherit
-post_type: revision
+post_status: publish
+post_type: post
 post_category: music
 post_author: Luke Boyle
 ---

@@ -3,7 +3,7 @@ post_title: Mac Miller - Circles
 post_date: 2020-01-25 00:00:00
 post_modified: 2020-01-25 00:00:00
 post_status: publish
-post_type: revision
+post_type: post
 post_category: music
 post_author: Luke Boyle
 ---

@@ -3,7 +3,7 @@ post_title: Software I actually believe in
 post_date: 2018-12-21 00:00:00
 post_modified: 2018-12-21 00:00:00
 post_status: publish
-post_type: revision
+post_type: post
 post_author: Luke Boyle
 ---
 

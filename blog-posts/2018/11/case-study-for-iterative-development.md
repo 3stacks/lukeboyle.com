@@ -3,7 +3,7 @@ post_title: My Muscle Chef: A case study for iterative development
 post_date: 2018-11-28 00:00:00                                    
 post_modified: 2018-11-28 00:00:00                                    
 post_status: publish                                                
-post_type: revision                                               
+post_type: post                                               
 post_author: Luke Boyle                                             
 ---
 

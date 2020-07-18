@@ -1,9 +1,9 @@
 ---
-post_title    Project estimations made easy
-post_date     2017-12-19 15:50:11
-post_status   publish
-post_type     post
-post_author   Luke Boyle
+post_title: Project estimations made easy
+post_date: 2017-12-19 15:50:11
+post_status: publish
+post_type: post
+post_author: Luke Boyle
 ---
 
 I recently published a post on the Stak Digital

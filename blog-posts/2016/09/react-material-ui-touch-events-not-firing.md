@@ -2,8 +2,8 @@
 post_title: React Material-UI touch events not firing
 post_date: 2016-09-24 02:32:44
 post_modified: 2016-09-24 02:32:44
-post_status: inherit
-post_type: revision
+post_status: publish
+post_type: post
 post_author: Luke Boyle
 ---
 

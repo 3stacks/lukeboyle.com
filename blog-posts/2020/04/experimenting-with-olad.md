@@ -3,7 +3,7 @@ post_title: Experimenting with OLAD (One lift a day)
 post_date: 2020-04-10 00:00:00
 post_modified: 2020-04-10 00:00:00
 post_status: publish
-post_type: revision
+post_type: post
 post_author: Luke Boyle
 ---
 

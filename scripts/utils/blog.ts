@@ -1,5 +1,6 @@
 import glob from 'glob';
 import safeGet from 'lodash/get';
+import YAML from 'yamljs';
 import * as fs from 'fs';
 
 export function isNotDirectory(path) {
@@ -43,49 +44,22 @@ export function resolveBlogPost(path: string): Promise<IBlogPost> {
 		const rawContent: string = fs.readFileSync(path, {
 			encoding: 'utf-8'
 		});
-		const lines = rawContent.split('\n');
 		const slug = path
 			.split('/')
 			[path.split('/').length - 1].replace('.md', '');
-		let title;
-		let metaData;
-		let contents;
-
-		lines.forEach(line => {
-			if (line.slice(0, 2) === '# ') {
-				title = line.slice(2);
-
-				return;
-			}
-
-			if (line.slice(0, 2) === '| ') {
-				const lineWithoutFirstDelimeter = line.slice(2);
-				const key = lineWithoutFirstDelimeter.slice(
-					0,
-					lineWithoutFirstDelimeter.indexOf(' | ')
-				);
-				const value = lineWithoutFirstDelimeter.slice(
-					lineWithoutFirstDelimeter.indexOf(' | ') + 3,
-					-2
-				);
-
-				metaData = {
-					...metaData,
-					[key.trim()]: value.trim()
-				};
-
-				return;
-			}
-
-			contents = `${contents || ''}\n${line}`;
-		});
+		const contentsWithoutFirst = rawContent.slice(3);
+		const metaData = YAML.parse(
+			contentsWithoutFirst.slice(0, contentsWithoutFirst.indexOf('---'))
+		);
 
 		resolve({
 			slug,
 			path,
-			title,
+			title: metaData.post_title,
 			metaData,
-			content: contents
+			content: contentsWithoutFirst.slice(
+				contentsWithoutFirst.indexOf('---') + 3
+			)
 		});
 	});
 }
@@ -98,6 +72,8 @@ export function resolveBlogPosts(): Promise<IPostArchive> {
 			}
 
 			const posts = paths.filter(isNotDirectory).map(resolveBlogPost);
+
+			console.log(posts);
 
 			resolve(
 				await Promise.all(posts).then(values => {
