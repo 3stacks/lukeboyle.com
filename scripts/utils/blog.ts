@@ -176,7 +176,7 @@ import Link from 'gatsby-link';
 import HomeHeadBanner from '${rootDir}/components/HomeHeadBanner';
 import PostArchive from '${rootDir}/components/PostArchive';
 import BlogPreview from '${rootDir}/components/BlogPreview';
-import { BodyWrapper } from '../../styled/music.style';
+import { BodyWrapper, MainHeader } from '../../styled/music.style';
 import Layout from '${rootDir}/components/Layout';
 import MaxWidthContainer from '${rootDir}/components/MaxWidthContainer';
 import { PAGES } from '${rootDir}/constants';
@@ -206,9 +206,9 @@ export const Blog = () => (
 		<MaxWidthContainer>
 			<BodyWrapper>
 				<div className="left">
-					<h3>
+					<MainHeader>
 						Post Archive
-					</h3>
+					</MainHeader>
 					<PostArchive data={${JSON.stringify(sidebarData)}} />
 				</div>
 				<div>

@@ -15,7 +15,7 @@ export const PortfolioContainer = styled.div`
 	& .inner {
 		display: grid;
 		grid-template-columns: 1fr;
-		margin-bottom: 30px;
+		margin-bottom: 0;
 
 		${bp(
 			515,
@@ -40,28 +40,27 @@ export const PortfolioContent = styled.div`
 	color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 	& .title,
 	& .blog-post--title {
-	        font-size: 4rem;
-	        
-	        text-align: center;
+		font-size: 4rem;
+
+		text-align: center;
 	}
 	& .content {
-	        max-width: 700px;
-	        margin: 0 auto;
-	        font-size: 1.8rem;
-	        figure {
-				margin: 0;
-			}
-			p {
-				font-size: 1.8rem;
-			}
-			img {
-				max-width: 100%;
-			}
-			
+		max-width: 700px;
+		margin: 0 auto;
+		font-size: 1.8rem;
+		figure {
+			margin: 0;
+		}
+		p {
+			font-size: 1.8rem;
+		}
+		img {
+			max-width: 100%;
+		}
 	}
 	& .buttons {
-	        display: flex;
-	        justify-content: space-between;
-	        width: 100%;
+		display: flex;
+		justify-content: space-between;
+		width: 100%;
 	}
--`;
+`;

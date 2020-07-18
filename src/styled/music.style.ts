@@ -8,73 +8,50 @@ export const ArtistList = styled.ol`
 	list-style: none;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-gap: 20px;
-	margin: 0 0 2rem;
+	margin: 0;
 	padding: 0;
-	
-	${bp(
-		450,
-		css`
-			grid-template-columns: 1fr 1fr;
-		`
-	)}
-	
-	${bp(
-		700,
-		css`
-			grid-template-columns: 1fr 1fr 1fr;
-		`
-	)}
-	
-	${bp(
-		920,
-		css`
-			grid-template-columns: 1fr 1fr 1fr 1fr;
-		`
-	)}
-	
+
 	li {
 		display: flex;
-		flex-direction: column;
 		align-items: center;
-		transform: translate(-5px, -5px);
-        background-color: ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
-        box-shadow: 7px 7px 0 0 ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
-        color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
-        border: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
+		margin: 0;
+		color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 	}
-	
+
 	.image-wrapper {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-		
+		width: 70px;
+		height: 70px;
+
 		img {
-			max-width: 100%;
+			width: 100%;
+			height: 100%;
 		}
 	}
+
 	.info-wrapper {
-	  padding: 15px;
-	  display: flex;
-	  flex-direction: column;
-	  height: 100%;
+		padding: 0 0 0 10px;
+		display: flex;
+		flex-direction: column;
 	}
-	
+
 	.artist-name {
-		font-size: 1.7rem;
-		margin: 0 0 1rem;
-		text-align: center;
-	} 
+		font-size: 1.7rem !important;
+		margin: 0;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
 	.play-count {
-		margin: auto 0 0;
+		margin: 0;
 		font-size: 1.6rem;
-		text-align: center;
+		text-align: left;
 	}
 `;
 
 export const MainHeader = styled.h2`
 	text-align: center;
+	padding: 20px;
+	margin: 0 !important;
 	${getFontSize(3)}
 `;
 
@@ -99,7 +76,6 @@ export const BodyWrapper = styled.div`
 
 	.left {
 		align-self: start;
-		padding: 20px;
 		width: 100%;
 		${blackShift(5)};
 
@@ -117,25 +93,6 @@ export const BodyWrapper = styled.div`
 				top: -1px;
 			`
 		)}
-
-		h2 {
-			text-align: center;
-
-			${bp(
-				1000,
-				css`
-					text-align: left;
-					font-size: 2.8rem;
-				`
-			)}
-
-			${bp(
-				1027,
-				css`
-					font-size: 3rem;
-				`
-			)}
-		}
 	}
 
 	${bp(
@@ -161,7 +118,6 @@ export const BodyWrapper = styled.div`
 
 	li {
 		font-size: 1.7rem;
-		margin-bottom: 1rem;
 	}
 `;
 

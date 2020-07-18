@@ -198,12 +198,22 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 			JSON.stringify(
 				musicPosts
 					.reverse()
-					.map(({ postTitle, path, fileName, componentName }) => ({
-						path,
-						fileName,
-						componentName,
-						postTitle
-					})),
+					.map(
+						({
+							postTitle,
+							path,
+							fileName,
+							componentName,
+							component,
+							...others
+						}) => ({
+							path,
+							fileName,
+							componentName,
+							postTitle,
+							...others
+						})
+					),
 				null,
 				'\t'
 			)

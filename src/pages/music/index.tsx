@@ -15,6 +15,8 @@ import prefetchedAlbumData from '../../data/albums.json';
 import prefetchedCrateData from '../../data/crate.json';
 import { ArtistList, BodyWrapper, MainHeader } from '../../styled/music.style';
 import { PAGES } from '../../constants';
+import BlogPreview from '../../components/BlogPreview/BlogPreview';
+import HomeHeadBanner from '../../components/HomeHeadBanner/HomeHeadBanner';
 
 interface IProps {
     data: {
@@ -64,28 +66,12 @@ export default function Music({ data }: IProps) {
     return (
         <Layout slug="music" pageName={PAGES.MUSIC}>
             <Helmet title="Music | Luke Boyle" />
+            <HomeHeadBanner hasColor>
+                <h1 className="site-name">Boyleing Point</h1>
+            </HomeHeadBanner>
             <MaxWidthContainer>
                 <BodyWrapper>
                     <div className="left">
-                        <MainHeader>Recent posts</MainHeader>
-                        <ul>
-                            {postData.map(post => {
-                                return (
-                                    <li key={post.fileName}>
-                                        <Link
-                                            to={`/${post.path.replace(
-                                                '.md',
-                                                ''
-                                            )}`}
-                                        >
-                                            {post.postTitle}
-                                        </Link>
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                    <div>
                         <MainHeader>What's new in the crate</MainHeader>
                         <ArtistList>
                             {crateData.map(release => {
@@ -113,7 +99,7 @@ export default function Music({ data }: IProps) {
                         </ArtistList>
                         <MainHeader>Who I've been listening to</MainHeader>
                         <ArtistList>
-                            {artistData.map(artist => {
+                            {artistData.slice(0, 5).map(artist => {
                                 const imageToShow =
                                     artist.image.find(
                                         image => image.size === 'large'
@@ -140,7 +126,7 @@ export default function Music({ data }: IProps) {
                         </ArtistList>
                         <MainHeader>My most played albums</MainHeader>
                         <ArtistList>
-                            {albumData.map(album => {
+                            {albumData.slice(0, 5).map(album => {
                                 const imageToShow =
                                     album.image.find(
                                         image => image.size === 'large'
@@ -165,6 +151,25 @@ export default function Music({ data }: IProps) {
                                 );
                             })}
                         </ArtistList>
+                    </div>
+                    <div>
+                        <ul>
+                            {postData.map(post => {
+                                return (
+                                    <li key={post.fileName}>
+                                        <BlogPreview
+                                            author="Luke Boyle"
+                                            publishDate={post.publishDate}
+                                            title={post.postTitle}
+                                            slug={`/${post.path.replace(
+                                                '.md',
+                                                ''
+                                            )}`}
+                                        />
+                                    </li>
+                                );
+                            })}
+                        </ul>
                     </div>
                 </BodyWrapper>
             </MaxWidthContainer>

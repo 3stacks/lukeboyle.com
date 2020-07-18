@@ -20,39 +20,7 @@ export default function Header({
     return (
         <StyledHeader>
             <MaxWidthContainer>
-                <SiteNav
-                    isHome={isHome}
-                    slug={slug}
-                    rightSlot={
-                        <>
-                            <li className="item">
-                                <BareButton
-                                    style={{
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        color: CUSTOM_PROPERTIES.COLOR_TEXT
-                                    }}
-                                    onClick={() =>
-                                        onColorChangePressed(
-                                            activeTheme === THEMES.DEFAULT
-                                                ? THEMES.ALT
-                                                : THEMES.DEFAULT
-                                        )
-                                    }
-                                    title="Switch the color theme"
-                                >
-                                    <MdInvertColors
-                                        style={{
-                                            width: 25,
-                                            height: 25
-                                        }}
-                                    />
-                                </BareButton>
-                            </li>
-                        </>
-                    }
-                />
+                <SiteNav isHome={isHome} slug={slug} />
             </MaxWidthContainer>
         </StyledHeader>
     );

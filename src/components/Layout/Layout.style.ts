@@ -242,6 +242,14 @@ export const StyledLayout = styled.div<{
 		font-size: 3.5rem;
 	}
 
+	&.home {
+		main {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+		}
+	}
+
 	${props =>
 		!props.showFullPageColor &&
 		css`
