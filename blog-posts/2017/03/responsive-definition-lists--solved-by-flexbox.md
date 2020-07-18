@@ -1,10 +1,10 @@
 ---
 post_title: Responsive Definition Lists: Solved by flexbox
-post_date: 2017-03-29 12:16:17                           
-post_modified: 2017-03-29 12:16:17                           
-post_status: draft                                         
+post_date: 2017-03-29 12:16:17
+post_modified: 2017-03-29 12:16:17
+post_status: draft
 post_type: post
-post_author: Luke Boyle                                    
+post_author: Luke Boyle
 ---
 
 Consider the definition list. Here's a simple example. The standard behaviour would have the term and definition both as block level elements, naturally stacking down like so.
