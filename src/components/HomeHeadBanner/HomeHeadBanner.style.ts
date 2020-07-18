@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import { CUSTOM_PROPERTIES } from '../../styled/colors';
 import { bp } from '../../styled/mixins';
 import { WIDTHS } from '../../styled/sizes';
+import MaxWidthContainer from '../MaxWidthContainer';
 
 export const StyledBanner = styled.div<{ hasColor: boolean }>`
 	color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
@@ -26,6 +27,10 @@ export const StyledBanner = styled.div<{ hasColor: boolean }>`
 			height: 200px;
 		`
 	)}
+
+	${MaxWidthContainer} {
+		max-width: 800px;
+	}
 
 	h1,
 	h2,

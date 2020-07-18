@@ -190,7 +190,16 @@ ${pages[key].reduce((acc, curr) => {
 }, '')}
 				
 export const Blog = () => (
-	<Layout slug="blog" pageName={PAGES.BLOG}>
+	<Layout 
+		slug="blog" 
+		pageName={PAGES.BLOG} 
+		headChildren={() => (
+			<HomeHeadBanner hasColor>
+				<h1 className="site-name">Boyleing Point</h1>
+				<p>Psychotic ramblings about technology</p>
+			</HomeHeadBanner>
+		)}
+	>
 		<Helmet>
 			<title>${
 				pageNumber === 0
@@ -198,11 +207,6 @@ export const Blog = () => (
 					: `Page ${parseInt(key, 10) - 1} | Luke Boyle's Blog`
 			}</title>
 		</Helmet>
-		<HomeHeadBanner hasColor>
-			<h1 className="site-name">
-				Boyleing Point
-			</h1>
-		</HomeHeadBanner>
 		<MaxWidthContainer>
 			<BodyWrapper>
 				<div className="left">

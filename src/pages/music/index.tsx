@@ -64,11 +64,17 @@ export default function Music({ data }: IProps) {
     }, []);
 
     return (
-        <Layout slug="music" pageName={PAGES.MUSIC}>
+        <Layout
+            slug="music"
+            pageName={PAGES.MUSIC}
+            headChildren={() => (
+                <HomeHeadBanner hasColor>
+                    <h1 className="site-name">Boyleing Point</h1>
+                    <p>Psychotic ramblings about music</p>
+                </HomeHeadBanner>
+            )}
+        >
             <Helmet title="Music | Luke Boyle" />
-            <HomeHeadBanner hasColor>
-                <h1 className="site-name">Boyleing Point</h1>
-            </HomeHeadBanner>
             <MaxWidthContainer>
                 <BodyWrapper>
                     <div className="left">
