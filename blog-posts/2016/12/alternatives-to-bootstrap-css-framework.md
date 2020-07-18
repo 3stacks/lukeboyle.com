@@ -1,13 +1,11 @@
-# Alternatives to Bootstrap CSS Framework
-
-| Metadata name | Value                                   |
-| ------------- | --------------------------------------- |
-| post_title    | Alternatives to Bootstrap CSS Framework |
-| post_date     | 2016-12-16 14:40:48                     |
-| post_modified | 2016-12-16 14:40:48                     |
-| post_status   | draft                                   |
-| post_type     | revision                                |
-| post_author   | Luke Boyle                              |
+---
+post_title: Alternatives to Bootstrap CSS Framework
+post_date: 2016-12-16 14:40:48
+post_modified: 2016-12-16 14:40:48
+post_status: draft
+post_type: revision
+post_author: Luke Boyle
+---
 
 Grid based CSS Frameworks are a dime a dozen, but are any of them actually good? Here I'm presenting what I think are good alternatives to Bootstrap.
 

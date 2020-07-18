@@ -1,15 +1,11 @@
-# CSS Buttons: Solved with Flexbox
-
-## This post is causing issues because it's trying to inline the style tags below. Figure out a way to add this to stylesheets.
-
-| Metadata name | Value                            |
-| ------------- | -------------------------------- |
-| post_title    | CSS Buttons: Solved with Flexbox |
-| post_date     | 2017-03-09 03:57:17              |
-| post_modified | 2017-03-09 03:57:17              |
-| post_status   | draft                            |
-| post_type     | revision                         |
-| post_author   | Luke Boyle                       |
+---
+post_title: CSS Buttons: Solved with Flexbox
+post_date: 2017-03-09 03:57:17
+post_modified: 2017-03-09 03:57:17
+post_status: publish
+post_type: revision
+post_author: Luke Boyle
+---
 
 There are two commonly accepted approaches to making buttons with CSS, but both of them are a little bit shit. What if I told you there was another way? (`morpheus.wav`)
 

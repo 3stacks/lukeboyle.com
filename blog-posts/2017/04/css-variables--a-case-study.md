@@ -1,13 +1,11 @@
-# CSS Variables: A Case Study
-
-| Metadata name | Value                       |
-| ------------- | --------------------------- |
-| post_title    | CSS Variables: A Case Study |
-| post_date     | 2017-04-26 15:50:11         |
-| post_modified | 2017-04-26 15:50:11         |
-| post_status   | inherit                     |
-| post_type     | revision                    |
-| post_author   | Luke Boyle                  |
+---
+post_title: CSS Variables: A Case Study 
+post_date: 2017-04-26 15:50:11         
+post_modified: 2017-04-26 15:50:11         
+post_status: inherit                     
+post_type: revision                    
+post_author: Luke Boyle                  
+---
 
 In [Agander](https://agander.io), I made my first forays into colour themes. In a very simple approach, I have two colour schemes (light and dark) which are displayed on the body as a class (scheme-light and scheme-dark) respectively. The general approach for styling a component is as such: `_button.scss`
 

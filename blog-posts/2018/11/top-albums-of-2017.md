@@ -1,14 +1,12 @@
-# Top albums of 2017
-
-| Metadata name | Value               |
-| ------------- | ------------------- |
-| post_title    | Top albums of 2017  |
-| post_date     | 2018-11-08 00:00:00 |
-| post_modified | 2018-11-08 00:00:00 |
-| post_status   | publish             |
-| post_type     | top_list            |
-| post_category | music               |
-| post_author   | Luke Boyle          |
+---
+post_title: Top albums of 2017
+post_date: 2018-11-08 00:00:00
+post_modified: 2018-11-08 00:00:00
+post_status: publish
+post_type: top_list
+post_category: music
+post_author: Luke Boyle
+---
 
 ## You Only Live 2wice
 

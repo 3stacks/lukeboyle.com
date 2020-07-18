@@ -1,13 +1,11 @@
-# Using the new built in Wordpress RESTful API for front end
-
-| Metadata name | Value                                                      |
-| ------------- | ---------------------------------------------------------- |
-| post_title    | Using the new built in Wordpress RESTful API for front end |
-| post_date     | 2016-12-23 02:50:52                                        |
-| post_modified | 2016-12-23 02:50:52                                        |
-| post_status   | draft                                                      |
-| post_type     | revision                                                   |
-| post_author   | Luke Boyle                                                 |
+---
+post_title: Using the new built in Wordpress RESTful API for front end
+post_date: 2016-12-23 02:50:52
+post_modified: 2016-12-23 02:50:52
+post_status: draft
+post_type: revision
+post_author: Luke Boyle
+---
 
 On my portfolio page, there's a feature that will request whichever post you mouseover so that it opens that post in the current page (just to be flashy). I'm using the `fetch` API, but since I could only request the url of the post I got an entire HTML document and I had to work on that to get just the content. The current system grabs that HTML and then grabs all children nodes and inserts them in a new div one by one (see below):
 

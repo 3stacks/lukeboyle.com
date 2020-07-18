@@ -1,14 +1,12 @@
-# Top albums of 2019
-
-| Metadata name | Value               |
-| ------------- | ------------------- |
-| post_title    | Top albums of 2019  |
-| post_date     | 2019-07-31 00:00:00 |
-| post_modified | 2019-07-31 00:00:00 |
-| post_status   | publish             |
-| post_type     | top_list            |
-| post_category | music               |
-| post_author   | Luke Boyle          |
+---
+post_title: Top albums of 2019
+post_date: 2019-07-31 00:00:00
+post_modified: 2019-07-31 00:00:00
+post_status: publish
+post_type: top_list
+post_category: music
+post_author: Luke Boyle
+---
 
 ## IGOR
 

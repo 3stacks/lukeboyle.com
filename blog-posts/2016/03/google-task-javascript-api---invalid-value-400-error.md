@@ -1,12 +1,11 @@
-# Google Task Javascript API - Invalid Value 400 Error
-
-| Metadata name | Value                                                |
-| ------------- | ---------------------------------------------------- |
-| post_title    | Google Task Javascript API - Invalid Value 400 Error |
-| post_date     | 2016-03-19 13:08:01                                  |
-| post_modified | 2016-03-19 13:08:01                                  |
-| post_status   | publish                                              |
-| post_author   | Luke Boyle                                           |
+---
+post_title: Google Task Javascript API - Invalid Value 400 Error
+post_date: 2016-03-19 13:08:01
+post_modified: 2016-03-19 13:08:01
+post_type: post
+post_status: publish
+post_author: Luke Boyle
+---
 
 After a long battle with the weird Google Task Javascript API I've established a module for [Agander](http://agander.io) that has the ability to:
 

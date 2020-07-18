@@ -1,13 +1,11 @@
-# Mac Miller
-
-| Metadata name | Value               |
-| ------------- | ------------------- |
-| post_title    | Mac Miller          |
-| post_date     | 2018-11-07 00:00:00 |
-| post_modified | 2018-11-07 00:00:00 |
-| post_status   | publish             |
-| post_type     | revision            |
-| post_author   | Luke Boyle          |
+---
+post_title: Mac Miller
+post_date: 2018-11-07 00:00:00
+post_modified: 2018-11-07 00:00:00
+post_status: publish
+post_type: revision
+post_author: Luke Boyle
+---
 
 ![Mac Miller](/blog-posts/images/mac.jpg)
 

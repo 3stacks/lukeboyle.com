@@ -1,13 +1,11 @@
-# Google Calendar API - ColorId
-
-| Metadata name | Value                         |
-| ------------- | ----------------------------- |
-| post_title    | Google Calendar API - ColorId |
-| post_date     | 2016-04-20 06:50:38           |
-| post_modified | 2016-04-20 06:50:38           |
-| post_status   | publish                       |
-| post_type     | post                          |
-| post_author   | Luke Boyle                    |
+---
+post_title: Google Calendar API - ColorId
+post_date: 2016-04-20 06:50:38
+post_modified: 2016-04-20 06:50:38
+post_status: publish
+post_type: post
+post_author: Luke Boyle
+---
 
 When you request a Google Calendar event it will come with a colorId which is either undefined if user didn't select a colour, or between one and 11 if they did. Since I needed these for Agander, I decided to collate these for the curious. These are the corresponding colours used in the Google Calendar app.
 

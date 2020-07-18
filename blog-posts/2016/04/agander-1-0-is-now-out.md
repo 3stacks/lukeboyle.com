@@ -1,13 +1,11 @@
-# Agander 1.0 is now out.
-
-| Metadata name | Value                   |
-| ------------- | ----------------------- |
-| post_title    | Agander 1.0 is now out. |
-| post_date     | 2016-04-11 14:05:20     |
-| post_modified | 2016-04-11 14:05:20     |
-| post_status   | publish                 |
-| post_type     | post                    |
-| post_author   | Luke Boyle              |
+---
+post_title: Agander 1.0 is now out.
+post_date: 2016-04-11 14:05:20
+post_modified: 2016-04-11 14:05:20
+post_status: publish
+post_type: post
+post_author: Luke Boyle
+---
 
 Agander started in November 2015 with a vision to unify several of the
 productivity services I use. With Agander I could now have one tab where

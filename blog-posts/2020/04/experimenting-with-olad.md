@@ -1,13 +1,11 @@
-# Experimenting with OLAD (One lift a day)
-
-| Metadata name | Value                                    |
-| ------------- | ---------------------------------------- |
-| post_title    | Experimenting with OLAD (One lift a day) |
-| post_date     | 2020-04-10 00:00:00                      |
-| post_modified | 2020-04-10 00:00:00                      |
-| post_status   | publish                                  |
-| post_type     | revision                                 |
-| post_author   | Luke Boyle                               |
+---
+post_title: Experimenting with OLAD (One lift a day)
+post_date: 2020-04-10 00:00:00
+post_modified: 2020-04-10 00:00:00
+post_status: publish
+post_type: revision
+post_author: Luke Boyle
+---
 
 New lifters often place far too much importance on choosing the right program.
 Stronglifts or Starting Strength? 5/3/1 or PHUL? In reality, the right program

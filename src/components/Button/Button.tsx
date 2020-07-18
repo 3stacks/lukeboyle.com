@@ -54,6 +54,7 @@ export const BareButton = styled.button`
 export default styled.button<{ isSecondary: boolean }>`
     ${getButtonStyles}
 `;
+
 export const LinkButton = styled(Link)<{ isSecondary?: boolean }>`
     ${getButtonStyles}
 `;

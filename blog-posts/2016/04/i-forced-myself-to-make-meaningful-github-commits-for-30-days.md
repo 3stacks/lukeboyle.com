@@ -1,13 +1,11 @@
-# I forced myself to make meaningful Github commits for 30 days.
-
-| Metadata name | Value                                                          |
-| ------------- | -------------------------------------------------------------- |
-| post_title    | I forced myself to make meaningful Github commits for 30 days. |
-| post_date     | 2016-04-25 01:40:28                                            |
-| post_modified | 2016-04-25 01:40:28                                            |
-| post_status   | publish                                                        |
-| post_type     | post                                                           |
-| post_author   | Luke Boyle                                                     |
+---
+post_title: I forced myself to make meaningful Github commits for 30 days.
+post_date: 2016-04-25 01:40:28
+post_modified: 2016-04-25 01:40:28
+post_status: publish
+post_type: post
+post_author: Luke Boyle
+---
 
 30 days ago I decided to see how long I could keep up a streak on Github, but I didn't want to half ass it. 1 commit days just would not do. I quickly found that if I was going to be successful I would need to make a conscious effort to reserve time and energy each day. So my typical day became:
 

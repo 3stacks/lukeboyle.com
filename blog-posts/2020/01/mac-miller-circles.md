@@ -1,14 +1,12 @@
-# Mac Miller - Circles
-
-| Metadata name | Value                |
-| ------------- | -------------------- |
-| post_title    | Mac Miller - Circles |
-| post_date     | 2020-01-25 00:00:00  |
-| post_modified | 2020-01-25 00:00:00  |
-| post_status   | publish              |
-| post_type     | revision             |
-| post_category | music                |
-| post_author   | Luke Boyle           |
+---
+post_title: Mac Miller - Circles
+post_date: 2020-01-25 00:00:00
+post_modified: 2020-01-25 00:00:00
+post_status: publish
+post_type: revision
+post_category: music
+post_author: Luke Boyle
+---
 
 ![Circles album cover](/blog-posts/images/circles-splash.jpg)
 

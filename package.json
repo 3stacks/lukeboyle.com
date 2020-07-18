@@ -62,6 +62,7 @@
         "shelljs": "^0.8.2",
         "ts-node": "^8.3.0",
         "typescript": "^3.5.3",
-        "typography": "^0.15.10"
+        "typography": "^0.15.10",
+        "yamljs": "^0.3.0"
     }
 }

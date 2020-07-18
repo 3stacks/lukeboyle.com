@@ -1,13 +1,11 @@
-# Agander 2.0 is now out.
-
-| Metadata name | Value                   |
-| ------------- | ----------------------- |
-| post_title    | Agander 2.0 is now out. |
-| post_date     | 2016-06-07 23:21:12     |
-| post_modified | 2016-06-07 23:21:12     |
-| post_status   | publish                 |
-| post_type     | post                    |
-| post_author   | Luke Boyle              |
+---
+post_title: Agander 2.0 is now out.
+post_date: 2016-06-07 23:21:12
+post_modified: 2016-06-07 23:21:12
+post_status: publish
+post_type: post
+post_author: Luke Boyle
+---
 
 It's been about 2 and a half months since the first official full release of Agander went live, and it's out with the old in with the new.
 

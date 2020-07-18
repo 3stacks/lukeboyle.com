@@ -1,13 +1,11 @@
-# Converting a WordPress site to a React static site
-
-| Metadata name | Value                                              |
-| ------------- | -------------------------------------------------- |
-| post_title    | Converting a WordPress site to a React static site |
-| post_date     | 2018-01-08 00:00:00                                |
-| post_modified | 2018-01-08 00:00:00                                |
-| post_status   | publish                                            |
-| post_type     | revision                                           |
-| post_author   | Luke Boyle                                         |
+---
+post_title: Converting a WordPress site to a React static site
+post_date: 2018-01-08 00:00:00
+post_modified: 2018-01-08 00:00:00
+post_status: publish
+post_type: revision
+post_author: Luke Boyle
+---
 
 The last iteration of this website was a truly insane infinite scrolling
 carousel that was very overwhelming to anyone who dare behold it, so with this

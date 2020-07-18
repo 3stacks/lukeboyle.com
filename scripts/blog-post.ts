@@ -4,6 +4,7 @@ import path from 'path';
 import camelCase from 'lodash/camelCase';
 import shell from 'shelljs';
 import sortBy from 'lodash/sortBy';
+import YAML = require('yamljs');
 import { getMarkupFromMarkdown, renderer } from './utils/renderer';
 import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
 import {
@@ -18,7 +19,7 @@ import { getCanonicalURLFromString } from './utils/string';
 function generateComponent(acc, curr) {
 	const fileName = getFileNameFromPath(curr.path);
 	const camelCaseName = camelCase(fileName);
-	const postContents = curr.contents;
+	let postContents = curr.contents;
 	let imports = `
 import React from 'react';
 import BlogPost from '../../../../components/BlogPost';
@@ -39,58 +40,27 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 		return `<img src={${imageName}} alt="${text}"/>`;
 	};
 
-	const postStatusIndex = postContents.indexOf('post_status');
-	const afterPostStatusContents = postContents.slice(postStatusIndex);
-	const almostPostStatus = afterPostStatusContents
-		.slice(afterPostStatusContents.indexOf('|'))
-		.slice(2);
-	const postStatus = almostPostStatus.slice(0, almostPostStatus.indexOf(' '));
-
 	const canonicalUrl = getCanonicalURLFromString(postContents) || '';
+	const contentsWithoutFirst = postContents.slice(3);
+	const frontMatterMetadata = YAML.parse(
+		contentsWithoutFirst.slice(0, contentsWithoutFirst.indexOf('---'))
+	);
+
+	postContents = contentsWithoutFirst.slice(
+		contentsWithoutFirst.indexOf('---') + 3
+	);
 
 	const lines = postContents.split('\n');
-	// TODO: fuck this off
-	let tableMode = false;
-	const contents = lines.reduce((acc, curr, index) => {
-		if (curr.slice(0, 2) === '# ') {
-			return Object.assign({}, acc, {
-				title: curr.slice(2)
-			});
-		}
+	const contents = {
+		title: frontMatterMetadata.post_title,
+		metaData: frontMatterMetadata,
+		contents: lines.reduce((acc, curr) => {
+			return `${acc || ''}\n${curr}`;
+		})
+	};
 
-		// Table Start
-		if (curr.includes('| Metadata name |')) {
-			tableMode = true;
-		}
-
-		if (tableMode === true) {
-			if (curr.slice(0, 2) === '| ') {
-				const lineWithoutFirstDelimeter = curr.slice(2);
-				const key = lineWithoutFirstDelimeter.slice(
-					0,
-					lineWithoutFirstDelimeter.indexOf(' | ')
-				);
-				const value = lineWithoutFirstDelimeter.slice(
-					lineWithoutFirstDelimeter.indexOf(' | ') + 3,
-					-2
-				);
-
-				return Object.assign({}, acc, {
-					metaData: Object.assign({}, acc.metaData, {
-						[key.trim()]: value.trim()
-					})
-				});
-			} else {
-				tableMode = false;
-			}
-		}
-
-		return Object.assign({}, acc, {
-			contents: `${acc.contents || ''}\n${curr}`
-		});
-	}, {});
-
-	if (postStatus !== 'draft') {
+	if (contents.metaData.post_status !== 'draft') {
+		console.log(contents.metaData);
 		const postContents = getMarkupFromMarkdown(contents.contents);
 		let parsedContents = postContents;
 

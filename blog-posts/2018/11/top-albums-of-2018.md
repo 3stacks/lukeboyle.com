@@ -1,14 +1,12 @@
-# Top albums of 2018
-
-| Metadata name | Value               |
-| ------------- | ------------------- |
-| post_title    | Top albums of 2018  |
-| post_date     | 2018-11-09 00:00:00 |
-| post_modified | 2018-11-09 00:00:00 |
-| post_status   | publish             |
-| post_type     | top_list            |
-| post_category | music               |
-| post_author   | Luke Boyle          |
+---
+post_title: Top albums of 2018
+post_date: 2018-11-09 00:00:00
+post_modified: 2018-11-09 00:00:00
+post_status: publish
+post_type: top_list
+post_category: music
+post_author: Luke Boyle
+---
 
 ## God's Favorite Customer
 

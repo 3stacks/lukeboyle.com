@@ -1,14 +1,12 @@
-# A few of my favourite verses
-
-| Metadata name | Value                        |
-| ------------- | ---------------------------- |
-| post_title    | A few of my favourite verses |
-| post_date     | 2019-09-01 00:00:00          |
-| post_modified | 2019-09-01 00:00:00          |
-| post_status   | publish                      |
-| post_type     | top_list                     |
-| post_category | music                        |
-| post_author   | Luke Boyle                   |
+---
+post_title: A few of my favourite verses
+post_date: 2019-09-01 00:00:00
+post_modified: 2019-09-01 00:00:00
+post_status: publish
+post_type: top_list
+post_category: music
+post_author: Luke Boyle
+---
 
 ## André 3000
 

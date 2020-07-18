@@ -1,14 +1,12 @@
-# Top 15 Albums of 2016
-
-| Metadata name | Value                 |
-| ------------- | --------------------- |
-| post_title    | Top 15 Albums of 2016 |
-| post_date     | 2016-12-14 01:48:15   |
-| post_modified | 2016-12-14 01:48:15   |
-| post_status   | inherit               |
-| post_type     | top_list              |
-| post_category | music                 |
-| post_author   | Luke Boyle            |
+---
+post_title: Top 15 Albums of 2016
+post_date: 2016-12-14 01:48:15
+post_modified: 2016-12-14 01:48:15
+post_status: inherit
+post_type: top_list
+post_category: music
+post_author: Luke Boyle
+---
 
 ## Scum With Boundaries
 
