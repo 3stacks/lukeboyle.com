@@ -6,7 +6,13 @@ import {
     AccordionItemButton,
     AccordionItemPanel
 } from 'react-accessible-accordion';
+import { FaChevronDown } from 'react-icons/fa';
 import { Wrapper } from './style';
+import styled from 'styled-components';
+
+const AccordionButton = styled.div<{ level: number }>`
+    padding-left: ${({ level }) => level * 20}px;
+`;
 
 export default function PostArchive({ data }) {
     return (
@@ -14,7 +20,7 @@ export default function PostArchive({ data }) {
             <Accordion allowZeroExpanded>
                 {Object.entries(data)
                     .reverse()
-                    .map(([year, months]) => {
+                    .map(([year, months], index) => {
                         return (
                             <AccordionItem key={year}>
                                 <AccordionItemHeading>
@@ -30,6 +36,7 @@ export default function PostArchive({ data }) {
                                                     <AccordionItem key={month}>
                                                         <AccordionItemHeading>
                                                             <AccordionItemButton>
+                                                                <FaChevronDown />{' '}
                                                                 {month}
                                                             </AccordionItemButton>
                                                         </AccordionItemHeading>

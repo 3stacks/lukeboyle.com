@@ -1,15 +1,16 @@
 import styled from 'styled-components';
+import { CUSTOM_PROPERTIES } from '../../styled/colors';
 
 export const Wrapper = styled.div`
 	font-size: 1.5rem;
 
 	.accordion__item + .accordion__item {
-		border-top: 1px solid rgba(0, 0, 0, 0.1);
+		border-top: 1px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 	}
 
 	.accordion__button {
-		background-color: #fff;
-		color: #444;
+		background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
+		color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 		cursor: pointer;
 		padding: 18px;
 		width: 100%;
@@ -17,28 +18,20 @@ export const Wrapper = styled.div`
 		border: none;
 	}
 
+	.accordion .accordion .accordion__item {
+		padding-left: 20px;
+
+		ul {
+			padding-left: 20px;
+		}
+	}
+
 	.accordion__button:hover {
-		background-color: #f4f4f4;
-	}
-
-	.accordion__button:before {
-		display: inline-block;
-		content: '';
-		height: 7px;
-		width: 7px;
-		margin-right: 12px;
-		border-bottom: 2px solid currentColor;
-		border-right: 2px solid currentColor;
-		transform: rotate(-45deg);
-	}
-
-	.accordion__button[aria-expanded='true']::before,
-	.accordion__button[aria-selected='true']::before {
-		transform: rotate(45deg);
+		background-color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
+		color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
 	}
 
 	.accordion__panel {
-		padding-left: 20px;
 		animation: fadein 0.35s ease-in;
 	}
 
