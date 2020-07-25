@@ -258,4 +258,14 @@ export const StyledLayout = styled.div<{
 				color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 			}
 		`}
+
+	dl {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		font-size: 1.8rem;
+
+		dt {
+			font-weight: bold;
+		}
+	}
 `;
