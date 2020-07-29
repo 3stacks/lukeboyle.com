@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css"
+        />
+        <script
+            src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"
+            defer
+        ></script>
+        <script src="./index.js" type="module" defer></script>
+    </head>
+    <body>
+        <h1>
+            Tiny CMS
+        </h1>
+        <p>
+            Editing/creating a post
+        </p>
+        <form id="editor_form">
+            <div>
+                <label for="post_title">
+                    Title
+                </label>
+                <input type="text" name="post_title" id="post_title" />
+            </div>
+            <div>
+                <label for="post_type">
+                    Post type
+                </label>
+                <select name="post_type" id="post_type">
+                    <option value="post">Post</option>
+                    <option value="top_list">Top list</option>
+                </select>
+            </div>
+            <div>
+                <label for="post_author">
+                    Post author
+                </label>
+                <input
+                    type="text"
+                    name="post_author"
+                    id="post_author"
+                    value="Luke Boyle"
+                />
+            </div>
+            <div id="editor"></div>
+            <button type="submit">
+                Save changes
+            </button>
+        </form>
+    </body>
+</html>
