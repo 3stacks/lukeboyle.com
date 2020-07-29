@@ -5,7 +5,11 @@ import { PostPreview } from './BlogPreview.style';
 import styled from 'styled-components';
 
 const SnippetContents = styled.div`
-    margin: 1rem 0;
+    margin: 1.6rem 0;
+`;
+
+const ReadMoreLink = styled.div`
+    font-size: 1.6rem;
 `;
 
 export const BlogPreview = ({
@@ -34,7 +38,9 @@ export const BlogPreview = ({
                     </time>
                 </p>
                 <SnippetContents>{children}</SnippetContents>
-                <Link to={slug}>Read more</Link>
+                <ReadMoreLink>
+                    <Link to={slug}>Read more</Link>
+                </ReadMoreLink>
             </div>
         </PostPreview>
     );
