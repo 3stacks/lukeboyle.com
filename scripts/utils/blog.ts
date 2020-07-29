@@ -73,8 +73,6 @@ export function resolveBlogPosts(): Promise<IPostArchive> {
 
 			const posts = paths.filter(isNotDirectory).map(resolveBlogPost);
 
-			console.log(posts);
-
 			resolve(
 				await Promise.all(posts).then(values => {
 					return values.reverse().reduce((acc, post) => {
@@ -193,16 +191,18 @@ export const Blog = () => (
 				</div>
 				<div>
 					${pages[key].reduce((acc, curr) => {
-						return (
-							acc +
-							`
+		return (
+			acc +
+			`
 <BlogPreview 
 	author="${curr.postAuthor}"
 	publishDate={${curr.publishDate}} 
 	title="${curr.postTitle}" 
 	slug="/${curr.path.replace('.md', '')}"
-/>`
-						);
+>
+	{${curr.snippet}}
+</BlogPreview>`
+		);
 					}, '')}	
 					<ul className="pagination">
 						${

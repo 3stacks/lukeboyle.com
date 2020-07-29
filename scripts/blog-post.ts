@@ -5,6 +5,7 @@ import camelCase from 'lodash/camelCase';
 import shell from 'shelljs';
 import sortBy from 'lodash/sortBy';
 import YAML from 'yamljs';
+import marked from 'marked';
 import { getMarkupFromMarkdown, renderer } from './utils/renderer';
 import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
 import {
@@ -51,18 +52,24 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 		);
 
 		const lines = postContents.trim().split('\n');
+		const contentsArray = lines.map(line => {
+			if (line === '') {
+				return '\n';
+			}
+
+			return `${line}\n`;
+		});
 		const contents = {
 			title: frontMatterMetadata.post_title,
 			metaData: frontMatterMetadata,
-			contents: lines
-				.map(line => {
-					if (line === '') {
-						return '\n';
-					}
-
-					return `${line}\n`;
-				})
-				.join('')
+			contents: contentsArray.join(''),
+			snippet:
+				frontMatterMetadata.post_type === 'post'
+					? contentsArray
+							.slice(0, 10)
+							.filter(line => !line.trim().startsWith('!['))
+							.join('')
+					: null
 		};
 
 		if (!contents.metaData.post_status) {
@@ -103,6 +110,17 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 				}, '');
 			}
 
+			const firstParagraphToken = contents.snippet
+				? marked
+						.lexer(contents.snippet)
+						.find(block => block.type === 'paragraph')
+				: undefined;
+
+			const snippet =
+				typeof firstParagraphToken === 'undefined'
+					? contents.metaData.snippet
+					: getMarkupFromMarkdown((firstParagraphToken as any).text);
+
 			acc.push({
 				path: curr.path,
 				fileName,
@@ -113,7 +131,7 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 				postType: contents.metaData.post_type || 'text-post',
 				postAuthor: contents.metaData.post_author,
 				postTitle: contents.metaData.post_title,
-				snippet: contents.metaData.snippet,
+				snippet: snippet || null,
 				component: generateBlogPostComponent(
 					imports,
 					camelCaseName,
@@ -204,7 +222,6 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 		const postsPerPage = 6;
 		const pages = components.reduce((acc, curr, index) => {
 			const pagesSoFar = Object.keys(acc);
-
 			const lastPage =
 				parseInt(pagesSoFar[pagesSoFar.length - 1], 10) || 0;
 

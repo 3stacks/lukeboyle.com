@@ -2,7 +2,7 @@
 post_title: Google Task Javascript API - Invalid Value 400 Error
 post_date: 2016-03-19 13:08:01
 post_modified: 2016-03-19 13:08:01
-post_type: draft
+post_type: post
 post_status: publish
 post_author: Luke Boyle
 ---
