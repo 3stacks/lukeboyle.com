@@ -57,7 +57,37 @@ from Google search results (as evidenced by the "search engine visibility" chart
 
 You don't have to agree with them politically to see that Google is applying different standards to conservative content
 than to more liberal content. I don't visit Breitbart, I don't read their articles, and frankly I don't give a shit
-what they have to say. If you believe in a free and open internet then you have to agree this is wrong. During the cold
+what they have to say, but I believe in a free and open internet. If you believe in a free and open internet then you have to agree this is wrong. During the cold
 war, anyone who didn't follow the extreme protectionist beliefs (CITATION NEEDED) of the time were shouted down as
 communists. This same thing is happening now, but the buzz word is different. The new weaponised word is "racist". If
-time had elapsed differently, I have no doubt that it would be left-wing websites being suppressed now, and that still wouldn't be okay.
+time had elapsed differently, I have no doubt that it would be left-wing websites suppressed in search results, and that still wouldn't be okay.
+
+There's plenty of evidence to suggest that Google is manually making these decisions to block conservative websites,
+however, Alphabet CEO Sundar Pichai denied that they manually censor websites at the recent [Congressional antitrust hearing](https://www.theguardian.com/technology/2020/jul/29/tech-hearings-facebook-mark-zuckerberg-amazon-jeff-bezos-apple-tim-cook-google-sundar-pichai-congress)
+except for in cases where there are legal requirements or copyright issues. I don't buy that, personally.
+
+## Streaming
+
+When Youtube was founded it was facing severe scaling problems (because video processing and streaming is extremly expensive).
+Fortunately for them, Google saw potential in the platform and purchased the company for \$1.65bn in Google stock, and their money
+issues were over. Google was throwing money into scaling the platform, and it was experiencing great growth. This success turned
+out to be a major problem for the Youtube, because, from the time it was purchased it has been making a loss. In recent years,
+Youtube has become profitable, however, without the bottomless pockets of Google behind it, they never would have been
+able to accomplish this. What incentive could Google have to take losses year after year on Youtube? Well, it turns
+out user data is particularly delicious. Mastercard's CEO has infamously said ["data is the new oil"](https://www.cnbc.com/2017/10/24/mastercard-boss-just-said-data-is-the-new-oil.html).
+I personally can't wait for Facebook, Amazon, and Google to become para-military organisations in the up-coming data wars.
+
+Youtube has essentially bullied their way into market dominance using Google's bottomless pit of money. This is problematic
+because it allows failing companies to cheat death. Just like a bottom-feeding fish, latching onto a whale shark and hitching a ride.
+
+![A whale shark with small fish adhered to the top of it. Youtube, Google Play, and Google Plus logos are superimposed on the small fish heads](/blog-posts/images/do-not-trust-google/google-shark.jpg)
+
+In the barren wasteland that is the video streaming landscape, who is left? Let's see:
+
+-   Vimeo: Maybe if you want to watch someone's high school media project or artistic short films.
+    Not exactly a hub of digestible content.
+-   Vid.me: Deceased, RIP. Hardly knew you.
+-   Bitchute - If your entire platform is "x but without censorship" you're probably not going to gain much
+    traction, because most people don't care about censorship until it affects them.
+
+## Mobile
