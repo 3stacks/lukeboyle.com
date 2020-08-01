@@ -135,7 +135,7 @@ Nest™ WiFi mesh router and let them inspect all of your web traffic that way?
 
 ![Google Nest Wifi Router product photo](/blog-posts/images/do-not-trust-google/nest.jpg)
 
-Or perhaps you want to buy the new Pixel and give them advanced analytics about how you use your phone [privacy class action lawsuit](https://www.searchenginejournal.com/google-privacy-lawsuit-android-apps/374952/), everywhere you
+Or perhaps you want to buy the new Pixel and give them advanced analytics about how you use your phone ([privacy class action lawsuit](https://www.searchenginejournal.com/google-privacy-lawsuit-android-apps/374952/)), everywhere you
 go (Location History), how much physical activity you do (Google Fit), every article/video you engage with (Chrome),
 everything you buy (Google Pay - and incidentally, how much disposable income you have, so they can better target more
 relevant ads to you). All of these "services" are simply a ruse so that Google can build an extremely accurate profile
