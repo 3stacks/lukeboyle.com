@@ -78,16 +78,41 @@ out user data is particularly delicious. Mastercard's CEO has infamously said ["
 I personally can't wait for Facebook, Amazon, and Google to become para-military organisations in the up-coming data wars.
 
 Youtube has essentially bullied their way into market dominance using Google's bottomless pit of money. This is problematic
-because it allows failing companies to cheat death. Just like a bottom-feeding fish, latching onto a whale shark and hitching a ride.
+because it allows failing companies to cheat death. Just like a bottom-feeding fish,latching onto a whale shark and hitching a ride.
+As I mentioned before, video streaming is extremely expensive, so it makes sense that great cloud infrastructure is a prerequisite to
+success. Well, big surprise, Google offers world-class commercial cloud infrastructure with Google Cloud Platform (GCP)!
+Do you suppose Youtube is paying full price for their infra?
 
 ![A whale shark with small fish adhered to the top of it. Youtube, Google Play, and Google Plus logos are superimposed on the small fish heads](/blog-posts/images/do-not-trust-google/google-shark.jpg)
 
-In the barren wasteland that is the video streaming landscape, who is left? Let's see:
-
--   Vimeo: Maybe if you want to watch someone's high school media project or artistic short films.
-    Not exactly a hub of digestible content.
--   Vid.me: Deceased, RIP. Hardly knew you.
--   Bitchute - If your entire platform is "x but without censorship" you're probably not going to gain much
-    traction, because most people don't care about censorship until it affects them.
+So, when you see a headline that says "[Stop paying for iCloud – Google One will now back up your iPhone for free](https://bgr.com/2020/07/30/google-one-free-phone-backup-ios-android/)".
+Before obeying the shill who wrote it, you should ask yourself, "How can a company afford to give away so much storage space for free?". Well, they can't.
+Google simply obscures their losses with the immense revenue from Google Ads in the profit/loss statement at the end of each quarter.
+For more reading about this topic, Tim Bray has a fantastic article called ["Break up Google"](https://www.tbray.org/ongoing/When/202x/2020/06/25/Break-Up-Google).
 
 ## Mobile
+
+This article is already becoming too long, so I'm just going to cover mobile quickly. As Tim Bray mentions in the
+article above, Android isn't really a business. The only real non-ad revenue they have is from the commission they get
+from app purchases and licensing fees from OEMs (e.g. Samsung, Huawei, LG). How, then, are they able to sustain
+hundreds of highly paid engineers and all the other non-technical staff required to support the system?
+
+![A map of the world with Android vs iOS market share. iOS is most dominant in first-world countries, whereas Android dominates emerging nations](/blog-posts/images/do-not-trust-google/android-ios-market-share.jpg)
+
+Above is a map of Android vs iOS market shares. You can see that iOS pretty much only has the dominant market share
+in first world countries (like USA, Canada, Australia, UK, Japan). Most of the emerging countries in the world are
+strongly in favour of Android because, unlike Apple, the OS is not restricted to a particular device. So, countries like
+India (where the number of smart-phone users has increased sharply from 199 million in 2015 to 401 million in 2020 [source](https://www.statista.com/statistics/467163/forecast-of-smartphone-users-in-india/))
+that mostly purchase low-cost phones (e.g. Huawei, Xiaomi, Oppo). Emerging markets are extremely important to companies
+like Google partly because these countries are easier to exploit because they don't have strong legislation to protect
+users from predatory advertising, anticompetitive tactics, or data privacy. This is why I speculate that Mastercard is
+scrambling to [connect refugees to the global payment network](https://www.forbes.com/sites/tomgroenfeldt/2020/05/06/financial-inclusion-helps-refugees-move-from-aid-recipients-to-earners-and-tax-payers) (Remember that quote from the Mastercard CEO: "Data is the new oil")
+and, indeed, why Mastercard [forced Patreon to ban Robert Spencer for his anti-refugee sentiment](https://www.jihadwatch.org/2018/08/patreon-and-mastercard-ban-robert-spencer-without-explanation).
+
+Again, regardless of whether you agree with someone's political leaning or rhetoric, I shouldn't have to explain
+why it's ludicrous for people to believe that faceless, soulless corporations such as MasterCard or Google give
+two fucks about moral righteousness when their only servant is a number ticker on the Nasdaq website.
+
+## Closing thoughts
+
+All of that is to say
