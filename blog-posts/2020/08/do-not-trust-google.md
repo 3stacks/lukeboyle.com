@@ -11,8 +11,8 @@ I realise that this is one of the most well-explored topics on the
 privacy-conscious edges of the internet, but seriously... Do not trust Google.
 Facebook seems to be our current punching bag of choice because of their supposed
 ability to manipulate political opinion, but in my opinion Google is a much more insidious company
-with far greater potential for abuse. Google is the [largest advertising platform](https://www.investopedia.com/news/facebook-google-digital-ad-market-share-drops-amazon-climbs/)
-by a significant margin (accounting for 36.3% of advertising in the U.S. with Facebook trailing at 19.3%). At the
+with far greater potential for abuse. Google is the [largest advertising platform](https://www.investopedia.com/news/facebook-google-digital-ad-market-share-drops-amazon-climbs/) by
+a significant margin (accounting for 36.3% of advertising in the U.S. with Facebook trailing at 19.3%). At the
 end of the day, if you delete your Facebook account, what are you really missing out on?
 
 Google (or more specifically Alphabet Inc.) owns the largest search engine (Google.com), the largest video streaming
@@ -62,8 +62,9 @@ The new weaponised word is "Nazi". If time had elapsed differently, I have no do
 websites suppressed in search results, and that still wouldn't be okay.
 
 There's plenty of evidence to suggest that Google is manually making these decisions to block conservative websites,
-however, Alphabet CEO Sundar Pichai denied that they manually censor websites at the recent [Congressional antitrust hearing](https://www.theguardian.com/technology/2020/jul/29/tech-hearings-facebook-mark-zuckerberg-amazon-jeff-bezos-apple-tim-cook-google-sundar-pichai-congress)
-except for in cases where there are legal requirements or copyright issues. I don't buy that, personally.
+however, Alphabet CEO Sundar Pichai denied that they manually censor websites at the
+recent [Congressional antitrust hearing](https://www.theguardian.com/technology/2020/jul/29/tech-hearings-facebook-mark-zuckerberg-amazon-jeff-bezos-apple-tim-cook-google-sundar-pichai-congress) except
+for in cases where there are legal requirements or copyright issues. I don't buy that, personally.
 
 ## Streaming
 
@@ -148,16 +149,17 @@ Well that was pretty depressing. So, how can you reclaim a shred of your privacy
 
 ### Search
 
-There's a swathe of privacy-focused alternatives popping up these days. I personally use [duckduckgo.com](duckduckgo.com)
-which is built on the Bing search API and does not track any user data. I'll concede that Duckduckgo doesn't have as
-good search results, but I'm okay with that. Another one is [https://www.startpage.com/](https://www.startpage.com/)
-which actually uses Google results, but ensures Google can't track your activity.
+There's a swathe of privacy-focused alternatives popping up these days. I personally
+use [duckduckgo.com](duckduckgo.com) which
+is built on the Bing search API and does not track any user data. I'll concede that Duckduckgo doesn't have as
+good search results, but I'm okay with that. Another one is [https://www.startpage.com/](https://www.startpage.com/) which
+actually uses Google results, but ensures Google can't track your activity.
 
 ### Streaming
 
 I'm currently using [invidio.us](invidio.us) which, like Startpage, is just a wrapper for Youtube. So you can get the
-same content minus the tracking. Bonus, check out [invidation on the mozilla extension store](https://addons.mozilla.org/en-US/firefox/addon/invidition/)
-to open all youtube links in invidio.us instead.
+same content minus the tracking. Bonus, check out [invidation on the mozilla extension store](https://addons.mozilla.org/en-US/firefox/addon/invidition/) to
+open all youtube links in invidio.us instead.
 
 ### Mobile
 
@@ -166,6 +168,6 @@ you care about having a repairable device. If you really want to go hardcore the
 
 ### Browsing
 
-I didn't really touch on Chrome, but I'm not happy with Chrome either. Since Edge has [switched to using Chromium](https://www.lifewire.com/what-it-is-chromium-edge-4842127)
-the only real competitor (i.e. non-Chromium) in the browser market share is Safari. I use Firefox because I believe
+I didn't really touch on Chrome, but I'm not happy with Chrome either. Since Edge has [switched to using Chromium](https://www.lifewire.com/what-it-is-chromium-edge-4842127) the
+only real competitor (i.e. non-Chromium) in the browser market share is Safari. I use Firefox because I believe
 in Mozilla and their commitment to maintaining privacy. They're doing good stuff lately.
