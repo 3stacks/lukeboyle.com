@@ -7,6 +7,8 @@ post_type: post
 post_author: Luke Boyle
 ---
 
+![](/blog-posts/images/do-not-trust-google/google-fasc.jpg)
+
 I realise that this is one of the most well-explored topics on the
 privacy-conscious edges of the internet, but seriously... Do not trust Google.
 Facebook seems to be our current punching bag of choice because of their supposed

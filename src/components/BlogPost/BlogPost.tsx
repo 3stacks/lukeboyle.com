@@ -11,13 +11,15 @@ export const BlogPost = ({
     publishDate,
     author,
     title,
-    seo: { canonical, pageTitle, pageDescription }
+    seo: { canonical, pageTitle, pageDescription },
+    fileName
 }: {
     children: any;
     publishDate: string;
     author: string;
     title: string;
     canonical: string;
+    fileName: string;
     seo: {
         canonical: string;
         pageTitle: string;
@@ -25,7 +27,7 @@ export const BlogPost = ({
     };
 }) => {
     return (
-        <Layout slug="blog-single">
+        <Layout slug={`blog-single ${fileName}`}>
             <Helmet>
                 {canonical !== '' && <link rel="canonical" href={canonical} />}
                 {pageDescription && (

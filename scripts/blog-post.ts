@@ -137,7 +137,8 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 					camelCaseName,
 					parsedContents,
 					contents.metaData,
-					canonicalUrl
+					canonicalUrl,
+					fileName
 				)
 			});
 		}

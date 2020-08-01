@@ -250,6 +250,14 @@ export const StyledLayout = styled.div<{
 		}
 	}
 
+	&.do-not-trust-google {
+		img:first-of-type {
+			display: block;
+			max-width: 70%;
+			margin: 0 auto;
+		}
+	}
+
 	${props =>
 		!props.showFullPageColor &&
 		css`

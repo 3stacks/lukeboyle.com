@@ -112,7 +112,8 @@ export function generateBlogPostComponent(
 	componentName: string,
 	contents: string,
 	metaData: IMetaData,
-	canonicalUrl: string
+	canonicalUrl: string,
+	fileName: string
 ) {
 	return `${imports}
 	
@@ -120,6 +121,7 @@ export const ${componentName} = () => {
 	return (
 		<BlogPost
 			title="${metaData.post_title}"
+			fileName="${fileName.replace('.md', '')}"
 			publishDate="${metaData.post_date}"
 			author="${metaData.post_author}"
 			canonical="${canonicalUrl}"
@@ -191,9 +193,9 @@ export const Blog = () => (
 				</div>
 				<div>
 					${pages[key].reduce((acc, curr) => {
-		return (
-			acc +
-			`
+						return (
+							acc +
+							`
 <BlogPreview 
 	author="${curr.postAuthor}"
 	publishDate={${curr.publishDate}} 
@@ -202,7 +204,7 @@ export const Blog = () => (
 >
 	{${curr.snippet}}
 </BlogPreview>`
-		);
+						);
 					}, '')}	
 					<ul className="pagination">
 						${
