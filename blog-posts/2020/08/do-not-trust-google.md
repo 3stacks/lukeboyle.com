@@ -13,14 +13,11 @@ Facebook seems to be our current punching bag of choice because of their suppose
 ability to manipulate political opinion, but in my opinion Google is a much more insidious company
 with far greater potential for abuse. Google is the [largest advertising platform](https://www.investopedia.com/news/facebook-google-digital-ad-market-share-drops-amazon-climbs/)
 by a significant margin (accounting for 36.3% of advertising in the U.S. with Facebook trailing at 19.3%). At the
-end of the day, if you delete your Facebook account, what are you really missing out on? Photos of friends and family
-members, easy access to chat, and heavily biased news (CITATION NEEDED).
+end of the day, if you delete your Facebook account, what are you really missing out on?
 
-Google (or more specifically Alphabet Inc.) owns the largest search engine (Google.com), the largest video streaming platform (Youtube),
-and the most-used smartphone operating system (Android)
-
-You might ask, "What's wrong with that? Sounds like they're just very successful at what they do". Well, let's break
-down those three markets (Search, Streaming, Mobile).
+Google (or more specifically Alphabet Inc.) owns the largest search engine (Google.com), the largest video streaming
+platform (Youtube), and the most-used smartphone operating system (Android). You might ask, "What's wrong with that?
+Sounds like they're just very successful at what they do". Well, let's break down those three markets (Search, Streaming, Mobile).
 
 ![The classic Google slogan "Don't be evil", except the end of the "don't" is crossed out so it says "Do be evil"](/blog-posts/images/do-not-trust-google/do-be-evil.jpg)
 
@@ -57,10 +54,12 @@ from Google search results (as evidenced by the "search engine visibility" chart
 
 You don't have to agree with them politically to see that Google is applying different standards to conservative content
 than to more liberal content. I don't visit Breitbart, I don't read their articles, and frankly I don't give a shit
-what they have to say, but I believe in a free and open internet. If you believe in a free and open internet then you have to agree this is wrong. During the cold
-war, anyone who didn't follow the extreme protectionist beliefs (CITATION NEEDED) of the time were shouted down as
-communists. This same thing is happening now, but the buzz word is different. The new weaponised word is "racist". If
-time had elapsed differently, I have no doubt that it would be left-wing websites suppressed in search results, and that still wouldn't be okay.
+what they have to say, but I believe in a free and open internet. If you believe in a free and open internet then you
+have to agree this is wrong. During the cold war, anyone who didn't follow the extreme protectionist beliefs of the
+time [were shouted down as communists](https://www.history.com/topics/cold-war/red-scare) (Even Martin Luther King Jr.
+was dismissed as a communist by J. Edgar Hoover). This same thing is happening now, but the buzz word is different.
+The new weaponised word is "Nazi". If time had elapsed differently, I have no doubt that it would be left-wing
+websites suppressed in search results, and that still wouldn't be okay.
 
 There's plenty of evidence to suggest that Google is manually making these decisions to block conservative websites,
 however, Alphabet CEO Sundar Pichai denied that they manually censor websites at the recent [Congressional antitrust hearing](https://www.theguardian.com/technology/2020/jul/29/tech-hearings-facebook-mark-zuckerberg-amazon-jeff-bezos-apple-tim-cook-google-sundar-pichai-congress)
@@ -115,4 +114,58 @@ two fucks about moral righteousness when their only servant is a number ticker o
 
 ## Closing thoughts
 
-All of that is to say
+So, after reading all of that, I have to ask:
+
+Why don't you route all of your web traffic through Google Servers?
+
+![Google DNS logo](/blog-posts/images/do-not-trust-google/google-dns.jpg)
+
+To be clear, I'm not accusing Google of storing DNS logs or associating that with specific users (they claim that they
+don't in their terms of service), however, I think it's unreasonable to think that they wouldn't be capable of that. I
+also wouldn't put it past them to lie in terms of service considering their recent run-ins with the law ([\$1.7bn fine for anti-competitive behaviour](https://www.cbsnews.com/news/google-eu-fines-google-1-7-billion-for-blocking-advertising-rivals/), [\$170m for violating children's privacy on Youtube](https://www.nytimes.com/2019/09/04/technology/google-youtube-fine-ftc.html), [50 million euro fine for GDPR violations](https://www.theverge.com/2019/1/21/18191591/google-gdpr-fine-50-million-euros-data-consent-cnil)).
+
+$2bn doesn't matter to Google. It's a drop in the bucket, especially considering they would probably be able to freely
+harvest user data for months or even years before they're caught and slapped on the wrist. If a single user's search data
+is worth upwards of $10 a year (see the Safari Google default search engine deal) for Google, then the complete logs of
+their browsing history would be quite juicy indeed.
+
+Okay, so that's verging on conspiracy theory I suppose. Maybe Google DNS will remain clean. How about you get a Google®
+Nest™ WiFi mesh router and let them inspect all of your web traffic that way?
+
+![Google Nest Wifi Router product photo](/blog-posts/images/do-not-trust-google/nest.jpg)
+
+Or perhaps you want to buy the new Pixel and give them advanced analytics about how you use your phone [privacy class action lawsuit](https://www.searchenginejournal.com/google-privacy-lawsuit-android-apps/374952/), everywhere you
+go (Location History), how much physical activity you do (Google Fit), every article/video you engage with (Chrome),
+everything you buy (Google Pay - and incidentally, how much disposable income you have, so they can better target more
+relevant ads to you). All of these "services" are simply a ruse so that Google can build an extremely accurate profile
+about the type of consumer you are and target you with more advertising to turn you into a soulless consumer.
+
+I don't want these people to also be the arbiters of what content I should or should not be able to see online.
+
+## Actual closing thoughts
+
+Well that was pretty depressing. So, how can you reclaim a shred of your privacy?
+
+### Search
+
+There's a swathe of privacy-focused alternatives popping up these days. I personally use [duckduckgo.com](duckduckgo.com)
+which is built on the Bing search API and does not track any user data. I'll concede that Duckduckgo doesn't have as
+good search results, but I'm okay with that. Another one is [https://www.startpage.com/](https://www.startpage.com/)
+which actually uses Google results, but ensures Google can't track your activity.
+
+### Streaming
+
+I'm currently using [invidio.us](invidio.us) which, like Startpage, is just a wrapper for Youtube. So you can get the
+same content minus the tracking. Bonus, check out [invidation on the mozilla extension store](https://addons.mozilla.org/en-US/firefox/addon/invidition/)
+to open all youtube links in invidio.us instead.
+
+### Mobile
+
+I really don't have an answer for this one. I'm an iPhone user, but really, Apple is not much better, especially if
+you care about having a repairable device. If you really want to go hardcore there's some custom Android forks like [https://grapheneos.org/](https://grapheneos.org/)
+
+### Browsing
+
+I didn't really touch on Chrome, but I'm not happy with Chrome either. Since Edge has [switched to using Chromium](https://www.lifewire.com/what-it-is-chromium-edge-4842127)
+the only real competitor (i.e. non-Chromium) in the browser market share is Safari. I use Firefox because I believe
+in Mozilla and their commitment to maintaining privacy. They're doing good stuff lately.
