@@ -40,15 +40,15 @@ they probably don't know is that is just the tip of the iceberg. Other dimension
 -   how relevant the content is to the search term (SEO magic)?
 -   and, most importantly, does this website fit an acceptable narrative?
 
-There's certainly an argument to be made for suppressing some search results (such as pro-authoritarian sites
-(e.g. communist or fascist), extremely fringe conspiracy, illegal pornography, or bomb-making instructions) because
-advertisers probably don't want their ads next to those results. Rightly or wrongly, Google is already suppressing
-content from such websites (though, they're probably still indexing them).
+There's certainly an argument to be made for suppressing some search results, such as pro-authoritarian sites
+(e.g. communist or fascist), extremely fringe conspiracy, illegal pornography, or bomb-making instructions. Advertisers
+probably don't want their ads next to those results. Rightly or wrongly, Google is already suppressing content from
+such websites (though, they're probably still indexing them).
 
 If Google can suppress fascist content from sites like Stormfront (prominent white-supremacy forum), then who is to
 say which content they can or cannot suppress? Breitbart is a well-known right wing news site that has had their
-content [almost entirely purged](https://www.breitbart.com/tech/2020/07/28/election-interference-google-purges-breitbart-from-search-results/)
-from Google search results (as evidenced by the "search engine visibility" chart below).
+content [almost entirely purged](https://www.breitbart.com/tech/2020/07/28/election-interference-google-purges-breitbart-from-search-results/) from
+Google search results (as evidenced by the "search engine visibility" chart below).
 
 ![Search engine visibility index for Breitbart.com shows significant increase in visibility leading up to the 2016 presidential election with a sharp drop in mid 2017](/blog-posts/images/do-not-trust-google/breitbart-visibility-index.jpg)
 
@@ -68,22 +68,22 @@ for in cases where there are legal requirements or copyright issues. I don't buy
 
 ## Streaming
 
-When Youtube was founded it was facing severe scaling problems (because video processing and streaming is extremly expensive).
+When YouTube was founded it was facing severe scaling problems (because video processing and streaming is extremely expensive).
 Fortunately for them, Google saw potential in the platform and purchased the company for \$1.65bn in Google stock, and their money
 issues were over. Google was throwing money into scaling the platform, and it was experiencing great growth. This success turned
-out to be a major problem for the Youtube, because, from the time it was purchased it has been making a loss. In recent years,
-Youtube has become profitable, however, without the bottomless pockets of Google behind it, they never would have been
-able to accomplish this. What incentive could Google have to take losses year after year on Youtube? Well, it turns
+out to be a major problem for the YouTube, because, from the time it was purchased it has been making a loss. In recent years,
+YouTube has become profitable, however, without the bottomless pockets of Google behind it, they never would have been
+able to accomplish this. What incentive could Google have to take losses year after year on YouTube? Well, it turns
 out user data is particularly delicious. Mastercard's CEO has infamously said ["data is the new oil"](https://www.cnbc.com/2017/10/24/mastercard-boss-just-said-data-is-the-new-oil.html).
 I personally can't wait for Facebook, Amazon, and Google to become para-military organisations in the up-coming data wars.
 
-Youtube has essentially bullied their way into market dominance using Google's bottomless pit of money. This is problematic
+YouTube has essentially bullied their way into market dominance using Google's bottomless pit of money. This is problematic
 because it allows failing companies to cheat death. Just like a bottom-feeding fish,latching onto a whale shark and hitching a ride.
 As I mentioned before, video streaming is extremely expensive, so it makes sense that great cloud infrastructure is a prerequisite to
 success. Well, big surprise, Google offers world-class commercial cloud infrastructure with Google Cloud Platform (GCP)!
-Do you suppose Youtube is paying full price for their infra?
+Do you suppose YouTube is paying full price for their infra?
 
-![A whale shark with small fish adhered to the top of it. Youtube, Google Play, and Google Plus logos are superimposed on the small fish heads](/blog-posts/images/do-not-trust-google/google-shark.jpg)
+![A whale shark with small fish adhered to the top of it. YouTube, Google Play, and Google Plus logos are superimposed on the small fish heads](/blog-posts/images/do-not-trust-google/google-shark.jpg)
 
 So, when you see a headline that says "[Stop paying for iCloud – Google One will now back up your iPhone for free](https://bgr.com/2020/07/30/google-one-free-phone-backup-ios-android/)".
 Before obeying the shill who wrote it, you should ask yourself, "How can a company afford to give away so much storage space for free?". Well, they can't.
@@ -123,7 +123,7 @@ Why don't you route all of your web traffic through Google Servers?
 
 To be clear, I'm not accusing Google of storing DNS logs or associating that with specific users (they claim that they
 don't in their terms of service), however, I think it's unreasonable to think that they wouldn't be capable of that. I
-also wouldn't put it past them to lie in terms of service considering their recent run-ins with the law ([\$1.7bn fine for anti-competitive behaviour](https://www.cbsnews.com/news/google-eu-fines-google-1-7-billion-for-blocking-advertising-rivals/), [\$170m for violating children's privacy on Youtube](https://www.nytimes.com/2019/09/04/technology/google-youtube-fine-ftc.html), [50 million euro fine for GDPR violations](https://www.theverge.com/2019/1/21/18191591/google-gdpr-fine-50-million-euros-data-consent-cnil)).
+also wouldn't put it past them to lie in terms of service considering their recent run-ins with the law ([\$1.7bn fine for anti-competitive behaviour](https://www.cbsnews.com/news/google-eu-fines-google-1-7-billion-for-blocking-advertising-rivals/), [\$170m for violating children's privacy on YouTube](https://www.nytimes.com/2019/09/04/technology/google-youtube-fine-ftc.html), [50 million euro fine for GDPR violations](https://www.theverge.com/2019/1/21/18191591/google-gdpr-fine-50-million-euros-data-consent-cnil)).
 
 $2bn doesn't matter to Google. It's a drop in the bucket, especially considering they would probably be able to freely
 harvest user data for months or even years before they're caught and slapped on the wrist. If a single user's search data
@@ -157,8 +157,8 @@ actually uses Google results, but ensures Google can't track your activity.
 
 ### Streaming
 
-I'm currently using [invidio.us](invidio.us) which, like Startpage, is just a wrapper for Youtube. So you can get the
-same content minus the tracking. Bonus, check out [invidation on the mozilla extension store](https://addons.mozilla.org/en-US/firefox/addon/invidition/) to
+I'm currently using [invidio.us](invidio.us) which, like Startpage, is just a wrapper for YouTube. So you can get the
+same content minus the tracking. Bonus, check out [Invidition on the mozilla extension store](https://addons.mozilla.org/en-US/firefox/addon/invidition/) to
 open all youtube links in invidio.us instead.
 
 ### Mobile
