@@ -33,15 +33,16 @@ export const Index = () => {
                     </Stuff>
                     <Stuff>
                         <h2 className="block-header">Latest Post</h2>
-                        <h3 className="title">Github Actions for web apps</h3>
+                        <h3 className="title">Do not trust Google</h3>
                         <p>
-                            Github continues to improve their offering with the
-                            newly released "Github Actions" system. Here's the
-                            definitive guide to deploying SPAs.
+                            Why should an advertising company get to dictate
+                            what you are allowed to see on the Internet? Google
+                            has proven time and time again that their old slogan
+                            "Don't be evil" was a meaningless platitude.
                         </p>
                         <LinkButton
                             isSecondary
-                            to="/blog-posts/2019/08/github-actions-for-web-apps"
+                            to="/blog-posts/2020/08/do-not-trust-google"
                         >
                             Read more
                         </LinkButton>
