@@ -85,7 +85,7 @@ export const StyledNav = styled.div`
 
 			a {
 				color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
-				font-size: 1.2rem;
+				font-size: 1.4rem;
 				border-color: transparent;
 
 				${bp(
