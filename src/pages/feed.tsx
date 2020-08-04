@@ -43,7 +43,7 @@ const Body = styled.div`
     ${bp(
         768,
         css`
-            padding: 10px 0 0 10px;
+            padding: 5px 0 0 10px;
         `
     )}
 
