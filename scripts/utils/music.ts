@@ -204,9 +204,7 @@ function sleep(time: number): Promise<any> {
 export async function getDiscogsCollectionItems(
 	apiKey: string
 ): Promise<IDiscogsRelease[]> {
-	const collectionResponse: AxiosResponse<
-		IDiscogsCollectionResponse
-	> = await axios.get(
+	const collectionResponse: AxiosResponse<IDiscogsCollectionResponse> = await axios.get(
 		`https://api.discogs.com/users/lookboil/collection/folders/0/releases?sort=added&sort_order=desc`
 	);
 	const releaseIds = collectionResponse.data.releases.map(
