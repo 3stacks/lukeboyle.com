@@ -20,7 +20,8 @@ interface IProps {
 }
 
 export const Layout = ({ pageName, headChildren, slug, children }: IProps) => {
-    const isHomeOrPortfolioPage = slug === 'home' || slug === 'portfolio';
+    const isHomeOrPortfolioPage =
+        slug === 'home' || slug === 'portfolio' || slug === 'feed';
     const [activeTheme, updateActiveTheme] = useState<THEMES>(
         (typeof window !== 'undefined' &&
             THEMES[localStorage.getItem('activeTheme')]) ||

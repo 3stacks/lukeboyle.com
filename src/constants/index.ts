@@ -1,6 +1,7 @@
 export enum PAGES {
 	HOME = 'HOME',
 	PORTFOLIO = 'PORTFOLIO',
+	FEED = 'FEED',
 	BLOG = 'BLOG',
 	MUSIC = 'MUSIC',
 	ABOUT = 'ABOUT'
