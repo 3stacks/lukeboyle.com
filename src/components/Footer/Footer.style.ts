@@ -1,8 +1,16 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CUSTOM_PROPERTIES } from '../../styled/colors';
+import { bp } from '../../styled/mixins';
 
 export const StyledFooter = styled.div`
-	height: 60px;
+	height: 100px;
+
+	${bp(
+		600,
+		css`
+			height: 60px;
+		`
+	)};
 
 	& .inner {
 		display: flex;

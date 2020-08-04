@@ -11,13 +11,16 @@ export const StyledHeader = styled.header`
 	position: fixed;
 	bottom: 0;
 	background-color: ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
-	height: ${HEADER_HEIGHT}px;
+	height: 80px;
+	padding-bottom: 20px;
+	border-top: 2px solid ${CUSTOM_PROPERTIES.COLOR_TEXT};
 
 	${bp(
 		600,
 		css`
-			height: auto;
+			height: ${HEADER_HEIGHT}px !important;
 			position: static;
+			border-top: none;
 		`
 	)};
 
