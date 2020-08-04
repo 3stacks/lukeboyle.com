@@ -250,17 +250,15 @@ export const StyledLayout = styled.div<{
 		}
 	}
 
-	&.do-not-trust-google {
-		img:first-of-type {
-			${bp(
-				768,
-				css`
-					display: block;
-					max-width: 70%;
-					margin: 0 auto;
-				`
-			)}
-		}
+	[data-identifier='google-fasc'] {
+		${bp(
+			768,
+			css`
+				display: block;
+				max-width: 70%;
+				margin: 0 auto;
+			`
+		)}
 	}
 
 	${props =>

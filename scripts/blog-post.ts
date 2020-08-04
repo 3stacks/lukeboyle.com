@@ -37,8 +37,11 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 					? href
 					: `../..${href.replace('/blog-posts', '')}`
 			}'`;
+			const hrefParts = href.split('/');
 
-			return `<img src={${imageName}} alt="${text}"/>`;
+			return `<img src={${imageName}} alt="${text}" data-identifier="${
+				hrefParts[hrefParts.length - 1].split('.')[0]
+			}" />`;
 		};
 
 		const canonicalUrl = getCanonicalURLFromString(postContents) || '';
@@ -113,7 +116,7 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 			const firstParagraphToken = contents.snippet
 				? marked
 						.lexer(contents.snippet)
-						.find(block => block.type === 'paragraph')
+						.find(block => (block as any).type === 'paragraph')
 				: undefined;
 
 			const snippet =

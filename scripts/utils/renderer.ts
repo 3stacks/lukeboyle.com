@@ -54,22 +54,14 @@ renderer.heading = function(code: string, level: number): string {
 	}
 };
 
-renderer.table = function(header: string, body: string): string {
-	if (header.includes('Metadata name')) {
-		const rows = body.split('<tr>');
-		const dateRow = rows.find(row => row.includes('post_date'));
-		const rawDate = dateRow.split('<td>')[2];
-		const date = rawDate.slice(0, rawDate.length - 12);
-		return `<p>
-			<time datetime="${date}">${formatDate(date, 'Do of MMMM, YYYY')}</time>
-		</p>`;
-	} else {
-		return header + body;
-	}
-};
+renderer.image = (href: string, title: string, text: string): string => {
+	const hrefParts = href.split('/');
 
-renderer.image = function(href: string, title: string, text: string): string {
-	return `<img src="${href}" alt="${text}"/>`;
+	console.log(hrefParts);
+
+	return `<img src="${href}" alt="${text}" data-filename={${
+		hrefParts[hrefParts.length - 1].split('.')[0]
+	}}/>`;
 };
 
 export function getMarkupFromMarkdown(markdownString: string): string {
