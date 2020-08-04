@@ -5,7 +5,7 @@ import { format } from 'date-fns';
 import MaxWidthContainer from '../components/MaxWidthContainer';
 import HomeHeadBanner from '../components/HomeHeadBanner';
 import styled, { css } from 'styled-components';
-import avatarSrc from '../assets/img/avatar.jpg';
+import avatarSrc from '../public/img/avatar.jpg';
 import { blackShift, bp } from '../styled/mixins';
 import { BodyWrapper } from '../styled/music.style';
 

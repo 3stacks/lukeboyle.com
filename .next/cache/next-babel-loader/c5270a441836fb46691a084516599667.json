@@ -1,0 +1,20 @@
+{
+    "ast": null,
+    "code": "export var PAGES;\n\n(function (PAGES) {\n  PAGES[\"HOME\"] = \"HOME\";\n  PAGES[\"PORTFOLIO\"] = \"PORTFOLIO\";\n  PAGES[\"FEED\"] = \"FEED\";\n  PAGES[\"BLOG\"] = \"BLOG\";\n  PAGES[\"MUSIC\"] = \"MUSIC\";\n  PAGES[\"ABOUT\"] = \"ABOUT\";\n})(PAGES || (PAGES = {}));\n\nexport var MY_NAME = 'Luke Boyle';\nexport var META_DESCRIPTION;\n\n(function (META_DESCRIPTION) {\n  META_DESCRIPTION[\"HOME\"] = \"Luke Boyle is a Front End Developer from Melbourne, Australia. Specialising in JavaScript web applications, he has experience with Angular, React and Vue Js.\";\n})(META_DESCRIPTION || (META_DESCRIPTION = {}));\n\nexport var PORTFOLIO_ITEM_NAMES;\n\n(function (PORTFOLIO_ITEM_NAMES) {\n  PORTFOLIO_ITEM_NAMES[\"UNDERWRITING_RULES_ENGINE\"] = \"Underwriting Rules Engine\";\n  PORTFOLIO_ITEM_NAMES[\"DEBT_DESTROYER\"] = \"Debt Destroyer\";\n  PORTFOLIO_ITEM_NAMES[\"THIS_WEBSITE\"] = \"This website\";\n  PORTFOLIO_ITEM_NAMES[\"GUESSTIMATE\"] = \"Guesstimate\";\n  PORTFOLIO_ITEM_NAMES[\"SPECTRUM\"] = \"Spectrum\";\n  PORTFOLIO_ITEM_NAMES[\"AGANDER\"] = \"Agander\";\n  PORTFOLIO_ITEM_NAMES[\"SPLIT_VISUALISER\"] = \"Split Visualiser\";\n  PORTFOLIO_ITEM_NAMES[\"VICES\"] = \"Vices\";\n})(PORTFOLIO_ITEM_NAMES || (PORTFOLIO_ITEM_NAMES = {}));",
+    "map": {
+        "version": 3,
+        "sources": ["/Users/luke/Sites/portfolio-2016/src/constants/index.ts"],
+        "names": [
+            "PAGES",
+            "MY_NAME",
+            "META_DESCRIPTION",
+            "PORTFOLIO_ITEM_NAMES"
+        ],
+        "mappings": "AAAA,WAAYA,KAAZ;;WAAYA,K;AAAAA,EAAAA,K;AAAAA,EAAAA,K;AAAAA,EAAAA,K;AAAAA,EAAAA,K;AAAAA,EAAAA,K;AAAAA,EAAAA,K;GAAAA,K,KAAAA,K;;AAQZ,OAAO,IAAMC,OAAO,GAAG,YAAhB;AACP,WAAYC,gBAAZ;;WAAYA,gB;AAAAA,EAAAA,gB;GAAAA,gB,KAAAA,gB;;AAGZ,WAAYC,oBAAZ;;WAAYA,oB;AAAAA,EAAAA,oB;AAAAA,EAAAA,oB;AAAAA,EAAAA,oB;AAAAA,EAAAA,oB;AAAAA,EAAAA,oB;AAAAA,EAAAA,oB;AAAAA,EAAAA,oB;AAAAA,EAAAA,oB;GAAAA,oB,KAAAA,oB",
+        "sourcesContent": [
+            "export enum PAGES {\n\tHOME = 'HOME',\n\tPORTFOLIO = 'PORTFOLIO',\n\tFEED = 'FEED',\n\tBLOG = 'BLOG',\n\tMUSIC = 'MUSIC',\n\tABOUT = 'ABOUT'\n}\nexport const MY_NAME = 'Luke Boyle';\nexport enum META_DESCRIPTION {\n\tHOME = 'Luke Boyle is a Front End Developer from Melbourne, Australia. Specialising in JavaScript web applications, he has experience with Angular, React and Vue Js.'\n}\nexport enum PORTFOLIO_ITEM_NAMES {\n\tUNDERWRITING_RULES_ENGINE = 'Underwriting Rules Engine',\n\tDEBT_DESTROYER = 'Debt Destroyer',\n\tTHIS_WEBSITE = 'This website',\n\tGUESSTIMATE = 'Guesstimate',\n\tSPECTRUM = 'Spectrum',\n\tAGANDER = 'Agander',\n\tSPLIT_VISUALISER = 'Split Visualiser',\n\tVICES = 'Vices'\n}\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

@@ -1,0 +1,24 @@
+{
+    "ast": null,
+    "code": "import styled, { css } from 'styled-components';\nimport { blackShift, bp } from './styled/mixins';\nimport { getFontSize } from './styled/utils';\nexport const RecentStuff = styled.div`\n\tdisplay: grid;\n\tpadding: 30px 0;\n\tgrid-gap: 30px;\n\tgrid-template-columns: 1fr;\n\n\t${bp(620, css`\n\t\t\tgrid-template-columns: 1fr 1fr;\n\t\t`)}\n`;\nexport const Stuff = styled.div`\n\ttext-align: center;\n\tpadding: 20px;\n\tdisplay: flex;\n\tflex-direction: column;\n\talign-items: center;\n\t${blackShift(5)}\n\n\ta {\n\t\tmargin-top: auto;\n\t}\n\n\t.block-header {\n\t\tmargin-bottom: 2rem;\n\t\t${getFontSize(2.5, 1.3, 2)}\n\t}\n\n\t.title {\n\t\t${getFontSize(3.5, 1.3, 3.5)}\n\t}\n\n\th2 {\n\t\tmargin-bottom: 0;\n\t}\n`;",
+    "map": {
+        "version": 3,
+        "sources": ["/Users/luke/Sites/portfolio-2016/src/index.style.ts"],
+        "names": [
+            "styled",
+            "css",
+            "blackShift",
+            "bp",
+            "getFontSize",
+            "RecentStuff",
+            "div",
+            "Stuff"
+        ],
+        "mappings": "AAAA,OAAOA,MAAP,IAAiBC,GAAjB,QAA4B,mBAA5B;AACA,SAASC,UAAT,EAAqBC,EAArB,QAA+B,iBAA/B;AACA,SAASC,WAAT,QAA4B,gBAA5B;AAEA,OAAO,MAAMC,WAAW,GAAGL,MAAM,CAACM,GAAI;;;;;;GAMnCH,EAAE,CACH,GADG,EAEHF,GAAI;;GAFD,CAKF;CAXI;AAcP,OAAO,MAAMM,KAAK,GAAGP,MAAM,CAACM,GAAI;;;;;;GAM7BJ,UAAU,CAAC,CAAD,CAAI;;;;;;;;IAQbE,WAAW,CAAC,GAAD,EAAM,GAAN,EAAW,CAAX,CAAc;;;;IAIzBA,WAAW,CAAC,GAAD,EAAM,GAAN,EAAW,GAAX,CAAgB;;;;;;CAlBxB",
+        "sourcesContent": [
+            "import styled, { css } from 'styled-components';\r\nimport { blackShift, bp } from './styled/mixins';\r\nimport { getFontSize } from './styled/utils';\r\n\r\nexport const RecentStuff = styled.div`\r\n\tdisplay: grid;\r\n\tpadding: 30px 0;\r\n\tgrid-gap: 30px;\r\n\tgrid-template-columns: 1fr;\r\n\r\n\t${bp(\r\n\t\t620,\r\n\t\tcss`\r\n\t\t\tgrid-template-columns: 1fr 1fr;\r\n\t\t`\r\n\t)}\r\n`;\r\n\r\nexport const Stuff = styled.div`\r\n\ttext-align: center;\r\n\tpadding: 20px;\r\n\tdisplay: flex;\r\n\tflex-direction: column;\r\n\talign-items: center;\r\n\t${blackShift(5)}\r\n\r\n\ta {\r\n\t\tmargin-top: auto;\r\n\t}\r\n\r\n\t.block-header {\r\n\t\tmargin-bottom: 2rem;\r\n\t\t${getFontSize(2.5, 1.3, 2)}\r\n\t}\r\n\r\n\t.title {\r\n\t\t${getFontSize(3.5, 1.3, 3.5)}\r\n\t}\r\n\r\n\th2 {\r\n\t\tmargin-bottom: 0;\r\n\t}\r\n`;\r\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

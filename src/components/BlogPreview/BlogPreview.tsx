@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import formatDate from 'date-fns/format';
 import { PostPreview } from './BlogPreview.style';
 import styled from 'styled-components';
@@ -29,17 +29,19 @@ export const BlogPreview = ({
         <PostPreview>
             <div>
                 <h2>
-                    <Link to={slug}>{title}</Link>
+                    <Link href={slug}>{title}</Link>
                 </h2>
                 <p>
                     Posted by {author} on the{' '}
-                    <time className="date" dateTime={publishDate}>
+                    <time className="date" dateTime={`${publishDate}`}>
                         {formatDate(publishDate, 'Do of MMMM, YYYY')}
                     </time>
                 </p>
                 <SnippetContents>{children}</SnippetContents>
                 <ReadMoreLink>
-                    <Link to={slug}>Read more</Link>
+                    <Link href={slug}>
+                        <a>Read more</a>
+                    </Link>
                 </ReadMoreLink>
             </div>
         </PostPreview>

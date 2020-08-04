@@ -1,0 +1,27 @@
+{
+    "ast": null,
+    "code": "import styled, { css } from 'styled-components';\nimport { bp } from '../../styled/mixins';\nimport { WIDTHS } from '../../styled/sizes';\nconst MaxWidthContainer = styled.div`\n    ${props => props.isSmall ? css`\n                  max-width: 700px;\n              ` : css`\n                  max-width: 1000px;\n              `};\n    padding: 0 15px;\n    margin: 0 auto;\n\n    ${bp(WIDTHS.M, css`\n            padding: 0 30px;\n        `)}\n`;\nexport default MaxWidthContainer;",
+    "map": {
+        "version": 3,
+        "sources": [
+            "/Users/luke/Sites/portfolio-2016/src/components/MaxWidthContainer/MaxWidthContainer.tsx"
+        ],
+        "names": [
+            "styled",
+            "css",
+            "bp",
+            "WIDTHS",
+            "MaxWidthContainer",
+            "div",
+            "props",
+            "isSmall",
+            "M"
+        ],
+        "mappings": "AAAA,OAAOA,MAAP,IAAiBC,GAAjB,QAA4B,mBAA5B;AACA,SAASC,EAAT,QAAmB,qBAAnB;AACA,SAASC,MAAT,QAAuB,oBAAvB;AAEA,MAAMC,iBAAiB,GAAGJ,MAAM,CAACK,GAA2B;MACtDC,KAAK,IACHA,KAAK,CAACC,OAAN,GACMN,GAAI;;eADV,GAIMA,GAAI;;eAEF;;;;MAIVC,EAAE,CACAC,MAAM,CAACK,CADP,EAEAP,GAAI;;SAFJ,CAKF;CAjBN;AAoBA,eAAeG,iBAAf",
+        "sourcesContent": [
+            "import styled, { css } from 'styled-components';\nimport { bp } from '../../styled/mixins';\nimport { WIDTHS } from '../../styled/sizes';\n\nconst MaxWidthContainer = styled.div<{ isSmall?: boolean }>`\n    ${props =>\n        props.isSmall\n            ? css`\n                  max-width: 700px;\n              `\n            : css`\n                  max-width: 1000px;\n              `};\n    padding: 0 15px;\n    margin: 0 auto;\n\n    ${bp(\n        WIDTHS.M,\n        css`\n            padding: 0 30px;\n        `\n    )}\n`;\n\nexport default MaxWidthContainer;\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

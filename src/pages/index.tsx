@@ -27,7 +27,7 @@ export const Index = () => {
                         <h2 className="block-header">Latest Project</h2>
                         <h3 className="title">{latestProject.name}</h3>
                         <p className="snippet">{latestProject.snippet}</p>
-                        <LinkButton to={latestProject.link}>
+                        <LinkButton href={latestProject.link}>
                             Read More
                         </LinkButton>
                     </Stuff>
@@ -42,7 +42,7 @@ export const Index = () => {
                         </p>
                         <LinkButton
                             isSecondary
-                            to="/blog-posts/2020/08/do-not-trust-google"
+                            href="/blog-posts/2020/08/do-not-trust-google"
                         >
                             Read more
                         </LinkButton>

@@ -209,11 +209,11 @@ export const Blog = () => (
 					<ul className="pagination">
 						${
 							pageNumber > 0
-								? `<li><Link to="${
+								? `<li><Link href="${
 										key === '2'
 											? '/blog'
 											: `/blog/${parseInt(key, 10) - 2}`
-								  }">&lt;</Link></li>`
+								  }"><a>&lt;</a></Link></li>`
 								: ''
 						}
 						${Object.entries(pages)
@@ -221,19 +221,19 @@ export const Blog = () => (
 							.reduce((acc, curr, index) => {
 								return `${acc}
 <li>
-	<Link to="${index === 0 ? '/blog' : `/blog/${index}`}" className=${
+	<Link href="${index === 0 ? '/blog' : `/blog/${index}`}" className=${
 									pageNumber === index ? '"is-active"' : '""'
 								}>
-		${index}
+		<a>${index}</a>
 	</Link>
 </li>`;
 							}, '')}
 						${
 							pageNumber !== Object.values(pages).length - 1
-								? `<li><Link to="/blog/${parseInt(
+								? `<li><Link href="/blog/${parseInt(
 										key,
 										10
-								  )}">&gt;</Link></li>`
+								  )}"><a>&gt;</a></Link></li>`
 								: ''
 						}
 					</ul>							

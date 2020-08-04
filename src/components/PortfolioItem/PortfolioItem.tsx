@@ -14,7 +14,7 @@ export const PortfolioItem = ({
         <div className="card">
             <h2 className="title">{shortName ? shortName : name}</h2>
             <p>{snippet}</p>
-            <LinkButton to={link}>Read More</LinkButton>
+            <LinkButton href={link}>Read More</LinkButton>
         </div>
     </PortfolioPageItem>
 );

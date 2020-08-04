@@ -1,0 +1,33 @@
+{
+    "ast": null,
+    "code": "const yellow = '#ffe01b';\nconst nightBlue = '#142634';\nconst grey = '#bdc7c1';\nconst orange = '#d48872';\nconst blue = 'blue';\nconst white = '#fff';\nconst black = '#111';\nexport const DEFAULT_COLORS = {\n  PRIMARY: yellow,\n  WHITE: white,\n  TEXT: black,\n  SECONDARY: black\n};\nexport const ALT_COLORS = {\n  PRIMARY: white,\n  WHITE: white,\n  TEXT: blue,\n  SECONDARY: blue\n};\nexport const NIGHT_MODE_COLORS = {\n  PRIMARY: nightBlue,\n  WHITE: grey,\n  TEXT: orange,\n  SECONDARY: orange\n};\nexport let CUSTOM_PROPERTIES;\n\n(function (CUSTOM_PROPERTIES) {\n  CUSTOM_PROPERTIES[\"COLOR_PRIMARY\"] = \"var(--color-primary)\";\n  CUSTOM_PROPERTIES[\"COLOR_SECONDARY\"] = \"var(--color-secondary)\";\n  CUSTOM_PROPERTIES[\"COLOR_TEXT\"] = \"var(--color-text)\";\n  CUSTOM_PROPERTIES[\"COLOR_WHITE\"] = \"var(--color-white)\";\n})(CUSTOM_PROPERTIES || (CUSTOM_PROPERTIES = {}));\n\nexport let THEMES;\n\n(function (THEMES) {\n  THEMES[\"DEFAULT\"] = \"DEFAULT\";\n  THEMES[\"NIGHT\"] = \"NIGHT\";\n  THEMES[\"ALT\"] = \"ALT\";\n})(THEMES || (THEMES = {}));\n\nexport const COLORS = DEFAULT_COLORS;",
+    "map": {
+        "version": 3,
+        "sources": ["/Users/luke/Sites/portfolio-2016/src/styled/colors.ts"],
+        "names": [
+            "yellow",
+            "nightBlue",
+            "grey",
+            "orange",
+            "blue",
+            "white",
+            "black",
+            "DEFAULT_COLORS",
+            "PRIMARY",
+            "WHITE",
+            "TEXT",
+            "SECONDARY",
+            "ALT_COLORS",
+            "NIGHT_MODE_COLORS",
+            "CUSTOM_PROPERTIES",
+            "THEMES",
+            "COLORS"
+        ],
+        "mappings": "AAAA,MAAMA,MAAM,GAAG,SAAf;AACA,MAAMC,SAAS,GAAG,SAAlB;AACA,MAAMC,IAAI,GAAG,SAAb;AACA,MAAMC,MAAM,GAAG,SAAf;AACA,MAAMC,IAAI,GAAG,MAAb;AACA,MAAMC,KAAK,GAAG,MAAd;AACA,MAAMC,KAAK,GAAG,MAAd;AASA,OAAO,MAAMC,cAAsB,GAAG;AACrCC,EAAAA,OAAO,EAAER,MAD4B;AAErCS,EAAAA,KAAK,EAAEJ,KAF8B;AAGrCK,EAAAA,IAAI,EAAEJ,KAH+B;AAIrCK,EAAAA,SAAS,EAAEL;AAJ0B,CAA/B;AAOP,OAAO,MAAMM,UAAkB,GAAG;AACjCJ,EAAAA,OAAO,EAAEH,KADwB;AAEjCI,EAAAA,KAAK,EAAEJ,KAF0B;AAGjCK,EAAAA,IAAI,EAAEN,IAH2B;AAIjCO,EAAAA,SAAS,EAAEP;AAJsB,CAA3B;AAOP,OAAO,MAAMS,iBAAyB,GAAG;AACxCL,EAAAA,OAAO,EAAEP,SAD+B;AAExCQ,EAAAA,KAAK,EAAEP,IAFiC;AAGxCQ,EAAAA,IAAI,EAAEP,MAHkC;AAIxCQ,EAAAA,SAAS,EAAER;AAJ6B,CAAlC;AAOP,WAAYW,iBAAZ;;WAAYA,iB;AAAAA,EAAAA,iB;AAAAA,EAAAA,iB;AAAAA,EAAAA,iB;AAAAA,EAAAA,iB;GAAAA,iB,KAAAA,iB;;AAOZ,WAAYC,MAAZ;;WAAYA,M;AAAAA,EAAAA,M;AAAAA,EAAAA,M;AAAAA,EAAAA,M;GAAAA,M,KAAAA,M;;AAMZ,OAAO,MAAMC,MAAM,GAAGT,cAAf",
+        "sourcesContent": [
+            "const yellow = '#ffe01b';\nconst nightBlue = '#142634';\nconst grey = '#bdc7c1';\nconst orange = '#d48872';\nconst blue = 'blue';\nconst white = '#fff';\nconst black = '#111';\n\nexport interface ITheme {\n\tPRIMARY: string;\n\tWHITE: string;\n\tTEXT: string;\n\tSECONDARY: string;\n}\n\nexport const DEFAULT_COLORS: ITheme = {\n\tPRIMARY: yellow,\n\tWHITE: white,\n\tTEXT: black,\n\tSECONDARY: black\n};\n\nexport const ALT_COLORS: ITheme = {\n\tPRIMARY: white,\n\tWHITE: white,\n\tTEXT: blue,\n\tSECONDARY: blue\n};\n\nexport const NIGHT_MODE_COLORS: ITheme = {\n\tPRIMARY: nightBlue,\n\tWHITE: grey,\n\tTEXT: orange,\n\tSECONDARY: orange\n};\n\nexport enum CUSTOM_PROPERTIES {\n\tCOLOR_PRIMARY = 'var(--color-primary)',\n\tCOLOR_SECONDARY = 'var(--color-secondary)',\n\tCOLOR_TEXT = 'var(--color-text)',\n\tCOLOR_WHITE = 'var(--color-white)'\n}\n\nexport enum THEMES {\n\tDEFAULT = 'DEFAULT',\n\tNIGHT = 'NIGHT',\n\tALT = 'ALT'\n}\n\nexport const COLORS = DEFAULT_COLORS;\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

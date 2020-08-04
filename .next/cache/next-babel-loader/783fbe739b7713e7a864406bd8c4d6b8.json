@@ -1,0 +1,23 @@
+{
+    "ast": null,
+    "code": "var _this = this,\n    _jsxFileName = \"/Users/luke/Sites/portfolio-2016/src/components/Footer/Footer.tsx\";\n\nvar __jsx = React.createElement;\nimport React from 'react';\nimport MaxWidthContainer from '../../components/MaxWidthContainer';\nimport { StyledFooter } from './Footer.style';\nimport { FaYinYang } from 'react-icons/fa';\nexport var Footer = function Footer() {\n  return __jsx(StyledFooter, {\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 8,\n      columnNumber: 9\n    }\n  }, __jsx(MaxWidthContainer, {\n    className: \"inner\",\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 9,\n      columnNumber: 13\n    }\n  }, __jsx(\"small\", {\n    className: \"copyright\",\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 10,\n      columnNumber: 17\n    }\n  }, \"\\xA9 Luke Boyle \", __jsx(FaYinYang, {\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 11,\n      columnNumber: 39\n    }\n  }), \" 93 'til infinity\"), __jsx(\"a\", {\n    className: \"copyright\",\n    href: \"/sitemap.xml\",\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 13,\n      columnNumber: 17\n    }\n  }, \"Sitemap\")));\n};\n_c = Footer;\nexport default Footer;\n\nvar _c;\n\n$RefreshReg$(_c, \"Footer\");",
+    "map": {
+        "version": 3,
+        "sources": [
+            "/Users/luke/Sites/portfolio-2016/src/components/Footer/Footer.tsx"
+        ],
+        "names": [
+            "React",
+            "MaxWidthContainer",
+            "StyledFooter",
+            "FaYinYang",
+            "Footer"
+        ],
+        "mappings": ";;;;AAAA,OAAOA,KAAP,MAAkB,OAAlB;AACA,OAAOC,iBAAP,MAA8B,oCAA9B;AACA,SAASC,YAAT,QAA6B,gBAA7B;AACA,SAASC,SAAT,QAA0B,gBAA1B;AAEA,OAAO,IAAMC,MAAM,GAAG,SAATA,MAAS,GAAM;AACxB,SACI,MAAC,YAAD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACI,MAAC,iBAAD;AAAmB,IAAA,SAAS,EAAC,OAA7B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACI;AAAO,IAAA,SAAS,EAAC,WAAjB;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,yBACsB,MAAC,SAAD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IADtB,sBADJ,EAII;AAAG,IAAA,SAAS,EAAC,WAAb;AAAyB,IAAA,IAAI,EAAC,cAA9B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,eAJJ,CADJ,CADJ;AAYH,CAbM;KAAMA,M;AAeb,eAAeA,MAAf",
+        "sourcesContent": [
+            "import React from 'react';\nimport MaxWidthContainer from '../../components/MaxWidthContainer';\nimport { StyledFooter } from './Footer.style';\nimport { FaYinYang } from 'react-icons/fa';\n\nexport const Footer = () => {\n    return (\n        <StyledFooter>\n            <MaxWidthContainer className=\"inner\">\n                <small className=\"copyright\">\n                    &copy; Luke Boyle <FaYinYang /> 93 'til infinity\n                </small>\n                <a className=\"copyright\" href=\"/sitemap.xml\">\n                    Sitemap\n                </a>\n            </MaxWidthContainer>\n        </StyledFooter>\n    );\n};\n\nexport default Footer;\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

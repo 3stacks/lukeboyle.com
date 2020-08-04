@@ -1,0 +1,25 @@
+{
+    "ast": null,
+    "code": "import _taggedTemplateLiteral from \"@babel/runtime/helpers/esm/taggedTemplateLiteral\";\n\nfunction _templateObject2() {\n  var data = _taggedTemplateLiteral([\"\\n\\t\\t\\theight: 60px;\\n\\t\\t\"]);\n\n  _templateObject2 = function _templateObject2() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _templateObject() {\n  var data = _taggedTemplateLiteral([\"\\n\\theight: 100px;\\n\\n\\t\", \";\\n\\n\\t& .inner {\\n\\t\\tdisplay: flex;\\n\\t\\tjustify-content: space-between;\\n\\t\\talign-items: center;\\n\\t\\theight: 100%;\\n\\t\\tfont-size: 1.4rem;\\n\\n\\t\\ta {\\n\\t\\t\\tcolor: \", \";\\n\\n\\t\\t\\t&:hover {\\n\\t\\t\\t\\tcolor: \", \";\\n\\t\\t\\t\\tborder-bottom: 1px solid \", \";\\n\\t\\t\\t}\\n\\t\\t}\\n\\t}\\n\\n\\t& .copyright {\\n\\t\\tcolor: \", \";\\n\\t\\tfont-size: 1.4rem;\\n\\t}\\n\"]);\n\n  _templateObject = function _templateObject() {\n    return data;\n  };\n\n  return data;\n}\n\nimport styled, { css } from 'styled-components';\nimport { CUSTOM_PROPERTIES } from '../../styled/colors';\nimport { bp } from '../../styled/mixins';\nexport var StyledFooter = styled.div(_templateObject(), bp(600, css(_templateObject2())), CUSTOM_PROPERTIES.COLOR_TEXT, CUSTOM_PROPERTIES.COLOR_TEXT, CUSTOM_PROPERTIES.COLOR_TEXT, CUSTOM_PROPERTIES.COLOR_TEXT);",
+    "map": {
+        "version": 3,
+        "sources": [
+            "/Users/luke/Sites/portfolio-2016/src/components/Footer/Footer.style.ts"
+        ],
+        "names": [
+            "styled",
+            "css",
+            "CUSTOM_PROPERTIES",
+            "bp",
+            "StyledFooter",
+            "div",
+            "COLOR_TEXT"
+        ],
+        "mappings": ";;;;;;;;;;;;;;;;;;;;;;AAAA,OAAOA,MAAP,IAAiBC,GAAjB,QAA4B,mBAA5B;AACA,SAASC,iBAAT,QAAkC,qBAAlC;AACA,SAASC,EAAT,QAAmB,qBAAnB;AAEA,OAAO,IAAMC,YAAY,GAAGJ,MAAM,CAACK,GAAV,oBAGtBF,EAAE,CACH,GADG,EAEHF,GAFG,qBAHoB,EAkBbC,iBAAiB,CAACI,UAlBL,EAqBZJ,iBAAiB,CAACI,UArBN,EAsBMJ,iBAAiB,CAACI,UAtBxB,EA4BdJ,iBAAiB,CAACI,UA5BJ,CAAlB",
+        "sourcesContent": [
+            "import styled, { css } from 'styled-components';\nimport { CUSTOM_PROPERTIES } from '../../styled/colors';\nimport { bp } from '../../styled/mixins';\n\nexport const StyledFooter = styled.div`\n\theight: 100px;\n\n\t${bp(\n\t\t600,\n\t\tcss`\n\t\t\theight: 60px;\n\t\t`\n\t)};\n\n\t& .inner {\n\t\tdisplay: flex;\n\t\tjustify-content: space-between;\n\t\talign-items: center;\n\t\theight: 100%;\n\t\tfont-size: 1.4rem;\n\n\t\ta {\n\t\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\n\t\t\t&:hover {\n\t\t\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\t\t\t\tborder-bottom: 1px solid ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\t\t\t}\n\t\t}\n\t}\n\n\t& .copyright {\n\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\t\tfont-size: 1.4rem;\n\t}\n`;\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

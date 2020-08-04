@@ -1,0 +1,32 @@
+{
+    "ast": null,
+    "code": "var _this = this,\n    _jsxFileName = \"/Users/luke/Sites/portfolio-2016/src/components/SiteNav/SiteNav.tsx\";\n\nvar __jsx = React.createElement;\nimport React from 'react';\nimport Link from 'gatsby-link';\nimport { MY_NAME } from '../../constants';\nimport { StyledNav } from './SiteNav.style';\nimport { routes } from '../../data';\nexport var SiteNav = function SiteNav(_ref) {\n  var _ref$isHome = _ref.isHome,\n      isHome = _ref$isHome === void 0 ? false : _ref$isHome,\n      slug = _ref.slug,\n      rightSlot = _ref.rightSlot;\n  return __jsx(StyledNav, {\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 16,\n      columnNumber: 5\n    }\n  }, isHome ? __jsx(\"h1\", {\n    className: \"logo\",\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 18,\n      columnNumber: 13\n    }\n  }, MY_NAME) : __jsx(\"p\", {\n    className: \"logo\",\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 20,\n      columnNumber: 13\n    }\n  }, __jsx(Link, {\n    href: \"/\",\n    rel: \"home\",\n    title: \"Go back to the home page\",\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 21,\n      columnNumber: 17\n    }\n  }, MY_NAME)), __jsx(\"ul\", {\n    id: \"menu\",\n    className: \"menu\",\n    __self: _this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 26,\n      columnNumber: 9\n    }\n  }, routes.map(function (route) {\n    var isHome = route.slug === 'home';\n    return __jsx(\"li\", {\n      key: route.link,\n      className: slug === route.slug ? 'item is-active' : 'item',\n      __self: _this,\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 31,\n        columnNumber: 21\n      }\n    }, __jsx(Link, {\n      href: route.link,\n      \"aria-label\": isHome ? 'Go back to homepage' : undefined,\n      tabIndex: 0,\n      __self: _this,\n      __source: {\n        fileName: _jsxFileName,\n        lineNumber: 37,\n        columnNumber: 25\n      }\n    }, route.text));\n  }), rightSlot));\n};\n_c = SiteNav;\nexport default SiteNav;\n\nvar _c;\n\n$RefreshReg$(_c, \"SiteNav\");",
+    "map": {
+        "version": 3,
+        "sources": [
+            "/Users/luke/Sites/portfolio-2016/src/components/SiteNav/SiteNav.tsx"
+        ],
+        "names": [
+            "React",
+            "Link",
+            "MY_NAME",
+            "StyledNav",
+            "routes",
+            "SiteNav",
+            "isHome",
+            "slug",
+            "rightSlot",
+            "map",
+            "route",
+            "link",
+            "undefined",
+            "text"
+        ],
+        "mappings": ";;;;AAAA,OAAOA,KAAP,MAAkB,OAAlB;AACA,OAAOC,IAAP,MAAiB,aAAjB;AACA,SAASC,OAAT,QAAwB,iBAAxB;AACA,SAASC,SAAT,QAA0B,iBAA1B;AACA,SAASC,MAAT,QAAuB,YAAvB;AAEA,OAAO,IAAMC,OAAO,GAAG,SAAVA,OAAU;AAAA,yBACnBC,MADmB;AAAA,MACnBA,MADmB,4BACV,KADU;AAAA,MAEnBC,IAFmB,QAEnBA,IAFmB;AAAA,MAGnBC,SAHmB,QAGnBA,SAHmB;AAAA,SASnB,MAAC,SAAD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACKF,MAAM,GACH;AAAI,IAAA,SAAS,EAAC,MAAd;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAAsBJ,OAAtB,CADG,GAGH;AAAG,IAAA,SAAS,EAAC,MAAb;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACI,MAAC,IAAD;AAAM,IAAA,IAAI,EAAC,GAAX;AAAe,IAAA,GAAG,EAAC,MAAnB;AAA0B,IAAA,KAAK,EAAC,0BAAhC;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACKA,OADL,CADJ,CAJR,EAUI;AAAI,IAAA,EAAE,EAAC,MAAP;AAAc,IAAA,SAAS,EAAC,MAAxB;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACKE,MAAM,CAACK,GAAP,CAAW,UAAAC,KAAK,EAAI;AACjB,QAAMJ,MAAM,GAAGI,KAAK,CAACH,IAAN,KAAe,MAA9B;AAEA,WACI;AACI,MAAA,GAAG,EAAEG,KAAK,CAACC,IADf;AAEI,MAAA,SAAS,EACLJ,IAAI,KAAKG,KAAK,CAACH,IAAf,GAAsB,gBAAtB,GAAyC,MAHjD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,OAMI,MAAC,IAAD;AACI,MAAA,IAAI,EAAEG,KAAK,CAACC,IADhB;AAEI,oBACIL,MAAM,GAAG,qBAAH,GAA2BM,SAHzC;AAKI,MAAA,QAAQ,EAAE,CALd;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,OAOKF,KAAK,CAACG,IAPX,CANJ,CADJ;AAkBH,GArBA,CADL,EAuBKL,SAvBL,CAVJ,CATmB;AAAA,CAAhB;KAAMH,O;AA+Cb,eAAeA,OAAf",
+        "sourcesContent": [
+            "import React from 'react';\nimport Link from 'gatsby-link';\nimport { MY_NAME } from '../../constants';\nimport { StyledNav } from './SiteNav.style';\nimport { routes } from '../../data';\n\nexport const SiteNav = ({\n    isHome = false,\n    slug,\n    rightSlot\n}: {\n    isHome: boolean;\n    slug: string;\n    rightSlot?: React.ReactElement;\n}) => (\n    <StyledNav>\n        {isHome ? (\n            <h1 className=\"logo\">{MY_NAME}</h1>\n        ) : (\n            <p className=\"logo\">\n                <Link href=\"/\" rel=\"home\" title=\"Go back to the home page\">\n                    {MY_NAME}\n                </Link>\n            </p>\n        )}\n        <ul id=\"menu\" className=\"menu\">\n            {routes.map(route => {\n                const isHome = route.slug === 'home';\n\n                return (\n                    <li\n                        key={route.link}\n                        className={\n                            slug === route.slug ? 'item is-active' : 'item'\n                        }\n                    >\n                        <Link\n                            href={route.link}\n                            aria-label={\n                                isHome ? 'Go back to homepage' : undefined\n                            }\n                            tabIndex={0}\n                        >\n                            {route.text}\n                        </Link>\n                    </li>\n                );\n            })}\n            {rightSlot}\n        </ul>\n    </StyledNav>\n);\n\nexport default SiteNav;\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

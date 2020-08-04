@@ -3,10 +3,6 @@ import styled, {
 	css,
 	FlattenSimpleInterpolation
 } from 'styled-components';
-import graphikWoff from '../../assets/fonts/Graphik-Regular.woff';
-import graphikWoffTwo from '../../assets/fonts/Graphik-Regular.woff2';
-import publicoWoff from '../../assets/fonts/Publico.woff';
-import publicoWoffTwo from '../../assets/fonts/Publico.woff2';
 import {
 	ALT_COLORS,
 	COLORS,
@@ -33,14 +29,14 @@ export const GlobalLayoutStyle = createGlobalStyle`
 	@font-face {
         font-family: 'Publico';
         font-display: swap;
-        src: url(${publicoWoffTwo}) format('woff2'),
-          url(${publicoWoff}) format('woff');
+        src: url("/fonts/Publico.woff2") format('woff2'),
+          url("/fonts/Publico.woff") format('woff');
     }
     @font-face {
         font-family: 'Graphik';
         font-display: swap;
-        src: url(${graphikWoffTwo}) format('woff2'),
-          url(${graphikWoff}) format('woff');
+        src: url("/fonts/Graphik-Regular.woff2") format('woff2'),
+          url("/fonts/Graphik-Regular.woff") format('woff');
     }
 
 	html {

@@ -1,0 +1,23 @@
+{
+    "ast": null,
+    "code": "import { css } from 'styled-components';\nimport { LINE_HEIGHTS } from './sizes';\nexport function getFontSize(fontSize, lineHeight = LINE_HEIGHTS.DEFAULT, marginBottom) {\n  return css`\n\t\tfont-size: ${fontSize}rem;\n\t\tline-height: ${lineHeight};\n\t\tmargin-bottom: ${marginBottom ? marginBottom : fontSize * lineHeight}rem;\n\t`;\n}",
+    "map": {
+        "version": 3,
+        "sources": ["/Users/luke/Sites/portfolio-2016/src/styled/utils.ts"],
+        "names": [
+            "css",
+            "LINE_HEIGHTS",
+            "getFontSize",
+            "fontSize",
+            "lineHeight",
+            "DEFAULT",
+            "marginBottom"
+        ],
+        "mappings": "AAAA,SAASA,GAAT,QAAgD,mBAAhD;AACA,SAASC,YAAT,QAA6B,SAA7B;AAEA,OAAO,SAASC,WAAT,CACNC,QADM,EAENC,UAAwB,GAAGH,YAAY,CAACI,OAFlC,EAGNC,YAHM,EAIuB;AAC7B,SAAON,GAAI;eACGG,QAAS;iBACPC,UAAW;mBACTE,YAAY,GAC1BA,YAD0B,GAE1BH,QAAQ,GAAGC,UAAW;EAL1B;AAOA",
+        "sourcesContent": [
+            "import { css, FlattenSimpleInterpolation } from 'styled-components';\nimport { LINE_HEIGHTS } from './sizes';\n\nexport function getFontSize(\n\tfontSize: number,\n\tlineHeight: LINE_HEIGHTS = LINE_HEIGHTS.DEFAULT,\n\tmarginBottom?: number\n): FlattenSimpleInterpolation {\n\treturn css`\n\t\tfont-size: ${fontSize}rem;\n\t\tline-height: ${lineHeight};\n\t\tmargin-bottom: ${marginBottom\n\t\t\t? marginBottom\n\t\t\t: fontSize * lineHeight}rem;\n\t`;\n}\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

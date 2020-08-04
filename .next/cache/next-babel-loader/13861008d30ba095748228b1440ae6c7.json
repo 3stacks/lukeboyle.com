@@ -1,0 +1,23 @@
+{
+    "ast": null,
+    "code": "import _taggedTemplateLiteral from \"@babel/runtime/helpers/esm/taggedTemplateLiteral\";\n\nfunction _templateObject() {\n  var data = _taggedTemplateLiteral([\"\\n\\t\\tfont-size: \", \"rem;\\n\\t\\tline-height: \", \";\\n\\t\\tmargin-bottom: \", \"rem;\\n\\t\"]);\n\n  _templateObject = function _templateObject() {\n    return data;\n  };\n\n  return data;\n}\n\nimport { css } from 'styled-components';\nimport { LINE_HEIGHTS } from './sizes';\nexport function getFontSize(fontSize) {\n  var lineHeight = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : LINE_HEIGHTS.DEFAULT;\n  var marginBottom = arguments.length > 2 ? arguments[2] : undefined;\n  return css(_templateObject(), fontSize, lineHeight, marginBottom ? marginBottom : fontSize * lineHeight);\n}",
+    "map": {
+        "version": 3,
+        "sources": ["/Users/luke/Sites/portfolio-2016/src/styled/utils.ts"],
+        "names": [
+            "css",
+            "LINE_HEIGHTS",
+            "getFontSize",
+            "fontSize",
+            "lineHeight",
+            "DEFAULT",
+            "marginBottom"
+        ],
+        "mappings": ";;;;;;;;;;;;AAAA,SAASA,GAAT,QAAgD,mBAAhD;AACA,SAASC,YAAT,QAA6B,SAA7B;AAEA,OAAO,SAASC,WAAT,CACNC,QADM,EAIuB;AAAA,MAF7BC,UAE6B,uEAFFH,YAAY,CAACI,OAEX;AAAA,MAD7BC,YAC6B;AAC7B,SAAON,GAAP,oBACcG,QADd,EAEgBC,UAFhB,EAGkBE,YAAY,GAC1BA,YAD0B,GAE1BH,QAAQ,GAAGC,UALf;AAOA",
+        "sourcesContent": [
+            "import { css, FlattenSimpleInterpolation } from 'styled-components';\nimport { LINE_HEIGHTS } from './sizes';\n\nexport function getFontSize(\n\tfontSize: number,\n\tlineHeight: LINE_HEIGHTS = LINE_HEIGHTS.DEFAULT,\n\tmarginBottom?: number\n): FlattenSimpleInterpolation {\n\treturn css`\n\t\tfont-size: ${fontSize}rem;\n\t\tline-height: ${lineHeight};\n\t\tmargin-bottom: ${marginBottom\n\t\t\t? marginBottom\n\t\t\t: fontSize * lineHeight}rem;\n\t`;\n}\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

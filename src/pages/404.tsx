@@ -19,7 +19,7 @@ export default function NotFoundError() {
                     The page you are looking for doesn&apos;t exist. I&apos;ll
                     be honest, it was probably my fault.
                 </p>
-                <LinkButton isSecondary={false} to="/">
+                <LinkButton isSecondary={false} href="/">
                     Go back to Home
                 </LinkButton>
             </MaxWidthContainer>

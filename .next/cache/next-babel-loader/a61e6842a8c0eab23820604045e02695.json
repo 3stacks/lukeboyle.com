@@ -1,0 +1,29 @@
+{
+    "ast": null,
+    "code": "import styled, { css } from 'styled-components';\nimport { CUSTOM_PROPERTIES } from './colors';\nexport const ScreenReaderText = styled.span`\n\tposition: absolute !important;\n\tclip: rect(1px, 1px, 1px, 1px);\n`;\nexport const NoWrap = styled.span`\n\twhite-space: nowrap;\n`;\nexport function bp(size, content) {\n  return css`\n\t\t@media (min-width: ${size}px) {\n\t\t\t${content}\n\t\t}\n\t`;\n}\nexport function blackShift(distance) {\n  return css`\n\t\tbackground-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};\n\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n\t\tborder: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n\n\t\t@media screen and (prefers-reduced-motion: no-preference) {\n\t\t\ttransform: translate(-${distance}px, -${distance}px);\n\t\t\tbox-shadow: ${distance + 2}px ${distance + 2}px 0 0\n\t\t\t\t${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n\t\t}\n\t`;\n}",
+    "map": {
+        "version": 3,
+        "sources": ["/Users/luke/Sites/portfolio-2016/src/styled/mixins.ts"],
+        "names": [
+            "styled",
+            "css",
+            "CUSTOM_PROPERTIES",
+            "ScreenReaderText",
+            "span",
+            "NoWrap",
+            "bp",
+            "size",
+            "content",
+            "blackShift",
+            "distance",
+            "COLOR_WHITE",
+            "COLOR_SECONDARY"
+        ],
+        "mappings": "AAAA,OAAOA,MAAP,IAAiBC,GAAjB,QAAwD,mBAAxD;AACA,SAASC,iBAAT,QAAkC,UAAlC;AAEA,OAAO,MAAMC,gBAAgB,GAAGH,MAAM,CAACI,IAAK;;;CAArC;AAKP,OAAO,MAAMC,MAAM,GAAGL,MAAM,CAACI,IAAK;;CAA3B;AAIP,OAAO,SAASE,EAAT,CACNC,IADM,EAENC,OAFM,EAGuB;AAC7B,SAAOP,GAAI;uBACWM,IAAK;KACvBC,OAAQ;;EAFZ;AAKA;AAED,OAAO,SAASC,UAAT,CAAoBC,QAApB,EAAkE;AACxE,SAAOT,GAAI;sBACUC,iBAAiB,CAACS,WAAY;WACzCT,iBAAiB,CAACU,eAAgB;sBACvBV,iBAAiB,CAACU,eAAgB;;;2BAG7BF,QAAS,QAAOA,QAAS;iBACnCA,QAAQ,GAAG,CAAE,MAAKA,QAAQ,GAAG,CAAE;MAC1CR,iBAAiB,CAACU,eAAgB;;EARvC;AAWA",
+        "sourcesContent": [
+            "import styled, { css, FlattenSimpleInterpolation } from 'styled-components';\nimport { CUSTOM_PROPERTIES } from './colors';\n\nexport const ScreenReaderText = styled.span`\n\tposition: absolute !important;\n\tclip: rect(1px, 1px, 1px, 1px);\n`;\n\nexport const NoWrap = styled.span`\n\twhite-space: nowrap;\n`;\n\nexport function bp(\n\tsize: number,\n\tcontent: FlattenSimpleInterpolation\n): FlattenSimpleInterpolation {\n\treturn css`\n\t\t@media (min-width: ${size}px) {\n\t\t\t${content}\n\t\t}\n\t`;\n}\n\nexport function blackShift(distance: number): FlattenSimpleInterpolation {\n\treturn css`\n\t\tbackground-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};\n\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n\t\tborder: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n\n\t\t@media screen and (prefers-reduced-motion: no-preference) {\n\t\t\ttransform: translate(-${distance}px, -${distance}px);\n\t\t\tbox-shadow: ${distance + 2}px ${distance + 2}px 0 0\n\t\t\t\t${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n\t\t}\n\t`;\n}\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

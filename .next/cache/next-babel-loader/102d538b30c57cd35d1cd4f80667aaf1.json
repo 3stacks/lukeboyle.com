@@ -1,0 +1,15 @@
+{
+    "ast": null,
+    "code": "export { default } from './MaxWidthContainer';",
+    "map": {
+        "version": 3,
+        "sources": [
+            "/Users/luke/Sites/portfolio-2016/src/components/MaxWidthContainer/index.ts"
+        ],
+        "names": ["default"],
+        "mappings": "AAAA,SAASA,OAAT,QAAwB,qBAAxB",
+        "sourcesContent": ["export { default } from './MaxWidthContainer';\n"]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

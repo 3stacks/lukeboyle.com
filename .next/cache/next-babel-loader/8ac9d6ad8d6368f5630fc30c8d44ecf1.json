@@ -1,0 +1,27 @@
+{
+    "ast": null,
+    "code": "export let WIDTHS;\n\n(function (WIDTHS) {\n  WIDTHS[WIDTHS[\"XS\"] = 320] = \"XS\";\n  WIDTHS[WIDTHS[\"S\"] = 480] = \"S\";\n  WIDTHS[WIDTHS[\"M\"] = 768] = \"M\";\n  WIDTHS[WIDTHS[\"L\"] = 992] = \"L\";\n  WIDTHS[WIDTHS[\"XL\"] = 1200] = \"XL\";\n})(WIDTHS || (WIDTHS = {}));\n\nexport let FONT_SIZES;\n\n(function (FONT_SIZES) {\n  FONT_SIZES[FONT_SIZES[\"H1\"] = 4] = \"H1\";\n  FONT_SIZES[FONT_SIZES[\"H2\"] = 3.5] = \"H2\";\n  FONT_SIZES[FONT_SIZES[\"H3\"] = 2.8] = \"H3\";\n  FONT_SIZES[FONT_SIZES[\"P\"] = 1.8] = \"P\";\n})(FONT_SIZES || (FONT_SIZES = {}));\n\nexport let LINE_HEIGHTS;\n\n(function (LINE_HEIGHTS) {\n  LINE_HEIGHTS[LINE_HEIGHTS[\"FLAT\"] = 1] = \"FLAT\";\n  LINE_HEIGHTS[LINE_HEIGHTS[\"DEFAULT\"] = 1.5] = \"DEFAULT\";\n  LINE_HEIGHTS[LINE_HEIGHTS[\"HEADINGS\"] = 1.3] = \"HEADINGS\";\n  LINE_HEIGHTS[LINE_HEIGHTS[\"PROSE\"] = 1.7] = \"PROSE\";\n})(LINE_HEIGHTS || (LINE_HEIGHTS = {}));\n\nexport let VERTICAL_RHYTHMS;\n\n(function (VERTICAL_RHYTHMS) {\n  VERTICAL_RHYTHMS[VERTICAL_RHYTHMS[\"H1\"] = FONT_SIZES.H1 * LINE_HEIGHTS.FLAT] = \"H1\";\n  VERTICAL_RHYTHMS[VERTICAL_RHYTHMS[\"H2\"] = FONT_SIZES.H2 * LINE_HEIGHTS.FLAT] = \"H2\";\n  VERTICAL_RHYTHMS[VERTICAL_RHYTHMS[\"H3\"] = FONT_SIZES.H3 * LINE_HEIGHTS.FLAT] = \"H3\";\n  VERTICAL_RHYTHMS[VERTICAL_RHYTHMS[\"P\"] = FONT_SIZES.P * LINE_HEIGHTS.PROSE] = \"P\";\n})(VERTICAL_RHYTHMS || (VERTICAL_RHYTHMS = {}));\n\nexport const HEADER_HEIGHT = 60;",
+    "map": {
+        "version": 3,
+        "sources": ["/Users/luke/Sites/portfolio-2016/src/styled/sizes.ts"],
+        "names": [
+            "WIDTHS",
+            "FONT_SIZES",
+            "LINE_HEIGHTS",
+            "VERTICAL_RHYTHMS",
+            "H1",
+            "FLAT",
+            "H2",
+            "H3",
+            "P",
+            "PROSE",
+            "HEADER_HEIGHT"
+        ],
+        "mappings": "AAAA,WAAYA,MAAZ;;WAAYA,M;AAAAA,EAAAA,M,CAAAA,M;AAAAA,EAAAA,M,CAAAA,M;AAAAA,EAAAA,M,CAAAA,M;AAAAA,EAAAA,M,CAAAA,M;AAAAA,EAAAA,M,CAAAA,M;GAAAA,M,KAAAA,M;;AAQZ,WAAYC,UAAZ;;WAAYA,U;AAAAA,EAAAA,U,CAAAA,U;AAAAA,EAAAA,U,CAAAA,U;AAAAA,EAAAA,U,CAAAA,U;AAAAA,EAAAA,U,CAAAA,U;GAAAA,U,KAAAA,U;;AAOZ,WAAYC,YAAZ;;WAAYA,Y;AAAAA,EAAAA,Y,CAAAA,Y;AAAAA,EAAAA,Y,CAAAA,Y;AAAAA,EAAAA,Y,CAAAA,Y;AAAAA,EAAAA,Y,CAAAA,Y;GAAAA,Y,KAAAA,Y;;AAOZ,WAAYC,gBAAZ;;WAAYA,gB;AAAAA,EAAAA,gB,CAAAA,gB,SACNF,UAAU,CAACG,EAAX,GAAgBF,YAAY,CAACG,I;AADvBF,EAAAA,gB,CAAAA,gB,SAENF,UAAU,CAACK,EAAX,GAAgBJ,YAAY,CAACG,I;AAFvBF,EAAAA,gB,CAAAA,gB,SAGNF,UAAU,CAACM,EAAX,GAAgBL,YAAY,CAACG,I;AAHvBF,EAAAA,gB,CAAAA,gB,QAIPF,UAAU,CAACO,CAAX,GAAeN,YAAY,CAACO,K;GAJrBN,gB,KAAAA,gB;;AAOZ,OAAO,MAAMO,aAAa,GAAG,EAAtB",
+        "sourcesContent": [
+            "export enum WIDTHS {\n\tXS = 320,\n\tS = 480,\n\tM = 768,\n\tL = 992,\n\tXL = 1200\n}\n\nexport enum FONT_SIZES {\n\tH1 = 4,\n\tH2 = 3.5,\n\tH3 = 2.8,\n\tP = 1.8\n}\n\nexport enum LINE_HEIGHTS {\n\tFLAT = 1,\n\tDEFAULT = 1.5,\n\tHEADINGS = 1.3,\n\tPROSE = 1.7\n}\n\nexport enum VERTICAL_RHYTHMS {\n\tH1 = FONT_SIZES.H1 * LINE_HEIGHTS.FLAT,\n\tH2 = FONT_SIZES.H2 * LINE_HEIGHTS.FLAT,\n\tH3 = FONT_SIZES.H3 * LINE_HEIGHTS.FLAT,\n\tP = FONT_SIZES.P * LINE_HEIGHTS.PROSE\n}\n\nexport const HEADER_HEIGHT = 60;\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

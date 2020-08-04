@@ -1,0 +1,27 @@
+{
+    "ast": null,
+    "code": "import _taggedTemplateLiteral from \"@babel/runtime/helpers/esm/taggedTemplateLiteral\";\n\nfunction _templateObject4() {\n  var data = _taggedTemplateLiteral([\"\\n            padding: 0 30px;\\n        \"]);\n\n  _templateObject4 = function _templateObject4() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _templateObject3() {\n  var data = _taggedTemplateLiteral([\"\\n                  max-width: 1000px;\\n              \"]);\n\n  _templateObject3 = function _templateObject3() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _templateObject2() {\n  var data = _taggedTemplateLiteral([\"\\n                  max-width: 700px;\\n              \"]);\n\n  _templateObject2 = function _templateObject2() {\n    return data;\n  };\n\n  return data;\n}\n\nfunction _templateObject() {\n  var data = _taggedTemplateLiteral([\"\\n    \", \";\\n    padding: 0 15px;\\n    margin: 0 auto;\\n\\n    \", \"\\n\"]);\n\n  _templateObject = function _templateObject() {\n    return data;\n  };\n\n  return data;\n}\n\nimport styled, { css } from 'styled-components';\nimport { bp } from '../../styled/mixins';\nimport { WIDTHS } from '../../styled/sizes';\nvar MaxWidthContainer = styled.div(_templateObject(), function (props) {\n  return props.isSmall ? css(_templateObject2()) : css(_templateObject3());\n}, bp(WIDTHS.M, css(_templateObject4())));\nexport default MaxWidthContainer;",
+    "map": {
+        "version": 3,
+        "sources": [
+            "/Users/luke/Sites/portfolio-2016/src/components/MaxWidthContainer/MaxWidthContainer.tsx"
+        ],
+        "names": [
+            "styled",
+            "css",
+            "bp",
+            "WIDTHS",
+            "MaxWidthContainer",
+            "div",
+            "props",
+            "isSmall",
+            "M"
+        ],
+        "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAAA,OAAOA,MAAP,IAAiBC,GAAjB,QAA4B,mBAA5B;AACA,SAASC,EAAT,QAAmB,qBAAnB;AACA,SAASC,MAAT,QAAuB,oBAAvB;AAEA,IAAMC,iBAAiB,GAAGJ,MAAM,CAACK,GAAV,oBACjB,UAAAC,KAAK;AAAA,SACHA,KAAK,CAACC,OAAN,GACMN,GADN,uBAIMA,GAJN,oBADG;AAAA,CADY,EAYjBC,EAAE,CACAC,MAAM,CAACK,CADP,EAEAP,GAFA,qBAZe,CAAvB;AAoBA,eAAeG,iBAAf",
+        "sourcesContent": [
+            "import styled, { css } from 'styled-components';\nimport { bp } from '../../styled/mixins';\nimport { WIDTHS } from '../../styled/sizes';\n\nconst MaxWidthContainer = styled.div<{ isSmall?: boolean }>`\n    ${props =>\n        props.isSmall\n            ? css`\n                  max-width: 700px;\n              `\n            : css`\n                  max-width: 1000px;\n              `};\n    padding: 0 15px;\n    margin: 0 auto;\n\n    ${bp(\n        WIDTHS.M,\n        css`\n            padding: 0 30px;\n        `\n    )}\n`;\n\nexport default MaxWidthContainer;\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

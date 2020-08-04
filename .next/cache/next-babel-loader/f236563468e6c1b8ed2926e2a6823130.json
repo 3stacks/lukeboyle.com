@@ -1,0 +1,26 @@
+{
+    "ast": null,
+    "code": "var _jsxFileName = \"/Users/luke/Sites/portfolio-2016/src/components/Header/Header.tsx\";\nvar __jsx = React.createElement;\nimport React from 'react';\nimport SiteNav from '../SiteNav';\nimport MaxWidthContainer from '../../components/MaxWidthContainer';\nimport { StyledHeader } from './Header.style';\nexport default function Header({\n  isHome = false,\n  slug\n}) {\n  return __jsx(StyledHeader, {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 17,\n      columnNumber: 9\n    }\n  }, __jsx(MaxWidthContainer, {\n    style: {\n      height: '100%'\n    },\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 18,\n      columnNumber: 13\n    }\n  }, __jsx(SiteNav, {\n    isHome: isHome,\n    slug: slug,\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 19,\n      columnNumber: 17\n    }\n  })));\n}",
+    "map": {
+        "version": 3,
+        "sources": [
+            "/Users/luke/Sites/portfolio-2016/src/components/Header/Header.tsx"
+        ],
+        "names": [
+            "React",
+            "SiteNav",
+            "MaxWidthContainer",
+            "StyledHeader",
+            "Header",
+            "isHome",
+            "slug",
+            "height"
+        ],
+        "mappings": ";;AAAA,OAAOA,KAAP,MAAkB,OAAlB;AACA,OAAOC,OAAP,MAAoB,YAApB;AACA,OAAOC,iBAAP,MAA8B,oCAA9B;AACA,SAASC,YAAT,QAA6B,gBAA7B;AAGA,eAAe,SAASC,MAAT,CAAgB;AAC3BC,EAAAA,MAAM,GAAG,KADkB;AAE3BC,EAAAA;AAF2B,CAAhB,EAQZ;AACC,SACI,MAAC,YAAD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACI,MAAC,iBAAD;AAAmB,IAAA,KAAK,EAAE;AAAEC,MAAAA,MAAM,EAAE;AAAV,KAA1B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACI,MAAC,OAAD;AAAS,IAAA,MAAM,EAAEF,MAAjB;AAAyB,IAAA,IAAI,EAAEC,IAA/B;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,IADJ,CADJ,CADJ;AAOH",
+        "sourcesContent": [
+            "import React from 'react';\nimport SiteNav from '../SiteNav';\nimport MaxWidthContainer from '../../components/MaxWidthContainer';\nimport { StyledHeader } from './Header.style';\nimport { THEMES } from '../../styled/colors';\n\nexport default function Header({\n    isHome = false,\n    slug\n}: {\n    isHome: boolean;\n    slug: string;\n    activeTheme: THEMES;\n    onColorChangePressed: (whichColor: THEMES) => void;\n}) {\n    return (\n        <StyledHeader>\n            <MaxWidthContainer style={{ height: '100%' }}>\n                <SiteNav isHome={isHome} slug={slug} />\n            </MaxWidthContainer>\n        </StyledHeader>\n    );\n}\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

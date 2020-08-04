@@ -1,0 +1,28 @@
+{
+    "ast": null,
+    "code": "import styled, { css } from 'styled-components';\nimport { bp } from '../../styled/mixins';\nimport { WIDTHS } from '../../styled/sizes';\nimport { CUSTOM_PROPERTIES } from '../../styled/colors';\nexport const StyledNav = styled.div`\n\tdisplay: flex;\n\tjustify-content: space-between;\n\talign-items: stretch;\n\tflex-wrap: wrap;\n\tpadding: 16px 0;\n\theight: 100%;\n\n\ta {\n\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\t}\n\n\t${bp(WIDTHS.M, css`\n\t\t\tflex-wrap: nowrap;\n\t\t`)}\n\n\t& .logo {\n\t\tmargin: 0;\n\t\tfont-size: 2.5rem;\n\t\tline-height: 1;\n\t\tfont-family: 'Publico', serif;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tdisplay: none;\n\n\t\ta {\n\t\t\tline-height: 1;\n\t\t}\n\n\t\t${bp(600, css`\n\t\t\t\tdisplay: block;\n\t\t\t\tmargin-bottom: 16px;\n\t\t\t`)}\n\n\t\t${bp(WIDTHS.M, css`\n\t\t\t\twidth: 250px;\n\t\t\t\ttext-align: left;\n\t\t\t\tmargin: 0;\n\t\t\t`)};\n\n\t\ta {\n\t\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\t\t\ttext-decoration: none;\n\t\t\tborder-color: transparent;\n\n\t\t\t&:focus,\n\t\t\t&:hover {\n\t\t\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\t\t\t}\n\t\t}\n\t}\n\n\t.menu {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n\t\tflex-wrap: wrap;\n\t\tlist-style: none;\n\t\tmargin: 0;\n\t\tpadding: 0;\n\t\twidth: 100%;\n\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\n\t\t${bp(WIDTHS.M, css`\n\t\t\t\tjustify-content: flex-end;\n\t\t\t`)};\n\n\t\t& .item {\n\t\t\tdisplay: inline-block;\n\t\t\tmargin: 0;\n\t\t\tline-height: 1;\n\n\t\t\t&:not(:last-child) {\n\t\t\t\tmargin-right: 8px;\n\t\t\t\t${bp(600, css`\n\t\t\t\t\t\tmargin-right: 15px;\n\t\t\t\t\t`)};\n\t\t\t}\n\n\t\t\ta {\n\t\t\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\t\t\t\tfont-size: 1.4rem;\n\t\t\t\tborder-color: transparent;\n\t\t\t\tline-height: 1;\n\n\t\t\t\t${bp(362, css`\n\t\t\t\t\t\tfont-size: 1.6rem;\n\t\t\t\t\t`)};\n\t\t\t}\n\n\t\t\t&.is-active {\n\t\t\t\ta {\n\t\t\t\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_WHITE};\n\t\t\t\t\tbackground-color: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n`;",
+    "map": {
+        "version": 3,
+        "sources": [
+            "/Users/luke/Sites/portfolio-2016/src/components/SiteNav/SiteNav.style.ts"
+        ],
+        "names": [
+            "styled",
+            "css",
+            "bp",
+            "WIDTHS",
+            "CUSTOM_PROPERTIES",
+            "StyledNav",
+            "div",
+            "COLOR_TEXT",
+            "M",
+            "COLOR_WHITE"
+        ],
+        "mappings": "AAAA,OAAOA,MAAP,IAAiBC,GAAjB,QAA4B,mBAA5B;AACA,SAASC,EAAT,QAAmB,qBAAnB;AACA,SAAwBC,MAAxB,QAAsC,oBAAtC;AACA,SAASC,iBAAT,QAAkC,qBAAlC;AAGA,OAAO,MAAMC,SAAS,GAAGL,MAAM,CAACM,GAAI;;;;;;;;;WASzBF,iBAAiB,CAACG,UAAW;;;GAGrCL,EAAE,CACHC,MAAM,CAACK,CADJ,EAEHP,GAAI;;GAFD,CAKF;;;;;;;;;;;;;;;IAeCC,EAAE,CACH,GADG,EAEHD,GAAI;;;IAFD,CAMF;;IAEAC,EAAE,CACHC,MAAM,CAACK,CADJ,EAEHP,GAAI;;;;IAFD,CAOF;;;YAGQG,iBAAiB,CAACG,UAAW;;;;;;aAM5BH,iBAAiB,CAACG,UAAW;;;;;;;;;;;;;;WAc/BH,iBAAiB,CAACG,UAAW;;IAEpCL,EAAE,CACHC,MAAM,CAACK,CADJ,EAEHP,GAAI;;IAFD,CAKF;;;;;;;;;MASEC,EAAE,CACH,GADG,EAEHD,GAAI;;MAFD,CAKF;;;;aAIOG,iBAAiB,CAACG,UAAW;;;;;MAKpCL,EAAE,CACH,GADG,EAEHD,GAAI;;MAFD,CAKF;;;;;cAKQG,iBAAiB,CAACK,WAAY;yBACnBL,iBAAiB,CAACG,UAAW;;;;;CA/G/C",
+        "sourcesContent": [
+            "import styled, { css } from 'styled-components';\nimport { bp } from '../../styled/mixins';\nimport { HEADER_HEIGHT, WIDTHS } from '../../styled/sizes';\nimport { CUSTOM_PROPERTIES } from '../../styled/colors';\nimport MaxWidthContainer from '../MaxWidthContainer';\n\nexport const StyledNav = styled.div`\n\tdisplay: flex;\n\tjustify-content: space-between;\n\talign-items: stretch;\n\tflex-wrap: wrap;\n\tpadding: 16px 0;\n\theight: 100%;\n\n\ta {\n\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\t}\n\n\t${bp(\n\t\tWIDTHS.M,\n\t\tcss`\n\t\t\tflex-wrap: nowrap;\n\t\t`\n\t)}\n\n\t& .logo {\n\t\tmargin: 0;\n\t\tfont-size: 2.5rem;\n\t\tline-height: 1;\n\t\tfont-family: 'Publico', serif;\n\t\twidth: 100%;\n\t\ttext-align: center;\n\t\tdisplay: none;\n\n\t\ta {\n\t\t\tline-height: 1;\n\t\t}\n\n\t\t${bp(\n\t\t\t600,\n\t\t\tcss`\n\t\t\t\tdisplay: block;\n\t\t\t\tmargin-bottom: 16px;\n\t\t\t`\n\t\t)}\n\n\t\t${bp(\n\t\t\tWIDTHS.M,\n\t\t\tcss`\n\t\t\t\twidth: 250px;\n\t\t\t\ttext-align: left;\n\t\t\t\tmargin: 0;\n\t\t\t`\n\t\t)};\n\n\t\ta {\n\t\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\t\t\ttext-decoration: none;\n\t\t\tborder-color: transparent;\n\n\t\t\t&:focus,\n\t\t\t&:hover {\n\t\t\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\t\t\t}\n\t\t}\n\t}\n\n\t.menu {\n\t\tdisplay: flex;\n\t\talign-items: center;\n\t\tjustify-content: center;\n\t\tflex-wrap: wrap;\n\t\tlist-style: none;\n\t\tmargin: 0;\n\t\tpadding: 0;\n\t\twidth: 100%;\n\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\n\t\t${bp(\n\t\t\tWIDTHS.M,\n\t\t\tcss`\n\t\t\t\tjustify-content: flex-end;\n\t\t\t`\n\t\t)};\n\n\t\t& .item {\n\t\t\tdisplay: inline-block;\n\t\t\tmargin: 0;\n\t\t\tline-height: 1;\n\n\t\t\t&:not(:last-child) {\n\t\t\t\tmargin-right: 8px;\n\t\t\t\t${bp(\n\t\t\t\t\t600,\n\t\t\t\t\tcss`\n\t\t\t\t\t\tmargin-right: 15px;\n\t\t\t\t\t`\n\t\t\t\t)};\n\t\t\t}\n\n\t\t\ta {\n\t\t\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\t\t\t\tfont-size: 1.4rem;\n\t\t\t\tborder-color: transparent;\n\t\t\t\tline-height: 1;\n\n\t\t\t\t${bp(\n\t\t\t\t\t362,\n\t\t\t\t\tcss`\n\t\t\t\t\t\tfont-size: 1.6rem;\n\t\t\t\t\t`\n\t\t\t\t)};\n\t\t\t}\n\n\t\t\t&.is-active {\n\t\t\t\ta {\n\t\t\t\t\tcolor: ${CUSTOM_PROPERTIES.COLOR_WHITE};\n\t\t\t\t\tbackground-color: ${CUSTOM_PROPERTIES.COLOR_TEXT};\n\t\t\t\t}\n\t\t\t}\n\t\t}\n\t}\n`;\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

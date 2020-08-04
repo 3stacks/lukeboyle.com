@@ -18,7 +18,7 @@ export const SiteNav = ({
             <h1 className="logo">{MY_NAME}</h1>
         ) : (
             <p className="logo">
-                <Link to="/" rel="home" title="Go back to the home page">
+                <Link href="/" rel="home" title="Go back to the home page">
                     {MY_NAME}
                 </Link>
             </p>
@@ -35,7 +35,7 @@ export const SiteNav = ({
                         }
                     >
                         <Link
-                            to={route.link}
+                            href={route.link}
                             aria-label={
                                 isHome ? 'Go back to homepage' : undefined
                             }

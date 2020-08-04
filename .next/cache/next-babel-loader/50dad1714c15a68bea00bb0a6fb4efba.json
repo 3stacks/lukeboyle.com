@@ -1,0 +1,24 @@
+{
+    "ast": null,
+    "code": "var _jsxFileName = \"/Users/luke/Sites/portfolio-2016/src/components/HomeHeadBanner/HomeHeadBanner.tsx\";\nvar __jsx = React.createElement;\nimport React from 'react';\nimport MaxWidthContainer from '../../components/MaxWidthContainer';\nimport { StyledBanner } from './HomeHeadBanner.style';\nexport const HomeHeadBanner = ({\n  children,\n  hasColor\n}) => {\n  return __jsx(StyledBanner, {\n    hasColor: hasColor,\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 13,\n      columnNumber: 9\n    }\n  }, __jsx(MaxWidthContainer, {\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 14,\n      columnNumber: 13\n    }\n  }, children));\n};\nexport default HomeHeadBanner;",
+    "map": {
+        "version": 3,
+        "sources": [
+            "/Users/luke/Sites/portfolio-2016/src/components/HomeHeadBanner/HomeHeadBanner.tsx"
+        ],
+        "names": [
+            "React",
+            "MaxWidthContainer",
+            "StyledBanner",
+            "HomeHeadBanner",
+            "children",
+            "hasColor"
+        ],
+        "mappings": ";;AAAA,OAAOA,KAAP,MAAkB,OAAlB;AACA,OAAOC,iBAAP,MAA8B,oCAA9B;AACA,SAASC,YAAT,QAA6B,wBAA7B;AAEA,OAAO,MAAMC,cAAc,GAAG,CAAC;AAC3BC,EAAAA,QAD2B;AAE3BC,EAAAA;AAF2B,CAAD,KAMxB;AACF,SACI,MAAC,YAAD;AAAc,IAAA,QAAQ,EAAEA,QAAxB;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KACI,MAAC,iBAAD;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAAoBD,QAApB,CADJ,CADJ;AAKH,CAZM;AAcP,eAAeD,cAAf",
+        "sourcesContent": [
+            "import React from 'react';\nimport MaxWidthContainer from '../../components/MaxWidthContainer';\nimport { StyledBanner } from './HomeHeadBanner.style';\n\nexport const HomeHeadBanner = ({\n    children,\n    hasColor\n}: {\n    children: React.ReactNode;\n    hasColor: boolean;\n}) => {\n    return (\n        <StyledBanner hasColor={hasColor}>\n            <MaxWidthContainer>{children}</MaxWidthContainer>\n        </StyledBanner>\n    );\n};\n\nexport default HomeHeadBanner;\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

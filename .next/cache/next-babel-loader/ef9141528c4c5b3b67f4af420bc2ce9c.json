@@ -1,0 +1,35 @@
+{
+    "ast": null,
+    "code": "var _jsxFileName = \"/Users/luke/Sites/portfolio-2016/src/components/Button/Button.tsx\";\nvar __jsx = React.createElement;\nimport React from 'react';\nimport Link from 'next/link';\nimport styled, { css } from 'styled-components';\nimport { CUSTOM_PROPERTIES } from '../../styled/colors';\n\nfunction getButtonStyles({\n  isSecondary = false\n}) {\n  return css`\n        display: inline-flex;\n        align-items: center;\n        ${isSecondary ? css`\n                  color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n                  background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};\n                  border: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n              ` : css`\n                  color: ${CUSTOM_PROPERTIES.COLOR_WHITE};\n                  background-color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n                  border: none;\n              `};\n\n        padding: 10px 15px;\n        text-decoration: none;\n        text-transform: uppercase;\n        font-size: 1.3rem;\n        font-weight: bold;\n        border: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n\n        &:hover,\n        &:focus {\n            color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY} !important;\n            outline: none;\n            background-color: #fff;\n            border: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n            color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n\n            @media screen and (prefers-reduced-motion: no-preference) {\n                transform: translate(-3px, -3px);\n                box-shadow: 4px 4px 0 0 ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n            }\n        }\n    `;\n}\n\nexport const BareButton = styled.button`\n    appearance: none;\n    border: none;\n    outline: none;\n    cursor: pointer;\n    background: transparent;\n    padding: 0;\n`;\nexport default styled.button`\n    ${getButtonStyles}\n`;\nexport const LinkButton = styled(Link)`\n    ${getButtonStyles}\n`;\nexport const AnchorButton = styled.a`\n    ${getButtonStyles}\n`;\nexport const ExternalLink = ({\n  label,\n  href,\n  isSecondary\n}) => {\n  return __jsx(AnchorButton, {\n    key: href,\n    target: \"_blank\",\n    rel: \"noopener noreferrer\",\n    className: \"link button primary\",\n    href: href,\n    isSecondary: isSecondary,\n    __self: this,\n    __source: {\n      fileName: _jsxFileName,\n      lineNumber: 74,\n      columnNumber: 9\n    }\n  }, label);\n};",
+    "map": {
+        "version": 3,
+        "sources": [
+            "/Users/luke/Sites/portfolio-2016/src/components/Button/Button.tsx"
+        ],
+        "names": [
+            "React",
+            "Link",
+            "styled",
+            "css",
+            "CUSTOM_PROPERTIES",
+            "getButtonStyles",
+            "isSecondary",
+            "COLOR_SECONDARY",
+            "COLOR_WHITE",
+            "BareButton",
+            "button",
+            "LinkButton",
+            "AnchorButton",
+            "a",
+            "ExternalLink",
+            "label",
+            "href"
+        ],
+        "mappings": ";;AAAA,OAAOA,KAAP,MAAkB,OAAlB;AACA,OAAOC,IAAP,MAAiB,WAAjB;AACA,OAAOC,MAAP,IAAiBC,GAAjB,QAA4B,mBAA5B;AACA,SAASC,iBAAT,QAAkC,qBAAlC;;AAEA,SAASC,eAAT,CAAyB;AAAEC,EAAAA,WAAW,GAAG;AAAhB,CAAzB,EAAkD;AAC9C,SAAOH,GAAI;;;UAGLG,WAAW,GACPH,GAAI;2BACSC,iBAAiB,CAACG,eAAgB;sCACvBH,iBAAiB,CAACI,WAAY;sCAC9BJ,iBAAiB,CAACG,eAAgB;eAJnD,GAMPJ,GAAI;2BACSC,iBAAiB,CAACI,WAAY;sCACnBJ,iBAAiB,CAACG,eAAgB;;eAExD;;;;;;;4BAOYH,iBAAiB,CAACG,eAAgB;;;;qBAIzCH,iBAAiB,CAACG,eAAgB;;;gCAGvBH,iBAAiB,CAACG,eAAgB;qBAC7CH,iBAAiB,CAACG,eAAgB;;;;0CAIbH,iBAAiB,CAACG,eAAgB;;;KAhCxE;AAoCH;;AAED,OAAO,MAAME,UAAU,GAAGP,MAAM,CAACQ,MAAO;;;;;;;CAAjC;AASP,eAAeR,MAAM,CAACQ,MAAiC;MACjDL,eAAgB;CADtB;AAIA,OAAO,MAAMM,UAAU,GAAGT,MAAM,CAACD,IAAD,CAAkC;MAC5DI,eAAgB;CADf;AAGP,OAAO,MAAMO,YAAY,GAAGV,MAAM,CAACW,CAA6B;MAC1DR,eAAgB;CADf;AAGP,OAAO,MAAMS,YAAY,GAAG,CAAC;AACzBC,EAAAA,KADyB;AAEzBC,EAAAA,IAFyB;AAGzBV,EAAAA;AAHyB,CAAD,KAQtB;AACF,SACI,MAAC,YAAD;AACI,IAAA,GAAG,EAAEU,IADT;AAEI,IAAA,MAAM,EAAC,QAFX;AAGI,IAAA,GAAG,EAAC,qBAHR;AAII,IAAA,SAAS,EAAC,qBAJd;AAKI,IAAA,IAAI,EAAEA,IALV;AAMI,IAAA,WAAW,EAAEV,WANjB;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA;AAAA,KAQKS,KARL,CADJ;AAYH,CArBM",
+        "sourcesContent": [
+            "import React from 'react';\nimport Link from 'next/link';\nimport styled, { css } from 'styled-components';\nimport { CUSTOM_PROPERTIES } from '../../styled/colors';\n\nfunction getButtonStyles({ isSecondary = false }) {\n    return css`\n        display: inline-flex;\n        align-items: center;\n        ${isSecondary\n            ? css`\n                  color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n                  background-color: ${CUSTOM_PROPERTIES.COLOR_WHITE};\n                  border: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n              `\n            : css`\n                  color: ${CUSTOM_PROPERTIES.COLOR_WHITE};\n                  background-color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n                  border: none;\n              `};\n\n        padding: 10px 15px;\n        text-decoration: none;\n        text-transform: uppercase;\n        font-size: 1.3rem;\n        font-weight: bold;\n        border: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n\n        &:hover,\n        &:focus {\n            color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY} !important;\n            outline: none;\n            background-color: #fff;\n            border: 2px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n            color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n\n            @media screen and (prefers-reduced-motion: no-preference) {\n                transform: translate(-3px, -3px);\n                box-shadow: 4px 4px 0 0 ${CUSTOM_PROPERTIES.COLOR_SECONDARY};\n            }\n        }\n    `;\n}\n\nexport const BareButton = styled.button`\n    appearance: none;\n    border: none;\n    outline: none;\n    cursor: pointer;\n    background: transparent;\n    padding: 0;\n`;\n\nexport default styled.button<{ isSecondary: boolean }>`\n    ${getButtonStyles}\n`;\n\nexport const LinkButton = styled(Link)<{ isSecondary?: boolean }>`\n    ${getButtonStyles}\n`;\nexport const AnchorButton = styled.a<{ isSecondary?: boolean }>`\n    ${getButtonStyles}\n`;\nexport const ExternalLink = ({\n    label,\n    href,\n    isSecondary\n}: {\n    label: string;\n    href: string;\n    isSecondary?: boolean;\n}) => {\n    return (\n        <AnchorButton\n            key={href}\n            target=\"_blank\"\n            rel=\"noopener noreferrer\"\n            className=\"link button primary\"\n            href={href}\n            isSecondary={isSecondary}\n        >\n            {label}\n        </AnchorButton>\n    );\n};\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}

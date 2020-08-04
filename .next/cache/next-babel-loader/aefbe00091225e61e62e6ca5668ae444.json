@@ -1,0 +1,15 @@
+{
+    "ast": null,
+    "code": "export var routes = [{\n  link: '/',\n  text: 'Home',\n  slug: 'home'\n}, {\n  link: '/blog',\n  text: 'Blog',\n  slug: 'blog'\n}, {\n  link: '/feed',\n  text: 'Feed',\n  slug: 'feed'\n}, {\n  link: '/music',\n  text: 'Music',\n  slug: 'music'\n}, {\n  link: '/portfolio',\n  text: 'Portfolio',\n  slug: 'portfolio'\n}, {\n  link: '/about',\n  text: 'About',\n  slug: 'about'\n}];",
+    "map": {
+        "version": 3,
+        "sources": ["/Users/luke/Sites/portfolio-2016/src/data/index.ts"],
+        "names": ["routes", "link", "text", "slug"],
+        "mappings": "AAAA,OAAO,IAAMA,MAAM,GAAG,CACrB;AACCC,EAAAA,IAAI,EAAE,GADP;AAECC,EAAAA,IAAI,EAAE,MAFP;AAGCC,EAAAA,IAAI,EAAE;AAHP,CADqB,EAMrB;AACCF,EAAAA,IAAI,EAAE,OADP;AAECC,EAAAA,IAAI,EAAE,MAFP;AAGCC,EAAAA,IAAI,EAAE;AAHP,CANqB,EAWrB;AACCF,EAAAA,IAAI,EAAE,OADP;AAECC,EAAAA,IAAI,EAAE,MAFP;AAGCC,EAAAA,IAAI,EAAE;AAHP,CAXqB,EAgBrB;AACCF,EAAAA,IAAI,EAAE,QADP;AAECC,EAAAA,IAAI,EAAE,OAFP;AAGCC,EAAAA,IAAI,EAAE;AAHP,CAhBqB,EAqBrB;AACCF,EAAAA,IAAI,EAAE,YADP;AAECC,EAAAA,IAAI,EAAE,WAFP;AAGCC,EAAAA,IAAI,EAAE;AAHP,CArBqB,EA0BrB;AACCF,EAAAA,IAAI,EAAE,QADP;AAECC,EAAAA,IAAI,EAAE,OAFP;AAGCC,EAAAA,IAAI,EAAE;AAHP,CA1BqB,CAAf",
+        "sourcesContent": [
+            "export const routes = [\n\t{\n\t\tlink: '/',\n\t\ttext: 'Home',\n\t\tslug: 'home'\n\t},\n\t{\n\t\tlink: '/blog',\n\t\ttext: 'Blog',\n\t\tslug: 'blog'\n\t},\n\t{\n\t\tlink: '/feed',\n\t\ttext: 'Feed',\n\t\tslug: 'feed'\n\t},\n\t{\n\t\tlink: '/music',\n\t\ttext: 'Music',\n\t\tslug: 'music'\n\t},\n\t{\n\t\tlink: '/portfolio',\n\t\ttext: 'Portfolio',\n\t\tslug: 'portfolio'\n\t},\n\t{\n\t\tlink: '/about',\n\t\ttext: 'About',\n\t\tslug: 'about'\n\t}\n];\n"
+        ]
+    },
+    "metadata": {},
+    "sourceType": "module"
+}
