@@ -12,7 +12,7 @@ export const StyledHeader = styled.header`
 	bottom: 0;
 	background-color: ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
 	height: 80px;
-	padding-bottom: 20px;
+	padding-bottom: 0;
 	border-top: 2px solid ${CUSTOM_PROPERTIES.COLOR_TEXT};
 
 	${bp(
