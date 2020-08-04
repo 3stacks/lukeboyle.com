@@ -8,7 +8,7 @@ import styled from 'styled-components';
 import avatarSrc from '../assets/img/avatar.jpg';
 import { blackShift } from '../styled/mixins';
 
-const Tile = styled.div`
+const Tile = styled.article`
     width: 100%;
     padding: 20px;
     ${blackShift(5)};
