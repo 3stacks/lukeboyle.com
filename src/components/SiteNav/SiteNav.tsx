@@ -24,14 +24,28 @@ export const SiteNav = ({
             </p>
         )}
         <ul id="menu" className="menu">
-            {routes.map(route => (
-                <li
-                    key={route.link}
-                    className={slug === route.slug ? 'item is-active' : 'item'}
-                >
-                    <Link to={route.link}>{route.text}</Link>
-                </li>
-            ))}
+            {routes.map(route => {
+                const isHome = route.slug === 'home';
+
+                return (
+                    <li
+                        key={route.link}
+                        className={
+                            slug === route.slug ? 'item is-active' : 'item'
+                        }
+                    >
+                        <Link
+                            to={route.link}
+                            aria-label={
+                                isHome ? 'Go back to homepage' : undefined
+                            }
+                            tabIndex={0}
+                        >
+                            {route.text}
+                        </Link>
+                    </li>
+                );
+            })}
             {rightSlot}
         </ul>
     </StyledNav>

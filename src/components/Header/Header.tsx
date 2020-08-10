@@ -2,15 +2,11 @@ import React from 'react';
 import SiteNav from '../SiteNav';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledHeader } from './Header.style';
-import { BareButton } from '../Button';
-import { MdInvertColors } from 'react-icons/md';
-import { CUSTOM_PROPERTIES, THEMES } from '../../styled/colors';
+import { THEMES } from '../../styled/colors';
 
 export default function Header({
     isHome = false,
-    slug,
-    onColorChangePressed,
-    activeTheme
+    slug
 }: {
     isHome: boolean;
     slug: string;
@@ -19,7 +15,7 @@ export default function Header({
 }) {
     return (
         <StyledHeader>
-            <MaxWidthContainer>
+            <MaxWidthContainer style={{ height: '100%' }}>
                 <SiteNav isHome={isHome} slug={slug} />
             </MaxWidthContainer>
         </StyledHeader>

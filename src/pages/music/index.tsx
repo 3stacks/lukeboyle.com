@@ -139,7 +139,7 @@ export default function Music({ data }: IProps) {
                                     ) || album.image[0];
                                 const imageSrc = imageToShow['#text'];
                                 return (
-                                    <li key={album.mbid}>
+                                    <li key={album.mbid || album.url}>
                                         <div className="image-wrapper">
                                             <img src={imageSrc} alt="" />
                                         </div>

@@ -2,13 +2,15 @@ import styled, { css } from 'styled-components';
 import { bp } from '../../styled/mixins';
 import { HEADER_HEIGHT, WIDTHS } from '../../styled/sizes';
 import { CUSTOM_PROPERTIES } from '../../styled/colors';
+import MaxWidthContainer from '../MaxWidthContainer';
 
 export const StyledNav = styled.div`
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: stretch;
 	flex-wrap: wrap;
 	padding: 16px 0;
+	height: 100%;
 
 	a {
 		color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
@@ -24,10 +26,15 @@ export const StyledNav = styled.div`
 	& .logo {
 		margin: 0;
 		font-size: 2.5rem;
+		line-height: 1;
 		font-family: 'Publico', serif;
 		width: 100%;
 		text-align: center;
 		display: none;
+
+		a {
+			line-height: 1;
+		}
 
 		${bp(
 			600,
@@ -51,6 +58,7 @@ export const StyledNav = styled.div`
 			text-decoration: none;
 			border-color: transparent;
 
+			&:focus,
 			&:hover {
 				color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 			}
@@ -78,15 +86,23 @@ export const StyledNav = styled.div`
 		& .item {
 			display: inline-block;
 			margin: 0;
+			line-height: 1;
 
 			&:not(:last-child) {
-				margin-right: 15px;
+				margin-right: 8px;
+				${bp(
+					600,
+					css`
+						margin-right: 15px;
+					`
+				)};
 			}
 
 			a {
 				color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
-				font-size: 1.2rem;
+				font-size: 1.4rem;
 				border-color: transparent;
+				line-height: 1;
 
 				${bp(
 					362,

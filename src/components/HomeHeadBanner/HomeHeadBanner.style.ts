@@ -13,7 +13,8 @@ export const StyledBanner = styled.div<{ hasColor: boolean }>`
 	flex-direction: column;
 	flex-wrap: wrap;
 	text-align: center;
-	padding-top: 30px;
+	padding: 30px 0;
+
 	${({ hasColor }) =>
 		hasColor &&
 		css`
@@ -23,7 +24,7 @@ export const StyledBanner = styled.div<{ hasColor: boolean }>`
 	${bp(
 		768,
 		css`
-			padding-top: 0;
+			padding: 0;
 			height: 200px;
 		`
 	)}
