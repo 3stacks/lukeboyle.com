@@ -135,8 +135,8 @@ export const Index = () => {
                             <a href="https://www.smh.com.au/business/companies/nbn-rollout-cost-to-jump-by-2-billion-20180831-p500yw.html">
                                 [1]
                             </a>{' '}
-                            they've invested in this abject failure of a
-                            project. All you need to do is look at Telstra's
+                            they've invested into the abject failure that is the
+                            NBN. All you need to do is look at Telstra's
                             official speed metrics between their supported
                             broadband technologies to see that NBN is a bad
                             service.
