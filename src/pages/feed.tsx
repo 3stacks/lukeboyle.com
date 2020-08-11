@@ -130,7 +130,7 @@ export const Index = () => {
                                 banned Huawei
                             </a>{' '}
                             in a deliberate attempt to slow the roll-out of the
-                            NBN? Surely they would like to recoup some of the
+                            5G? Surely they would like to recoup some of the
                             $48.7bn{' '}
                             <a href="https://www.smh.com.au/business/companies/nbn-rollout-cost-to-jump-by-2-billion-20180831-p500yw.html">
                                 [1]
