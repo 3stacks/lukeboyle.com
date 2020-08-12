@@ -16,7 +16,7 @@ import {
 } from './utils/blog';
 import { getCanonicalURLFromString } from './utils/string';
 
-function generateComponent(acc, curr) {
+export function generateComponent(acc, curr) {
 	try {
 		const fileName = getFileNameFromPath(curr.path);
 		const camelCaseName = camelCase(fileName);

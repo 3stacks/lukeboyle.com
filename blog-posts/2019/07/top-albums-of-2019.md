@@ -12,49 +12,49 @@ post_author: Luke Boyle
 
 ### Tyler, the Creator
 
-![igor](/blog-posts/images/albums/2019/igor.jpg)
+![igor](/src/public/images/albums/2019/igor.jpg)
 
 ## Ventura
 
 ### Anderson .Paak
 
-![ventura](/blog-posts/images/albums/2019/ventura.jpg)
+![ventura](/src/public/images/albums/2019/ventura.jpg)
 
 ## Here Comes the Cowboy
 
 ### Mac DeMarco
 
-![the-cowboy](/blog-posts/images/albums/2019/the-cowboy.jpeg)
+![the-cowboy](/src/public/images/albums/2019/the-cowboy.jpeg)
 
 ## Social Cues
 
 ### Cage The Elephant
 
-![social-cues](/blog-posts/images/albums/2019/social-cues.jpg)
+![social-cues](/src/public/images/albums/2019/social-cues.jpg)
 
 ## Czarface Meets Ghostface
 
 ### Czarface & Ghostface Killah
 
-![crash-talk](/blog-posts/images/albums/2019/ghostczar.jpg)
+![crash-talk](/src/public/images/albums/2019/ghostczar.jpg)
 
 ## Nothing Great About Britain
 
 ### slowthai
 
-![britain](/blog-posts/images/albums/2019/britain.png)
+![britain](/src/public/images/albums/2019/britain.png)
 
 ## Guns
 
 ### Quelle Chris
 
-![Guns album artwork](/blog-posts/images/albums/2019/guns.jpg)
+![Guns album artwork](/src/public/images/albums/2019/guns.jpg)
 
 ## Hiding Places
 
 ### woods + segal
 
-![hiding-places](/blog-posts/images/albums/2019/hiding-places.jpg)
+![hiding-places](/src/public/images/albums/2019/hiding-places.jpg)
 
 The influx of these MC/Producer partnerships is producing some
 amazing albums. I compare it to Hollywood films. In most of these
@@ -141,4 +141,4 @@ contribute to the experience, then it isn't featured.
 
 ### Freddie Gibbs & Madlib
 
-![bandana](/blog-posts/images/albums/2019/bandana.jpeg)
+![bandana](/src/public/images/albums/2019/bandana.jpeg)

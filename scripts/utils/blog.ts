@@ -2,6 +2,11 @@ import glob from 'glob';
 import safeGet from 'lodash/get';
 import YAML from 'yamljs';
 import * as fs from 'fs';
+import camelCase from 'lodash/camelCase';
+import { getMarkupFromMarkdown, renderer } from './renderer';
+import { getCanonicalURLFromString } from './string';
+import marked from 'marked';
+import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
 
 export function isNotDirectory(path) {
 	return !fs.lstatSync(path).isDirectory();
@@ -244,4 +249,133 @@ export const Blog = () => (
 )
 
 export default Blog;`;
+}
+
+export function generateComponent(acc, post) {
+	const fileName = getFileNameFromPath(post.path);
+	const camelCaseName = camelCase(fileName);
+	let postContents = post.contents;
+	let imports = `
+import React from 'react';
+import BlogPost from '../../../../components/BlogPost';
+import BlockQuote from '../../../../components/BlockQuote';`;
+
+	renderer.image = function(href, title, text) {
+		const rawFilename = getFileNameFromPath(href);
+		const imageName = `${camelCase(
+			rawFilename.slice(0, rawFilename.indexOf('.'))
+		)}Src`;
+
+		imports = `${imports}\nimport ${imageName} from '${
+			href.includes('http')
+				? href
+				: `../..${href.replace('/blog-posts', '')}`
+		}'`;
+		const hrefParts = href.split('/');
+
+		return `<img src={${imageName}} alt="${text}" data-identifier="${
+			hrefParts[hrefParts.length - 1].split('.')[0]
+		}" />`;
+	};
+
+	const canonicalUrl = getCanonicalURLFromString(postContents) || '';
+	const contentsWithoutFirst = postContents.slice(3);
+	const frontMatterMetadata = YAML.parse(
+		contentsWithoutFirst.slice(0, contentsWithoutFirst.indexOf('---'))
+	);
+
+	postContents = contentsWithoutFirst.slice(
+		contentsWithoutFirst.indexOf('---') + 3
+	);
+
+	const lines = postContents.trim().split('\n');
+	const contentsArray = lines.map(line => {
+		if (line === '') {
+			return '\n';
+		}
+
+		return `${line}\n`;
+	});
+	const contents = {
+		title: frontMatterMetadata.post_title,
+		metaData: frontMatterMetadata,
+		contents: contentsArray.join(''),
+		snippet:
+			frontMatterMetadata.post_type === 'post'
+				? contentsArray
+						.slice(0, 10)
+						.filter(line => !line.trim().startsWith('!['))
+						.join('')
+				: null
+	};
+
+	if (contents.metaData.post_status !== 'draft') {
+		let parsedContents = getMarkupFromMarkdown(contents.contents);
+
+		if (contents.metaData.post_type === 'top_list') {
+			imports = `${imports}\nimport { AlbumBlock } from '../../../../styled/music.style';`;
+			const rawParts = postContents.split('<h2>');
+			const parts = rawParts.slice(1, rawParts.length);
+			parsedContents = parts.reduce((acc, curr) => {
+				const albumTitle = curr.split('</h2>')[0];
+				const artistStart = curr.split('<h3>');
+				const artist = artistStart[artistStart.length - 1].split(
+					'</h3>'
+				)[0];
+				const imageStart = curr.split('<img ');
+				const imageBits = imageStart[imageStart.length - 1].split(
+					'/>'
+				)[0];
+				const snippet = curr.split('/></p>')[1];
+				return `${acc}\n<AlbumBlock>
+	<h2 className="title">${albumTitle}</h2>
+	<h3 className="artist">${artist}</h3>
+	<img ${imageBits} />
+	${
+		snippet === '\n'
+			? '\n'
+			: `<div className="snippet">
+		${curr.split('/></p>')[1]}
+	</div>\n`
+	}
+</AlbumBlock>
+`;
+			}, '');
+		}
+
+		const firstParagraphToken = contents.snippet
+			? marked
+					.lexer(contents.snippet)
+					.find(block => (block as any).type === 'paragraph')
+			: undefined;
+
+		const snippet =
+			typeof firstParagraphToken === 'undefined'
+				? contents.metaData.snippet
+				: getMarkupFromMarkdown((firstParagraphToken as any).text);
+
+		acc.push({
+			path: post.path,
+			fileName,
+			componentName:
+				camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
+			publishDate: new Date(contents.metaData.post_date).getTime(),
+			postCategory: contents.metaData.post_category || 'blog',
+			postType: contents.metaData.post_type || 'text-post',
+			postAuthor: contents.metaData.post_author,
+			postTitle: contents.metaData.post_title,
+			snippet: snippet || null,
+			metaData: frontMatterMetadata,
+			component: generateBlogPostComponent(
+				imports,
+				camelCaseName,
+				parsedContents,
+				contents.metaData,
+				canonicalUrl,
+				fileName
+			)
+		});
+	}
+
+	return acc;
 }
