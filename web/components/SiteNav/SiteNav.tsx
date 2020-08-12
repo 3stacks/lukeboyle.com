@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import Link from 'next/link';
 import { MY_NAME } from '../../constants';
 import { StyledNav } from './SiteNav.style';
 import { routes } from '../../data';
@@ -18,8 +18,8 @@ export const SiteNav = ({
             <h1 className="logo">{MY_NAME}</h1>
         ) : (
             <p className="logo">
-                <Link to="/" rel="home" title="Go back to the home page">
-                    {MY_NAME}
+                <Link href="/" rel="home" title="Go back to the home page">
+                    <a>{MY_NAME}</a>
                 </Link>
             </p>
         )}
@@ -35,13 +35,13 @@ export const SiteNav = ({
                         }
                     >
                         <Link
-                            to={route.link}
+                            href={route.link}
                             aria-label={
                                 isHome ? 'Go back to homepage' : undefined
                             }
                             tabIndex={0}
                         >
-                            {route.text}
+                            <a>{route.text}</a>
                         </Link>
                     </li>
                 );

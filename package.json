@@ -2,6 +2,10 @@
     "name": "luke-boyle-portfolio",
     "version": "2.0.0",
     "description": "My personal website",
+    "private": true,
+    "workspaces": [
+        "web"
+    ],
     "scripts": {
         "content-server": "ts-node-dev --watch scripts/content-server.ts scripts/content-server.ts",
         "generate-blog-posts": "ts-node-dev scripts/blog-post.ts",
@@ -9,26 +13,14 @@
         "generate-music-posts": "ts-node-dev scripts/music.ts",
         "prepare-data": "npm-run-all -p generate-blog-posts generate-portfolio-posts generate-music-posts",
         "deploy": "ts-node-dev scripts/deploy.ts",
-        "start": "next dev",
-        "build": "next build && next export",
         "lint": "eslint -c .eslintrc.json ./**/**/*.ts  && tsc --noEmit"
     },
     "author": "Luke Boyle",
     "license": "BSD-3-Clause",
-    "dependencies": {
-        "@apollo/client": "3.1.1",
+    "dependencies": {},
+    "devDependencies": {
         "date-fns": "^1.29.0",
         "graphql": "^15.3.0",
-        "next": "^9.5.2",
-        "react": "^16.13.0",
-        "react-accessible-accordion": "^3.0.0",
-        "react-dom": "^16.13.0",
-        "react-helmet": "^5.2.0",
-        "react-icons": "^3.7.0",
-        "react-typography": "^0.15.10",
-        "styled-components": "^5.0.1"
-    },
-    "devDependencies": {
         "@lukeboyle/get-filename-from-path": "^1.0.3",
         "@toast-ui/editor": "^2.3.1-alpha",
         "@types/fs-extra": "^8.0.0",
@@ -49,7 +41,6 @@
         "eslint-plugin-react": "^7.18.3",
         "fs-extra": "^6.0.1",
         "glob": "^7.1.3",
-        "graphql": "^14.6.0",
         "lodash": "^4.17.11",
         "marked": "^1.1.1",
         "mime-types": "^2.1.20",

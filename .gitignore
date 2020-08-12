@@ -30,7 +30,6 @@ node_modules
 .sass-cache/
 .cache/
 vendor
-web
 src/pages/blog-posts
 blog.jsx
 src/pages/blog.js
@@ -42,7 +41,7 @@ src/pages/portfolio
 .cache
 node_modules
 yarn-error.log
-
+.next
 # Build directory
 /public
 .DS_Store

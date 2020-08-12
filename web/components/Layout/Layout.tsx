@@ -3,14 +3,8 @@ import Helmet from 'react-helmet';
 import Header from '../Header';
 import Footer from '../Footer';
 import { META_DESCRIPTION, MY_NAME, PAGES } from '../../constants';
-import appleSmall from '../../assets/img/apple-icon-76x76.png';
-import appleMedium from '../../assets/img/apple-icon-120x120.png';
-import appleLarge from '../../assets/img/apple-icon-152x152.png';
-import androidIcon from '../../assets/img/android-icon-192x192.png';
-import favicon from '../../assets/img/favicon-32x32.png';
 import { GlobalLayoutStyle, StyledLayout } from './Layout.style';
 import { THEMES } from '../../styled/colors';
-import './Layout.module.css';
 
 interface IProps {
     pageName?: PAGES;
@@ -22,20 +16,9 @@ interface IProps {
 export const Layout = ({ pageName, headChildren, slug, children }: IProps) => {
     const isHomeOrPortfolioPage =
         slug === 'home' || slug === 'portfolio' || slug === 'feed';
-    const [activeTheme, updateActiveTheme] = useState<THEMES>(
-        (typeof window !== 'undefined' &&
-            THEMES[localStorage.getItem('activeTheme')]) ||
-            THEMES.DEFAULT
-    );
-
-    useEffect(() => {
-        typeof window !== 'undefined' &&
-            localStorage.setItem('activeTheme', activeTheme);
-    }, [activeTheme]);
 
     return (
         <StyledLayout
-            activeTheme={activeTheme}
             className={`layout ${slug}`}
             showFullPageColor={isHomeOrPortfolioPage}
         >
@@ -52,38 +35,37 @@ export const Layout = ({ pageName, headChildren, slug, children }: IProps) => {
                     name="viewport"
                     content="width=device-width, initial-scale=1.0"
                 />
-                <link rel="apple-touch-icon" sizes="76x76" href={appleSmall} />
+                <link
+                    rel="apple-touch-icon"
+                    sizes="76x76"
+                    href="/img/apple-icon-76x76.png"
+                />
                 <link
                     rel="apple-touch-icon"
                     sizes="120x120"
-                    href={appleMedium}
+                    href="/img/apple-icon-120x120.png"
                 />
                 <link
                     rel="apple-touch-icon"
                     sizes="152x152"
-                    href={appleLarge}
+                    href="/img/apple-icon-152x152.png"
                 />
                 <link
                     rel="icon"
                     type="image/png"
                     sizes="192x192"
-                    href={androidIcon}
+                    href="/img/android-icon-192x192.png"
                 />
                 <link
                     rel="icon"
                     type="image/png"
                     sizes="32x32"
-                    href={favicon}
+                    href="/img/favicon-32x32.png"
                 />
                 <html lang="en-US" />
             </Helmet>
             <GlobalLayoutStyle />
-            <Header
-                isHome={slug === 'home'}
-                slug={slug}
-                activeTheme={activeTheme}
-                onColorChangePressed={updateActiveTheme}
-            />
+            <Header isHome={slug === 'home'} slug={slug} />
             <main className="main">
                 {headChildren && (
                     <div className="head-slot">{headChildren()}</div>

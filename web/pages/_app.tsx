@@ -1,3 +1,8 @@
+import * as React from 'react';
+import App from 'next/app';
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyles = createGlobalStyle`
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 html {
     font-family: sans-serif;
@@ -184,4 +189,17 @@ textarea {
 ::-webkit-file-upload-button {
     -webkit-appearance: button;
     font: inherit;
+}
+`;
+
+export default class MyApp extends App {
+    render() {
+        const { Component, pageProps } = this.props;
+        return (
+            <>
+                <GlobalStyles />
+                <Component {...pageProps} />
+            </>
+        );
+    }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import styled, { css } from 'styled-components';
 import { CUSTOM_PROPERTIES } from '../../styled/colors';
 
@@ -55,9 +55,11 @@ export default styled.button<{ isSecondary: boolean }>`
     ${getButtonStyles}
 `;
 
-export const LinkButton = styled(Link)<{ isSecondary?: boolean }>`
-    ${getButtonStyles}
-`;
+export const LinkButton = ({ to, children, ...others }: any) => (
+    <Link href={to}>
+        <AnchorButton {...others}>{children}</AnchorButton>
+    </Link>
+);
 export const AnchorButton = styled.a<{ isSecondary?: boolean }>`
     ${getButtonStyles}
 `;
