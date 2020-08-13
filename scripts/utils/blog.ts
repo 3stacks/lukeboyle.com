@@ -262,7 +262,6 @@ import BlogPost from '../../../../components/BlogPost';
 import BlockQuote from '../../../../components/BlockQuote';`;
 
 	renderer.image = function(href, title, text) {
-		console.log(href.replace('/web/public', ''));
 		const hrefParts = href.split('/');
 
 		return `<img src="${href.replace(

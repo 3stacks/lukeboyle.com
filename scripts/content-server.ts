@@ -82,6 +82,7 @@ const resolvers = {
 			return await getBlogPosts();
 		},
 		blogPost: async (_, { path }) => {
+			console.log(path);
 			const fileName = `.${path}.md`;
 			const postFile = {
 				path: fileName,
@@ -90,6 +91,8 @@ const resolvers = {
 				})
 			};
 			const postComponent = generateComponent([], postFile);
+
+			console.log(postComponent);
 
 			return postComponent[0];
 		},
