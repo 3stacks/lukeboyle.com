@@ -9,18 +9,33 @@ import {
 import { FaChevronDown } from 'react-icons/fa';
 import { Wrapper } from './style';
 import styled from 'styled-components';
+import { IMetaData } from '../../../scripts/utils/blog';
 
 const AccordionButton = styled.div<{ level: number }>`
     padding-left: ${({ level }) => level * 20}px;
 `;
 
-export default function PostArchive({ data }) {
+interface IBlogPost {
+    slug: string;
+    path: string;
+    title: string;
+    content: string;
+    metaData: IMetaData;
+}
+
+interface IPostArchive {
+    [year: string]: {
+        [month: string]: IBlogPost[];
+    };
+}
+
+export default function PostArchive({ data }: { data: IPostArchive }) {
     return (
         <Wrapper>
             <Accordion allowZeroExpanded>
                 {Object.entries(data)
                     .reverse()
-                    .map(([year, months], index) => {
+                    .map(([year, months]) => {
                         return (
                             <AccordionItem key={year}>
                                 <AccordionItemHeading>

@@ -18,6 +18,7 @@ function getBlogPosts() {
 						};
 					})
 					.reduce(generateComponent, [])
+					.reverse()
 			);
 		});
 	});
@@ -35,9 +36,10 @@ const typeDefs = gql`
 
 	type BlogPost {
 		path: String
+		slug: String
 		fileName: String
 		componentName: String
-		publishDate: Float
+		publishDate: String
 		postCategory: String
 		postType: String
 		postTitle: String
@@ -55,7 +57,6 @@ const typeDefs = gql`
 const resolvers = {
 	Query: {
 		blogPosts: async () => {
-			console.log('here');
 			return await getBlogPosts();
 		}
 	}

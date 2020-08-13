@@ -92,18 +92,19 @@ export function resolveBlogPosts(): Promise<IPostArchive> {
 						}
 
 						return {
-							...acc,
-							[year]: {
+							years: [
 								...acc[year],
-								[month]: [
-									...safeGet(acc, [year, month], []),
-									{
-										slug: post.slug,
-										path: post.path,
-										title: post.title
-									}
-								]
-							}
+								{
+									months: [
+										...safeGet(acc, [year, month], []),
+										{
+											slug: post.slug,
+											path: post.path,
+											title: post.title
+										}
+									]
+								}
+							]
 						};
 					}, {});
 				})
@@ -354,18 +355,30 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 				? contents.metaData.snippet
 				: getMarkupFromMarkdown((firstParagraphToken as any).text);
 
+		console.log(
+			contents.metaData.post_date,
+			typeof contents.metaData.post_date
+		);
+		const truePublishDate = new Date(
+			contents.metaData.post_date
+		).toISOString();
+		const pathParts = post.path.split('/');
 		acc.push({
 			path: post.path,
 			fileName,
+			slug: pathParts[pathParts.length - 1].replace('.md', ''),
 			componentName:
 				camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
-			publishDate: new Date(contents.metaData.post_date).getTime(),
+			publishDate: truePublishDate,
 			postCategory: contents.metaData.post_category || 'blog',
 			postType: contents.metaData.post_type || 'text-post',
 			postAuthor: contents.metaData.post_author,
 			postTitle: contents.metaData.post_title,
 			snippet: snippet || null,
-			metaData: frontMatterMetadata,
+			metaData: {
+				...frontMatterMetadata,
+				post_date: truePublishDate
+			},
 			component: generateBlogPostComponent(
 				imports,
 				camelCaseName,

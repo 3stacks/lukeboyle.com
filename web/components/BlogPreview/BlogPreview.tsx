@@ -19,7 +19,7 @@ export const BlogPreview = ({
     author,
     children
 }: {
-    publishDate: number;
+    publishDate: string;
     title: string;
     slug: string;
     author: string;
@@ -36,7 +36,7 @@ export const BlogPreview = ({
                 <p>
                     Posted by {author} on the{' '}
                     <time className="date" dateTime={publishDate}>
-                        {formatDate(publishDate, 'Do of MMMM, YYYY')}
+                        {formatDate(new Date(publishDate), 'Do of MMMM, YYYY')}
                     </time>
                 </p>
                 <SnippetContents>{children}</SnippetContents>
