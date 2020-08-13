@@ -3,7 +3,7 @@ import fs from 'fs';
 import glob from 'glob';
 import { generateComponent, isNotDirectory } from './utils/blog';
 
-function getBlogPosts() {
+function getBlogPosts(): Promise<any[]> {
 	return new Promise((resolve, reject) => {
 		glob('blog-posts/**/*.md', (err, files) => {
 			resolve(
@@ -22,6 +22,12 @@ function getBlogPosts() {
 			);
 		});
 	});
+}
+
+async function getMusicPostPreviews() {
+	const posts = await getBlogPosts();
+
+	return posts.filter(post => post.postCategory === 'music');
 }
 
 const typeDefs = gql`
@@ -49,8 +55,21 @@ const typeDefs = gql`
 		snippet: String
 	}
 
+	type PostPreview {
+		path: String
+		fileName: String
+		componentName: String
+		postTitle: String
+		publishDate: String
+		postCategory: String
+		postType: String
+		postAuthor: String
+		snippet: String
+	}
+
 	type Query {
 		blogPosts: [BlogPost]
+		musicPreviews: [PostPreview]
 	}
 `;
 
@@ -58,6 +77,9 @@ const resolvers = {
 	Query: {
 		blogPosts: async () => {
 			return await getBlogPosts();
+		},
+		musicPreviews: async () => {
+			return await getMusicPostPreviews();
 		}
 	}
 };

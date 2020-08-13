@@ -23,7 +23,7 @@ export const BlogPreview = ({
     title: string;
     slug: string;
     author: string;
-    children: React.ReactNode;
+    children?: React.ReactNode;
 }) => {
     return (
         <PostPreview>
@@ -39,7 +39,7 @@ export const BlogPreview = ({
                         {formatDate(new Date(publishDate), 'Do of MMMM, YYYY')}
                     </time>
                 </p>
-                <SnippetContents>{children}</SnippetContents>
+                {children && <SnippetContents>{children}</SnippetContents>}
                 <ReadMoreLink>
                     <Link href={slug}>
                         <a>Read more</a>
