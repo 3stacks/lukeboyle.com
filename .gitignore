@@ -32,10 +32,8 @@ public/
 .cache/
 vendor
 web
-src/pages/blog-posts
-blog.jsx
-src/pages/blog.js
-src/pages/blog
+src/pages/blog-posts/**/*.tsx
+src/pages/blog/*.tsx
 src/pages/portfolio
 .env
 .env.*
