@@ -61,6 +61,7 @@ export const LinkButton = ({ to, children, ...others }: any) => (
     </Link>
 );
 export const AnchorButton = styled.a<{ isSecondary?: boolean }>`
+    cursor: pointer;
     ${getButtonStyles}
 `;
 export const ExternalLink = ({
