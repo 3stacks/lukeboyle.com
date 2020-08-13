@@ -355,10 +355,6 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 				? contents.metaData.snippet
 				: getMarkupFromMarkdown((firstParagraphToken as any).text);
 
-		console.log(
-			contents.metaData.post_date,
-			typeof contents.metaData.post_date
-		);
 		const truePublishDate = new Date(
 			contents.metaData.post_date
 		).toISOString();
@@ -379,6 +375,8 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 				...frontMatterMetadata,
 				post_date: truePublishDate
 			},
+			contents: parsedContents,
+			canonicalUrl,
 			component: generateBlogPostComponent(
 				imports,
 				camelCaseName,

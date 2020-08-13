@@ -53,6 +53,8 @@ const typeDefs = gql`
 		title: String
 		metaData: FrontMatterMetadata
 		snippet: String
+		contents: String
+		canonicalUrl: String
 	}
 
 	type PostPreview {
@@ -69,6 +71,7 @@ const typeDefs = gql`
 
 	type Query {
 		blogPosts: [BlogPost]
+		blogPost(path: String!): BlogPost
 		musicPreviews: [PostPreview]
 	}
 `;
@@ -77,6 +80,18 @@ const resolvers = {
 	Query: {
 		blogPosts: async () => {
 			return await getBlogPosts();
+		},
+		blogPost: async (_, { path }) => {
+			const fileName = `.${path}.md`;
+			const postFile = {
+				path: fileName,
+				contents: fs.readFileSync(fileName, {
+					encoding: 'utf-8'
+				})
+			};
+			const postComponent = generateComponent([], postFile);
+
+			return postComponent[0];
 		},
 		musicPreviews: async () => {
 			return await getMusicPostPreviews();
