@@ -7,7 +7,7 @@ post_type: post
 post_author: Luke Boyle
 ---
 
-![](/src/public/images/do-not-trust-google/google-fasc.jpg)
+![](/web/public/images/do-not-trust-google/google-fasc.jpg)
 
 I realise that this is one of the most well-explored topics on the
 privacy-conscious edges of the internet, but seriously... Do not trust Google.
@@ -21,7 +21,7 @@ Google (or more specifically Alphabet Inc.) owns the largest search engine (Goog
 platform (Youtube), and the most-used smartphone operating system (Android). You might ask, "What's wrong with that?
 Sounds like they're just very successful at what they do". Well, let's break down those three markets (Search, Streaming, Mobile).
 
-![The classic Google slogan "Don't be evil", except the end of the "don't" is crossed out so it says "Do be evil"](/src/public/images/do-not-trust-google/do-be-evil.jpg)
+![The classic Google slogan "Don't be evil", except the end of the "don't" is crossed out so it says "Do be evil"](/web/public/images/do-not-trust-google/do-be-evil.jpg)
 
 ## Search
 
@@ -52,7 +52,7 @@ say which content they can or cannot suppress? Breitbart is a well-known right w
 content [almost entirely purged](https://www.breitbart.com/tech/2020/07/28/election-interference-google-purges-breitbart-from-search-results/) from
 Google search results (as evidenced by the "search engine visibility" chart below).
 
-![Search engine visibility index for Breitbart.com shows significant increase in visibility leading up to the 2016 presidential election with a sharp drop in mid 2017](/src/public/images/do-not-trust-google/breitbart-visibility-index.jpg)
+![Search engine visibility index for Breitbart.com shows significant increase in visibility leading up to the 2016 presidential election with a sharp drop in mid 2017](/web/public/images/do-not-trust-google/breitbart-visibility-index.jpg)
 
 You don't have to agree with them politically to see that Google is applying different standards to conservative content
 than to more liberal content. I don't visit Breitbart, I don't read their articles, and frankly I don't give a shit
@@ -85,7 +85,7 @@ As I mentioned before, video streaming is extremely expensive, so it makes sense
 success. Well, big surprise, Google offers world-class commercial cloud infrastructure with Google Cloud Platform (GCP)!
 Do you suppose YouTube is paying full price for their infra?
 
-![A whale shark with small fish adhered to the top of it. YouTube, Google Play, and Google Plus logos are superimposed on the small fish heads](/src/public/images/do-not-trust-google/google-shark.jpg)
+![A whale shark with small fish adhered to the top of it. YouTube, Google Play, and Google Plus logos are superimposed on the small fish heads](/web/public/images/do-not-trust-google/google-shark.jpg)
 
 So, when you see a headline that says "[Stop paying for iCloud – Google One will now back up your iPhone for free](https://bgr.com/2020/07/30/google-one-free-phone-backup-ios-android/)".
 Before obeying the shill who wrote it, you should ask yourself, "How can a company afford to give away so much storage space for free?". Well, they can't.
@@ -99,7 +99,7 @@ article above, Android isn't really a business. The only real non-ad revenue the
 from app purchases and licensing fees from OEMs (e.g. Samsung, Huawei, LG). How, then, are they able to sustain
 hundreds of highly paid engineers and all the other non-technical staff required to support the system?
 
-![A map of the world with Android vs iOS market share. iOS is most dominant in first-world countries, whereas Android dominates emerging nations](/src/public/images/do-not-trust-google/android-ios-market-share.jpg)
+![A map of the world with Android vs iOS market share. iOS is most dominant in first-world countries, whereas Android dominates emerging nations](/web/public/images/do-not-trust-google/android-ios-market-share.jpg)
 
 Above is a map of Android vs iOS market shares. You can see that iOS pretty much only has the dominant market share
 in first world countries (like USA, Canada, Australia, UK, Japan). Most of the emerging countries in the world are
@@ -121,7 +121,7 @@ So, after reading all of that, I have to ask:
 
 Why don't you route all of your web traffic through Google Servers?
 
-![Google DNS logo](/src/public/images/do-not-trust-google/google-dns.jpg)
+![Google DNS logo](/web/public/images/do-not-trust-google/google-dns.jpg)
 
 To be clear, I'm not accusing Google of storing DNS logs or associating that with specific users (they claim that they
 don't in their terms of service), however, I think it's unreasonable to think that they wouldn't be capable of that. I
@@ -135,7 +135,7 @@ their browsing history would be quite juicy indeed.
 Okay, so that's verging on conspiracy theory I suppose. Maybe Google DNS will remain clean. How about you get a Google®
 Nest™ WiFi mesh router and let them inspect all of your web traffic that way?
 
-![Google Nest Wifi Router product photo](/src/public/images/do-not-trust-google/nest.jpg)
+![Google Nest Wifi Router product photo](/web/public/images/do-not-trust-google/nest.jpg)
 
 Or perhaps you want to buy the new Pixel and give them advanced analytics about how you use your phone ([privacy class action lawsuit](https://www.searchenginejournal.com/google-privacy-lawsuit-android-apps/374952/)), everywhere you
 go (Location History), how much physical activity you do (Google Fit), every article/video you engage with (Chrome),

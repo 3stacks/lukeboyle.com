@@ -56,11 +56,11 @@ So how did I "increase my 1RM by 18-35%"? One simple trick! "Adherence" (and may
 
 Adherence before OLAD
 
-![](/src/public/images/olad-results/adherence-before.jpg)
+![](/web/public/images/olad-results/adherence-before.jpg)
 
 Adherence after OLAD
 
-![](/src/public/images/olad-results/adherence-after.jpg)
+![](/web/public/images/olad-results/adherence-after.jpg)
 
 I really just owe this adherence to the renewed enjoyment I've had in the gym. It's pretty great to get out of the gym
 within 45 minutes (excluding prehab/rehab). I was quite fatigued by the few cycles of 5/3/1 I had just done (not to
@@ -69,7 +69,7 @@ mention the 1.5 hour workouts), so it made sense I was burned out.
 All things considered, I'm really happy with this program. After my second knee dislocation in 2019 I didn't expect to
 be squatting again but here we are. It's not the most encouraging sign when your bench is beating your squat, but I'm not giving up.
 
-![post-dislocation swelling](/src/public/images/olad-results/dislocation.jpg)
+![post-dislocation swelling](/web/public/images/olad-results/dislocation.jpg)
 
 ## Lifts
 

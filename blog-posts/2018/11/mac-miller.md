@@ -7,7 +7,7 @@ post_type: post
 post_author: Luke Boyle
 ---
 
-![Mac Miller](/src/public/images/mac.jpg)
+![Mac Miller](/web/public/images/mac.jpg)
 
 > I was drowning but now I'm swimming
 

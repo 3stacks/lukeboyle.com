@@ -25,7 +25,7 @@ disposable prototypes, testing as you build, and always having a working program
 One of the most recognisable and user-friendly explanations of this concept is "The Agile Bicycle"
 illustrated by [Henrik Knilberg](http://blog.crisp.se/2016/01/25/henrikkniberg/making-sense-of-mvp)
 
-![mvp bicycle](/src/public/images/mvp.jpg)
+![mvp bicycle](/web/public/images/mvp.jpg)
 
 This is a great example of delivering a minimum viable product (MVP). There are many benefits to this
 method:
@@ -53,13 +53,13 @@ were all frozen. On the technical side, subscriptions were not manageable by the
 through customer service, which added some friction. It wasn’t a mind-blowing experience, but the
 meals all tasted good and most importantly, the business model worked.
 
-![the beginning](/src/public/images/foodz.jpg)
+![the beginning](/web/public/images/foodz.jpg)
 
 Over the last 12 months I’ve observed various improvements to their offering.
 
 1. They replaced the Styrofoam boxes with wool insulated cardboard boxes
 
-![new box](/src/public/images/box.jpg)
+![new box](/web/public/images/box.jpg)
 
 2. They replaced the take-away style containers with vacuum sealed containers to allow the foods
    to last longer without being frozen. This paved the way for them to start offering fresh meals

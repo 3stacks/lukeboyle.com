@@ -12,46 +12,46 @@ post_author: Luke Boyle
 
 ### Freddie Gibbs
 
-![yolt](/src/public/images/yolt.jpg)
+![yolt](/web/public/images/yolt.jpg)
 
 ## Big Fish Theory
 
 ### Vince Staples
 
-![fish](/src/public/images/fish.jpg)
+![fish](/web/public/images/fish.jpg)
 
 ## 4eva is a mighty long time
 
 ### Big K.R.I.T
 
-![mighty-long-time](/src/public/images/mighty-long-time.jpg)
+![mighty-long-time](/web/public/images/mighty-long-time.jpg)
 
 ## Brick Body Kids Still Daydream
 
 ### Open Mike Eagle
 
-![brick](/src/public/images/brick.jpg)
+![brick](/web/public/images/brick.jpg)
 
 ## Flower Boy
 
 ### Tyler, The Creator
 
-![flower boy](/src/public/images/flower-boy.jpg)
+![flower boy](/web/public/images/flower-boy.jpg)
 
 ## DAMN.
 
 ### Kendrick Lamar
 
-![damn](/src/public/images/damn.jpg)
+![damn](/web/public/images/damn.jpg)
 
 ## All-Amerikkkan Badass
 
 ### Joey Badass
 
-![all amerikkkan badass](/src/public/images/all-amerikkkan.jpg)
+![all amerikkkan badass](/web/public/images/all-amerikkkan.jpg)
 
 ## A Crow Looked At Me
 
 ### Mount Eerie
 
-![a crow looked at me](/src/public/images/a-crow.jpg)
+![a crow looked at me](/web/public/images/a-crow.jpg)
