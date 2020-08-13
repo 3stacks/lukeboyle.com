@@ -3,13 +3,19 @@ import { gql } from '@apollo/client';
 import { initializeApollo } from '../../../../lib/apolloClient';
 import { ALL_POSTS_QUERY } from '../../../blog';
 import BlogPost from '../../../../components/BlogPost/BlogPost';
+import { IMetaData } from '../../../../../scripts/utils/blog';
 
 interface IBlogPostProps extends IApolloQueryProps<{}> {}
 
 export function Post({ initialApolloState: { ROOT_QUERY } }: IBlogPostProps) {
     const { contents, canonicalUrl, metaData, fileName } = Object.values(
         ROOT_QUERY
-    )[1];
+    )[1] as {
+        contents: string;
+        canonicalUrl: string;
+        metaData: IMetaData;
+        fileName: string;
+    };
 
     if (!contents) {
         return null;

@@ -262,19 +262,13 @@ import BlogPost from '../../../../components/BlogPost';
 import BlockQuote from '../../../../components/BlockQuote';`;
 
 	renderer.image = function(href, title, text) {
-		const rawFilename = getFileNameFromPath(href);
-		const imageName = `${camelCase(
-			rawFilename.slice(0, rawFilename.indexOf('.'))
-		)}Src`;
-
-		imports = `${imports}\nimport ${imageName} from '${
-			href.includes('http')
-				? href
-				: `../..${href.replace('/blog-posts', '')}`
-		}'`;
+		console.log(href.replace('/web/public', ''));
 		const hrefParts = href.split('/');
 
-		return `<img src={${imageName}} alt="${text}" data-identifier="${
+		return `<img src="${href.replace(
+			'/web/public',
+			''
+		)}" alt="${text}" data-identifier="${
 			hrefParts[hrefParts.length - 1].split('.')[0]
 		}" />`;
 	};
@@ -328,7 +322,7 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 					'/>'
 				)[0];
 				const snippet = curr.split('/></p>')[1];
-				return `${acc}\n<AlbumBlock>
+				return `${acc}\n<div className=""album-block>
 	<h2 className="title">${albumTitle}</h2>
 	<h3 className="artist">${artist}</h3>
 	<img ${imageBits} />
@@ -339,7 +333,7 @@ import BlockQuote from '../../../../components/BlockQuote';`;
 		${curr.split('/></p>')[1]}
 	</div>\n`
 	}
-</AlbumBlock>
+</div className="album-block">
 `;
 			}, '');
 		}
