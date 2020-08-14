@@ -69,8 +69,6 @@ mention the 1.5 hour workouts), so it made sense I was burned out.
 All things considered, I'm really happy with this program. After my second knee dislocation in 2019 I didn't expect to
 be squatting again but here we are. It's not the most encouraging sign when your bench is beating your squat, but I'm not giving up.
 
-![post-dislocation swelling](/web/public/images/olad-results/dislocation.jpg)
-
 ## Lifts
 
 ### Strict overhead press - 80kg (~176 pounds) x 2

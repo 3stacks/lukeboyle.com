@@ -90,7 +90,7 @@ const BlogPage = ({
                             );
                         })}
                         <Pagination
-                            pageNumber={pageNumber}
+                            pageNumber={parseInt(pageNumber, 10)}
                             pageCount={pageCount}
                         />
                     </div>
