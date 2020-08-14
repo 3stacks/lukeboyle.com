@@ -25,7 +25,6 @@ vendor
 .env.*
 # Project dependencies
 .cache
-node_modules
 yarn-error.log
 .next
 .DS_Store
