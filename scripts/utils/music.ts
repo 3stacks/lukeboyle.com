@@ -212,7 +212,7 @@ export async function getDiscogsCollectionItems(
 	const releaseIds = collectionResponse.data.releases.map(
 		release => release.id
 	);
-	const releases = releaseIds.slice(0, 4).map(async releaseId => {
+	const releases = releaseIds.slice(0, 5).map(async releaseId => {
 		try {
 			await sleep(2000);
 			const response = await axios.get(

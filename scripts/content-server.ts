@@ -252,7 +252,7 @@ const resolvers = {
 				process.env.LAST_FM_API_KEY
 			);
 
-			return topAlbumResponse.slice(0, 12).map(topAlbum => {
+			return topAlbumResponse.slice(0, 5).map(topAlbum => {
 				return {
 					...topAlbum,
 					mbid: topAlbum.mbid || nanoid(),

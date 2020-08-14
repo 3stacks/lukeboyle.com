@@ -41,7 +41,6 @@ export default function Music({
         ROOT_QUERY: { musicPreviews, topAlbums, topArtists, discogsCollection }
     }
 }: IProps) {
-    console.log(discogsCollection);
     return (
         <Layout
             slug="music"
