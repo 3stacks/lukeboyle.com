@@ -36,12 +36,6 @@ interface IBlogPost {
 	metaData: IMetaData;
 }
 
-interface IPostArchive {
-	[year: string]: {
-		[month: string]: IBlogPost[];
-	};
-}
-
 export function generateComponent(acc, post) {
 	const fileName = getFileNameFromPath(post.path);
 	const camelCaseName = camelCase(fileName);

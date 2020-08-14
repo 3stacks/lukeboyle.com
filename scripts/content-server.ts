@@ -14,7 +14,7 @@ import {
 dotenv.config();
 
 function getBlogPosts(): Promise<any[]> {
-	return new Promise((resolve, reject) => {
+	return new Promise(resolve => {
 		glob('blog-posts/**/*.md', (err, files) => {
 			resolve(
 				files
@@ -35,7 +35,7 @@ function getBlogPosts(): Promise<any[]> {
 }
 
 function getPortfolioItems(): Promise<any[]> {
-	return new Promise((resolve, reject) => {
+	return new Promise(resolve => {
 		glob('portfolio/**/*.md', (err, files) => {
 			resolve(
 				files

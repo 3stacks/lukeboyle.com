@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { initializeApollo } from '../../lib/apolloClient';
 import { gql } from '@apollo/client';
+import { initializeApollo } from '../../lib/apolloClient';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { BodyWrapper, MainHeader } from '../../styled/music.style';
 import HomeHeadBanner from '../../components/HomeHeadBanner/HomeHeadBanner';
@@ -8,9 +8,9 @@ import { PAGES } from '../../constants';
 import Layout from '../../components/Layout/Layout';
 import BlogPreview from '../../components/BlogPreview/BlogPreview';
 import PostArchive from '../../components/PostArchive';
-import safeGet from 'lodash/get';
 import Pagination from '../../components/Pagination';
 import { getTotalPages } from './index';
+import { getPostArchiveFromBlogPosts } from '../../components/utils';
 
 const BlogPage = ({
     pageNumber,
@@ -31,28 +31,10 @@ const BlogPage = ({
     const parsedPageNumber = parseInt(pageNumber, 10);
     const postStartIndex = parsedPageNumber * 6;
     const postsForPage = blogPosts.slice(postStartIndex, postStartIndex + 6);
-    const archiveData = React.useMemo(() => {
-        return blogPosts.reduce((acc, post) => {
-            const pathParts = post.path.replace('blog-posts/', '').split('/');
-            const year = pathParts[0];
-            const month = pathParts[1];
-
-            return {
-                ...acc,
-                [year]: {
-                    ...acc[year],
-                    [month]: [
-                        ...safeGet(acc, [year, month], []),
-                        {
-                            slug: post.slug,
-                            path: post.path,
-                            title: post.metaData.post_title
-                        }
-                    ]
-                }
-            };
-        }, {});
-    }, [blogPosts]);
+    const archiveData = React.useMemo(
+        () => getPostArchiveFromBlogPosts(blogPosts),
+        [blogPosts]
+    );
 
     return (
         <Layout

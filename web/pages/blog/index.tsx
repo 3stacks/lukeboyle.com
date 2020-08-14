@@ -8,8 +8,8 @@ import { PAGES } from '../../constants';
 import Layout from '../../components/Layout/Layout';
 import BlogPreview from '../../components/BlogPreview/BlogPreview';
 import PostArchive from '../../components/PostArchive';
-import safeGet from 'lodash/get';
 import Pagination from '../../components/Pagination';
+import { getPostArchiveFromBlogPosts } from '../../components/utils';
 
 export function getTotalPages(items: any[], pageLimit: number = 6): number {
     return Math.ceil(items.length / pageLimit);
@@ -24,28 +24,10 @@ const BlogPage = (props: {
         return null;
     }
 
-    const archiveData = React.useMemo(() => {
-        return blogPosts.reduce((acc, post) => {
-            const pathParts = post.path.replace('blog-posts/', '').split('/');
-            const year = pathParts[0];
-            const month = pathParts[1];
-
-            return {
-                ...acc,
-                [year]: {
-                    ...acc[year],
-                    [month]: [
-                        ...safeGet(acc, [year, month], []),
-                        {
-                            slug: post.slug,
-                            path: post.path,
-                            title: post.metaData.post_title
-                        }
-                    ]
-                }
-            };
-        }, {});
-    }, [blogPosts]);
+    const archiveData = React.useMemo(
+        () => getPostArchiveFromBlogPosts(blogPosts),
+        [blogPosts]
+    );
     const pagePosts = blogPosts.slice(0, 6);
     const pageCount = React.useMemo(() => getTotalPages(blogPosts), [
         blogPosts

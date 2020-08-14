@@ -23,7 +23,7 @@ interface IBlogPost {
     metaData: IMetaData;
 }
 
-interface IPostArchive {
+export interface IPostArchive {
     [year: string]: {
         [month: string]: IBlogPost[];
     };
