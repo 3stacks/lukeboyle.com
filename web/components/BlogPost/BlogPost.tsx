@@ -1,7 +1,7 @@
 import * as React from 'react';
 import formatDate from 'date-fns/format';
+import Head from 'next/head';
 import Layout from '../Layout';
-import Helmet from 'react-helmet';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledPost } from './BlogPost.style';
 import HomeHeadBanner from '../HomeHeadBanner/HomeHeadBanner';
@@ -28,14 +28,14 @@ export const BlogPost = ({
 }) => {
     return (
         <Layout slug={`blog-single ${fileName}`}>
-            <Helmet>
+            <Head>
                 {canonical !== '' && <link rel="canonical" href={canonical} />}
                 {pageDescription && (
                     <meta name="description" content={pageDescription} />
                 )}
                 <meta name="author" content={author} />
                 <title>{pageTitle || title} | Luke Boyle</title>
-            </Helmet>
+            </Head>
             <StyledPost>
                 <HomeHeadBanner hasColor>
                     <h1>{title}</h1>

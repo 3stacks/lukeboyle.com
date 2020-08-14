@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import Head from 'next/head';
 import Layout from '../../components/Layout';
 import portfolioItems from '../../data/portfolio-items';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
@@ -18,7 +18,9 @@ export const Portfolio = () => {
             )}
         >
             <PortfolioContainer>
-                <Helmet title="Development Portfolio | Luke Boyle" />
+                <Head>
+                    <title>Development Portfolio | Luke Boyle</title>
+                </Head>
                 <MaxWidthContainer className="inner">
                     {portfolioItems.map(PortfolioItem)}
                 </MaxWidthContainer>

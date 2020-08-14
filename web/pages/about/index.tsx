@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import Head from 'next/head';
 import Layout from '../../components/Layout';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import ExternalLink from '../../components/ExternalLink';
@@ -8,9 +8,9 @@ import { PAGES } from '../../constants';
 export const About = () => {
     return (
         <Layout pageName={PAGES.ABOUT} slug="about">
-            <Helmet>
+            <Head>
                 <title>About | Luke Boyle</title>
-            </Helmet>
+            </Head>
             <MaxWidthContainer isSmall className="about-main">
                 <h2>Quick facts:</h2>
                 <ul>
