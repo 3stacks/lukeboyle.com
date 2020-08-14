@@ -36,14 +36,15 @@ export const SiteNav = ({
                             slug === route.slug ? 'item is-active' : 'item'
                         }
                     >
-                        <Link
-                            href={route.link}
-                            aria-label={
-                                isHome ? 'Go back to homepage' : undefined
-                            }
-                            tabIndex={0}
-                        >
-                            <a>{route.text}</a>
+                        <Link href={route.link}>
+                            <a
+                                aria-label={
+                                    isHome ? 'Go back to homepage' : undefined
+                                }
+                                tabIndex={0}
+                            >
+                                {route.text}
+                            </a>
                         </Link>
                     </li>
                 );

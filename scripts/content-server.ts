@@ -36,7 +36,7 @@ function getBlogPosts(): Promise<any[]> {
 
 function getPortfolioItems(): Promise<any[]> {
 	return new Promise(resolve => {
-		glob('portfolio/**/*.md', (err, files) => {
+		glob('portfolio-items/**/*.md', (err, files) => {
 			resolve(
 				files
 					.filter(isNotDirectory)
