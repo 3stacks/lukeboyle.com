@@ -18,7 +18,6 @@ export function getTotalPages(items: any[], pageLimit: number = 6): number {
 const BlogPage = (props: {
     initialApolloState: { ROOT_QUERY: { blogPosts: any[] } };
 }) => {
-    console.log(props);
     const { blogPosts } = props.initialApolloState.ROOT_QUERY;
 
     if (!blogPosts) {
@@ -31,7 +30,6 @@ const BlogPage = (props: {
             const year = pathParts[0];
             const month = pathParts[1];
 
-            console.log(post, year, month);
             return {
                 ...acc,
                 [year]: {
@@ -72,7 +70,6 @@ const BlogPage = (props: {
                     </div>
                     <div>
                         {pagePosts.map(post => {
-                            console.log(post);
                             return (
                                 <BlogPreview
                                     key={post.path}
