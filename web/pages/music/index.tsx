@@ -44,7 +44,6 @@ export default function Music({
     return (
         <Layout
             slug="music"
-            pageName={PAGES.MUSIC}
             headChildren={() => (
                 <HomeHeadBanner hasColor>
                     <h1 className="site-name">Boyleing Point</h1>

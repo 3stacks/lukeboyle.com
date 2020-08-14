@@ -4,7 +4,6 @@ import { initializeApollo } from '../../lib/apolloClient';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { BodyWrapper, MainHeader } from '../../styled/music.style';
 import HomeHeadBanner from '../../components/HomeHeadBanner/HomeHeadBanner';
-import { PAGES } from '../../constants';
 import Layout from '../../components/Layout/Layout';
 import BlogPreview from '../../components/BlogPreview/BlogPreview';
 import PostArchive from '../../components/PostArchive';
@@ -39,7 +38,6 @@ const BlogPage = ({
     return (
         <Layout
             slug="blog"
-            pageName={PAGES.BLOG}
             headChildren={() => (
                 <HomeHeadBanner hasColor>
                     <h1 className="site-name">Boyleing Point</h1>
@@ -110,7 +108,7 @@ export async function getStaticPaths() {
         ROOT_QUERY: { blogPosts: any[] };
     };
 
-    const pageCount = Math.ceil(blogPosts.length / 6);
+    const pageCount = getTotalPages(blogPosts);
     const pages = new Array(pageCount).fill(true);
     const paths = pages.map((_, index) => `/blog/${index + 1}`);
 

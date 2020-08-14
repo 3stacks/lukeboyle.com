@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { ServerStyleSheet } from 'styled-components';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { MY_NAME } from '../constants';
 
 export default class MyDocument extends Document {
     static async getInitialProps(ctx) {
@@ -33,10 +34,7 @@ export default class MyDocument extends Document {
         return (
             <Html>
                 <Head>
-                    <meta
-                        name="google-site-verification"
-                        content="JKQQdLNK9rQUZnixIsfEuJALcEcfPp9_ee2grLgOVGM"
-                    />
+                    <title>{MY_NAME}</title>
                     <meta name="referrer" content="origin" />
                     <meta charSet="utf-8" />
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />

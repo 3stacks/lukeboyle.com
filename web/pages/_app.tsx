@@ -1,5 +1,6 @@
 import * as React from 'react';
 import App from 'next/app';
+import { Head } from 'next/document';
 import { GlobalLayoutStyle } from '../styled/layout.style';
 
 export default class MyApp extends App {
@@ -8,6 +9,7 @@ export default class MyApp extends App {
 
         return (
             <>
+                <Head />
                 <GlobalLayoutStyle />
                 <Component {...pageProps} />
             </>

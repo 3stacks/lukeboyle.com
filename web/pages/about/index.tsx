@@ -7,7 +7,7 @@ import { PAGES } from '../../constants';
 
 export const About = () => {
     return (
-        <Layout pageName={PAGES.ABOUT} slug="about">
+        <Layout slug="about">
             <Head>
                 <title>About | Luke Boyle</title>
             </Head>

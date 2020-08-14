@@ -113,7 +113,6 @@ export const Index = () => {
     return (
         <Layout
             slug="feed"
-            pageName={PAGES.FEED}
             headChildren={() => (
                 <HomeHeadBanner hasColor>
                     <h1>The downward spiral</h1>
