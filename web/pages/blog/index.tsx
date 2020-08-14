@@ -8,8 +8,12 @@ import { PAGES } from '../../constants';
 import Layout from '../../components/Layout/Layout';
 import BlogPreview from '../../components/BlogPreview/BlogPreview';
 import PostArchive from '../../components/PostArchive';
-import { useMemo } from 'react';
 import safeGet from 'lodash/get';
+import Pagination from '../../components/Pagination';
+
+export function getTotalPages(items: any[], pageLimit: number = 6): number {
+    return Math.ceil(items.length / pageLimit);
+}
 
 const BlogPage = (props: {
     initialApolloState: { ROOT_QUERY: { blogPosts: any[] } };
@@ -21,7 +25,7 @@ const BlogPage = (props: {
         return null;
     }
 
-    const archiveData = useMemo(() => {
+    const archiveData = React.useMemo(() => {
         return blogPosts.reduce((acc, post) => {
             const pathParts = post.path.replace('blog-posts/', '').split('/');
             const year = pathParts[0];
@@ -45,6 +49,9 @@ const BlogPage = (props: {
         }, {});
     }, [blogPosts]);
     const pagePosts = blogPosts.slice(0, 6);
+    const pageCount = React.useMemo(() => getTotalPages(blogPosts), [
+        blogPosts
+    ]);
 
     return (
         <Layout
@@ -82,6 +89,7 @@ const BlogPage = (props: {
                                 </BlogPreview>
                             );
                         })}
+                        <Pagination pageNumber={0} pageCount={pageCount} />
                     </div>
                 </BodyWrapper>
             </MaxWidthContainer>
