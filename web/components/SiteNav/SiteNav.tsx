@@ -18,8 +18,10 @@ export const SiteNav = ({
             <h1 className="logo">{MY_NAME}</h1>
         ) : (
             <p className="logo">
-                <Link href="/" rel="home" title="Go back to the home page">
-                    <a>{MY_NAME}</a>
+                <Link href="/">
+                    <a rel="home" title="Go back to the home page">
+                        {MY_NAME}
+                    </a>
                 </Link>
             </p>
         )}

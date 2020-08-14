@@ -1,5 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
+import Head from 'next/head';
 import MaxWidthContainer from '../components/MaxWidthContainer';
 import Layout from '../components/Layout';
 import { LinkButton } from '../components/Button';
@@ -8,9 +8,9 @@ import HomeHeadBanner from '../components/HomeHeadBanner/HomeHeadBanner';
 export default function NotFoundError() {
     return (
         <Layout slug="home">
-            <Helmet>
+            <Head>
                 <title>Not Found | Luke Boyle</title>
-            </Helmet>
+            </Head>
             <HomeHeadBanner hasColor={false}>
                 <h1 className="site-name">Not found</h1>
             </HomeHeadBanner>

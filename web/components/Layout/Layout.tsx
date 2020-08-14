@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Helmet from 'react-helmet';
+import Head from 'next/head';
 import Header from '../Header';
 import Footer from '../Footer';
 import { META_DESCRIPTION, MY_NAME, PAGES } from '../../constants';
@@ -22,7 +22,8 @@ export const Layout = ({ pageName, headChildren, slug, children }: IProps) => {
             className={`layout ${slug}`}
             showFullPageColor={isHomeOrPortfolioPage}
         >
-            <Helmet title={`${MY_NAME} | Front End Developer`}>
+            <Head>
+                <title>{MY_NAME} | Front End Developer</title>
                 <meta name="description" content={META_DESCRIPTION[pageName]} />
                 <meta
                     name="google-site-verification"
@@ -63,7 +64,7 @@ export const Layout = ({ pageName, headChildren, slug, children }: IProps) => {
                     href="/img/favicon-32x32.png"
                 />
                 <html lang="en-US" />
-            </Helmet>
+            </Head>
             <GlobalLayoutStyle />
             <Header isHome={slug === 'home'} slug={slug} />
             <main className="main">

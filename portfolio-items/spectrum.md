@@ -1,6 +1,6 @@
 # Spectrum
 
-![](/portfolio-items/images/spectrum.png)
+![](/web/public/images/spectrum.png)
 
 Spectrum is a web-based editor for writing software specification documents. The app enables software architects to progressively define the functionality in their system allowing developers to begin implementing the specification sooner.
 

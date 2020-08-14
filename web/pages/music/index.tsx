@@ -8,6 +8,12 @@ import { ArtistList, BodyWrapper, MainHeader } from '../../styled/music.style';
 import { PAGES } from '../../constants';
 import BlogPreview from '../../components/BlogPreview/BlogPreview';
 import HomeHeadBanner from '../../components/HomeHeadBanner/HomeHeadBanner';
+import truncate from 'lodash/truncate';
+import {
+    IDiscogsRelease,
+    ILastFMAlbum,
+    ILastFMArtist
+} from '../../../scripts/utils/music';
 
 interface IProps {
     initialApolloState: {
@@ -23,48 +29,19 @@ interface IProps {
                 postAuthor: string;
                 snippet: string;
             }[];
+            topAlbums: ILastFMAlbum[];
+            topArtists: ILastFMArtist[];
+            discogsCollection: IDiscogsRelease[];
         };
     };
 }
 
 export default function Music({
     initialApolloState: {
-        ROOT_QUERY: { musicPreviews }
+        ROOT_QUERY: { musicPreviews, topAlbums, topArtists, discogsCollection }
     }
 }: IProps) {
-    // const [artistData, updateArtistData] = useState(prefetchedArtistData);
-    // const [albumData, updateAlbumData] = useState(prefetchedAlbumData);
-    // const [crateData, updateCrateData] = useState(prefetchedCrateData);
-
-    // useEffect(() => {
-    //     let isCancelled = false;
-    //
-    //     async function fetchData() {
-    //         const LAST_FM_API_KEY = data.site.siteMetadata.lastFMApiKey;
-    //         const DISCOGS_API_KEY = data.site.siteMetadata.discogsApiKey;
-    //
-    //         try {
-    //             const albumResponse = await getTopAlbums(LAST_FM_API_KEY);
-    //             const artistResponse = await getTopArtists(LAST_FM_API_KEY);
-    //             const discogsResponse = await getDiscogsCollectionItems(
-    //                 DISCOGS_API_KEY
-    //             );
-    //
-    //             if (!isCancelled) {
-    //                 updateArtistData(artistResponse);
-    //                 updateAlbumData(albumResponse);
-    //                 updateCrateData(discogsResponse);
-    //             }
-    //         } catch (e) {
-    //             console.error(e);
-    //         }
-    //     }
-    //
-    //     fetchData();
-    //
-    //     return () => (isCancelled = true);
-    // }, []);
-
+    console.log(discogsCollection);
     return (
         <Layout
             slug="music"
@@ -84,82 +61,86 @@ export default function Music({
                     <div className="left">
                         <MainHeader>What's new in the crate</MainHeader>
                         <ArtistList>
-                            {/*{crateData.map(release => {*/}
-                            {/*    return (*/}
-                            {/*        <li key={release.id}>*/}
-                            {/*            <div className="image-wrapper">*/}
-                            {/*                <img*/}
-                            {/*                    src={release.images[0].uri}*/}
-                            {/*                    alt=""*/}
-                            {/*                />*/}
-                            {/*            </div>*/}
-                            {/*            <div className="info-wrapper">*/}
-                            {/*                <h2 className="artist-name">*/}
-                            {/*                    {truncate(release.title, {*/}
-                            {/*                        length: 20*/}
-                            {/*                    })}*/}
-                            {/*                </h2>*/}
-                            {/*                <p className="play-count">*/}
-                            {/*                    {release.artists[0].name}*/}
-                            {/*                </p>*/}
-                            {/*            </div>*/}
-                            {/*        </li>*/}
-                            {/*    );*/}
-                            {/*})}*/}
+                            {discogsCollection.map(release => {
+                                return (
+                                    <li key={(release as any).guid}>
+                                        <div className="image-wrapper">
+                                            <img
+                                                src={release.images[0].uri150}
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div className="info-wrapper">
+                                            <h2 className="artist-name">
+                                                {truncate(release.title, {
+                                                    length: 20
+                                                })}
+                                            </h2>
+                                            <p className="play-count">
+                                                {release.artists_sort}
+                                            </p>
+                                        </div>
+                                    </li>
+                                );
+                            })}
                         </ArtistList>
                         <MainHeader>Who I've been listening to</MainHeader>
                         <ArtistList>
-                            {/*{artistData.slice(0, 5).map(artist => {*/}
-                            {/*    const imageToShow =*/}
-                            {/*        artist.image.find(*/}
-                            {/*            image => image.size === 'large'*/}
-                            {/*        ) || artist.image[0];*/}
-                            {/*    const imageSrc = imageToShow['#text'];*/}
-                            {/*    return (*/}
-                            {/*        <li key={artist.mbid}>*/}
-                            {/*            <div className="image-wrapper">*/}
-                            {/*                <img src={imageSrc} alt="" />*/}
-                            {/*            </div>*/}
-                            {/*            <div className="info-wrapper">*/}
-                            {/*                <h2 className="artist-name">*/}
-                            {/*                    {truncate(artist.name, {*/}
-                            {/*                        length: 20*/}
-                            {/*                    })}*/}
-                            {/*                </h2>*/}
-                            {/*                <p className="play-count">*/}
-                            {/*                    {artist.playcount} plays*/}
-                            {/*                </p>*/}
-                            {/*            </div>*/}
-                            {/*        </li>*/}
-                            {/*    );*/}
-                            {/*})}*/}
+                            {topArtists.map(artist => {
+                                const imageToShow =
+                                    artist.image.find(
+                                        image => image.size === 'large'
+                                    ) || artist.image[0];
+                                return (
+                                    <li key={artist.mbid}>
+                                        <div className="image-wrapper">
+                                            <img
+                                                src={imageToShow.link}
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div className="info-wrapper">
+                                            <h2 className="artist-name">
+                                                {truncate(artist.name, {
+                                                    length: 20
+                                                })}
+                                            </h2>
+                                            <p className="play-count">
+                                                {artist.playcount} plays
+                                            </p>
+                                        </div>
+                                    </li>
+                                );
+                            })}
                         </ArtistList>
                         <MainHeader>My most played albums</MainHeader>
                         <ArtistList>
-                            {/*{albumData.slice(0, 5).map(album => {*/}
-                            {/*    const imageToShow =*/}
-                            {/*        album.image.find(*/}
-                            {/*            image => image.size === 'large'*/}
-                            {/*        ) || album.image[0];*/}
-                            {/*    const imageSrc = imageToShow['#text'];*/}
-                            {/*    return (*/}
-                            {/*        <li key={album.mbid || album.url}>*/}
-                            {/*            <div className="image-wrapper">*/}
-                            {/*                <img src={imageSrc} alt="" />*/}
-                            {/*            </div>*/}
-                            {/*            <div className="info-wrapper">*/}
-                            {/*                <h2 className="artist-name">*/}
-                            {/*                    {truncate(album.name, {*/}
-                            {/*                        length: 20*/}
-                            {/*                    })}*/}
-                            {/*                </h2>*/}
-                            {/*                <p className="play-count">*/}
-                            {/*                    {album.playcount} plays*/}
-                            {/*                </p>*/}
-                            {/*            </div>*/}
-                            {/*        </li>*/}
-                            {/*    );*/}
-                            {/*})}*/}
+                            {topAlbums.map(album => {
+                                const imageToShow =
+                                    album.image.find(
+                                        image => image.size === 'large'
+                                    ) || album.image[0];
+                                return (
+                                    <li key={album.mbid}>
+                                        <div className="image-wrapper">
+                                            <img
+                                                src={imageToShow.link}
+                                                alt=""
+                                            />
+                                        </div>
+                                        <div className="info-wrapper">
+                                            <h2 className="artist-name">
+                                                {truncate(album.name, {
+                                                    length: 20
+                                                })}
+                                            </h2>
+                                            <p className="play-count">
+                                                {album.playcount} plays
+                                            </p>
+                                        </div>
+                                    </li>
+                                );
+                            })}
                         </ArtistList>
                     </div>
                     <div>
@@ -190,7 +171,7 @@ export default function Music({
 }
 
 export const MUSIC_POSTS_QUERY = gql`
-    query {
+    query MusicPosts {
         musicPreviews {
             path
             fileName
@@ -201,6 +182,35 @@ export const MUSIC_POSTS_QUERY = gql`
             postType
             postAuthor
             snippet
+        }
+        topArtists {
+            mbid
+            playcount
+            name
+            artist {
+                name
+            }
+            image {
+                size
+                link
+            }
+        }
+        topAlbums {
+            mbid
+            name
+            playcount
+            image {
+                size
+                link
+            }
+        }
+        discogsCollection {
+            title
+            artists_sort
+            guid
+            images {
+                uri150
+            }
         }
     }
 `;

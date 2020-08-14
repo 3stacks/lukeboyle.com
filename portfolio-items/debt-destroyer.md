@@ -4,7 +4,7 @@ Debt Destroyer takes a list of all your debts with interest rates and minimum pa
 
 Additionally, you may add any extra funds you can contribute to your debt each month and that will be added to your monthly contributions.
 
-![](/portfolio-items/images/destroyer-charts.jpg)
+![](/web/public/images/destroyer-charts.jpg)
 
 If you pay off a debt mid-cycle it will automatically roll the remainder of your available funds into the next debt.
 

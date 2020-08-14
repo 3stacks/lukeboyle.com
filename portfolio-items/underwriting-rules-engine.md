@@ -43,4 +43,4 @@ was considered the latest form state.
 -   Underwrite Me comes with basic input types out of the box, so using custom tags
     on certain questions, we were able to expand the range of input types
 
-![](/portfolio-items/images/custom-fields.png)
+![](/web/public/images/custom-fields.png)
