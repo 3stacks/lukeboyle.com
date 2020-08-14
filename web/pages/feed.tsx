@@ -8,6 +8,7 @@ import { blackShift, bp } from '../styled/mixins';
 import { BodyWrapper } from '../styled/music.style';
 import { CUSTOM_PROPERTIES } from '../styled/colors';
 import Head from 'next/head';
+import { LinkButton } from '../components/Button';
 
 const Table = styled.table`
     font-size: 1.6rem;
@@ -111,104 +112,107 @@ const Post = ({
  */
 export const Index = () => {
     return (
-        <Layout
-            slug="feed"
-            headChildren={() => (
-                <HomeHeadBanner hasColor>
-                    <h1>The downward spiral</h1>
-                </HomeHeadBanner>
-            )}
-        >
+        <main className="main">
             <Head>
                 <title>The Downward Spiral | Luke Boyle</title>
             </Head>
-            <MaxWidthContainer style={{ maxWidth: 850 }}>
-                <BodyWrapper style={{ display: 'block' }}>
-                    <Post postedDate="2020-08-11T20:46:52.549Z">
-                        <p>
-                            Is it possible that the Australian government{' '}
-                            <a href="https://www.gizmodo.com.au/2020/03/huawei-5g-australia/">
-                                banned Huawei
-                            </a>{' '}
-                            in a deliberate attempt to slow the roll-out of the
-                            5G? Surely they would like to recoup some of the
-                            $48.7bn{' '}
-                            <a href="https://www.smh.com.au/business/companies/nbn-rollout-cost-to-jump-by-2-billion-20180831-p500yw.html">
-                                [1]
-                            </a>{' '}
-                            they've invested into the abject failure that is the
-                            NBN. All you need to do is look at Telstra's
-                            official speed metrics between their supported
-                            broadband technologies to see that NBN is a bad
-                            service.
-                        </p>
-                        <figure>
-                            <Table>
-                                <thead>
-                                    <tr>
-                                        <td></td>
-                                        <td>Peak Speed</td>
-                                        <td>Latency</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>4G</td>
-                                        <td>100-300 Mbps</td>
-                                        <td>50ms</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5G</td>
-                                        <td>1-20 Gbps</td>
-                                        <td>1-6ms</td>
-                                    </tr>
-                                    <tr>
-                                        <td>NBN</td>
-                                        <td>12-100 Mbps</td>
-                                        <td>may vary</td>
-                                    </tr>
-                                </tbody>
-                            </Table>
-                            <figcaption>
-                                Table data:{' '}
-                                <a href="https://telstraventures.com/5g-australia-how-it-affects-businesses/">
-                                    [2]
+            <div className="head-slot">
+                <HomeHeadBanner hasColor>
+                    <h1>The downward spiral</h1>
+                </HomeHeadBanner>
+            </div>
+            <div className="body-slot">
+                <MaxWidthContainer style={{ maxWidth: 850 }}>
+                    <BodyWrapper style={{ display: 'block' }}>
+                        <Post postedDate="2020-08-11T20:46:52.549Z">
+                            <p>
+                                Is it possible that the Australian government{' '}
+                                <a href="https://www.gizmodo.com.au/2020/03/huawei-5g-australia/">
+                                    banned Huawei
+                                </a>{' '}
+                                in a deliberate attempt to slow the roll-out of
+                                the 5G? Surely they would like to recoup some of
+                                the $48.7bn{' '}
+                                <a href="https://www.smh.com.au/business/companies/nbn-rollout-cost-to-jump-by-2-billion-20180831-p500yw.html">
+                                    [1]
+                                </a>{' '}
+                                they've invested into the abject failure that is
+                                the NBN. All you need to do is look at Telstra's
+                                official speed metrics between their supported
+                                broadband technologies to see that NBN is a bad
+                                service.
+                            </p>
+                            <figure>
+                                <Table>
+                                    <thead>
+                                        <tr>
+                                            <td></td>
+                                            <td>Peak Speed</td>
+                                            <td>Latency</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>4G</td>
+                                            <td>100-300 Mbps</td>
+                                            <td>50ms</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5G</td>
+                                            <td>1-20 Gbps</td>
+                                            <td>1-6ms</td>
+                                        </tr>
+                                        <tr>
+                                            <td>NBN</td>
+                                            <td>12-100 Mbps</td>
+                                            <td>may vary</td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                                <figcaption>
+                                    Table data:{' '}
+                                    <a href="https://telstraventures.com/5g-australia-how-it-affects-businesses/">
+                                        [2]
+                                    </a>
+                                    . <br /> Expected median speed in San
+                                    Francisco (under average network load)
+                                    market is 1.4Gbps with latency of 4.9ms{' '}
+                                    <a href="https://www.whistleout.com.au/MobilePhones/Guides/5g-in-australia-what-you-need-to-know">
+                                        [3]
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <p>
+                                If it came out that this was the case then I
+                                wouldn't be surprised if they were also
+                                responsible for the proliferation of 5G
+                                conspiracy theories
+                            </p>
+                        </Post>
+                        <Post postedDate="2020-08-04T10:32:52.549Z">
+                            <p>
+                                I'm going to destroy you with FACTS and LOGIC
+                                (that's what I call my fists)
+                            </p>
+                        </Post>
+                        <Post postedDate="2020-08-04T10:25:52.549Z">
+                            <p>
+                                I'm hosting my own Twitter-like feed with the
+                                idea that it can be easily piped into an RSS
+                                feed. It would be nice for everyone to just be
+                                able to host their own feed and then users could
+                                just subscribe to different people on some app.
+                                Then everyone owns their own data (kinda like{' '}
+                                <a href="https://matrix.org">
+                                    https://matrix.org
                                 </a>
-                                . <br /> Expected median speed in San Francisco
-                                (under average network load) market is 1.4Gbps
-                                with latency of 4.9ms{' '}
-                                <a href="https://www.whistleout.com.au/MobilePhones/Guides/5g-in-australia-what-you-need-to-know">
-                                    [3]
-                                </a>
-                            </figcaption>
-                        </figure>
-                        <p>
-                            If it came out that this was the case then I
-                            wouldn't be surprised if they were also responsible
-                            for the proliferation of 5G conspiracy theories
-                        </p>
-                    </Post>
-                    <Post postedDate="2020-08-04T10:32:52.549Z">
-                        <p>
-                            I'm going to destroy you with FACTS and LOGIC
-                            (that's what I call my fists)
-                        </p>
-                    </Post>
-                    <Post postedDate="2020-08-04T10:25:52.549Z">
-                        <p>
-                            I'm hosting my own Twitter-like feed with the idea
-                            that it can be easily piped into an RSS feed. It
-                            would be nice for everyone to just be able to host
-                            their own feed and then users could just subscribe
-                            to different people on some app. Then everyone owns
-                            their own data (kinda like{' '}
-                            <a href="https://matrix.org">https://matrix.org</a>
-                            ).
-                        </p>
-                    </Post>
-                </BodyWrapper>
-            </MaxWidthContainer>
-        </Layout>
+                                ).
+                            </p>
+                        </Post>
+                    </BodyWrapper>
+                </MaxWidthContainer>
+            </div>
+        </main>
     );
 };
 

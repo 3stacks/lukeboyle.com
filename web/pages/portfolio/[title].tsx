@@ -3,7 +3,7 @@ import { gql } from '@apollo/client';
 import { initializeApollo } from '../../lib/apolloClient';
 import { IPortfolioItem } from '../../data/portfolio-items';
 import portfolioData from '../../data/portfolio-items';
-import { PORTFOLIO_ITEM_NAMES } from '../../constants';
+import { MY_NAME, PORTFOLIO_ITEM_NAMES } from '../../constants';
 import HomeHeadBanner from '../../components/HomeHeadBanner/HomeHeadBanner';
 import Head from 'next/head';
 import Layout from '../../components/Layout/Layout';
@@ -11,7 +11,8 @@ import { PortfolioContent } from '../../styled/portfolio.style';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledPost } from '../../components/BlogPost/BlogPost.style';
 import { IMetaData } from '../../../scripts/utils/blog';
-import { ExternalLink } from '../../components/Button';
+import { ExternalLink, LinkButton } from '../../components/Button';
+import { RecentStuff, Stuff } from '../../index.style';
 
 interface IPortfolioPostProps extends IApolloQueryProps<{}> {}
 
@@ -43,32 +44,36 @@ export function PortfolioItem({
     );
 
     return (
-        <Layout
-            slug="portfolio"
-            headChildren={() => (
+        <main className="main">
+            <div className="head-slot">
                 <HomeHeadBanner hasColor={false}>
                     <div dangerouslySetInnerHTML={{ __html: headMarkup }} />
                 </HomeHeadBanner>
-            )}
-        >
-            <PortfolioContent>
-                <Head>
-                    <title>{portfolioContent.name} | Project Case Study</title>
-                    <meta
-                        name="description"
-                        content={portfolioContent.snippet}
-                    />
-                </Head>
-                <MaxWidthContainer>
-                    <StyledPost className="content">
-                        <div dangerouslySetInnerHTML={{ __html: bodyMarkup }} />
-                        <div className="buttons">
-                            {portfolioContent.links.map(ExternalLink)}
-                        </div>
-                    </StyledPost>
-                </MaxWidthContainer>
-            </PortfolioContent>
-        </Layout>
+            </div>
+            <div className="body-slot">
+                <PortfolioContent>
+                    <Head>
+                        <title>
+                            {portfolioContent.name} | Project Case Study
+                        </title>
+                        <meta
+                            name="description"
+                            content={portfolioContent.snippet}
+                        />
+                    </Head>
+                    <MaxWidthContainer>
+                        <StyledPost className="content">
+                            <div
+                                dangerouslySetInnerHTML={{ __html: bodyMarkup }}
+                            />
+                            <div className="buttons">
+                                {portfolioContent.links.map(ExternalLink)}
+                            </div>
+                        </StyledPost>
+                    </MaxWidthContainer>
+                </PortfolioContent>
+            </div>
+        </main>
     );
 }
 

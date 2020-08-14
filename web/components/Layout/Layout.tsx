@@ -9,7 +9,7 @@ interface IProps {
     children: any;
 }
 
-export const Layout = ({ headChildren, slug, children }: IProps) => {
+export const Layout = ({ slug, children }: IProps) => {
     const isHomeOrPortfolioPage =
         slug === 'home' || slug === 'portfolio' || slug === 'feed';
 
@@ -19,14 +19,7 @@ export const Layout = ({ headChildren, slug, children }: IProps) => {
             showFullPageColor={isHomeOrPortfolioPage}
         >
             <Header isHome={slug === 'home'} slug={slug} />
-            <main className="main">
-                {headChildren && (
-                    <div className="head-slot">{headChildren()}</div>
-                )}
-                <div className="body-slot">
-                    <>{children}</>
-                </div>
-            </main>
+            {children}
             <Footer />
         </StyledLayout>
     );

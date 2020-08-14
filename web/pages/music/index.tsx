@@ -5,7 +5,7 @@ import Head from 'next/head';
 import Layout from '../../components/Layout';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { ArtistList, BodyWrapper, MainHeader } from '../../styled/music.style';
-import { PAGES } from '../../constants';
+import { MY_NAME, PAGES } from '../../constants';
 import BlogPreview from '../../components/BlogPreview/BlogPreview';
 import HomeHeadBanner from '../../components/HomeHeadBanner/HomeHeadBanner';
 import truncate from 'lodash/truncate';
@@ -14,6 +14,8 @@ import {
     ILastFMAlbum,
     ILastFMArtist
 } from '../../../scripts/utils/music';
+import { RecentStuff, Stuff } from '../../index.style';
+import { LinkButton } from '../../components/Button';
 
 interface IProps {
     initialApolloState: {
@@ -42,129 +44,134 @@ export default function Music({
     }
 }: IProps) {
     return (
-        <Layout
-            slug="music"
-            headChildren={() => (
+        <main className="main">
+            <Head>
+                <title>{MY_NAME} | Front End Developer</title>
+            </Head>
+            <div className="head-slot">
                 <HomeHeadBanner hasColor>
                     <h1 className="site-name">Boyleing Point</h1>
                     <p>Psychotic ramblings about music</p>
                 </HomeHeadBanner>
-            )}
-        >
-            {/*<Head>*/}
-            {/*    <title>Music | Luke Boyle</title>*/}
-            {/*</Head>*/}
-            <MaxWidthContainer>
-                <BodyWrapper>
-                    <div className="left">
-                        <MainHeader>What's new in the crate</MainHeader>
-                        <ArtistList>
-                            {discogsCollection.map(release => {
-                                return (
-                                    <li key={(release as any).guid}>
-                                        <div className="image-wrapper">
-                                            <img
-                                                src={release.images[0].uri150}
-                                                alt=""
+            </div>
+            <div className="body-slot">
+                <Head>
+                    <title>Music | Luke Boyle</title>
+                </Head>
+                <MaxWidthContainer>
+                    <BodyWrapper>
+                        <div className="left">
+                            <MainHeader>What's new in the crate</MainHeader>
+                            <ArtistList>
+                                {discogsCollection.map(release => {
+                                    return (
+                                        <li key={(release as any).guid}>
+                                            <div className="image-wrapper">
+                                                <img
+                                                    src={
+                                                        release.images[0].uri150
+                                                    }
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div className="info-wrapper">
+                                                <h2 className="artist-name">
+                                                    {truncate(release.title, {
+                                                        length: 20
+                                                    })}
+                                                </h2>
+                                                <p className="play-count">
+                                                    {release.artists_sort}
+                                                </p>
+                                            </div>
+                                        </li>
+                                    );
+                                })}
+                            </ArtistList>
+                            <MainHeader>Who I've been listening to</MainHeader>
+                            <ArtistList>
+                                {topArtists.map(artist => {
+                                    const imageToShow =
+                                        artist.image.find(
+                                            image => image.size === 'large'
+                                        ) || artist.image[0];
+                                    return (
+                                        <li key={artist.mbid}>
+                                            <div className="image-wrapper">
+                                                <img
+                                                    src={imageToShow.link}
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div className="info-wrapper">
+                                                <h2 className="artist-name">
+                                                    {truncate(artist.name, {
+                                                        length: 20
+                                                    })}
+                                                </h2>
+                                                <p className="play-count">
+                                                    {artist.playcount} plays
+                                                </p>
+                                            </div>
+                                        </li>
+                                    );
+                                })}
+                            </ArtistList>
+                            <MainHeader>My most played albums</MainHeader>
+                            <ArtistList>
+                                {topAlbums.map(album => {
+                                    const imageToShow =
+                                        album.image.find(
+                                            image => image.size === 'large'
+                                        ) || album.image[0];
+                                    return (
+                                        <li key={album.mbid}>
+                                            <div className="image-wrapper">
+                                                <img
+                                                    src={imageToShow.link}
+                                                    alt=""
+                                                />
+                                            </div>
+                                            <div className="info-wrapper">
+                                                <h2 className="artist-name">
+                                                    {truncate(album.name, {
+                                                        length: 20
+                                                    })}
+                                                </h2>
+                                                <p className="play-count">
+                                                    {album.playcount} plays
+                                                </p>
+                                            </div>
+                                        </li>
+                                    );
+                                })}
+                            </ArtistList>
+                        </div>
+                        <div>
+                            <ul>
+                                {musicPreviews.map(post => {
+                                    return (
+                                        <li key={post.fileName}>
+                                            <BlogPreview
+                                                author="Luke Boyle"
+                                                publishDate={new Date(
+                                                    post.publishDate
+                                                ).toISOString()}
+                                                title={post.postTitle}
+                                                slug={`/${post.path.replace(
+                                                    '.md',
+                                                    ''
+                                                )}`}
                                             />
-                                        </div>
-                                        <div className="info-wrapper">
-                                            <h2 className="artist-name">
-                                                {truncate(release.title, {
-                                                    length: 20
-                                                })}
-                                            </h2>
-                                            <p className="play-count">
-                                                {release.artists_sort}
-                                            </p>
-                                        </div>
-                                    </li>
-                                );
-                            })}
-                        </ArtistList>
-                        <MainHeader>Who I've been listening to</MainHeader>
-                        <ArtistList>
-                            {topArtists.map(artist => {
-                                const imageToShow =
-                                    artist.image.find(
-                                        image => image.size === 'large'
-                                    ) || artist.image[0];
-                                return (
-                                    <li key={artist.mbid}>
-                                        <div className="image-wrapper">
-                                            <img
-                                                src={imageToShow.link}
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="info-wrapper">
-                                            <h2 className="artist-name">
-                                                {truncate(artist.name, {
-                                                    length: 20
-                                                })}
-                                            </h2>
-                                            <p className="play-count">
-                                                {artist.playcount} plays
-                                            </p>
-                                        </div>
-                                    </li>
-                                );
-                            })}
-                        </ArtistList>
-                        <MainHeader>My most played albums</MainHeader>
-                        <ArtistList>
-                            {topAlbums.map(album => {
-                                const imageToShow =
-                                    album.image.find(
-                                        image => image.size === 'large'
-                                    ) || album.image[0];
-                                return (
-                                    <li key={album.mbid}>
-                                        <div className="image-wrapper">
-                                            <img
-                                                src={imageToShow.link}
-                                                alt=""
-                                            />
-                                        </div>
-                                        <div className="info-wrapper">
-                                            <h2 className="artist-name">
-                                                {truncate(album.name, {
-                                                    length: 20
-                                                })}
-                                            </h2>
-                                            <p className="play-count">
-                                                {album.playcount} plays
-                                            </p>
-                                        </div>
-                                    </li>
-                                );
-                            })}
-                        </ArtistList>
-                    </div>
-                    <div>
-                        <ul>
-                            {musicPreviews.map(post => {
-                                return (
-                                    <li key={post.fileName}>
-                                        <BlogPreview
-                                            author="Luke Boyle"
-                                            publishDate={new Date(
-                                                post.publishDate
-                                            ).toISOString()}
-                                            title={post.postTitle}
-                                            slug={`/${post.path.replace(
-                                                '.md',
-                                                ''
-                                            )}`}
-                                        />
-                                    </li>
-                                );
-                            })}
-                        </ul>
-                    </div>
-                </BodyWrapper>
-            </MaxWidthContainer>
-        </Layout>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+                        </div>
+                    </BodyWrapper>
+                </MaxWidthContainer>
+            </div>
+        </main>
     );
 }
 

@@ -10,6 +10,10 @@ import PostArchive from '../../components/PostArchive';
 import Pagination from '../../components/Pagination';
 import { getTotalPages } from './index';
 import { getPostArchiveFromBlogPosts } from '../../components/utils';
+import Head from 'next/head';
+import { MY_NAME } from '../../constants';
+import { RecentStuff, Stuff } from '../../index.style';
+import { LinkButton } from '../../components/Button';
 
 const BlogPage = ({
     pageNumber,
@@ -36,47 +40,50 @@ const BlogPage = ({
     );
 
     return (
-        <Layout
-            slug="blog"
-            headChildren={() => (
+        <main className="main">
+            <div className="head-slot">
                 <HomeHeadBanner hasColor>
                     <h1 className="site-name">Boyleing Point</h1>
                     <p>Psychotic ramblings about technology</p>
                 </HomeHeadBanner>
-            )}
-        >
-            <MaxWidthContainer>
-                <BodyWrapper>
-                    <div className="left">
-                        <MainHeader>Post Archive</MainHeader>
-                        <PostArchive data={archiveData} />
-                    </div>
-                    <div>
-                        {postsForPage.map(post => {
-                            return (
-                                <BlogPreview
-                                    key={post.path}
-                                    author={post.metaData.post_author}
-                                    publishDate={post.metaData.post_date}
-                                    title={post.metaData.post_title}
-                                    slug={`/${post.path.replace('.md', '')}`}
-                                >
-                                    <span
-                                        dangerouslySetInnerHTML={{
-                                            __html: post.snippet
-                                        }}
-                                    />
-                                </BlogPreview>
-                            );
-                        })}
-                        <Pagination
-                            pageNumber={parseInt(pageNumber, 10)}
-                            pageCount={pageCount}
-                        />
-                    </div>
-                </BodyWrapper>
-            </MaxWidthContainer>
-        </Layout>
+            </div>
+            <div className="body-slot">
+                <MaxWidthContainer>
+                    <BodyWrapper>
+                        <div className="left">
+                            <MainHeader>Post Archive</MainHeader>
+                            <PostArchive data={archiveData} />
+                        </div>
+                        <div>
+                            {postsForPage.map(post => {
+                                return (
+                                    <BlogPreview
+                                        key={post.path}
+                                        author={post.metaData.post_author}
+                                        publishDate={post.metaData.post_date}
+                                        title={post.metaData.post_title}
+                                        slug={`/${post.path.replace(
+                                            '.md',
+                                            ''
+                                        )}`}
+                                    >
+                                        <span
+                                            dangerouslySetInnerHTML={{
+                                                __html: post.snippet
+                                            }}
+                                        />
+                                    </BlogPreview>
+                                );
+                            })}
+                            <Pagination
+                                pageNumber={parseInt(pageNumber, 10)}
+                                pageCount={pageCount}
+                            />
+                        </div>
+                    </BodyWrapper>
+                </MaxWidthContainer>
+            </div>
+        </main>
     );
 };
 

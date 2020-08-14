@@ -6,26 +6,32 @@ import MaxWidthContainer from '../../components/MaxWidthContainer';
 import HomeHeadBanner from '../../components/HomeHeadBanner';
 import { PortfolioContainer } from '../../styled/portfolio.style';
 import PortfolioItem from '../../components/PortfolioItem';
+import { MY_NAME } from '../../constants';
+import { RecentStuff, Stuff } from '../../index.style';
+import { LinkButton } from '../../components/Button';
 
 export const Portfolio = () => {
     return (
-        <Layout
-            slug="portfolio"
-            headChildren={() => (
+        <main className="main">
+            <Head>
+                <title>{MY_NAME} | Front End Developer</title>
+            </Head>
+            <div className="head-slot">
                 <HomeHeadBanner hasColor={false}>
                     <h1>A Sample of My Work</h1>
                 </HomeHeadBanner>
-            )}
-        >
-            <PortfolioContainer>
-                <Head>
-                    <title>Development Portfolio | Luke Boyle</title>
-                </Head>
-                <MaxWidthContainer className="inner">
-                    {portfolioItems.map(PortfolioItem)}
-                </MaxWidthContainer>
-            </PortfolioContainer>
-        </Layout>
+            </div>
+            <div className="body-slot">
+                <PortfolioContainer>
+                    <Head>
+                        <title>Development Portfolio | Luke Boyle</title>
+                    </Head>
+                    <MaxWidthContainer className="inner">
+                        {portfolioItems.map(PortfolioItem)}
+                    </MaxWidthContainer>
+                </PortfolioContainer>
+            </div>
+        </main>
     );
 };
 

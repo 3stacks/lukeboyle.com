@@ -3,13 +3,15 @@ import App from 'next/app';
 import Head from 'next/head';
 import { GlobalLayoutStyle } from '../styled/layout.style';
 import { MY_NAME } from '../constants';
+import Layout from '../components/Layout/Layout';
 
 export default class MyApp extends App {
     render() {
+        console.log(this.props);
         const { Component, pageProps } = this.props;
 
         return (
-            <>
+            <Layout slug="home">
                 <Head>
                     <title>{MY_NAME}</title>
                     <meta name="referrer" content="origin" />
@@ -42,10 +44,14 @@ export default class MyApp extends App {
                         sizes="32x32"
                         href="/img/favicon-32x32.png"
                     />
+                    <meta
+                        name="viewport"
+                        content="width=device-width, initial-scale=1.0"
+                    />
                 </Head>
                 <GlobalLayoutStyle />
                 <Component {...pageProps} />
-            </>
+            </Layout>
         );
     }
 }
