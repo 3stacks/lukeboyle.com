@@ -6,6 +6,7 @@ import MaxWidthContainer from '../components/MaxWidthContainer';
 import { LinkButton } from '../components/Button';
 import { RecentStuff, Stuff } from '../index.style';
 import HomeHeadBanner from '../components/HomeHeadBanner';
+import { Head } from 'next/document';
 
 export const Index = () => {
     const latestProject = projects[0];
@@ -13,7 +14,6 @@ export const Index = () => {
     return (
         <Layout
             slug="home"
-            pageName={PAGES.HOME}
             headChildren={() => (
                 <HomeHeadBanner hasColor={false}>
                     <h2>{MY_NAME}</h2>
@@ -21,6 +21,13 @@ export const Index = () => {
                 </HomeHeadBanner>
             )}
         >
+            <Head>
+                <title>{MY_NAME} | Front End Developer</title>
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1.0"
+                />
+            </Head>
             <MaxWidthContainer>
                 <RecentStuff>
                     <Stuff>

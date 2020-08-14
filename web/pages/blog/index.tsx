@@ -4,12 +4,13 @@ import { gql } from '@apollo/client';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { BodyWrapper, MainHeader } from '../../styled/music.style';
 import HomeHeadBanner from '../../components/HomeHeadBanner/HomeHeadBanner';
-import { PAGES } from '../../constants';
+import { META_DESCRIPTION, PAGES } from '../../constants';
 import Layout from '../../components/Layout/Layout';
 import BlogPreview from '../../components/BlogPreview/BlogPreview';
 import PostArchive from '../../components/PostArchive';
 import Pagination from '../../components/Pagination';
 import { getPostArchiveFromBlogPosts } from '../../components/utils';
+import Head from 'next/head';
 
 export function getTotalPages(items: any[], pageLimit: number = 6): number {
     return Math.ceil(items.length / pageLimit);
@@ -36,7 +37,6 @@ const BlogPage = (props: {
     return (
         <Layout
             slug="blog"
-            pageName={PAGES.BLOG}
             headChildren={() => (
                 <HomeHeadBanner hasColor>
                     <h1 className="site-name">Boyleing Point</h1>
@@ -44,6 +44,10 @@ const BlogPage = (props: {
                 </HomeHeadBanner>
             )}
         >
+            <Head>
+                <title>Blog | Luke Boyle</title>
+                <meta name="description" content={META_DESCRIPTION.BLOG} />
+            </Head>
             <MaxWidthContainer>
                 <BodyWrapper>
                     <div className="left">
