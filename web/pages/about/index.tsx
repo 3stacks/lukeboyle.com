@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Layout from '../../components/Layout';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import ExternalLink from '../../components/ExternalLink';
-import { PAGES } from '../../constants';
 
 export const About = () => {
     return (

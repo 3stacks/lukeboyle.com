@@ -51,9 +51,9 @@ export default function Music({
                 </HomeHeadBanner>
             )}
         >
-            <Head>
-                <title>Music | Luke Boyle</title>
-            </Head>
+            {/*<Head>*/}
+            {/*    <title>Music | Luke Boyle</title>*/}
+            {/*</Head>*/}
             <MaxWidthContainer>
                 <BodyWrapper>
                     <div className="left">

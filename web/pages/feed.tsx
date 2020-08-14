@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { PAGES } from '../constants';
 import Layout from '../components/Layout';
 import { format } from 'date-fns';
 import MaxWidthContainer from '../components/MaxWidthContainer';
@@ -8,6 +7,7 @@ import styled, { css } from 'styled-components';
 import { blackShift, bp } from '../styled/mixins';
 import { BodyWrapper } from '../styled/music.style';
 import { CUSTOM_PROPERTIES } from '../styled/colors';
+import Head from 'next/head';
 
 const Table = styled.table`
     font-size: 1.6rem;
@@ -119,6 +119,9 @@ export const Index = () => {
                 </HomeHeadBanner>
             )}
         >
+            <Head>
+                <title>The Downward Spiral | Luke Boyle</title>
+            </Head>
             <MaxWidthContainer style={{ maxWidth: 850 }}>
                 <BodyWrapper style={{ display: 'block' }}>
                     <Post postedDate="2020-08-11T20:46:52.549Z">

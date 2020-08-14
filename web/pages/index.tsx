@@ -1,12 +1,12 @@
 import React from 'react';
 import projects from '../data/portfolio-items';
-import { MY_NAME, PAGES } from '../constants';
+import { MY_NAME } from '../constants';
 import Layout from '../components/Layout';
 import MaxWidthContainer from '../components/MaxWidthContainer';
 import { LinkButton } from '../components/Button';
 import { RecentStuff, Stuff } from '../index.style';
 import HomeHeadBanner from '../components/HomeHeadBanner';
-import { Head } from 'next/document';
+import Head from 'next/head';
 
 export const Index = () => {
     const latestProject = projects[0];
