@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { ServerStyleSheet } from 'styled-components';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { META_DESCRIPTION, MY_NAME } from '../constants';
 
 export default class MyDocument extends Document {
     static async getInitialProps(ctx) {

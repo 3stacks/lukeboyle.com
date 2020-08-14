@@ -4,7 +4,7 @@ import { gql } from '@apollo/client';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { BodyWrapper, MainHeader } from '../../styled/music.style';
 import HomeHeadBanner from '../../components/HomeHeadBanner/HomeHeadBanner';
-import { META_DESCRIPTION, PAGES } from '../../constants';
+import { META_DESCRIPTION } from '../../constants';
 import Layout from '../../components/Layout/Layout';
 import BlogPreview from '../../components/BlogPreview/BlogPreview';
 import PostArchive from '../../components/PostArchive';

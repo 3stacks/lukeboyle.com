@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
-import { PAGES } from '../../constants';
 import { StyledLayout } from './Layout.style';
 
 interface IProps {

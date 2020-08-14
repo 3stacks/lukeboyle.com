@@ -32,66 +32,35 @@ export interface IPostArchive {
 export default function PostArchive({ data }: { data: IPostArchive }) {
     return (
         <Wrapper>
-            <Accordion allowZeroExpanded>
-                {Object.entries(data)
-                    .reverse()
-                    .map(([year, months]) => {
-                        return (
-                            <AccordionItem key={year}>
-                                <AccordionItemHeading>
-                                    <AccordionItemButton>
-                                        {year}
-                                    </AccordionItemButton>
-                                </AccordionItemHeading>
-                                <AccordionItemPanel>
-                                    <Accordion>
-                                        {Object.entries(months).map(
-                                            ([month, posts]) => {
-                                                return (
-                                                    <AccordionItem key={month}>
-                                                        <AccordionItemHeading>
-                                                            <AccordionItemButton>
-                                                                <FaChevronDown />{' '}
-                                                                {month}
-                                                            </AccordionItemButton>
-                                                        </AccordionItemHeading>
-                                                        <AccordionItemPanel>
-                                                            <ul>
-                                                                {posts.map(
-                                                                    post => {
-                                                                        const url = `/blog-posts/${year}/${month}/${post.slug}`;
+            {Object.entries(data)
+                .reverse()
+                .map(([year, months]) => {
+                    return (
+                        <details key={year}>
+                            <summary>{year}</summary>
+                            {Object.entries(months).map(([month, posts]) => {
+                                return (
+                                    <details key={month}>
+                                        <summary>{month}</summary>
+                                        <ul>
+                                            {posts.map(post => {
+                                                const url = `/blog-posts/${year}/${month}/${post.slug}`;
 
-                                                                        return (
-                                                                            <li
-                                                                                key={
-                                                                                    url
-                                                                                }
-                                                                            >
-                                                                                <a
-                                                                                    href={
-                                                                                        url
-                                                                                    }
-                                                                                >
-                                                                                    {
-                                                                                        post.title
-                                                                                    }
-                                                                                </a>
-                                                                            </li>
-                                                                        );
-                                                                    }
-                                                                )}
-                                                            </ul>
-                                                        </AccordionItemPanel>
-                                                    </AccordionItem>
+                                                return (
+                                                    <li key={url}>
+                                                        <a href={url}>
+                                                            {post.title}
+                                                        </a>
+                                                    </li>
                                                 );
-                                            }
-                                        )}
-                                    </Accordion>
-                                </AccordionItemPanel>
-                            </AccordionItem>
-                        );
-                    })}
-            </Accordion>
+                                            })}
+                                        </ul>
+                                    </details>
+                                );
+                            })}
+                        </details>
+                    );
+                })}
         </Wrapper>
     );
 }
