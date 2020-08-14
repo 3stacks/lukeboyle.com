@@ -9,16 +9,39 @@ interface IProps {
     children: any;
 }
 
+const getRouteFromSlug = slug => {
+    if (slug === '/') {
+        return 'home';
+    }
+
+    if (slug.includes('/portfolio')) {
+        return 'portfolio';
+    }
+
+    if (slug.includes('/blog-posts')) {
+        const slugParts = slug.split('/');
+
+        return `blog-single ${slugParts[slugParts.length - 1]}`;
+    }
+
+    if (slug.includes('/blog')) {
+        return 'blog';
+    }
+
+    return slug.slice(0, 1);
+};
+
 export const Layout = ({ slug, children }: IProps) => {
     const isHomeOrPortfolioPage =
-        slug === 'home' || slug === 'portfolio' || slug === 'feed';
+        slug === '/' || slug.includes('/portfolio') || slug === '/feed';
+    const route = getRouteFromSlug(slug);
 
     return (
         <StyledLayout
-            className={`layout ${slug}`}
+            className={`layout ${route}`}
             showFullPageColor={isHomeOrPortfolioPage}
         >
-            <Header isHome={slug === 'home'} slug={slug} />
+            <Header isHome={route === 'home'} slug={route} />
             {children}
             <Footer />
         </StyledLayout>

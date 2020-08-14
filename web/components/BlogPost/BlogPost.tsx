@@ -1,7 +1,6 @@
 import * as React from 'react';
 import formatDate from 'date-fns/format';
 import Head from 'next/head';
-import Layout from '../Layout';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledPost } from './BlogPost.style';
 import HomeHeadBanner from '../HomeHeadBanner/HomeHeadBanner';
@@ -11,8 +10,7 @@ export const BlogPost = ({
     publishDate,
     author,
     title,
-    seo: { canonical, pageTitle, pageDescription },
-    fileName
+    seo: { canonical, pageTitle, pageDescription }
 }: {
     children: any;
     publishDate: string;
@@ -27,7 +25,7 @@ export const BlogPost = ({
     };
 }) => {
     return (
-        <Layout slug={`blog-single ${fileName}`}>
+        <main className="main">
             <Head>
                 {canonical !== '' && <link rel="canonical" href={canonical} />}
                 {pageDescription && (
@@ -50,7 +48,7 @@ export const BlogPost = ({
                     <>{children}</>
                 </MaxWidthContainer>
             </StyledPost>
-        </Layout>
+        </main>
     );
 };
 
