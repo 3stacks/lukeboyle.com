@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { gql } from '@apollo/client';
-import Head from 'next/head';
 import { initializeApollo } from '../../../../lib/apolloClient';
 import { ALL_POSTS_QUERY } from '../../../blog';
 import BlogPost from '../../../../components/BlogPost/BlogPost';
@@ -37,9 +36,6 @@ export function Post({ initialApolloState: { ROOT_QUERY } }: IBlogPostProps) {
                     : ''
             }}
         >
-            <Head>
-                <title>{metaData.post_title} | Luke Boyle</title>
-            </Head>
             <span dangerouslySetInnerHTML={{ __html: contents }} />
         </BlogPost>
     );
