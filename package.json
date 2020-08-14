@@ -12,7 +12,7 @@
         "generate-portfolio-posts": "ts-node-dev scripts/portfolio.ts",
         "generate-music-posts": "ts-node-dev scripts/music.ts",
         "prepare-data": "npm-run-all -p generate-blog-posts generate-portfolio-posts generate-music-posts",
-        "deploy": "ts-node-dev scripts/deploy.ts",
+        "build": "yarn workspace web build",
         "lint": "eslint -c .eslintrc.json ./**/**/*.ts  && tsc --noEmit"
     },
     "author": "Luke Boyle",
