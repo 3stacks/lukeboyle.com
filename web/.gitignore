@@ -1,3 +1,9 @@
 .next
 out
 node_modules
+vendor
+yarn-error.log
+.DS_Store
+coverage
+logs
+*.log
