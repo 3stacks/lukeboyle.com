@@ -4,7 +4,7 @@
         "module": "commonjs",
         "lib": ["dom", "es6", "es2017"],
         "outDir": "dist",
-        "rootDir": "./",
+        "rootDir": ".",
         "removeComments": true,
         "esModuleInterop": true,
         "jsx": "preserve",
@@ -19,5 +19,5 @@
         "isolatedModules": true
     },
     "exclude": ["node_modules", "src"],
-    "include": ["**/*.ts"]
+    "include": ["./**/*.ts"]
 }

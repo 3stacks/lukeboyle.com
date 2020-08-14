@@ -20,6 +20,7 @@
     },
     "devDependencies": {
         "@types/styled-components": "^5.0.1",
-        "typescript": "^3.5.3"
+        "typescript": "^3.5.3",
+        "babel-plugin-styled-components": "^1.8.0"
     }
 }

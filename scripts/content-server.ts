@@ -2,7 +2,7 @@ import { ApolloServer, gql } from 'apollo-server';
 import fs from 'fs';
 import glob from 'glob';
 import { generateComponent, isNotDirectory } from './utils/blog';
-import { generatePortfolioItem } from './portfolio';
+import { generatePortfolioItem } from './utils/portfolio';
 import dotenv from 'dotenv';
 import { nanoid } from 'nanoid';
 import {
@@ -80,7 +80,6 @@ const typeDefs = gql`
 		postCategory: String
 		postType: String
 		postTitle: String
-		component: String
 		title: String
 		metaData: FrontMatterMetadata
 		snippet: String
