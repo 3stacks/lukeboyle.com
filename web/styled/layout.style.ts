@@ -1,8 +1,7 @@
-import { createGlobalStyle, css } from 'styled-components';
-import { FONT_SIZES, LINE_HEIGHTS, VERTICAL_RHYTHMS, WIDTHS } from './sizes';
+import { createGlobalStyle } from 'styled-components';
+import { FONT_SIZES, LINE_HEIGHTS, VERTICAL_RHYTHMS } from './sizes';
 import { getFontSize } from './utils';
 import { CUSTOM_PROPERTIES } from './colors';
-import { bp } from './mixins';
 
 export const GlobalLayoutStyle = createGlobalStyle`
 	* {
@@ -134,42 +133,5 @@ export const GlobalLayoutStyle = createGlobalStyle`
 			background-color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 			color: ${CUSTOM_PROPERTIES.COLOR_WHITE} !important;
 		}
-	}
-	
-	.pagination {
-		display: flex;
-		margin: 0 auto !important;
-		font-size: 1.6rem;
-		width: calc(100% - 20px);
-		justify-content: center;
-		
-		li:not(:last-of-type) {
-			margin-right: 20px;
-		}
-		
-		a {
-			width: 31px;
-			font-size: 2rem;
-			display: inline-flex;
-			justify-content: center;
-		}
-		
-		.is-active {
-			border: none;
-			cursor: pointer;
-			background-color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
-			color: ${CUSTOM_PROPERTIES.COLOR_WHITE};
-		}
-		
-		${bp(
-			WIDTHS.M,
-			css`
-				width: calc(100% - 120px);
-			`
-		)}
-	}
-	
-	.pagination li {
-		list-style: none;
 	}
 `;
