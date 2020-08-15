@@ -6,3 +6,6 @@ coverage
 .idea
 logs
 *.log
+.next
+out
+vendor
