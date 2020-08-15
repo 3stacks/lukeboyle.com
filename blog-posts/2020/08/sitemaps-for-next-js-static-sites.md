@@ -2,10 +2,10 @@
 post_title: Sitemaps for Next.js static sites with dynamic routes
 post_date: 2020-08-15 00:00:00
 post_modified: 2020-08-15 00:00:00
-post_status: draft
+post_status: publish
 post_type: post
 post_author: Luke Boyle
-snippet: I recently re-built my website in Next.js, and I needed to write a script to generate a sitemap with dynamic static routes
+snippet: I recently re-built my website in Next.js, and I needed to write a script to generate a sitemap with dynamic static routes.
 ---
 
 I just recently re-built my Gatsby site using Next.js. I liked Gatsby for a while,

@@ -62,13 +62,14 @@ export function generateComponent(acc, post) {
 		title: frontMatterMetadata.post_title,
 		metaData: frontMatterMetadata,
 		contents: contentsArray.join(''),
-		snippet:
-			frontMatterMetadata.post_type === 'post'
-				? contentsArray
-						.slice(0, 10)
-						.filter(line => !line.trim().startsWith('!['))
-						.join('')
-				: null
+		snippet: frontMatterMetadata.snippet
+			? frontMatterMetadata.snippet
+			: frontMatterMetadata.post_type === 'post'
+			? contentsArray
+					.slice(0, 10)
+					.filter(line => !line.trim().startsWith('!['))
+					.join('')
+			: null
 	};
 
 	if (contents.metaData.post_status !== 'draft') {
