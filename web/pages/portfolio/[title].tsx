@@ -45,6 +45,9 @@ export function PortfolioItem({
 
     return (
         <main className="main">
+            <Head>
+                <title>{portfolioContent.name} Case Study | Luke Boyle</title>
+            </Head>
             <div className="head-slot">
                 <HomeHeadBanner hasColor={false}>
                     <div dangerouslySetInnerHTML={{ __html: headMarkup }} />

@@ -41,6 +41,9 @@ const BlogPage = ({
 
     return (
         <main className="main">
+            <Head>
+                <title>Blog - Page {pageNumber} | Luke Boyle</title>
+            </Head>
             <div className="head-slot">
                 <HomeHeadBanner hasColor>
                     <h1 className="site-name">Boyleing Point</h1>

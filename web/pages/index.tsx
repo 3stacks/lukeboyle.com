@@ -15,7 +15,7 @@ export const Index = () => {
     return (
         <main className="main">
             <Head>
-                <title>{MY_NAME} | Front End Developer</title>
+                <title>{MY_NAME} | Technology and Culture</title>
             </Head>
             <div className="head-slot">
                 <HomeHeadBanner hasColor={false}>

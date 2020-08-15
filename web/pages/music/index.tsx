@@ -46,7 +46,7 @@ export default function Music({
     return (
         <main className="main">
             <Head>
-                <title>{MY_NAME} | Front End Developer</title>
+                <title>Posts About Music | Luke Boyle</title>
             </Head>
             <div className="head-slot">
                 <HomeHeadBanner hasColor>
