@@ -1,4 +1,3 @@
 User-Agent: *
-Disallow:
 Allow: /
 Sitemap: https://lukeboyle.com/sitemap.xml

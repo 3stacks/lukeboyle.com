@@ -10,6 +10,7 @@
 		"start:content-server": "ts-node-dev --watch scripts/content-server.ts scripts/content-server.ts",
 		"start:web": "yarn workspace web start",
 		"build:web": "yarn workspace web build",
+		"build:sitemap": "ts-node-dev scripts/generate-sitemap.ts",
 		"start": "run-p start:content-server start:web",
 		"build": "run-p -r start:content-server build:web"
 	},
@@ -32,6 +33,7 @@
 		"@types/styled-components": "^5.0.1",
 		"apollo-server": "^2.10.1",
 		"axios": "^0.18.0",
+		"chalk": "^4.1.0",
 		"dotenv": "^6.0.0",
 		"fs-extra": "^6.0.1",
 		"glob": "^7.1.3",
