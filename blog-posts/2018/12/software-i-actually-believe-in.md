@@ -30,21 +30,21 @@ Age of money tells you how long between getting paid do you spend your
 money. It's very encouraging to see yourself breaking the cycle of
 pay-cheque to pay-cheque.
 
-![age of money 7 days](/blog-posts/images/age-of-money.jpg)
+![age of money 7 days](/web/public/images/age-of-money.jpg)
 
 #### Net worth
 
 Net worth is pretty self explanatory. It tracks your assets versus your
 debts and gives you a nice net worth graph over time.
 
-![](/blog-posts/images/net-worth.jpg)
+![](/web/public/images/net-worth.jpg)
 
 #### Spending
 
 You also get a categorical breakdown of your spending which you can
 click into to see more specific information about each category
 
-![](/blog-posts/images/spending.jpg)
+![](/web/public/images/spending.jpg)
 
 ### Free budgeting resources
 

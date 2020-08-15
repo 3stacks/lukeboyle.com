@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "lib": ["dom", "es6", "es2017"],
+        "removeComments": true,
+        "esModuleInterop": true,
+        "jsx": "preserve",
+        "typeRoots": ["./node_modules/@types", "../node_modules/@types"],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": false,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true
+    },
+    "exclude": ["node_modules"],
+    "include": ["."]
+}

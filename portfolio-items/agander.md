@@ -41,7 +41,7 @@ In the most active month (surrounding the release of version 1.0), the repositor
 
 ## Issues and Labels
 
-![](/portfolio-items/images/agander-issues.png)
+![](/web/public/images/agander-issues.png)
 
 Each issue gets a status, type and a priority to make them more searchable and more manageable.
 

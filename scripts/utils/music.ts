@@ -1,8 +1,10 @@
 import axios, { AxiosResponse } from 'axios';
+import { nanoid } from 'nanoid';
 
 interface ILastFMImage {
 	size: 'small' | 'medium' | 'large' | 'extralarge';
 	text: string;
+	link: string;
 }
 
 export interface ILastFMArtist {
@@ -210,13 +212,16 @@ export async function getDiscogsCollectionItems(
 	const releaseIds = collectionResponse.data.releases.map(
 		release => release.id
 	);
-	const releases = releaseIds.slice(0, 4).map(async releaseId => {
+	const releases = releaseIds.slice(0, 5).map(async releaseId => {
 		try {
 			await sleep(2000);
 			const response = await axios.get(
 				`https://api.discogs.com/releases/${releaseId}?token=${apiKey}`
 			);
-			return response.data;
+			return {
+				...response.data,
+				guid: nanoid()
+			};
 		} catch (e) {
 			console.error(e);
 		}

@@ -1,5 +1,4 @@
 import marked from 'marked';
-import formatDate from 'date-fns/format';
 
 export const renderer = new marked.Renderer();
 
@@ -54,14 +53,15 @@ renderer.heading = function(code: string, level: number): string {
 	}
 };
 
-renderer.image = (href: string, title: string, text: string): string => {
+renderer.image = function(href: string, title: string, text: string): string {
 	const hrefParts = href.split('/');
 
-	console.log(hrefParts);
-
-	return `<img src="${href}" alt="${text}" data-filename={${
+	return `<img src="${href.replace(
+		'/web/public',
+		''
+	)}" alt="${text}" data-identifier="${
 		hrefParts[hrefParts.length - 1].split('.')[0]
-	}}/>`;
+	}" />`;
 };
 
 export function getMarkupFromMarkdown(markdownString: string): string {

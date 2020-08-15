@@ -8,7 +8,7 @@ post_category: music
 post_author: Luke Boyle
 ---
 
-![Circles album cover](/blog-posts/images/circles-splash.jpg)
+![Circles album cover](/web/public/images/circles-splash.jpg)
 
 One of the unfortunate realities of life is that people die. The music industry,
 eager to exploit, will often take this opportunity to cash in. They'll
@@ -48,7 +48,7 @@ represent the cycle of life: a notion that is paralleled in the opening track _C
 "I just end up right at the start of the line. Drawin' circles." Similarly, every day ends
 the same way it begins; the hands of the clock go around in a circle until they strike 12.
 
-![Mac Miller in blue](/blog-posts/images/mac-miller-blue.jpg)
+![Mac Miller in blue](/web/public/images/mac-miller-blue.jpg)
 
 > Hey, one of these days we'll all get by
 >
@@ -71,7 +71,7 @@ I'm just chilling" and "'fore I start to think about the future. First, can I pl
 He's taking life one day at a time and working through the "clutter" in his head. The downside of this approach is you
 can easily forget about the bigger picture and end up clinging to destructive coping mechanisms.
 
-![Mac Miller at his NPR tiny desk concert](/blog-posts/images/mac.jpg)
+![Mac Miller at his NPR tiny desk concert](/web/public/images/mac.jpg)
 
 > Won't give a fuck about tomorrow if I die today
 >
@@ -99,7 +99,7 @@ It resembles the purifying of the spirit which is born into murkiness<sub>[2]</s
 the airplane window and disappearing as a ripple in the water is superb and continues to drive home the idea of swimming.
 Good News is the best send-off anyone could hope for.
 
-![Mac Miller superimposed in a lotus flower](/blog-posts/images/mac-in-lotus.png)
+![Mac Miller superimposed in a lotus flower](/web/public/images/mac-in-lotus.png)
 
 > I was drowning but now I'm swimming
 
@@ -164,7 +164,7 @@ but recognising that sometimes the best you can do is keep Swimming in Circles.
 
 <p className="is-centred">
 
-![Swimming in Circles](/blog-posts/images/swimming-in-circles.jpg)
+![Swimming in Circles](/web/public/images/swimming-in-circles.jpg)
 
 </p>
 
