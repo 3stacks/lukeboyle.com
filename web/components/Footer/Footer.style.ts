@@ -2,6 +2,14 @@ import styled, { css } from 'styled-components';
 import { CUSTOM_PROPERTIES } from '../../styled/colors';
 import { bp } from '../../styled/mixins';
 
+export const FooterLinks = styled.div`
+	a {
+		&:not(:first-of-type) {
+			margin-left: 15px;
+		}
+	}
+`;
+
 export const StyledFooter = styled.div`
 	height: 100px;
 

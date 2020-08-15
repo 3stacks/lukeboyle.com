@@ -15,104 +15,104 @@ import { RecentStuff, Stuff } from '../../index.style';
 import { LinkButton } from '../../components/Button';
 
 export function getTotalPages(items: any[], pageLimit: number = 6): number {
-    return Math.ceil(items.length / pageLimit);
+	return Math.ceil(items.length / pageLimit);
 }
 
 const BlogPage = (props: {
-    initialApolloState: { ROOT_QUERY: { blogPosts: any[] } };
+	initialApolloState: { ROOT_QUERY: { blogPosts: any[] } };
 }) => {
-    const { blogPosts } = props.initialApolloState.ROOT_QUERY;
+	const { blogPosts } = props.initialApolloState.ROOT_QUERY;
 
-    if (!blogPosts) {
-        return null;
-    }
+	if (!blogPosts) {
+		return null;
+	}
 
-    const archiveData = React.useMemo(
-        () => getPostArchiveFromBlogPosts(blogPosts),
-        [blogPosts]
-    );
-    const pagePosts = blogPosts.slice(0, 6);
-    const pageCount = React.useMemo(() => getTotalPages(blogPosts), [
-        blogPosts
-    ]);
+	const archiveData = React.useMemo(
+		() => getPostArchiveFromBlogPosts(blogPosts),
+		[blogPosts]
+	);
+	const pagePosts = blogPosts.slice(0, 6);
+	const pageCount = React.useMemo(() => getTotalPages(blogPosts), [
+		blogPosts
+	]);
 
-    return (
-        <main className="main">
-            <Head>
-                <title>Blog | Luke Boyle</title>
-                <meta name="description" content={META_DESCRIPTION.BLOG} />
-            </Head>
-            <div className="head-slot">
-                <HomeHeadBanner hasColor>
-                    <h1 className="site-name">Boyleing Point</h1>
-                    <p>Psychotic ramblings about technology</p>
-                </HomeHeadBanner>
-            </div>
-            <div className="body-slot">
-                <MaxWidthContainer>
-                    <BodyWrapper>
-                        <div className="left">
-                            <MainHeader>Post Archive</MainHeader>
-                            <PostArchive data={archiveData} />
-                        </div>
-                        <div>
-                            {pagePosts.map(post => {
-                                return (
-                                    <BlogPreview
-                                        key={post.path}
-                                        author={post.metaData.post_author}
-                                        publishDate={post.metaData.post_date}
-                                        title={post.metaData.post_title}
-                                        slug={`/${post.path.replace(
-                                            '.md',
-                                            ''
-                                        )}`}
-                                    >
-                                        <span
-                                            dangerouslySetInnerHTML={{
-                                                __html: post.snippet
-                                            }}
-                                        />
-                                    </BlogPreview>
-                                );
-                            })}
-                            <Pagination pageNumber={0} pageCount={pageCount} />
-                        </div>
-                    </BodyWrapper>
-                </MaxWidthContainer>
-            </div>
-        </main>
-    );
+	return (
+		<main className="main">
+			<Head>
+				<title>Blog | Luke Boyle</title>
+				<meta name="description" content={META_DESCRIPTION.BLOG} />
+			</Head>
+			<div className="head-slot">
+				<HomeHeadBanner hasColor>
+					<h1 className="site-name">Boyleing Point</h1>
+					<p>Psychotic ramblings about technology</p>
+				</HomeHeadBanner>
+			</div>
+			<div className="body-slot">
+				<MaxWidthContainer>
+					<BodyWrapper>
+						<div className="left">
+							<MainHeader>Post Archive</MainHeader>
+							<PostArchive data={archiveData} />
+						</div>
+						<div>
+							{pagePosts.map(post => {
+								return (
+									<BlogPreview
+										key={post.path}
+										author={post.metaData.post_author}
+										publishDate={post.metaData.post_date}
+										title={post.metaData.post_title}
+										slug={`/${post.path.replace(
+											'.md',
+											''
+										)}`}
+									>
+										<span
+											dangerouslySetInnerHTML={{
+												__html: post.snippet
+											}}
+										/>
+									</BlogPreview>
+								);
+							})}
+							<Pagination pageNumber={0} pageCount={pageCount} />
+						</div>
+					</BodyWrapper>
+				</MaxWidthContainer>
+			</div>
+		</main>
+	);
 };
 
 export const ALL_POSTS_QUERY = gql`
-    query {
-        blogPosts {
-            path
-            slug
-            snippet
-            metaData {
-                post_title
-                post_date
-                post_author
-            }
-        }
-    }
+	query {
+		blogPosts {
+			path
+			slug
+			snippet
+			metaData {
+				post_title
+				post_date
+				post_author
+			}
+		}
+	}
 `;
 
 export async function getStaticProps() {
-    const apolloClient = initializeApollo();
+	const apolloClient = initializeApollo();
 
-    await apolloClient.query({
-        query: ALL_POSTS_QUERY
-    });
+	await apolloClient.query({
+		query: ALL_POSTS_QUERY
+	});
 
-    return {
-        props: {
-            initialApolloState: apolloClient.cache.extract()
-        },
-        revalidate: 1
-    };
+	return {
+		props: {
+			initialApolloState: apolloClient.cache.extract()
+		},
+		revalidate: 1
+	};
 }
 
 export default BlogPage;
