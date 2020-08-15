@@ -1,45 +1,52 @@
 {
-    "name": "luke-boyle-portfolio",
-    "version": "2.0.0",
-    "description": "My personal website",
-    "private": true,
-    "workspaces": [
-        "web"
-    ],
-    "scripts": {
-        "start:content-server": "ts-node-dev --watch scripts/content-server.ts scripts/content-server.ts",
-        "start:web": "yarn workspace web start",
-        "build:web": "yarn workspace web build",
-        "start": "run-p start:content-server start:web",
-        "build": "run-p -r start:content-server build:web"
-    },
-    "author": "Luke Boyle",
-    "license": "BSD-3-Clause",
-    "dependencies": {},
-    "devDependencies": {
-        "@lukeboyle/get-filename-from-path": "^1.0.3",
-        "@types/fs-extra": "^8.0.0",
-        "@types/lodash": "^4.14.138",
-        "@types/marked": "^1.1.0",
-        "@types/mime-types": "^2.1.0",
-        "@types/node": "^14.0.27",
-        "@types/shelljs": "^0.8.5",
-        "@types/styled-components": "^5.0.1",
-        "apollo-server": "^2.10.1",
-        "axios": "^0.18.0",
-        "dotenv": "^6.0.0",
-        "fs-extra": "^6.0.1",
-        "glob": "^7.1.3",
-        "graphql": "^15.3.0",
-        "lodash": "^4.17.11",
-        "marked": "^1.1.1",
-        "nanoid": "^3.1.12",
-        "npm-run-all": "^4.1.5",
-        "parcel-bundler": "^1.12.4",
-        "prettier": "^1.18.2",
-        "shelljs": "^0.8.2",
-        "ts-node-dev": "^1.0.0-pre.56",
-        "typography": "^0.15.10",
-        "yamljs": "^0.3.0"
-    }
+	"name": "luke-boyle-portfolio",
+	"version": "2.0.0",
+	"description": "My personal website",
+	"private": true,
+	"workspaces": [
+		"web"
+	],
+	"scripts": {
+		"start:content-server": "ts-node-dev --watch scripts/content-server.ts scripts/content-server.ts",
+		"start:web": "yarn workspace web start",
+		"build:web": "yarn workspace web build",
+		"start": "run-p start:content-server start:web",
+		"build": "run-p -r start:content-server build:web"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "pretty-quick --staged"
+		}
+	},
+	"author": "Luke Boyle",
+	"license": "BSD-3-Clause",
+	"dependencies": {},
+	"devDependencies": {
+		"@lukeboyle/get-filename-from-path": "^1.0.3",
+		"@types/fs-extra": "^8.0.0",
+		"@types/lodash": "^4.14.138",
+		"@types/marked": "^1.1.0",
+		"@types/mime-types": "^2.1.0",
+		"@types/node": "^14.0.27",
+		"@types/shelljs": "^0.8.5",
+		"@types/styled-components": "^5.0.1",
+		"apollo-server": "^2.10.1",
+		"axios": "^0.18.0",
+		"dotenv": "^6.0.0",
+		"fs-extra": "^6.0.1",
+		"glob": "^7.1.3",
+		"graphql": "^15.3.0",
+		"husky": "^4.2.5",
+		"lodash": "^4.17.11",
+		"marked": "^1.1.1",
+		"nanoid": "^3.1.12",
+		"npm-run-all": "^4.1.5",
+		"parcel-bundler": "^1.12.4",
+		"prettier": "^1.18.2",
+		"pretty-quick": "^2.0.1",
+		"shelljs": "^0.8.2",
+		"ts-node-dev": "^1.0.0-pre.56",
+		"typography": "^0.15.10",
+		"yamljs": "^0.3.0"
+	}
 }
