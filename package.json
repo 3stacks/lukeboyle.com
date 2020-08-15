@@ -9,7 +9,7 @@
 	"scripts": {
 		"start:content-server": "ts-node-dev --watch scripts/content-server.ts scripts/content-server.ts",
 		"start:web": "yarn workspace web start",
-		"build:web": "yarn workspace web build",
+		"build:web": "yarn workspace web build && build:sitemap",
 		"build:sitemap": "ts-node-dev scripts/generate-sitemap.ts",
 		"start": "run-p start:content-server start:web",
 		"build": "run-p -r start:content-server build:web"
