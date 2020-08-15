@@ -122,7 +122,7 @@ import prettierConfig from './.prettierrc.js';
 {
 	"scripts": {
 		"start": "next start",
-		"build": "next build && build:sitemap",
+		"build": "next build && yarn run build:sitemap",
 		"build:sitemap": "node ./generate-sitemap.js"
 	},
 	"devDependencies": {
