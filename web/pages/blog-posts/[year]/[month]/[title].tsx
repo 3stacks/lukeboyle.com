@@ -23,13 +23,15 @@ export function Post({
 		canonicalUrl,
 		metaData,
 		fileName,
-		postType
+		postType,
+		snippet
 	} = Object.values(ROOT_QUERY)[1] as {
 		contents: string;
 		canonicalUrl: string;
 		metaData: IMetaData;
 		fileName: string;
 		postType: string;
+		snippet: string;
 	};
 
 	const renderBody = React.useCallback(() => {
@@ -50,8 +52,11 @@ export function Post({
 			seo={{
 				canonical: canonicalUrl ? canonicalUrl : '',
 				pageTitle: metaData.seoTitle ? metaData.seoTitle : '',
-				pageDescription: metaData.seoDescription
-					? metaData.pageDescription
+				pageDescription: snippet
+					? snippet
+							.replace(/<\/?p>/g, '')
+							.trim()
+							.slice(0, 160)
 					: ''
 			}}
 		>
