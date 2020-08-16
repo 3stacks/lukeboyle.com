@@ -260,6 +260,13 @@ export const generateTopList = (
 			{ tokens: [IImageBlock] } | undefined
 		]) => {
 			const image = imageBlock.tokens[0];
+			const finalOtherBlocks =
+				otherBlocks.length && otherBlocks.length > 0
+					? otherBlocks.filter(
+							(otherBlock: IContentBlock) =>
+								otherBlock.type !== CONTENT_BLOCK_TYPES.SPACE
+					  )
+					: [];
 
 			return (
 				<div className="album-block" key={artist.text + title.text}>
@@ -269,7 +276,7 @@ export const generateTopList = (
 						src={image.href.replace('/web/public', '')}
 						alt={image.text}
 					/>
-					{otherBlocks.length && (
+					{finalOtherBlocks.length > 0 && (
 						<div className="snippet">
 							{otherBlocks.map(parseContentBlock)}
 						</div>
