@@ -4,7 +4,11 @@ import { initializeApollo } from '../../../../lib/apolloClient';
 import { ALL_POSTS_QUERY } from '../../../blog';
 import BlogPost from '../../../../components/BlogPost/BlogPost';
 import { IMetaData } from '../../../../../scripts/utils/blog';
-import { IContentBlock, parseContentBlock } from '../../../../utils/blog';
+import {
+	generateTopList,
+	IContentBlock,
+	parseContentBlock
+} from '../../../../utils/blog';
 
 interface IBlogPostProps extends IApolloQueryProps<{}> {
 	contentBlocks: IContentBlock[];
@@ -14,22 +18,27 @@ export function Post({
 	initialApolloState: { ROOT_QUERY },
 	contentBlocks
 }: IBlogPostProps) {
-	const { contents, canonicalUrl, metaData, fileName } = Object.values(
-		ROOT_QUERY
-	)[1] as {
+	const {
+		contents,
+		canonicalUrl,
+		metaData,
+		fileName,
+		postType
+	} = Object.values(ROOT_QUERY)[1] as {
 		contents: string;
 		canonicalUrl: string;
 		metaData: IMetaData;
 		fileName: string;
+		postType: string;
 	};
-	const renderBody = React.useCallback(
-		() => contentBlocks.map(parseContentBlock),
-		[]
-	);
 
-	if (!contents) {
-		return null;
-	}
+	const renderBody = React.useCallback(() => {
+		if (postType === 'top_list') {
+			return generateTopList(contentBlocks);
+		}
+
+		return contentBlocks.map(parseContentBlock);
+	}, []);
 
 	return (
 		<BlogPost
@@ -74,14 +83,15 @@ export const POST_QUERY = gql`
 			fileName
 			path
 			slug
+			postType
 			snippet
 			publishDate
-			contents
 			contentBlocks
 			metaData {
 				post_title
 				post_date
 				post_author
+				post_type
 			}
 		}
 	}

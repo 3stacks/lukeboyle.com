@@ -15,7 +15,15 @@ enum CONTENT_BLOCK_TYPES {
 	HTML = 'html',
 	EM = 'em',
 	CODE = 'code',
-	CODESPAN = 'codespan'
+	CODESPAN = 'codespan',
+	BLOCKQUOTE = 'blockquote'
+}
+
+interface IBlockquoteBlock {
+	type: CONTENT_BLOCK_TYPES.BLOCKQUOTE;
+	raw: string;
+	text: string;
+	tokens: IContentBlock[];
 }
 
 interface IHTMLBlock {
@@ -125,7 +133,8 @@ export type IContentBlock =
 	| IEMBlock
 	| IHTMLBlock
 	| ICodeBlock
-	| ICodespanBlock;
+	| ICodespanBlock
+	| IBlockquoteBlock;
 
 export const parseContentBlock = (contentBlock: IContentBlock) => {
 	const key = Math.random();
@@ -153,6 +162,12 @@ export const parseContentBlock = (contentBlock: IContentBlock) => {
 		case CONTENT_BLOCK_TYPES.LIST_ITEM:
 			return (
 				<li key={key}>{contentBlock.tokens.map(parseContentBlock)}</li>
+			);
+		case CONTENT_BLOCK_TYPES.BLOCKQUOTE:
+			return (
+				<blockquote key={key}>
+					{contentBlock.tokens.map(parseContentBlock)}
+				</blockquote>
 			);
 		case CONTENT_BLOCK_TYPES.LIST:
 			if (contentBlock.ordered) {
@@ -203,4 +218,64 @@ export const parseContentBlock = (contentBlock: IContentBlock) => {
 			console.log(contentBlock);
 			return null;
 	}
+};
+
+export const generateTopList = (
+	contentBlocks: IContentBlock[]
+): React.ReactNode[] => {
+	const tuples = contentBlocks.reduce((acc, curr) => {
+		switch (curr.type) {
+			case CONTENT_BLOCK_TYPES.HEADING:
+				if (curr.depth === 2) {
+					acc.push([curr]);
+				}
+
+				if (curr.depth === 3) {
+					const lastTuple = acc[acc.length - 1];
+
+					if (lastTuple) {
+						lastTuple.push(curr);
+					}
+				}
+
+				break;
+			case CONTENT_BLOCK_TYPES.PARAGRAPH:
+			default:
+				const lastTuple = acc[acc.length - 1];
+
+				if (lastTuple) {
+					lastTuple.push(curr);
+				}
+
+				break;
+		}
+
+		return acc;
+	}, []);
+
+	return tuples.map(
+		([title, artist, imageBlock, ...otherBlocks]: [
+			IHeadingBlock,
+			IHeadingBlock,
+			{ tokens: [IImageBlock] } | undefined
+		]) => {
+			const image = imageBlock.tokens[0];
+
+			return (
+				<div className="album-block" key={artist.text + title.text}>
+					<h2 className="title">{title.text}</h2>
+					<h3 className="artist">{artist.text}</h3>
+					<img
+						src={image.href.replace('/web/public', '')}
+						alt={image.text}
+					/>
+					{otherBlocks.length && (
+						<div className="snippet">
+							{otherBlocks.map(parseContentBlock)}
+						</div>
+					)}
+				</div>
+			);
+		}
+	);
 };
