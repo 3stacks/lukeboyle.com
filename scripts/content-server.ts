@@ -84,6 +84,7 @@ const typeDefs = gql`
 		metaData: FrontMatterMetadata
 		snippet: String
 		contents: String
+		contentBlocks: String
 		canonicalUrl: String
 	}
 

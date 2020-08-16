@@ -120,6 +120,7 @@ export function generateComponent(acc, post) {
 			contents.metaData.post_date
 		).toISOString();
 		const pathParts = post.path.split('/');
+
 		acc.push({
 			path: post.path,
 			fileName,
@@ -137,6 +138,7 @@ export function generateComponent(acc, post) {
 				post_date: truePublishDate
 			},
 			contents: parsedContents,
+			contentBlocks: JSON.stringify(marked.lexer(contents.contents)),
 			canonicalUrl
 		});
 	}

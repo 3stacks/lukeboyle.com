@@ -16,6 +16,7 @@
 		"react-accessible-accordion": "^3.0.0",
 		"react-dom": "^16.13.0",
 		"react-icons": "^3.7.0",
+		"react-lazyload": "^3.0.0",
 		"styled-components": "^5.0.1"
 	},
 	"devDependencies": {
