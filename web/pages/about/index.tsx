@@ -67,7 +67,9 @@ export const About = () => {
 					</ul>
 					<h2>Tracking &amp; privacy</h2>
 					<Link href="/privacy-policy">
-						<a>View my privacy policy here</a>
+						<a style={{ fontSize: '1.6rem' }}>
+							View my privacy policy here
+						</a>
 					</Link>
 				</MaxWidthContainer>
 			</div>

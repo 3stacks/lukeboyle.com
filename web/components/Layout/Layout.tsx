@@ -24,7 +24,7 @@ const getRouteFromSlug = slug => {
 		return 'blog';
 	}
 
-	return 'home';
+	return slug.replace('/', '');
 };
 
 export const Layout = ({ slug, children }: IProps) => {
