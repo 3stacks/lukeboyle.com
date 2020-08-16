@@ -1,64 +1,14 @@
 import * as React from 'react';
 import { gql } from '@apollo/client';
-import Image from '../../../../components/Image';
 import { initializeApollo } from '../../../../lib/apolloClient';
 import { ALL_POSTS_QUERY } from '../../../blog';
 import BlogPost from '../../../../components/BlogPost/BlogPost';
 import { IMetaData } from '../../../../../scripts/utils/blog';
-import Link from 'next/link';
+import { IContentBlock, parseContentBlock } from '../../../../utils/blog';
 
 interface IBlogPostProps extends IApolloQueryProps<{}> {
 	contentBlocks: IContentBlock[];
 }
-
-const parseContentBlock = (contentBlock: IContentBlock, index: number) => {
-	switch (contentBlock.type) {
-		case CONTENT_BLOCK_TYPES.PARAGRAPH:
-			return (
-				<p key={index}>{contentBlock.tokens.map(parseContentBlock)}</p>
-			);
-		case CONTENT_BLOCK_TYPES.TEXT:
-			return contentBlock.raw;
-		case CONTENT_BLOCK_TYPES.LINK:
-			return (
-				<Link href={contentBlock.href}>
-					<a title={contentBlock.title}>{contentBlock.text}</a>
-				</Link>
-			);
-		case CONTENT_BLOCK_TYPES.HEADING:
-			const HeadingTag = `h${contentBlock.depth}`;
-
-			// @ts-ignore
-			return <HeadingTag>{contentBlock.text}</HeadingTag>;
-		case CONTENT_BLOCK_TYPES.LIST_ITEM:
-			return <li>{contentBlock.tokens.map(parseContentBlock)}</li>;
-		case CONTENT_BLOCK_TYPES.LIST:
-			if (contentBlock.ordered) {
-				return <ol>{contentBlock.items.map(parseContentBlock)}</ol>;
-			}
-
-			return <ul>{contentBlock.items.map(parseContentBlock)}</ul>;
-		case CONTENT_BLOCK_TYPES.IMAGE:
-			const imageUrl = contentBlock.href.replace('/web/public', '');
-			const urlParts = imageUrl.split('/');
-
-			return (
-				<Image
-					src={imageUrl}
-					alt={contentBlock.text}
-					identifier={urlParts[urlParts.length - 1].split('.')[0]}
-				/>
-			);
-
-		case CONTENT_BLOCK_TYPES.SPACE:
-			return '';
-		case CONTENT_BLOCK_TYPES.ESCAPE:
-			return contentBlock.text;
-		default:
-			console.log(contentBlock);
-			return null;
-	}
-};
 
 export function Post({
 	initialApolloState: { ROOT_QUERY },
@@ -72,6 +22,10 @@ export function Post({
 		metaData: IMetaData;
 		fileName: string;
 	};
+	const renderBody = React.useCallback(
+		() => contentBlocks.map(parseContentBlock),
+		[]
+	);
 
 	if (!contents) {
 		return null;
@@ -92,7 +46,7 @@ export function Post({
 					: ''
 			}}
 		>
-			{contentBlocks.map(parseContentBlock)}
+			{renderBody()}
 		</BlogPost>
 	);
 }
@@ -138,96 +92,6 @@ export interface IApolloQueryProps<T> {
 		ROOT_QUERY: T;
 	};
 }
-
-enum CONTENT_BLOCK_TYPES {
-	PARAGRAPH = 'paragraph',
-	HEADING = 'heading',
-	SPACE = 'space',
-	TEXT = 'text',
-	LINK = 'link',
-	IMAGE = 'image',
-	LIST = 'list',
-	LIST_ITEM = 'list_item',
-	ESCAPE = 'escape'
-}
-
-interface IEscapeBlock {
-	type: CONTENT_BLOCK_TYPES.ESCAPE;
-	raw: string;
-	text: string;
-}
-
-interface IImageBlock {
-	type: CONTENT_BLOCK_TYPES.IMAGE;
-	raw: string;
-	href: string;
-	title: string;
-	text: string;
-}
-
-interface IHeadingBlock {
-	type: CONTENT_BLOCK_TYPES.HEADING;
-	raw: string;
-	depth: number;
-	text: string;
-	tokens: ITextBlock[];
-}
-
-interface IListBlock {
-	type: CONTENT_BLOCK_TYPES.LIST;
-	raw: string;
-	ordered: boolean;
-	start: string;
-	loose: boolean;
-	items: [];
-}
-
-interface IListItemBlock {
-	type: CONTENT_BLOCK_TYPES.LIST_ITEM;
-	raw: string;
-	task: boolean;
-	loose: boolean;
-	text: string;
-	tokens: any[];
-}
-
-interface ISpaceBlock {
-	type: CONTENT_BLOCK_TYPES.SPACE;
-	raw: string;
-}
-
-interface IParagraphBlock {
-	type: CONTENT_BLOCK_TYPES.PARAGRAPH;
-	raw: string;
-	text: string;
-	tokens: object[];
-}
-
-interface ILinkBlock {
-	type: CONTENT_BLOCK_TYPES.LINK;
-	raw: string;
-	href: string;
-	title: string | null;
-	text: string;
-	tokens: IContentBlock[];
-}
-
-interface ITextBlock {
-	type: CONTENT_BLOCK_TYPES.TEXT;
-	raw: string;
-	text: string;
-}
-
-type IContentBlock =
-	| IParagraphBlock
-	| ISpaceBlock
-	| ITextBlock
-	| ILinkBlock
-	| IImageBlock
-	| IHeadingBlock
-	| IListBlock
-	| IListItemBlock
-	| IEscapeBlock;
 
 export async function getStaticProps({ params }) {
 	const apolloClient = initializeApollo();

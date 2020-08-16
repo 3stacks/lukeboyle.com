@@ -1,0 +1,206 @@
+import * as React from 'react';
+import Link from 'next/link';
+import Image from '../components/Image';
+
+enum CONTENT_BLOCK_TYPES {
+	PARAGRAPH = 'paragraph',
+	HEADING = 'heading',
+	SPACE = 'space',
+	TEXT = 'text',
+	LINK = 'link',
+	IMAGE = 'image',
+	LIST = 'list',
+	LIST_ITEM = 'list_item',
+	ESCAPE = 'escape',
+	HTML = 'html',
+	EM = 'em',
+	CODE = 'code',
+	CODESPAN = 'codespan'
+}
+
+interface IHTMLBlock {
+	type: CONTENT_BLOCK_TYPES.HTML;
+	raw: string;
+	pre: boolean;
+	text: string;
+}
+
+interface IEMBlock {
+	type: CONTENT_BLOCK_TYPES.EM;
+	raw: string;
+	text: string;
+	tokens: IContentBlock[];
+}
+
+interface IEscapeBlock {
+	type: CONTENT_BLOCK_TYPES.ESCAPE;
+	raw: string;
+	text: string;
+}
+
+interface IImageBlock {
+	type: CONTENT_BLOCK_TYPES.IMAGE;
+	raw: string;
+	href: string;
+	title: string;
+	text: string;
+}
+
+interface IHeadingBlock {
+	type: CONTENT_BLOCK_TYPES.HEADING;
+	raw: string;
+	depth: number;
+	text: string;
+	tokens: ITextBlock[];
+}
+
+interface IListBlock {
+	type: CONTENT_BLOCK_TYPES.LIST;
+	raw: string;
+	ordered: boolean;
+	start: string;
+	loose: boolean;
+	items: [];
+}
+
+interface IListItemBlock {
+	type: CONTENT_BLOCK_TYPES.LIST_ITEM;
+	raw: string;
+	task: boolean;
+	loose: boolean;
+	text: string;
+	tokens: any[];
+}
+
+interface ISpaceBlock {
+	type: CONTENT_BLOCK_TYPES.SPACE;
+	raw: string;
+}
+
+interface IParagraphBlock {
+	type: CONTENT_BLOCK_TYPES.PARAGRAPH;
+	raw: string;
+	text: string;
+	tokens: object[];
+}
+
+interface ILinkBlock {
+	type: CONTENT_BLOCK_TYPES.LINK;
+	raw: string;
+	href: string;
+	title: string | null;
+	text: string;
+	tokens: IContentBlock[];
+}
+
+interface ITextBlock {
+	type: CONTENT_BLOCK_TYPES.TEXT;
+	raw: string;
+	text: string;
+}
+
+interface ICodeBlock {
+	type: CONTENT_BLOCK_TYPES.CODE;
+	raw: string;
+	codeBlockStyle: string;
+	text: string;
+}
+
+interface ICodespanBlock {
+	type: CONTENT_BLOCK_TYPES.CODESPAN;
+	raw: string;
+	text: string;
+}
+
+export type IContentBlock =
+	| IParagraphBlock
+	| ISpaceBlock
+	| ITextBlock
+	| ILinkBlock
+	| IImageBlock
+	| IHeadingBlock
+	| IListBlock
+	| IListItemBlock
+	| IEscapeBlock
+	| IEMBlock
+	| IHTMLBlock
+	| ICodeBlock
+	| ICodespanBlock;
+
+export const parseContentBlock = (contentBlock: IContentBlock) => {
+	const key = Math.random();
+
+	switch (contentBlock.type) {
+		case CONTENT_BLOCK_TYPES.PARAGRAPH:
+			return (
+				<p key={key}>{contentBlock.tokens.map(parseContentBlock)}</p>
+			);
+		case CONTENT_BLOCK_TYPES.TEXT:
+			return (
+				<React.Fragment key={key}>{contentBlock.raw}</React.Fragment>
+			);
+		case CONTENT_BLOCK_TYPES.LINK:
+			return (
+				<Link href={contentBlock.href} key={key}>
+					<a title={contentBlock.title}>{contentBlock.text}</a>
+				</Link>
+			);
+		case CONTENT_BLOCK_TYPES.HEADING:
+			const HeadingTag = `h${contentBlock.depth}`;
+
+			// @ts-ignore
+			return <HeadingTag key={key}>{contentBlock.text}</HeadingTag>;
+		case CONTENT_BLOCK_TYPES.LIST_ITEM:
+			return (
+				<li key={key}>{contentBlock.tokens.map(parseContentBlock)}</li>
+			);
+		case CONTENT_BLOCK_TYPES.LIST:
+			if (contentBlock.ordered) {
+				return (
+					<ol key={key}>
+						{contentBlock.items.map(parseContentBlock)}
+					</ol>
+				);
+			}
+
+			return (
+				<ul key={key}>{contentBlock.items.map(parseContentBlock)}</ul>
+			);
+		case CONTENT_BLOCK_TYPES.IMAGE:
+			const imageUrl = contentBlock.href.replace('/web/public', '');
+			const urlParts = imageUrl.split('/');
+
+			return (
+				<Image
+					key={key}
+					src={imageUrl}
+					alt={contentBlock.text}
+					identifier={urlParts[urlParts.length - 1].split('.')[0]}
+				/>
+			);
+		case CONTENT_BLOCK_TYPES.EM:
+			return (
+				<em key={key}>{contentBlock.tokens.map(parseContentBlock)}</em>
+			);
+		case CONTENT_BLOCK_TYPES.SPACE:
+			return '';
+		case CONTENT_BLOCK_TYPES.HTML:
+			return (
+				<span
+					dangerouslySetInnerHTML={{ __html: contentBlock.text }}
+					key={key}
+				/>
+			);
+		case CONTENT_BLOCK_TYPES.ESCAPE:
+			return (
+				<React.Fragment key={key}>{contentBlock.text}</React.Fragment>
+			);
+		case CONTENT_BLOCK_TYPES.CODESPAN:
+			return <code key={key}>{contentBlock.text}</code>;
+		case CONTENT_BLOCK_TYPES.CODE:
+			return <pre key={key}>{contentBlock.text}</pre>;
+		default:
+			console.log(contentBlock);
+			return null;
+	}
+};

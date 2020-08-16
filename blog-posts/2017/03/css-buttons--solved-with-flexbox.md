@@ -13,26 +13,26 @@ There are two commonly accepted approaches to making buttons with CSS, but both 
 
 ```html
 <style>
-    .button-padding-approach {
-        font-size: inherit;
-        -webkit-appearance: none;
-        border-radius: 0;
-        border-style: solid;
-        border-width: 0;
-        cursor: pointer;
-        font-weight: normal;
-        line-height: normal;
-        margin: 0;
-        position: relative;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        padding: 1rem 2rem 1.0625rem 2rem;
-        font-size: 16px;
-        background-color: #999;
-        color: #000;
-        max-width: 170px;
-    }
+	.button-padding-approach {
+		font-size: inherit;
+		-webkit-appearance: none;
+		border-radius: 0;
+		border-style: solid;
+		border-width: 0;
+		cursor: pointer;
+		font-weight: normal;
+		line-height: normal;
+		margin: 0;
+		position: relative;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		padding: 1rem 2rem 1.0625rem 2rem;
+		font-size: 16px;
+		background-color: #999;
+		color: #000;
+		max-width: 170px;
+	}
 </style>
 
 <div>[A Button](#) [A Button that breaks to two lines](#)</div>
@@ -44,31 +44,31 @@ This approach works okay, and it's good for multi-line (buttons where the market
 
 ```html
 <style>
-    .button-lineheight-approach {
-        -webkit-appearance: none;
-        border-radius: 0;
-        border-style: solid;
-        border-width: 0;
-        cursor: pointer;
-        font-weight: normal;
-        line-height: normal;
-        margin: 0;
-        position: relative;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        background-color: #999;
-        color: #000;
-        max-width: 170px;
-        height: 50px;
-        line-height: 50px;
-        padding: 0 2rem 0;
-    }
+	.button-lineheight-approach {
+		-webkit-appearance: none;
+		border-radius: 0;
+		border-style: solid;
+		border-width: 0;
+		cursor: pointer;
+		font-weight: normal;
+		line-height: normal;
+		margin: 0;
+		position: relative;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		background-color: #999;
+		color: #000;
+		max-width: 170px;
+		height: 50px;
+		line-height: 50px;
+		padding: 0 2rem 0;
+	}
 </style>
-```
 
 <div>[A Button](#) [A Button that breaks to two lines](#)</div>
+```
 
 This approach is a lot less hands on for the vertical alignment. You set `height: 50px;` and `line-height: 50px;` and voila, perfect vertical alignment. Until you need two lines and then it bleeds out of the button because you thought a CTA would never be more than 3 words long. At this point you're forced to either increase the button width, or reduce your font-size and neither are very designer friendly.
 
@@ -76,40 +76,40 @@ This approach is a lot less hands on for the vertical alignment. You set `height
 
 ```html
 <style>
-    .button-flexbox-approach {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        -webkit-appearance: none;
-        border-radius: 0;
-        border-style: solid;
-        border-width: 0;
-        cursor: pointer;
-        font-weight: normal;
-        line-height: normal;
-        margin: 0;
-        position: relative;
-        text-align: center;
-        text-decoration: none;
-        padding: 1rem 2rem 1.0625rem 2rem;
-        font-size: 16px;
-        background-color: #34495e;
-        color: #fff;
-    }
-    .button-flexbox-approach:hover {
-        color: #fff;
-    }
-    .flex-button-container {
-        display: inline-block;
-    }
+	.button-flexbox-approach {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		-webkit-appearance: none;
+		border-radius: 0;
+		border-style: solid;
+		border-width: 0;
+		cursor: pointer;
+		font-weight: normal;
+		line-height: normal;
+		margin: 0;
+		position: relative;
+		text-align: center;
+		text-decoration: none;
+		padding: 1rem 2rem 1.0625rem 2rem;
+		font-size: 16px;
+		background-color: #34495e;
+		color: #fff;
+	}
+	.button-flexbox-approach:hover {
+		color: #fff;
+	}
+	.flex-button-container {
+		display: inline-block;
+	}
 </style>
 
 <div>
-    <div class="flex-button-container">[A Button](#)</div>
+	<div class="flex-button-container">[A Button](#)</div>
 
-    <div class="flex-button-container" style="max-width: 170px;">
-        [A Button that breaks to two lines](#)
-    </div>
+	<div class="flex-button-container" style="max-width: 170px;">
+		[A Button that breaks to two lines](#)
+	</div>
 </div>
 ```
 
