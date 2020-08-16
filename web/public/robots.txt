@@ -1,3 +1,4 @@
 User-Agent: *
 Allow: /
 Sitemap: https://lukeboyle.com/sitemap.xml
+Disallow: /offline-plugin-app-shell-fallback/
