@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { gql } from '@apollo/client';
-import LazyLoad from 'react-lazyload';
+import Image from '../../../../components/Image';
 import { initializeApollo } from '../../../../lib/apolloClient';
 import { ALL_POSTS_QUERY } from '../../../blog';
 import BlogPost from '../../../../components/BlogPost/BlogPost';
@@ -12,7 +12,6 @@ interface IBlogPostProps extends IApolloQueryProps<{}> {
 }
 
 const parseContentBlock = (contentBlock: IContentBlock, index: number) => {
-	console.log(contentBlock);
 	switch (contentBlock.type) {
 		case CONTENT_BLOCK_TYPES.PARAGRAPH:
 			return (
@@ -44,15 +43,11 @@ const parseContentBlock = (contentBlock: IContentBlock, index: number) => {
 			const urlParts = imageUrl.split('/');
 
 			return (
-				<LazyLoad once>
-					<img
-						src={imageUrl}
-						alt={contentBlock.text}
-						data-identifier={
-							urlParts[urlParts.length - 1].split('.')[0]
-						}
-					/>
-				</LazyLoad>
+				<Image
+					src={imageUrl}
+					alt={contentBlock.text}
+					identifier={urlParts[urlParts.length - 1].split('.')[0]}
+				/>
 			);
 
 		case CONTENT_BLOCK_TYPES.SPACE:
