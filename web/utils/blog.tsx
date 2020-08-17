@@ -14,6 +14,7 @@ enum CONTENT_BLOCK_TYPES {
 	ESCAPE = 'escape',
 	HTML = 'html',
 	EM = 'em',
+	STRONG = 'strong',
 	CODE = 'code',
 	CODESPAN = 'codespan',
 	BLOCKQUOTE = 'blockquote'
@@ -31,6 +32,13 @@ interface IHTMLBlock {
 	raw: string;
 	pre: boolean;
 	text: string;
+}
+
+interface IStrongBlock {
+	type: CONTENT_BLOCK_TYPES.STRONG;
+	raw: string;
+	text: string;
+	tokens: IContentBlock[];
 }
 
 interface IEMBlock {
@@ -105,6 +113,7 @@ interface ITextBlock {
 	type: CONTENT_BLOCK_TYPES.TEXT;
 	raw: string;
 	text: string;
+	tokens?: IContentBlock[];
 }
 
 interface ICodeBlock {
@@ -134,7 +143,8 @@ export type IContentBlock =
 	| IHTMLBlock
 	| ICodeBlock
 	| ICodespanBlock
-	| IBlockquoteBlock;
+	| IBlockquoteBlock
+	| IStrongBlock;
 
 export const parseContentBlock = (contentBlock: IContentBlock) => {
 	const key = Math.random();
@@ -146,19 +156,43 @@ export const parseContentBlock = (contentBlock: IContentBlock) => {
 			);
 		case CONTENT_BLOCK_TYPES.TEXT:
 			return (
-				<React.Fragment key={key}>{contentBlock.raw}</React.Fragment>
+				<React.Fragment key={key}>
+					{contentBlock.tokens
+						? contentBlock.tokens.map(parseContentBlock)
+						: contentBlock.raw}
+				</React.Fragment>
 			);
 		case CONTENT_BLOCK_TYPES.LINK:
+			if (contentBlock.href.startsWith('#')) {
+				return (
+					<a href={contentBlock.href} key={key}>
+						{contentBlock.tokens.map(parseContentBlock)}
+					</a>
+				);
+			}
 			return (
 				<Link href={contentBlock.href} key={key}>
-					<a title={contentBlock.title}>{contentBlock.text}</a>
+					<a title={contentBlock.title}>
+						{contentBlock.tokens.map(parseContentBlock)}
+					</a>
 				</Link>
 			);
 		case CONTENT_BLOCK_TYPES.HEADING:
 			const HeadingTag = `h${contentBlock.depth}`;
 
-			// @ts-ignore
-			return <HeadingTag key={key}>{contentBlock.text}</HeadingTag>;
+			return (
+				// @ts-ignore
+				<HeadingTag
+					key={key}
+					id={contentBlock.text
+						.split(' ')
+						.slice(0, 3)
+						.join('_')
+						.toUpperCase()}
+				>
+					{contentBlock.text}
+				</HeadingTag>
+			);
 		case CONTENT_BLOCK_TYPES.LIST_ITEM:
 			return (
 				<li key={key}>{contentBlock.tokens.map(parseContentBlock)}</li>
@@ -196,6 +230,12 @@ export const parseContentBlock = (contentBlock: IContentBlock) => {
 		case CONTENT_BLOCK_TYPES.EM:
 			return (
 				<em key={key}>{contentBlock.tokens.map(parseContentBlock)}</em>
+			);
+		case CONTENT_BLOCK_TYPES.STRONG:
+			return (
+				<strong key={key}>
+					{contentBlock.tokens.map(parseContentBlock)}
+				</strong>
 			);
 		case CONTENT_BLOCK_TYPES.SPACE:
 			return '';

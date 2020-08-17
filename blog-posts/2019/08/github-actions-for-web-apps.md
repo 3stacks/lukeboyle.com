@@ -225,16 +225,16 @@ First I'll quickly go through how to get your S3 bucket and IAM keys and be a bi
 
 ```json
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "PublicReadGetObject",
-            "Effect": "Allow",
-            "Principal": "*",
-            "Action": "s3:GetObject",
-            "Resource": "arn:aws:s3:::your-arn-here/*"
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "PublicReadGetObject",
+			"Effect": "Allow",
+			"Principal": "*",
+			"Action": "s3:GetObject",
+			"Resource": "arn:aws:s3:::your-arn-here/*"
+		}
+	]
 }
 ```
 
@@ -258,21 +258,21 @@ an IAM user leak all you'll be giving away is access to that single bucket.
 
 ```json
 {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Sid": "VisualEditor0",
-            "Effect": "Allow",
-            "Action": "s3:ListBucket",
-            "Resource": "arn:aws:s3:::your-arn-here.io"
-        },
-        {
-            "Sid": "VisualEditor1",
-            "Effect": "Allow",
-            "Action": ["s3:PutObject", "s3:GetObject", "s3:DeleteObject"],
-            "Resource": "arn:aws:s3:::your-arn-here.io/*"
-        }
-    ]
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "VisualEditor0",
+			"Effect": "Allow",
+			"Action": "s3:ListBucket",
+			"Resource": "arn:aws:s3:::your-arn-here.io"
+		},
+		{
+			"Sid": "VisualEditor1",
+			"Effect": "Allow",
+			"Action": ["s3:PutObject", "s3:GetObject", "s3:DeleteObject"],
+			"Resource": "arn:aws:s3:::your-arn-here.io/*"
+		}
+	]
 }
 ```
 
@@ -378,7 +378,7 @@ First we have to generate a personal access token.
 
 ![Github access token scopes](/web/public/images/scopes.jpg)
 
-Add the secret as per the [Storing and using the secrets](/#Storing and using the secrets) section
+Add the secret as per the [Storing and using the secrets](#STORING_AND_USING) section
 above, calling your access token secret `GITHUB_ACCESS_TOKEN`
 
 Back in `ci.yml`,
