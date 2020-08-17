@@ -4,15 +4,12 @@ import { gql } from '@apollo/client';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { BodyWrapper, MainHeader } from '../../styled/music.style';
 import HomeHeadBanner from '../../components/HomeHeadBanner/HomeHeadBanner';
-import { META_DESCRIPTION, MY_NAME } from '../../constants';
-import Layout from '../../components/Layout/Layout';
+import { META_DESCRIPTION } from '../../constants';
 import BlogPreview from '../../components/BlogPreview/BlogPreview';
 import PostArchive from '../../components/PostArchive';
 import Pagination from '../../components/Pagination';
 import { getPostArchiveFromBlogPosts } from '../../components/utils';
 import Head from 'next/head';
-import { RecentStuff, Stuff } from '../../index.style';
-import { LinkButton } from '../../components/Button';
 
 export function getTotalPages(items: any[], pageLimit: number = 6): number {
 	return Math.ceil(items.length / pageLimit);
