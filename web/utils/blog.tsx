@@ -17,7 +17,8 @@ enum CONTENT_BLOCK_TYPES {
 	STRONG = 'strong',
 	CODE = 'code',
 	CODESPAN = 'codespan',
-	BLOCKQUOTE = 'blockquote'
+	BLOCKQUOTE = 'blockquote',
+	TABLE = 'table'
 }
 
 interface IBlockquoteBlock {
@@ -60,6 +61,18 @@ interface IImageBlock {
 	href: string;
 	title: string;
 	text: string;
+}
+
+interface ITableBlock {
+	type: CONTENT_BLOCK_TYPES.TABLE;
+	header: string[];
+	align: string | null[];
+	cells: string[][];
+	raw: string;
+	tokens: {
+		header: IContentBlock[][];
+		cells: IContentBlock[][];
+	};
 }
 
 interface IHeadingBlock {
@@ -144,7 +157,8 @@ export type IContentBlock =
 	| ICodeBlock
 	| ICodespanBlock
 	| IBlockquoteBlock
-	| IStrongBlock;
+	| IStrongBlock
+	| ITableBlock;
 
 export const parseContentBlock = (contentBlock: IContentBlock) => {
 	const key = Math.random();
@@ -254,6 +268,27 @@ export const parseContentBlock = (contentBlock: IContentBlock) => {
 			return <code key={key}>{contentBlock.text}</code>;
 		case CONTENT_BLOCK_TYPES.CODE:
 			return <pre key={key}>{contentBlock.text}</pre>;
+		case CONTENT_BLOCK_TYPES.TABLE:
+			return (
+				<table key={key} style={{ width: '100%' }}>
+					<thead>
+						<tr>
+							{contentBlock.header.map((headCell, index) => (
+								<td key={index}>{headCell}</td>
+							))}
+						</tr>
+					</thead>
+					<tbody>
+						{contentBlock.cells.map((row, index) => (
+							<tr key={index}>
+								{row.map((cell, nestedIndex) => (
+									<td key={nestedIndex}>{cell}</td>
+								))}
+							</tr>
+						))}
+					</tbody>
+				</table>
+			);
 		default:
 			console.log(contentBlock);
 			return null;
