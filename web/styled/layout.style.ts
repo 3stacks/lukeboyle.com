@@ -10,13 +10,13 @@ export const GlobalLayoutStyle = createGlobalStyle`
 	
 	@font-face {
         font-family: 'Publico';
-        font-display: swap;
+        font-display: fallback;
 		src: url('/fonts/Publico.woff2') format('woff2'),
           url('/fonts/Publico.woff') format('woff');   
     }
     @font-face {
         font-family: 'Graphik';
-        font-display: swap;
+        font-display: fallback;
         src: url('/fonts/Graphik-Regular.woff2') format('woff2'),
           url('/fonts/Graphik-Regular.woff') format('woff');
     }
