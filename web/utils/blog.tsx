@@ -282,7 +282,25 @@ export const parseContentBlock = (contentBlock: IContentBlock) => {
 						{contentBlock.cells.map((row, index) => (
 							<tr key={index}>
 								{row.map((cell, nestedIndex) => (
-									<td key={nestedIndex}>{cell}</td>
+									<td key={nestedIndex}>
+										{cell.match(/#[0-9a-f]{3,6}/g) ? (
+											<>
+												<span
+													style={{
+														width: 15,
+														height: 15,
+														borderRadius: 4,
+														backgroundColor: cell,
+														display: 'inline-block',
+														marginRight: 15
+													}}
+												/>
+												{cell}
+											</>
+										) : (
+											cell
+										)}
+									</td>
 								))}
 							</tr>
 						))}
