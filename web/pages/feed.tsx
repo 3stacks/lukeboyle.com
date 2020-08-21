@@ -49,6 +49,10 @@ const Tile = styled.article`
 			border: 2px solid ${CUSTOM_PROPERTIES.COLOR_TEXT};
 		}
 	}
+
+	stream {
+		margin-top: 10px;
+	}
 `;
 
 const Body = styled.div`

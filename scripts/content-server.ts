@@ -285,8 +285,8 @@ const resolvers = {
 dislocations, and COMPLETELY unethical mass
 cultivation (GOMAD, dozen eggs a day) and I'm
 finally getting some SUCCULENT deltoids. The
-best gains of my life have been doing one lift a
-day ([/blog-posts/2020/07/olad-results-so-far](OLAD)). ~75kg(165lbs) ~18% BF vs 118kg(260lbs) ~25%
+best gains of my life have been doing [one lift a
+day](/blog-posts/2020/07/olad-results-so-far). ~75kg(165lbs) ~18% BF vs 118kg(260lbs) ~25%
 BF.`,
 					imageSrc: '/images/mass.jpg'
 				},
@@ -299,16 +299,16 @@ BF.`,
 				},
 				{
 					date: '2020-08-11T20:46:52.549Z',
-					body: `Is it possible that the Australian government [https://www.gizmodo.com.au/2020/03/huawei-5g-australia/](banned Huawei) in a deliberate attempt to slow the roll-out of
+					body: `Is it possible that the Australian government [banned Huawei](https://www.gizmodo.com.au/2020/03/huawei-5g-australia/) in a deliberate attempt to slow the roll-out of
 the 5G? Surely they would like to recoup some of
-the $48.7bn [https://www.smh.com.au/business/companies/nbn-rollout-cost-to-jump-by-2-billion-20180831-p500yw.html]([1]) they've invested into the abject failure that is
+the $48.7bn [[1]](https://www.smh.com.au/business/companies/nbn-rollout-cost-to-jump-by-2-billion-20180831-p500yw.html) they've invested into the abject failure that is
 the NBN. All you need to do is look at Telstra's
 official speed metrics between their supported
 broadband technologies to see that NBN is a bad
 service.
 
 <figure>
-<Table>
+<table>
 <thead>
 <tr>
 <td />
@@ -333,7 +333,7 @@ service.
 <td>may vary</td>
 </tr>
 </tbody>
-</Table>
+</table>
 <figcaption>
 Table data: <a href="https://telstraventures.com/5g-australia-how-it-affects-businesses/">[2]</a>. <br /> 
 Expected median speed in San Francisco (under average load) market is 1.4Gbps with latency of 4.9ms <a href="https://www.whistleout.com.au/MobilePhones/Guides/5g-in-australia-what-you-need-to-know">[3]</a>
