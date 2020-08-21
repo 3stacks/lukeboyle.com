@@ -307,39 +307,17 @@ official speed metrics between their supported
 broadband technologies to see that NBN is a bad
 service.
 
-<figure>
-<table>
-<thead>
-<tr>
-<td />
-<td>Peak Speed</td>
-<td>Latency</td>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>4G</td>
-<td>100-300 Mbps</td>
-<td>50ms</td>
-</tr>
-<tr>
-<td>5G</td>
-<td>1-20 Gbps</td>
-<td>1-6ms</td>
-</tr>
-<tr>
-<td>NBN</td>
-<td>12-100 Mbps</td>
-<td>may vary</td>
-</tr>
-</tbody>
-</table>
-<figcaption>
-Table data: <a href="https://telstraventures.com/5g-australia-how-it-affects-businesses/">[2]</a>. <br /> 
-Expected median speed in San Francisco (under average load) market is 1.4Gbps with latency of 4.9ms <a href="https://www.whistleout.com.au/MobilePhones/Guides/5g-in-australia-what-you-need-to-know">[3]</a>
+|     |  Peak Speed  | Latency |
+| --- | ------------ | ------- |
+|  4G | 100-300 Mbps | 50ms |
+| 5G | 1-20 Gbps | 1-6ms |
+| NBN | 12-100 Mbps | may vary |
 
-</figcaption>
-</figure>
+Table data: [[2]](https://telstraventures.com/5g-australia-how-it-affects-businesses).
+
+Expected median speed in San Francisco (under average load) market is 1.4Gbps with latency of 4.9ms [[3]](https://www.whistleout.com.au/MobilePhones/Guides/5g-in-australia-what-you-need-to-know)
+
+<br />
 
 If it came out that this was the case then I
 wouldn't be surprised if they were also
