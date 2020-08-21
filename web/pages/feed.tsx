@@ -8,17 +8,9 @@ import Image from '../components/Image';
 import { BodyWrapper } from '../styled/music.style';
 import { CUSTOM_PROPERTIES } from '../styled/colors';
 import Head from 'next/head';
-import Link from 'next/link';
-
-const Table = styled.table`
-	font-size: 1.6rem;
-	margin: 1rem 0;
-
-	td {
-		padding: 5px;
-		border: 2px solid ${CUSTOM_PROPERTIES.COLOR_TEXT};
-	}
-`;
+import { initializeApollo } from '../lib/apolloClient';
+import { gql } from '@apollo/client';
+import { parseContentBlock } from '../utils/blog';
 
 const Tile = styled.article`
 	width: 100%;
@@ -46,6 +38,16 @@ const Tile = styled.article`
 
 	img {
 		max-width: 100%;
+	}
+
+	table {
+		font-size: 1.6rem;
+		margin: 1rem 0;
+
+		td {
+			padding: 5px;
+			border: 2px solid ${CUSTOM_PROPERTIES.COLOR_TEXT};
+		}
 	}
 `;
 
@@ -82,9 +84,8 @@ const Body = styled.div`
 
 const PostImg = styled.div`
 	margin-top: 10px;
-	box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px,
-		rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
-	border-radius: 20px;
+	box-shadow: rgba(101, 119, 134, 0.2) 0 0 15px,
+		rgba(101, 119, 134, 0.15) 0 0 3px 1px;
 	overflow: hidden;
 	display: flex;
 `;
@@ -123,7 +124,13 @@ const Post = ({
  * TODO: add pagination
  * TODO: don't manage content directly in the component
  */
-export const Index = () => {
+export const Index = ({
+	initialApolloState: {
+		ROOT_QUERY: { feed }
+	}
+}: {
+	initialApolloState: { ROOT_QUERY: { feed: any[] } };
+}) => {
 	return (
 		<main className="main">
 			<Head>
@@ -137,124 +144,48 @@ export const Index = () => {
 			<div className="body-slot">
 				<MaxWidthContainer style={{ maxWidth: 768 }}>
 					<BodyWrapper style={{ display: 'block' }}>
-						<Post postedDate="2020-08-21T21:49:00.549Z">
-							<p>
-								2016 vs 2020. 2 years of powerlifting, 2 patella
-								dislocations, and COMPLETELY unethical mass
-								cultivation (GOMAD, dozen eggs a day) and I'm
-								finally getting some SUCCULENT deltoids. The
-								best gains of my life have been doing one lift a
-								day (
-								<Link href="http://localhost:3000/blog-posts/2020/07/olad-results-so-far">
-									<a>OLAD</a>
-								</Link>
-								). ~75kg(165lbs) ~18% BF vs 118kg(260lbs) ~25%
-								BF.
-							</p>
-							<PostImg>
-								<Image src="/images/mass.jpg" alt="" />
-							</PostImg>
-						</Post>
-						<Post postedDate="2020-08-21T21:49:00.549Z">
-							<iframe
-								src="https://player.vimeo.com/video/450065357"
-								width="100%"
-								height="480"
-								frameBorder="0"
-								allow="autoplay; fullscreen"
-								allowFullScreen
-							/>
-						</Post>
-						<Post postedDate="2020-08-11T20:46:52.549Z">
-							<p>
-								Is it possible that the Australian government{' '}
-								<a href="https://www.gizmodo.com.au/2020/03/huawei-5g-australia/">
-									banned Huawei
-								</a>{' '}
-								in a deliberate attempt to slow the roll-out of
-								the 5G? Surely they would like to recoup some of
-								the $48.7bn{' '}
-								<a href="https://www.smh.com.au/business/companies/nbn-rollout-cost-to-jump-by-2-billion-20180831-p500yw.html">
-									[1]
-								</a>{' '}
-								they've invested into the abject failure that is
-								the NBN. All you need to do is look at Telstra's
-								official speed metrics between their supported
-								broadband technologies to see that NBN is a bad
-								service.
-							</p>
-							<figure>
-								<Table>
-									<thead>
-										<tr>
-											<td />
-											<td>Peak Speed</td>
-											<td>Latency</td>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>4G</td>
-											<td>100-300 Mbps</td>
-											<td>50ms</td>
-										</tr>
-										<tr>
-											<td>5G</td>
-											<td>1-20 Gbps</td>
-											<td>1-6ms</td>
-										</tr>
-										<tr>
-											<td>NBN</td>
-											<td>12-100 Mbps</td>
-											<td>may vary</td>
-										</tr>
-									</tbody>
-								</Table>
-								<figcaption>
-									Table data:{' '}
-									<a href="https://telstraventures.com/5g-australia-how-it-affects-businesses/">
-										[2]
-									</a>
-									. <br /> Expected median speed in San
-									Francisco (under average network load)
-									market is 1.4Gbps with latency of 4.9ms{' '}
-									<a href="https://www.whistleout.com.au/MobilePhones/Guides/5g-in-australia-what-you-need-to-know">
-										[3]
-									</a>
-								</figcaption>
-							</figure>
-							<p>
-								If it came out that this was the case then I
-								wouldn't be surprised if they were also
-								responsible for the proliferation of 5G
-								conspiracy theories
-							</p>
-						</Post>
-						<Post postedDate="2020-08-04T10:32:52.549Z">
-							<p>
-								I'm going to destroy you with FACTS and LOGIC
-								(that's what I call my fists)
-							</p>
-						</Post>
-						<Post postedDate="2020-08-04T10:25:52.549Z">
-							<p>
-								I'm hosting my own Twitter-like feed with the
-								idea that it can be easily piped into an RSS
-								feed. It would be nice for everyone to just be
-								able to host their own feed and then users could
-								just subscribe to different people on some app.
-								Then everyone owns their own data (kinda like{' '}
-								<a href="https://matrix.org">
-									https://matrix.org
-								</a>
-								).
-							</p>
-						</Post>
+						{feed.map(post => {
+							return (
+								<Post postedDate={post.date} key={post.date}>
+									{JSON.parse(post.body).map(
+										parseContentBlock
+									)}
+									{post.imageSrc && (
+										<PostImg>
+											<Image src={post.imageSrc} alt="" />
+										</PostImg>
+									)}
+								</Post>
+							);
+						})}
 					</BodyWrapper>
 				</MaxWidthContainer>
 			</div>
 		</main>
 	);
 };
+
+export async function getStaticProps() {
+	const apolloClient = initializeApollo();
+
+	await apolloClient.query({
+		query: gql`
+			query {
+				feed {
+					date
+					body
+					imageSrc
+				}
+			}
+		`
+	});
+
+	return {
+		props: {
+			initialApolloState: apolloClient.cache.extract()
+		},
+		revalidate: 1
+	};
+}
 
 export default Index;

@@ -73,18 +73,26 @@ be squatting again but here we are. It's not the most encouraging sign when your
 
 ### Strict overhead press - 80kg (~176 pounds) x 2
 
-<iframe src="https://player.vimeo.com/video/441522966" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<stream src="31cc64527b38b828aad62f9648436639" controls></stream>
+
+<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=31cc64527b38b828aad62f9648436639"></script>
 
 ### Trap bar deadlift - 180kg(~396 pounds) x 3
 
-<iframe src="https://player.vimeo.com/video/441527050" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<stream src="09ba1489ae6f35e21d61818dc873a51d" controls></stream>
+
+<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=09ba1489ae6f35e21d61818dc873a51d"></script>
 
 ### Squat
 
 I have no recent squat footage so here's some of this weird reverse safety bar front squat thing I got from [John Meadows](https://www.youtube.com/watch?v=mUAOLEPEuV0)
 
-<iframe src="https://player.vimeo.com/video/441565792" width="640" height="480" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<stream src="c2da8e3bf1f7ca017b617ef0c7a4083f" controls></stream>
+
+<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=c2da8e3bf1f7ca017b617ef0c7a4083f"></script>
 
 ### Bench - 105kg(~230 pounds) x 2
 
-<iframe src="https://player.vimeo.com/video/441559066" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<stream src="cf6d18be8a97a0c7cfbf56520d47afd3" controls></stream>
+
+<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=cf6d18be8a97a0c7cfbf56520d47afd3"></script>
