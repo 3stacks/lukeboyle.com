@@ -122,6 +122,16 @@ export const Index = () => {
 			<div className="body-slot">
 				<MaxWidthContainer style={{ maxWidth: 850 }}>
 					<BodyWrapper style={{ display: 'block' }}>
+						<Post postedDate="2020-08-21T21:49:00.549Z">
+							<iframe
+								src="https://player.vimeo.com/video/450065357"
+								width="640"
+								height="480"
+								frameBorder="0"
+								allow="autoplay; fullscreen"
+								allowFullScreen
+							/>
+						</Post>
 						<Post postedDate="2020-08-11T20:46:52.549Z">
 							<p>
 								Is it possible that the Australian government{' '}
@@ -144,7 +154,7 @@ export const Index = () => {
 								<Table>
 									<thead>
 										<tr>
-											<td></td>
+											<td />
 											<td>Peak Speed</td>
 											<td>Latency</td>
 										</tr>
