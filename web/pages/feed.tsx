@@ -4,9 +4,11 @@ import MaxWidthContainer from '../components/MaxWidthContainer';
 import HomeHeadBanner from '../components/HomeHeadBanner';
 import styled, { css } from 'styled-components';
 import { blackShift, bp } from '../styled/mixins';
+import Image from '../components/Image';
 import { BodyWrapper } from '../styled/music.style';
 import { CUSTOM_PROPERTIES } from '../styled/colors';
 import Head from 'next/head';
+import Link from 'next/link';
 
 const Table = styled.table`
 	font-size: 1.6rem;
@@ -41,6 +43,10 @@ const Tile = styled.article`
 			`
 		)}
 	}
+
+	img {
+		max-width: 100%;
+	}
 `;
 
 const Body = styled.div`
@@ -72,6 +78,15 @@ const Body = styled.div`
 	p {
 		margin: 0;
 	}
+`;
+
+const PostImg = styled.div`
+	margin-top: 10px;
+	box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px,
+		rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
+	border-radius: 20px;
+	overflow: hidden;
+	display: flex;
 `;
 
 const Avatar = styled.img`
@@ -120,12 +135,30 @@ export const Index = () => {
 				</HomeHeadBanner>
 			</div>
 			<div className="body-slot">
-				<MaxWidthContainer style={{ maxWidth: 850 }}>
+				<MaxWidthContainer style={{ maxWidth: 768 }}>
 					<BodyWrapper style={{ display: 'block' }}>
+						<Post postedDate="2020-08-21T21:49:00.549Z">
+							<p>
+								2016 vs 2020. 2 years of powerlifting, 2 patella
+								dislocations, and COMPLETELY unethical mass
+								cultivation (GOMAD, dozen eggs a day) and I'm
+								finally getting some SUCCULENT deltoids. The
+								best gains of my life have been doing one lift a
+								day (
+								<Link href="http://localhost:3000/blog-posts/2020/07/olad-results-so-far">
+									<a>OLAD</a>
+								</Link>
+								). ~75kg(165lbs) ~18% BF vs 118kg(260lbs) ~25%
+								BF.
+							</p>
+							<PostImg>
+								<Image src="/images/mass.jpg" alt="" />
+							</PostImg>
+						</Post>
 						<Post postedDate="2020-08-21T21:49:00.549Z">
 							<iframe
 								src="https://player.vimeo.com/video/450065357"
-								width="640"
+								width="100%"
 								height="480"
 								frameBorder="0"
 								allow="autoplay; fullscreen"
