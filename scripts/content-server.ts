@@ -280,6 +280,12 @@ const resolvers = {
 		feed: async () => {
 			const posts = [
 				{
+					date: '2020-08-24T23:05:00.549Z',
+					body: `> "I think there's a degree of luck and intellect involved in giving up things that hurt you"
+					 
+[George Carlin, 40 years of comedy](https://youtu.be/nCGGWeD_EJk)`
+				},
+				{
 					date: '2020-08-21T21:50:00.549Z',
 					body: `2016 vs 2020. 2 years of powerlifting, 2 patella
 dislocations, and COMPLETELY unethical mass
