@@ -2,9 +2,9 @@ import * as React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import { StyledLayout } from './Layout.style';
+import { useRouter } from 'next/router';
 
 interface IProps {
-	slug: string;
 	headChildren?: () => React.ReactElement;
 	children: any;
 }
@@ -24,13 +24,18 @@ const getRouteFromSlug = slug => {
 		return 'blog';
 	}
 
+	if (slug === '/') {
+		return 'home';
+	}
+
 	return slug.replace('/', '');
 };
 
-export const Layout = ({ slug, children }: IProps) => {
+export const Layout = ({ children }: IProps) => {
+	const { asPath } = useRouter();
+	const route = getRouteFromSlug(asPath);
 	const isHomeOrPortfolioPage =
-		slug === '/' || slug.includes('/portfolio') || slug === '/feed';
-	const route = getRouteFromSlug(slug);
+		asPath === '/' || asPath.includes('/portfolio') || asPath === '/feed';
 
 	return (
 		<StyledLayout

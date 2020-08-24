@@ -6,10 +6,8 @@ import Layout from '../components/Layout/Layout';
 import { GlobalLayoutStyle } from '../styled/layout.style';
 
 export const MyApp = ({ Component, pageProps }) => {
-	const router = useRouter();
-
 	return (
-		<Layout slug={router.asPath}>
+		<Layout>
 			<Head>
 				<title>{MY_NAME}</title>
 				<meta name="referrer" content="origin" />
