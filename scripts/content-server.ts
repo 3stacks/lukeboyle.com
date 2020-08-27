@@ -10,9 +10,7 @@ import {
 	getTopAlbums,
 	getTopArtists
 } from './utils/music';
-import Image from 'web/components/Image';
-import { BodyWrapper } from 'web/styled/music.style';
-import * as React from 'react';
+import sortBy from 'lodash/sortBy';
 import marked from 'marked';
 
 dotenv.config();
@@ -21,18 +19,20 @@ function getBlogPosts(): Promise<any[]> {
 	return new Promise(resolve => {
 		glob('blog-posts/**/*.md', (err, files) => {
 			resolve(
-				files
-					.filter(isNotDirectory)
-					.map(file => {
-						return {
-							path: file,
-							contents: fs.readFileSync(file, {
-								encoding: 'utf-8'
-							})
-						};
-					})
-					.reduce(generateComponent, [])
-					.reverse()
+				sortBy(
+					files
+						.filter(isNotDirectory)
+						.map(file => {
+							return {
+								path: file,
+								contents: fs.readFileSync(file, {
+									encoding: 'utf-8'
+								})
+							};
+						})
+						.reduce(generateComponent, []),
+					'publishDate'
+				).reverse()
 			);
 		});
 	});
