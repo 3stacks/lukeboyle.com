@@ -1,7 +1,6 @@
 import * as React from 'react';
 import Head from 'next/head';
 import { MY_NAME } from '../constants';
-import { useRouter } from 'next/router';
 import Layout from '../components/Layout/Layout';
 import { GlobalLayoutStyle } from '../styled/layout.style';
 
