@@ -19,6 +19,7 @@ const Tile = styled.article`
 	display: grid;
 	grid-column-gap: 10px;
 	grid-template-columns: 50px auto;
+	grid-template-rows: 25px auto;
 
 	${bp(
 		768,
@@ -54,24 +55,22 @@ const Tile = styled.article`
 	stream {
 		margin-top: 10px;
 	}
+
+	blockquote {
+		margin-top: 0;
+	}
 `;
 
 const Body = styled.div`
 	width: 100%;
-	padding: 5px 0 0 10px;
 	grid-column: 1 / 3;
+	padding: 30px 0 0 0;
 
 	${bp(
 		400,
 		css`
 			grid-column: 2 / 3;
-		`
-	)}
-
-	${bp(
-		768,
-		css`
-			padding: 5px 0 0 10px;
+			padding: 5px 0 0 0;
 		`
 	)}
 
