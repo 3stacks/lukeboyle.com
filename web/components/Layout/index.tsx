@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
-import { StyledLayout } from './Layout.style';
+import { StyledLayout } from './style';
 import { useRouter } from 'next/router';
 
 interface IProps {

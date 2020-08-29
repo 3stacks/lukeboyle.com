@@ -1,6 +1,6 @@
 import React from 'react';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
-import { StyledFooter, FooterLinks } from './Footer.style';
+import { StyledFooter, FooterLinks } from './style';
 import { FaYinYang } from 'react-icons/fa';
 import Link from 'next/link';
 

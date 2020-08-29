@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Head from 'next/head';
 import { MY_NAME } from '../constants';
-import Layout from '../components/Layout/Layout';
+import Layout from '../components/Layout';
 import { GlobalLayoutStyle } from '../styled/layout.style';
 
 export const MyApp = ({ Component, pageProps }) => {

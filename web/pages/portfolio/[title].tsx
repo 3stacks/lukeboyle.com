@@ -3,16 +3,13 @@ import { gql } from '@apollo/client';
 import { initializeApollo } from '../../lib/apolloClient';
 import { IPortfolioItem } from '../../data/portfolio-items';
 import portfolioData from '../../data/portfolio-items';
-import { MY_NAME, PORTFOLIO_ITEM_NAMES } from '../../constants';
+import { PORTFOLIO_ITEM_NAMES } from '../../constants';
 import HomeHeadBanner from '../../components/HomeHeadBanner';
 import Head from 'next/head';
-import Layout from '../../components/Layout/Layout';
 import { PortfolioContent } from '../../styled/portfolio.style';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledPost } from '../../components/BlogPost/style';
-import { IMetaData } from '../../../scripts/utils/blog';
 import { ExternalLink, LinkButton } from '../../components/Button';
-import { RecentStuff, Stuff } from '../../index.style';
 
 interface IPortfolioPostProps extends IApolloQueryProps<{}> {}
 
