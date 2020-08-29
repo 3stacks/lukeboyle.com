@@ -8,7 +8,7 @@ import BlogPreview from '../../components/BlogPreview/BlogPreview';
 import PostArchive from '../../components/PostArchive';
 import Pagination from '../../components/Pagination';
 import { getTotalPages } from './index';
-import { getPostArchiveFromBlogPosts } from '../../components/utils';
+import { getPostArchiveFromBlogPosts } from '../../utils/blog';
 import Head from 'next/head';
 
 const BlogPage = ({

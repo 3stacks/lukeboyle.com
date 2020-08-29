@@ -1,26 +1,15 @@
 import * as React from 'react';
-import { gql } from '@apollo/client';
 import { initializeApollo } from '../../../lib/apolloClient';
-import { ALL_POSTS_QUERY, getTotalPages } from '../../blog';
-import BlogPost from '../../../components/BlogPost/BlogPost';
-import { IMetaData } from '../../../../scripts/utils/blog';
-import {
-	generateTopList,
-	IContentBlock,
-	parseContentBlock
-} from '../../../utils/blog';
+import { ALL_POSTS_QUERY } from '../../blog';
+import { IContentBlock } from '../../../utils/blog';
 import { IApolloQueryProps } from './[month]/[title]';
-import { getPostArchiveFromBlogPosts } from '../../../components/utils';
+import { getPostArchiveFromBlogPosts } from '../../../utils/blog';
 import Head from 'next/head';
 import HomeHeadBanner from '../../../components/HomeHeadBanner';
 import MaxWidthContainer from '../../../components/MaxWidthContainer';
 import { BodyWrapper, MainHeader } from '../../../styled/music.style';
 import PostArchive from '../../../components/PostArchive';
 import BlogPreview from '../../../components/BlogPreview/BlogPreview';
-
-interface IBlogPostProps extends IApolloQueryProps<{}> {
-	contentBlocks: IContentBlock[];
-}
 
 export const YearPage = ({
 	year,

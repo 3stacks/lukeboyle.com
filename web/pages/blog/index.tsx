@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { initializeApollo } from '../../lib/apolloClient';
 import { gql } from '@apollo/client';
+import Head from 'next/head';
+import { initializeApollo } from '../../lib/apolloClient';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { BodyWrapper, MainHeader } from '../../styled/music.style';
 import HomeHeadBanner from '../../components/HomeHeadBanner';
@@ -8,8 +9,7 @@ import { META_DESCRIPTION } from '../../constants';
 import BlogPreview from '../../components/BlogPreview/BlogPreview';
 import PostArchive from '../../components/PostArchive';
 import Pagination from '../../components/Pagination';
-import { getPostArchiveFromBlogPosts } from '../../components/utils';
-import Head from 'next/head';
+import { getPostArchiveFromBlogPosts } from '../../utils/blog';
 
 export function getTotalPages(items: any[], pageLimit: number = 6): number {
 	return Math.ceil(items.length / pageLimit);
