@@ -30,6 +30,7 @@ export const StyledFooter = styled.div`
 		a {
 			color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 
+			&:focus,
 			&:hover {
 				color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 				border-bottom: 1px solid ${CUSTOM_PROPERTIES.COLOR_TEXT};

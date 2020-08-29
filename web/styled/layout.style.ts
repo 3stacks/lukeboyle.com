@@ -129,6 +129,7 @@ export const GlobalLayoutStyle = createGlobalStyle`
 		
 		&:hover, 
 		&:focus {
+			outline: none;
 			border-bottom: 1px solid transparent;
 			background-color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 			color: ${CUSTOM_PROPERTIES.COLOR_WHITE} !important;
