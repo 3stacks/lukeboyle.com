@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { CUSTOM_PROPERTIES } from '../../styled/colors';
 
 export const StyledSummary = styled.summary`
 	display: flex;
 	align-items: center;
 	cursor: pointer;
 	list-style-type: none;
+	padding: 5px;
 
 	svg {
 		font-size: 1.6rem;
@@ -31,6 +33,11 @@ export const StyledDetails = styled.details`
 			opacity: 1;
 			transform: translateX(0);
 		}
+	}
+
+	&:hover summary {
+		background-color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
+		color: white;
 	}
 
 	.contents {
