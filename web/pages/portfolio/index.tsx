@@ -13,11 +13,9 @@ export const Portfolio = () => {
 			<Head>
 				<title>{MY_NAME} | Front End Developer</title>
 			</Head>
-			<div className="head-slot">
-				<HomeHeadBanner hasColor={false}>
-					<h1>A Sample of My Work</h1>
-				</HomeHeadBanner>
-			</div>
+			<HomeHeadBanner hasColor={false}>
+				<h1>A Sample of My Work</h1>
+			</HomeHeadBanner>
 			<div className="body-slot">
 				<PortfolioContainer>
 					<Head>
