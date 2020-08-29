@@ -2,6 +2,7 @@ import React from 'react';
 import sortBy from 'lodash/sortBy';
 import { Wrapper } from './style';
 import { IBlogPost } from '../../../scripts/utils/blog';
+import Accordion from '../Accordion';
 
 export interface IPostArchive {
 	[year: string]: {
@@ -16,12 +17,10 @@ export default function PostArchive({ data }: { data: IPostArchive }) {
 				.reverse()
 				.map(([year, months]) => {
 					return (
-						<details key={year}>
-							<summary>{year}</summary>
+						<Accordion key={year} summary={year}>
 							{Object.entries(months).map(([month, posts]) => {
 								return (
-									<details key={month}>
-										<summary>{month}</summary>
+									<Accordion key={month} summary={month}>
 										<ul>
 											{sortBy(posts, [
 												'metaData',
@@ -40,10 +39,10 @@ export default function PostArchive({ data }: { data: IPostArchive }) {
 													);
 												})}
 										</ul>
-									</details>
+									</Accordion>
 								);
 							})}
-						</details>
+						</Accordion>
 					);
 				})}
 		</Wrapper>

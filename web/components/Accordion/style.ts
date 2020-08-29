@@ -35,7 +35,22 @@ export const StyledDetails = styled.details`
 		}
 	}
 
-	&:hover summary {
+	summary:focus {
+		position: relative;
+		outline: none;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: calc(100% - 10px);
+			width: calc(100% - 10px);
+			border: 5px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
+		}
+	}
+
+	&:hover > summary {
 		background-color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 		color: white;
 	}
