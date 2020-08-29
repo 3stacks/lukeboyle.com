@@ -12,7 +12,7 @@ import {
 import { IApolloQueryProps } from './[month]/[title]';
 import { getPostArchiveFromBlogPosts } from '../../../components/utils';
 import Head from 'next/head';
-import HomeHeadBanner from '../../../components/HomeHeadBanner/HomeHeadBanner';
+import HomeHeadBanner from '../../../components/HomeHeadBanner';
 import MaxWidthContainer from '../../../components/MaxWidthContainer';
 import { BodyWrapper, MainHeader } from '../../../styled/music.style';
 import PostArchive from '../../../components/PostArchive/PostArchive';

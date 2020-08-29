@@ -16,7 +16,7 @@ const StyledMain = styled.main`
 	justify-content: space-evenly;
 `;
 
-export const Index = () => {
+export const HomePage = () => {
 	const latestProject = projects[0];
 
 	return (
@@ -65,4 +65,4 @@ export const Index = () => {
 	);
 };
 
-export default Index;
+export default HomePage;

@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-import Layout from '../../components/Layout';
 import portfolioItems from '../../data/portfolio-items';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import HomeHeadBanner from '../../components/HomeHeadBanner';

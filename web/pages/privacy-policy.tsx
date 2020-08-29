@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import HomeHeadBanner from '../components/HomeHeadBanner/HomeHeadBanner';
+import HomeHeadBanner from '../components/HomeHeadBanner';
 import MaxWidthContainer from '../components/MaxWidthContainer';
 import Accordion from '../components/Accordion';
 

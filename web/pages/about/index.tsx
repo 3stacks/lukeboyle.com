@@ -1,13 +1,9 @@
 import React from 'react';
 import Head from 'next/head';
-import Layout from '../../components/Layout';
+import Link from 'next/link';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import ExternalLink from '../../components/ExternalLink';
-import { MY_NAME } from '../../constants';
-import HomeHeadBanner from '../../components/HomeHeadBanner/HomeHeadBanner';
-import { RecentStuff, Stuff } from '../../index.style';
-import { LinkButton } from '../../components/Button';
-import Link from 'next/link';
+import HomeHeadBanner from '../../components/HomeHeadBanner';
 
 export const About = () => {
 	return (
@@ -15,6 +11,11 @@ export const About = () => {
 			<Head>
 				<title>About | Luke Boyle</title>
 			</Head>
+			<div className="head-slot">
+				<HomeHeadBanner hasColor>
+					<h1>About the beast</h1>
+				</HomeHeadBanner>
+			</div>
 			<div className="body-slot">
 				<MaxWidthContainer isSmall className="about-main">
 					<h2>Quick facts:</h2>
