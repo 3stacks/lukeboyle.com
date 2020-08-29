@@ -1,8 +1,7 @@
 import styled, { css } from 'styled-components';
 import { bp } from '../../styled/mixins';
-import { HEADER_HEIGHT, WIDTHS } from '../../styled/sizes';
+import { WIDTHS } from '../../styled/sizes';
 import { CUSTOM_PROPERTIES } from '../../styled/colors';
-import MaxWidthContainer from '../MaxWidthContainer';
 
 export const StyledNav = styled.div`
 	display: flex;

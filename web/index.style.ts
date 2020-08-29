@@ -4,7 +4,7 @@ import { getFontSize } from './styled/utils';
 
 export const RecentStuff = styled.div`
 	display: grid;
-	padding: 30px 0;
+	padding: 0 0 30px;
 	grid-gap: 30px;
 	grid-template-columns: 1fr;
 
