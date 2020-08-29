@@ -3,12 +3,13 @@ import projects from '../data/portfolio-items';
 import { MY_NAME } from '../constants';
 import Layout from '../components/Layout';
 import MaxWidthContainer from '../components/MaxWidthContainer';
-import { LinkButton } from '../components/Button';
+import { AnchorButton, LinkButton } from '../components/Button';
 import { RecentStuff, Stuff } from '../index.style';
 import HomeHeadBanner from '../components/HomeHeadBanner';
 import Head from 'next/head';
 import { BodyWrapper } from '../styled/music.style';
 import styled from 'styled-components';
+import Link from 'next/link';
 
 const StyledMain = styled.main`
 	display: flex;
@@ -37,9 +38,11 @@ export const HomePage = () => {
 							<h2 className="block-header">Latest Project</h2>
 							<h3 className="title">{latestProject.name}</h3>
 							<p className="snippet">{latestProject.snippet}</p>
-							<LinkButton tabIndex="0" to={latestProject.link}>
-								Read More
-							</LinkButton>
+							<Link href={latestProject.link}>
+								<AnchorButton href={latestProject.link}>
+									Read more
+								</AnchorButton>
+							</Link>
 						</Stuff>
 						<Stuff>
 							<h2 className="block-header">Latest Post</h2>
@@ -51,13 +54,14 @@ export const HomePage = () => {
 								old slogan "Don't be evil" was a meaningless
 								platitude.
 							</p>
-							<LinkButton
-								tabIndex="0"
-								isSecondary
-								to="/blog-posts/2020/08/do-not-trust-google"
-							>
-								Read more
-							</LinkButton>
+							<Link href="/blog-posts/2020/08/do-not-trust-google">
+								<AnchorButton
+									isSecondary
+									href="/blog-posts/2020/08/do-not-trust-google"
+								>
+									Read more
+								</AnchorButton>
+							</Link>
 						</Stuff>
 					</RecentStuff>
 				</MaxWidthContainer>
