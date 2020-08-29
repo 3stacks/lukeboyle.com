@@ -100,8 +100,7 @@ const typeDefs = gql`
 		path: String
 		fileName: String
 		componentName: String
-		headMarkup: String
-		bodyMarkup: String
+		bodyBlocks: String
 	}
 
 	type LFMImage {

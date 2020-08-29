@@ -16,12 +16,12 @@ export const PortfolioContainer = styled.div`
 		display: grid;
 		grid-template-columns: 1fr;
 		margin-bottom: 0;
+		grid-gap: 30px;
 
 		${bp(
 			515,
 			css`
 				grid-template-columns: 1fr 1fr;
-				grid-gap: 30px;
 			`
 		)}
 

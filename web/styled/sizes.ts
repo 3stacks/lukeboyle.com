@@ -27,4 +27,4 @@ export enum VERTICAL_RHYTHMS {
 	P = FONT_SIZES.P * LINE_HEIGHTS.PROSE
 }
 
-export const HEADER_HEIGHT = 60;
+export const HEADER_HEIGHT = 80;

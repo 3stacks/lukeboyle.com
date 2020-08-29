@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 import { CUSTOM_PROPERTIES } from '../../styled/colors';
 import { bp } from '../../styled/mixins';
+import { HEADER_HEIGHT } from '../../styled/sizes';
 
 export const FooterLinks = styled.div`
 	a {
@@ -11,21 +12,22 @@ export const FooterLinks = styled.div`
 `;
 
 export const StyledFooter = styled.div`
-	height: 100px;
-
-	${bp(
-		600,
-		css`
-			height: 60px;
-		`
-	)};
+	height: 60px;
 
 	& .inner {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		height: 100%;
 		font-size: 1.4rem;
+		flex-direction: column;
+
+		${bp(
+			420,
+			css`
+				flex-direction: row;
+				height: 100%;
+			`
+		)};
 
 		a {
 			color: ${CUSTOM_PROPERTIES.COLOR_TEXT};

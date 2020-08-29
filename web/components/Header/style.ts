@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import { CUSTOM_PROPERTIES } from '../../styled/colors';
 import { BareButton } from '../Button';
 import { bp } from '../../styled/mixins';
-import { HEADER_HEIGHT, WIDTHS } from '../../styled/sizes';
+import { HEADER_HEIGHT } from '../../styled/sizes';
 
 export const StyledHeader = styled.header`
 	color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
@@ -11,7 +11,7 @@ export const StyledHeader = styled.header`
 	position: fixed;
 	bottom: 0;
 	background-color: ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
-	height: 80px;
+	height: ${HEADER_HEIGHT}px;
 	padding-bottom: 0;
 	border-top: 2px solid ${CUSTOM_PROPERTIES.COLOR_TEXT};
 

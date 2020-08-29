@@ -9,25 +9,20 @@ import Head from 'next/head';
 import { PortfolioContent } from '../../styled/portfolio.style';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledPost } from '../../components/BlogPost/style';
-import { ExternalLink, LinkButton } from '../../components/Button';
+import { ExternalLink } from '../../components/Button';
+import { IContentBlock, parseContentBlock } from '../../utils/blog';
 
 interface IPortfolioPostProps extends IApolloQueryProps<{}> {}
 
 export function PortfolioItem({
 	initialApolloState: { ROOT_QUERY }
 }: IPortfolioPostProps) {
-	const {
-		path,
-		fileName,
-		componentName,
-		headMarkup,
-		bodyMarkup
-	} = Object.values(ROOT_QUERY)[1] as {
-		path: string;
+	const { fileName, headMarkup, bodyBlocks } = Object.values(
+		ROOT_QUERY
+	)[1] as {
 		fileName: string;
-		componentName: string;
 		headMarkup: string;
-		bodyMarkup: string;
+		bodyBlocks: string;
 	};
 
 	const parsedFileName = fileName.toUpperCase().replace(/-/g, '_');
@@ -39,33 +34,24 @@ export function PortfolioItem({
 	const portfolioContent: IPortfolioItem = portfolioData.find(
 		data => data.name === PORTFOLIO_ITEM_NAMES[parsedFileName]
 	);
+	const parsedBodyBlocks = JSON.parse(bodyBlocks);
 
 	return (
 		<main className="main">
 			<Head>
 				<title>{portfolioContent.name} Case Study | Luke Boyle</title>
+				<meta name="description" content={portfolioContent.snippet} />
 			</Head>
 			<div className="head-slot">
 				<HomeHeadBanner hasColor={false}>
-					<div dangerouslySetInnerHTML={{ __html: headMarkup }} />
+					{parseContentBlock(parsedBodyBlocks[0])}
 				</HomeHeadBanner>
 			</div>
 			<div className="body-slot">
 				<PortfolioContent>
-					<Head>
-						<title>
-							{portfolioContent.name} | Project Case Study
-						</title>
-						<meta
-							name="description"
-							content={portfolioContent.snippet}
-						/>
-					</Head>
 					<MaxWidthContainer>
 						<StyledPost className="content">
-							<div
-								dangerouslySetInnerHTML={{ __html: bodyMarkup }}
-							/>
+							{parsedBodyBlocks.slice(1).map(parseContentBlock)}
 							<div className="buttons">
 								{portfolioContent.links.map(ExternalLink)}
 							</div>
@@ -83,8 +69,7 @@ export const POST_QUERY = gql`
 			path
 			fileName
 			componentName
-			headMarkup
-			bodyMarkup
+			bodyBlocks
 		}
 	}
 `;
