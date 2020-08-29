@@ -1,8 +1,8 @@
-import React from 'react';
+import * as React from 'react';
+import Link from 'next/link';
 import { AnchorButton } from '../Button';
 import { IPortfolioItem } from '../../data/portfolio-items';
-import { PortfolioPageItem } from './PortfolioItem.style';
-import Link from 'next/link';
+import { PortfolioPageItem } from './style';
 
 export const PortfolioItem = ({
 	id,
