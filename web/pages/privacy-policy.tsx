@@ -3,49 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import HomeHeadBanner from '../components/HomeHeadBanner/HomeHeadBanner';
 import MaxWidthContainer from '../components/MaxWidthContainer';
-import styled from 'styled-components';
-import { FaChevronRight } from 'react-icons/fa';
-
-const StyledSummary = styled.summary`
-	display: flex;
-	align-items: center;
-	cursor: pointer;
-	list-style-type: none;
-
-	svg {
-		font-size: 1.6rem;
-		margin-right: 15px;
-		transition: transform 0.25s ease-out;
-	}
-
-	h3 {
-		margin: 0;
-	}
-
-	&::-webkit-details-marker {
-		display: none;
-	}
-`;
-
-const StyledDetails = styled.details`
-	&[open] {
-		summary svg {
-			transform: rotate(90deg);
-		}
-
-		.contents {
-			opacity: 1;
-			transform: translateX(0);
-		}
-	}
-
-	.contents {
-		position: relative;
-		opacity: 0;
-		transform: translateX(-10px);
-		transition: opacity 0.2s ease-out, transform 0.2s ease-out;
-	}
-`;
+import Accordion from '../components/Accordion';
 
 export const PrivacyPolicy = () => {
 	return (
@@ -84,23 +42,21 @@ export const PrivacyPolicy = () => {
 						All deprecated versions of the policy will be retained
 						here for clarity.
 					</p>
-					<StyledDetails>
-						<StyledSummary>
-							<FaChevronRight />
+					<Accordion
+						summary={
 							<h3>
 								Policy deprecated as of{' '}
 								<time dateTime="2020-08-15">15/08/2020</time>
 							</h3>
-						</StyledSummary>
-						<div className="contents">
-							<p>
-								The site uses DNS level analytics provided by
-								Cloudflare to give me traffic stats and
-								geographical information. I don't use Google
-								analytics or any other tracking software.
-							</p>
-						</div>
-					</StyledDetails>
+						}
+					>
+						<p>
+							The site uses DNS level analytics provided by
+							Cloudflare to give me traffic stats and geographical
+							information. I don't use Google analytics or any
+							other tracking software.
+						</p>
+					</Accordion>
 				</MaxWidthContainer>
 			</div>
 		</main>
