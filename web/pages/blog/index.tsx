@@ -6,7 +6,7 @@ import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { BodyWrapper, MainHeader } from '../../styled/music.style';
 import HomeHeadBanner from '../../components/HomeHeadBanner';
 import { META_DESCRIPTION } from '../../constants';
-import BlogPreview from '../../components/BlogPreview/BlogPreview';
+import BlogPreview from '../../components/BlogPreview';
 import PostArchive from '../../components/PostArchive';
 import Pagination from '../../components/Pagination';
 import { getPostArchiveFromBlogPosts } from '../../utils/blog';

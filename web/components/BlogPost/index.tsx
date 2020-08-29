@@ -2,8 +2,8 @@ import * as React from 'react';
 import formatDate from 'date-fns/format';
 import Head from 'next/head';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
-import { StyledPost } from './BlogPost.style';
 import HomeHeadBanner from '../HomeHeadBanner';
+import { StyledPost } from './style';
 
 export const BlogPost = ({
 	children,

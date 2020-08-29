@@ -9,7 +9,7 @@ import Head from 'next/head';
 import Layout from '../../components/Layout/Layout';
 import { PortfolioContent } from '../../styled/portfolio.style';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
-import { StyledPost } from '../../components/BlogPost/BlogPost.style';
+import { StyledPost } from '../../components/BlogPost/style';
 import { IMetaData } from '../../../scripts/utils/blog';
 import { ExternalLink, LinkButton } from '../../components/Button';
 import { RecentStuff, Stuff } from '../../index.style';

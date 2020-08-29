@@ -2,7 +2,7 @@ import * as React from 'react';
 import { gql } from '@apollo/client';
 import { initializeApollo } from '../../../../lib/apolloClient';
 import { ALL_POSTS_QUERY } from '../../../blog';
-import BlogPost from '../../../../components/BlogPost/BlogPost';
+import BlogPost from '../../../../components/BlogPost';
 import { IMetaData } from '../../../../../scripts/utils/blog';
 import {
 	generateTopList,

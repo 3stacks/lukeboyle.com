@@ -1,15 +1,13 @@
 import * as React from 'react';
 import { initializeApollo } from '../../../lib/apolloClient';
 import { ALL_POSTS_QUERY } from '../../blog';
-import { IContentBlock } from '../../../utils/blog';
-import { IApolloQueryProps } from './[month]/[title]';
 import { getPostArchiveFromBlogPosts } from '../../../utils/blog';
 import Head from 'next/head';
 import HomeHeadBanner from '../../../components/HomeHeadBanner';
 import MaxWidthContainer from '../../../components/MaxWidthContainer';
 import { BodyWrapper, MainHeader } from '../../../styled/music.style';
 import PostArchive from '../../../components/PostArchive';
-import BlogPreview from '../../../components/BlogPreview/BlogPreview';
+import BlogPreview from '../../../components/BlogPreview';
 
 export const YearPage = ({
 	year,

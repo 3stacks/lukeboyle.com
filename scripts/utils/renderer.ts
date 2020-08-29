@@ -22,10 +22,6 @@ renderer.link = (href, title, text) => {
 	} target="_blank" rel="noreferrer noopener">${text}</a>`;
 };
 
-renderer.blockquote = function(htmlString: string): string {
-	return `<BlockQuote>${htmlString}</BlockQuote>`;
-};
-
 renderer.code = function(code: string, language: string) {
 	return `<pre><code>
 		${code

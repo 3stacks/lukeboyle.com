@@ -4,7 +4,7 @@ import { gql } from '@apollo/client';
 import Head from 'next/head';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { ArtistList, BodyWrapper, MainHeader } from '../../styled/music.style';
-import BlogPreview from '../../components/BlogPreview/BlogPreview';
+import BlogPreview from '../../components/BlogPreview';
 import HomeHeadBanner from '../../components/HomeHeadBanner';
 import truncate from 'lodash/truncate';
 import {
