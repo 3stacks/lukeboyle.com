@@ -25,7 +25,7 @@ export const StyledSummary = styled.summary`
 
 export const StyledDetails = styled.details`
 	&[open] {
-		summary svg {
+		& > summary svg {
 			transform: rotate(90deg);
 		}
 
