@@ -18,15 +18,9 @@ export function Post({
 	initialApolloState: { ROOT_QUERY },
 	contentBlocks
 }: IBlogPostProps) {
-	const {
-		contents,
-		canonicalUrl,
-		metaData,
-		fileName,
-		postType,
-		snippet
-	} = Object.values(ROOT_QUERY)[1] as {
-		contents: string;
+	const { canonicalUrl, metaData, fileName, snippet } = Object.values(
+		ROOT_QUERY
+	)[1] as {
 		canonicalUrl: string;
 		metaData: IMetaData;
 		fileName: string;
@@ -35,7 +29,7 @@ export function Post({
 	};
 
 	const renderBody = React.useCallback(() => {
-		if (postType === 'top_list') {
+		if (metaData.post_type === 'top_list') {
 			return generateTopList(contentBlocks);
 		}
 
@@ -88,9 +82,7 @@ export const POST_QUERY = gql`
 			fileName
 			path
 			slug
-			postType
 			snippet
-			publishDate
 			contentBlocks
 			metaData {
 				post_title

@@ -60,7 +60,6 @@ export function generateComponent(acc, post) {
 	});
 	const contents = {
 		title: frontMatterMetadata.post_title,
-		metaData: frontMatterMetadata,
 		contents: contentsArray.join(''),
 		snippet: frontMatterMetadata.snippet
 			? frontMatterMetadata.snippet
@@ -72,39 +71,7 @@ export function generateComponent(acc, post) {
 			: null
 	};
 
-	if (contents.metaData.post_status !== 'draft') {
-		let parsedContents = getMarkupFromMarkdown(contents.contents);
-
-		if (contents.metaData.post_type === 'top_list') {
-			const rawParts = postContents.split('<h2>');
-			const parts = rawParts.slice(1, rawParts.length);
-			parsedContents = parts.reduce((acc, curr) => {
-				const albumTitle = curr.split('</h2>')[0];
-				const artistStart = curr.split('<h3>');
-				const artist = artistStart[artistStart.length - 1].split(
-					'</h3>'
-				)[0];
-				const imageStart = curr.split('<img ');
-				const imageBits = imageStart[imageStart.length - 1].split(
-					'/>'
-				)[0];
-				const snippet = curr.split('/></p>')[1];
-				return `${acc}\n<div className=""album-block>
-	<h2 className="title">${albumTitle}</h2>
-	<h3 className="artist">${artist}</h3>
-	<img ${imageBits} />
-	${
-		snippet === '\n'
-			? '\n'
-			: `<div className="snippet">
-		${curr.split('/></p>')[1]}
-	</div>\n`
-	}
-</div className="album-block">
-`;
-			}, '');
-		}
-
+	if (frontMatterMetadata.post_status !== 'draft') {
 		const firstParagraphToken = contents.snippet
 			? marked
 					.lexer(contents.snippet)
@@ -113,11 +80,11 @@ export function generateComponent(acc, post) {
 
 		const snippet =
 			typeof firstParagraphToken === 'undefined'
-				? contents.metaData.snippet
+				? frontMatterMetadata.snippet
 				: getMarkupFromMarkdown((firstParagraphToken as any).text);
 
 		const truePublishDate = new Date(
-			contents.metaData.post_date
+			frontMatterMetadata.post_date
 		).toISOString();
 		const pathParts = post.path.split('/');
 
@@ -127,17 +94,13 @@ export function generateComponent(acc, post) {
 			slug: pathParts[pathParts.length - 1].replace('.md', ''),
 			componentName:
 				camelCaseName[0].toUpperCase() + camelCaseName.slice(1),
-			publishDate: truePublishDate,
-			postCategory: contents.metaData.post_category || 'blog',
-			postType: contents.metaData.post_type || 'text-post',
-			postAuthor: contents.metaData.post_author,
-			postTitle: contents.metaData.post_title,
 			snippet: snippet || null,
 			metaData: {
 				...frontMatterMetadata,
-				post_date: truePublishDate
+				post_date: truePublishDate,
+				post_category: frontMatterMetadata.post_category || 'blog',
+				post_type: frontMatterMetadata.post_type || 'text-post'
 			},
-			contents: parsedContents,
 			contentBlocks: JSON.stringify(marked.lexer(contents.contents)),
 			canonicalUrl
 		});

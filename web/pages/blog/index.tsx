@@ -92,6 +92,9 @@ export const ALL_POSTS_QUERY = gql`
 				post_title
 				post_date
 				post_author
+				post_type
+				post_category
+				post_status
 			}
 		}
 	}

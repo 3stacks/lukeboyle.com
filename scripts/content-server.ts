@@ -31,7 +31,7 @@ function getBlogPosts(): Promise<any[]> {
 							};
 						})
 						.reduce(generateComponent, []),
-					'publishDate'
+					['metaData', 'post_date']
 				).reverse()
 			);
 		});
@@ -62,7 +62,7 @@ function getPortfolioItems(): Promise<any[]> {
 async function getMusicPostPreviews() {
 	const posts = await getBlogPosts();
 
-	return posts.filter(post => post.postCategory === 'music');
+	return posts.filter(post => post.metaData.post_category === 'music');
 }
 
 const typeDefs = gql`
@@ -73,6 +73,7 @@ const typeDefs = gql`
 		post_status: String
 		post_type: String
 		post_author: String
+		post_category: String
 	}
 
 	type BlogPost {
@@ -80,14 +81,9 @@ const typeDefs = gql`
 		slug: String
 		fileName: String
 		componentName: String
-		publishDate: String
-		postCategory: String
-		postType: String
-		postTitle: String
 		title: String
 		metaData: FrontMatterMetadata
 		snippet: String
-		contents: String
 		contentBlocks: String
 		canonicalUrl: String
 	}
@@ -96,12 +92,8 @@ const typeDefs = gql`
 		path: String
 		fileName: String
 		componentName: String
-		postTitle: String
-		publishDate: String
-		postCategory: String
-		postType: String
-		postAuthor: String
 		snippet: String
+		metaData: FrontMatterMetadata
 	}
 
 	type PortfolioItem {
