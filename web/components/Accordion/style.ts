@@ -50,7 +50,7 @@ export const StyledDetails = styled.details`
 		}
 	}
 
-	&:hover > summary {
+	summary:hover {
 		background-color: ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
 		color: white;
 	}
