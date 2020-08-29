@@ -2,10 +2,8 @@ import React from 'react';
 import { initializeApollo } from '../../lib/apolloClient';
 import { gql } from '@apollo/client';
 import Head from 'next/head';
-import Layout from '../../components/Layout';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { ArtistList, BodyWrapper, MainHeader } from '../../styled/music.style';
-import { MY_NAME, PAGES } from '../../constants';
 import BlogPreview from '../../components/BlogPreview/BlogPreview';
 import HomeHeadBanner from '../../components/HomeHeadBanner/HomeHeadBanner';
 import truncate from 'lodash/truncate';
@@ -43,7 +41,6 @@ export default function Music({
 		ROOT_QUERY: { musicPreviews, topAlbums, topArtists, discogsCollection }
 	}
 }: IProps) {
-	console.log(musicPreviews);
 	return (
 		<main className="main">
 			<Head>

@@ -3,7 +3,7 @@ import { CUSTOM_PROPERTIES } from './colors';
 import { bp } from './mixins';
 
 export const PortfolioContainer = styled.div`
-	padding-top: 30px;
+	padding: 30px 0;
 
 	h1 {
 		margin-top: 0;
@@ -21,7 +21,7 @@ export const PortfolioContainer = styled.div`
 			515,
 			css`
 				grid-template-columns: 1fr 1fr;
-				grid-column-gap: 30px;
+				grid-gap: 30px;
 			`
 		)}
 

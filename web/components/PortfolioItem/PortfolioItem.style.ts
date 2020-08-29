@@ -8,24 +8,19 @@ export const PortfolioPageItem = styled.div`
 	flex-direction: column;
 	border: 2px solid ${CUSTOM_PROPERTIES.COLOR_PRIMARY};
 
-	&:not(:last-of-type) {
-		margin-bottom: 30px;
-	}
-
 	${blackShift(5)}
 
-	& .image {
-		font-size: 0;
-		img {
-			width: 100%;
-		}
-	}
 	& .image {
 		height: 200px;
 		width: 100%;
 		border-radius: 4px 4px 0 0;
 		background-size: cover;
 		background-repeat: no-repeat;
+		font-size: 0;
+
+		img {
+			width: 100%;
+		}
 	}
 
 	& .card {
