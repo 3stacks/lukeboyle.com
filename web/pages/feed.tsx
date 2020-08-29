@@ -16,8 +16,9 @@ const Tile = styled.article`
 	width: 100%;
 	padding: 10px;
 	${blackShift(5)};
-	display: flex;
-	align-items: flex-start;
+	display: grid;
+	grid-column-gap: 10px;
+	grid-template-columns: 50px auto;
 
 	${bp(
 		768,
@@ -56,10 +57,16 @@ const Tile = styled.article`
 `;
 
 const Body = styled.div`
-	display: flex;
-	flex-direction: column;
 	width: 100%;
 	padding: 5px 0 0 10px;
+	grid-column: 1 / 3;
+
+	${bp(
+		400,
+		css`
+			grid-column: 2 / 3;
+		`
+	)}
 
 	${bp(
 		768,
@@ -67,19 +74,6 @@ const Body = styled.div`
 			padding: 5px 0 0 10px;
 		`
 	)}
-
-	address {
-		font-style: normal;
-		display: inline;
-	}
-
-	div:first-of-type {
-		font-size: 1.5rem;
-
-		span {
-			padding: 0 5px;
-		}
-	}
 
 	p {
 		margin: 0;
@@ -100,6 +94,20 @@ const Avatar = styled.img`
 	border-radius: 50%;
 `;
 
+const Meta = styled.div`
+	address {
+		font-style: normal;
+		display: inline;
+	}
+
+	font-size: 1.5rem;
+	padding: 5px 0 0 0;
+
+	span {
+		padding: 0 5px;
+	}
+`;
+
 const Post = ({
 	postedDate,
 	children
@@ -110,16 +118,14 @@ const Post = ({
 	return (
 		<Tile>
 			<Avatar src="/img/avatar.jpg" alt="" />
-			<Body>
-				<div>
-					<address>Luke Boyle</address>
-					<span>&middot;</span>
-					<time dateTime={postedDate}>
-						{format(new Date(postedDate), 'DD MMM')}
-					</time>
-				</div>
-				<div>{children}</div>
-			</Body>
+			<Meta>
+				<address>Luke Boyle</address>
+				<span>&middot;</span>
+				<time dateTime={postedDate}>
+					{format(new Date(postedDate), 'DD MMM')}
+				</time>
+			</Meta>
+			<Body>{children}</Body>
 		</Tile>
 	);
 };
