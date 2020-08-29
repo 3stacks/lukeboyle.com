@@ -15,9 +15,8 @@ import Head from 'next/head';
 import HomeHeadBanner from '../../../components/HomeHeadBanner';
 import MaxWidthContainer from '../../../components/MaxWidthContainer';
 import { BodyWrapper, MainHeader } from '../../../styled/music.style';
-import PostArchive from '../../../components/PostArchive/PostArchive';
+import PostArchive from '../../../components/PostArchive';
 import BlogPreview from '../../../components/BlogPreview/BlogPreview';
-import Pagination from '../../../components/Pagination';
 
 interface IBlogPostProps extends IApolloQueryProps<{}> {
 	contentBlocks: IContentBlock[];

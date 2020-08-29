@@ -1,5 +1,5 @@
 import safeGet from 'lodash/get';
-import { IPostArchive } from '../PostArchive/PostArchive';
+import { IPostArchive } from '../PostArchive';
 
 export const getPostArchiveFromBlogPosts = (blogPosts): IPostArchive => {
 	return blogPosts.reduce((acc, post) => {
