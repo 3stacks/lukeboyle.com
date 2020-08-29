@@ -1,15 +1,7 @@
 import React from 'react';
 import sortBy from 'lodash/sortBy';
 import { Wrapper } from './style';
-import { IMetaData } from '../../../scripts/utils/blog';
-
-interface IBlogPost {
-	slug: string;
-	path: string;
-	title: string;
-	content: string;
-	metaData: IMetaData;
-}
+import { IBlogPost } from '../../../scripts/utils/blog';
 
 export interface IPostArchive {
 	[year: string]: {

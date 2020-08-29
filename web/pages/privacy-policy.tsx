@@ -3,6 +3,19 @@ import Head from 'next/head';
 import Link from 'next/link';
 import HomeHeadBanner from '../components/HomeHeadBanner/HomeHeadBanner';
 import MaxWidthContainer from '../components/MaxWidthContainer';
+import styled from 'styled-components';
+
+const StyledSummary = styled.summary`
+	display: flex;
+	cursor: pointer;
+	list-style-type: none;
+
+	&::-webkit-details-marker {
+		display: none;
+	}
+`;
+
+const StyledDetails = styled.details``;
 
 export const PrivacyPolicy = () => {
 	return (
@@ -30,27 +43,31 @@ export const PrivacyPolicy = () => {
 						. All tracking is performed on the server. There is no
 						client side analytics and all data is anonymous logged.
 						The data points collected are limited to:
-						<ul>
-							<li>Number of users</li>
-							<li>Country of origin</li>
-							<li>Pages viewed</li>
-						</ul>
 					</p>
+					<ul>
+						<li>Number of users</li>
+						<li>Country of origin</li>
+						<li>Pages viewed</li>
+					</ul>
 					<h2>Deprecated versions of the privacy policy</h2>
 					<p>
 						All deprecated versions of the policy will be retained
 						here for clarity.
 					</p>
-					<h3>
-						Policy deprecated as of{' '}
-						<time dateTime="2020-08-15">15/08/2020</time>
-					</h3>
-					<p>
-						The site uses DNS level analytics provided by Cloudflare
-						to give me traffic stats and geographical information. I
-						don't use Google analytics or any other tracking
-						software.
-					</p>
+					<StyledDetails>
+						<StyledSummary>
+							<h3>
+								Policy deprecated as of{' '}
+								<time dateTime="2020-08-15">15/08/2020</time>
+							</h3>
+						</StyledSummary>
+						<p>
+							The site uses DNS level analytics provided by
+							Cloudflare to give me traffic stats and geographical
+							information. I don't use Google analytics or any
+							other tracking software.
+						</p>
+					</StyledDetails>
 				</MaxWidthContainer>
 			</div>
 		</main>

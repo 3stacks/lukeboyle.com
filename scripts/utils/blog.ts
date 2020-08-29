@@ -28,7 +28,7 @@ export interface IMetaData {
 	pageDescription: string;
 }
 
-interface IBlogPost {
+export interface IBlogPost {
 	slug: string;
 	path: string;
 	title: string;
