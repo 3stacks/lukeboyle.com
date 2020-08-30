@@ -1,11 +1,3 @@
-export enum PAGES {
-	HOME = 'HOME',
-	PORTFOLIO = 'PORTFOLIO',
-	FEED = 'FEED',
-	BLOG = 'BLOG',
-	MUSIC = 'MUSIC',
-	ABOUT = 'ABOUT'
-}
 export const MY_NAME = 'Luke Boyle';
 export enum META_DESCRIPTION {
 	HOME = 'Luke Boyle is a Front End Developer from Melbourne, Australia. Specialising in JavaScript web applications, he has experience with Angular, React and Vue Js.',

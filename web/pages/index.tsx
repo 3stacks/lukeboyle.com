@@ -1,6 +1,6 @@
 import React from 'react';
 import projects from '../data/portfolio-items';
-import { MY_NAME } from '../constants';
+import { META_DESCRIPTION, MY_NAME } from '../constants';
 import MaxWidthContainer from '../components/MaxWidthContainer';
 import { AnchorButton } from '../components/Button';
 import { RecentStuff, Stuff } from '../index.style';
@@ -16,6 +16,7 @@ export const HomePage = () => {
 		<StyledMain className="main">
 			<Head>
 				<title>{MY_NAME} | Technology and Culture</title>
+				<meta name="description" content={META_DESCRIPTION.HOME} />
 			</Head>
 			<div className="head-slot">
 				<HomeHeadBanner hasColor={false}>
