@@ -4,11 +4,8 @@ import { initializeApollo } from '../../../../lib/apolloClient';
 import { ALL_POSTS_QUERY } from '../../../blog';
 import BlogPost from '../../../../components/BlogPost';
 import { IMetaData } from '../../../../../scripts/utils/blog';
-import {
-	generateTopList,
-	IContentBlock,
-	parseContentBlock
-} from '../../../../utils/blog';
+import { generateTopList, parseContentBlock } from '../../../../utils/blog';
+import { IContentBlock } from '../../../../utils/types';
 
 interface IBlogPostProps extends IApolloQueryProps<{}> {
 	contentBlocks: IContentBlock[];
