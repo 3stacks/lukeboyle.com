@@ -7,15 +7,8 @@ import { AnchorButton, LinkButton } from '../components/Button';
 import { RecentStuff, Stuff } from '../index.style';
 import HomeHeadBanner from '../components/HomeHeadBanner';
 import Head from 'next/head';
-import { BodyWrapper } from '../styled/music.style';
-import styled from 'styled-components';
 import Link from 'next/link';
-
-const StyledMain = styled.main`
-	display: flex;
-	flex-direction: column;
-	justify-content: space-evenly;
-`;
+import { StyledMain } from '../styled/index.style';
 
 export const HomePage = () => {
 	const latestProject = projects[0];

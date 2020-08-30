@@ -4,7 +4,7 @@ import MaxWidthContainer from '../components/MaxWidthContainer';
 import { LinkButton } from '../components/Button';
 import HomeHeadBanner from '../components/HomeHeadBanner';
 
-export default function NotFoundError() {
+export const NotFoundError = () => {
 	return (
 		<main className="main">
 			<Head>
@@ -28,4 +28,6 @@ export default function NotFoundError() {
 			</div>
 		</main>
 	);
-}
+};
+
+export default NotFoundError;

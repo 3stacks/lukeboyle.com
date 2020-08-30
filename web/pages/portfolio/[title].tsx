@@ -10,7 +10,7 @@ import { PortfolioContent } from '../../styled/portfolio.style';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import { StyledPost } from '../../components/BlogPost/style';
 import { ExternalLink } from '../../components/Button';
-import { IContentBlock, parseContentBlock } from '../../utils/blog';
+import { parseContentBlock } from '../../utils/blog';
 
 interface IPortfolioPostProps extends IApolloQueryProps<{}> {}
 
