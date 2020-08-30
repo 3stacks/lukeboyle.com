@@ -10,20 +10,20 @@ interface IProps {
 	children: any;
 }
 
+const isSlugHomeOrPortfolio = (slug: string): boolean => {
+	return slug === '/' || slug.includes('/portfolio') || slug === '/feed';
+};
+
 export const Layout = ({ children }: IProps) => {
 	const { asPath } = useRouter();
 	const [route, setRoute] = React.useState<string>(getRouteFromSlug(asPath));
 	const [isHomeOrPortfolioPage, setIsHomeOrPortfolioPage] = React.useState<
 		boolean
-	>(asPath === '/' || asPath.includes('/portfolio') || asPath === '/feed');
+	>(isSlugHomeOrPortfolio(asPath));
 
 	React.useEffect(() => {
 		setRoute(getRouteFromSlug(asPath));
-		setIsHomeOrPortfolioPage(
-			asPath === '/' ||
-				asPath.includes('/portfolio') ||
-				asPath === '/feed'
-		);
+		setIsHomeOrPortfolioPage(isSlugHomeOrPortfolio(asPath));
 	}, [asPath]);
 
 	return (
