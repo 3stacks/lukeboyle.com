@@ -19,7 +19,7 @@ const Post = ({
 }) => {
 	return (
 		<Tile>
-			<Avatar src="/img/avatar.jpg" alt="" />
+			<Avatar src="/images/avatar.jpg" alt="" />
 			<Meta>
 				<address>Luke Boyle</address>
 				<span>&middot;</span>
