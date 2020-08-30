@@ -1,9 +1,8 @@
 import React from 'react';
 import projects from '../data/portfolio-items';
 import { MY_NAME } from '../constants';
-import Layout from '../components/Layout';
 import MaxWidthContainer from '../components/MaxWidthContainer';
-import { AnchorButton, LinkButton } from '../components/Button';
+import { AnchorButton } from '../components/Button';
 import { RecentStuff, Stuff } from '../index.style';
 import HomeHeadBanner from '../components/HomeHeadBanner';
 import Head from 'next/head';

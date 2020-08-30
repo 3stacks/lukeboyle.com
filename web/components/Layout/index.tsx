@@ -1,41 +1,30 @@
 import * as React from 'react';
+import { useRouter } from 'next/router';
 import Header from '../Header';
 import Footer from '../Footer';
 import { StyledLayout } from './style';
-import { useRouter } from 'next/router';
+import { getRouteFromSlug } from '../../utils';
 
 interface IProps {
 	headChildren?: () => React.ReactElement;
 	children: any;
 }
 
-const getRouteFromSlug = slug => {
-	if (slug.includes('/portfolio')) {
-		return 'portfolio';
-	}
-
-	if (slug.includes('/blog-posts')) {
-		const slugParts = slug.split('/');
-
-		return `blog-single ${slugParts[slugParts.length - 1]}`;
-	}
-
-	if (slug.includes('/blog')) {
-		return 'blog';
-	}
-
-	if (slug === '/') {
-		return 'home';
-	}
-
-	return slug.replace('/', '');
-};
-
 export const Layout = ({ children }: IProps) => {
 	const { asPath } = useRouter();
-	const route = getRouteFromSlug(asPath);
-	const isHomeOrPortfolioPage =
-		asPath === '/' || asPath.includes('/portfolio') || asPath === '/feed';
+	const [route, setRoute] = React.useState<string>(getRouteFromSlug(asPath));
+	const [isHomeOrPortfolioPage, setIsHomeOrPortfolioPage] = React.useState<
+		boolean
+	>(asPath === '/' || asPath.includes('/portfolio') || asPath === '/feed');
+
+	React.useEffect(() => {
+		setRoute(getRouteFromSlug(asPath));
+		setIsHomeOrPortfolioPage(
+			asPath === '/' ||
+				asPath.includes('/portfolio') ||
+				asPath === '/feed'
+		);
+	}, [asPath]);
 
 	return (
 		<StyledLayout
