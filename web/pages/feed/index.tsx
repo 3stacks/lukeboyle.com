@@ -1,14 +1,14 @@
 import * as React from 'react';
 import { format } from 'date-fns';
-import MaxWidthContainer from '../components/MaxWidthContainer';
-import HomeHeadBanner from '../components/HomeHeadBanner';
-import Image from '../components/Image';
-import { BodyWrapper } from '../styled/music.style';
+import MaxWidthContainer from '../../components/MaxWidthContainer';
+import HomeHeadBanner from '../../components/HomeHeadBanner';
+import Image from '../../components/Image';
+import { BodyWrapper } from '../../styled/music.style';
 import Head from 'next/head';
-import { initializeApollo } from '../lib/apolloClient';
+import { initializeApollo } from '../../lib/apolloClient';
 import { gql } from '@apollo/client';
-import { parseContentBlock } from '../utils/blog';
-import { Avatar, Body, Meta, PostImg, Tile } from '../styled/feed.style';
+import { parseContentBlock } from '../../utils/blog';
+import { Avatar, Body, Meta, PostImg, Tile } from '../../styled/feed.style';
 
 const Post = ({
 	postedDate,
@@ -34,9 +34,8 @@ const Post = ({
 
 /**
  * TODO: add pagination
- * TODO: don't manage content directly in the component
  */
-export const Index = ({
+export const Feed = ({
 	initialApolloState: {
 		ROOT_QUERY: { feed }
 	}
@@ -100,4 +99,4 @@ export async function getStaticProps() {
 	};
 }
 
-export default Index;
+export default Feed;
