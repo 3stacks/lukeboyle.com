@@ -1,13 +1,8 @@
+import { ITheme } from './types';
+
 const yellow = '#ffe01b';
 const white = '#fff';
 const black = '#111';
-
-export interface ITheme {
-	PRIMARY: string;
-	WHITE: string;
-	TEXT: string;
-	SECONDARY: string;
-}
 
 export const DEFAULT_COLORS: ITheme = {
 	PRIMARY: yellow,
