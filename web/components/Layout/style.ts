@@ -26,21 +26,6 @@ export const StyledLayout = styled.div<{
 			padding-bottom: 0;
 		`
 	)}
-	.block-header {
-		font-size: 2.5rem;
-	}
-
-	.title {
-		font-size: 3.5rem;
-	}
-
-	&.home {
-		main {
-			display: flex;
-			flex-direction: column;
-			justify-content: space-evenly;
-		}
-	}
 
 	[data-identifier='google-fasc'] {
 		${bp(
