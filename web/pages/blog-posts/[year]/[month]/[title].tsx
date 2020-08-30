@@ -70,7 +70,6 @@ export async function getStaticPaths() {
 export const POST_QUERY = gql`
 	query BlogPost($path: String!) {
 		blogPost(path: $path) {
-			canonicalUrl
 			fileName
 			path
 			slug
