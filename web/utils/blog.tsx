@@ -9,6 +9,7 @@ import {
 	IHeadingBlock,
 	IImageBlock
 } from './types';
+import BlockQuote from '../components/BlockQuote';
 
 export const parseContentBlock = (contentBlock: IContentBlock) => {
 	const key = Math.random();
@@ -63,9 +64,9 @@ export const parseContentBlock = (contentBlock: IContentBlock) => {
 			);
 		case CONTENT_BLOCK_TYPES.BLOCKQUOTE:
 			return (
-				<blockquote key={key}>
+				<BlockQuote key={key}>
 					{contentBlock.tokens.map(parseContentBlock)}
-				</blockquote>
+				</BlockQuote>
 			);
 		case CONTENT_BLOCK_TYPES.LIST:
 			if (contentBlock.ordered) {

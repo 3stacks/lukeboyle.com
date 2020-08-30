@@ -40,15 +40,12 @@ export const StyledPost = styled.article`
 	}
 
 	blockquote {
-		border-left: 5px solid ${CUSTOM_PROPERTIES.COLOR_SECONDARY};
-		padding-left: 15px;
 		margin-left: 15px;
 		margin-right: 0;
 
 		${bp(
 			640,
 			css`
-				padding-left: 30px;
 				margin-left: 30px;
 			`
 		)}
