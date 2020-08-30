@@ -18,10 +18,7 @@ export function Post({
 	initialApolloState: { ROOT_QUERY },
 	contentBlocks
 }: IBlogPostProps) {
-	const { canonicalUrl, metaData, fileName, snippet } = Object.values(
-		ROOT_QUERY
-	)[1] as {
-		canonicalUrl: string;
+	const { metaData, fileName, snippet } = Object.values(ROOT_QUERY)[1] as {
 		metaData: IMetaData;
 		fileName: string;
 		postType: string;
@@ -42,9 +39,7 @@ export function Post({
 			fileName={fileName.replace('.md', '')}
 			publishDate={metaData.post_date}
 			author={metaData.post_author}
-			canonical={canonicalUrl}
 			seo={{
-				canonical: canonicalUrl ? canonicalUrl : '',
 				pageTitle: metaData.seoTitle ? metaData.seoTitle : '',
 				pageDescription: snippet
 					? snippet

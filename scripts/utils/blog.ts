@@ -2,7 +2,6 @@ import YAML from 'yamljs';
 import * as fs from 'fs-extra';
 import camelCase from 'lodash/camelCase';
 import { getMarkupFromMarkdown } from './renderer';
-import { getCanonicalURLFromString } from './string';
 import marked from 'marked';
 import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
 
@@ -40,7 +39,6 @@ export function generateComponent(acc, post) {
 	const fileName = getFileNameFromPath(post.path);
 	const camelCaseName = camelCase(fileName);
 	let postContents = post.contents;
-	const canonicalUrl = getCanonicalURLFromString(postContents) || '';
 	const contentsWithoutFirst = postContents.slice(3);
 	const frontMatterMetadata = YAML.parse(
 		contentsWithoutFirst.slice(0, contentsWithoutFirst.indexOf('---'))
@@ -101,8 +99,7 @@ export function generateComponent(acc, post) {
 				post_category: frontMatterMetadata.post_category || 'blog',
 				post_type: frontMatterMetadata.post_type || 'text-post'
 			},
-			contentBlocks: JSON.stringify(marked.lexer(contents.contents)),
-			canonicalUrl
+			contentBlocks: JSON.stringify(marked.lexer(contents.contents))
 		});
 	}
 

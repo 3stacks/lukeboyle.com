@@ -16,10 +16,9 @@ export const BlogPost = ({
 	publishDate: string;
 	author: string;
 	title: string;
-	canonical: string;
 	fileName: string;
 	seo: {
-		canonical: string;
+		canonical?: string;
 		pageTitle: string;
 		pageDescription: string;
 	};

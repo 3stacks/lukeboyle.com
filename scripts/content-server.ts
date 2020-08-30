@@ -85,7 +85,6 @@ const typeDefs = gql`
 		metaData: FrontMatterMetadata
 		snippet: String
 		contentBlocks: String
-		canonicalUrl: String
 	}
 
 	type PostPreview {
