@@ -19,13 +19,15 @@ export const Header = ({
 					{isHome ? (
 						<h1 className="logo">{MY_NAME}</h1>
 					) : (
-						<p className="logo">
-							<Link href="/">
-								<a rel="home" title="Go back to the home page">
-									{MY_NAME}
-								</a>
-							</Link>
-						</p>
+						<Link href="/">
+							<a
+								rel="home"
+								title="Go back to the home page"
+								className="logo"
+							>
+								{MY_NAME}
+							</a>
+						</Link>
 					)}
 					<ul id="menu" className="menu">
 						{routes.map(route => {

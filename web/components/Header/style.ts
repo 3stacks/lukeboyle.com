@@ -44,6 +44,7 @@ export const StyledNav = styled.div`
 	${bp(
 		WIDTHS.M,
 		css`
+			align-items: center;
 			flex-wrap: nowrap;
 		`
 	)}
@@ -56,9 +57,13 @@ export const StyledNav = styled.div`
 		width: 100%;
 		text-align: center;
 		display: none;
+		color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
+		text-decoration: none;
+		border-color: transparent;
 
-		a {
-			line-height: 1;
+		&:focus,
+		&:hover {
+			color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 		}
 
 		${bp(
@@ -79,14 +84,6 @@ export const StyledNav = styled.div`
 		)};
 
 		a {
-			color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
-			text-decoration: none;
-			border-color: transparent;
-
-			&:focus,
-			&:hover {
-				color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
-			}
 		}
 	}
 
