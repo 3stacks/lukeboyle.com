@@ -6,7 +6,6 @@ import prettierConfig from '../.prettierrc.js';
 
 (() => {
 	glob('./web/out/**/*.html', (err, files) => {
-		console.log(files);
 		if (!files.length) {
 			console.error(red('Could not find output directory'));
 			process.exit(1);

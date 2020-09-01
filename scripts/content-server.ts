@@ -183,6 +183,7 @@ const typeDefs = gql`
 		date: String
 		body: String
 		imageSrc: String
+		guid: String
 	}
 
 	type Query {
@@ -195,6 +196,7 @@ const typeDefs = gql`
 		topAlbums: [Album]
 		discogsCollection: [DiscogsEntry]
 		feed: [FeedEntry]
+		post(guid: String!): FeedEntry
 	}
 `;
 
@@ -273,6 +275,15 @@ const resolvers = {
 				...post,
 				body: JSON.stringify(marked.lexer(post.body))
 			}));
+		},
+		post: async (_, { guid }) => {
+			console.log('\n\n\n\n', guid);
+			const targetPost = posts.find(post => post.guid === guid);
+
+			return {
+				...targetPost,
+				body: JSON.stringify(marked.lexer(targetPost.body))
+			};
 		}
 	}
 };

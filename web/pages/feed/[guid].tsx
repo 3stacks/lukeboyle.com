@@ -9,17 +9,20 @@ import { initializeApollo } from '../../lib/apolloClient';
 import { parseContentBlock } from '../../utils/blog';
 import { PostImg } from '../../styled/feed.style';
 import Post from '../../components/Post';
+import Link from 'next/link';
+import { LinkButton } from '../../components/Button';
 
 /**
  * TODO: add pagination
  */
 export const Feed = ({
-	initialApolloState: {
-		ROOT_QUERY: { feed }
-	}
+	initialApolloState: { ROOT_QUERY }
 }: {
-	initialApolloState: { ROOT_QUERY: { feed: any[] } };
+	initialApolloState: { ROOT_QUERY: any };
 }) => {
+	const post: any = Object.values(ROOT_QUERY)[1];
+
+	console.log(post);
 	return (
 		<main className="main">
 			<Head>
@@ -33,43 +36,39 @@ export const Feed = ({
 			<div className="body-slot">
 				<MaxWidthContainer style={{ maxWidth: 768 }}>
 					<BodyWrapper style={{ display: 'block' }}>
-						{feed.map(post => {
-							return (
-								<Post postedDate={post.date} key={post.guid}>
-									{JSON.parse(post.body).map(
-										parseContentBlock
-									)}
-									{post.imageSrc && (
-										<PostImg>
-											<Image src={post.imageSrc} alt="" />
-										</PostImg>
-									)}
-								</Post>
-							);
-						})}
+						<Post postedDate={post.date}>
+							{JSON.parse(post.body).map(parseContentBlock)}
+							{post.imageSrc && (
+								<PostImg>
+									<Image src={post.imageSrc} alt="" />
+								</PostImg>
+							)}
+						</Post>
 					</BodyWrapper>
+					<LinkButton to="/feed">Go back to feed</LinkButton>
 				</MaxWidthContainer>
 			</div>
 		</main>
 	);
 };
 
-export const FEED_ENTRIES_QUERY = gql`
-	query {
-		feed {
-			date
-			body
-			guid
-			imageSrc
-		}
-	}
-`;
-
-export async function getStaticProps() {
+export async function getStaticProps({ params }) {
 	const apolloClient = initializeApollo();
 
 	await apolloClient.query({
-		query: FEED_ENTRIES_QUERY
+		query: gql`
+			query Post($guid: String!) {
+				post(guid: $guid) {
+					body
+					date
+					guid
+					imageSrc
+				}
+			}
+		`,
+		variables: {
+			guid: params.guid.replace('/feed/', '')
+		}
 	});
 
 	return {
@@ -78,6 +77,33 @@ export async function getStaticProps() {
 		},
 		revalidate: 1
 	};
+}
+
+export async function getStaticPaths() {
+	const apolloClient = initializeApollo();
+
+	await apolloClient.query({
+		query: gql`
+			query {
+				feed {
+					date
+					guid
+					body
+					imageSrc
+				}
+			}
+		`
+	});
+
+	const {
+		ROOT_QUERY: { feed }
+	} = apolloClient.cache.extract() as { ROOT_QUERY: { feed: any[] } };
+
+	const paths = feed.map(post => {
+		return `/feed/${post.guid}`;
+	});
+
+	return { paths, fallback: false };
 }
 
 export default Feed;

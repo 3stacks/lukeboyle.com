@@ -44,6 +44,8 @@ export const Tile = styled.article`
 
 	stream {
 		margin-top: 10px;
+		min-height: 50px;
+		background-color: black;
 	}
 
 	blockquote {

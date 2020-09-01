@@ -1,7 +1,7 @@
 export default [
 	{
 		date: '2020-09-01T17:53:00.549Z',
-		id: 'TsfHWyx49O',
+		guid: 'TsfHWyx49O',
 		body: `I challenge Prince Andrew to a no holds barred cage match, oh yeah, oh yeah.
 
 <stream src="f7ed57f97db93bcc6de8b8ee7fdcda43" controls></stream>
@@ -12,20 +12,20 @@ export default [
 	},
 	{
 		date: '2020-09-01T17:53:00.549Z',
-		id: 'jYmTOWSTJU',
+		guid: 'jYmTOWSTJU',
 		body: `<stream src="6bf5f363cdd1e8379f3f6e5290989ef4" controls></stream>
 <script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=6bf5f363cdd1e8379f3f6e5290989ef4"></script>`
 	},
 	{
 		date: '2020-08-24T23:05:00.549Z',
-		id: 'xGXH37XNqW',
+		guid: 'xGXH37XNqW',
 		body: `> "I think there's a degree of luck and intellect involved in giving up things that hurt you"
 					 
 [George Carlin, 40 years of comedy](https://youtu.be/nCGGWeD_EJk)`
 	},
 	{
 		date: '2020-08-21T21:50:00.549Z',
-		id: '0gXhua0hzF',
+		guid: '0gXhua0hzF',
 		body: `2016 vs 2020. 2 years of powerlifting, 2 patella
 dislocations, and COMPLETELY unethical mass
 cultivation (GOMAD, dozen eggs a day) and I'm
@@ -37,7 +37,7 @@ BF.`,
 	},
 	{
 		date: '2020-08-21T21:49:00.549Z',
-		id: 'm_DVmyl7sP',
+		guid: 'm_DVmyl7sP',
 		body: `Watch it asshole
 <stream src="ed8a9bee48a7e6cd988927225231d1d4" controls></stream>
 <script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=ed8a9bee48a7e6cd988927225231d1d4"></script>
@@ -45,7 +45,7 @@ BF.`,
 	},
 	{
 		date: '2020-08-11T20:46:52.549Z',
-		id: 'z35pQYA4YE',
+		guid: 'z35pQYA4YE',
 		body: `Is it possible that the Australian government [banned Huawei](https://www.gizmodo.com.au/2020/03/huawei-5g-australia/) in a deliberate attempt to slow the roll-out of
 the 5G? Surely they would like to recoup some of
 the $48.7bn [[1]](https://www.smh.com.au/business/companies/nbn-rollout-cost-to-jump-by-2-billion-20180831-p500yw.html) they've invested into the abject failure that is
@@ -73,13 +73,13 @@ conspiracy theories`
 	},
 	{
 		date: '2020-08-04T10:32:52.549Z',
-		id: 'vbCerZhVub',
+		guid: 'vbCerZhVub',
 		body: `I'm going to destroy you with FACTS and LOGIC
 (that's what I call my fists)`
 	},
 	{
 		date: '2020-08-04T10:25:52.549Z',
-		id: 'VNWy_RhyJf',
+		guid: 'VNWy_RhyJf',
 		body: `I'm hosting my own Twitter-like feed with the
 idea that it can be easily piped into an RSS
 feed. It would be nice for everyone to just be

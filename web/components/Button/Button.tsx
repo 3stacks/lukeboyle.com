@@ -57,7 +57,9 @@ export default styled.button<{ isSecondary: boolean }>`
 
 export const LinkButton = ({ to, children, ...others }: any) => (
 	<Link href={to}>
-		<AnchorButton {...others}>{children}</AnchorButton>
+		<AnchorButton {...others} href={to}>
+			{children}
+		</AnchorButton>
 	</Link>
 );
 
