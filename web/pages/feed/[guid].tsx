@@ -39,6 +39,13 @@ export const Feed = ({
 						data-rh="true"
 					/>
 				)}
+				{post.snippet && (
+					<meta
+						content={post.snippet}
+						property="og:description"
+						data-rh="true"
+					/>
+				)}
 			</Head>
 			<MaxWidthContainer style={{ maxWidth: 768 }}>
 				<Post postedDate={post.date} guid={post.guid}>
@@ -67,6 +74,7 @@ export async function getStaticProps({ params }) {
 					body
 					date
 					guid
+					snippet
 					imageSrc
 				}
 			}

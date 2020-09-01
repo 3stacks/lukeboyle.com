@@ -13,6 +13,7 @@ import {
 } from './utils/music';
 import sortBy from 'lodash/sortBy';
 import marked from 'marked';
+import { getMarkupFromMarkdown } from './utils/renderer';
 
 dotenv.config();
 
@@ -183,6 +184,7 @@ const typeDefs = gql`
 		date: String
 		body: String
 		imageSrc: String
+		snippet: String
 		guid: String
 	}
 
@@ -271,21 +273,27 @@ const resolvers = {
 			return await getDiscogsCollectionItems(process.env.DISCOGS_TOKEN);
 		},
 		feed: async () => {
-			return posts.map(post => ({
-				...post,
-				body: JSON.stringify(marked.lexer(post.body))
-			}));
+			return posts.map(generatePost);
 		},
 		post: async (_, { guid }) => {
 			console.log('\n\n\n\n', guid);
 			const targetPost = posts.find(post => post.guid === guid);
 
-			return {
-				...targetPost,
-				body: JSON.stringify(marked.lexer(targetPost.body))
-			};
+			return generatePost(targetPost);
 		}
 	}
+};
+
+const generatePost = (post: any) => {
+	const firstParagraphToken = marked
+		.lexer(post.body)
+		.find(block => (block as any).type === 'paragraph');
+
+	return {
+		...post,
+		snippet: firstParagraphToken.raw,
+		body: JSON.stringify(marked.lexer(post.body))
+	};
 };
 
 const server = new ApolloServer({ typeDefs, resolvers });
