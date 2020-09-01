@@ -34,7 +34,7 @@ export const Feed = ({
 				/>
 				{post.imageSrc && (
 					<meta
-						content={post.imageSrc}
+						content={`https://lukeboyle.com/${post.imageSrc}`}
 						property="og:image"
 						data-rh="true"
 					/>

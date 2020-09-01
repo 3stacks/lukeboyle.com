@@ -10,6 +10,8 @@ export const PostPageMain = styled.div`
 	flex: 1 0;
 
 	${MaxWidthContainer} {
+		width: 100%;
+
 		${bp(
 			600,
 			css`
