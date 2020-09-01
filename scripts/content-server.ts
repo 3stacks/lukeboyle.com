@@ -270,6 +270,11 @@ const resolvers = {
 		feed: async () => {
 			const posts = [
 				{
+					date: '2020-09-01T17:53:00.549Z',
+					body: `<stream src="6bf5f363cdd1e8379f3f6e5290989ef4" controls></stream>
+<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=6bf5f363cdd1e8379f3f6e5290989ef4"></script>`
+				},
+				{
 					date: '2020-08-24T23:05:00.549Z',
 					body: `> "I think there's a degree of luck and intellect involved in giving up things that hurt you"
 					 
