@@ -65,7 +65,7 @@ export const BodyWrapper = styled.div`
 	${bp(
 		600,
 		css`
-			padding-top: 0;
+			padding-top: 30px;
 			padding-bottom: 30px;
 		`
 	)};
@@ -77,7 +77,7 @@ export const BodyWrapper = styled.div`
 	${bp(
 		WIDTHS.M,
 		css`
-			padding-top: 0;
+			padding-top: 60px;
 			padding-bottom: 60px;
 		`
 	)};

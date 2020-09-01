@@ -1,11 +1,11 @@
 import * as React from 'react';
+import Head from 'next/head';
+import { gql } from '@apollo/client';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import HomeHeadBanner from '../../components/HomeHeadBanner';
 import Image from '../../components/Image';
 import { BodyWrapper } from '../../styled/music.style';
-import Head from 'next/head';
 import { initializeApollo } from '../../lib/apolloClient';
-import { gql } from '@apollo/client';
 import { parseContentBlock } from '../../utils/blog';
 import { PostImg } from '../../styled/feed.style';
 import Post from '../../components/Post';
