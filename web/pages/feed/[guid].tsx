@@ -10,7 +10,7 @@ import { parseContentBlock } from '../../utils/blog';
 import { PostImg } from '../../styled/feed.style';
 import Post from '../../components/Post';
 import Link from 'next/link';
-import { LinkButton } from '../../components/Button';
+import { AnchorButton, LinkButton } from '../../components/Button';
 
 /**
  * TODO: add pagination
@@ -37,9 +37,9 @@ export const Feed = ({
 							</PostImg>
 						)}
 					</Post>
-					<LinkButton to="/feed" style={{ marginTop: 24 }}>
+					<AnchorButton href="/feed" style={{ marginTop: 24 }}>
 						Go back to feed
-					</LinkButton>
+					</AnchorButton>
 				</BodyWrapper>
 			</MaxWidthContainer>
 		</main>
