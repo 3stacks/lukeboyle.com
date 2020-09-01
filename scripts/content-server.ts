@@ -5,6 +5,7 @@ import { generateComponent, isNotDirectory } from './utils/blog';
 import { generatePortfolioItem } from './utils/portfolio';
 import dotenv from 'dotenv';
 import { nanoid } from 'nanoid';
+import posts from './posts';
 import {
 	getDiscogsCollectionItems,
 	getTopAlbums,
@@ -268,79 +269,6 @@ const resolvers = {
 			return await getDiscogsCollectionItems(process.env.DISCOGS_TOKEN);
 		},
 		feed: async () => {
-			const posts = [
-				{
-					date: '2020-09-01T17:53:00.549Z',
-					body: `<stream src="6bf5f363cdd1e8379f3f6e5290989ef4" controls></stream>
-<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=6bf5f363cdd1e8379f3f6e5290989ef4"></script>`
-				},
-				{
-					date: '2020-08-24T23:05:00.549Z',
-					body: `> "I think there's a degree of luck and intellect involved in giving up things that hurt you"
-					 
-[George Carlin, 40 years of comedy](https://youtu.be/nCGGWeD_EJk)`
-				},
-				{
-					date: '2020-08-21T21:50:00.549Z',
-					body: `2016 vs 2020. 2 years of powerlifting, 2 patella
-dislocations, and COMPLETELY unethical mass
-cultivation (GOMAD, dozen eggs a day) and I'm
-finally getting some SUCCULENT deltoids. The
-best gains of my life have been doing [one lift a
-day](/blog-posts/2020/07/olad-results-so-far). ~75kg(165lbs) ~18% BF vs 118kg(260lbs) ~25%
-BF.`,
-					imageSrc: '/images/mass.jpg'
-				},
-				{
-					date: '2020-08-21T21:49:00.549Z',
-					body: `Watch it asshole
-<stream src="ed8a9bee48a7e6cd988927225231d1d4" controls></stream>
-<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=ed8a9bee48a7e6cd988927225231d1d4"></script>
-`
-				},
-				{
-					date: '2020-08-11T20:46:52.549Z',
-					body: `Is it possible that the Australian government [banned Huawei](https://www.gizmodo.com.au/2020/03/huawei-5g-australia/) in a deliberate attempt to slow the roll-out of
-the 5G? Surely they would like to recoup some of
-the $48.7bn [[1]](https://www.smh.com.au/business/companies/nbn-rollout-cost-to-jump-by-2-billion-20180831-p500yw.html) they've invested into the abject failure that is
-the NBN. All you need to do is look at Telstra's
-official speed metrics between their supported
-broadband technologies to see that NBN is a bad
-service.
-
-|     |  Peak Speed  | Latency |
-| --- | ------------ | ------- |
-|  4G | 100-300 Mbps | 50ms |
-| 5G | 1-20 Gbps | 1-6ms |
-| NBN | 12-100 Mbps | may vary |
-
-Table data: [[2]](https://telstraventures.com/5g-australia-how-it-affects-businesses).
-
-Expected median speed in San Francisco (under average load) market is 1.4Gbps with latency of 4.9ms [[3]](https://www.whistleout.com.au/MobilePhones/Guides/5g-in-australia-what-you-need-to-know)
-
-<br />
-
-If it came out that this was the case then I
-wouldn't be surprised if they were also
-responsible for the proliferation of 5G
-conspiracy theories`
-				},
-				{
-					date: '2020-08-04T10:32:52.549Z',
-					body: `I'm going to destroy you with FACTS and LOGIC
-(that's what I call my fists)`
-				},
-				{
-					date: '2020-08-04T10:25:52.549Z',
-					body: `I'm hosting my own Twitter-like feed with the
-idea that it can be easily piped into an RSS
-feed. It would be nice for everyone to just be
-able to host their own feed and then users could
-just subscribe to different people on some app.
-Then everyone owns their own data (kinda like [https://matrix.org](https://matrix.org)).`
-				}
-			];
-
 			return posts.map(post => ({
 				...post,
 				body: JSON.stringify(marked.lexer(post.body))
