@@ -1,4 +1,36 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import MaxWidthContainer from '../components/MaxWidthContainer';
+import { bp } from './mixins';
+import { WIDTHS } from './sizes';
+
+export const PostPageMain = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1 0;
+
+	${MaxWidthContainer} {
+		${bp(
+			600,
+			css`
+				padding-top: 30px;
+				padding-bottom: 30px;
+			`
+		)};
+
+		div:last-of-type {
+			max-width: 700px;
+		}
+
+		${bp(
+			WIDTHS.M,
+			css`
+				padding-top: 60px;
+				padding-bottom: 60px;
+			`
+		)};
+	}
+`;
 
 export const PostImg = styled.div`
 	margin-top: 10px;

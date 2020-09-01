@@ -6,41 +6,9 @@ import Image from '../../components/Image';
 import { BodyWrapper } from '../../styled/music.style';
 import { initializeApollo } from '../../lib/apolloClient';
 import { parseContentBlock } from '../../utils/blog';
-import { PostImg } from '../../styled/feed.style';
+import { PostImg, PostPageMain } from '../../styled/feed.style';
 import Post from '../../components/Post';
 import { AnchorButton } from '../../components/Button';
-import styled, { css } from 'styled-components';
-import { bp } from '../../styled/mixins';
-import { WIDTHS } from '../../styled/sizes';
-
-const PostPageMain = styled.div`
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex: 1 0;
-
-	${MaxWidthContainer} {
-		${bp(
-			600,
-			css`
-				padding-top: 30px;
-				padding-bottom: 30px;
-			`
-		)};
-
-		div:last-of-type {
-			max-width: 700px;
-		}
-
-		${bp(
-			WIDTHS.M,
-			css`
-				padding-top: 60px;
-				padding-bottom: 60px;
-			`
-		)};
-	}
-`;
 
 export const Feed = ({
 	initialApolloState: { ROOT_QUERY }
@@ -53,6 +21,24 @@ export const Feed = ({
 		<PostPageMain className="main">
 			<Head>
 				<title>The Downward Spiral | Luke Boyle</title>
+				<meta property="og:site_name" content="The Downward Spiral" />
+				<meta
+					content={`https://lukeboyle.com/feed/${post.guid}`}
+					property="og:url"
+					data-rh="true"
+				/>
+				<meta
+					content="Luke's Downward Spiral"
+					property="og:title"
+					data-rh="true"
+				/>
+				{post.imageSrc && (
+					<meta
+						content={post.imageSrc}
+						property="og:image"
+						data-rh="true"
+					/>
+				)}
 			</Head>
 			<MaxWidthContainer style={{ maxWidth: 768 }}>
 				<Post postedDate={post.date} guid={post.guid}>
