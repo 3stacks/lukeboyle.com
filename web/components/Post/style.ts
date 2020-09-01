@@ -83,6 +83,10 @@ export const Meta = styled.div`
 		display: inline;
 	}
 
+	a {
+		border: none;
+	}
+
 	font-size: 1.5rem;
 	padding: 5px 0 0 0;
 

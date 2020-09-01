@@ -22,32 +22,26 @@ export const Feed = ({
 }) => {
 	const post: any = Object.values(ROOT_QUERY)[1];
 
-	console.log(post);
 	return (
 		<main className="main">
 			<Head>
 				<title>The Downward Spiral | Luke Boyle</title>
 			</Head>
-			<div className="head-slot">
-				<HomeHeadBanner hasColor>
-					<h1>The downward spiral</h1>
-				</HomeHeadBanner>
-			</div>
-			<div className="body-slot">
-				<MaxWidthContainer style={{ maxWidth: 768 }}>
-					<BodyWrapper style={{ display: 'block' }}>
-						<Post postedDate={post.date}>
-							{JSON.parse(post.body).map(parseContentBlock)}
-							{post.imageSrc && (
-								<PostImg>
-									<Image src={post.imageSrc} alt="" />
-								</PostImg>
-							)}
-						</Post>
-					</BodyWrapper>
-					<LinkButton to="/feed">Go back to feed</LinkButton>
-				</MaxWidthContainer>
-			</div>
+			<MaxWidthContainer style={{ maxWidth: 768 }}>
+				<BodyWrapper style={{ display: 'block' }}>
+					<Post postedDate={post.date} guid={post.guid}>
+						{JSON.parse(post.body).map(parseContentBlock)}
+						{post.imageSrc && (
+							<PostImg>
+								<Image src={post.imageSrc} alt="" />
+							</PostImg>
+						)}
+					</Post>
+					<LinkButton to="/feed" style={{ marginTop: 24 }}>
+						Go back to feed
+					</LinkButton>
+				</BodyWrapper>
+			</MaxWidthContainer>
 		</main>
 	);
 };

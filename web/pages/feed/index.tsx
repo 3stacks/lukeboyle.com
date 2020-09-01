@@ -35,7 +35,11 @@ export const Feed = ({
 					<BodyWrapper style={{ display: 'block' }}>
 						{feed.map(post => {
 							return (
-								<Post postedDate={post.date} key={post.guid}>
+								<Post
+									postedDate={post.date}
+									key={post.guid}
+									guid={post.guid}
+								>
 									{JSON.parse(post.body).map(
 										parseContentBlock
 									)}
