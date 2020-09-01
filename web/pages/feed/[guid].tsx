@@ -2,19 +2,46 @@ import * as React from 'react';
 import Head from 'next/head';
 import { gql } from '@apollo/client';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
-import HomeHeadBanner from '../../components/HomeHeadBanner';
 import Image from '../../components/Image';
 import { BodyWrapper } from '../../styled/music.style';
 import { initializeApollo } from '../../lib/apolloClient';
 import { parseContentBlock } from '../../utils/blog';
 import { PostImg } from '../../styled/feed.style';
 import Post from '../../components/Post';
-import Link from 'next/link';
-import { AnchorButton, LinkButton } from '../../components/Button';
+import { AnchorButton } from '../../components/Button';
+import styled, { css } from 'styled-components';
+import { bp } from '../../styled/mixins';
+import { WIDTHS } from '../../styled/sizes';
 
-/**
- * TODO: add pagination
- */
+const PostPageMain = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1 0;
+
+	${MaxWidthContainer} {
+		${bp(
+			600,
+			css`
+				padding-top: 30px;
+				padding-bottom: 30px;
+			`
+		)};
+
+		div:last-of-type {
+			max-width: 700px;
+		}
+
+		${bp(
+			WIDTHS.M,
+			css`
+				padding-top: 60px;
+				padding-bottom: 60px;
+			`
+		)};
+	}
+`;
+
 export const Feed = ({
 	initialApolloState: { ROOT_QUERY }
 }: {
@@ -23,26 +50,24 @@ export const Feed = ({
 	const post: any = Object.values(ROOT_QUERY)[1];
 
 	return (
-		<main className="main">
+		<PostPageMain className="main">
 			<Head>
 				<title>The Downward Spiral | Luke Boyle</title>
 			</Head>
 			<MaxWidthContainer style={{ maxWidth: 768 }}>
-				<BodyWrapper style={{ display: 'block' }}>
-					<Post postedDate={post.date} guid={post.guid}>
-						{JSON.parse(post.body).map(parseContentBlock)}
-						{post.imageSrc && (
-							<PostImg>
-								<Image src={post.imageSrc} alt="" />
-							</PostImg>
-						)}
-					</Post>
-					<AnchorButton href="/feed" style={{ marginTop: 24 }}>
-						Go back to feed
-					</AnchorButton>
-				</BodyWrapper>
+				<Post postedDate={post.date} guid={post.guid}>
+					{JSON.parse(post.body).map(parseContentBlock)}
+					{post.imageSrc && (
+						<PostImg>
+							<Image src={post.imageSrc} alt="" />
+						</PostImg>
+					)}
+				</Post>
+				<AnchorButton href="/feed" style={{ marginTop: 24 }}>
+					Go back to feed
+				</AnchorButton>
 			</MaxWidthContainer>
-		</main>
+		</PostPageMain>
 	);
 };
 
