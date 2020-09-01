@@ -4,8 +4,8 @@ export default [
 		guid: 'TsfHWyx49O',
 		body: `I challenge Prince Andrew to a no holds barred cage match, oh yeah, oh yeah.
 
-<stream src="f7ed57f97db93bcc6de8b8ee7fdcda43" controls></stream>
-<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=f7ed57f97db93bcc6de8b8ee7fdcda43"></script>
+<stream src="807b9cdf385786443379a946fa7e0dda" controls></stream>
+<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=807b9cdf385786443379a946fa7e0dda"></script>
 
 <small>Source to 2nd part of the video: [https://youtu.be/hpbGz9JPadM](https://youtu.be/hpbGz9JPadM)</small>
 `
