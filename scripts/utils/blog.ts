@@ -1,18 +1,12 @@
 import YAML from 'yamljs';
 import * as fs from 'fs-extra';
 import camelCase from 'lodash/camelCase';
-import { getMarkupFromMarkdown } from './renderer';
 import marked from 'marked';
+import { getMarkupFromMarkdown } from './renderer';
 import getFileNameFromPath from '@lukeboyle/get-filename-from-path';
 
 export function isNotDirectory(path) {
 	return !fs.lstatSync(path).isDirectory();
-}
-
-export interface IContents {
-	contents: string;
-	title: string;
-	metaData: IMetaData;
 }
 
 export interface IMetaData {

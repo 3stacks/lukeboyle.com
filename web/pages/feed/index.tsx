@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { format } from 'date-fns';
 import MaxWidthContainer from '../../components/MaxWidthContainer';
 import HomeHeadBanner from '../../components/HomeHeadBanner';
 import Image from '../../components/Image';
@@ -8,29 +7,8 @@ import Head from 'next/head';
 import { initializeApollo } from '../../lib/apolloClient';
 import { gql } from '@apollo/client';
 import { parseContentBlock } from '../../utils/blog';
-import { Avatar, Body, Meta, PostImg, Tile } from '../../styled/feed.style';
-
-const Post = ({
-	postedDate,
-	children
-}: {
-	postedDate: string;
-	children: React.ReactNode;
-}) => {
-	return (
-		<Tile>
-			<Avatar src="/images/avatar.jpg" alt="" />
-			<Meta>
-				<address>Luke Boyle</address>
-				<span>&middot;</span>
-				<time dateTime={postedDate}>
-					{format(new Date(postedDate), 'DD MMM')}
-				</time>
-			</Meta>
-			<Body>{children}</Body>
-		</Tile>
-	);
-};
+import { PostImg } from '../../styled/feed.style';
+import Post from '../../components/Post';
 
 /**
  * TODO: add pagination

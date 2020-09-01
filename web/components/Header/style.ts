@@ -29,7 +29,7 @@ export const StyledHeader = styled.header`
 	}
 `;
 
-export const StyledNav = styled.div`
+export const StyledNav = styled.nav`
 	display: flex;
 	justify-content: space-between;
 	align-items: stretch;
@@ -54,12 +54,13 @@ export const StyledNav = styled.div`
 		font-size: 2.5rem;
 		line-height: 1;
 		font-family: 'Publico', serif;
-		width: 100%;
+		width: auto;
 		text-align: center;
 		display: none;
 		color: ${CUSTOM_PROPERTIES.COLOR_TEXT};
 		text-decoration: none;
 		border-color: transparent;
+		white-space: nowrap;
 
 		&:focus,
 		&:hover {
@@ -77,7 +78,6 @@ export const StyledNav = styled.div`
 		${bp(
 			WIDTHS.M,
 			css`
-				width: 250px;
 				text-align: left;
 				margin: 0;
 			`

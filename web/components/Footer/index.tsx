@@ -9,7 +9,8 @@ export const Footer = () => {
 		<StyledFooter>
 			<MaxWidthContainer className="inner">
 				<small className="copyright">
-					&copy; Luke Boyle <FaYinYang /> 93 'til infinity
+					&copy; Luke Boyle <FaYinYang aria-hidden="true" /> 93 'til
+					infinity
 				</small>
 				<FooterLinks>
 					<Link href="/privacy-policy">

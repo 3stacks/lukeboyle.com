@@ -11,7 +11,7 @@ export const FooterLinks = styled.div`
 	}
 `;
 
-export const StyledFooter = styled.div`
+export const StyledFooter = styled.footer`
 	height: 60px;
 
 	& .inner {

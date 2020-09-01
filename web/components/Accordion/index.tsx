@@ -7,7 +7,7 @@ export const Accordion: React.FC<IProps> = ({ summary, children }) => {
 	return (
 		<StyledDetails>
 			<StyledSummary>
-				<FaChevronRight />
+				<FaChevronRight aria-hidden="true" />
 				{summary}
 			</StyledSummary>
 			<div className="contents">{children}</div>
