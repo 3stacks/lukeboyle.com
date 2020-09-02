@@ -28,7 +28,7 @@ stood out giving Clinton a 24 point lead over Trump.
 So, imagine you're a journalist at CNN and all the rhetoric you hear at work strongly favours
 Clinton, your polling strongly favours Clinton, your contemporaries at other outlets
 (within the bubble, of course) strongly favour Clinton. When the results came in post-election
-(electoral college controversy aside), imagine the shock.
+(electoral college controversy aside), --- describe the shock, how the results have largely still not been accepted. russian bots etc ---
 
 ## Fact checkers
 
@@ -56,7 +56,7 @@ If the claim was about the sexual assault charge (as the URL indicates) then the
 or "Partly true". It could be argued that Snopes purposely picked the most extreme claims in order to alter their rating
 of the claim's veracity. An acceptable counterpoint here might be that Snopes must indeed take the most extreme claims
 so they are able to cover the whole gamut of potentially false claims, however, in some other cases it seems that the
-claims are being misrepresented in order to obfuscate the truth.
+claims are being misrepresented in order to obfuscate the truth. (TODO: find more examples)
 
 Let's take the claim "The URL antifa.com automatically redirects to the official campaign website of U.S. Democratic presidential candidate Joe Biden."
 You can verify this one for yourself as of the 2nd of September. Visit antifa.com and you will be redirected to Joe Biden's
@@ -68,19 +68,25 @@ They clarify in the **What's false** section, "However, there are no apparent li
 That wasn't even in the claim they were fact checking. From the outside, it looks as though they added additional context so that the rating
 would not simply be "True".
 
+## The echochamber
+
 ## notes
 
 -   A topic doesn't become valid until it's reported on by news organisations
 -   Wikipedia pages are mostly based on reporting by news organisations, so if a topic is not reported on in the news,
     it won't be covered at all.
 -   So if a topic is considered taboo, and there are no articles being written about it then where do you get the information from?
--
+
+## Have white supremacists infiltrated police forces?
 
 https://www.theguardian.com/us-news/2020/aug/27/white-supremacists-militias-infiltrate-us-police-report
-
 https://truthout.org/articles/white-supremacist-groups-have-infiltrated-us-police-departments-report-says/
 
-https://books.google.com.au/books?hl=en&lr=&id=MVRuDwAAQBAJ&oi=fnd&pg=PP1&ots=W7mtxkHwod&sig=3VusC3ppVSq5dBhRG25EmpLP-qs&redir_esc=y#v=onepage&q&f=false
+The Guardian, et al. have referenced this Brennan Centre think tank article about white supremacists infiltrating
+police. You don't need to think too hard to realise that there's truth to this. At a time there were an estimated \_\_\_\_ KKK members
+in police forces across America.
+
+But when you go to the report The Guardian is referencing https://www.brennancenter.org/our-work/research-reports/hidden-plain-sight-racism-white-supremacy-and-far-right-militancy-law
 
 ### Newsguard results
 
@@ -94,3 +100,5 @@ https://books.google.com.au/books?hl=en&lr=&id=MVRuDwAAQBAJ&oi=fnd&pg=PP1&ots=W7
 | Washington Examiner | 92.5/100 | The website for a magazine that covers national politics and policy from a right-of-center viewpoint, owned by a billionaire who funds conservative politicians and causes.                 |
 | The Guardian        | 100/100  | The website of The Guardian, a daily newspaper based in London known for its left-of-center point of view and investigations into governments, politicians, and companies around the world. |
 | Politifact          | 100/100  | A nonprofit fact-checking website that evaluates the credibility of statements by politicians and pundits.                                                                                  |
+
+https://books.google.com.au/books?hl=en&lr=&id=MVRuDwAAQBAJ&oi=fnd&pg=PP1&ots=W7mtxkHwod&sig=3VusC3ppVSq5dBhRG25EmpLP-qs&redir_esc=y#v=onepage&q&f=false
