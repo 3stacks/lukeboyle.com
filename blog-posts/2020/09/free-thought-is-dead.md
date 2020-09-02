@@ -48,6 +48,26 @@ In the claim below:
 
 ![Snopes fact check about Jacob Blake raping a child. It is marked as False](/web/public/images/free-thought/snopes-jacob-blake.png)
 
+Snopes is 100% correct here. If the claim is "Jacob Blake raped a child", that is verifiably false. However, details of
+the sexual assault charge don't appear until 300 words into the analysis, far below the fold. Snopes says "Some online
+commentators and social media users sought to justify Blake’s shooting and/or undermine the legitimacy of protests
+surrounding it." They never provide any evidence that these claims have been made, but expect us to faithfully accept it.
+If the claim was about the sexual assault charge (as the URL indicates) then the rating would have been "Mostly true"
+or "Partly true". It could be argued that Snopes purposely picked the most extreme claims in order to alter their rating
+of the claim's veracity. An acceptable counterpoint here might be that Snopes must indeed take the most extreme claims
+so they are able to cover the whole gamut of potentially false claims, however, in some other cases it seems that the
+claims are being misrepresented in order to obfuscate the truth.
+
+Let's take the claim "The URL antifa.com automatically redirects to the official campaign website of U.S. Democratic presidential candidate Joe Biden."
+You can verify this one for yourself as of the 2nd of September. Visit antifa.com and you will be redirected to Joe Biden's
+website. That is objectively true. So what does Snopes say? "Mostly true".
+
+![](/web/public/images/free-thought/snopes-antifa-biden.jpg)
+
+They clarify in the **What's false** section, "However, there are no apparent links between any of the website redirects and the Joe Biden campaign".
+That wasn't even in the claim they were fact checking. From the outside, it looks as though they added additional context so that the rating
+would not simply be "True".
+
 ## notes
 
 -   A topic doesn't become valid until it's reported on by news organisations
