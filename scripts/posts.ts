@@ -1,6 +1,16 @@
 export default [
 	{
 		date: '2020-09-01T17:53:00.549Z',
+		guid: '5a682ca4',
+		body: `After years of unequal application of terms of service, Twitter has starting giving left-wing accounts the ban hammer 
+(perhaps in solidarity for the thousands of banned conservative and right wing accounts). The only problem is, they don't understand that 
+this is what they have been advocating for the entire time. Remember, "freedom of speech is not freedom from consequences". This should 
+be a time for people across the spectrum to unite against Twitter's suppression of free speech, however, the #StopTheLeftPurge tag is filled 
+with gloating right wingers and braindead left wingers claiming they're being singled out. Vote with your wallets lefties, join Parler and let Twitter 
+wither until they provide an equal platform for all viewpoints`
+	},
+	{
+		date: '2020-09-01T17:53:00.549Z',
 		guid: 'TsfHWyx49O',
 		body: `I challenge Prince Andrew to a no holds barred cage match, oh yeah, oh yeah.
 
