@@ -20,6 +20,19 @@ export const Feed = ({
 }: {
 	initialApolloState: { ROOT_QUERY: { feed: any[] } };
 }) => {
+	React.useEffect(() => {
+		if (typeof window !== 'undefined') {
+			const hasBeenLoaded = Boolean(
+				sessionStorage.getItem('feedLoaded') || ''
+			);
+
+			if (!hasBeenLoaded) {
+				window.location.reload();
+				sessionStorage.setItem('feedLoaded', 'true');
+			}
+		}
+	}, []);
+
 	return (
 		<main className="main">
 			<Head>
