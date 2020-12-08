@@ -14,8 +14,7 @@ wither until they provide an equal platform for all viewpoints`
 		guid: 'TsfHWyx49O',
 		body: `I challenge Prince Andrew to a no holds barred cage match, oh yeah, oh yeah.
 
-<stream src="807b9cdf385786443379a946fa7e0dda" controls></stream>
-<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=807b9cdf385786443379a946fa7e0dda"></script>
+<div style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.videodelivery.net/807b9cdf385786443379a946fa7e0dda" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;"  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
 
 <small>Source to 2nd part of the video: [https://youtu.be/hpbGz9JPadM](https://youtu.be/hpbGz9JPadM)</small>
 `
@@ -23,8 +22,7 @@ wither until they provide an equal platform for all viewpoints`
 	{
 		date: '2020-09-01T17:53:00.549Z',
 		guid: 'jYmTOWSTJU',
-		body: `<stream src="6bf5f363cdd1e8379f3f6e5290989ef4" controls></stream>
-<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=6bf5f363cdd1e8379f3f6e5290989ef4"></script>`
+		body: `<div style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.videodelivery.net/6bf5f363cdd1e8379f3f6e5290989ef4" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;"  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>`
 	},
 	{
 		date: '2020-08-24T23:05:00.549Z',
@@ -49,8 +47,7 @@ BF.`,
 		date: '2020-08-21T21:49:00.549Z',
 		guid: 'm_DVmyl7sP',
 		body: `Watch it asshole
-<stream src="ed8a9bee48a7e6cd988927225231d1d4" controls></stream>
-<script data-cfasync="false" defer type="text/javascript" src="https://embed.videodelivery.net/embed/r4xu.fla9.latest.js?video=ed8a9bee48a7e6cd988927225231d1d4"></script>
+<div style="position: relative; padding-top: 56.25%;"><iframe src="https://iframe.videodelivery.net/ed8a9bee48a7e6cd988927225231d1d4" style="border: none; position: absolute; top: 0; height: 100%; width: 100%;"  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;" allowfullscreen="true"></iframe></div>
 `
 	},
 	{

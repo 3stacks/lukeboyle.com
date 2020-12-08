@@ -291,7 +291,7 @@ const generatePost = (post: any) => {
 
 	return {
 		...post,
-		snippet: firstParagraphToken.raw,
+		snippet: firstParagraphToken ? firstParagraphToken.raw : '',
 		body: JSON.stringify(marked.lexer(post.body))
 	};
 };
